@@ -31,7 +31,7 @@ export default function RootLayout({
             />
             <Sidebar />
           </div>
-          <div className="w-[80%] h-[100vh] ml-[-2rem] ">
+          <div className="w-[85%] h-[100vh] ml-[-2rem] ">
             <div className="flex w-full h-[12vh] mb-3">
               <Navsearchbar />
             </div>

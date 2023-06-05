@@ -30,7 +30,7 @@ import {
 
 export default function NavSearchbar() {
   return (
-    <Card className="w-[40%] rounded-md px-4">
+    <Card className="w-[40%] rounded-md px-4 py-2">
       <div className="flex my-4 mx-2">
         <div className="flex gap-x-4 ml-5 mt-4">
           <div className="relative inline-flex w-fit">
@@ -39,7 +39,7 @@ export default function NavSearchbar() {
                 <p className="text-[8px] text-white">3</p>
               </div>
               <MenuHandler>
-                <div className="flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">
+                <div className="flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-10 h-10">
                   <Image alt="" src="/message.svg" width={20} height={20} />
                 </div>
               </MenuHandler>
@@ -57,7 +57,7 @@ export default function NavSearchbar() {
                 <p className="text-[8px] text-white">3</p>
               </div>
               <MenuHandler>
-                <div className="flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">
+                <div className="flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-10 h-10">
                   <Image alt="" src="/Alert.svg" width={20} height={20} />
                 </div>
               </MenuHandler>
@@ -68,21 +68,22 @@ export default function NavSearchbar() {
               </MenuList>
             </Menu>
           </div>
-
-          <div className="flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">
-            <Image alt="" src="/setting1.svg" width={20} height={20} />
-          </div>
         </div>
-        <div className="ml-10 flex">
+        <div className="ml-8 mt-2 flex">
           <Avatar
             src="/user.svg"
             className="bg-[#FFBC35] p-1"
             alt="avatar"
             size="lg"
           />
-          <div className="mt-[6px] ml-3  text-black">
-            <p className="font-bold">Demo User</p>
-            <p className="text-xs">Software Developer</p>
+          <div className="ml-3 mt-[-8px]  text-black">
+            <p className="font-bold text-[20px]">Demo User</p>
+            <p className="text-[8px]">
+              Account Id: f48cda68-448b-4c67-9828-f48cda68
+            </p>
+            <p className="text-[8px]">Namespace: Demo (c60c671bf1410535)</p>
+
+            <p className="text-[8px]">Usage Intent: Basic Analysis</p>
           </div>
         </div>
       </div>

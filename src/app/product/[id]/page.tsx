@@ -39,7 +39,7 @@ export default function Page({ params }: any) {
         <Card className="ml-3">
           <CardBody>
             <ProductHeading data={data} />
-            {/* <div className="w-[73vw] mt-6 bg-gray-300 h-[1px]" /> */}
+            <div className="w-[73vw] mt-6 bg-gray-300 h-[1px]" />
             <div>
               <Tabs />
             </div>

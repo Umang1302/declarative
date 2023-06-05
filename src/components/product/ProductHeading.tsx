@@ -91,7 +91,7 @@ export default function Navsearchbar({ data }: any) {
                 <span className="font-semibold">
                   Description about the product:{" "}
                 </span>{" "}
-                {data.content}
+                {data.description}
               </p>
             </div>
           </div>
