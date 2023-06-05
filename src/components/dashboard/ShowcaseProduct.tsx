@@ -56,7 +56,7 @@ export default function Example() {
     {
       id: 1,
       heading: jsonData.data[1].name,
-      content: jsonData.data[1].content,
+      content: jsonData.data[1].description,
       logoSrc: "/yahoo.svg",
       owner: "Yahoo finance",
       location: "LA, California",
@@ -64,7 +64,7 @@ export default function Example() {
     {
       id: 2,
       heading: jsonData.data[2].name,
-      content: jsonData.data[2].content,
+      content: jsonData.data[2].description,
       logoSrc: "/yahoo.svg",
       owner: "Yahoo finance",
       location: "LA, California",
@@ -72,7 +72,7 @@ export default function Example() {
     {
       id: 3,
       heading: jsonData.data[3].name,
-      content: jsonData.data[3].content,
+      content: jsonData.data[3].description,
       logoSrc: "/yahoo.svg",
       owner: "Yahoo finance",
       location: "LA, California",
@@ -80,7 +80,7 @@ export default function Example() {
     {
       id: 4,
       heading: jsonData.data[4].name,
-      content: jsonData.data[4].content,
+      content: jsonData.data[4].description,
       logoSrc: "/yahoo.svg",
       owner: "Yahoo finance",
       location: "LA, California",
