@@ -8,7 +8,7 @@ import NavUserArea from "./NavUserArea";
 export default function Navsearchbar() {
   return (
     <>
-      <Card className="w-[75%] rounded-md mr-2">
+      <Card className="w-[45vw] rounded-md mr-2">
         <CardBody className="mt-3">
           <label htmlFor="simple-search" className="sr-only">
             Search

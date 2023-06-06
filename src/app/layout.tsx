@@ -20,8 +20,8 @@ export default function RootLayout({
       <body
         className={cabin.className + " bg-gray-300" + " p-4 overflow-y-hidden"}
       >
-        <div className="flex">
-          <div className="flex h-[calc(96vh)] w-full max-w-[20rem]">
+        <div className="flex w-[100vw] h-[100vh] overflow-x-hidden overflow-y-hidden">
+          <div className="flex h-[96vh] w-full max-w-[10vw]">
             <Image
               className="absolute z-10 top-[134px] left-[268px]"
               src="/highlight.svg"
@@ -31,11 +31,11 @@ export default function RootLayout({
             />
             <Sidebar />
           </div>
-          <div className="w-[85%] h-[100vh] ml-[-2rem] ">
-            <div className="flex w-full h-[12vh] mb-3">
+          <div className="w-[85vw] h-[100vh]">
+            <div className="flex w-[90vw] h-[12vh] mb-3 ml-[10vw]">
               <Navsearchbar />
             </div>
-            <div className="h-[83vh] pr-3 w-full">{children}</div>
+            <div className="h-[83vh] ml-[10vw]">{children}</div>
           </div>
         </div>
       </body>

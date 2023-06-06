@@ -54,8 +54,7 @@ export default function LabelSection() {
           <button
             key={i}
             className={`w-[12vw] rounded-lg h-[3.5vh] text-sm
-               bg-[#C4C4C4] font-[600] text-[18px]
-             ${cabin.className}`}
+               bg-[#C4C4C4] font-[800] text-[20px] ${cabin.className}`}
           >
             {element.label}
           </button>

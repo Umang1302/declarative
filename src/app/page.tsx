@@ -54,7 +54,7 @@ export default function Dashboard() {
       <div className={`mt-5 ${cabin.className}`}>
         <LabelSection />
         <Hero />
-        <div className="-mt-[5vh] flex ml-[65vw]">
+        <div className="-mt-[5vh] flex ml-[50vw]">
           {/* <button className="bg-transparent shadow-none bg-white rounded-xl text-black flex py-3 px-12 h-[50px] w-[250px] hover:shadow-none">
             <div className="flex mt-[-5px]">
               <PlusIcon className="h-8 w-8 text-[#4D91FF] ml-[-2rem]" />{" "}

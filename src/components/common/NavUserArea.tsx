@@ -30,7 +30,7 @@ import {
 
 export default function NavSearchbar() {
   return (
-    <Card className="w-[40%] rounded-md px-4 py-2">
+    <Card className="w-[32vw] rounded-md px-4 py-2">
       <div className="flex my-4 mx-2">
         <div className="flex gap-x-4 ml-5 mt-4">
           <div className="relative inline-flex w-fit">
