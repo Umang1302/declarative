@@ -1,19 +1,36 @@
 "use client";
 
+import { Breadcrumbs } from "@material-tailwind/react";
 import { Cabin } from "next/font/google";
+import Link from "next/link";
 const cabin = Cabin({ subsets: ["latin"] });
 
 export default function Hero() {
   return (
-    <div className={`mt-5 p-1 flex justify-between w-full ${cabin.className}`}>
+    <div
+      className={`mt-5 p-1 flex 4xl:w-[75vw] justify-between w-full ${cabin.className}`}
+    >
       <div className="w-[70%]">
-        <h1 className="font-bold text-4xl">Products</h1>
-        {/* <p className="mt-2 text-sm">
-          <span className="font-bold mr-2">Description of the product:</span>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ea sint
-          fugit accusamus enim, corrupti deserunt, fugiat ut, fuga commodi nulla
-          tenetur repellendus natus. Natus totam perferendis eius iste aliquid?
-        </p> */}
+        <h1 className="font-bold text-4xl 4xl:text-7xl">Products</h1>
+      </div>
+      <div className="4xl:mb-[60px]">
+        <Breadcrumbs className="bg-transparent 4xl:text-[25px]" separator="->">
+          <Link href="/" className="opacity-60 flex active:text-red-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 mt-[2px] 4xl:w-10 4xl:h-10"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+            </svg>
+            <span className="ml-1 4xl:text-[30px]">Home</span>
+          </Link>
+
+          <Link href="/product/0" className="4xl:text-[30px]">
+            Products
+          </Link>
+        </Breadcrumbs>
       </div>
       {/* <div className="flex mt-6 gap-x-2">
         <a href="#" className="opacity-60">

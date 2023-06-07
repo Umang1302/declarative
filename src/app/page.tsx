@@ -2,7 +2,7 @@
 
 import Hero from "@/components/dashboard/Hero";
 import LabelSection from "@/components/dashboard/LabelSection";
-import { Button, IconButton } from "@material-tailwind/react";
+import { Breadcrumbs, Button, IconButton } from "@material-tailwind/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import ShowcaseProduct from "../components/dashboard/ShowcaseProduct";
 import { Cabin } from "next/font/google";
@@ -63,7 +63,8 @@ export default function Dashboard() {
               </span>
             </div>
           </button> */}
-          <div className="flex items-center gap-4">
+
+          <div className="flex items-center gap-4 4xl:gap-11 mt-7 ml-[5vw]">
             <Button
               variant="text"
               color="blue-gray"
@@ -71,13 +72,16 @@ export default function Dashboard() {
               onClick={prev}
               disabled={active === 1}
             >
-              <ChevronLeftIcon strokeWidth={2} className="h-4 w-4" />
+              <ChevronLeftIcon
+                strokeWidth={2}
+                className="h-4 w-4 4xl:w-10 4xl:h-10"
+              />
             </Button>
-            <div className="flex items-center gap-2">
+            <div className="items-center gap-2">
               {[...Array(Math.ceil(dataLength / 6))].map((v, i) => {
                 return (
                   <IconButton key={i + 1} {...getItemProps(i + 1)}>
-                    {i + 1}
+                    <p className="4xl:text-[25px]">{i + 1}</p>
                   </IconButton>
                 );
               })}
@@ -93,7 +97,10 @@ export default function Dashboard() {
               onClick={next}
               disabled={active === Math.ceil(dataLength / 6)}
             >
-              <ChevronRightIcon strokeWidth={2} className="h-4 w-4" />
+              <ChevronRightIcon
+                strokeWidth={2}
+                className="h-4 w-4 4xl:w-10 4xl:h-10"
+              />
             </Button>
           </div>
         </div>

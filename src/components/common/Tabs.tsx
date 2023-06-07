@@ -6,17 +6,16 @@ import {
   TabPanel,
 } from "@material-tailwind/react";
 import React, { useEffect } from "react";
+import OverviewTable from "../product/OverviewTab";
 
-export default function TransparentTabs() {
+export default function TransparentTabs({ data }: any) {
   const [activeTab, setActiveTab] = React.useState("overview");
 
-  const data = [
+  const tabData = [
     {
       label: "Overview",
       value: "overview",
-      desc: `It really matters and then like it really doesn't matter.
-      What matters is the people who are sparked by it. And the people 
-      who are like offended by it, it doesn't matter.`,
+      desc: <OverviewTable data={data} />,
     },
     {
       label: "Intends",
@@ -43,7 +42,7 @@ export default function TransparentTabs() {
           className: "shadow-none",
         }}
       >
-        {data.map(({ label, value }) => (
+        {tabData.map(({ label, value }) => (
           <Tab
             key={value}
             value={value}
@@ -58,7 +57,7 @@ export default function TransparentTabs() {
       <div className="absolute w-[73vw] bg-gray-300 h-[1px]" />
 
       <TabsBody>
-        {data.map(({ value, desc }) => (
+        {tabData.map(({ value, desc }) => (
           <TabPanel key={value} value={value}>
             {desc}
           </TabPanel>

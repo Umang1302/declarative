@@ -37,7 +37,7 @@ export default function ShowcaseProduct({ page }: any) {
   const [productList, setProductList] = useState<any>([]);
 
   const handleOpen = (value: any) => {
-    setOpen(open === value ? 0 : value);
+    setOpen(open === value ? -1 : value);
   };
 
   React.useEffect(() => {
@@ -72,7 +72,7 @@ export default function ShowcaseProduct({ page }: any) {
 
   return (
     <div
-      className={`mt-3 ${cabin.className} overflow-y-auto px-2 py-1 max-h-[70vh] w-[78vw]`}
+      className={`${cabin.className} overflow-y-auto px-2 py-1 max-h-[70vh] 2xl:mt-[-1rem] w-[78vw]`}
     >
       {productList.map((element: any, index: number) => (
         <div key={index} className=" my-3">
@@ -107,18 +107,23 @@ export default function ShowcaseProduct({ page }: any) {
                   className={`${cabin.className} border-none px-4`}
                   onClick={() => {
                     handleOpen(index);
-                    if (open === index) {
-                      router.push(`/product/${index}`);
-                    }
                   }}
                 >
-                  <p className="text-[24px] font-[700]">{element.name}</p>
+                  <div
+                    onClick={() => {
+                      if (open === index) {
+                        router.push(`/product/${index}`);
+                      }
+                    }}
+                  >
+                    <p className="text-[24px] font-[700]">{element.name}</p>
+                  </div>
                 </AccordionHeader>
                 {open === index && (
                   <div className="w-[73vw] mt-2 bg-gray-300 h-[1px]" />
                 )}
 
-                <div className="flex absolute gap-x-4 top-5 left-[46vw]">
+                <div className="flex absolute gap-x-4 top-5 left-[46vw] 4xl:left-[60vw]">
                   <div className="w-[100px] h-[36px] px-2 rounded-lg bg-[#F2F2F2] flex justify-between">
                     <Image
                       alt=""
@@ -227,32 +232,32 @@ export default function ShowcaseProduct({ page }: any) {
                           </div>
                         </div>
                       </div>
-                      <div className="w-[25vw]  grid grid-cols-3 gap-x-3 text-black font-[600] ml-[-25vw]">
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] bg-[#A0EDA7]">
+                      <div className="w-[25vw]  grid grid-cols-3 gap-x-3 4xl:gap-y-8 text-black font-[600] ml-[-25vw] 4xl:text-[20px]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 4xl:h-[3vh] bg-[#A0EDA7]">
                           Security (2)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] bg-[#4D91FF]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 4xl:h-[3vh]  bg-[#4D91FF]">
                           Profile
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] bg-[#A0EDA7]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 4xl:h-[3vh] bg-[#A0EDA7]">
                           Attributes (29)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] bg-[#A0EDA7]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 4xl:h-[3vh] bg-[#A0EDA7]">
                           Privacy (2)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] bg-[#FFBC35]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 4xl:h-[3vh] bg-[#FFBC35]">
                           Metrics (2)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] bg-[#FFBC35]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 4xl:h-[3vh] bg-[#FFBC35]">
                           Access (2)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] bg-[#4D91FF]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 4xl:h-[3vh] bg-[#4D91FF]">
                           Lifecycle (1)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] bg-[#A0EDA7]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 4xl:h-[3vh] bg-[#A0EDA7]">
                           Rules (5) (98%)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] bg-[#A0EDA7]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 4xl:h-[3vh] bg-[#A0EDA7]">
                           Sharing (0)
                         </button>
                       </div>

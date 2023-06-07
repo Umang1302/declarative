@@ -8,16 +8,16 @@ import NavUserArea from "./NavUserArea";
 export default function Navsearchbar() {
   return (
     <>
-      <Card className="w-[45vw] rounded-md mr-2">
+      <Card className="w-[45vw] 4xl:h-[12vh] rounded-md mr-2">
         <CardBody className="mt-3">
           <label htmlFor="simple-search" className="sr-only">
             Search
           </label>
-          <div className="relative w-full">
+          <div className="relative w-full 4xl:mt-5">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
                 aria-hidden="true"
-                className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                className="w-5 h-5 4xl:w-10 4xl:h-10 text-gray-500 dark:text-gray-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ export default function Navsearchbar() {
             <input
               type="text"
               id="simple-search"
-              className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 4xl:pl-16 4xl:pt-[30px] p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 4xl:h-[70px] 4xl:placeholder:text-[40px]"
               placeholder="Search"
             />
           </div>

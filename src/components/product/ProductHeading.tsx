@@ -9,12 +9,42 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import Image from "next/image";
+import { Cabin } from "next/font/google";
+const cabin = Cabin({ subsets: ["latin"] });
 
 export default function Navsearchbar({ data }: any) {
+  const label = [
+    {
+      id: 1,
+      label: "Mutual Funds",
+    },
+    {
+      id: 2,
+      label: "Securities",
+    },
+  ];
+
   return (
     <div className="flex justify-between">
       <div>
         <p className="text-2xl font-bold">{data.name}</p>
+        <div className="flex mt-3 gap-x-5">
+          <p className="text-[12px]">
+            <span className="font-[800]">Product Id:</span> {data.productId}
+          </p>
+          <p className="text-[12px] flex">
+            <div className="w-1 h-1 mt-[6px] mr-1 bg-blue-800 rounded-full"></div>
+            {data.tier}
+          </p>
+          <p className="text-[12px]">
+            <span className="font-[800]">Source: </span> Dataset
+          </p>
+          <p className="text-[12px]">
+            <span className="font-[800]">Source Id: </span>{" "}
+            {data.sourceDatasetId}
+          </p>
+        </div>
+
         <div className="flex absolute gap-x-4 top-6 left-[30vw] mt-1">
           <div className="w-[90px] h-7 px-2 rounded-lg bg-[#F2F2F2] flex justify-between">
             <Image
@@ -74,7 +104,7 @@ export default function Navsearchbar({ data }: any) {
                     />
                   </button> */}
         </div>
-        <div className="w-[60vw] mt-6 bg-gray-300 h-[1px]" />
+        <div className="w-[60vw] mt-3 bg-gray-300 h-[1px]" />
         <div>
           <div className="mt-2 w-[98%] h-20 flex px-3 py-2">
             <div className="flex">
@@ -87,22 +117,37 @@ export default function Navsearchbar({ data }: any) {
               </div>
             </div>
             <div className="ml-[90px] w-[60%] flex gap-x-6">
-              <p className="w-[98%] mr-3 text-sm">
-                <span className="font-semibold">
-                  Description about the product:{" "}
-                </span>{" "}
-                {data.description}
-              </p>
+              <div>
+                <p className="w-[98%] mr-3 text-sm">
+                  <p className="font-semibold">
+                    Description about the product:{" "}
+                  </p>{" "}
+                  {data.description}
+                </p>
+                <div>
+                  <div className="flex gap-x-3  mt-2">
+                    {label.map((element, i) => (
+                      <button
+                        key={i}
+                        className={`w-[10vw] rounded-lg h-[3vh] text-sm
+               bg-[#C4C4C4] font-[600] text-[16px] ${cabin.className}`}
+                      >
+                        {element.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="absolute w-[200px] h-[100px] top-7 left-[68vw]">
+      <div className="absolute w-[200px] h-[100px] top-7 left-[64vw]">
         <Image
           alt=""
-          src="/qrcode.svg"
-          width={80}
-          height={80}
+          src="/qrCode1.svg"
+          width={100}
+          height={100}
           className="ml-2"
         />
       </div>

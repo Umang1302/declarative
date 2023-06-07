@@ -34,14 +34,14 @@ export default function Page({ params }: any) {
             className={`absolute w-[2.5px] h-12  top-3 z-50 left-[-3px] bg-red-500 rounded-r-3xl`}
           /> */}
         <div
-          className={`absolute h-12 z-50 left-[10px] top-3 w-[2.5px] bg-red-500 rounded-r-3xl`}
+          className={`absolute h-12 z-50 left-[10px] top-3 4xl:top-12 w-[2.5px] bg-red-500 rounded-r-3xl`}
         />
-        <Card className="ml-3">
+        <Card className="ml-3 w-[95%] 4xl:mt-9">
           <CardBody>
             <ProductHeading data={data} />
-            <div className="w-[73vw] mt-6 bg-gray-300 h-[1px]" />
+            <div className="4xl:mt-[50px] w-[73vw] mt-6 bg-gray-300 h-[1px]" />
             <div>
-              <Tabs />
+              <Tabs data={data} />
             </div>
           </CardBody>
         </Card>

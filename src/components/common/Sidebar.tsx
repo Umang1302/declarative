@@ -11,6 +11,7 @@ import {
   AccordionHeader,
   AccordionBody,
   Button,
+  ListItemSuffix,
 } from "@material-tailwind/react";
 import {
   ChevronRightIcon,
@@ -33,165 +34,97 @@ export default function Sidebar() {
   };
 
   return (
-    <Card className=" shadow-xl w-[250px] shadow-blue-gray-900/5 rounded-lg">
-      <div className="flex items-center gap-4 p-4">
-        <div className="mt-2 ml-2">
-          <Image
-            src="/declarativeLogo1.svg"
-            alt="brand"
-            width={180}
-            height={70}
-          />
-        </div>
-
-        {/* <Typography variant="h5" color="blue-gray">
-          Declarative
-        </Typography> */}
+    <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] 2xl:w-[18vw] 4xl:py-10 2xl:py-6 lg:py-3 px-2">
+      <div className="w-full 4xl:h-[100px] 2xl:h-[80px] lg:h-[60px] relative">
+        <Image src="/declarativeLogo1.svg" alt="brand" fill />
       </div>
-      <List className={`mt-[-1rem] ${cabin.className}`}>
-        <hr className=" mt-2 border-[#C4C4C4]" />
-        {/* <ListItem> */}
-        <Button
-          variant="text"
-          className={`text-black hover:bg-[#ffe7df] active:outline-none border-black border-[1px] w-[200px] ml-4 mt-2 py-1 ${cabin.className}`}
-        >
-          <div className="flex justify-center">
-            <PlusIcon className="h-8 w-8 text-[#F65A27] ml-[-2rem]" />
-            <p
-              className={`mt-2 font-600 tracking-wide text-[20px] normal-case ml-[1rem] ${cabin.className}`}
-            >
-              Create
-            </p>
+      <div className="w-full">
+        <hr className="4xl:mt-8 2xl:mt-3 border-[#C4C4C4]" />
+        <List className={`4xl:mt-8 2xl:mt-3 xl:mt-1 w-full ${cabin.className}`}>
+          <Button
+            variant="text"
+            className={`text-black hover:bg-[#ffe7df] active:outline-none border-black border-[1px] w-full 4xl:h-[5rem] 4xl:rounded-3xl 2xl:w-[100%] 2xl:h-[3rem] lg:h-[2rem] lg:w-[60%] ${cabin.className}`}
+          >
+            <div className="flex 4xl:gap-x-3 2xl:gap-x-2 lg:gap-x-2 justify-center">
+              <PlusIcon className="text-[#F65A27] 4xl:w-[60px] 4xl:h-[60px] 2xl:w-[40px] 2xl:h-[40px] 2xl:mt-[-5px] lg:w-[25px] lg:h-[25px] lg:mt-[-7px]" />
+              <p
+                className={`4xl:text-[40px] 4xl:mt-[20px] 2xl:text-[25px] 2xl:mt-[5px] lg:text-[10px] lg:mt-[-5px] normal-case ${cabin.className}`}
+              >
+                Create
+              </p>
+            </div>
+          </Button>
+          <div className="w-full">
+            <hr className="4xl:mt-8 w-[100%] 2xl:mt-3 border-[#C4C4C4]" />
           </div>
-        </Button>
-        {/* </ListItem> */}
-        <div className="overflow-y-auto overflow-x-hidden">
-          <hr className="my-2 border-[#C4C4C4]" />
-
           <ListItem
-            className="hover:bg-[#ffe7df]"
+            className="hover:bg-[#ffe7df] 4xl:mt-8 2xl:mt-2 2xl:mb-2"
             onClick={() => {
               router.push("/");
             }}
           >
             <ListItemPrefix>
-              <Image src="/home.svg" alt="brand" width={20} height={20} />
+              <div className="relative 4xl:w-[30px] 4xl:h-[30px] 2xl:w-[20px] 2xl:h-[20px]">
+                <Image src="/home.svg" alt="brand" fill />
+              </div>
             </ListItemPrefix>
-            <p className={`text-xl`}>Home</p>
-            {/* <ListItemSuffix>
-            <Chip
-              value="14"
-              size="sm"
-              variant="ghost"
-              color="blue-gray"
-              className="rounded-full"
-            />
-          </ListItemSuffix> */}
+            <p className="4xl:text-[40px] 2xl:text-[25px] font-[600]">Home</p>
           </ListItem>
-          <hr className="my-2 border-[#C4C4C4]" />
-          <ListItem className="hover:bg-[#ffe7df]">
+          <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8 " />
+          <ListItem className="hover:bg-[#ffe7df] 4xl:mt-8 2xl:mt-2 2xl:mb-2">
             <ListItemPrefix>
-              <Image src="/products.svg" alt="brand" width={20} height={20} />
+              <div className="relative 4xl:w-[30px] 4xl:h-[30px] 2xl:w-[20px] 2xl:h-[20px]">
+                <Image src="/products.svg" alt="brand" fill />
+              </div>
             </ListItemPrefix>
-            <p className="text-xl">Products</p>
-            {/* <ListItemSuffix>
-            <Chip
-              value="14"
-              size="sm"
-              variant="ghost"
-              color="blue-gray"
-              className="rounded-full"
-            />
-          </ListItemSuffix> */}
+            <p className="4xl:text-[40px] 2xl:text-[25px] font-[600]">
+              Products
+            </p>
           </ListItem>
-          <hr className="my-2 border-[#C4C4C4]" />
-          <Accordion
-            open={open === 1}
-            icon={
+          <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8" />
+          <ListItem className="hover:bg-[#ffe7df] 4xl:mt-8 2xl:mt-2 2xl:mb-2">
+            <ListItemPrefix>
+              <div className="relative 4xl:w-[30px] 4xl:h-[30px] 2xl:w-[20px] 2xl:h-[20px]">
+                <Image src="/intends.svg" alt="brand" fill />
+              </div>
+            </ListItemPrefix>
+            <p className="4xl:text-[40px] 2xl:text-[25px] font-[600]">
+              Intents
+            </p>
+            <ListItemSuffix>
               <ChevronDownIcon
                 strokeWidth={2.5}
                 className={`mx-auto h-6 w-6 transition-transform text-[#F65A27] ${
                   open === 1 ? "rotate-180" : ""
                 }`}
               />
-            }
-          >
-            <ListItem className="p-0 hover:bg-[#ffe7df]" selected={open === 1}>
-              <AccordionHeader
-                onClick={() => handleOpen(1)}
-                className="border-b-0 p-3"
-              >
-                <ListItemPrefix>
-                  <Image
-                    src="/intends.svg"
-                    alt="brand"
-                    width={20}
-                    height={20}
-                  />
-                </ListItemPrefix>
-                <Typography className="mr-auto text-xl">Intents</Typography>
-              </AccordionHeader>
-            </ListItem>
-            <AccordionBody className="py-1">
-              <List className="p-0">
-                <ListItem className="hover:bg-[#ffe7df]">
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
-                  Analytics
-                </ListItem>
-                <ListItem className="hover:bg-[#ffe7df]">
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
-                  Reporting
-                </ListItem>
-                <ListItem className="hover:bg-[#ffe7df]">
-                  <ListItemPrefix>
-                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
-                  Projects
-                </ListItem>
-              </List>
-            </AccordionBody>
-          </Accordion>
-          <hr className="my-2 border-[#C4C4C4]" />
-
-          <ListItem className="hover:bg-[#ffe7df]">
-            <ListItemPrefix>
-              <Image src="/settings.svg" alt="brand" width={20} height={20} />
-            </ListItemPrefix>
-            <p className="text-xl">Settings</p>
-            {/* <ListItemSuffix>
-            <Chip
-              value="14"
-              size="sm"
-              variant="ghost"
-              color="blue-gray"
-              className="rounded-full"
-            />
-          </ListItemSuffix> */}
+            </ListItemSuffix>
           </ListItem>
-          <hr className="my-2 border-[#C4C4C4]" />
-
-          <ListItem className="hover:bg-[#ffe7df]">
+          <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8" />
+          <ListItem className="hover:bg-[#ffe7df] 4xl:mt-8 2xl:mt-2 2xl:mb-2">
             <ListItemPrefix>
-              <Image src="/logOut.svg" alt="brand" width={20} height={20} />
+              <div className="relative 4xl:w-[30px] 4xl:h-[30px] 2xl:w-[20px] 2xl:h-[20px]">
+                <Image src="/settings.svg" alt="brand" fill />
+              </div>
             </ListItemPrefix>
-            <p className="text-xl">Log Out</p>
-            {/* <ListItemSuffix>
-            <Chip
-              value="14"
-              size="sm"
-              variant="ghost"
-              color="blue-gray"
-              className="rounded-full"
-            />
-          </ListItemSuffix> */}
+            <p className="4xl:text-[40px] 2xl:text-[25px] font-[600]">
+              Settings
+            </p>
           </ListItem>
-          <hr className="my-2 border-[#C4C4C4]" />
-        </div>
-      </List>
+          <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8" />
+          <ListItem className="hover:bg-[#ffe7df] 4xl:mt-8 2xl:mt-2 2xl:mb-2">
+            <ListItemPrefix>
+              <div className="relative 4xl:w-[30px] 4xl:h-[30px] 2xl:w-[20px] 2xl:h-[20px]">
+                <Image src="/logOut.svg" alt="brand" fill />
+              </div>
+            </ListItemPrefix>
+            <p className="4xl:text-[40px] 2xl:text-[25px] font-[600]">
+              Log Out
+            </p>
+          </ListItem>
+          <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8" />
+        </List>
+      </div>
     </Card>
   );
 }
