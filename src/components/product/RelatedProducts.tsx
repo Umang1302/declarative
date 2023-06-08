@@ -18,7 +18,10 @@ export default function RelatedProducts() {
   return (
     <div className="flex overflow-x-auto gap-x-14 mb-10 px-6 py-3">
       {jsonData.data.map((element, i) => (
-        <Card key={i} className="mt-6 min-w-[25vw] min-h-[25vh] relative">
+        <Card
+          key={i}
+          className="mt-6 2xl:min-w-[25vw] 2xl:min-h-[22vh] 4xl:min-w-[15vw] 4xl:min-h-[8vw] relative"
+        >
           <div
             className={`absolute h-12 z-50 left-[10px] top-3 4xl:top-24 2xl:top-2 2xl:left-[-2px] w-[2.5px] bg-red-500 rounded-r-3xl`}
           />
