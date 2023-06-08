@@ -33,8 +33,10 @@ import {
 
 export default function NavSearchbar() {
   return (
-    <Card className={`w-[32vw] rounded-md px-4 py-2 ${cabin.className}`}>
-      <div className="flex my-4 4xl:my-6 mx-2">
+    <Card
+      className={`w-[32vw] 4xl:h-[11vh] rounded-md px-4 py-2 ${cabin.className}`}
+    >
+      <div className="flex my-4 4xl:my-10 mx-2">
         <div className="flex gap-x-4 4xl:gap-x-8 ml-5 mt-4">
           <div className="relative inline-flex w-fit">
             <Menu>
