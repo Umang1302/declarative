@@ -40,7 +40,9 @@ export default function Sidebar() {
       </div>
       <div className="w-full">
         <hr className="4xl:mt-8 2xl:mt-3 border-[#C4C4C4]" />
-        <List className={`4xl:mt-8 2xl:mt-3 xl:mt-1 w-full ${cabin.className}`}>
+        <List
+          className={`4xl:mt-8 4xl:px-3 2xl:mt-3 xl:mt-1 w-full ${cabin.className}`}
+        >
           <Button
             variant="text"
             className={`text-black hover:bg-[#ffe7df] active:outline-none border-black border-[1px] w-full 4xl:h-[5rem] 4xl:rounded-3xl 2xl:w-[100%] 2xl:h-[3rem] lg:h-[2rem] lg:w-[60%] ${cabin.className}`}

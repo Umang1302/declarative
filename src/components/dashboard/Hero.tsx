@@ -8,7 +8,7 @@ const cabin = Cabin({ subsets: ["latin"] });
 export default function Hero() {
   return (
     <div
-      className={`mt-5 p-1 flex 4xl:w-[75vw] justify-between w-full ${cabin.className}`}
+      className={`mt-5 p-1 flex 2xl:w-[75vw] 4xl:w-[75vw] justify-between w-full ${cabin.className}`}
     >
       <div className="w-[70%]">
         <h1 className="font-bold text-4xl 4xl:text-7xl">Products</h1>
