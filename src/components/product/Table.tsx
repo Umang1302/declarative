@@ -20,7 +20,7 @@ import {
   Tooltip,
 } from "@material-tailwind/react";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Select, Option } from "@material-tailwind/react";
 
 const TABS = [
@@ -55,10 +55,27 @@ const TABLE_HEAD = [
   "is Series Key",
   "Classification",
   "Description",
+  "CreatedAt",
+  "UpdatedAt",
+  "AccountId",
+  "ProductId",
+  "NamespaceId",
+  "SourceAttribute",
+  "Transformation",
+  "ClassificationCategory",
+  "Length",
+  "Type",
+  "Precision",
+  "Scale",
+  "Status",
+  "CreatedBy",
+  "UpdatedBy",
 ];
 
 export default function Example({ data }: any) {
   const TABLE_ROWS = data.attributes;
+
+  const [dropDownValue, setDropDownValue] = useState<string>("weekly");
 
   useEffect(() => {
     console.log("data Table", TABLE_ROWS);
@@ -66,18 +83,22 @@ export default function Example({ data }: any) {
 
   return (
     <Card className="h-full w-full shadow-none">
-      <div className="rounded-none flex justify-around h-[10vh]">
+      <div className="rounded-none flex justify-around 2xl:h-[7vh] 4xl:h-[4vh] 2xl:mt-[-12px]">
         <div className="mb-8 items-center justify-between gap-8 ">
           <p>Frequency</p>
           <Select
-            value="Select "
+            value={dropDownValue}
             animate={{
               mount: { y: 0 },
               unmount: { y: 25 },
             }}
+            onChange={(val) => {
+              console.log(val);
+              if (val) setDropDownValue(val);
+            }}
           >
-            <Option>Option 1</Option>
-            <Option>Option 1</Option>
+            <Option value="weekly">Weekly</Option>
+            <Option value="daily">Daily</Option>
           </Select>
         </div>
         <div className="items-center gap-4 md:flex-row">
@@ -100,7 +121,7 @@ export default function Example({ data }: any) {
         </div>
 
         <div className="items-center gap-4 md:flex-row">
-          <p>Type</p>
+          <p>Status</p>
           <Tabs value="active" className="w-full md:w-max">
             <TabsHeader>
               {TABS1.map(({ label, value }) => (
@@ -133,9 +154,7 @@ export default function Example({ data }: any) {
                     className="flex items-center justify-between gap-2 font-normal leading-none opacity-70"
                   >
                     {head}{" "}
-                    {index !== TABLE_HEAD.length - 1 && (
-                      <ChevronUpDownIcon strokeWidth={2} className="h-4 w-4" />
-                    )}
+                    <ChevronUpDownIcon strokeWidth={2} className="h-4 w-4" />
                   </Typography>
                 </th>
               ))}
@@ -144,7 +163,29 @@ export default function Example({ data }: any) {
           <tbody>
             {TABLE_ROWS.map(
               (
-                { isRecordKey, name, classification, description }: any,
+                {
+                  isRecordKey,
+                  isSeriesKey,
+                  createdAt,
+                  updatedAt,
+                  accountId,
+                  attributeId,
+                  productId,
+                  namespaceId,
+                  sourceAttribute,
+                  transformation,
+                  classificationCategory,
+                  type,
+                  length,
+                  precision,
+                  scale,
+                  status,
+                  createdBy,
+                  updatedBy,
+                  name,
+                  classification,
+                  description,
+                }: any,
                 index: any
               ) => {
                 const isLast = index === TABLE_ROWS.length - 1;
@@ -187,7 +228,7 @@ export default function Example({ data }: any) {
                     </td>
                     <td className={classes}>
                       <div className="w-max ml-7">
-                        {isRecordKey && (
+                        {isSeriesKey && (
                           <Image
                             alt=""
                             src="/seriesKey.svg"
@@ -213,6 +254,141 @@ export default function Example({ data }: any) {
                         className="font-normal"
                       >
                         {description}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {createdAt}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {updatedAt}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {accountId}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {productId}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {namespaceId}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {sourceAttribute}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {transformation}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {classificationCategory}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {length}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {type}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {precision}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {scale}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {status}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {updatedBy}
+                      </Typography>
+                    </td>
+                    <td className={classes}>
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal"
+                      >
+                        {createdBy}
                       </Typography>
                     </td>
                   </tr>

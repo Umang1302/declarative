@@ -13,10 +13,13 @@ import {
 } from "@material-tailwind/react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function RelatedProducts() {
+  const router = useRouter();
+
   return (
-    <div className="flex overflow-x-auto gap-x-14 mb-10 px-6 py-3">
+    <div className="flex overflow-x-auto gap-x-14 mb-10 px-6 py-3 2xl:w-[77vw]">
       {jsonData.data.map((element, i) => (
         <Card
           key={i}
@@ -30,7 +33,13 @@ export default function RelatedProducts() {
               color="blue-gray"
               className="mb-2 2xl:text-[16px] font-[600]"
             >
-              {element.name}
+              <button
+                onClick={() => {
+                  router.push(`/product/${i}`);
+                }}
+              >
+                {element.name}
+              </button>
             </Typography>
             <Typography className="2xl:text-sm">
               {element.description}

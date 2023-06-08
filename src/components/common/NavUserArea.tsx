@@ -34,10 +34,10 @@ import {
 export default function NavSearchbar() {
   return (
     <Card
-      className={`w-[32vw] 4xl:h-[11vh] rounded-md px-4 py-2 ${cabin.className}`}
+      className={`w-[35vw] 4xl:h-[11vh] rounded-md px-4 py-2 ${cabin.className}`}
     >
       <div className="flex my-4 4xl:my-10 mx-2">
-        <div className="flex gap-x-4 4xl:gap-x-8 ml-5 mt-4">
+        <div className="flex gap-x-4 4xl:gap-x-8 ml-5 2xl:ml-0 2xl:mt-8 mt-4">
           <div className="relative inline-flex w-fit">
             <Menu>
               <div className="absolute bottom-auto left-auto right-0 top-0 z-10 inline-block -translate-y-[2px] translate-x-2/4 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 rounded-full bg-[#F65A27] px-[3.4px] 4xl:px-[8px] 4xl:py-[0.3px] py-[0.6px] border-2 border-white w-4 h-4 4xl:w-8 4xl:h-8">
@@ -78,22 +78,22 @@ export default function NavSearchbar() {
             </Menu>
           </div>
         </div>
-        <div className="ml-8 mt-2 flex">
-          <div className=" flex items-center justify-center rounded-full bg-[#FFBC35] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-16 h-16 4xl:w-24 4xl:h-24">
+        <div className="ml-6 mt-2 flex">
+          <div className=" flex items-center justify-center rounded-full bg-[#FFBC35] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-16 h-16 4xl:w-24 4xl:h-24 2xl:mt-3">
             <div className="relative 2xl:w-14 2xl:h-14 4xl:w-16 4xl:h-16">
               <Image alt="" src="/user.svg" fill />
             </div>
           </div>
           <div className="ml-3 mt-[-8px]  text-black">
             <p className="font-bold text-[20px] 4xl:text-[28px]">Demo User</p>
-            <p className="text-[8px] 4xl:text-[14px]">
+            <p className="text-[8px] 4xl:text-[14px] 2xl:text-[12px]">
               Account Id: f48cda68-448b-4c67-9828-f48cda68
             </p>
-            <p className="text-[8px] 4xl:text-[14px]">
+            <p className="text-[8px] 4xl:text-[14px] 2xl:text-[12px]">
               Namespace: Demo (c60c671bf1410535)
             </p>
 
-            <p className="text-[8px] 4xl:text-[14px]">
+            <p className="text-[8px] 4xl:text-[14px] 2xl:text-[12px]">
               Usage Intent: Basic Analysis
             </p>
           </div>

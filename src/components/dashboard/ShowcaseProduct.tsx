@@ -31,7 +31,7 @@ function Icon({ id, open }: any) {
   );
 }
 
-export default function ShowcaseProduct({ page }: any) {
+export default function ShowcaseProduct({ page, prodData }: any) {
   const router = useRouter();
   const [open, setOpen] = useState(-1);
   const [productList, setProductList] = useState<any>([]);
@@ -44,20 +44,12 @@ export default function ShowcaseProduct({ page }: any) {
     console.log(jsonData.data[0].name);
   }, []);
 
-  const data = jsonData.data;
-  const dataLength = jsonData.data.length;
+  // const data = jsonData.data;
+  // const dataLength = jsonData.data.length;
 
   React.useEffect(() => {
-    const start = (page - 1) * 6;
-    const end = page * 6;
-    if (end - 6 > dataLength) {
-      return;
-    } else {
-      const finalData = data.slice(start, end);
-      console.log("start end", start, end, finalData);
-      setProductList(finalData);
-    }
-  }, [page]);
+    setProductList(prodData);
+  }, [page, prodData]);
 
   const label = [
     {

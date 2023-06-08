@@ -45,12 +45,12 @@ export default function Sidebar() {
         >
           <Button
             variant="text"
-            className={`text-black hover:bg-[#ffe7df] active:outline-none border-black border-[1px] w-full 4xl:h-[5rem] 4xl:rounded-3xl 2xl:w-[100%] 2xl:h-[3rem] lg:h-[2rem] lg:w-[60%] ${cabin.className}`}
+            className={`text-black hover:bg-[#ffe7df] flex justify-center active:outline-none border-black border-[1px] w-full 4xl:h-[5rem] 4xl:rounded-3xl 2xl:w-[100%] 2xl:px-2  2xl:h-[3rem] lg:h-[2rem] lg:w-[60%] ${cabin.className}`}
           >
-            <div className="flex 4xl:gap-x-3 2xl:gap-x-2 lg:gap-x-2 justify-center">
-              <PlusIcon className="text-[#F65A27] 4xl:w-[60px] 4xl:h-[60px] 2xl:w-[40px] 2xl:h-[40px] 2xl:mt-[-5px] lg:w-[25px] lg:h-[25px] lg:mt-[-7px]" />
+            <div className="flex 4xl:gap-x-3 lg:gap-x-2 2xl:w-[50%] justify-between">
+              <PlusIcon className="text-[#F65A27] 4xl:w-[60px] 4xl:h-[60px] 2xl:w-[40px] 2xl:h-[40px] 2xl:ml-[-10px] lg:w-[25px] lg:h-[25px] lg:mt-[-7px]" />
               <p
-                className={`4xl:text-[40px] 4xl:mt-[20px] 2xl:text-[25px] 2xl:mt-[5px] lg:text-[10px] lg:mt-[-5px] normal-case ${cabin.className}`}
+                className={`4xl:text-[40px] 4xl:mt-[20px]  2xl:text-[23px] 2xl:tracking-wider lg:text-[10px] lg:mt-[-5px] normal-case 2xl:mt-[5px] 2xl:ml-[-83px] ${cabin.className}`}
               >
                 Create
               </p>
@@ -70,7 +70,7 @@ export default function Sidebar() {
                 <Image src="/home.svg" alt="brand" fill />
               </div>
             </ListItemPrefix>
-            <p className="4xl:text-[40px] 2xl:text-[25px] font-[600]">Home</p>
+            <p className="4xl:text-[40px] 2xl:text-[23px] font-[600]">Home</p>
           </ListItem>
           <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8 " />
           <ListItem className="hover:bg-[#ffe7df] 4xl:mt-8 2xl:mt-2 2xl:mb-2">
@@ -79,18 +79,18 @@ export default function Sidebar() {
                 <Image src="/products.svg" alt="brand" fill />
               </div>
             </ListItemPrefix>
-            <p className="4xl:text-[40px] 2xl:text-[25px] font-[600]">
+            <p className="4xl:text-[40px] 2xl:text-[23px] font-[600]">
               Products
             </p>
           </ListItem>
-          <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8" />
-          <ListItem className="hover:bg-[#ffe7df] 4xl:mt-8 2xl:mt-2 2xl:mb-2">
+          {/* <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8" /> */}
+          {/* <ListItem className="hover:bg-[#ffe7df] 4xl:mt-8 2xl:mt-2 2xl:mb-2">
             <ListItemPrefix>
               <div className="relative 4xl:w-[30px] 4xl:h-[30px] 2xl:w-[20px] 2xl:h-[20px]">
                 <Image src="/intends.svg" alt="brand" fill />
               </div>
             </ListItemPrefix>
-            <p className="4xl:text-[40px] 2xl:text-[25px] font-[600]">
+            <p className="4xl:text-[40px] 2xl:text-[23px] font-[600]">
               Intents
             </p>
             <ListItemSuffix>
@@ -101,7 +101,7 @@ export default function Sidebar() {
                 }`}
               />
             </ListItemSuffix>
-          </ListItem>
+          </ListItem> */}
           <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8" />
           <ListItem className="hover:bg-[#ffe7df] 4xl:mt-8 2xl:mt-2 2xl:mb-2">
             <ListItemPrefix>
@@ -109,7 +109,7 @@ export default function Sidebar() {
                 <Image src="/settings.svg" alt="brand" fill />
               </div>
             </ListItemPrefix>
-            <p className="4xl:text-[40px] 2xl:text-[25px] font-[600]">
+            <p className="4xl:text-[40px] 2xl:text-[23px] font-[600]">
               Settings
             </p>
           </ListItem>
@@ -120,7 +120,7 @@ export default function Sidebar() {
                 <Image src="/logOut.svg" alt="brand" fill />
               </div>
             </ListItemPrefix>
-            <p className="4xl:text-[40px] 2xl:text-[25px] font-[600]">
+            <p className="4xl:text-[40px] 2xl:text-[23px] font-[600]">
               Log Out
             </p>
           </ListItem>
