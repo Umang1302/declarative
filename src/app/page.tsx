@@ -9,6 +9,7 @@ import { Cabin } from "next/font/google";
 import React from "react";
 import { RingLoader } from "react-spinners";
 import jsonData from "../../data.json";
+import Image from "next/image";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -102,6 +103,9 @@ export default function Dashboard() {
                 className="h-4 w-4 4xl:w-10 4xl:h-10"
               />
             </Button>
+            <div className="relative 2xl:w-8 2xl:h-8">
+              <Image alt="" src="/sort.svg" fill />
+            </div>
           </div>
         </div>
         <ShowcaseProduct page={active} />

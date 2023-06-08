@@ -2,6 +2,7 @@
 
 import { Breadcrumbs } from "@material-tailwind/react";
 import { Cabin } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 const cabin = Cabin({ subsets: ["latin"] });
 
