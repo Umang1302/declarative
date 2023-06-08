@@ -5,6 +5,7 @@ import jsonData from "../../../../data.json";
 import { RingLoader } from "react-spinners";
 import { Breadcrumbs, Card, CardBody } from "@material-tailwind/react";
 import ProductHeading from "../../../components/product/ProductHeading";
+import RelatedProducts from "../../../components/product/RelatedProducts";
 import Tabs from "../../../components/common/Tabs";
 import Link from "next/link";
 
@@ -29,7 +30,7 @@ export default function Page({ params }: any) {
     );
   } else {
     return (
-      <div className="relative overflow-y-auto overflow-x-hidden max-h-[82.5vh] rounded-lg">
+      <div className="relative overflow-y-auto overflow-x-hidden h-[80vh] rounded-lg">
         {/* <div className="relative"> */}
         {/* <div
             className={`absolute w-[2.5px] h-12  top-3 z-50 left-[-3px] bg-red-500 rounded-r-3xl`}
@@ -67,6 +68,10 @@ export default function Page({ params }: any) {
             </div>
           </CardBody>
         </Card>
+        <div className="2xl:mt-10">
+          <p className="2xl:text-[20px]">Related Products</p>
+          <RelatedProducts />
+        </div>
       </div>
     );
   }
