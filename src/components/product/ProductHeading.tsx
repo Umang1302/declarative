@@ -46,16 +46,16 @@ export default function Navsearchbar({ data }: any) {
         </div>
 
         <div className="flex absolute gap-x-4 top-6 left-[30vw] mt-1">
-          <div className="w-[90px] h-7 px-2 rounded-lg bg-[#F2F2F2] flex justify-between">
+          <div className="w-[90px] h-7 px-2 rounded-lg bg-[#E3E1E1] flex justify-between">
             <Image
               alt=""
-              src="/userChip.svg"
+              src="/tier.svg"
               width={18}
               height={18}
-              className="ml-2"
+              className="ml-1"
             />
-            <div className="w-[40px] mr-[-6px] rounded-lg bg-[#E3E1E1] flex justify-center">
-              <p className="font-bold mt-1">5</p>
+            <div className="w-[46px] rounded-lg bg-[#E3E1E1] flex justify-center">
+              <p className="font-bold mt-[5px] text-[0.8rem]">{data.tier}</p>
             </div>
           </div>
 
