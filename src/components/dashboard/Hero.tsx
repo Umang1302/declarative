@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="w-[70%]">
         <h1 className="font-bold text-4xl 4xl:text-7xl">Products</h1>
       </div>
-      <div className="4xl:mb-[60px]">
+      <div className="4xl:mb-[60px] mb-[2%]">
         <Breadcrumbs className="bg-transparent 4xl:text-[25px]" separator="->">
           <Link href="/" className="opacity-60 flex active:text-red-600">
             <svg

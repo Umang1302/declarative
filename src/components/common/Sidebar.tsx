@@ -35,7 +35,7 @@ export default function Sidebar() {
 
   return (
     <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] 2xl:w-[18vw] 4xl:py-10 2xl:py-6 lg:py-3 px-2">
-      <div className="w-full 4xl:h-[100px] 2xl:h-[80px] lg:h-[60px] relative">
+      <div className="w-[100%] h-[12%] relative">
         <Image src="/declarativeLogo1.svg" alt="brand" fill />
       </div>
       <div className="w-full">

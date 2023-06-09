@@ -5,7 +5,6 @@ import React from "react";
 
 import Sidebar from "../components/common/Sidebar";
 import Navsearchbar from "../components/common/NavSearchbar";
-import Image from "next/image";
 
 import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });
@@ -26,7 +25,8 @@ export default function RootLayout({
       >
         <div className="flex w-[100vw] h-[100vh] overflow-x-hidden overflow-y-hidden">
           <div className="relative flex h-[96vh]">
-            <div className="absolute z-10 4xl:top-[230px] 4xl:left-[470px] 2xl:top-[140px] 2xl:left-[260px]">
+            {/* <div className="absolute z-10 4xl:top-[230px] 4xl:left-[470px] 2xl:top-[140px] 2xl:left-[260px]"> */}
+            <div className="absolute z-10 top-[18%] left-[100%]">
               <svg
                 width="15"
                 height="43"

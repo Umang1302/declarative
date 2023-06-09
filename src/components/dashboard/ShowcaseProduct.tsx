@@ -115,7 +115,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                   <div className="w-[73vw] mt-2 bg-gray-300 h-[1px]" />
                 )}
 
-                <div className="flex absolute gap-x-4 top-5 left-[46vw] 4xl:left-[60vw]">
+                <div className="flex absolute gap-x-4 top-5 4xl:left-[60vw] 2xl:left-[65%]">
                   <div className="w-[100px] h-[36px] px-2 rounded-lg bg-[#F2F2F2] flex justify-between">
                     <Image
                       alt=""

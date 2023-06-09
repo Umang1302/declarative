@@ -142,7 +142,7 @@ export default function Navsearchbar({ data }: any) {
           </div>
         </div>
       </div>
-      <div className="absolute w-[200px] h-[100px] top-7 left-[64vw]">
+      <div className="absolute w-[200px] h-[100px] top-[1.4%] left-[64vw]">
         <Image
           alt=""
           src="/qrCode1.svg"
