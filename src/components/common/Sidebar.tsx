@@ -34,8 +34,92 @@ export default function Sidebar() {
   };
 
   return (
-    <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] 2xl:w-[18vw] 4xl:py-10 2xl:py-6 lg:py-3 px-2">
-      <div className="w-[100%] h-[12%] relative">
+    <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] max-w-[290px] min-w-[192px] py-2 px-2">
+      <div className={`w-full h-full ${cabin.className}`}>
+        {/* logo */}
+        <div className="relative w-full h-[8%] max-h-[70px]">
+          <Image src="/declarativeLogo1.svg" alt="brand" fill />
+        </div>
+
+        <hr className="border-[#C4C4C4]" />
+
+        {/* Create Botton */}
+        <div className="w-full h-[8%] max-h-[60px] py-1 my-3 px-2">
+          <button className="w-full h-full border-[1px] items-center rounded-lg border-black flex justify-center">
+            <PlusIcon className="text-[#F65A27] w-10 h-10" />
+            <p className="text-[1.5rem] font-[600]">Create</p>
+          </button>
+        </div>
+
+        <hr className="border-[#C4C4C4]" />
+
+        {/* start Menu */}
+        <div className="w-full">
+          <div className={`w-full ${cabin.className}`}>
+            <div
+              className="hover:bg-[#ffe7df] w-full flex items-center justify-start py-5 px-2 gap-x-3"
+              onClick={() => {
+                router.push("/");
+              }}
+            >
+              <div className="relative w-5 h-5">
+                <Image src="/home.svg" alt="brand" fill />
+              </div>
+
+              <p className="text-[1.2rem] font-[600]">Home</p>
+            </div>
+            <hr className="border-[#C4C4C4]" />
+
+            <div
+              className="hover:bg-[#ffe7df] w-full flex items-center justify-start py-5 px-2 gap-x-3"
+              onClick={() => {
+                router.push("/");
+              }}
+            >
+              <div className="relative w-5 h-5">
+                <Image src="/products.svg" alt="brand" fill />
+              </div>
+
+              <p className="text-[1.2rem] font-[600]">Products</p>
+            </div>
+            <hr className="border-[#C4C4C4]" />
+
+            <div
+              className="hover:bg-[#ffe7df] w-full flex items-center justify-start py-5 px-2 gap-x-3"
+              onClick={() => {
+                router.push("/");
+              }}
+            >
+              <div className="relative w-5 h-5">
+                <Image src="/settings.svg" alt="brand" fill />
+              </div>
+
+              <p className="text-[1.2rem] font-[600]">Settings</p>
+            </div>
+            <hr className="border-[#C4C4C4]" />
+
+            <div
+              className="hover:bg-[#ffe7df] w-full flex items-center justify-start py-5 px-2 gap-x-3"
+              onClick={() => {
+                router.push("/");
+              }}
+            >
+              <div className="relative w-5 h-5">
+                <Image src="/logOut.svg" alt="brand" fill />
+              </div>
+
+              <p className="text-[1.2rem] font-[600]">Log Out</p>
+            </div>
+            <hr className="border-[#C4C4C4]" />
+          </div>
+        </div>
+      </div>
+    </Card>
+  );
+}
+
+{
+  /* <div className="w-[100%] h-[12%] relative">
         <Image src="/declarativeLogo1.svg" alt="brand" fill />
       </div>
       <div className="w-full">
@@ -83,25 +167,6 @@ export default function Sidebar() {
               Products
             </p>
           </ListItem>
-          {/* <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8" /> */}
-          {/* <ListItem className="hover:bg-[#ffe7df] 4xl:mt-8 2xl:mt-2 2xl:mb-2">
-            <ListItemPrefix>
-              <div className="relative 4xl:w-[30px] 4xl:h-[30px] 2xl:w-[20px] 2xl:h-[20px]">
-                <Image src="/intends.svg" alt="brand" fill />
-              </div>
-            </ListItemPrefix>
-            <p className="4xl:text-[40px] 2xl:text-[23px] font-[600]">
-              Intents
-            </p>
-            <ListItemSuffix>
-              <ChevronDownIcon
-                strokeWidth={2.5}
-                className={`mx-auto h-6 w-6 transition-transform text-[#F65A27] ${
-                  open === 1 ? "rotate-180" : ""
-                }`}
-              />
-            </ListItemSuffix>
-          </ListItem> */}
           <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8" />
           <ListItem className="hover:bg-[#ffe7df] 4xl:mt-8 2xl:mt-2 2xl:mb-2">
             <ListItemPrefix>
@@ -126,7 +191,28 @@ export default function Sidebar() {
           </ListItem>
           <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8" />
         </List>
-      </div>
-    </Card>
-  );
+      </div> */
+}
+{
+  /* <hr className="border-[#C4C4C4] w-[100%]  4xl:mt-8" /> */
+}
+{
+  /* <ListItem className="hover:bg-[#ffe7df] 4xl:mt-8 2xl:mt-2 2xl:mb-2">
+            <ListItemPrefix>
+              <div className="relative 4xl:w-[30px] 4xl:h-[30px] 2xl:w-[20px] 2xl:h-[20px]">
+                <Image src="/intends.svg" alt="brand" fill />
+              </div>
+            </ListItemPrefix>
+            <p className="4xl:text-[40px] 2xl:text-[23px] font-[600]">
+              Intents
+            </p>
+            <ListItemSuffix>
+              <ChevronDownIcon
+                strokeWidth={2.5}
+                className={`mx-auto h-6 w-6 transition-transform text-[#F65A27] ${
+                  open === 1 ? "rotate-180" : ""
+                }`}
+              />
+            </ListItemSuffix>
+          </ListItem> */
 }
