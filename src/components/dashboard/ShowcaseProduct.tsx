@@ -116,16 +116,18 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                 )}
 
                 <div className="flex absolute gap-x-4 top-5 4xl:left-[60vw] 2xl:left-[65%]">
-                  <div className="w-[100px] h-[36px] px-2 rounded-lg bg-[#F2F2F2] flex justify-between">
+                  <div className="w-[100px] h-[36px] px-2 rounded-lg bg-[#E3E1E1] flex justify-between">
                     <Image
                       alt=""
-                      src="/userChip.svg"
+                      src="/tier.svg"
                       width={18}
                       height={18}
                       className="ml-1"
                     />
-                    <div className="w-[46px] mr-[-6px]  rounded-lg bg-[#E3E1E1] flex justify-center">
-                      <p className="font-bold mt-[6px]">5+</p>
+                    <div className="w-[46px] rounded-lg bg-[#E3E1E1] flex justify-center">
+                      <p className="font-bold mt-[8px] text-[0.8rem]">
+                        {element.tier}
+                      </p>
                     </div>
                   </div>
 
