@@ -18,10 +18,17 @@ import {
   Avatar,
   IconButton,
   Tooltip,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Checkbox,
 } from "@material-tailwind/react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Select, Option } from "@material-tailwind/react";
+
+import { Option } from "@material-tailwind/react";
+import React, { useMemo, useEffect, useState } from "react";
+import Select from "react-select";
 
 const TABS = [
   {
@@ -49,37 +56,174 @@ const TABS1 = [
   },
 ];
 
-const TABLE_HEAD = [
-  "Attributes",
-  "Is Record Key",
-  "is Series Key",
-  "Classification",
-  "Description",
-  "CreatedAt",
-  "UpdatedAt",
-  "AccountId",
-  "ProductId",
-  "NamespaceId",
-  "SourceAttribute",
-  "Transformation",
-  "ClassificationCategory",
-  "Length",
-  "Type",
-  "Precision",
-  "Scale",
-  "Status",
-  "CreatedBy",
-  "UpdatedBy",
-];
-
 export default function Example({ data }: any) {
   const TABLE_ROWS = data.attributes;
-
-  const [dropDownValue, setDropDownValue] = useState<string>("weekly");
+  const [dropDownMenu, setDropDownMenu] = useState<any>([
+    {
+      label: "Attributes",
+      value: "attributes",
+    },
+    {
+      label: "Is Record Key",
+      value: "isRecoredKey",
+    },
+    {
+      label: "Is Series Key",
+      value: "isSeriesKey",
+    },
+    {
+      label: "Classification",
+      value: "classification",
+    },
+    {
+      label: "Description",
+      value: "description",
+    },
+    {
+      label: "CreatedAt",
+      value: "createdAt",
+    },
+    {
+      label: "UpdatedAt",
+      value: "updatedAt",
+    },
+    {
+      label: "AccountId",
+      value: "accountId",
+    },
+    {
+      label: "ProductId",
+      value: "productId",
+    },
+    {
+      label: "NamespaceId",
+      value: "namespaceId",
+    },
+    {
+      label: "SourceAttribute",
+      value: "sourceAttribute",
+    },
+    {
+      label: "ClassificationCategory",
+      value: "classificationCategory",
+    },
+    {
+      label: "Length",
+      value: "length",
+    },
+    {
+      label: "Type",
+      value: "type",
+    },
+    {
+      label: "Precision",
+      value: "precision",
+    },
+    {
+      label: "Scale",
+      value: "scale",
+    },
+    {
+      label: "Status",
+      value: "status",
+    },
+    {
+      label: "CreatedBy",
+      value: "createdBy",
+    },
+    {
+      label: "UpdatedBy",
+      value: "updatedBy",
+    },
+  ]);
+  const [tableHead, setTableHead] = useState<any>([
+    "Attributes",
+    "Is Record Key",
+    "Is Series Key",
+    "Classification",
+    "Description",
+    "CreatedAt",
+    "UpdatedAt",
+    // "AccountId",
+    // "ProductId",
+    // "NamespaceId",
+    // "SourceAttribute",
+    // "Transformation",
+    // "ClassificationCategory",
+    // "Length",
+    // "Type",
+    // "Precision",
+    // "Scale",
+    // "Status",
+    // "CreatedBy",
+    // "UpdatedBy",
+  ]);
+  const [dropDownValue, setDropDownValue] = useState<any>([
+    {
+      label: "Weekly",
+      value: "weekly",
+    },
+    {
+      label: "Daily",
+      value: "daily",
+    },
+  ]);
+  const [selected, setSelected] = useState<any>([
+    {
+      label: "Attributes",
+      value: "attributes",
+    },
+    {
+      label: "Is Record Key",
+      value: "isRecoredKey",
+    },
+    {
+      label: "Is Series Key",
+      value: "isSeriesKey",
+    },
+    {
+      label: "Classification",
+      value: "classification",
+    },
+    {
+      label: "Description",
+      value: "description",
+    },
+    {
+      label: "CreatedAt",
+      value: "createdAt",
+    },
+    {
+      label: "UpdatedAt",
+      value: "updatedAt",
+    },
+  ]);
+  const [tableRowData, setTableRowData] = useState<any>([]);
+  const [sort, setSort] = React.useState<boolean>(false);
 
   useEffect(() => {
-    console.log("data Table", TABLE_ROWS);
+    setTableRowData(data.attributes);
   }, []);
+
+  useEffect(() => {
+    const modifiedHead = selected.map(
+      (element: any, i: number) => element.label
+    );
+    console.log("data Table", modifiedHead);
+    setTableHead(modifiedHead);
+  }, [selected]);
+
+  {
+    /* <Checkbox
+                    defaultValue={dropDownMenu[element]}
+                    id="vertical-list-react"
+                    ripple={false}
+                    className="hover:before:opacity-0"
+                    containerProps={{
+                      className: "p-0",
+                    }}
+                  /> */
+  }
 
   return (
     <Card className="h-full w-full shadow-none">
@@ -87,19 +231,10 @@ export default function Example({ data }: any) {
         <div className="mb-8 items-center justify-between gap-8 ">
           <p>Frequency</p>
           <Select
-            value={dropDownValue}
-            animate={{
-              mount: { y: 0 },
-              unmount: { y: 25 },
-            }}
-            onChange={(val) => {
-              console.log(val);
-              if (val) setDropDownValue(val);
-            }}
-          >
-            <Option value="weekly">Weekly</Option>
-            <Option value="daily">Daily</Option>
-          </Select>
+            defaultValue={dropDownValue[0]}
+            options={dropDownValue}
+            className="max-w-[400px]"
+          />
         </div>
         <div className="items-center gap-4 md:flex-row">
           <p>Type</p>
@@ -112,12 +247,6 @@ export default function Example({ data }: any) {
               ))}
             </TabsHeader>
           </Tabs>
-          {/* <div className="w-full md:w-72">
-            <Input
-              label="Search"
-              icon={<MagnifyingGlassIcon className="h-5 w-5" />}
-            />
-          </div> */}
         </div>
 
         <div className="items-center gap-4 md:flex-row">
@@ -131,21 +260,30 @@ export default function Example({ data }: any) {
               ))}
             </TabsHeader>
           </Tabs>
-          {/* <div className="w-full md:w-72">
-            <Input
-              label="Search"
-              icon={<MagnifyingGlassIcon className="h-5 w-5" />}
-            />
-          </div> */}
         </div>
       </div>
       <CardBody className="overflow-scroll px-0">
+        <div className="w-full">
+          <p>Show Columns</p>
+          <Select
+            defaultValue={selected}
+            isMulti={true}
+            options={dropDownMenu}
+            onChange={(val) => {
+              console.log(val);
+              setSelected(val);
+            }}
+            className="basic-multi-select"
+            classNamePrefix="select"
+          />
+        </div>
+
         <table className="mt-4 w-full min-w-max table-auto text-left">
           <thead>
             <tr>
-              {TABLE_HEAD.map((head, index) => (
+              {tableHead.map((head: any, index: number) => (
                 <th
-                  key={head}
+                  key={head.label}
                   className="cursor-pointer border-y border-blue-gray-100 p-4 bg-[#A0EDA7] transition-colors hover:bg-blue-gray-50"
                 >
                   <Typography
@@ -154,14 +292,81 @@ export default function Example({ data }: any) {
                     className="flex items-center justify-between gap-2 font-normal leading-none opacity-70"
                   >
                     {head}{" "}
-                    <ChevronUpDownIcon strokeWidth={2} className="h-4 w-4" />
+                    <div
+                      onClick={() => {
+                        console.log("clicked", sort);
+                        if (!sort) {
+                          setSort(true);
+                        } else {
+                          setSort(false);
+                        }
+
+                        if (!sort) {
+                          let sortedData = data.attributes.sort(
+                            (a: any, b: any) =>
+                              a.name > b.name
+                                ? 1
+                                : a.name === b.name
+                                ? a.name > b.name
+                                  ? 1
+                                  : -1
+                                : -1
+                          );
+                          console.log(sortedData);
+                          setTableRowData(sortedData);
+                        } else {
+                          let unSortedData = data.attributes.sort(
+                            (a: any, b: any) =>
+                              a.name < b.name
+                                ? 1
+                                : a.name === b.name
+                                ? a.name < b.name
+                                  ? 1
+                                  : -1
+                                : -1
+                          );
+                          setTableRowData(unSortedData);
+                        }
+                      }}
+                    >
+                      <svg
+                        width="22"
+                        height="16"
+                        viewBox="0 0 22 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          width="21.3333"
+                          height="2.66666"
+                          rx="1.33333"
+                          fill="black"
+                        />
+                        <rect
+                          x="2.66406"
+                          y="6.66699"
+                          width="16"
+                          height="2.66666"
+                          rx="1.33333"
+                          fill="black"
+                        />
+                        <rect
+                          x="6.66406"
+                          y="13.333"
+                          width="7.99999"
+                          height="2.66666"
+                          rx="1.33333"
+                          fill="black"
+                        />
+                      </svg>
+                    </div>
                   </Typography>
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {TABLE_ROWS.map(
+            {tableRowData.map(
               (
                 {
                   isRecordKey,
@@ -195,202 +400,243 @@ export default function Example({ data }: any) {
 
                 return (
                   <tr key={name}>
-                    <td className={classes}>
-                      <div className="flex items-center gap-3">
-                        <div className="flex flex-col">
+                    {tableHead.indexOf("Attributes") !== -1 && (
+                      <td className={classes}>
+                        <div className="flex items-center gap-3">
+                          <div className="flex flex-col">
+                            <Typography
+                              variant="small"
+                              color="blue-gray"
+                              className="font-normal"
+                            >
+                              {name}
+                            </Typography>
+                          </div>
+                        </div>
+                      </td>
+                    )}
+                    {tableHead.indexOf("Is Record Key") !== -1 && (
+                      <td className={classes}>
+                        <div className="flex ml-7">
                           <Typography
                             variant="small"
                             color="blue-gray"
                             className="font-normal"
                           >
-                            {name}
+                            {isRecordKey && (
+                              <Image
+                                alt=""
+                                src="/key.svg"
+                                width={10}
+                                height={10}
+                              />
+                            )}
                           </Typography>
                         </div>
-                      </div>
-                    </td>
-                    <td className={classes}>
-                      <div className="flex ml-7">
+                      </td>
+                    )}
+                    {tableHead.indexOf("Is Series Key") !== -1 && (
+                      <td className={classes}>
+                        <div className="w-max ml-7">
+                          {isSeriesKey && (
+                            <Image
+                              alt=""
+                              src="/seriesKey.svg"
+                              width={20}
+                              height={20}
+                            />
+                          )}
+                        </div>
+                      </td>
+                    )}
+                    {tableHead.indexOf("Classification") !== -1 && (
+                      <td className={classes}>
                         <Typography
                           variant="small"
                           color="blue-gray"
                           className="font-normal"
                         >
-                          {isRecordKey && (
-                            <Image
-                              alt=""
-                              src="/key.svg"
-                              width={10}
-                              height={10}
-                            />
-                          )}
+                          {classification}
                         </Typography>
-                      </div>
-                    </td>
-                    <td className={classes}>
-                      <div className="w-max ml-7">
-                        {isSeriesKey && (
-                          <Image
-                            alt=""
-                            src="/seriesKey.svg"
-                            width={20}
-                            height={20}
-                          />
-                        )}
-                      </div>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {classification}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {description}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {createdAt}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {updatedAt}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {accountId}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {productId}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {namespaceId}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {sourceAttribute}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {transformation}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {classificationCategory}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {length}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {type}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {precision}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {scale}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {status}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {updatedBy}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        variant="small"
-                        color="blue-gray"
-                        className="font-normal"
-                      >
-                        {createdBy}
-                      </Typography>
-                    </td>
+                      </td>
+                    )}
+                    {tableHead.indexOf("Description") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {description}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("CreatedAt") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {createdAt}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("UpdatedAt") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {updatedAt}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("AccountId") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {accountId}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("ProductId") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {productId}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("NamespaceId") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {namespaceId}
+                        </Typography>
+                      </td>
+                    )}
+
+                    {tableHead.indexOf("SourceAttribute") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {sourceAttribute}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("Transformation") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {transformation}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("ClassificationCategory") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {classificationCategory}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("Length") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {length}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("Type") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {type}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("Precision") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {precision}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("Scale") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {scale}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("Status") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {status}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("CreatedBy") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {updatedBy}
+                        </Typography>
+                      </td>
+                    )}
+                    {tableHead.indexOf("UpdatedBy") !== -1 && (
+                      <td className={classes}>
+                        <Typography
+                          variant="small"
+                          color="blue-gray"
+                          className="font-normal"
+                        >
+                          {createdBy}
+                        </Typography>
+                      </td>
+                    )}
                   </tr>
                 );
               }
@@ -398,19 +644,6 @@ export default function Example({ data }: any) {
           </tbody>
         </table>
       </CardBody>
-      {/* <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4">
-        <Typography variant="small" color="blue-gray" className="font-normal">
-          Page 1 of 10
-        </Typography>
-        <div className="flex gap-2">
-          <Button variant="outlined" color="blue-gray" size="sm">
-            Previous
-          </Button>
-          <Button variant="outlined" color="blue-gray" size="sm">
-            Next
-          </Button>
-        </div>
-      </CardFooter> */}
     </Card>
   );
 }
