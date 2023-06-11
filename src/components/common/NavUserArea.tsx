@@ -79,8 +79,8 @@ export default function NavSearchbar() {
           </div>
         </div>
         {/* </div> */}
-        <div className="ml-5 flex 4xl:mt-[-1rem]">
-          <div className=" flex items-center justify-center rounded-full bg-[#FFBC35] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-16 h-16 4xl:w-24 4xl:h-24 2xl:mt-3">
+        <div className="ml-5 flex">
+          <div className=" flex items-center justify-center rounded-full bg-[#FFBC35] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-[5rem] h-[5rem]">
             <div className="relative w-12 h-12">
               <Image alt="" src="/user.svg" fill />
             </div>
