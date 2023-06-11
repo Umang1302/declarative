@@ -49,8 +49,8 @@ export default function Dashboard() {
   }, []);
 
   React.useEffect(() => {
-    const start = (active - 1) * 6;
-    const end = active * 6;
+    const start = (active - 1) * 10;
+    const end = active * 10;
     if (end - 6 > dataLength) {
       return;
     } else {
@@ -67,8 +67,8 @@ export default function Dashboard() {
       setSort(false);
     }
     console.log(sort);
-    const start = (active - 1) * 6;
-    const end = active * 6;
+    const start = (active - 1) * 10;
+    const end = active * 10;
     const currentData = jsonData.data.slice(start, end);
     if (!sort) {
       let sortedData = currentData.sort((a, b) =>
@@ -92,66 +92,47 @@ export default function Dashboard() {
     );
   } else {
     return (
-      <div className={`mt-5 ${cabin.className}`}>
+      <div className={`w-full mt-5 ${cabin.className}`}>
         <LabelSection />
-        <Hero />
-        <div className="-mt-[5vh] flex ml-[50vw]">
-          {/* <button className="bg-transparent shadow-none bg-white rounded-xl text-black flex py-3 px-12 h-[50px] w-[250px] hover:shadow-none">
-            <div className="flex mt-[-5px]">
-              <PlusIcon className="h-8 w-8 text-[#4D91FF] ml-[-2rem]" />{" "}
-              <span className="mt-1 ml-2 w-[160px] text-base text-[12px] normal-case tracking-[1px] font-semibold">
-                Create Product
-              </span>
-            </div>
-          </button> */}
 
-          <div className="flex items-center gap-4 4xl:gap-11 mt-7 ml-[5vw] 2xl:mb-[10px]">
-            <Button
-              variant="text"
-              color="blue-gray"
-              className="flex items-center gap-2 rounded-full"
-              onClick={prev}
-              disabled={active === 1}
-            >
-              <ChevronLeftIcon
-                strokeWidth={2}
-                className="h-4 w-4 4xl:w-10 4xl:h-10"
-              />
-            </Button>
-            <div className="items-center gap-2">
-              {[...Array(Math.ceil(dataLength / 6))].map((v, i) => {
-                return (
-                  <IconButton key={i + 1} {...getItemProps(i + 1)}>
-                    <p className="4xl:text-[25px]">{i + 1}</p>
-                  </IconButton>
-                );
-              })}
-              {/* <IconButton {...getItemProps(2)}>2</IconButton>
-              <IconButton {...getItemProps(3)}>3</IconButton>
-              <IconButton {...getItemProps(4)}>4</IconButton>
-              <IconButton {...getItemProps(5)}>5</IconButton> */}
-            </div>
-            <Button
-              variant="text"
-              color="blue-gray"
-              className="flex items-center gap-2 rounded-full"
-              onClick={next}
-              disabled={active === Math.ceil(dataLength / 6)}
-            >
-              <ChevronRightIcon
-                strokeWidth={2}
-                className="h-4 w-4 4xl:w-10 4xl:h-10"
-              />
-            </Button>
-            <div
-              className="relative 2xl:w-6 2xl:h-6"
-              onClick={() => {
-                console.log("clicked");
-                sortFunctionality();
-              }}
-            >
-              <Image alt="" src="/sort.svg" fill />
-            </div>
+        <Hero />
+
+        <div className="flex w-full justify-end items-center max-w-[1560px]">
+          <Button
+            variant="text"
+            color="blue-gray"
+            className="flex items-center gap-2 rounded-full"
+            onClick={prev}
+            disabled={active === 1}
+          >
+            <ChevronLeftIcon strokeWidth={2} className="h-4 w-4" />
+          </Button>
+          <div className="items-center gap-2">
+            {[...Array(Math.ceil(dataLength / 10))].map((v, i) => {
+              return (
+                <IconButton key={i + 1} {...getItemProps(i + 1)}>
+                  <p className="">{i + 1}</p>
+                </IconButton>
+              );
+            })}
+          </div>
+          <Button
+            variant="text"
+            color="blue-gray"
+            className="flex items-center gap-2 rounded-full"
+            onClick={next}
+            disabled={active === Math.ceil(dataLength / 6)}
+          >
+            <ChevronRightIcon strokeWidth={2} className="h-4 w-4" />
+          </Button>
+          <div
+            className="relative w-6 h-6"
+            onClick={() => {
+              console.log("clicked");
+              sortFunctionality();
+            }}
+          >
+            <Image alt="" src="/sort.svg" fill />
           </div>
         </div>
         <ShowcaseProduct page={active} prodData={prodData} />
@@ -159,3 +140,54 @@ export default function Dashboard() {
     );
   }
 }
+
+{
+  /* <div className="-mt-[5vh] flex ml-[50vw]"> */
+}
+
+{
+  /* 
+  <div className="flex items-center gap-4 4xl:gap-11 mt-7 ml-[5vw] 2xl:mb-[10px]">
+    <Button
+      variant="text"
+      color="blue-gray"
+      className="flex items-center gap-2 rounded-full"
+      onClick={prev}
+      disabled={active === 1}
+    >
+      <ChevronLeftIcon strokeWidth={2} className="h-4 w-4 4xl:w-10 4xl:h-10" />
+    </Button>
+    <div className="items-center gap-2">
+      {[...Array(Math.ceil(dataLength / 6))].map((v, i) => {
+        return (
+          <IconButton key={i + 1} {...getItemProps(i + 1)}>
+            <p className="4xl:text-[25px]">{i + 1}</p>
+          </IconButton>
+        );
+      })}
+      {/* <IconButton {...getItemProps(2)}>2</IconButton>
+              <IconButton {...getItemProps(3)}>3</IconButton>
+              <IconButton {...getItemProps(4)}>4</IconButton>
+              <IconButton {...getItemProps(5)}>5</IconButton> */
+}
+//   </div>
+//   <Button
+//     variant="text"
+//     color="blue-gray"
+//     className="flex items-center gap-2 rounded-full"
+//     onClick={next}
+//     disabled={active === Math.ceil(dataLength / 6)}
+//   >
+//     <ChevronRightIcon strokeWidth={2} className="h-4 w-4 4xl:w-10 4xl:h-10" />
+//   </Button>
+//   <div
+//     className="relative 2xl:w-6 2xl:h-6"
+//     onClick={() => {
+//       console.log("clicked");
+//       sortFunctionality();
+//     }}
+//   >
+//     <Image alt="" src="/sort.svg" fill />
+//   </div>
+// </div>
+// </div>;

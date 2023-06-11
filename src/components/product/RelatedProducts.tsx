@@ -14,24 +14,23 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { Cabin } from "next/font/google";
+const cabin = Cabin({ subsets: ["latin"] });
 
 export default function RelatedProducts() {
   const router = useRouter();
 
   return (
-    <div className="flex overflow-x-auto gap-x-14 mb-10 px-6 py-3 2xl:w-[77vw]">
+    <div className="flex overflow-x-auto gap-x-14 mb-10 px-6 py-3 w-full">
       {jsonData.data.map((element, i) => (
-        <Card
-          key={i}
-          className="mt-6 2xl:min-w-[25vw] 2xl:min-h-[22vh] 4xl:min-w-[15vw] 4xl:min-h-[8vw] relative"
-        >
+        <Card key={i} className="mt-3 min-w-[25rem] relative">
           <div
-            className={`absolute h-12 z-50 left-[10px] top-3 4xl:top-24 2xl:top-2 2xl:left-[-2px] w-[2.5px] bg-red-500 rounded-r-3xl`}
+            className={`absolute h-12 z-50 top-3 w-[2.5px] bg-red-500 rounded-r-3xl`}
           />
           <CardBody>
             <Typography
               color="blue-gray"
-              className="mb-2 2xl:text-[16px] font-[600]"
+              className={`${cabin.className} mb-2 font-[700]`}
             >
               <button
                 onClick={() => {
@@ -41,14 +40,16 @@ export default function RelatedProducts() {
                 {element.name}
               </button>
             </Typography>
-            <Typography className="2xl:text-sm">
+            <Typography className={`2xl:text-sm ${cabin.className}`}>
               {element.description}
             </Typography>
             <div className="flex">
               <div className="flex mt-2">
                 <Avatar src="/yahoo.svg" className="" alt="avatar" size="sm" />
                 <div className="mt-[10px] ml-3  text-black">
-                  <p className="font-[600] text-[18px]">{element.ownerName}</p>
+                  <p className={`font-[600] text-[18px] ${cabin.className}`}>
+                    {element.ownerName}
+                  </p>
                 </div>
               </div>
             </div>

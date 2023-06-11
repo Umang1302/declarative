@@ -7,6 +7,8 @@ import {
 } from "@material-tailwind/react";
 import React, { useEffect } from "react";
 import OverviewTable from "../product/OverviewTab";
+import { Cabin } from "next/font/google";
+const cabin = Cabin({ subsets: ["latin"] });
 
 export default function TransparentTabs({ data }: any) {
   const [activeTab, setActiveTab] = React.useState("overview");
@@ -49,7 +51,7 @@ export default function TransparentTabs({ data }: any) {
             onClick={() => setActiveTab(value)}
             className={activeTab === value ? "text-black" : "text-gray-500"}
           >
-            <p className={`text-xl`}>{label}</p>
+            <p className={`text-xl ${cabin.className}`}>{label}</p>
           </Tab>
         ))}
       </TabsHeader>

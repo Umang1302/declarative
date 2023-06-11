@@ -1,8 +1,4 @@
-import {
-  MagnifyingGlassIcon,
-  ChevronUpDownIcon,
-} from "@heroicons/react/24/outline";
-import { PencilIcon, UserPlusIcon } from "@heroicons/react/24/solid";
+import { FunnelIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import {
   Card,
   CardHeader,
@@ -23,12 +19,19 @@ import {
   MenuList,
   MenuItem,
   Checkbox,
+  Drawer,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
 } from "@material-tailwind/react";
 import Image from "next/image";
 
 import { Option } from "@material-tailwind/react";
 import React, { useMemo, useEffect, useState } from "react";
 import Select from "react-select";
+import { Cabin } from "next/font/google";
+const cabin = Cabin({ subsets: ["latin"] });
 
 const TABS = [
   {
@@ -201,6 +204,10 @@ export default function Example({ data }: any) {
   const [tableRowData, setTableRowData] = useState<any>([]);
   const [sort, setSort] = React.useState<boolean>(false);
 
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(!open);
+
   useEffect(() => {
     setTableRowData(data.attributes);
   }, []);
@@ -227,55 +234,102 @@ export default function Example({ data }: any) {
 
   return (
     <Card className="h-full w-full shadow-none">
-      <div className="rounded-none flex justify-around 2xl:h-[7vh] 4xl:h-[4vh] 2xl:mt-[-12px]">
-        <div className="mb-8 items-center justify-between gap-8 ">
-          <p>Frequency</p>
-          <Select
-            defaultValue={dropDownValue[0]}
-            options={dropDownValue}
-            className="max-w-[400px]"
-          />
-        </div>
-        <div className="items-center gap-4 md:flex-row">
-          <p>Type</p>
-          <Tabs value="static" className="w-full md:w-max">
-            <TabsHeader>
-              {TABS.map(({ label, value }) => (
-                <Tab key={value} value={value}>
-                  &nbsp;&nbsp;{label}&nbsp;&nbsp;
-                </Tab>
-              ))}
-            </TabsHeader>
-          </Tabs>
-        </div>
+      <CardBody
+        className={`overflow-scroll px-0 mt-[-2rem] ${cabin.className}`}
+      >
+        <div className="w-full flex justify-between gap-x-12">
+          <div className="max-w-[70%]">
+            <p>Show Columns</p>
+            <Select
+              defaultValue={selected}
+              isMulti={true}
+              options={dropDownMenu}
+              onChange={(val) => {
+                console.log(val);
+                setSelected(val);
+              }}
+              className="basic-multi-select"
+              classNamePrefix="select"
+            />
+          </div>
+          <div className="flex items-center">
+            <div className="mt-6">
+              <button
+                onClick={handleOpen}
+                className="px-5 border-black bg-[#F65A27] text-white shadow-lg rounded-lg "
+              >
+                <p className="text-[1rem] font-[600] flex justify-around items-center">
+                  <FunnelIcon strokeWidth={2} className="h-4 w-4" />
+                  More Filters
+                </p>
+              </button>
+            </div>
+            <Dialog size="lg" open={open} handler={handleOpen}>
+              <DialogHeader className={`${cabin.className}`}>
+                More Filters
+              </DialogHeader>
+              <DialogBody divider>
+                <div className="rounded-none flex justify-around 2xl:h-[7vh] 4xl:h-[4vh] 2xl:mt-[-12px]">
+                  <div className="mb-8 items-center justify-between gap-8 ">
+                    <p className={`${cabin.className}`}>Frequency</p>
+                    <Select
+                      defaultValue={dropDownValue[0]}
+                      options={dropDownValue}
+                      className={`max-w-[400px] ${cabin.className}`}
+                    />
+                  </div>
+                  <div
+                    className={`items-center gap-4 md:flex-row ${cabin.className}`}
+                  >
+                    <p className={`${cabin.className}`}>Type</p>
+                    <Tabs value="static" className="w-full md:w-max">
+                      <TabsHeader>
+                        {TABS.map(({ label, value }) => (
+                          <Tab key={value} value={value}>
+                            <p className={`${cabin.className}`}>
+                              &nbsp;&nbsp;{label}&nbsp;&nbsp;
+                            </p>
+                          </Tab>
+                        ))}
+                      </TabsHeader>
+                    </Tabs>
+                  </div>
 
-        <div className="items-center gap-4 md:flex-row">
-          <p>Status</p>
-          <Tabs value="active" className="w-full md:w-max">
-            <TabsHeader>
-              {TABS1.map(({ label, value }) => (
-                <Tab key={value} value={value}>
-                  &nbsp;&nbsp;{label}&nbsp;&nbsp;
-                </Tab>
-              ))}
-            </TabsHeader>
-          </Tabs>
-        </div>
-      </div>
-      <CardBody className="overflow-scroll px-0">
-        <div className="w-full">
-          <p>Show Columns</p>
-          <Select
-            defaultValue={selected}
-            isMulti={true}
-            options={dropDownMenu}
-            onChange={(val) => {
-              console.log(val);
-              setSelected(val);
-            }}
-            className="basic-multi-select"
-            classNamePrefix="select"
-          />
+                  <div className="items-center gap-4 md:flex-row">
+                    <p>Status</p>
+                    <Tabs value="active" className="w-full md:w-max">
+                      <TabsHeader>
+                        {TABS1.map(({ label, value }) => (
+                          <Tab key={value} value={value}>
+                            <p className={`${cabin.className}`}>
+                              &nbsp;&nbsp;{label}&nbsp;&nbsp;
+                            </p>
+                          </Tab>
+                        ))}
+                      </TabsHeader>
+                    </Tabs>
+                  </div>
+                </div>
+              </DialogBody>
+              <DialogFooter>
+                <Button
+                  variant="text"
+                  color="red"
+                  onClick={handleOpen}
+                  className="mr-1"
+                >
+                  <span className={`${cabin.className}`}>Cancel</span>
+                </Button>
+                <Button
+                  variant="gradient"
+                  color="deep-orange"
+                  onClick={handleOpen}
+                >
+                  <span className={`${cabin.className}`}>Confirm</span>
+                </Button>
+              </DialogFooter>
+            </Dialog>
+          </div>
         </div>
 
         <table className="mt-4 w-full min-w-max table-auto text-left">
@@ -284,12 +338,12 @@ export default function Example({ data }: any) {
               {tableHead.map((head: any, index: number) => (
                 <th
                   key={head.label}
-                  className="cursor-pointer border-y border-blue-gray-100 p-4 bg-[#A0EDA7] transition-colors hover:bg-blue-gray-50"
+                  className={`cursor-pointer border-y border-blue-gray-100 p-4 bg-[#A0EDA7] transition-colors hover:bg-blue-gray-50  ${cabin.className}`}
                 >
                   <Typography
                     variant="small"
                     color="blue-gray"
-                    className="flex items-center justify-between gap-2 font-normal leading-none opacity-70"
+                    className={` ${cabin.className} flex items-center justify-between gap-2 font-normal leading-none opacity-70`}
                   >
                     {head}{" "}
                     <div
@@ -407,7 +461,7 @@ export default function Example({ data }: any) {
                             <Typography
                               variant="small"
                               color="blue-gray"
-                              className="font-normal"
+                              className={` ${cabin.className} font-normal`}
                             >
                               {name}
                             </Typography>
@@ -421,7 +475,7 @@ export default function Example({ data }: any) {
                           <Typography
                             variant="small"
                             color="blue-gray"
-                            className="font-normal"
+                            className={` ${cabin.className} font-normal`}
                           >
                             {isRecordKey && (
                               <Image
@@ -454,7 +508,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {classification}
                         </Typography>
@@ -465,7 +519,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {description}
                         </Typography>
@@ -476,7 +530,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {createdAt}
                         </Typography>
@@ -487,7 +541,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {updatedAt}
                         </Typography>
@@ -498,7 +552,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {accountId}
                         </Typography>
@@ -509,7 +563,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {productId}
                         </Typography>
@@ -520,7 +574,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {namespaceId}
                         </Typography>
@@ -532,7 +586,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {sourceAttribute}
                         </Typography>
@@ -543,7 +597,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {transformation}
                         </Typography>
@@ -554,7 +608,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {classificationCategory}
                         </Typography>
@@ -565,7 +619,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {length}
                         </Typography>
@@ -576,7 +630,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {type}
                         </Typography>
@@ -587,7 +641,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {precision}
                         </Typography>
@@ -598,7 +652,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {scale}
                         </Typography>
@@ -609,7 +663,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {status}
                         </Typography>
@@ -620,7 +674,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {updatedBy}
                         </Typography>
@@ -631,7 +685,7 @@ export default function Example({ data }: any) {
                         <Typography
                           variant="small"
                           color="blue-gray"
-                          className="font-normal"
+                          className={` ${cabin.className} font-normal`}
                         >
                           {createdBy}
                         </Typography>

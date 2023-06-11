@@ -30,13 +30,9 @@ export default function Page({ params }: any) {
     );
   } else {
     return (
-      <div className="relative overflow-y-auto overflow-x-hidden h-[80vh] rounded-lg">
-        {/* <div className="relative"> */}
-        {/* <div
-            className={`absolute w-[2.5px] h-12  top-3 z-50 left-[-3px] bg-red-500 rounded-r-3xl`}
-          /> */}
-        <div className=" flex justify-end 2xl:w-[75vw] 4xl:mt-3">
-          <Breadcrumbs className="bg-transparent 4xl:text-[20px]">
+      <div className="mt-5 overflow-y-auto overflow-x-hidden h-[80vh] w-[78vw] pr-5 4xl:w-[63vw] rounded-lg">
+        <div className=" flex justify-end">
+          <Breadcrumbs className="bg-transparent">
             <Link href="/" className="opacity-60 flex active:text-red-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -56,20 +52,22 @@ export default function Page({ params }: any) {
             </Link>
           </Breadcrumbs>
         </div>
-        <div
-          className={`absolute h-12 z-50 left-[10px] top-3 4xl:top-24 2xl:top-12 w-[2.5px] bg-red-500 rounded-r-3xl`}
-        />
-        <Card className="ml-3 w-[95%] 4xl:mt-6">
+        <Card className="relative ml-3 w-[100%] 4xl:mt-6">
+          <div
+            className={`absolute w-1 top-3 h-12 z-50 bg-red-500 rounded-r-3xl`}
+          />
           <CardBody>
             <ProductHeading data={data} />
-            <div className="4xl:mt-[50px] w-[73vw] mt-6 bg-gray-300 h-[1px]" />
+
+            <div className="w-[100%] bg-gray-300 h-[1px]" />
             <div>
               <Tabs data={data} />
             </div>
           </CardBody>
         </Card>
-        <div className="2xl:mt-10">
-          <p className="2xl:text-[20px]">Related Products</p>
+
+        <div className="w-full mt-8 ml-4">
+          <h1 className="font-bold text-2xl">Related Products</h1>
           <RelatedProducts />
         </div>
       </div>
