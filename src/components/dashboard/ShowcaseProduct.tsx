@@ -67,7 +67,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
       className={`${cabin.className} overflow-y-auto px-2 py-1 max-h-[65vh] w-[78vw]`}
     >
       {productList.map((element: any, index: number) => (
-        <div key={index} className=" my-3">
+        <div key={index} className="my-3">
           <Accordion
             open={open === index}
             icon={<Icon id={index} open={open} />}
@@ -76,25 +76,25 @@ export default function ShowcaseProduct({ page, prodData }: any) {
               {(index === 0 || index % 3 === 0) && (
                 <div
                   className={`absolute w-[2.5px] ${
-                    open === index ? " h-48" : "h-12"
+                    open === index ? " h-48" : "h-10"
                   }  top-3 z-50 left-[-3px] bg-red-500 rounded-r-3xl`}
                 />
               )}
               {(index === 1 || index % 3 === 1) && (
                 <div
                   className={`absolute w-[2.5px] ${
-                    open === index ? " h-48" : "h-12"
+                    open === index ? " h-48" : "h-10"
                   } top-3 z-50 left-[-3px] bg-blue-500 rounded-r-3xl`}
                 />
               )}
               {(index === 2 || index % 3 === 2) && (
                 <div
                   className={`absolute w-[2.5px] ${
-                    open === index ? " h-48" : "h-12"
+                    open === index ? " h-48" : "h-10"
                   } top-3 z-50 left-[-3px] bg-green-500 rounded-r-3xl`}
                 />
               )}
-              <Card className="p-2 max-w-[1560px] relative">
+              <Card className="max-w-[1560px] h-[4rem] relative">
                 <AccordionHeader
                   className={`${cabin.className} border-none px-4`}
                   onClick={() => {
