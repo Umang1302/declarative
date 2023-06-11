@@ -235,7 +235,7 @@ export default function Example({ data }: any) {
   return (
     <Card className="h-full w-full shadow-none">
       <CardBody
-        className={`overflow-scroll px-0 mt-[-2rem] ${cabin.className}`}
+        className={`overflow-x-auto px-0 mt-[-2rem] ${cabin.className}`}
       >
         <div className="w-full flex justify-between gap-x-12">
           <div className="max-w-[70%]">

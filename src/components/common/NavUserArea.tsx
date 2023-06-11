@@ -36,7 +36,7 @@ export default function NavSearchbar() {
     <Card
       className={`w-[35vw] lg:w-[410px] 2xl:w-[500px] 3xl:w-[550px] 4xl:w-[600px] h-full rounded-md px-4 py-2 ${cabin.className}`}
     >
-      <div className="flex items-center justify-around my-4 mx-2">
+      <div className="flex items-center justify-around mx-2">
         <div className="flex gap-x-7">
           <div className="relative inline-flex w-fit">
             <Menu>

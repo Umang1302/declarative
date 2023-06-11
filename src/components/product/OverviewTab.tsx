@@ -32,7 +32,7 @@ export default function OverviewTable({ data }: any) {
   ];
 
   return (
-    <div className="">
+    <div className="w-full h-full">
       <Table data={data} />
     </div>
   );
