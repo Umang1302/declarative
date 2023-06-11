@@ -94,9 +94,9 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                   } top-3 z-50 left-[-3px] bg-green-500 rounded-r-3xl`}
                 />
               )}
-              <Card className="max-w-[1560px] h-[4rem] relative">
+              <Card className="max-w-[1560px] relative">
                 <AccordionHeader
-                  className={`${cabin.className} border-none px-4`}
+                  className={`${cabin.className} border-none px-4 h-[4rem]`}
                   onClick={() => {
                     handleOpen(index);
                   }}
