@@ -19,6 +19,14 @@ export default function TransparentTabs({ data }: any) {
       value: "overview",
       desc: <OverviewTable data={data} />,
     },
+    {
+      label: "Intends",
+      value: "intends",
+    },
+    {
+      label: "Data",
+      value: "data",
+    },
   ];
 
   useEffect(() => {}, []);
