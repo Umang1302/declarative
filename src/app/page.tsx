@@ -10,7 +10,6 @@ import React from "react";
 import { RingLoader } from "react-spinners";
 import jsonData from "../../data.json";
 import Image from "next/image";
-import useStateRef from "react-usestateref";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -92,7 +91,7 @@ export default function Dashboard() {
     );
   } else {
     return (
-      <div className={`w-full mt-5 ${cabin.className}`}>
+      <div className={`w-full mt-5 4xl:mt-14 ${cabin.className}`}>
         <LabelSection />
 
         <Hero />

@@ -79,14 +79,14 @@ export default function NavSearchbar() {
           </div>
         </div>
         {/* </div> */}
-        <div className="ml-5 flex">
+        <div className="ml-5 flex 4xl:mt-[-1rem]">
           <div className=" flex items-center justify-center rounded-full bg-[#FFBC35] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-16 h-16 4xl:w-24 4xl:h-24 2xl:mt-3">
             <div className="relative w-12 h-12">
               <Image alt="" src="/user.svg" fill />
             </div>
           </div>
 
-          <div className={`ml-3 mt-[-8px]  text-black ${cabin.className}`}>
+          <div className={`ml-3 mt-[-8px] text-black ${cabin.className}`}>
             <p className="font-bold text-[20px] 4xl:text-[28px]">Demo User</p>
             <p className="text-[8px] 4xl:text-[14px] 2xl:text-[12px]">
               Account ID: f48cda68-448b-4c67-9828-f48cda68
