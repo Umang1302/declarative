@@ -36,15 +36,15 @@ export default function NavSearchbar() {
     <Card
       className={`w-[35vw] lg:w-[410px] 2xl:w-[500px] 3xl:w-[550px] 4xl:w-[600px] h-full rounded-md px-4 py-2 ${cabin.className}`}
     >
-      <div className="flex items-center justify-around mx-2">
+      <div className="flex items-center justify-around mx-2 my-3">
         <div className="flex gap-x-7">
           <div className="relative inline-flex w-fit">
             <Menu>
-              <div className="flex absolute bottom-auto left-auto items-center justify-center -right-[0.5rem] top-[-0.5rem] z-10 rounded-full bg-[#F65A27] border-2 border-white w-6 h-6">
-                <p className="text-[0.8rem] text-white">3</p>
+              <div className="flex absolute bottom-auto left-auto items-center justify-center -right-[0.4rem] top-[-0.5rem] z-10 rounded-full bg-[#F65A27] border-2 border-white w-4 h-4">
+                <p className="text-[0.6rem] text-white">3</p>
               </div>
               <MenuHandler>
-                <div className=" flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-12 h-12">
+                <div className=" flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">
                   <div className="relative w-6 h-6">
                     <Image alt="" src="/message.svg" fill />
                   </div>
@@ -60,11 +60,11 @@ export default function NavSearchbar() {
 
           <div className="relative inline-flex w-fit">
             <Menu>
-              <div className="flex absolute bottom-auto left-auto items-center justify-center -right-[0.5rem] top-[-0.5rem] z-10 rounded-full bg-[#F65A27] border-2 border-white w-6 h-6">
-                <p className="text-[0.8rem] text-white">3</p>
+              <div className="flex absolute bottom-auto left-auto items-center justify-center -right-[0.4rem] top-[-0.5rem] z-10 rounded-full bg-[#F65A27] border-2 border-white w-4 h-4">
+                <p className="text-[0.6rem] text-white">3</p>
               </div>
               <MenuHandler>
-                <div className=" flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-12 h-12">
+                <div className=" flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">
                   <div className="relative w-6 h-6">
                     <Image alt="" src="/Alert.svg" fill />
                   </div>
@@ -80,8 +80,8 @@ export default function NavSearchbar() {
         </div>
         {/* </div> */}
         <div className="ml-5 flex">
-          <div className=" flex items-center justify-center rounded-full bg-[#FFBC35] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-[5rem] h-[5rem]">
-            <div className="relative w-12 h-12">
+          <div className="mt-2 flex items-center justify-center rounded-full bg-[#FFBC35] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-[4rem] h-[4rem]">
+            <div className="relative w-10 h-10">
               <Image alt="" src="/user.svg" fill />
             </div>
           </div>

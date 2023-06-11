@@ -41,13 +41,13 @@ export default function Sidebar() {
           <Image src="/declarativeLogo1.svg" alt="brand" fill />
         </div>
 
-        <hr className="border-[#C4C4C4]" />
+        <hr className="border-[#C4C4C4] mt-2" />
 
         {/* Create Botton */}
-        <div className="w-full h-[8%] max-h-[60px] py-1 my-3 px-2">
-          <button className="w-full h-full border-[1px] items-center rounded-lg border-black flex justify-center">
-            <PlusIcon className="text-[#F65A27] w-10 h-10" />
-            <p className="text-[1.5rem] font-[600]">Create</p>
+        <div className="w-full h-[8%] max-h-[60px] py-1 my-2 flex justify-center px-2">
+          <button className="w-[90%] h-[90%] gap-x-4 border-[1px] items-center rounded-lg border-black flex justify-center">
+            <PlusIcon className="text-[#F65A27] w-8 h-8" />
+            <p className="text-[1.2rem] font-[600]">Create</p>
           </button>
         </div>
 

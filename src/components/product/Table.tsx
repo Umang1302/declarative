@@ -268,10 +268,10 @@ export default function Example({ data }: any) {
               <DialogHeader className={`${cabin.className}`}>
                 More Filters
               </DialogHeader>
-              <DialogBody divider>
+              <DialogBody divider className="h-[6rem]">
                 <div className="rounded-none flex justify-around 2xl:h-[7vh] 4xl:h-[4vh] 2xl:mt-[-12px]">
-                  <div className="mb-8 items-center justify-between gap-8 ">
-                    <p className={`${cabin.className}`}>Frequency</p>
+                  <div className="mb-8 items-center justify-between gap-8 gap-y-6 ">
+                    <p className={`${cabin.className} mb-2`}>Frequency</p>
                     <Select
                       defaultValue={dropDownValue[0]}
                       options={dropDownValue}
@@ -281,7 +281,7 @@ export default function Example({ data }: any) {
                   <div
                     className={`items-center gap-4 md:flex-row ${cabin.className}`}
                   >
-                    <p className={`${cabin.className}`}>Type</p>
+                    <p className={`${cabin.className} mb-2`}>Type</p>
                     <Tabs value="static" className="w-full md:w-max">
                       <TabsHeader>
                         {TABS.map(({ label, value }) => (
@@ -296,7 +296,7 @@ export default function Example({ data }: any) {
                   </div>
 
                   <div className="items-center gap-4 md:flex-row">
-                    <p>Status</p>
+                    <p className={`${cabin.className} mb-2`}>Status</p>
                     <Tabs value="active" className="w-full md:w-max">
                       <TabsHeader>
                         {TABS1.map(({ label, value }) => (
