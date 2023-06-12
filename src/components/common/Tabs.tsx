@@ -29,12 +29,10 @@ export default function TransparentTabs({ data }: any) {
     },
   ];
 
-  useEffect(() => {}, []);
-
   return (
     <Tabs value={activeTab} className="p-0">
       <TabsHeader
-        className="bg-transparent max-w-[40rem]"
+        className="bg-transparent max-w-[30rem]"
         indicatorProps={{
           className: "shadow-none",
         }}

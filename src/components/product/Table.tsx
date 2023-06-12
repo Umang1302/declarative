@@ -161,16 +161,6 @@ export default function Example({ data }: any) {
     // "CreatedBy",
     // "UpdatedBy",
   ]);
-  const [dropDownValue, setDropDownValue] = useState<any>([
-    {
-      label: "Weekly",
-      value: "weekly",
-    },
-    {
-      label: "Daily",
-      value: "daily",
-    },
-  ]);
   const [selected, setSelected] = useState<any>([
     {
       label: "Attributes",
@@ -203,6 +193,7 @@ export default function Example({ data }: any) {
   ]);
   const [tableRowData, setTableRowData] = useState<any>([]);
   const [sort, setSort] = React.useState<boolean>(false);
+  const [showCol, setShowCol] = React.useState<boolean>(false);
 
   const [open, setOpen] = useState(false);
 
@@ -239,20 +230,30 @@ export default function Example({ data }: any) {
       >
         <div className="w-full flex justify-between gap-x-12">
           <div className="max-w-[70%]">
-            <p>Show Columns</p>
-            <Select
-              defaultValue={selected}
-              isMulti={true}
-              options={dropDownMenu}
-              onChange={(val) => {
-                console.log(val);
-                setSelected(val);
+            <Button
+              color="deep-orange"
+              onClick={() => {
+                setShowCol(!showCol);
               }}
-              className="basic-multi-select"
-              classNamePrefix="select"
-            />
+              className={`border px-4 py-2 rounded-3xl ${showCol && "mb-2 "}`}
+            >
+              Select Columns
+            </Button>
+            {showCol && (
+              <Select
+                defaultValue={selected}
+                isMulti={true}
+                options={dropDownMenu}
+                onChange={(val) => {
+                  console.log(val);
+                  setSelected(val);
+                }}
+                className="basic-multi-select"
+                classNamePrefix="select"
+              />
+            )}
           </div>
-          <div className="flex items-center">
+          {/* <div className="flex items-center">
             <div className="mt-6">
               <button
                 onClick={handleOpen}
@@ -329,7 +330,7 @@ export default function Example({ data }: any) {
                 </Button>
               </DialogFooter>
             </Dialog>
-          </div>
+          </div> */}
         </div>
 
         <table className="mt-4 w-full min-w-max table-auto text-left">

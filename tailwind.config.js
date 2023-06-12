@@ -13,7 +13,7 @@ module.exports = withMT({
       xl: "1280px",
       "2xl": "1440px",
       "3xl": "1860px",
-      "4xl": "2300px",
+      "4xl": "2100px",
     },
     extend: {
       backgroundImage: {

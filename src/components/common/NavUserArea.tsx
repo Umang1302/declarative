@@ -34,7 +34,7 @@ import {
 export default function NavSearchbar() {
   return (
     <Card
-      className={`w-[35vw] lg:w-[410px] 2xl:w-[500px] 3xl:w-[550px] 4xl:w-[600px] h-full rounded-md px-4 py-2 ${cabin.className}`}
+      className={`w-[35vw] lg:w-[410px] 2xl:w-[450px] 3xl:w-[550px] 4xl:w-[600px] h-full rounded-md px-4 py-2 ${cabin.className}`}
     >
       <div className="flex items-center justify-around mx-2 my-3">
         <div className="flex gap-x-7">
@@ -86,16 +86,18 @@ export default function NavSearchbar() {
             </div>
           </div>
 
-          <div className={`ml-3 mt-[-8px] text-black ${cabin.className}`}>
+          <div
+            className={`ml-3 mt-[-8px] 2x:mt-[-10px] text-black ${cabin.className}`}
+          >
             <p className="font-bold text-[20px] 4xl:text-[28px]">Demo User</p>
-            <p className="text-[8px] 4xl:text-[14px] 2xl:text-[12px]">
+            <p className="text-[10px] 4xl:text-[14px] 2xl:text-[12px]">
               Account ID: f48cda68-448b-4c67-9828-f48cda68
             </p>
-            <p className="text-[8px] 4xl:text-[14px] 2xl:text-[12px]">
+            <p className="text-[10px] 4xl:text-[14px] 2xl:text-[12px]">
               Namespace: Demo (c60c671bf1410535)
             </p>
 
-            <p className="text-[8px] 4xl:text-[14px] 2xl:text-[12px]">
+            <p className="text-[10px] 4xl:text-[14px] 2xl:text-[12px]">
               Usage Intent: Basic Analysis
             </p>
           </div>

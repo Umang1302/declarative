@@ -11,16 +11,31 @@ import {
   DialogFooter,
   DialogHeader,
   Input,
+  Tab,
+  Tabs,
+  TabsHeader,
   Typography,
 } from "@material-tailwind/react";
 import Image from "next/image";
 import { Cabin } from "next/font/google";
+import Select from "react-select";
 const cabin = Cabin({ subsets: ["latin"] });
 
 export default function ProductHeading({ data }: any) {
   const [open, setOpen] = useState(false);
-
+  const [more, setMore] = useState(false);
   const handleOpen = () => setOpen(!open);
+
+  const [dropDownValue, setDropDownValue] = useState<any>([
+    {
+      label: "Weekly",
+      value: "weekly",
+    },
+    {
+      label: "Daily",
+      value: "daily",
+    },
+  ]);
 
   const label = [
     {
@@ -37,8 +52,34 @@ export default function ProductHeading({ data }: any) {
     },
   ];
 
+  const TABS = [
+    {
+      label: "Static",
+      value: "static",
+    },
+    {
+      label: "Incremental",
+      value: "incremental",
+    },
+  ];
+
+  const TABS1 = [
+    {
+      label: "Active",
+      value: "active",
+    },
+    {
+      label: "Draft",
+      value: "draft",
+    },
+    {
+      label: "Inactive",
+      value: "inactive",
+    },
+  ];
+
   return (
-    <div className="flex justify-between">
+    <div className={`flex justify-between ${more && "h-[20rem]"}`}>
       <div className={`${cabin.className} w-full`}>
         <p className="text-2xl font-bold">{data.name}</p>
         <div className="flex mt-3 gap-x-5">
@@ -57,20 +98,12 @@ export default function ProductHeading({ data }: any) {
             {data.sourceDatasetId}
           </p>
 
-          <Dialog open={open} handler={handleOpen}>
+          {/* <Dialog open={open} handler={handleOpen}>
             <DialogHeader className={`${cabin.className}`}>
               QR Code
             </DialogHeader>
             <DialogBody divider>
-              <div className="w-full h-full flex justify-center">
-                <Image
-                  alt=""
-                  src="/qrCode1.svg"
-                  width={100}
-                  height={100}
-                  className="ml-2"
-                />
-              </div>
+              
             </DialogBody>
             <DialogFooter>
               <Button
@@ -84,7 +117,7 @@ export default function ProductHeading({ data }: any) {
                 </span>
               </Button>
             </DialogFooter>
-          </Dialog>
+          </Dialog> */}
         </div>
 
         {/* CHIP SECTION */}
@@ -139,12 +172,21 @@ export default function ProductHeading({ data }: any) {
             />
           </button> */}
 
-          <button
+          {/* <button
             onClick={handleOpen}
             className="px-5 border-black bg-[#F65A27] text-white shadow-lg rounded-lg "
           >
             <p className="text-[1rem] font-[600]">QR Code</p>
-          </button>
+          </button> */}
+          <div className="flex">
+            <Image
+              alt=""
+              src="/qrCode1.svg"
+              width={70}
+              height={70}
+              className="ml-2"
+            />
+          </div>
           {/* <button className="bg-[#F65A27] flex rounded-full py-[6px] justify-center z-10 w-6 h-6 ml-8">
                     <Image
                       className=""
@@ -160,7 +202,7 @@ export default function ProductHeading({ data }: any) {
 
         <div className="w-full mt-3 bg-gray-300 h-[1px]" />
 
-        <div className="w-[100%] gap-x-7  h-20 flex px-3 py-2">
+        <div className="w-[100%] gap-x-7 h-20 3xl:h-24 flex justify-between px-3 py-2">
           <div className="flex">
             <div className="flex">
               <Avatar src="/yahoo.svg" className="" alt="avatar" size="lg" />
@@ -170,22 +212,90 @@ export default function ProductHeading({ data }: any) {
               </div>
             </div>
           </div>
-          <div className="flex gap-x-6">
-            <p className="w-[98%] mr-3 text-sm">
-              <p className="font-semibold">Description about the product: </p>{" "}
-              {data.description}
-            </p>
+          <div className="gap-x-6">
+            <div className="flex">
+              <p
+                className={`w-[98%] max-w-[15.1rem] ${
+                  !more && "truncate"
+                } mr-3 text-sm`}
+              >
+                <p className="font-semibold max-w-[100%]">
+                  Description about the product:{" "}
+                </p>{" "}
+                {data.description} Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Quasi, impedit. Consequatur praesentium
+                nostrum quam quaerat ipsa dolor impedit pariatur reprehenderit
+                animi ex laudantium quidem, tempora perspiciatis facilis ratione
+                beatae fuga.
+              </p>
 
-            <div className="flex gap-x-3  mt-2">
+              <button
+                className={`mt-4 ${more && "mt-[8rem]"}`}
+                onClick={() => {
+                  setMore(!more);
+                }}
+              >
+                {!more ? "more" : "less"}
+              </button>
+            </div>
+
+            <div className="flex gap-x-3 mt-2">
               {label.map((element, i) => (
                 <button
                   key={i}
-                  className={`w-[12vw] max-w-[160px] rounded-lg h-[3.5vh] 4xl:h-[2vh] text-sm 
-               bg-[#C4C4C4] font-[800] text-[20px] ${cabin.className}`}
+                  className={`w-[6vw] rounded-full h-[3vh] max-h-[40px] border-[2px] border-black text-[12px] text-black px-2`}
                 >
                   {element.label}
                 </button>
               ))}
+            </div>
+          </div>
+          <div>
+            <div className="rounded-none flex justify-around gap-x-6">
+              <div className="mb-8 items-center justify-between gap-8 gap-y-6">
+                <p className={`${cabin.className} mb-2 text-[0.7rem]`}>
+                  Frequency
+                </p>
+                <Select
+                  defaultValue={dropDownValue[0]}
+                  options={dropDownValue}
+                  className={`max-w-[300px] text-[0.6rem] ${cabin.className}`}
+                />
+              </div>
+
+              <div
+                className={`items-center gap-4 md:flex-row ${cabin.className}`}
+              >
+                <p className={`${cabin.className} mb-2 text-[0.7rem]`}>Type</p>
+                <Tabs value="static" className="w-full md:w-max">
+                  <TabsHeader>
+                    {TABS.map(({ label, value }) => (
+                      <Tab key={value} value={value}>
+                        <p className={`${cabin.className} text-[0.7rem]`}>
+                          &nbsp;&nbsp;{label}&nbsp;&nbsp;
+                        </p>
+                      </Tab>
+                    ))}
+                  </TabsHeader>
+                </Tabs>
+              </div>
+
+              <div className="items-center gap-4 md:flex-row">
+                <p className={`${cabin.className} mb-2 text-[0.7rem]`}>
+                  Status
+                </p>
+                <Tabs value="active" className="w-full md:w-max ">
+                  <TabsHeader>
+                    {TABS1.map(({ label, value }) => (
+                      <Tab key={value} value={value}>
+                        <p className={`${cabin.className} text-[0.7rem]`}>
+                          &nbsp;&nbsp;{label}&nbsp;&nbsp;
+                        </p>
+                      </Tab>
+                    ))}
+                  </TabsHeader>
+                </Tabs>
+              </div>
             </div>
           </div>
         </div>

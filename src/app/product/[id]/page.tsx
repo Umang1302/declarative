@@ -58,8 +58,7 @@ export default function Page({ params }: any) {
           />
           <CardBody>
             <ProductHeading data={data} />
-
-            <div className="w-[100%] bg-gray-300 h-[1px]" />
+            <div className="w-[100%] bg-gray-300 h-[1px] mt-2" />
             <div>
               <Tabs data={data} />
             </div>

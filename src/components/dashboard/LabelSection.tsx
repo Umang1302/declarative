@@ -53,8 +53,8 @@ export default function LabelSection() {
         {label.map((element, i) => (
           <button
             key={i}
-            className={`w-[12vw] rounded-lg h-[3.5vh] 4xl:h-[2vh] text-sm 
-               bg-[#C4C4C4] font-[800] text-[20px] ${cabin.className}`}
+            className={`w-[12vw] rounded-full border-black border-[2px] h-[3.5vh] 4xl:h-[2vh] text-sm 
+         font-[800] text-[20px] ${cabin.className}`}
           >
             {element.label}
           </button>
