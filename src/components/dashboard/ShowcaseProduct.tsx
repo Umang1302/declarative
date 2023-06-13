@@ -201,31 +201,31 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                         </div>
                       </div>
                       <div className="w-[40vw] 3xl:w-[40vw] 4xl:w-[70vw] grid grid-cols-3 gap-x-3 2xl:gap-y-2 text-black font-[600]">
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[2.5vh] 4xl:w-[6vw] 4xl:h-[2vh] bg-[#A0EDA7]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px]  4xl:w-[6vw] 4xl:h-[2vh] bg-[#A0EDA7]">
                           Security (2)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[2.5vh] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#4D91FF]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#4D91FF]">
                           Profile
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[2.5vh] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
                           Attributes (29)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[2.5vh] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
                           Privacy (2)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[2.5vh] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#FFBC35]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#FFBC35]">
                           Metrics (2)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[2.5vh] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#FFBC35]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#FFBC35]">
                           Access (2)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[2.5vh] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#4D91FF]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#4D91FF]">
                           Lifecycle (1)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[2.5vh] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
                           Rules (5) (98%)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[2.5vh] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
+                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px]  4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
                           Sharing (0)
                         </button>
                       </div>
