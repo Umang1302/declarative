@@ -252,11 +252,11 @@ export default function ProductHeading({ data }: any) {
           </div>
           <div>
             <div className="rounded-none flex justify-around gap-x-2">
-              <div className="mb-8 items-center justify-between gap-8 gap-y-6">
+              <div className="mb-8 items-center absolute right-[24rem] justify-between gap-8 gap-y-6">
                 <p className={`${cabin.className} mb-2 text-[0.7rem]`}>
                   Frequency
                 </p>
-                <div className="min-w-[80px]">
+                <div className="min-w-[80px] ">
                   <Select
                     defaultValue={dropDownValue[0]}
                     options={dropDownValue}
