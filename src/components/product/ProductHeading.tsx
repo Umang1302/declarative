@@ -202,7 +202,7 @@ export default function ProductHeading({ data }: any) {
 
         <div className="w-full mt-3 bg-gray-300 h-[1px]" />
 
-        <div className="overflow-scroll xl:overflow-hidden gap-x-7 h-[5.5rem] 3xl:h-24 flex justify-between px-3 py-2">
+        <div className="gap-x-7 h-[5.5rem] 3xl:h-24 flex justify-between px-3 py-2">
           <div className="flex">
             <div className="flex w-[200px]">
               <Avatar src="/yahoo.svg" className="" alt="avatar" size="lg" />
@@ -252,7 +252,7 @@ export default function ProductHeading({ data }: any) {
           </div>
           <div>
             <div className="rounded-none flex justify-around gap-x-2">
-              <div className="mb-8 items-center absolute right-[24rem] justify-between gap-8 gap-y-6">
+              <div className="mb-8 items-center justify-between gap-8 gap-y-6">
                 <p className={`${cabin.className} mb-2 text-[0.7rem]`}>
                   Frequency
                 </p>
