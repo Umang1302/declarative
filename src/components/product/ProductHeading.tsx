@@ -16,6 +16,11 @@ import {
   TabsHeader,
   Typography,
 } from "@material-tailwind/react";
+import {
+  ChevronDoubleRightIcon,
+  ChevronDoubleLeftIcon,
+} from "@heroicons/react/24/solid";
+
 import Image from "next/image";
 import { Cabin } from "next/font/google";
 import Select from "react-select";
@@ -206,14 +211,14 @@ export default function ProductHeading({ data }: any) {
           <div className="flex">
             <div className="flex w-[200px]">
               <Avatar src="/yahoo.svg" className="" alt="avatar" size="lg" />
-              <div className="mt-[6px] ml-3  text-black">
+              <div className="mt-[6px] ml-3 text-black">
                 <p className="font-bold">{data.ownerName}</p>
                 <p className="text-xs">LA, California</p>
               </div>
             </div>
           </div>
           <div className={`${more && "overflow-y-auto"} gap-x-6`}>
-            <div className={`flex `}>
+            <div className={`flex relative`}>
               <p
                 className={`w-[98%] max-w-[15.1rem] max-h-[8rem] ${
                   !more && "truncate"
@@ -227,19 +232,29 @@ export default function ProductHeading({ data }: any) {
                 nostrum quam quaerat ipsa dolor impedit pariatur reprehenderit
                 animi ex laudantium quidem, tempora perspiciatis facilis ratione
                 beatae fuga.
+                {more && (
+                  <ChevronDoubleLeftIcon
+                    onClick={() => {
+                      setMore(!more);
+                    }}
+                    strokeWidth={2}
+                    className="h-4 w-4 ml-[8rem] mb-2 mt-[-1rem]"
+                  />
+                )}
               </p>
-
-              <span
-                className={`mt-4 px-2 py-1`}
-                onClick={() => {
-                  setMore(!more);
-                }}
-              >
-                {!more ? "more" : "less"}
-              </span>
+              {!more && (
+                <span
+                  className={`absolute top-5 right-[4.2rem] text-[30px]`}
+                  onClick={() => {
+                    setMore(!more);
+                  }}
+                >
+                  <ChevronDoubleRightIcon strokeWidth={2} className="h-4 w-4" />
+                </span>
+              )}
             </div>
 
-            <div className={`${more && "mt-16"} flex gap-x-3`}>
+            <div className={`${more ? "mt-[4.3rem]" : "mt-2"} flex gap-x-3`}>
               {label.map((element, i) => (
                 <button
                   key={i}

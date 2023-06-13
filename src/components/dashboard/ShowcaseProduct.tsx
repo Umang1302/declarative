@@ -73,7 +73,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
             icon={<Icon id={index} open={open} />}
           >
             <div className="relative">
-              {(index === 0 || index % 3 === 0) && (
+              {/* {(index === 0 || index % 3 === 0) && (
                 <div
                   className={`absolute w-[2.5px] ${
                     open === index ? " h-48" : "h-10"
@@ -93,7 +93,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                     open === index ? " h-48" : "h-10"
                   } top-3 z-50 left-[-3px] bg-green-500 rounded-r-3xl`}
                 />
-              )}
+              )} */}
               <Card className="max-w-[1560px] relative">
                 <AccordionHeader
                   className={`${cabin.className} border-none px-4 h-[4rem]`}
