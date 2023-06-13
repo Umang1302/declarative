@@ -11,7 +11,7 @@ import {
   Button,
   Avatar,
 } from "@material-tailwind/react";
-import Link from "next/link";
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Cabin } from "next/font/google";

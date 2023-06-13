@@ -29,10 +29,10 @@ export default function RootLayout({
             <Sidebar />
           </div>
           <div className="w-[85vw]  h-[100vh] xl:w-[80vw] 4xl:px-72 2xl:px-8 lg:px-6 xl:px-6">
-            <div className="flex w-[90vw] h-[14vh] max-h-[140px] mx-6 mb-3">
+            <div className="flex w-[90vw] h-[14vh] max-h-[140px] mx-3 mb-3">
               <Navsearchbar />
             </div>
-            <div className="h-[83vh] w-full mx-6">{children}</div>
+            <div className="h-[83vh] w-full">{children}</div>
           </div>
         </div>
       </body>

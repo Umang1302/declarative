@@ -34,7 +34,7 @@ import {
 export default function NavSearchbar() {
   return (
     <Card
-      className={`w-[35vw] lg:w-[410px] 2xl:w-[450px] 3xl:w-[550px] 4xl:w-[600px] h-full rounded-md px-4 py-2 ${cabin.className}`}
+      className={`w-[40vw] lg:w-[410px] 2xl:w-[500px] 3xl:w-[460px] 4xl:w-[600px] h-full min-h-[8rem] rounded-md px-4 py-2 ${cabin.className}`}
     >
       <div className="flex items-center justify-around mx-2 my-3">
         <div className="flex gap-x-7">

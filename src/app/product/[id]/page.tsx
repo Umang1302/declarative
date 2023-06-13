@@ -53,9 +53,6 @@ export default function Page({ params }: any) {
           </Breadcrumbs>
         </div>
         <Card className="relative ml-3 w-[100%] 4xl:mt-6">
-          <div
-            className={`absolute w-1 top-3 h-12 z-50 bg-red-500 rounded-r-3xl`}
-          />
           <CardBody>
             <ProductHeading data={data} />
             <div className="w-[100%] bg-gray-300 h-[1px] mt-2" />

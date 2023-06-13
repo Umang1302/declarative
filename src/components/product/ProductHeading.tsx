@@ -79,7 +79,7 @@ export default function ProductHeading({ data }: any) {
   ];
 
   return (
-    <div className={`flex justify-between ${more && "h-[20rem]"}`}>
+    <div className={`flex justify-between`}>
       <div className={`${cabin.className} w-full`}>
         <p className="text-2xl font-bold">{data.name}</p>
         <div className="flex mt-3 gap-x-5">
@@ -202,9 +202,9 @@ export default function ProductHeading({ data }: any) {
 
         <div className="w-full mt-3 bg-gray-300 h-[1px]" />
 
-        <div className="w-[100%] gap-x-7 h-20 3xl:h-24 flex justify-between px-3 py-2">
+        <div className="overflow-scroll xl:overflow-hidden gap-x-7 h-[5.5rem] 3xl:h-24 flex justify-between px-3 py-2">
           <div className="flex">
-            <div className="flex">
+            <div className="flex w-[200px]">
               <Avatar src="/yahoo.svg" className="" alt="avatar" size="lg" />
               <div className="mt-[6px] ml-3  text-black">
                 <p className="font-bold">{data.ownerName}</p>
@@ -212,10 +212,10 @@ export default function ProductHeading({ data }: any) {
               </div>
             </div>
           </div>
-          <div className="gap-x-6">
-            <div className="flex">
+          <div className={`${more && "overflow-y-auto"} gap-x-6`}>
+            <div className={`flex `}>
               <p
-                className={`w-[98%] max-w-[15.1rem] ${
+                className={`w-[98%] max-w-[15.1rem] max-h-[8rem] ${
                   !more && "truncate"
                 } mr-3 text-sm`}
               >
@@ -229,17 +229,17 @@ export default function ProductHeading({ data }: any) {
                 beatae fuga.
               </p>
 
-              <button
-                className={`mt-4 ${more && "mt-[8rem]"}`}
+              <span
+                className={`mt-4 px-2 py-1`}
                 onClick={() => {
                   setMore(!more);
                 }}
               >
                 {!more ? "more" : "less"}
-              </button>
+              </span>
             </div>
 
-            <div className="flex gap-x-3 mt-2">
+            <div className={`${more && "mt-16"} flex gap-x-3`}>
               {label.map((element, i) => (
                 <button
                   key={i}
@@ -251,23 +251,25 @@ export default function ProductHeading({ data }: any) {
             </div>
           </div>
           <div>
-            <div className="rounded-none flex justify-around gap-x-6">
+            <div className="rounded-none flex justify-around gap-x-2">
               <div className="mb-8 items-center justify-between gap-8 gap-y-6">
                 <p className={`${cabin.className} mb-2 text-[0.7rem]`}>
                   Frequency
                 </p>
-                <Select
-                  defaultValue={dropDownValue[0]}
-                  options={dropDownValue}
-                  className={`max-w-[300px] text-[0.6rem] ${cabin.className}`}
-                />
+                <div className="min-w-[80px]">
+                  <Select
+                    defaultValue={dropDownValue[0]}
+                    options={dropDownValue}
+                    className={`max-w-[300px] text-[0.6rem] ${cabin.className}`}
+                  />
+                </div>
               </div>
 
               <div
                 className={`items-center gap-4 md:flex-row ${cabin.className}`}
               >
                 <p className={`${cabin.className} mb-2 text-[0.7rem]`}>Type</p>
-                <Tabs value="static" className="w-full md:w-max">
+                <Tabs value="static" className="w-full md:w-max mt-3">
                   <TabsHeader>
                     {TABS.map(({ label, value }) => (
                       <Tab key={value} value={value}>
@@ -284,7 +286,7 @@ export default function ProductHeading({ data }: any) {
                 <p className={`${cabin.className} mb-2 text-[0.7rem]`}>
                   Status
                 </p>
-                <Tabs value="active" className="w-full md:w-max ">
+                <Tabs value="active" className="w-full md:w-max mt-3">
                   <TabsHeader>
                     {TABS1.map(({ label, value }) => (
                       <Tab key={value} value={value}>
