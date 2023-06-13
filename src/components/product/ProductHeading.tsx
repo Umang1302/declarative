@@ -221,7 +221,7 @@ export default function ProductHeading({ data }: any) {
               >
                 <p className="font-semibold max-w-[100%]">
                   Description about the product:{" "}
-                </p>{" "}
+                </p>
                 {data.description} Lorem ipsum dolor sit amet, consectetur
                 adipisicing elit. Quasi, impedit. Consequatur praesentium
                 nostrum quam quaerat ipsa dolor impedit pariatur reprehenderit

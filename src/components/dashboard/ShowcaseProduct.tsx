@@ -223,7 +223,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                           Lifecycle (1)
                         </button>
                         <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
-                          Rules (5) (98%)
+                          Rules (5)
                         </button>
                         <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px]  4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
                           Sharing (0)
