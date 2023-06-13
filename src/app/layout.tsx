@@ -25,11 +25,10 @@ export default function RootLayout({
       >
         <div className="flex w-[100vw] h-[100vh] overflow-x-hidden overflow-y-hidden">
           <div className="flex h-[96vh]">
-            {/* <div className="absolute z-10 4xl:top-[230px] 4xl:left-[470px] 2xl:top-[140px] 2xl:left-[260px]"> */}
             <Sidebar />
           </div>
-          <div className="w-[85vw]  h-[100vh] xl:w-[80vw] 4xl:px-72 2xl:px-8 lg:px-6 xl:px-6">
-            <div className="flex w-[90vw] h-[14vh] max-h-[140px] mx-3 mb-3">
+          <div className="w-[80%] h-[100vh] px-6 4xl:px-[8%] max-w-[2018px] 5xl:mx-[5%]">
+            <div className="flex w-full h-[14vh] max-h-[140px] mx-3 mb-3">
               <Navsearchbar />
             </div>
             <div className="h-[83vh] w-full">{children}</div>

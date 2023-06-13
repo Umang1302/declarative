@@ -29,6 +29,18 @@ export default function LabelSection() {
       id: 6,
       label: "Census",
     },
+    {
+      id: 5,
+      label: "Economy",
+    },
+    {
+      id: 6,
+      label: "Census",
+    },
+    {
+      id: 5,
+      label: "Economy",
+    },
   ];
 
   //  ${
@@ -48,13 +60,13 @@ export default function LabelSection() {
   // }
 
   return (
-    <div className="mt-5">
-      <div className="flex w-full gap-x-3">
+    <div className="mt-5 w-full h-full mx-6">
+      <div className="flex h-full gap-x-3 w-full px-4">
         {label.map((element, i) => (
           <button
             key={i}
-            className={`w-[12vw] rounded-full border-black border-[2px] h-[3.5vh] 4xl:h-[2vh] text-sm 
-         font-[800] text-[20px] ${cabin.className}`}
+            className={`rounded-full h-[25px] px-4 border-gray-400 border-[2px] text-sm 
+         text-gray-600 font-[600] ${cabin.className}`}
           >
             {element.label}
           </button>

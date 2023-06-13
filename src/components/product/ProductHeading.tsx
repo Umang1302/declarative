@@ -258,7 +258,8 @@ export default function ProductHeading({ data }: any) {
               {label.map((element, i) => (
                 <button
                   key={i}
-                  className={`w-[6vw] rounded-full h-[3vh] max-h-[40px] border-[2px] border-black text-[12px] text-black px-2`}
+                  className={`rounded-full h-[25px] px-4 border-gray-400 border-[2px] text-sm 
+         text-gray-600 font-[600] ${cabin.className}`}
                 >
                   {element.label}
                 </button>

@@ -10,10 +10,11 @@ module.exports = withMT({
     screens: {
       md: "768px",
       lg: "1024px",
-      xl: "1320px",
+      xl: "1100px",
       "2xl": "1440px",
-      "3xl": "1860px",
-      "4xl": "2100px",
+      "3xl": "1620px",
+      "4xl": "2000px",
+      "5xl": "2460px",
     },
     extend: {
       backgroundImage: {

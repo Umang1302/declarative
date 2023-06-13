@@ -64,10 +64,10 @@ export default function ShowcaseProduct({ page, prodData }: any) {
 
   return (
     <div
-      className={`${cabin.className} overflow-y-auto px-2 py-1 max-h-[65vh] w-[78vw]`}
+      className={`${cabin.className} overflow-y-auto max-w-[1560px] px-2 py-1 max-h-[63vh]`}
     >
       {productList.map((element: any, index: number) => (
-        <div key={index} className="my-3">
+        <div key={index} className="my-3 w-full">
           <Accordion
             open={open === index}
             icon={<Icon id={index} open={open} />}
@@ -122,7 +122,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                           className="ml-1"
                         />
                         <div className="w-[46px] rounded-lg bg-[#E3E1E1] flex justify-center">
-                          <p className="font-bold mt-[8px] text-[0.8rem]">
+                          <p className="font-bold mt-[10px] text-[0.8rem]">
                             {element.tier}
                           </p>
                         </div>
@@ -132,8 +132,8 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                         <Image
                           alt=""
                           src="/greenEditChip.svg"
-                          width={18}
-                          height={18}
+                          width={20}
+                          height={20}
                           className="ml-1"
                         />
                         <div className="w-[46px] mr-[-6px]  rounded-lg bg-[#E3E1E1] flex justify-center">
@@ -147,8 +147,8 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                         <Image
                           alt=""
                           src="/starChip.svg"
-                          width={18}
-                          height={18}
+                          width={22}
+                          height={22}
                           className="ml-1"
                         />
                         <div className="w-[46px] mr-[-6px]  rounded-lg bg-[#E3E1E1] flex justify-center">
@@ -162,12 +162,12 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                 </AccordionHeader>
 
                 {open === index && (
-                  <div className="w-[73vw] mt-2 bg-gray-300 h-[1px]" />
+                  <div className="w-full mt-2 bg-gray-300 h-[1px]" />
                 )}
 
-                <AccordionBody>
-                  <div className={`${cabin.className} px-5`}>
-                    <div className="flex w-full 3xl:h-[10rem] 4xl:h-[10rem] justify-between">
+                <AccordionBody className="w-full h-full ">
+                  <div className={`${cabin.className} w-full px-5`}>
+                    <div className="flex w-full justify-between">
                       <div className="w-full">
                         <p className="w-[40vw] mr-3 text-[18px] text-black font-[400]">
                           {element.description}
@@ -188,11 +188,12 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                               </div>
                             </div>
                           </div>
-                          <div className="flex gap-x-3 ml-10">
+                          <div className="flex gap-x-3 ml-10 mt-4">
                             {label.map((element, i) => (
                               <button
                                 key={i}
-                                className={`w-[8vw] mt-4 rounded-full h-[3.5vh] max-h-[40px] border-[2px] border-black text-[16px] text-black font-[600] px-2`}
+                                className={`rounded-full h-[25px] px-4 border-gray-400 border-[2px] text-sm 
+         text-gray-600 font-[600] ${cabin.className}`}
                               >
                                 {element.label}
                               </button>
@@ -200,32 +201,32 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                           </div>
                         </div>
                       </div>
-                      <div className="w-[40vw] 3xl:w-[40vw] 4xl:w-[70vw] grid grid-cols-3 gap-x-3 2xl:gap-y-2 text-black font-[600]">
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px]  4xl:w-[6vw] 4xl:h-[2vh] bg-[#A0EDA7]">
+                      <div className="w-[60%] h-full grid lg:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-y-4 justify-center text-black font-[600]">
+                        <button className="w-[100px] rounded-lg h-[30px] bg-[#A0EDA7]">
                           Security (2)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#4D91FF]">
+                        <button className="w-[100px] rounded-lg h-[30px]  bg-[#4D91FF]">
                           Profile
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
+                        <button className="w-[100px] rounded-lg h-[30px]  bg-[#A0EDA7]">
                           Attributes (29)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
+                        <button className="w-[100px] rounded-lg h-[30px]  bg-[#A0EDA7]">
                           Privacy (2)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#FFBC35]">
+                        <button className="w-[100px] rounded-lg h-[30px]  bg-[#FFBC35]">
                           Metrics (2)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#FFBC35]">
+                        <button className="w-[100px] rounded-lg h-[30px]  bg-[#FFBC35]">
                           Access (2)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#4D91FF]">
+                        <button className="w-[100px] rounded-lg h-[30px]  bg-[#4D91FF]">
                           Lifecycle (1)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px] 4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
+                        <button className="w-[100px] rounded-lg h-[30px]  bg-[#A0EDA7]">
                           Rules (5)
                         </button>
-                        <button className="w-[8vw] rounded-lg h-[3.5vh] 3xl:h-[2.8vh] 2xl:h-[25px]  4xl:h-[2vh] 4xl:w-[6vw] bg-[#A0EDA7]">
+                        <button className="w-[100px] rounded-lg h-[30px]  bg-[#A0EDA7]">
                           Sharing (0)
                         </button>
                       </div>

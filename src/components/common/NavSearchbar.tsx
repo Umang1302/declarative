@@ -8,7 +8,10 @@ import NavUserArea from "./NavUserArea";
 export default function Navsearchbar() {
   return (
     <>
-      <Card className="md:w-[42vw] w-[50vw] max-w-[2000px] 3xl:w-[1000px] h-full min-h-[6.5rem] rounded-md mr-3 4xl:px-5">
+      <Card
+        // className="md:w-[42vw] w-[50vw] max-w-[2000px] 3xl:w-[1000px] h-full min-h-[6.5rem] rounded-md mr-3 4xl:px-5">
+        className="lg:w-[40%] xl:w-[60%] 3xl:w-[70%] h-full max-w-[1080px] min-h-[6.5rem] rounded-md mr-3 4xl:px-5"
+      >
         <CardBody className="mt-3 w-full h-full flex justify-center items-center">
           <div className="relative w-full">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">

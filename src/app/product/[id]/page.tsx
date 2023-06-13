@@ -30,7 +30,7 @@ export default function Page({ params }: any) {
     );
   } else {
     return (
-      <div className="mt-5 overflow-y-auto overflow-x-hidden h-[80vh] w-[78vw] pr-5 4xl:w-[63vw] rounded-lg">
+      <div className="mt-5 overflow-y-auto overflow-x-hidden w-full max-h-[100%] rounded-lg px-6">
         <div className=" flex justify-end">
           <Breadcrumbs className="bg-transparent">
             <Link href="/" className="opacity-60 flex active:text-red-600">

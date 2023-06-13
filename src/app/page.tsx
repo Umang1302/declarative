@@ -91,7 +91,7 @@ export default function Dashboard() {
     );
   } else {
     return (
-      <div className={`w-full mt-5 4xl:mt-14 ${cabin.className}`}>
+      <div className={`w-full mt-5 ${cabin.className}`}>
         <LabelSection />
 
         <Hero />
