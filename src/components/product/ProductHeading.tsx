@@ -244,7 +244,7 @@ export default function ProductHeading({ data }: any) {
               </p>
               {!more && (
                 <span
-                  className={`absolute top-5 right-[4.2rem] text-[30px]`}
+                  className={`text-[30px] mt-[1.3rem]`}
                   onClick={() => {
                     setMore(!more);
                   }}
