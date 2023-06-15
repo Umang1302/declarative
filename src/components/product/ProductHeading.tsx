@@ -144,7 +144,7 @@ export default function ProductHeading({ data }: any) {
           <div className="w-[90px] h-7 px-2 rounded-lg bg-[#F2F2F2] flex justify-between">
             <Image
               alt=""
-              src="/editChip.svg"
+              src="/greenEditChip.svg"
               width={18}
               height={18}
               className="ml-2"
@@ -207,7 +207,7 @@ export default function ProductHeading({ data }: any) {
 
         <div className="w-full mt-3 bg-gray-300 h-[1px]" />
 
-        <div className="gap-x-7 h-[5.5rem] 3xl:h-24 flex justify-between px-3 py-2">
+        <div className="gap-x-7 h-[5.5rem] overflow-x-auto 3xl:h-24 flex justify-between px-3 py-2">
           <div className="flex">
             <div className="flex w-[200px]">
               <Avatar src="/yahoo.svg" className="" alt="avatar" size="lg" />

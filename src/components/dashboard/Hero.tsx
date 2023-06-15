@@ -16,7 +16,7 @@ export default function Hero() {
       </div>
 
       <Breadcrumbs className="bg-transparent ">
-        <Link href="/" className="flex text-[#F65A27]">
+        <Link href="/" className="flex text-[#8E8E8E]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 mt-[2px]"
@@ -28,7 +28,7 @@ export default function Hero() {
           <span className="ml-1 ">Home</span>
         </Link>
 
-        <Link href="/product/0" className="">
+        <Link href="/product/0" className="flex  text-[#F65A27]">
           Products
         </Link>
       </Breadcrumbs>
