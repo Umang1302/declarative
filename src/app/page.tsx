@@ -65,7 +65,7 @@ export default function Dashboard() {
     } else {
       setSort(false);
     }
-    console.log(sort);
+
     const start = (active - 1) * 10;
     const end = active * 10;
     const currentData = jsonData.data.slice(start, end);
