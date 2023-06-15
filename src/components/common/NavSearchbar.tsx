@@ -36,6 +36,19 @@ export default function Navsearchbar() {
               // className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Search"
             />
+            <div className="absolute inset-y-0 right-2 flex items-center pl-3 pointer-events-none">
+              <svg
+                width="16"
+                height="12"
+                viewBox="0 0 16 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="16" height="2" fill="#555555" />
+                <rect x="2" y="5" width="12" height="2" fill="#555555" />
+                <rect x="5" y="10" width="6" height="2" fill="#555555" />
+              </svg>
+            </div>
           </div>
         </CardBody>
       </Card>
