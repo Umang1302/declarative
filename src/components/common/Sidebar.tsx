@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Card,
   Typography,
@@ -20,97 +20,109 @@ import {
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { Cabin } from "next/font/google";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
-export default function Sidebar() {
+export default function Sidebar({ active, setActive }: any) {
   const [open, setOpen] = React.useState(0);
 
   const router = useRouter();
+  const pathName = usePathname();
 
   const handleOpen = (value: any) => {
     setOpen(open === value ? 0 : value);
   };
 
+  useEffect(() => {
+    console.log(window.location.href, pathName, "____________________");
+    if (window.location.href.includes("/product")) {
+      setActive(1);
+    } else {
+      setActive(0);
+    }
+  }, [pathName]);
+
   return (
-    <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] max-w-[290px] min-w-[192px] py-2 px-2">
+    <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] max-w-[269px] min-w-[269px] py-2">
       <div className={`w-full h-full ${cabin.className}`}>
         {/* logo */}
-        <div className="relative w-full h-[8%] max-h-[70px]">
+        <div className="relative w-full mt-[34px] h-[8%] max-h-[70px]">
           <Image src="/declarativeLogo1.svg" alt="brand" fill />
         </div>
 
-        <hr className="border-[#C4C4C4] mt-2" />
+        <hr className="border-[#C4C4C4] mt-[33px]" />
 
         {/* Create Botton */}
-        <div className="w-full h-[8%] max-h-[60px] py-1 my-2 flex justify-start px-2">
-          <button className="w-[70%] h-[90%] gap-x-1 border-[1px] items-center rounded-3xl shadow-xl flex justify-center">
-            <PlusIcon className="text-[#F65A27] w-8 h-8" />
-            <p className="text-[1.2rem] font-[600]">Create</p>
+        <div className="w-full h-[8%] max-h-[60px] py-1 my-[38px] flex justify-start px-2">
+          <button className="w-[50%] h-[90%] gap-x-2 px-2 border-[1px] items-center rounded-[10px] shadow-xl flex">
+            <div className="relative w-[18px] h-[18px]">
+              <Image src="/plusIcon.svg" alt="brand" fill />
+            </div>
+            <p className="text-[20px] font-[600]">Create</p>
           </button>
         </div>
 
-        <hr className="border-[#C4C4C4]" />
-
         {/* start Menu */}
         <div className="w-full">
-          <div className={`w-full ${cabin.className}`}>
+          <div
+            className={`w-full gap-y-[30px] flex flex-col ${cabin.className}`}
+          >
             <div
-              className="hover:bg-[#ffe7df] w-full flex items-center justify-start py-5 px-2 gap-x-3"
+              className={`hover:bg-[#F2F2F2] ${
+                active === 0 && "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
+              } w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3`}
               onClick={() => {
                 router.push("/");
               }}
             >
-              <div className="relative w-5 h-5">
+              <div className="relative w-[18px] h-[18px]">
                 <Image src="/home.svg" alt="brand" fill />
               </div>
 
-              <p className="text-[1.2rem] font-[600]">Home</p>
+              <p className="text-[20px] font-[500]">Home</p>
             </div>
-            <hr className="border-[#C4C4C4]" />
 
             <div
-              className="hover:bg-[#ffe7df] w-full flex items-center justify-start py-5 px-2 gap-x-3"
+              className={`hover:bg-[#F2F2F2] w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3 ${
+                active === 1 && "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
+              }`}
               onClick={() => {
                 router.push("/");
               }}
             >
-              <div className="relative w-5 h-5">
+              <div className="relative w-[18px] h-[18px]">
                 <Image src="/products.svg" alt="brand" fill />
               </div>
 
-              <p className="text-[1.2rem] font-[600]">Products</p>
+              <p className="text-[20px] font-[500]">Products</p>
             </div>
-            <hr className="border-[#C4C4C4]" />
 
             <div
-              className="hover:bg-[#ffe7df] w-full flex items-center justify-start py-5 px-2 gap-x-3"
+              className="hover:bg-[#F2F2F2] w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
               onClick={() => {
                 router.push("/");
               }}
             >
-              <div className="relative w-5 h-5">
+              <div className="relative w-[18px] h-[18px]">
                 <Image src="/settings.svg" alt="brand" fill />
               </div>
 
-              <p className="text-[1.2rem] font-[600]">Settings</p>
+              <p className="text-[20px] font-[500]">Settings</p>
             </div>
-            <hr className="border-[#C4C4C4]" />
 
             <div
-              className="hover:bg-[#ffe7df] w-full flex items-center justify-start py-5 px-2 gap-x-3"
+              className="hover:bg-[#F2F2F2] w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
               onClick={() => {
                 router.push("/");
               }}
             >
-              <div className="relative w-5 h-5">
+              <div className="relative w-[18px] h-[18px]">
                 <Image src="/logOut.svg" alt="brand" fill />
               </div>
 
-              <p className="text-[1.2rem] font-[600]">Log Out</p>
+              <p className="text-[20px] font-[500]">Log Out</p>
             </div>
-            <hr className="border-[#C4C4C4]" />
           </div>
         </div>
       </div>

@@ -60,12 +60,12 @@ export default function LabelSection() {
   // }
 
   return (
-    <div className="mt-5 w-full h-full mx-6">
+    <div className="mt-5 w-[98%] min-w-[800px] overflow-x-auto overflow-y-hidden ml-6 h-full">
       <div className="flex h-full gap-x-3 w-full px-4">
         {label.map((element, i) => (
           <button
             key={i}
-            className={`rounded-full h-[25px] px-4 border-gray-400 border-[2px] text-sm 
+            className={`rounded-[10px] h-[25px] px-4 border-gray-400 border-[2px] text-sm 
          text-gray-600 font-[600] ${cabin.className}`}
           >
             {element.label}

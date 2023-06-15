@@ -48,16 +48,17 @@ export default function TransparentTabs({ data }: any) {
           </Tab>
         ))}
       </TabsHeader>
+      <TabsBody>
+        <div className="absolute w-full bg-gray-300 h-[1px]" />
 
-      <div className="absolute w-full bg-gray-300 h-[1px]" />
-
-      <div className="w-full">
-        {tabData.map(({ value, desc }) => (
-          <TabPanel className="w-full" key={value} value={value}>
-            {desc}
-          </TabPanel>
-        ))}
-      </div>
+        <div className="w-full">
+          {tabData.map(({ value, desc }) => (
+            <TabPanel className="w-full" key={value} value={value}>
+              {desc}
+            </TabPanel>
+          ))}
+        </div>
+      </TabsBody>
     </Tabs>
   );
 }

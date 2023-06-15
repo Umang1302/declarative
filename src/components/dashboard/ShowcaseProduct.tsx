@@ -94,7 +94,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                   } top-3 z-50 left-[-3px] bg-green-500 rounded-r-3xl`}
                 />
               )} */}
-              <Card className="max-w-[1560px] relative">
+              <Card className="max-w-[1680px] relative">
                 <AccordionHeader
                   className={`${cabin.className} border-none px-4 h-[4rem]`}
                   onClick={() => {
@@ -109,7 +109,9 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                         }
                       }}
                     >
-                      <p className="text-[24px] font-[700]">{element.name}</p>
+                      <p className="text-[24px] text-black font-[700]">
+                        {element.name}
+                      </p>
                     </div>
 
                     <div className="flex gap-x-4">
@@ -192,7 +194,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                             {label.map((element, i) => (
                               <button
                                 key={i}
-                                className={`rounded-full h-[25px] px-4 border-gray-400 border-[2px] text-sm 
+                                className={`rounded-[10px] h-[25px] px-4 border-gray-400 border-[2px] text-sm 
          text-gray-600 font-[600] ${cabin.className}`}
                               >
                                 {element.label}
@@ -201,7 +203,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                           </div>
                         </div>
                       </div>
-                      <div className="w-[60%] h-full grid lg:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-y-4 justify-center text-black font-[600]">
+                      <div className="w-[60%] pl-5 min-w-[429px] max-w-[430px] h-full grid lg:grid-cols-2 md:grid-cols-2 2xl:grid-cols-3 gap-y-4 justify-center text-black font-[600]">
                         <button className="w-[100px] rounded-lg h-[30px] bg-[#A0EDA7]">
                           Security (2)
                         </button>

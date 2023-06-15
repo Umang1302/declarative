@@ -14,20 +14,21 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [active, setActive] = React.useState(0);
   return (
     <html lang="en">
       <body
         className={
           cabin.className +
-          " bg-gray-300" +
+          " bg-[#F2F2F2]" +
           " p-4 overflow-y-hidden overflow-x-hidden"
         }
       >
         <div className="flex w-[100vw] h-[100vh] overflow-x-hidden overflow-y-hidden">
           <div className="flex h-[96vh]">
-            <Sidebar />
+            <Sidebar active={active} setActive={setActive} />
           </div>
-          <div className="w-[80%] h-[100vh] px-6 4xl:px-[8%] max-w-[2018px] 5xl:mx-[5%]">
+          <div className="w-[80%] h-[100vh] px-6 4xl:px-[10%] max-w-[2018px] 5xl:mx-[5%]">
             <div className="flex w-full h-[14vh] max-h-[140px] mx-3 mb-3">
               <Navsearchbar />
             </div>

@@ -26,7 +26,7 @@ export default function Dashboard() {
       // color: active === index ? "blue" : "blue-gray",
       onClick: () => setActive(index),
       className: `rounded-full shadow-none bg-transparent hover:bg-transparent hover:shadow-none ${
-        active === index ? "text-black" : "text-gray-500"
+        active === index ? "text-[#F65A27]" : "text-gray-500"
       }`,
     } as any);
 
