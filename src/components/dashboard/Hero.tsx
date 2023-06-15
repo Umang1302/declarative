@@ -16,7 +16,7 @@ export default function Hero() {
       </div>
 
       <Breadcrumbs className="bg-transparent ">
-        <Link href="/" className="opacity-60 flex text-[#F65A27]">
+        <Link href="/" className="flex text-[#F65A27]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 mt-[2px]"
