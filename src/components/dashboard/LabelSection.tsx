@@ -60,8 +60,8 @@ export default function LabelSection() {
   // }
 
   return (
-    <div className="mt-5 w-[98%] overflow-x-auto overflow-y-hidden h-full">
-      <div className="flex h-full gap-x-3 w-full px-4">
+    <div className="mt-5 w-[100%] overflow-x-auto overflow-y-hidden h-full">
+      <div className="flex h-full gap-x-3 w-full">
         {label.map((element, i) => (
           <button
             key={i}

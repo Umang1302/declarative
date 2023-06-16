@@ -67,9 +67,14 @@ export default function Hero({
   };
 
   return (
-    <div className={`mt-5 mx-3 flex p-1 w-[98%]${cabin.className}`}>
-      <div>
-        <div className="w-full  ml-[-1rem]">
+    <div
+      className={`mt-5 mx-3 relative flex p-1 w-full h-[80px]  ${cabin.className}`}
+    >
+      <div className="flex justify-between w-full">
+        <div className="w-[70%] h-full flex items-center">
+          <h1 className="font-bold text-4xl">Products</h1>
+        </div>
+        <div>
           <Breadcrumbs className=" bg-transparent w-full ">
             <Link href="/" className="flex text-[#8E8E8E]">
               <svg
@@ -88,13 +93,9 @@ export default function Hero({
             </Link>
           </Breadcrumbs>
         </div>
-
-        <div className="w-[70%]">
-          <h1 className="font-bold text-4xl">Products</h1>
-        </div>
       </div>
 
-      <div className="flex w-full h-[80px] justify-end items-end">
+      <div className="flex absolute w-full h-[80px] right-5 justify-end items-end">
         <Button
           variant="text"
           color="blue-gray"

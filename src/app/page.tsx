@@ -8,6 +8,7 @@ import React from "react";
 import { RingLoader } from "react-spinners";
 import jsonData from "../../data.json";
 import Image from "next/image";
+import LabelSection from "@/components/dashboard/LabelSection";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -79,8 +80,6 @@ export default function Dashboard() {
   } else {
     return (
       <div className={`w-full mt-5 ${cabin.className}`}>
-        {/* <LabelSection /> */}
-
         <Hero
           active={active}
           setActive={setActive}

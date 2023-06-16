@@ -1,7 +1,13 @@
 "use client";
 
 import React from "react";
-import { Avatar, Card, CardBody, Typography } from "@material-tailwind/react";
+import {
+  Avatar,
+  Badge,
+  Card,
+  CardBody,
+  Typography,
+} from "@material-tailwind/react";
 import Image from "next/image";
 
 import { Cabin } from "next/font/google";
@@ -35,71 +41,115 @@ export default function NavSearchbar() {
   return (
     <Card
       // className={`w-[40vw] lg:w-[410px] 2xl:w-[500px] 3xl:w-[460px] 4xl:w-[600px] h-full min-h-[6.5rem] rounded-md px-4 py-2 ${cabin.className}`}
-      className={`lg:w-[60%] xl:w-[30%] min-w-[450px] max-w-[500px] min-h-[6.5rem] rounded-md px-4 py-2 ${cabin.className}`}
+      className={`min-w-[450px] max-w-[300px] min-h-[6.2rem] rounded-md py-2 px-2 ${cabin.className}`}
     >
-      <div className="flex w-full h-full">
-        <div className="flex items-center justify-around w-[70%] h-full">
-          <div className="w-full h-full flex items-center gap-x-7">
-            <div className="relative">
-              <Menu>
-                <div className="flex absolute bottom-auto left-auto items-center justify-center -right-[0.4rem] top-[-0.5rem] z-10 rounded-full bg-[#F65A27] border-2 border-white w-4 h-4">
-                  <p className="text-[0.6rem] text-white">3</p>
-                </div>
-                <MenuHandler>
-                  <div className=" flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">
-                    <div className="relative w-6 h-6">
-                      <Image alt="" src="/message.svg" fill />
-                    </div>
-                  </div>
-                </MenuHandler>
-                <MenuList>
-                  <MenuItem>Message 1</MenuItem>
-                  <MenuItem>Message 2</MenuItem>
-                  <MenuItem>Message 3</MenuItem>
-                </MenuList>
-              </Menu>
+      <div className="w-[100%] px-2 h-full flex items-center justify-between">
+        <div className="w-[5rem] h-[5rem] flex items-center justify-center rounded-full bg-[#FFBC35] px-2 py-2 text-center shadow-lg">
+          <div className="relative w-10 h-10">
+            <Image alt="" src="/user.svg" fill />
+          </div>
+        </div>
+        <div>
+          <p className="font-bold text-[20px] 4xl:text-[28px]">Demo User</p>
+          <p className="text-[0.7rem]">
+            Account ID: f48cda68-448b-4c67-9828-f48cda68
+          </p>
+          <p className="text-[0.7rem]">Namespace: Demo (c60c671bf1410535)</p>
+          <p className="text-[0.7rem]">Usage Intent: Basic Analysis</p>
+        </div>
+        <div className="w-[20%] px-2 h-full flex gap-x-4 py-2">
+          <div className=" flex items-center justify-center relative rounded-full bg-white px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">
+            <div className="relative w-4 h-4">
+              <Image alt="" src="/blueMessage.svg" fill />
             </div>
-
-            <div className="relative">
-              <Menu>
-                <div className="flex absolute bottom-auto left-auto items-center justify-center -right-[0.4rem] top-[-0.5rem] z-10 rounded-full bg-[#F65A27] border-2 border-white w-4 h-4">
-                  <p className="text-[0.6rem] text-white">3</p>
-                </div>
-                <MenuHandler>
-                  <div className=" flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">
-                    <div className="relative w-6 h-6">
-                      <Image alt="" src="/Alert.svg" fill />
-                    </div>
-                  </div>
-                </MenuHandler>
-                <MenuList>
-                  <MenuItem>Message 1</MenuItem>
-                  <MenuItem>Message 2</MenuItem>
-                  <MenuItem>Message 3</MenuItem>
-                </MenuList>
-              </Menu>
+            <div className="flex absolute bottom-auto left-auto items-center justify-center -right-[0.4rem] top-[-0.5rem] z-10 rounded-full bg-[#F65A27] border-2 border-white w-4 h-4">
+              <p className="text-[0.6rem] text-white">3</p>
             </div>
-            <div className="flex items-center justify-center rounded-full bg-[#FFBC35] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-[4rem] h-[4rem]">
-              <div className="relative w-10 h-10">
-                <Image alt="" src="/user.svg" fill />
-              </div>
+          </div>
+          <div className=" flex items-center justify-center relative rounded-full bg-white px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">
+            <div className="relative w-4 h-4">
+              <Image alt="" src="/blueAlert.svg" fill />
+            </div>
+            <div className="flex absolute bottom-auto left-auto items-center justify-center -right-[0.4rem] top-[-0.5rem] z-10 rounded-full bg-[#F65A27] border-2 border-white w-4 h-4">
+              <p className="text-[0.6rem] text-white">3</p>
             </div>
           </div>
         </div>
-        <div className="ml-5 flex w-full h-full py-2">
-          <div
-            className={`ml-3 w-full mt-[-12px] text-black ${cabin.className}`}
-          >
+        {/* <div className="flex w-full h-full">
+          <div className={`w-full text-black ${cabin.className}`}>
             <p className="font-bold text-[20px] 4xl:text-[28px]">Demo User</p>
+
             <p className="text-[0.7rem]">
               Account ID: f48cda68-448b-4c67-9828-f48cda68
             </p>
-            <p className="text-[0.7rem]">Namespace: Demo (c60c671bf1410535)</p>
 
+            <p className="text-[0.7rem]">Namespace: Demo (c60c671bf1410535)</p>
             <p className="text-[0.7rem]">Usage Intent: Basic Analysis</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </Card>
   );
 }
+
+//  <div className="flex w-full h-full">
+//    <div className="flex items-center justify-around w-[70%] h-full">
+//      <div className="w-full h-full flex items-center gap-x-7">
+//        <div className="relative">
+//          <Menu>
+//            <div className="flex absolute bottom-auto left-auto items-center justify-center -right-[0.4rem] top-[-0.5rem] z-10 rounded-full bg-[#F65A27] border-2 border-white w-4 h-4">
+//              <p className="text-[0.6rem] text-white">3</p>
+//            </div>
+//            <MenuHandler>
+//              <div className=" flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">
+//                <div className="relative w-6 h-6">
+//                  <Image alt="" src="/message.svg" fill />
+//                </div>
+//              </div>
+//            </MenuHandler>
+//            <MenuList>
+//              <MenuItem>Message 1</MenuItem>
+//              <MenuItem>Message 2</MenuItem>
+//              <MenuItem>Message 3</MenuItem>
+//            </MenuList>
+//          </Menu>
+//        </div>
+
+//        <div className="relative">
+//          <Menu>
+//            <div className="flex absolute bottom-auto left-auto items-center justify-center -right-[0.4rem] top-[-0.5rem] z-10 rounded-full bg-[#F65A27] border-2 border-white w-4 h-4">
+//              <p className="text-[0.6rem] text-white">3</p>
+//            </div>
+//            <MenuHandler>
+//              <div className=" flex items-center justify-center rounded-full bg-[#4D91FF] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">
+//                <div className="relative w-6 h-6">
+//                  <Image alt="" src="/Alert.svg" fill />
+//                </div>
+//              </div>
+//            </MenuHandler>
+//            <MenuList>
+//              <MenuItem>Message 1</MenuItem>
+//              <MenuItem>Message 2</MenuItem>
+//              <MenuItem>Message 3</MenuItem>
+//            </MenuList>
+//          </Menu>
+//        </div>
+//        <div className="flex items-center justify-center rounded-full bg-[#FFBC35] px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-[4rem] h-[4rem]">
+//          <div className="relative w-10 h-10">
+//            <Image alt="" src="/user.svg" fill />
+//          </div>
+//        </div>
+//      </div>
+//    </div>
+//    <div className="ml-5 flex w-full h-full py-2">
+//      <div className={`ml-3 w-full mt-[-12px] text-black ${cabin.className}`}>
+//        <p className="font-bold text-[20px] 4xl:text-[28px]">Demo User</p>
+//        <p className="text-[0.7rem]">
+//          Account ID: f48cda68-448b-4c67-9828-f48cda68
+//        </p>
+//        <p className="text-[0.7rem]">Namespace: Demo (c60c671bf1410535)</p>
+
+//        <p className="text-[0.7rem]">Usage Intent: Basic Analysis</p>
+//      </div>
+//    </div>
+//  </div>;

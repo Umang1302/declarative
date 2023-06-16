@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Card, CardBody, Input, Typography } from "@material-tailwind/react";
+import { Card, CardBody } from "@material-tailwind/react";
 
 import NavUserArea from "./NavUserArea";
 import LabelSection from "../dashboard/LabelSection";
@@ -11,7 +11,7 @@ export default function Navsearchbar() {
     <>
       <Card
         // className="md:w-[42vw] w-[50vw] max-w-[2000px] 3xl:w-[1000px] h-full min-h-[6.5rem] rounded-md mr-3 4xl:px-5">
-        className="lg:w-[40%] xl:w-[60%] 3xl:w-[70%] h-full max-w-[1080px] min-h-[6.5rem] rounded-md mr-3 4xl:px-5"
+        className="md:w-[25%] lg:w-[35%] min-[1160px]:w-[40%] xl:w-[46%] 2xl:w-[53%] 3xl:w-[68%] h-full max-w-[1080px] min-h-[6.2rem] rounded-md mr-3 4xl:px-5"
       >
         <CardBody className="w-full h-full flex flex-col justify-center items-center">
           <div className="relative w-full">
@@ -51,7 +51,9 @@ export default function Navsearchbar() {
               </svg>
             </div>
           </div>
-          <LabelSection />
+          <div className="w-full">
+            <LabelSection />
+          </div>
         </CardBody>
       </Card>
       <NavUserArea />

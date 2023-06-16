@@ -9,11 +9,11 @@ module.exports = withMT({
   theme: {
     screens: {
       md: "768px",
-      lg: "1024px",
-      xl: "1290px",
+      lg: "1064px",
+      xl: "1260px",
       "2xl": "1440px",
       "3xl": "1620px",
-      "4xl": "2000px",
+      "4xl": "1920px",
       "5xl": "2460px",
     },
     extend: {
