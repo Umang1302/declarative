@@ -52,7 +52,7 @@ export default function Page({ params }: any) {
             </Link>
           </Breadcrumbs>
         </div>
-        <Card className="relative ml-3 w-[100%] 4xl:mt-6">
+        <Card className="relative ml-3 w-[100%] h-full 4xl:mt-6">
           <CardBody>
             <ProductHeading data={data} />
             <div className="w-[100%] bg-gray-300 h-[1px] mt-2" />

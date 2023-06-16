@@ -8,6 +8,7 @@ import {
 import React, { useEffect } from "react";
 import OverviewTable from "../product/OverviewTab";
 import { Cabin } from "next/font/google";
+import Intents from "../product/Intents";
 const cabin = Cabin({ subsets: ["latin"] });
 
 export default function TransparentTabs({ data }: any) {
@@ -22,6 +23,7 @@ export default function TransparentTabs({ data }: any) {
     {
       label: "Intends",
       value: "intends",
+      desc: <Intents data={data} />,
     },
     {
       label: "Data",
@@ -32,7 +34,7 @@ export default function TransparentTabs({ data }: any) {
   return (
     <Tabs value={activeTab} className="p-0">
       <TabsHeader
-        className="bg-transparent max-w-[30rem]"
+        className="bg-transparent max-w-[40rem]"
         indicatorProps={{
           className: "shadow-none",
         }}

@@ -24,7 +24,7 @@ export default function RootLayout({
           " p-4 overflow-y-hidden overflow-x-hidden"
         }
       >
-        <div className="flex w-[100%] h-[100vh] mt-8 pr-5 overflow-x-hidden overflow-y-hidden">
+        <div className="flex w-[100%] h-[100vh] pr-5 overflow-x-hidden overflow-y-hidden">
           <div className="flex h-[96vh]">
             <Sidebar active={active} setActive={setActive} />
           </div>
