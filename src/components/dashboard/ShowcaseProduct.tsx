@@ -194,7 +194,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                             {label.map((element, i) => (
                               <button
                                 key={i}
-                                className={`rounded-[10px] h-[25px] px-4 border-gray-400 border-[2px] text-[24px]
+                                className={`rounded-[10px] h-[25px] px-4 border-gray-400 border-[2px] text-sm
          text-gray-600 font-[600] ${cabin.className}`}
                               >
                                 {element.label}

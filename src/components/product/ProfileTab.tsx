@@ -103,8 +103,8 @@ export default function OverviewTable({ data }: any) {
       </div>
 
       {/* Main */}
-      <div className="h-[500px] lg:h-full relative flex justify-start overflow-x-auto">
-        <div className="justify-center h-[500px] mx-2 min-w-[350px]">
+      <div className="h-[450px] lg:h-full px-3 relative flex justify-start overflow-x-auto max-w-[1115px]">
+        <div className="justify-center h-[500px] mx-2 min-w-[340px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>Scope</p>
           </div>
@@ -142,7 +142,7 @@ export default function OverviewTable({ data }: any) {
           </div>
         </div>
 
-        <div className="justify-center h-[500px] mx-2 min-w-[410px]">
+        <div className="justify-center h-[500px] mx-2 min-w-[390px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>
               Schedule
@@ -274,7 +274,7 @@ export default function OverviewTable({ data }: any) {
           </Card>
         </Dialog>
 
-        <div className="justify-center h-[500px] mx-2 min-w-[350px]">
+        <div className="justify-center h-[500px] mx-2 min-w-[340px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>
               Results
@@ -310,6 +310,8 @@ export default function OverviewTable({ data }: any) {
             </div>
           </div>
         </div>
+
+        <div className="justify-center h-[500px] mx-2 min-w-[150px]"></div>
       </div>
     </div>
   );

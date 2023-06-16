@@ -38,7 +38,7 @@ export default function LabelSection() {
       label: "Census",
     },
     {
-      id: 5,
+      id: 6,
       label: "Economy",
     },
   ];
@@ -60,7 +60,7 @@ export default function LabelSection() {
   // }
 
   return (
-    <div className="mt-5 w-[98%] min-w-[800px] overflow-x-auto overflow-y-hidden ml-6 h-full">
+    <div className="mt-5 w-[98%] overflow-x-auto overflow-y-hidden h-full">
       <div className="flex h-full gap-x-3 w-full px-4">
         {label.map((element, i) => (
           <button

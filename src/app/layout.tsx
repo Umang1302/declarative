@@ -28,11 +28,11 @@ export default function RootLayout({
           <div className="flex h-[96vh]">
             <Sidebar active={active} setActive={setActive} />
           </div>
-          <div className="h-full w-full pl-6 4xl:px-[10%] max-w-[2018px] 5xl:mx-[5%] overflow-x-auto">
-            <div className="flex w-full h-[14vh] max-h-[130px] mx-3 mb-3">
+          <div className="h-full w-[98%] pl-6 4xl:px-[10%] max-w-[2018px] 5xl:mx-[5%] overflow-x-auto">
+            <div className="flex w-full mx-3 mb-3">
               <Navsearchbar />
             </div>
-            <div className="h-[83vh] w-full">{children}</div>
+            <div className="h-[80vh] w-full">{children}</div>
           </div>
         </div>
       </body>

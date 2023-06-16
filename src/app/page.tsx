@@ -1,9 +1,7 @@
 "use client";
 
 import Hero from "@/components/dashboard/Hero";
-import LabelSection from "@/components/dashboard/LabelSection";
-import { Breadcrumbs, Button, IconButton } from "@material-tailwind/react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+
 import ShowcaseProduct from "../components/dashboard/ShowcaseProduct";
 import { Cabin } from "next/font/google";
 import React from "react";
@@ -18,27 +16,16 @@ export default function Dashboard() {
   const [active, setActive] = React.useState(1);
   const dataLength = jsonData.data.length;
   const [prodData, setProdData] = React.useState<any>();
-  const [sort, setSort] = React.useState<boolean>(false);
 
-  const getItemProps = (index: any) =>
-    ({
-      // variant: active === index ? "filled" : "text",
-      // color: active === index ? "blue" : "blue-gray",
-      onClick: () => setActive(index),
-      className: `rounded-full shadow-none bg-transparent hover:bg-transparent hover:shadow-none ${
-        active === index ? "text-[#F65A27]" : "text-gray-500"
-      }`,
-    } as any);
-
-  const next = () => {
-    if (active === 5) return;
-    setActive(active + 1);
-  };
-
-  const prev = () => {
-    if (active === 1) return;
-    setActive(active - 1);
-  };
+  // const getItemProps = (index: any) =>
+  //   ({
+  //     // variant: active === index ? "filled" : "text",
+  //     // color: active === index ? "blue" : "blue-gray",
+  //     onClick: () => setActive(index),
+  //     className: `rounded-full shadow-none bg-transparent hover:bg-transparent hover:shadow-none ${
+  //       active === index ? "text-[#F65A27]" : "text-gray-500"
+  //     }`,
+  //   } as any);
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -59,31 +46,31 @@ export default function Dashboard() {
     }
   }, [active]);
 
-  const sortFunctionality = () => {
-    if (!sort) {
-      setSort(true);
-    } else {
-      setSort(false);
-    }
+  // const sortFunctionality = () => {
+  //   if (!sort) {
+  //     setSort(true);
+  //   } else {
+  //     setSort(false);
+  //   }
 
-    const start = (active - 1) * 10;
-    const end = active * 10;
-    const currentData = jsonData.data.slice(start, end);
-    if (!sort) {
-      let sortedData = currentData.sort((a, b) =>
-        a.name > b.name
-          ? 1
-          : a.name === b.name
-          ? a.name > b.name
-            ? 1
-            : -1
-          : -1
-      );
-      setProdData(sortedData);
-    } else {
-      setProdData(currentData);
-    }
-  };
+  //   const start = (active - 1) * 10;
+  //   const end = active * 10;
+  //   const currentData = jsonData.data.slice(start, end);
+  //   if (!sort) {
+  //     let sortedData = currentData.sort((a, b) =>
+  //       a.name > b.name
+  //         ? 1
+  //         : a.name === b.name
+  //         ? a.name > b.name
+  //           ? 1
+  //           : -1
+  //         : -1
+  //     );
+  //     setProdData(sortedData);
+  //   } else {
+  //     setProdData(currentData);
+  //   }
+  // };
 
   if (loading) {
     return (
@@ -92,11 +79,17 @@ export default function Dashboard() {
   } else {
     return (
       <div className={`w-full mt-5 ${cabin.className}`}>
-        <LabelSection />
+        {/* <LabelSection /> */}
 
-        <Hero />
+        <Hero
+          active={active}
+          setActive={setActive}
+          jsonData={jsonData}
+          dataLength={dataLength}
+          setProdData={setProdData}
+        />
 
-        <div className="flex w-full justify-end items-center max-w-[1560px]">
+        {/* <div className="flex w-full justify-end items-center max-w-[1560px]">
           <Button
             variant="text"
             color="blue-gray"
@@ -133,7 +126,7 @@ export default function Dashboard() {
           >
             <Image alt="" src="/sort.svg" fill />
           </div>
-        </div>
+        </div> */}
         <ShowcaseProduct page={active} prodData={prodData} />
       </div>
     );
