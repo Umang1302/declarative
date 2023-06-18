@@ -36,7 +36,8 @@ export default function TransparentTabs({ data }: any) {
       <TabsHeader
         className="bg-transparent max-w-[40rem]"
         indicatorProps={{
-          className: "shadow-none",
+          className:
+            "bg-transparent mt-1 border-b-2 border-black shadow-none rounded-none",
         }}
       >
         {tabData.map(({ label, value }) => (

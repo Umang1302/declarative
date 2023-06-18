@@ -207,7 +207,107 @@ export default function ProductHeading({ data }: any) {
 
         <div className="w-full mt-3 bg-gray-300 h-[1px]" />
 
-        <div className="gap-x-7 h-[5.5rem] overflow-x-auto 3xl:h-24 flex justify-between px-3 py-2">
+        <div className="flex w-full">
+          <div className="flex py-2 justify-between w-[49%] border-r-2 border-gray-300 pr-3">
+            <div className="flex">
+              <Avatar src="/yahoo.svg" className="" alt="avatar" size="lg" />
+              <div className="mt-[6px] ml-3 text-black">
+                <p className="font-bold">{data.ownerName}</p>
+                <p className="text-xs">LA, California</p>
+              </div>
+            </div>
+            {/* {open && ( */}
+            <div>
+              <p className="font-semibold max-w-[100%]">
+                Description about the product:{" "}
+              </p>
+              <p className={`max-w-[18rem] ${!open ? "truncate" : ""} `}>
+                {data.description}
+              </p>
+              <div className={`${more ? "mt-[4.3rem]" : "mt-2"} flex gap-x-3`}>
+                {label.map((element, i) => (
+                  <button
+                    key={i}
+                    className={`rounded-full h-[25px] px-4 border-gray-400 border-[2px] text-sm 
+         text-gray-600 font-[600] ${cabin.className}`}
+                  >
+                    {element.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div
+              onClick={() => {
+                handleOpen();
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={`${
+                  open ? "rotate-180" : ""
+                } h-5 w-5 transition-transform`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div className="flex justify-between w-[50%] px-3 items-start mt-3">
+            <div>
+              <p className={`${cabin.className} mb-2 text-[0.7rem]`}>
+                Frequency
+              </p>
+              <div className="min-w-[80px] ">
+                <Select
+                  defaultValue={dropDownValue[0]}
+                  options={dropDownValue}
+                  className={`max-w-[300px] text-[0.6rem] ${cabin.className}`}
+                />
+              </div>
+            </div>
+            <div
+              className={`items-center gap-4 md:flex-row ${cabin.className}`}
+            >
+              <p className={`${cabin.className} mb-2 text-[0.7rem]`}>Type</p>
+              <Tabs value="static" className="w-full md:w-max mt-3">
+                <TabsHeader>
+                  {TABS.map(({ label, value }) => (
+                    <Tab key={value} value={value}>
+                      <p className={`${cabin.className} text-[0.7rem]`}>
+                        &nbsp;&nbsp;{label}&nbsp;&nbsp;
+                      </p>
+                    </Tab>
+                  ))}
+                </TabsHeader>
+              </Tabs>
+            </div>
+            <div className="items-center gap-4 md:flex-row">
+              <p className={`${cabin.className} mb-2 text-[0.7rem]`}>Status</p>
+              <Tabs value="active" className="w-full md:w-max mt-3">
+                <TabsHeader>
+                  {TABS1.map(({ label, value }) => (
+                    <Tab key={value} value={value}>
+                      <p className={`${cabin.className} text-[0.7rem]`}>
+                        &nbsp;&nbsp;{label}&nbsp;&nbsp;
+                      </p>
+                    </Tab>
+                  ))}
+                </TabsHeader>
+              </Tabs>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="gap-x-7 h-[5.5rem] overflow-x-auto 3xl:h-24 flex justify-between px-3 py-2">
           <div className="flex">
             <div className="flex w-[200px]">
               <Avatar src="/yahoo.svg" className="" alt="avatar" size="lg" />
@@ -268,18 +368,7 @@ export default function ProductHeading({ data }: any) {
           </div>
           <div>
             <div className="rounded-none flex justify-around gap-x-2">
-              <div className="mb-8 items-center justify-between gap-8 gap-y-6">
-                <p className={`${cabin.className} mb-2 text-[0.7rem]`}>
-                  Frequency
-                </p>
-                <div className="min-w-[80px] ">
-                  <Select
-                    defaultValue={dropDownValue[0]}
-                    options={dropDownValue}
-                    className={`max-w-[300px] text-[0.6rem] ${cabin.className}`}
-                  />
-                </div>
-              </div>
+           
 
               <div
                 className={`items-center gap-4 md:flex-row ${cabin.className}`}
@@ -316,7 +405,7 @@ export default function ProductHeading({ data }: any) {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -244,17 +244,18 @@ export default function Example({ data }: any) {
           ) : (
             <div></div>
           )}
-          <Button
-            color="deep-orange"
+          <button
             onClick={() => {
               setShowCol(!showCol);
             }}
             className={`border px-2 py-1 rounded-3xl ${
               showCol && "mb-2 "
-            } text-[12px] normal-case mt-2 ${cabin.className}`}
+            } text-[12px] normal-case mt-2 bg-[#EAEAEA] text-black ${
+              cabin.className
+            }`}
           >
             Select Columns
-          </Button>
+          </button>
 
           {/* <div className="flex items-center">
             <div className="mt-6">

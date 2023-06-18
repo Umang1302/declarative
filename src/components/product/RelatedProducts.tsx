@@ -21,7 +21,7 @@ export default function RelatedProducts() {
   const router = useRouter();
 
   return (
-    <div className="flex overflow-x-auto gap-x-14 mb-10 px-6 py-3 w-full">
+    <div className="flex overflow-x-auto gap-x-14 px-1 py-3 max-w-[1440px]">
       {jsonData.data.map((element, i) => (
         <Card key={i} className="mt-3 min-w-[25rem] relative">
           <div

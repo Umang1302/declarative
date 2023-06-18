@@ -8,6 +8,8 @@ import ProductHeading from "../../../components/product/ProductHeading";
 import RelatedProducts from "../../../components/product/RelatedProducts";
 import Tabs from "../../../components/common/Tabs";
 import Link from "next/link";
+import { Cabin } from "next/font/google";
+const cabin = Cabin({ subsets: ["latin"] });
 
 export default function Page({ params }: any) {
   const [data, setData] = useState<any>();
@@ -30,8 +32,10 @@ export default function Page({ params }: any) {
     );
   } else {
     return (
-      <div className="mt-5 overflow-y-auto overflow-x-hidden w-full max-h-[100%] rounded-lg px-6 4xl:px-1">
-        <div className=" flex justify-end">
+      <div
+        className={`w-full mt-5 ${cabin.className}  max-h-[79vh] overflow-y-auto pr-5`}
+      >
+        <div className="w-full flex justify-end">
           <Breadcrumbs className="bg-transparent">
             <Link href="/" className="opacity-60 flex active:text-red-600">
               <svg
@@ -52,17 +56,19 @@ export default function Page({ params }: any) {
             </Link>
           </Breadcrumbs>
         </div>
-        <Card className="relative ml-3 w-[100%] h-full 4xl:mt-6">
+
+        <Card className="relative ml-3 w-[100%] 4xl:mt-6">
           <CardBody>
             <ProductHeading data={data} />
+
             <div className="w-[100%] bg-gray-300 h-[1px] mt-2" />
+
             <div>
               <Tabs data={data} />
             </div>
           </CardBody>
         </Card>
-
-        <div className="w-full mt-8 ml-4">
+        <div className="w-full px-3 mt-8">
           <h1 className="font-bold text-2xl">Related Products</h1>
           <RelatedProducts />
         </div>
@@ -70,3 +76,18 @@ export default function Page({ params }: any) {
     );
   }
 }
+
+//       <Card className="relative ml-3 w-[100%] h-full 4xl:mt-6">
+//         <CardBody>
+//           <ProductHeading data={data} />
+//           <div className="w-[100%] bg-gray-300 h-[1px] mt-2" />
+//           <div>
+//             <Tabs data={data} />
+//           </div>
+//         </CardBody>
+//       </Card>
+
+//       <div className="w-full mt-8 ml-4">
+//         <h1 className="font-bold text-2xl">Related Products</h1>
+//         <RelatedProducts />
+//       </div>

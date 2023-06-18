@@ -4,36 +4,22 @@ import {
   Button,
   Card,
   CardBody,
+  Checkbox,
   Dialog,
-  Tab,
-  Tabs,
-  TabsHeader,
+  Switch,
 } from "@material-tailwind/react";
 import { Cabin } from "next/font/google";
-import { Switch } from "@material-tailwind/react";
-import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
 export default function OverviewTable({ data }: any) {
-  const [scopeTab, setScopeTab] = useState<boolean>(false);
-  const [scheduleTab, setScheduleTab] = useState<boolean>(false);
-
   const [open, setOpen] = React.useState(false);
+  const [scheduleTab, setScheduleTab] = useState<boolean>(false);
   const handleOpen = () => setOpen((cur) => !cur);
 
-  const TABS = [
-    {
-      label: "Product",
-      value: "product",
-    },
-    {
-      label: "Series",
-      value: "series",
-    },
-  ];
   const [week, setWeek] = useState<any>([
     {
       name: "S",
@@ -92,7 +78,17 @@ export default function OverviewTable({ data }: any) {
     },
   ]);
 
-  // Schedule has been added | Repeats every 1 week on Friday at 8pm
+  const [dropDownValue1, setDropDownValue1] = useState<any>([
+    {
+      label: "Sum",
+      value: "sum",
+    },
+    {
+      label: "Average",
+      value: "average",
+    },
+  ]);
+
   const [weekNumber, setWeekNumber] = useState<string>("1");
   const [interval, setInterval] = useState<string>("Week");
   const [date, setDate] = useState("");
@@ -151,61 +147,268 @@ export default function OverviewTable({ data }: any) {
     handleOpen();
   };
 
+  const [tab1, setTab1] = useState("");
+  const [tab2, setTab2] = useState("");
+
+  const [rules, setRules] = useState<any>([
+    "Initial Investment Amount and Subsequent Investment Amount must be greater than 0",
+    "Management Name must be not null",
+  ]);
+
+  const [addRule, setAddRule] = useState<boolean>(false);
+  const [searchAttr, setSearchArray] = useState([
+    {
+      attribute: "Attribute 1",
+      check: false,
+    },
+    {
+      attribute: "Attribute 2",
+      check: false,
+    },
+    {
+      attribute: "Attribute 3",
+      check: false,
+    },
+    {
+      attribute: "Attribute 4",
+      check: false,
+    },
+    {
+      attribute: "Attribute 5",
+      check: false,
+    },
+    {
+      attribute: "Attribute 6",
+      check: false,
+    },
+  ]);
+
+  React.useEffect(() => {
+    console.log("SSSSS");
+  }, [addRule, searchAttr, tab1]);
+
+  const addRuleFun = (val: string) => {
+    const addedRule = [...rules];
+    addedRule.splice(0, 0, val);
+    setRules(addedRule);
+    setAddRule(false);
+  };
+
+  const deleteRule = (index: number) => {
+    const deletedArray = [...rules];
+    deletedArray.splice(index, 1);
+    setRules(deletedArray);
+  };
+
   return (
-    <div className="h-full">
-      {/* Header */}
-      <div className="w-full mb-2 h-[12%] border-b-[1px] border-gray-300 px-[2.3rem] justify-center py-4">
+    <div
+      className={`w-full h-full min-w-[920px] overflow-x-auto ${cabin.className}`}
+    >
+      {/* Rule */}
+      <div className="bg-[#CCE0FF] flex items-center w-[97%] h-[10%] px-6 justify-between">
+        <p className="text-[18px] font-[600]">Rules</p>
         <div
-          className={`w-full text-black h-full  flex  justify-start gap-x-36 ${cabin.className}`}
+          onClick={() => {
+            setAddRule(!addRule);
+          }}
+          className="relative w-[20px] h-[20px]"
         >
-          <div className="flex flex-col">
-            <p className="text-[#656565]">Name</p>
-            <span>Sampling Profiling Spec</span>
+          <Image src={`/blackPlus.svg`} alt="brand" fill />
+        </div>
+      </div>
+      <div className="w-[95%] px-3 h-[26%] overflow-y-auto">
+        {addRule && (
+          <Card className="h-[50px] rounded-none border-[1px]">
+            <div className="px-6 justify-between flex items-center h-full">
+              <input
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    if (e.target && e.target.value) {
+                      if (e.target.value !== "") addRuleFun(e.target.value);
+                    }
+                  }
+                }}
+                type="text"
+                className={`h-full min-w-[85%] appearance-none  py-2 focus:outline-none ${cabin.className}`}
+              />
+
+              <div
+                onClick={() => {
+                  console.log("delete");
+                  setAddRule(false);
+                }}
+                className="relative w-[13.5px] h-[18px]"
+              >
+                <Image src={`/bin.svg`} alt="brand" fill />
+              </div>
+            </div>
+          </Card>
+        )}
+        {rules?.map((rule: string, index: number) => (
+          <Card key={index} className="h-[50px] rounded-none border-[1px]">
+            <div className="px-6 justify-between flex items-center h-full">
+              {rule}
+
+              <div
+                onClick={() => {
+                  console.log("delete");
+                  deleteRule(index);
+                }}
+                className="relative w-[13.5px] h-[18px]"
+              >
+                <Image src={`/bin.svg`} alt="brand" fill />
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+
+      {/* Rule info */}
+      <div className="bg-[#CCE0FF] flex items-center w-[97%] h-[10%] px-6 justify-between">
+        <p className="text-[18px] font-[600]">Rule Information</p>
+      </div>
+      <div className="mb-6 w-full py-3 px-3">
+        <div className="py-10 px-10">
+          <div className="flex justify-between w-[90%]">
+            <div>
+              <p>Scope</p>
+              <div className="bg-[#EAEAEA] w-[280px]  min-w-[300px]  h-[40px] flex items-center justify-around rounded-[10px]">
+                <div
+                  onClick={() => {
+                    setTab1("series");
+                  }}
+                  className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
+                    tab1 === "series" && "bg-white"
+                  } `}
+                >
+                  Series
+                </div>
+                <div
+                  onClick={() => {
+                    setTab1("group");
+                  }}
+                  className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                    tab1 === "group" && "bg-white"
+                  } `}
+                >
+                  Group
+                </div>
+                <div
+                  onClick={() => {
+                    setTab1("product");
+                  }}
+                  className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                    tab1 === "product" && "bg-white"
+                  } `}
+                >
+                  Product
+                </div>
+              </div>
+            </div>
+            <div className="mt-6">
+              <Select
+                defaultValue={dropDownValue1[0]}
+                options={dropDownValue1}
+                onChange={(val) => {
+                  console.log(val, "DD");
+                  setInterval(val.value);
+                }}
+                className={`rounded-[10px]  min-w-[200px] text-[18px] ${cabin.className}`}
+              />
+            </div>
           </div>
-          <div className="flex flex-col">
-            <p className="text-[#656565]">Label</p>
-            <span>profiling for all valuations product</span>
+
+          <div className="flex mt-6">
+            <div className="flex w-[90%] justify-between">
+              <div>
+                <p>Type</p>
+                <div className="bg-[#EAEAEA] px-1 h-[40px] flex items-center justify-around rounded-[10px]">
+                  <div
+                    onClick={() => {
+                      setTab2("record");
+                    }}
+                    className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab2 === "record" && "bg-white"
+                    } `}
+                  >
+                    Record
+                  </div>
+                  <div
+                    onClick={() => {
+                      setTab2("aggregate");
+                    }}
+                    className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab2 === "aggregate" && "bg-white"
+                    } `}
+                  >
+                    Aggregate
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6">
+                <Select
+                  defaultValue={dropDownValue1[0]}
+                  options={dropDownValue1}
+                  onChange={(val) => {
+                    console.log(val, "DD");
+                    setInterval(val.value);
+                  }}
+                  className={`rounded-[10px] min-w-[200px] text-[18px] ${cabin.className}`}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Main */}
       <div className="h-[450px] lg:h-full px-3 relative flex justify-start overflow-x-auto max-w-[1115px]">
         <div className="justify-center h-[500px] mx-2 min-w-[340px]">
-          <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
-            <p className={`${cabin.className} font-[900] text-[18px]`}>Scope</p>
+          <div className="flex justify-evenly h-[10%] items-center bg-[#CCE0FF]">
+            <p className={`${cabin.className} font-[900] text-[18px]`}>
+              Attributes
+            </p>
           </div>
           <div className="bg-[#EEEEEE] w-full h-[90%]">
-            <div
-              className={`items-center flex justify-center py-3 w-full md:flex-row ${cabin.className}`}
-            >
-              <div className="mt-4 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
-                <p
-                  onClick={() => {
-                    setScopeTab(true);
-                  }}
-                  className={`${cabin.className} rounded-[10px] text-[18px] ${
-                    scopeTab && "bg-white"
-                  }`}
+            <div className="relative w-full">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg
+                  aria-hidden="true"
+                  className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  &nbsp;&nbsp;{"Product"}&nbsp;&nbsp;
-                </p>
-                <p
-                  onClick={() => {
-                    setScopeTab(false);
-                  }}
-                  className={`${cabin.className} rounded-[10px] text-[18px] ${
-                    !scopeTab && "bg-white"
-                  }`}
-                >
-                  &nbsp;&nbsp;{"Series"}&nbsp;&nbsp;
-                </p>
+                  <path
+                    fillRule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
               </div>
+              <input
+                type="text"
+                id="simple-search"
+                className="bg-gray-300 border border-gray-300 text-black text-sm block w-full pl-10 p-2.5 appearance-none focus:outline-none"
+                // className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Search"
+              />
             </div>
-            <div className="w-full items-center flex h-[20%] justify-around gap-x-6 bg-white mt-10">
-              <p className={`${cabin.className} text-[18px]`}>Incremental</p>
-              <Switch defaultChecked />
-            </div>
+            {searchAttr.map((item, index) => (
+              <Card
+                key={index}
+                className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
+              >
+                <div className="flex items-center">
+                  <Checkbox
+                    color="blue"
+                    // checked={item.check}
+                    // className="rounded-none"
+                    // onChange={() => {}}
+                  />
+                  <p>{item.attribute}</p>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
 
@@ -235,7 +438,7 @@ export default function OverviewTable({ data }: any) {
                     setScheduleTab(false);
                   }}
                   className={`${cabin.className} rounded-[10px] text-[18px] ${
-                    !scopeTab && "bg-white"
+                    !scheduleTab && "bg-white"
                   }`}
                 >
                   &nbsp;&nbsp;{"Time"}&nbsp;&nbsp;
