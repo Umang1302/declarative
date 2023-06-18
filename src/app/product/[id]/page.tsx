@@ -57,7 +57,7 @@ export default function Page({ params }: any) {
           </Breadcrumbs>
         </div>
 
-        <Card className="relative ml-3 w-[100%] 4xl:mt-6">
+        <Card className="relative 4xl:mt-6">
           <CardBody>
             <ProductHeading data={data} />
 
@@ -68,7 +68,7 @@ export default function Page({ params }: any) {
             </div>
           </CardBody>
         </Card>
-        <div className="w-full px-3 mt-8">
+        <div className="mt-8">
           <h1 className="font-bold text-2xl">Related Products</h1>
           <RelatedProducts />
         </div>

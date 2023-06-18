@@ -67,9 +67,7 @@ export default function Hero({
   };
 
   return (
-    <div
-      className={`mt-5 mx-3 relative flex p-1 w-full h-[80px]  ${cabin.className}`}
-    >
+    <div className={`mt-5 relative flex w-full h-[80px]  ${cabin.className}`}>
       <div className="flex justify-between w-full">
         <div className="w-[70%] h-full flex items-center">
           <h1 className="font-bold text-4xl">Products</h1>

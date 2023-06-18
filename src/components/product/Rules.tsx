@@ -201,9 +201,7 @@ export default function OverviewTable({ data }: any) {
   };
 
   return (
-    <div
-      className={`w-full h-full min-w-[920px] overflow-x-auto ${cabin.className}`}
-    >
+    <div className={`w-full h-full overflow-x-auto ${cabin.className}`}>
       {/* Rule */}
       <div className="bg-[#CCE0FF] flex items-center w-[97%] h-[10%] px-6 justify-between">
         <p className="text-[18px] font-[600]">Rules</p>
@@ -361,7 +359,7 @@ export default function OverviewTable({ data }: any) {
         </div>
       </div>
 
-      <div className="h-[450px] lg:h-full px-3 relative flex justify-start overflow-x-auto max-w-[1115px]">
+      <div className="h-[450px] lg:h-full px-3 relative flex justify-start overflow-x-auto overflow-y-hidden md:w-[50vw] lg:w-[58vw] xl:w-[45vw] 2xl:w-[54vw] 3xl:w-[60vw] 4xl:w-[63vw] max-w-[1115px] flex-grow">
         <div className="justify-center h-[500px] mx-2 min-w-[340px]">
           <div className="flex justify-evenly h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>

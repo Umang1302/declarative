@@ -154,7 +154,7 @@ export default function OverviewTable({ data }: any) {
   return (
     <div className="h-full">
       {/* Header */}
-      <div className="w-full mb-2 h-[12%] border-b-[1px] border-gray-300 px-[2.3rem] justify-center py-4">
+      <div className="w-full mb-2 h-[12%] border-b-[1px] border-gray-300 lg:px-[2.3rem] justify-center md:py-0 md:px-[2rem] lg:py-4">
         <div
           className={`w-full text-black h-full  flex  justify-start gap-x-36 ${cabin.className}`}
         >
@@ -170,7 +170,7 @@ export default function OverviewTable({ data }: any) {
       </div>
 
       {/* Main */}
-      <div className="h-[450px] lg:h-full px-3 relative flex justify-start overflow-x-auto max-w-[1115px]">
+      <div className="h-[450px] lg:h-full px-3 relative flex justify-start overflow-x-auto overflow-y-hidden md:w-[50vw] lg:w-[58vw] xl:w-[45vw] 2xl:w-[54vw] 3xl:w-[60vw] 4xl:w-[60vw] max-w-[1115px] flex-grow">
         <div className="justify-center h-[500px] mx-2 min-w-[340px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>Scope</p>
@@ -432,7 +432,7 @@ export default function OverviewTable({ data }: any) {
           </div>
         </div>
 
-        <div className="justify-center h-[500px] mx-2 min-w-[150px]"></div>
+        <div className="justify-center h-[500px] mx-2 min-w-[100px]"></div>
       </div>
     </div>
   );

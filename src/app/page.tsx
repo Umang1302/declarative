@@ -80,6 +80,8 @@ export default function Dashboard() {
   } else {
     return (
       <div className={`w-full mt-5 ${cabin.className}`}>
+        <LabelSection />
+
         <Hero
           active={active}
           setActive={setActive}

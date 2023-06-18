@@ -64,7 +64,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
 
   return (
     <div
-      className={`${cabin.className} overflow-y-auto w-full max-w-[1560px] px-2 py-1 max-h-[63vh]`}
+      className={`${cabin.className} overflow-y-auto w-full max-w-[1560px] py-1 max-h-[63vh]`}
     >
       {productList.map((element: any, index: number) => (
         <div key={index} className="my-3 w-full">
@@ -108,8 +108,9 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                           router.push(`/product/${index}`);
                         }
                       }}
+                      className="flex items-center"
                     >
-                      <p className="text-[24px] text-black font-[700]">
+                      <p className="text-[20px] text-black font-[700]">
                         {element.name}
                       </p>
                     </div>
@@ -164,17 +165,17 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                 </AccordionHeader>
 
                 {open === index && (
-                  <div className="w-full mt-2 bg-gray-300 h-[1px]" />
+                  <div className="w-full bg-gray-300 h-[1px]" />
                 )}
 
                 <AccordionBody className="w-full h-full ">
                   <div className={`${cabin.className} w-full px-5`}>
-                    <div className="flex w-full justify-between">
-                      <div className="w-full">
-                        <p className="w-[40vw] mr-3 text-[18px] text-black font-[400]">
+                    <div className="flex">
+                      <div className="w-[70%]">
+                        <p className="text-[18px] text-black font-[400]">
                           {element.description}
                         </p>
-                        <div className="mt-2 w-[98%] h-20 flex px-3 py-2">
+                        <div className="mt-2 w-[98%] h-20 flex py-2">
                           <div className="flex">
                             <div className="flex mt-2">
                               <Avatar
@@ -203,7 +204,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                           </div>
                         </div>
                       </div>
-                      <div className="w-[60%]  pl-5 max-w-[430px] h-full grid lg:grid-cols-2 md:grid-cols-2 lg:gap-x-1 2xl:grid-cols-3 gap-y-4 justify-center text-black font-[600]">
+                      <div className="w-[40%] pl-6 max-w-[430px] h-full grid lg:grid-cols-3 md:grid-cols-2 lg:gap-x-1 2xl:grid-cols-3 gap-y-4 text-black font-[600]">
                         <button className="w-[100px] rounded-lg h-[30px] bg-[#A0EDA7]">
                           Security (2)
                         </button>

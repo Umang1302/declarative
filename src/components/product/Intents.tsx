@@ -158,7 +158,7 @@ export default function Example({ data }: any) {
   return (
     <div className="w-[105%] h-full mt-[-1rem] ml-[-1rem] ml z-[100]">
       <div className="flex w-full h-full">
-        <div className="min-w-[250px] flex flex-col border-r-[1px] border-gray-300 gap-y-7 mt-2">
+        <div className="min-w-[230px] flex flex-col border-r-[1px] border-gray-300 gap-y-7 mt-2">
           {tabData.map((item, index) => (
             <div
               key={index}

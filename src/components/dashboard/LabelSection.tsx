@@ -7,7 +7,7 @@ export default function LabelSection() {
   const label = [
     {
       id: 1,
-      label: "Mutual Funds",
+      label: "Mutual",
     },
     {
       id: 2,
@@ -41,6 +41,50 @@ export default function LabelSection() {
       id: 6,
       label: "Economy",
     },
+    {
+      id: 1,
+      label: "Mutual",
+    },
+    {
+      id: 2,
+      label: "Securities",
+    },
+    {
+      id: 3,
+      label: "Benchmarks",
+    },
+    {
+      id: 4,
+      label: "ESG",
+    },
+    {
+      id: 5,
+      label: "Economy",
+    },
+    {
+      id: 6,
+      label: "Census",
+    },
+    {
+      id: 2,
+      label: "Securities",
+    },
+    {
+      id: 3,
+      label: "Benchmarks",
+    },
+    {
+      id: 4,
+      label: "ESG",
+    },
+    {
+      id: 5,
+      label: "Economy",
+    },
+    {
+      id: 6,
+      label: "Census",
+    },
   ];
 
   //  ${
@@ -60,8 +104,8 @@ export default function LabelSection() {
   // }
 
   return (
-    <div className="mt-5 w-[100%] overflow-x-auto overflow-y-hidden h-full">
-      <div className="flex h-full gap-x-3 w-full">
+    <div className="mt-5 h-full flex overflow-x-auto md:w-[87vw] xl:w-[75vw] 2xl:w-[75vw] min-[1500px]:w-[78%] 3xl:w-[80vw] max-w-[1480px] flex-grow">
+      <div className="flex h-full gap-x-3 w-[1700px]">
         {label.map((element, i) => (
           <button
             key={i}

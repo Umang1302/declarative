@@ -44,89 +44,94 @@ export default function Sidebar({ active, setActive }: any) {
   }, [pathName]);
 
   return (
-    <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] max-w-[269px] min-w-[269px] py-2">
-      <div className={`w-full h-full ${cabin.className}`}>
-        {/* logo */}
-        <div className="relative w-full mt-[34px] h-[8%] max-h-[70px]">
-          <Image src="/declarativeLogo1.svg" alt="brand" fill />
-        </div>
+    <>
+      <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] md:hidden xl:block max-w-[269px] min-w-[269px] py-2">
+        <div className={`w-full h-full ${cabin.className}`}>
+          {/* logo */}
+          <div className="relative w-full mt-[34px] h-[8%] max-h-[70px]">
+            <Image src="/declarativeLogo1.svg" alt="brand" fill />
+          </div>
 
-        <hr className="border-[#C4C4C4] mt-[33px]" />
+          <hr className="border-[#C4C4C4] mt-[33px]" />
 
-        {/* Create Botton */}
-        <div className="w-full h-[8%] max-h-[60px] py-1 my-[38px] flex justify-start px-2">
-          <button className="w-[50%] h-[90%] gap-x-2 px-2 border-[1px] items-center rounded-[10px] shadow-xl flex">
-            <div className="relative w-[18px] h-[18px]">
-              <Image src="/plusIcon.svg" alt="brand" fill />
-            </div>
-            <p className="text-[20px] font-[600]">Create</p>
-          </button>
-        </div>
-
-        {/* start Menu */}
-        <div className="w-full">
-          <div
-            className={`w-full gap-y-[30px] flex flex-col ${cabin.className}`}
-          >
-            <div
-              className={`hover:bg-[#F2F2F2] ${
-                active === 0 && "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
-              } w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3`}
-              onClick={() => {
-                router.push("/");
-              }}
-            >
+          {/* Create Botton */}
+          <div className="w-full h-[8%] max-h-[60px] py-1 my-[38px] flex justify-start px-2">
+            <button className="w-[50%] h-[90%] gap-x-2 px-2 border-[1px] items-center rounded-[10px] shadow-xl flex">
               <div className="relative w-[18px] h-[18px]">
-                <Image src="/home.svg" alt="brand" fill />
+                <Image src="/plusIcon.svg" alt="brand" fill />
+              </div>
+              <p className="text-[20px] font-[600]">Create</p>
+            </button>
+          </div>
+
+          {/* start Menu */}
+          <div className="w-full">
+            <div
+              className={`w-full gap-y-[30px] flex flex-col ${cabin.className}`}
+            >
+              <div
+                className={`hover:bg-[#F2F2F2] ${
+                  active === 0 && "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
+                } w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3`}
+                onClick={() => {
+                  router.push("/");
+                }}
+              >
+                <div className="relative w-[18px] h-[18px]">
+                  <Image src="/home.svg" alt="brand" fill />
+                </div>
+
+                <p className="text-[18px] font-[500] text-black">Home</p>
               </div>
 
-              <p className="text-[20px] font-[500]">Home</p>
-            </div>
+              <div
+                className={`hover:bg-[#F2F2F2] w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3 ${
+                  active === 1 && "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
+                }`}
+                onClick={() => {
+                  router.push("/");
+                }}
+              >
+                <div className="relative w-[18px] h-[18px]">
+                  <Image src="/products.svg" alt="brand" fill />
+                </div>
 
-            <div
-              className={`hover:bg-[#F2F2F2] w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3 ${
-                active === 1 && "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
-              }`}
-              onClick={() => {
-                router.push("/");
-              }}
-            >
-              <div className="relative w-[18px] h-[18px]">
-                <Image src="/products.svg" alt="brand" fill />
+                <p className="text-[18px] font-[500] text-black">Products</p>
               </div>
 
-              <p className="text-[20px] font-[500]">Products</p>
-            </div>
+              <div
+                className="hover:bg-[#F2F2F2] w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
+                onClick={() => {
+                  router.push("/");
+                }}
+              >
+                <div className="relative w-[18px] h-[18px]">
+                  <Image src="/settings.svg" alt="brand" fill />
+                </div>
 
-            <div
-              className="hover:bg-[#F2F2F2] w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
-              onClick={() => {
-                router.push("/");
-              }}
-            >
-              <div className="relative w-[18px] h-[18px]">
-                <Image src="/settings.svg" alt="brand" fill />
+                <p className="text-[18px] font-[500] text-black">Settings</p>
               </div>
 
-              <p className="text-[20px] font-[500]">Settings</p>
-            </div>
+              <div
+                className="hover:bg-[#F2F2F2] w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
+                onClick={() => {
+                  router.push("/");
+                }}
+              >
+                <div className="relative w-[18px] h-[18px]">
+                  <Image src="/logOut.svg" alt="brand" fill />
+                </div>
 
-            <div
-              className="hover:bg-[#F2F2F2] w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
-              onClick={() => {
-                router.push("/");
-              }}
-            >
-              <div className="relative w-[18px] h-[18px]">
-                <Image src="/logOut.svg" alt="brand" fill />
+                <p className="text-[18px] font-[500] text-black">Log Out</p>
               </div>
-
-              <p className="text-[20px] font-[500]">Log Out</p>
             </div>
           </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+      <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[80px] xl:hidden py-2">
+        <div className={`w-full  ${cabin.className}`} />
+      </Card>
+    </>
   );
 }
 

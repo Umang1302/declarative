@@ -207,7 +207,7 @@ export default function ProductHeading({ data }: any) {
 
         <div className="w-full mt-3 bg-gray-300 h-[1px]" />
 
-        <div className="flex w-full">
+        {/* <div className="flex w-full">
           <div className="flex py-2 justify-between w-[49%] border-r-2 border-gray-300 pr-3">
             <div className="flex">
               <Avatar src="/yahoo.svg" className="" alt="avatar" size="lg" />
@@ -216,7 +216,7 @@ export default function ProductHeading({ data }: any) {
                 <p className="text-xs">LA, California</p>
               </div>
             </div>
-            {/* {open && ( */}
+
             <div>
               <p className="font-semibold max-w-[100%]">
                 Description about the product:{" "}
@@ -305,7 +305,7 @@ export default function ProductHeading({ data }: any) {
               </Tabs>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="gap-x-7 h-[5.5rem] overflow-x-auto 3xl:h-24 flex justify-between px-3 py-2">
           <div className="flex">
