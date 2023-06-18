@@ -80,6 +80,9 @@ export default function Dashboard() {
   } else {
     return (
       <div className={`w-full mt-5 ${cabin.className}`}>
+        {/* <div className="w-full">
+          <LabelSection />
+        </div> */}
         <Hero
           active={active}
           setActive={setActive}
@@ -87,45 +90,6 @@ export default function Dashboard() {
           dataLength={dataLength}
           setProdData={setProdData}
         />
-
-        {/* <div className="flex w-full justify-end items-center max-w-[1560px]">
-          <Button
-            variant="text"
-            color="blue-gray"
-            className="flex items-center gap-2 rounded-full"
-            onClick={prev}
-            disabled={active === 1}
-          >
-            <ChevronLeftIcon strokeWidth={2} className="h-4 w-4" />
-          </Button>
-          <div className="items-center gap-2">
-            {[...Array(Math.ceil(dataLength / 10))].map((v, i) => {
-              return (
-                <IconButton key={i + 1} {...getItemProps(i + 1)}>
-                  <p className="">{i + 1}</p>
-                </IconButton>
-              );
-            })}
-          </div>
-          <Button
-            variant="text"
-            color="blue-gray"
-            className="flex items-center gap-2 rounded-full"
-            onClick={next}
-            disabled={active === Math.ceil(dataLength / 6)}
-          >
-            <ChevronRightIcon strokeWidth={2} className="h-4 w-4" />
-          </Button>
-          <div
-            className="relative w-6 h-6"
-            onClick={() => {
-              console.log("clicked");
-              sortFunctionality();
-            }}
-          >
-            <Image alt="" src="/sort.svg" fill />
-          </div>
-        </div> */}
         <ShowcaseProduct page={active} prodData={prodData} />
       </div>
     );

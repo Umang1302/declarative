@@ -24,14 +24,18 @@ export default function RootLayout({
           " p-4 overflow-y-hidden overflow-x-hidden"
         }
       >
-        <div className="flex w-[100%] h-[100vh] pr-5">
+        <div className="flex pr-5 gap-x-5 bg-green-600">
+          {/* SideBar */}
+
           <div className="flex h-[96vh]">
             <Sidebar active={active} setActive={setActive} />
           </div>
-          <div className="h-full w-[90%] pl-6 4xl:px-[10%] max-w-[2018px] 5xl:mx-[5%]">
-            <div className="flex w-full mx-3 mb-3">
-              <Navsearchbar />
-            </div>
+
+          <div className="flex-grow">
+            {/* TopBar */}
+            {/* <div className="flex"> */}
+            <Navsearchbar />
+            {/* </div> */}
             <div className="h-[80vh] lg:w-[82%] xl:w-[88%] 2xl:w-[90%] 3xl:w-full w-full">
               {children}
             </div>
