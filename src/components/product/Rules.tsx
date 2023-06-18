@@ -182,6 +182,7 @@ export default function OverviewTable({ data }: any) {
       check: false,
     },
   ]);
+  const [newRule, setNewRule] = useState("");
 
   React.useEffect(() => {
     console.log("SSSSS");
@@ -221,10 +222,13 @@ export default function OverviewTable({ data }: any) {
               <input
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
-                    if (e.target && e.target.value) {
-                      if (e.target.value !== "") addRuleFun(e.target.value);
+                    if (e.target && newRule) {
+                      if (newRule !== "") addRuleFun(newRule);
                     }
                   }
+                }}
+                onChange={(e) => {
+                  setNewRule(e.target.value);
                 }}
                 type="text"
                 className={`h-full min-w-[85%] appearance-none  py-2 focus:outline-none ${cabin.className}`}
