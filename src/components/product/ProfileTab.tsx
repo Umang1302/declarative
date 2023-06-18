@@ -235,7 +235,7 @@ export default function OverviewTable({ data }: any) {
                     setScheduleTab(false);
                   }}
                   className={`${cabin.className} rounded-[10px] text-[18px] ${
-                    !scopeTab && "bg-white"
+                    !scheduleTab && "bg-white"
                   }`}
                 >
                   &nbsp;&nbsp;{"Time"}&nbsp;&nbsp;
