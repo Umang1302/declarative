@@ -64,7 +64,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
 
   return (
     <div
-      className={`${cabin.className} overflow-y-auto w-full max-w-[1560px] py-1 max-h-[63vh]`}
+      className={`${cabin.className} overflow-y-auto w-full max-w-[1560px] pr-1 max-h-[63vh]`}
     >
       {productList.map((element: any, index: number) => (
         <div key={index} className="my-3 w-full">
@@ -124,9 +124,11 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                           height={18}
                           className="ml-1"
                         />
-                        <div className="w-[46px] rounded-lg bg-[#E3E1E1] flex justify-center">
-                          <p className="font-bold mt-[10px] text-[0.8rem]">
-                            {element.tier}
+                        <div className="w-[46px] rounded-lg flex -mt-[2px] justify-center">
+                          <p className="font-bold mt-[10px] text-[16px] ">
+                            {`${element.tier[0]}${element.tier
+                              .substr(1, 5)
+                              .toLowerCase()}`}
                           </p>
                         </div>
                       </div>
