@@ -129,7 +129,58 @@ export default function Sidebar({ active, setActive }: any) {
         </div>
       </Card>
       <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[80px] xl:hidden py-2">
-        <div className={`w-full  ${cabin.className}`} />
+        <div
+          className={`w-full flex flex-col gap-y-6 pt-6 items-center ${cabin.className}`}
+        >
+          <div className="relative  w-[36.6px] h-[36.6px]">
+            <Image src="/minLogo.svg" alt="brand" fill />
+          </div>
+          <div className="w-full h-[1px] bg-[#C4C4C4]" />
+
+          <div className="flex w-full items-center flex-col gap-y-20">
+            <div className="flex items-center p-2 rounded-[10px] border-[1px] shadow-xl">
+              <div className="relative w-[18px] h-[18px]">
+                <Image src="/plusIcon.svg" alt="brand" fill />
+              </div>
+            </div>
+            <div
+              className={`w-full ${
+                active === 0 && "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
+              } flex items-center justify-center py-4`}
+            >
+              <div className={`relative   w-[18px] h-[18px]`}>
+                <Image src="/home.svg" alt="brand" fill />
+              </div>
+            </div>
+            <div
+              className={`w-full ${
+                active === 1 && "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
+              } flex items-center justify-center py-4`}
+            >
+              <div className="relative  w-[18px] h-[18px]">
+                <Image src="/products.svg" alt="brand" fill />
+              </div>
+            </div>
+            <div
+              className={`w-full ${
+                active === 2 && "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
+              } flex items-center justify-center py-4`}
+            >
+              <div className="relative  w-[18px] h-[18px]">
+                <Image src="/intends.svg" alt="brand" fill />
+              </div>
+            </div>
+            <div
+              className={`w-full ${
+                active === 3 && "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
+              } flex items-center justify-center py-4`}
+            >
+              <div className="relative  w-[18px] h-[18px]">
+                <Image src="/logOut.svg" alt="brand" fill />
+              </div>
+            </div>
+          </div>
+        </div>
       </Card>
     </>
   );
