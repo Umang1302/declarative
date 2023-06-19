@@ -105,18 +105,6 @@ export default function OverviewTable({ data }: any) {
       day: ["Friday", "Monday"],
       time: "8pm",
     },
-    {
-      weekNumber: "2",
-      interval: "Week",
-      day: ["Friday"],
-      time: "8pm",
-    },
-    {
-      weekNumber: "3",
-      interval: "Week",
-      day: ["Friday"],
-      time: "8pm",
-    },
   ]);
 
   useEffect(() => {
