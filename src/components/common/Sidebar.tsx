@@ -137,7 +137,7 @@ export default function Sidebar({ active, setActive }: any) {
           </div>
           <div className="w-full h-[1px] bg-[#C4C4C4]" />
 
-          <div className="flex w-full items-center flex-col gap-y-20">
+          <div className="flex w-full items-center flex-col gap-y-16">
             <div className="flex items-center p-2 rounded-[10px] border-[1px] shadow-xl">
               <div className="relative w-[18px] h-[18px]">
                 <Image src="/plusIcon.svg" alt="brand" fill />
