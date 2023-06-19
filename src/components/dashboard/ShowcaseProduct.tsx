@@ -171,7 +171,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                 )}
 
                 <AccordionBody className="w-full h-full ">
-                  <div className={`${cabin.className} w-full px-5`}>
+                  <div className={`${cabin.className} w-full pl-5`}>
                     <div className="flex">
                       <div className="w-[70%]">
                         <p className="text-[18px] text-black font-[400]">
@@ -206,7 +206,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                           </div>
                         </div>
                       </div>
-                      <div className="w-[40%] pl-6 max-w-[430px] h-full grid lg:grid-cols-3 md:grid-cols-2 lg:gap-x-1 2xl:grid-cols-3 gap-y-4 text-black font-[600]">
+                      <div className="w-[40%] max-w-[430px] h-full grid lg:grid-cols-3 md:grid-cols-2 lg:gap-x-1 2xl:grid-cols-3 3xl:pl-8 gap-y-4 text-black font-[600]">
                         <button className="w-[100px] rounded-lg h-[30px] bg-[#A0EDA7]">
                           Security (2)
                         </button>
