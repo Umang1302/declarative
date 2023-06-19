@@ -21,8 +21,8 @@ export default function TransparentTabs({ data }: any) {
       desc: <OverviewTable data={data} />,
     },
     {
-      label: "Intends",
-      value: "intends",
+      label: "Intents",
+      value: "intents",
       desc: <Intents data={data} />,
     },
     {
