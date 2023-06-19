@@ -226,7 +226,7 @@ export default function Example({ data }: any) {
   return (
     <div className="shadow-none -py-[1rem] flex flex-col">
       <div className={`${cabin.className} max:w-[1462px]`}>
-        <div className="flex justify-between max:w-[1462px]">
+        <div className="flex justify-between max:w-[1462px] mb-2">
           {showCol ? (
             <Select
               defaultValue={selected}

@@ -41,6 +41,30 @@ export default function ProductHeading({ data }: any) {
       value: "daily",
     },
   ]);
+  const [dropDownValue1, setDropDownValue1] = useState<any>([
+    {
+      label: "Static",
+      value: "static",
+    },
+    {
+      label: "Incremental",
+      value: "incremental",
+    },
+  ]);
+  const [dropDownValue2, setDropDownValue2] = useState<any>([
+    {
+      label: "Active",
+      value: "active",
+    },
+    {
+      label: "Draft",
+      value: "draft",
+    },
+    {
+      label: "Inactive",
+      value: "inactive",
+    },
+  ]);
 
   const label = [
     {
@@ -207,7 +231,7 @@ export default function ProductHeading({ data }: any) {
 
         <div className="w-full mt-3 bg-gray-300 h-[1px]" />
 
-        {/* <div className="flex w-full">
+        <div className="flex w-full">
           <div className="flex py-2 justify-between w-[49%] border-r-2 border-gray-300 pr-3">
             <div className="flex">
               <Avatar src="/yahoo.svg" className="" alt="avatar" size="lg" />
@@ -261,7 +285,7 @@ export default function ProductHeading({ data }: any) {
             </div>
           </div>
 
-          <div className="flex justify-between w-[50%] px-3 items-start mt-3">
+          <div className="flex justify-between w-[50%] px-6 items-start mt-3">
             <div>
               <p className={`${cabin.className} mb-2 text-[0.7rem]`}>
                 Frequency
@@ -270,11 +294,34 @@ export default function ProductHeading({ data }: any) {
                 <Select
                   defaultValue={dropDownValue[0]}
                   options={dropDownValue}
-                  className={`max-w-[300px] text-[0.6rem] ${cabin.className}`}
+                  className={`max-w-[300px] min-w-[100px] text-[0.6rem] ${cabin.className}`}
                 />
               </div>
             </div>
-            <div
+
+            <div>
+              <p className={`${cabin.className} mb-2 text-[0.7rem]`}>Type</p>
+              <div className="min-w-[80px]">
+                <Select
+                  defaultValue={dropDownValue1[0]}
+                  options={dropDownValue1}
+                  className={`max-w-[300px] min-w-[100px] text-[0.6rem] ${cabin.className}`}
+                />
+              </div>
+            </div>
+
+            <div>
+              <p className={`${cabin.className} mb-2 text-[0.7rem]`}>Status</p>
+              <div className="min-w-[80px] ">
+                <Select
+                  defaultValue={dropDownValue2[0]}
+                  options={dropDownValue2}
+                  className={`max-w-[300px] min-w-[100px] text-[0.6rem] ${cabin.className}`}
+                />
+              </div>
+            </div>
+
+            {/* <div
               className={`items-center gap-4 md:flex-row ${cabin.className}`}
             >
               <p className={`${cabin.className} mb-2 text-[0.7rem]`}>Type</p>
@@ -303,9 +350,9 @@ export default function ProductHeading({ data }: any) {
                   ))}
                 </TabsHeader>
               </Tabs>
-            </div>
+            </div> */}
           </div>
-        </div> */}
+        </div>
 
         {/* <div className="gap-x-7 h-[5.5rem] overflow-x-auto 3xl:h-24 flex justify-between px-3 py-2">
           <div className="flex">
