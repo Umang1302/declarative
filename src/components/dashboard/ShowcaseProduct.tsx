@@ -40,6 +40,8 @@ export default function ShowcaseProduct({ page, prodData }: any) {
     setOpen(open === value ? -1 : value);
   };
 
+  const [activeLink, setActiveLink] = useState(false);
+
   React.useEffect(() => {
     console.log(jsonData.data[0].name);
   }, []);
@@ -61,6 +63,8 @@ export default function ShowcaseProduct({ page, prodData }: any) {
       label: "Securities",
     },
   ];
+
+  React.useEffect(() => {}, [activeLink]);
 
   return (
     <div
@@ -102,28 +106,52 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                   }}
                 >
                   <div className="flex w-full justify-between">
-                    <div
-                      onClick={() => {
-                        if (open === index) {
-                          router.push(`/product/${index}`);
-                        }
-                      }}
-                      className="flex items-center"
-                    >
-                      <p className="text-[20px] text-black font-[700]">
+                    <div className="flex items-center">
+                      <p
+                        onClick={() => {
+                          if (activeLink) {
+                            router.push(`/product/${index}`);
+                          }
+                        }}
+                        onMouseEnter={() => {
+                          setActiveLink(true);
+                        }}
+                        onMouseOut={() => {
+                          setActiveLink(true);
+                        }}
+                        className={`text-[20px] text-black font-[700] hover:text-[#F65A27]`}
+                      >
                         {element.name}
                       </p>
                     </div>
 
                     <div className="flex gap-x-4">
                       <div className="w-[100px] h-[36px] px-2 rounded-lg bg-[#E3E1E1] flex justify-between">
-                        <Image
-                          alt=""
-                          src="/tier.svg"
-                          width={18}
-                          height={18}
-                          className="ml-1"
-                        />
+                        {element.tier[element.tier.length - 1] === "1" ? (
+                          <Image
+                            alt=""
+                            src="/t1.svg"
+                            width={18}
+                            height={18}
+                            className="ml-1"
+                          />
+                        ) : element.tier[element.tier.length - 1] === "2" ? (
+                          <Image
+                            alt=""
+                            src="/t2.svg"
+                            width={18}
+                            height={18}
+                            className="ml-1"
+                          />
+                        ) : (
+                          <Image
+                            alt=""
+                            src="/tier.svg"
+                            width={18}
+                            height={18}
+                            className="ml-1"
+                          />
+                        )}
                         <div className="w-[46px] rounded-lg flex -mt-[2px] justify-center">
                           <p className="font-bold mt-[10px] text-[16px] ">
                             {`${element.tier[0]}${element.tier
@@ -158,7 +186,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                         />
                         <div className="w-[46px] mr-[-6px]  rounded-lg bg-[#E3E1E1] flex justify-center">
                           <p className="font-bold text-[0.9rem] mt-[10px]">
-                            5+
+                            4.9
                           </p>
                         </div>
                       </div>

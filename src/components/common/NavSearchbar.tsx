@@ -51,8 +51,12 @@ export default function Navsearchbar() {
               </svg>
             </div>
           </div>
+          <div className="relative w-full">
+            <LabelSection />
+          </div>
         </CardBody>
       </Card>
+
       <NavUserArea />
     </div>
   );

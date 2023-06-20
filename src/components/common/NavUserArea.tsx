@@ -43,14 +43,14 @@ export default function NavSearchbar() {
       // className={`w-[40vw] lg:w-[410px] 2xl:w-[500px] 3xl:w-[460px] 4xl:w-[600px] h-full min-h-[6.5rem] rounded-md px-4 py-2 ${cabin.className}`}
       className={`min-w-[450px] max-w-[300px] min-h-[6.2rem] rounded-md py-2 px-2 ${cabin.className}`}
     >
-      <div className="w-[100%] px-2 h-full flex items-center justify-between gap-x-1">
+      <div className="relative w-[100%] px-2 h-full flex items-center justify-start gap-x-3">
         {/* <div className="w-[5rem] h-[5rem] flex items-center justify-center rounded-full bg-[#FFBC35] px-2 py-2 text-center shadow-lg"> */}
-        <div className="relative w-[70px] h-[70px]">
+        <div className="relative w-[120px] h-[120px]">
           <Image alt="" src="/avatar.svg" fill />
         </div>
         {/* </div> */}
         <div>
-          <p className="font-bold text-[20px] 4xl:text-[28px]">Demo User</p>
+          <p className="font-bold text-[#000] text-[18px]">Demo User</p>
           <p className="text-[0.7rem] flex gap-x-1">
             Account ID: f48cda68-448b-4c67-9828-f48cda68
             <div className="relative w-2 mt-1 h-2">
@@ -60,7 +60,7 @@ export default function NavSearchbar() {
           <p className="text-[0.7rem]">Namespace: Demo (c60c671bf1410535)</p>
           <p className="text-[0.7rem]">Usage Intent: Basic Analysis</p>
         </div>
-        <div className="w-[20%] px-2 h-full flex gap-x-4 py-2">
+        <div className=" absolute right-2 w-[20%] px-2 h-full flex gap-x-4 py-2">
           <div className=" flex items-center justify-center relative rounded-full bg-white px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">
             <div className="relative w-4 h-4">
               <Image alt="" src="/blueMessage.svg" fill />
