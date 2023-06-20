@@ -158,7 +158,7 @@ export default function Example({ data }: any) {
   return (
     <div className="w-[105%] h-full mt-[-1rem] ml-[-1rem] ml z-[100]">
       <div className="flex w-full h-full">
-        <div className="min-w-[230px] flex flex-col border-r-[1px] border-gray-300 gap-y-7 mt-2">
+        <div className="min-w-[190px] flex flex-col border-r-[1px] border-gray-300 gap-y-7 mt-2">
           {tabData.map((item, index) => (
             <div
               key={index}
@@ -175,11 +175,11 @@ export default function Example({ data }: any) {
                 <Image src={`/${item.icon}.svg`} alt="brand" fill />
               </div> */}
 
-              <p className="text-[20px] font-[500]">{item.label}</p>
+              <p className="text-[16px] font-[500]">{item.label}</p>
             </div>
           ))}
         </div>
-        <div className="w-[86%]">
+        <div className="w-[86%] h-full">
           {tabData.map((item, i) => {
             if (item.value === activeTab) {
               return <>{item.desc && item.desc}</>;

@@ -113,7 +113,7 @@ export default function LabelSection() {
   };
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center max-w-[1560px]">
       <button
         onClick={() => {
           scroll(-40);

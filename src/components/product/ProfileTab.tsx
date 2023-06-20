@@ -158,8 +158,9 @@ export default function OverviewTable({ data }: any) {
       </div>
 
       {/* Main */}
-      <div className="h-[450px] lg:h-full px-3 relative flex justify-start overflow-x-auto overflow-y-hidden md:w-[50vw] lg:w-[58vw] xl:w-[45vw] 2xl:w-[54vw] 3xl:w-[60vw] 4xl:w-[60vw] max-w-[1115px] flex-grow">
-        <div className="justify-center h-[500px] mx-2 min-w-[340px]">
+      {/* <div className="h-[450px] lg:h-full px-3 relative flex justify-start overflow-x-auto overflow-y-hidden md:w-[50vw] lg:w-[58vw] xl:w-[45vw] 2xl:w-[54vw] 3xl:w-[60vw] 4xl:w-[60vw] max-w-[1115px] flex-grow"> */}
+      <div className="h-[450px] gap-x-2 gap-y-1 lg:h-full relative grid grid-cols-3 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3">
+        <div className="justify-center h-[500px] min-w-[370px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>Scope</p>
           </div>
@@ -197,7 +198,7 @@ export default function OverviewTable({ data }: any) {
           </div>
         </div>
 
-        <div className="justify-center h-[500px] mx-2 min-w-[390px]">
+        <div className="justify-center h-[500px] min-w-[370px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>
               Schedule
@@ -245,145 +246,36 @@ export default function OverviewTable({ data }: any) {
               {schedule.map((item: any, index: number) => (
                 <div
                   key={index}
-                  className="flex ml-1 justify-start items-center gap-x-2"
+                  className="flex ml-1 justify-start items-center w-full gap-x-2"
                 >
-                  <div className="relative w-[12px] h-[12px]">
-                    <Image src={`/time.svg`} alt="brand" fill />
-                  </div>
-                  <p className="text-[11px] mt-1">
-                    Schedule has been added | Repeats every {item.weekNumber}{" "}
-                    {item.interval} on {item.day[0]}{" "}
-                    {item.day.length > 1 && `${"+" + (item.day.length - 1)}`} at{" "}
-                    {item.time}
+                  <p className="text-[11px] w-full mt-1">
+                    <div className="flex justify-between w-full">
+                      <div>
+                        <p>Schedule has been added</p>
+                      </div>
+                      <div
+                        onClick={() => {
+                          deleteSchedule(index);
+                        }}
+                        className="relative w-[9.43px] h-[12px]"
+                      >
+                        <Image src={`/bin.svg`} alt="brand" fill />
+                      </div>
+                    </div>
+                    <p>
+                      Repeats every {item.weekNumber} {item.interval} on{" "}
+                      {item.day[0]}{" "}
+                      {item.day.length > 1 && `${"+" + (item.day.length - 1)}`}{" "}
+                      at {item.time}
+                    </p>
                   </p>
-                  <div
-                    onClick={() => {
-                      deleteSchedule(index);
-                    }}
-                    className="relative w-[9.43px] h-[12px]"
-                  >
-                    <Image src={`/bin.svg`} alt="brand" fill />
-                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <Dialog
-          size="xs"
-          open={open}
-          handler={handleOpen}
-          className="bg-transparent shadow-none"
-        >
-          <Card className="mx-auto w-full max-w-[24rem]">
-            <CardBody className={`${cabin.className}`}>
-              <div className="text-black flex flex-col gap-4">
-                <p className="font-[700] text-[16px]">
-                  Calender Event Schedule
-                </p>
-
-                <div className="flex items-center gap-x-5">
-                  <div className="relative w-[20px] h-[20px]">
-                    <Image src={`/watch.svg`} alt="brand" fill />
-                  </div>
-                  <input
-                    onChange={(e) => {
-                      console.log(e.target.value);
-                      setDate(e.target.value);
-                    }}
-                    type="date"
-                    className="border-[#EAEAEA] border-[2px] rounded-[10px] px-2"
-                  />
-                  <div>
-                    <input
-                      type="time"
-                      onChange={(e) => {
-                        console.log(e.target.value);
-                        setTime(e.target.value);
-                      }}
-                      // className="w-[53px] h-[48px] p-5 text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px]"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-x-5">
-                  <p className="text-[18px]">Repeat every</p>
-                  <input
-                    type="number"
-                    defaultValue={"1"}
-                    value={weekNumber}
-                    onChange={(e) => {
-                      console.log(e.target.value);
-                      setWeekNumber(e.target.value);
-                    }}
-                    className="w-[53px] h-[48px] p-5 text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px]"
-                  />
-                  <div>
-                    <Select
-                      defaultValue={dropDownValue[0]}
-                      options={dropDownValue}
-                      onChange={(val) => {
-                        console.log(val, "DD");
-                        setInterval(val.value);
-                      }}
-                      className={`h-[48px] w-[117px] rounded-[10px] text-[18px] ${cabin.className}`}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <p>Repeat on</p>
-                  <div className="flex mt-2 gap-x-2">
-                    {week.map((element: any, index: number) => (
-                      <div
-                        onClick={() => {
-                          const updateWeek = [...week];
-                          for (let i = 0; i < week.length; i++) {
-                            if (updateWeek[i].val === element.val) {
-                              updateWeek[i].selected = !updateWeek[i].selected;
-                            }
-                          }
-                          setWeek(updateWeek);
-                        }}
-                        className={`w-[30px] items-center flex justify-center h-[30px] rounded-full  ${
-                          element.selected ? `${element.color}` : "bg-[#EAEAEA]"
-                        }`}
-                        key={index}
-                      >
-                        {element.name}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-end mt-4 w-full ml-[0.5rem]">
-                <Button
-                  variant="text"
-                  className="bg-transparent hover:bg-transparent normal-case shadow-none text-[#656565]"
-                  onClick={handleOpen}
-                >
-                  <span className={`text-[14px] ${cabin.className}`}>
-                    Cancel
-                  </span>
-                </Button>
-                <Button
-                  variant="text"
-                  color="red"
-                  onClick={() => {
-                    addSchedule();
-                  }}
-                  className=" hover:bg-transparent normal-case"
-                >
-                  <span className={`text-[14px] before:${cabin.className}`}>
-                    Done
-                  </span>
-                </Button>
-              </div>
-            </CardBody>
-          </Card>
-        </Dialog>
-
-        <div className="justify-center h-[500px] mx-2 min-w-[340px]">
+        <div className="justify-center h-[500px] min-w-[370px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>
               Results
@@ -420,8 +312,117 @@ export default function OverviewTable({ data }: any) {
           </div>
         </div>
 
-        <div className="justify-center h-[500px] mx-2 min-w-[100px]"></div>
+        {/* <div className="justify-center h-[500px] mx-2 min-w-[100px]"></div> */}
       </div>
+
+      <Dialog
+        size="xs"
+        open={open}
+        handler={handleOpen}
+        className="bg-transparent shadow-none"
+      >
+        <Card className="mx-auto w-full max-w-[24rem]">
+          <CardBody className={`${cabin.className}`}>
+            <div className="text-black flex flex-col gap-4">
+              <p className="font-[700] text-[16px]">Calender Event Schedule</p>
+
+              <div className="flex items-center gap-x-5">
+                <div className="relative w-[20px] h-[20px]">
+                  <Image src={`/watch.svg`} alt="brand" fill />
+                </div>
+                <input
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    setDate(e.target.value);
+                  }}
+                  type="date"
+                  className="border-[#EAEAEA] border-[2px] rounded-[10px] px-2"
+                />
+                <div>
+                  <input
+                    type="time"
+                    onChange={(e) => {
+                      console.log(e.target.value);
+                      setTime(e.target.value);
+                    }}
+                    // className="w-[53px] h-[48px] p-5 text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px]"
+                  />
+                </div>
+              </div>
+
+              <div className="flex items-center gap-x-5">
+                <p className="text-[18px]">Repeat every</p>
+                <input
+                  type="number"
+                  defaultValue={"1"}
+                  value={weekNumber}
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    setWeekNumber(e.target.value);
+                  }}
+                  className="w-[53px] h-[48px] p-5 text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px]"
+                />
+                <div>
+                  <Select
+                    defaultValue={dropDownValue[0]}
+                    options={dropDownValue}
+                    onChange={(val) => {
+                      console.log(val, "DD");
+                      setInterval(val.value);
+                    }}
+                    className={`h-[48px] w-[117px] rounded-[10px] text-[18px] ${cabin.className}`}
+                  />
+                </div>
+              </div>
+              <div>
+                <p>Repeat on</p>
+                <div className="flex mt-2 gap-x-2">
+                  {week.map((element: any, index: number) => (
+                    <div
+                      onClick={() => {
+                        const updateWeek = [...week];
+                        for (let i = 0; i < week.length; i++) {
+                          if (updateWeek[i].val === element.val) {
+                            updateWeek[i].selected = !updateWeek[i].selected;
+                          }
+                        }
+                        setWeek(updateWeek);
+                      }}
+                      className={`w-[30px] items-center flex justify-center h-[30px] rounded-full  ${
+                        element.selected ? `${element.color}` : "bg-[#EAEAEA]"
+                      }`}
+                      key={index}
+                    >
+                      {element.name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-end mt-4 w-full ml-[0.5rem]">
+              <Button
+                variant="text"
+                className="bg-transparent hover:bg-transparent normal-case shadow-none text-[#656565]"
+                onClick={handleOpen}
+              >
+                <span className={`text-[14px] ${cabin.className}`}>Cancel</span>
+              </Button>
+              <Button
+                variant="text"
+                color="red"
+                onClick={() => {
+                  addSchedule();
+                }}
+                className=" hover:bg-transparent normal-case"
+              >
+                <span className={`text-[14px] before:${cabin.className}`}>
+                  Done
+                </span>
+              </Button>
+            </div>
+          </CardBody>
+        </Card>
+      </Dialog>
     </div>
   );
 }

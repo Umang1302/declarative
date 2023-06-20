@@ -101,18 +101,6 @@ export default function OverviewTable({ data }: any) {
       day: ["Friday", "Monday"],
       time: "8pm",
     },
-    {
-      weekNumber: "2",
-      interval: "Week",
-      day: ["Friday"],
-      time: "8pm",
-    },
-    {
-      weekNumber: "3",
-      interval: "Week",
-      day: ["Friday"],
-      time: "8pm",
-    },
   ]);
 
   useEffect(() => {
@@ -204,7 +192,7 @@ export default function OverviewTable({ data }: any) {
   return (
     <div className={`w-full h-full overflow-x-auto ${cabin.className}`}>
       {/* Rule */}
-      <div className="bg-[#CCE0FF] flex items-center w-[97%] h-[10%] px-6 justify-between">
+      <div className="bg-[#CCE0FF] flex items-center w-[97%] px-6 py-3 justify-between">
         <p className="text-[18px] font-[600]">Rules</p>
         <div
           onClick={() => {
@@ -215,7 +203,7 @@ export default function OverviewTable({ data }: any) {
           <Image src={`/blackPlus.svg`} alt="brand" fill />
         </div>
       </div>
-      <div className="w-[95%] px-3 h-[26%] overflow-y-auto">
+      <div className="w-[95%] px-3 h-[160px] overflow-y-auto">
         {addRule && (
           <Card className="h-[50px] rounded-none border-[1px]">
             <div className="px-6 justify-between flex items-center h-full">
@@ -266,7 +254,7 @@ export default function OverviewTable({ data }: any) {
       </div>
 
       {/* Rule info */}
-      <div className="bg-[#CCE0FF] flex items-center w-[97%] h-[10%] px-6 justify-between">
+      <div className="bg-[#CCE0FF] flex items-center w-[97%] h-[20%] px-6 py-3 justify-between">
         <p className="text-[18px] font-[600]">Rule Information</p>
       </div>
       <div className="mb-6 w-full py-3 px-3">
@@ -363,8 +351,8 @@ export default function OverviewTable({ data }: any) {
         </div>
       </div>
 
-      <div className="h-[450px] lg:h-full px-3 relative flex justify-start overflow-x-auto overflow-y-hidden md:w-[50vw] lg:w-[58vw] xl:w-[45vw] 2xl:w-[54vw] 3xl:w-[60vw] 4xl:w-[63vw] max-w-[1115px] flex-grow">
-        <div className="justify-center h-[500px] mx-2 min-w-[340px]">
+      <div className="h-[450px] gap-x-2 gap-y-1 lg:h-full relative grid grid-cols-3 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3">
+        <div className="justify-center h-[500px] min-w-[370px]">
           <div className="flex justify-evenly h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>
               Attributes
@@ -414,7 +402,7 @@ export default function OverviewTable({ data }: any) {
           </div>
         </div>
 
-        <div className="justify-center h-[500px] mx-2 min-w-[390px]">
+        <div className="justify-center h-[500px] min-w-[370px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>
               Schedule
@@ -462,25 +450,29 @@ export default function OverviewTable({ data }: any) {
               {schedule.map((item: any, index: number) => (
                 <div
                   key={index}
-                  className="flex ml-1 justify-start items-center gap-x-2"
+                  className="flex ml-1 justify-start items-center w-full gap-x-2"
                 >
-                  <div className="relative w-[12px] h-[12px]">
-                    <Image src={`/time.svg`} alt="brand" fill />
-                  </div>
-                  <p className="text-[11px] mt-1">
-                    Schedule has been added | Repeats every {item.weekNumber}{" "}
-                    {item.interval} on {item.day[0]}{" "}
-                    {item.day.length > 1 && `${"+" + (item.day.length - 1)}`} at{" "}
-                    {item.time}
+                  <p className="text-[11px] w-full mt-1">
+                    <div className="flex justify-between w-full">
+                      <div>
+                        <p>Schedule has been added</p>
+                      </div>
+                      <div
+                        onClick={() => {
+                          deleteSchedule(index);
+                        }}
+                        className="relative w-[9.43px] h-[12px]"
+                      >
+                        <Image src={`/bin.svg`} alt="brand" fill />
+                      </div>
+                    </div>
+                    <p>
+                      Repeats every {item.weekNumber} {item.interval} on{" "}
+                      {item.day[0]}{" "}
+                      {item.day.length > 1 && `${"+" + (item.day.length - 1)}`}{" "}
+                      at {item.time}
+                    </p>
                   </p>
-                  <div
-                    onClick={() => {
-                      deleteSchedule(index);
-                    }}
-                    className="relative w-[9.43px] h-[12px]"
-                  >
-                    <Image src={`/bin.svg`} alt="brand" fill />
-                  </div>
                 </div>
               ))}
             </div>
@@ -600,7 +592,7 @@ export default function OverviewTable({ data }: any) {
           </Card>
         </Dialog>
 
-        <div className="justify-center h-[500px] mx-2 min-w-[340px]">
+        <div className="justify-center h-[500px] min-w-[370px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>
               Results
@@ -636,8 +628,6 @@ export default function OverviewTable({ data }: any) {
             </div>
           </div>
         </div>
-
-        <div className="justify-center h-[500px] mx-2 min-w-[150px]"></div>
       </div>
     </div>
   );
