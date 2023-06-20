@@ -205,7 +205,7 @@ export default function OverviewTable({ data }: any) {
       </div>
       <div className="w-[95%] px-3 h-[160px] overflow-y-auto">
         {addRule && (
-          <Card className="h-[50px] rounded-none border-[1px]">
+          <Card className="h-[60px] w-[100%] rounded-none border-[1px] z-40">
             <div className="px-6 justify-between flex items-center h-full">
               <input
                 onKeyDown={(e) => {
@@ -235,10 +235,14 @@ export default function OverviewTable({ data }: any) {
           </Card>
         )}
         {rules?.map((rule: string, index: number) => (
-          <Card key={index} className="h-[50px] rounded-none border-[1px]">
+          <Card
+            key={index}
+            className={`h-[50px] rounded-none border-[1px] ${
+              addRule && "blur-sm"
+            }`}
+          >
             <div className="px-6 justify-between flex items-center h-full">
               {rule}
-
               <div
                 onClick={() => {
                   console.log("delete");
