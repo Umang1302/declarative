@@ -28,7 +28,7 @@ export default function RootLayout({
           <div className="flex h-[96vh]">
             <Sidebar active={active} setActive={setActive} />
           </div>
-          <div className="w-full pl-6 h-full max-w-[2018px] 4xl:px-[10%] 5xl:mx-[5%]">
+          <div className="w-full pl-6 h-full max-w-[2018px] 5xl:px-[10%] 5xl:mx-[5%]">
             <Navsearchbar />
             <div>{children}</div>
           </div>
