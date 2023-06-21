@@ -146,11 +146,11 @@ export default function OverviewTable({ data }: any) {
   const [addRule, setAddRule] = useState<boolean>(false);
   const [searchAttr, setSearchArray] = useState([
     {
-      attribute: "Attribute 1",
+      attribute: "initial_investment",
       check: false,
     },
     {
-      attribute: "Attribute 2",
+      attribute: "subsequent_investment",
       check: false,
     },
   ]);
