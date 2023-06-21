@@ -56,7 +56,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
   const label = [
     {
       id: 1,
-      label: "Mutual",
+      label: "Mutual Funds",
     },
     {
       id: 2,
@@ -225,8 +225,8 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                             {label.map((element, i) => (
                               <button
                                 key={i}
-                                className={`rounded-[10px] h-[25px] px-4 border-gray-400 border-[2px] text-sm
-         text-gray-600 font-[600] ${cabin.className}`}
+                                className={`rounded-[5px] h-[25px] px-4 border-gray-400 border-[2px] text-sm
+         text-gray-600 font-[600] ${cabin.className} hover:bg-[#EAEAEA] hover:border-0`}
                               >
                                 {element.label}
                               </button>

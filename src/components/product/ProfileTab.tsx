@@ -17,7 +17,7 @@ import Select from "react-select";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
-export default function OverviewTable({ data }: any) {
+export default function ProfileTab({ data }: any) {
   const [scopeTab, setScopeTab] = useState<boolean>(false);
   const [scheduleTab, setScheduleTab] = useState<boolean>(false);
 
@@ -140,7 +140,7 @@ export default function OverviewTable({ data }: any) {
   };
 
   return (
-    <div className="h-full">
+    <div className="h-full ml-3">
       {/* Header */}
       <div className="w-full mb-2 h-[12%] border-b-[1px] border-gray-300 lg:px-[2.3rem] justify-center md:py-0 md:px-[2rem] lg:py-4">
         <div
@@ -148,11 +148,11 @@ export default function OverviewTable({ data }: any) {
         >
           <div className="flex flex-col">
             <p className="text-[#656565]">Name</p>
-            <span>Sampling Profiling Spec</span>
+            <span>{data.name}</span>
           </div>
           <div className="flex flex-col">
             <p className="text-[#656565]">Label</p>
-            <span>profiling for all valuations product</span>
+            <span>{data.name}</span>
           </div>
         </div>
       </div>
@@ -283,7 +283,7 @@ export default function OverviewTable({ data }: any) {
               <input
                 type="text"
                 placeholder="Enter Event Type"
-                className="bg-transparent border-b-[1px] border-gray-400 w-[95%]"
+                className="bg-transparent border-b-[1px] border-gray-400 w-[95%] outline-none"
               />
             </div>
           </div>

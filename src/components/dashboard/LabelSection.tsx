@@ -135,8 +135,8 @@ export default function LabelSection() {
         {label.map((element, i) => (
           <button
             key={i}
-            className={`rounded-[10px] px-4 border-gray-400 border-[2px] text-sm 
-         text-gray-600 font-[600] ${cabin.className}`}
+            className={`rounded-[5px] hover:bg-[#EAEAEA] px-4 border-gray-400 border-[2px] text-sm 
+         text-gray-600 font-[600] ${cabin.className} hover:border-0`}
           >
             {element.label}
           </button>

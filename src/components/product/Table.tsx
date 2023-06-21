@@ -224,7 +224,7 @@ export default function Example({ data }: any) {
   }
 
   return (
-    <div className="shadow-none -py-[1rem] flex flex-col">
+    <div className="shadow-none mt-2 flex flex-col">
       <div className={`${cabin.className} max:w-[1462px]`}>
         <div className="flex justify-between max:w-[1462px] mb-2">
           {showCol ? (
@@ -232,7 +232,7 @@ export default function Example({ data }: any) {
               styles={{
                 control: (styles) => ({
                   ...styles,
-                  backgroundColor: "#EAEAEA",
+                  marginTop: "10px",
                   borderRadius: "10px",
                 }),
               }}
@@ -253,9 +253,9 @@ export default function Example({ data }: any) {
             onClick={() => {
               setShowCol(!showCol);
             }}
-            className={`border px-2 py-1 rounded-3xl ${
+            className={`border px-4 py-2 rounded-[10px] ${
               showCol && "mb-2 "
-            } text-[12px] normal-case mt-2 bg-[#EAEAEA] text-black ${
+            } text-[14px] normal-case mt-2 bg-[#EAEAEA] text-black font-[600] hover:text-white hover:bg-[#F65A27] ${
               cabin.className
             }`}
           >

@@ -32,9 +32,41 @@ export default function TransparentTabs({ data }: any) {
   ];
 
   return (
-    <Tabs value={activeTab} className="p-0">
+    <div className="w-full py-3">
+      <div className="flex justify-start gap-x-48">
+        {tabData.map(({ label, value }, index) => (
+          <div
+            onClick={() => {
+              setActiveTab(value);
+            }}
+            key={index}
+            className="relative"
+          >
+            {activeTab === value && (
+              <div
+                className={`absolute w-full h-[5px] bottom-[-10px] bg-[#F65A27]`}
+              ></div>
+            )}
+            <p className={`text-[20px] ${cabin.className}`}>{label}</p>
+          </div>
+        ))}
+      </div>
+      <div className="w-[100%] bg-gray-300 h-[1px] mt-2" />
+      <div className="w-[98%] h-full">
+        {tabData.map((item, i) => {
+          if (item.value === activeTab) {
+            return <>{item.desc && item.desc}</>;
+          }
+        })}
+      </div>
+    </div>
+  );
+}
+
+{
+  /* <Tabs value={activeTab} className="">
       <TabsHeader
-        className="bg-transparent max-w-[40rem]"
+        className="bg-transparent max-w-[20rem] bg-red-800"
         indicatorProps={{
           className:
             "bg-transparent w-[20px] items-center mt-1 shadow-none rounded-none",
@@ -45,11 +77,11 @@ export default function TransparentTabs({ data }: any) {
             key={value}
             value={value}
             onClick={() => setActiveTab(value)}
-            className={` ${
+            className={`${
               activeTab === value ? "text-black" : "text-gray-500"
             }`}
           >
-            <div className="w-full relative">
+            <div className="w-full relative bg-green-500">
               {activeTab === value && (
                 <div
                   className={`absolute w-full h-[5px] bottom-[-10px] bg-[#F65A27]`}
@@ -71,6 +103,5 @@ export default function TransparentTabs({ data }: any) {
           ))}
         </div>
       </TabsBody>
-    </Tabs>
-  );
+    </Tabs> */
 }

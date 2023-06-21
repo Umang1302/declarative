@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import jsonData from "../../../../data.json";
 import { RingLoader } from "react-spinners";
 import { Breadcrumbs, Card, CardBody } from "@material-tailwind/react";
@@ -9,6 +9,7 @@ import RelatedProducts from "../../../components/product/RelatedProducts";
 import Tabs from "../../../components/common/Tabs";
 import Link from "next/link";
 import { Cabin } from "next/font/google";
+import Image from "next/image";
 const cabin = Cabin({ subsets: ["latin"] });
 
 export default function Page({ params }: any) {
@@ -37,7 +38,7 @@ export default function Page({ params }: any) {
       >
         <div className="w-full flex justify-end">
           <Breadcrumbs className="bg-transparent">
-            <Link href="/" className="flex text-[#8E8E8E]">
+            <Link href="/" className="flex text-[#8E8E8E] hover:text-[#F65A27]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4 mt-[2px] 4xl:w-6 4xl:h-6"
@@ -50,7 +51,7 @@ export default function Page({ params }: any) {
             </Link>
             <Link
               href={`/product/${params.id}`}
-              className="4xl:text-[20px] text-[#8E8E8E]"
+              className="4xl:text-[20px] text-[#8E8E8E] hover:text-[#F65A27]"
             >
               Products
             </Link>
@@ -72,7 +73,6 @@ export default function Page({ params }: any) {
           </CardBody>
         </Card>
         <div className="mt-8">
-          <h1 className="font-bold text-2xl">Related Products</h1>
           <RelatedProducts />
         </div>
       </div>

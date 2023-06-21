@@ -69,15 +69,11 @@ export default function ProductHeading({ data }: any) {
   const label = [
     {
       id: 1,
-      label: "Label 1",
+      label: "Mutual Funds",
     },
     {
       id: 2,
-      label: "Label 2",
-    },
-    {
-      id: 3,
-      label: "Label 3",
+      label: "Securities",
     },
   ];
 
@@ -110,9 +106,9 @@ export default function ProductHeading({ data }: any) {
   return (
     <div className={`flex justify-between`}>
       <div className={`${cabin.className} text-black w-full`}>
-        <p className="text-[48px] font-bold">{data.name}</p>
-        <div className="flex mt-1 gap-x-[10%]">
-          <p className="text-[1rem] flex gap-x-1">
+        <p className="text-[36px] font-bold">{data.name}</p>
+        <div className="flex mt-1 gap-x-[6%] text-[#656565]">
+          <p className="text-[14px] flex gap-x-1">
             <span className="font-[800]">Product Id:</span>
             {"   "} {data.productId}
             <div className="relative w-3 mt-[4px] h-3">
@@ -123,10 +119,10 @@ export default function ProductHeading({ data }: any) {
             <div className="w-1 h-1 mt-[6px] mr-1 bg-blue-800 rounded-full"></div>
             {data.tier}
           </p> */}
-          <p className="text-[1rem]">
+          <p className="text-[14px]">
             <span className="font-[800]">Source: </span> Dataset
           </p>
-          <p className="text-[1rem] flex gap-x-1">
+          <p className="text-[14px] flex gap-x-1">
             <span className="font-[800]">Source Id: </span>
             {"   "}
             {data.sourceDatasetId}
@@ -159,7 +155,7 @@ export default function ProductHeading({ data }: any) {
 
         {/* CHIP SECTION */}
 
-        <div className="flex absolute gap-x-4 top-6 right-6 mt-1">
+        <div className="flex absolute gap-x-6 top-6 right-6 mt-1">
           <div className="w-[90px] h-7 px-2 rounded-lg bg-[#E3E1E1] flex justify-between">
             {data.tier[data.tier.length - 1] === "1" ? (
               <Image
@@ -283,8 +279,8 @@ export default function ProductHeading({ data }: any) {
                 {label.map((element, i) => (
                   <button
                     key={i}
-                    className={`rounded-full h-[25px] px-4 border-gray-400 border-[2px] text-sm 
-         text-gray-600 font-[600] ${cabin.className}`}
+                    className={`hover:bg-[#EAEAEA] rounded-[5px] h-[25px] px-4 border-gray-400 border-[2px] text-sm 
+         text-gray-600 font-[600] ${cabin.className} hover:border-0`}
                   >
                     {element.label}
                   </button>

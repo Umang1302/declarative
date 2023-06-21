@@ -26,7 +26,7 @@ export default function Example({ data }: any) {
           />
         </svg>
       ),
-      desc: <ProfileTab />,
+      desc: <ProfileTab data={data} />,
     },
     {
       label: "Rules",
@@ -156,7 +156,7 @@ export default function Example({ data }: any) {
     },
   ];
   return (
-    <div className="w-[105%] h-full mt-[-1rem] ml-[-1rem] ml z-[100]">
+    <div className="w-[105%] h-full  ml-[-1rem] ml z-[100]">
       <div className="flex w-full h-full">
         <div className="min-w-[190px] flex flex-col border-r-[1px] border-gray-300 gap-y-7 mt-2">
           {tabData.map((item, index) => (
@@ -175,7 +175,9 @@ export default function Example({ data }: any) {
                 <Image src={`/${item.icon}.svg`} alt="brand" fill />
               </div> */}
 
-              <p className="text-[16px] font-[500]">{item.label}</p>
+              <p className={`text-[16px] font-[500] ${cabin.className}`}>
+                {item.label}
+              </p>
             </div>
           ))}
         </div>
