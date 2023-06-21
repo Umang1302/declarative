@@ -301,6 +301,13 @@ export default function OverviewTable({ data }: any) {
             </div>
             <div className="mt-6">
               <Select
+                styles={{
+                  control: (styles) => ({
+                    ...styles,
+                    backgroundColor: "#EAEAEA",
+                    borderRadius: "10px",
+                  }),
+                }}
                 defaultValue={dropDownValue1[0]}
                 options={dropDownValue1}
                 onChange={(val) => {
@@ -341,6 +348,13 @@ export default function OverviewTable({ data }: any) {
               </div>
               <div className="mt-6">
                 <Select
+                  styles={{
+                    control: (styles) => ({
+                      ...styles,
+                      backgroundColor: "#EAEAEA",
+                      borderRadius: "10px",
+                    }),
+                  }}
                   defaultValue={dropDownValue1[0]}
                   options={dropDownValue1}
                   onChange={(val) => {
@@ -355,8 +369,8 @@ export default function OverviewTable({ data }: any) {
         </div>
       </div>
 
-      <div className="h-[450px] gap-x-2 gap-y-1 lg:h-full relative grid grid-cols-3 md:grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3">
-        <div className="justify-center h-[500px] min-w-[370px]">
+      <div className="h-[450px] gap-x-2 gap-y-1 relative grid grid-cols-3">
+        <div className="justify-center h-[500px]">
           <div className="flex justify-evenly h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>
               Attributes
@@ -406,7 +420,7 @@ export default function OverviewTable({ data }: any) {
           </div>
         </div>
 
-        <div className="justify-center h-[500px] min-w-[370px]">
+        <div className="justify-center h-[500px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>
               Schedule
@@ -444,10 +458,12 @@ export default function OverviewTable({ data }: any) {
                 onClick={handleOpen}
                 className="flex justify-start item-center gap-x-2"
               >
-                <div className="relative w-[20px] h-[20px]">
+                <div className="relative w-[20px] h-[20px] mt-1">
                   <Image src={`/clock.svg`} alt="brand" fill />
                 </div>
-                <p className={`${cabin.className} text-[18px]`}>
+                <p
+                  className={`${cabin.className} text-[18px] hover:text-[#f65a27] cursor-pointer`}
+                >
                   Calender event schedule
                 </p>
               </div>
@@ -479,6 +495,18 @@ export default function OverviewTable({ data }: any) {
                   </p>
                 </div>
               ))}
+            </div>
+            <div
+              className={`mt-8 ml-2 flex flex-col gap-y-5 text-[18px] px-2 pr-[2.2rem] ${cabin.className}`}
+            >
+              <p className="w-full h-[30px] border-b-[1px] border-gray-400">
+                Event
+              </p>
+              <input
+                type="text"
+                placeholder="Enter Event Type"
+                className="bg-transparent border-b-[1px] border-gray-400 w-[95%]"
+              />
             </div>
           </div>
         </div>
@@ -534,6 +562,13 @@ export default function OverviewTable({ data }: any) {
                   />
                   <div>
                     <Select
+                      styles={{
+                        control: (styles) => ({
+                          ...styles,
+                          backgroundColor: "#EAEAEA",
+                          borderRadius: "10px",
+                        }),
+                      }}
                       defaultValue={dropDownValue[0]}
                       options={dropDownValue}
                       onChange={(val) => {
@@ -596,7 +631,7 @@ export default function OverviewTable({ data }: any) {
           </Card>
         </Dialog>
 
-        <div className="justify-center h-[500px] min-w-[370px]">
+        <div className="justify-center h-[500px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>
               Results

@@ -33,11 +33,11 @@ export default function Page({ params }: any) {
   } else {
     return (
       <div
-        className={`w-full mt-5 ${cabin.className}  max-h-[79vh] overflow-y-auto pr-5`}
+        className={`w-full mt-2 ${cabin.className}  max-h-[79vh] overflow-y-auto pr-5`}
       >
         <div className="w-full flex justify-end">
           <Breadcrumbs className="bg-transparent">
-            <Link href="/" className="opacity-60 flex active:text-red-600">
+            <Link href="/" className="flex text-[#8E8E8E]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4 mt-[2px] 4xl:w-6 4xl:h-6"
@@ -48,7 +48,10 @@ export default function Page({ params }: any) {
               </svg>
               <span className="ml-1 4xl:text-[20px]">Home</span>
             </Link>
-            <Link href={`/product/${params.id}`} className="4xl:text-[20px]">
+            <Link
+              href={`/product/${params.id}`}
+              className="4xl:text-[20px] text-[#8E8E8E]"
+            >
               Products
             </Link>
             <Link href="/product/0" className="4xl:text-[20px] text-[#F65A27]">

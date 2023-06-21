@@ -109,11 +109,15 @@ export default function ProductHeading({ data }: any) {
 
   return (
     <div className={`flex justify-between`}>
-      <div className={`${cabin.className} w-full`}>
-        <p className="text-2xl font-bold">{data.name}</p>
-        <div className="flex mt-3 gap-x-5">
-          <p className="text-[1rem]">
-            <span className="font-[800]">Product Id:</span> {data.productId}
+      <div className={`${cabin.className} text-black w-full`}>
+        <p className="text-[48px] font-bold">{data.name}</p>
+        <div className="flex mt-1 gap-x-[10%]">
+          <p className="text-[1rem] flex gap-x-1">
+            <span className="font-[800]">Product Id:</span>
+            {"   "} {data.productId}
+            <div className="relative w-3 mt-[4px] h-3">
+              <Image alt="" src="/copy.svg" fill />
+            </div>
           </p>
           {/* <p className="text-[2rem] flex">
             <div className="w-1 h-1 mt-[6px] mr-1 bg-blue-800 rounded-full"></div>
@@ -122,9 +126,13 @@ export default function ProductHeading({ data }: any) {
           <p className="text-[1rem]">
             <span className="font-[800]">Source: </span> Dataset
           </p>
-          <p className="text-[1rem]">
-            <span className="font-[800]">Source Id: </span>{" "}
+          <p className="text-[1rem] flex gap-x-1">
+            <span className="font-[800]">Source Id: </span>
+            {"   "}
             {data.sourceDatasetId}
+            <div className="relative w-3 mt-[4px] h-3">
+              <Image alt="" src="/copy.svg" fill />
+            </div>
           </p>
 
           {/* <Dialog open={open} handler={handleOpen}>
@@ -151,17 +159,37 @@ export default function ProductHeading({ data }: any) {
 
         {/* CHIP SECTION */}
 
-        <div className="flex absolute gap-x-4 top-6 right-5 mt-1">
+        <div className="flex absolute gap-x-4 top-6 right-6 mt-1">
           <div className="w-[90px] h-7 px-2 rounded-lg bg-[#E3E1E1] flex justify-between">
-            <Image
-              alt=""
-              src="/tier.svg"
-              width={18}
-              height={18}
-              className="ml-1"
-            />
-            <div className="w-[46px] rounded-lg bg-[#E3E1E1] flex justify-center">
-              <p className="font-bold mt-[5px] text-[0.8rem]">{data.tier}</p>
+            {data.tier[data.tier.length - 1] === "1" ? (
+              <Image
+                alt=""
+                src="/t1.svg"
+                width={18}
+                height={18}
+                className="ml-1"
+              />
+            ) : data.tier[data.tier.length - 1] === "2" ? (
+              <Image
+                alt=""
+                src="/t2.svg"
+                width={18}
+                height={18}
+                className="ml-1"
+              />
+            ) : (
+              <Image
+                alt=""
+                src="/tier.svg"
+                width={18}
+                height={18}
+                className="ml-1"
+              />
+            )}
+            <div className="w-[46px] rounded-lg flex -mt-[2px] justify-center">
+              <p className="font-bold mt-[5px] text-[16px] ">
+                {`${data.tier[0]}${data.tier.substr(1, 5).toLowerCase()}`}
+              </p>
             </div>
           </div>
 
@@ -297,6 +325,7 @@ export default function ProductHeading({ data }: any) {
                     control: (styles) => ({
                       ...styles,
                       backgroundColor: "#EAEAEA",
+                      borderRadius: "10px",
                     }),
                   }}
                   defaultValue={dropDownValue[0]}
@@ -313,6 +342,7 @@ export default function ProductHeading({ data }: any) {
                     control: (styles) => ({
                       ...styles,
                       backgroundColor: "#EAEAEA",
+                      borderRadius: "10px",
                     }),
                   }}
                   defaultValue={dropDownValue2[0]}
@@ -329,11 +359,12 @@ export default function ProductHeading({ data }: any) {
                     control: (styles) => ({
                       ...styles,
                       backgroundColor: "#EAEAEA",
+                      borderRadius: "10px",
                     }),
                   }}
                   defaultValue={dropDownValue1[0]}
                   options={dropDownValue1}
-                  className={`max-w-[300px] rounded-[10px] min-w-[140px] text-[16px] ${cabin.className}`}
+                  className={`max-w-[300px] rounded-[10px] min-w-[140px] text-[16px] text-[#2D2D2D] ${cabin.className}`}
                 />
               </div>
             </div>

@@ -45,7 +45,7 @@ export default function NavSearchbar() {
     >
       <div className="relative w-[100%] px-2 h-full flex items-center justify-start gap-x-3">
         {/* <div className="w-[5rem] h-[5rem] flex items-center justify-center rounded-full bg-[#FFBC35] px-2 py-2 text-center shadow-lg"> */}
-        <div className="relative w-[120px] h-[120px]">
+        <div className="relative w-[80px] h-[80px]">
           <Image alt="" src="/avatar.svg" fill />
         </div>
         {/* </div> */}

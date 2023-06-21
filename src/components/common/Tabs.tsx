@@ -37,7 +37,7 @@ export default function TransparentTabs({ data }: any) {
         className="bg-transparent max-w-[40rem]"
         indicatorProps={{
           className:
-            "bg-transparent mt-1 border-b-2 border-black shadow-none rounded-none",
+            "bg-transparent w-[20px] items-center mt-1 shadow-none rounded-none",
         }}
       >
         {tabData.map(({ label, value }) => (
@@ -45,13 +45,22 @@ export default function TransparentTabs({ data }: any) {
             key={value}
             value={value}
             onClick={() => setActiveTab(value)}
-            className={activeTab === value ? "text-black" : "text-gray-500"}
+            className={` ${
+              activeTab === value ? "text-black" : "text-gray-500"
+            }`}
           >
-            <p className={`text-xl ${cabin.className}`}>{label}</p>
+            <div className="w-full relative">
+              {activeTab === value && (
+                <div
+                  className={`absolute w-full h-[5px] bottom-[-10px] bg-[#F65A27]`}
+                ></div>
+              )}
+              <p className={`text-[24px] ${cabin.className}`}>{label}</p>
+            </div>
           </Tab>
         ))}
       </TabsHeader>
-      <TabsBody>
+      <TabsBody className="z-0">
         <div className="absolute w-full bg-gray-300 h-[1px]" />
 
         <div className="p-0">
