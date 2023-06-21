@@ -32,7 +32,7 @@ export default function TransparentTabs({ data }: any) {
   ];
 
   return (
-    <div className="w-full py-3">
+    <div className="w-full h-full py-3">
       <div className="flex justify-start gap-x-48">
         {tabData.map(({ label, value }, index) => (
           <div

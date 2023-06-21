@@ -135,8 +135,8 @@ export default function OverviewTable({ data }: any) {
     handleOpen();
   };
 
-  const [tab1, setTab1] = useState("");
-  const [tab2, setTab2] = useState("");
+  const [tab1, setTab1] = useState("group");
+  const [tab2, setTab2] = useState("record");
 
   const [rules, setRules] = useState<any>([
     "Initial Investment Amount and Subsequent Investment Amount must be greater than 0",
@@ -151,22 +151,6 @@ export default function OverviewTable({ data }: any) {
     },
     {
       attribute: "Attribute 2",
-      check: false,
-    },
-    {
-      attribute: "Attribute 3",
-      check: false,
-    },
-    {
-      attribute: "Attribute 4",
-      check: false,
-    },
-    {
-      attribute: "Attribute 5",
-      check: false,
-    },
-    {
-      attribute: "Attribute 6",
       check: false,
     },
   ]);
@@ -189,8 +173,22 @@ export default function OverviewTable({ data }: any) {
     setRules(deletedArray);
   };
 
+  const updateRule = (index: any, val: any) => {
+    console.log(val);
+    const updatedRule = [...rules];
+    updatedRule.splice(index, 1, val);
+    setRules(updatedRule);
+    console.log(updatedRule);
+  };
+
+  const [selectRule, setSelectRule] = useState("0");
+
+  React.useEffect(() => {
+    console.log(selectRule);
+  }, [selectRule, rules]);
+
   return (
-    <div className={`w-full h-full overflow-x-auto ${cabin.className}`}>
+    <div className={`w-full h-full overflow-x-auto px-2 ${cabin.className}`}>
       {/* Rule */}
       <div className="bg-[#CCE0FF] flex items-center w-[97%] px-6 py-3 justify-between">
         <p className="text-[18px] font-[600]">Rules</p>
@@ -202,6 +200,30 @@ export default function OverviewTable({ data }: any) {
         >
           <Image src={`/blackPlus.svg`} alt="brand" fill />
         </div>
+      </div>
+      <div className="relative my-2 w-full">
+        <div className="absolute inset-y-0 left-4 flex items-center pl-3 pointer-events-none">
+          <svg
+            aria-hidden="true"
+            className="w-5 h-5 text-gray-500 dark:text-gray-400"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+              clipRule="evenodd"
+            ></path>
+          </svg>
+        </div>
+        <input
+          type="text"
+          id="simple-search"
+          className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block mx-3 w-[92%] outline-none pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          // className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Search"
+        />
       </div>
       <div className="w-[95%] px-3 h-[160px] overflow-y-auto">
         {addRule && (
@@ -242,7 +264,27 @@ export default function OverviewTable({ data }: any) {
             }`}
           >
             <div className="px-6 justify-between flex items-center h-full">
-              {rule}
+              <div className="w-full flex gap-x-3 items-center">
+                <div>
+                  <Checkbox
+                    onChange={(e) => {
+                      if (e.currentTarget.checked) {
+                        setSelectRule(`${index}`);
+                      }
+                    }}
+                    checked={selectRule === String(index)}
+                    type="checkbox"
+                  />
+                </div>
+                <input
+                  onChange={(e) => {
+                    updateRule(+index, e.target.value);
+                  }}
+                  value={rules[index]}
+                  type="text"
+                  className="w-[90%] outline-none"
+                />
+              </div>
               <div
                 onClick={() => {
                   console.log("delete");
@@ -259,10 +301,10 @@ export default function OverviewTable({ data }: any) {
 
       {/* Rule info */}
       <div className="bg-[#CCE0FF] flex items-center w-[97%] h-[20%] px-6 py-3 justify-between">
-        <p className="text-[18px] font-[600]">Rule Information</p>
+        <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
       </div>
       <div className="mb-6 w-full py-3 px-3">
-        <div className="py-10 px-10">
+        <div className="py-8 px-10">
           <div className="flex justify-between w-[90%]">
             <div>
               <p>Scope</p>
@@ -376,9 +418,9 @@ export default function OverviewTable({ data }: any) {
               Attributes
             </p>
           </div>
-          <div className="bg-[#EEEEEE] w-full h-[90%]">
-            <div className="relative w-full">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <div className="bg-[#EEEEEE] w-full h-[10%]">
+            <div className="relative w-full pt-3">
+              <div className="absolute inset-y-0 left-0 top-3 flex items-center pl-3 pointer-events-none">
                 <svg
                   aria-hidden="true"
                   className="w-5 h-5 text-gray-500 dark:text-gray-400"
@@ -426,11 +468,11 @@ export default function OverviewTable({ data }: any) {
               Schedule
             </p>
           </div>
-          <div className="bg-[#EEEEEE] h-[90%] w-full">
+          <div className="bg-[#EEEEEE] h-[70%] w-full">
             <div
-              className={`items-center flex justify-center py-3 w-full md:flex-row ${cabin.className}`}
+              className={`items-center flex justify-center w-full  ${cabin.className}`}
             >
-              <div className="mt-4 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
+              <div className="mt-2 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
                 <p
                   onClick={() => {
                     setScheduleTab(true);
@@ -453,7 +495,8 @@ export default function OverviewTable({ data }: any) {
                 </p>
               </div>
             </div>
-            <div className="w-full min-h-[20%] max-h-[25%] overflow-y-auto py-2 px-2 justify-start gap-x-6 bg-white mt-10">
+
+            <div className="w-full min-h-[20%] max-h-[25%] overflow-y-auto py-2 px-2 justify-start gap-x-6 bg-white mt-8">
               <div
                 onClick={handleOpen}
                 className="flex justify-start item-center gap-x-2"
@@ -496,6 +539,7 @@ export default function OverviewTable({ data }: any) {
                 </div>
               ))}
             </div>
+
             <div
               className={`mt-8 ml-2 flex flex-col gap-y-5 text-[18px] px-2 pr-[2.2rem] ${cabin.className}`}
             >
@@ -637,7 +681,7 @@ export default function OverviewTable({ data }: any) {
               Results
             </p>
           </div>
-          <div className="bg-[#EEEEEE] h-[90%] w-full">
+          <div className="bg-[#EEEEEE] h-[70%] w-full">
             <div
               className={`items-center flex justify-start py-3 w-full md:flex-row ${cabin.className}`}
             >
@@ -646,8 +690,10 @@ export default function OverviewTable({ data }: any) {
                 <Switch defaultChecked />
               </div>
             </div>
-            <div className="w-full items-center flex px-2 pr-[2.5rem] h-[20%] justify-between gap-x-6 bg-white mt-10">
-              <p className={`${cabin.className} text-[18px]`}>Detect Anomaly</p>
+            <div className="w-full items-center flex px-2 pr-[2.5rem] h-[23%] justify-between gap-x-6 bg-white">
+              <p className={`${cabin.className} text-[18px]`}>
+                Detect Anomaly (Auto DQ)
+              </p>
               <Switch defaultChecked />
             </div>
             <div
@@ -660,10 +706,30 @@ export default function OverviewTable({ data }: any) {
                 <p>Owners</p>
                 <Switch defaultChecked />
               </div>
-              <div className="w-full flex justify-between h-[40px] items-center border-b-[1px] border-gray-400">
+              <div className="w-full flex justify-between h-[40px] items-center">
                 <p>Consumers</p>
                 <Switch defaultChecked />
               </div>
+            </div>
+          </div>
+          <div className="flex mt-5 justify-between items-center px-4 w-[95%]">
+            <div>Alerts Threshold</div>
+            <div>
+              <input
+                type="text"
+                value={"5%"}
+                className="outline-none border-b-[2px] border-gray-400 w-8 h-8 "
+              />
+            </div>
+          </div>
+          <div className="flex mt-5 justify-between items-center px-4 w-[95%]">
+            <div>Variance Threshold</div>
+            <div>
+              <input
+                type="text"
+                value={"0"}
+                className="outline-none border-b-[2px] border-gray-400 w-8 h-8 px-2"
+              />
             </div>
           </div>
         </div>
