@@ -72,7 +72,7 @@ export default function Hero({
     >
       <div className="flex justify-between w-full">
         <div className="w-[70%] h-full flex items-center">
-          <h1 className="font-bold text-4xl">Products</h1>
+          <h1 className={`font-bold text-4xl  ${cabin.className}`}>Products</h1>
         </div>
         <div>
           <Breadcrumbs className=" bg-transparent w-full ">
@@ -85,10 +85,13 @@ export default function Hero({
               >
                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
               </svg>
-              <span className="ml-1">Home</span>
+              <span className={`ml-1 ${cabin.className}`}>Home</span>
             </Link>
 
-            <Link href="/product/0" className="flex  text-[#F65A27]">
+            <Link
+              href="/product/0"
+              className={`flex  text-[#F65A27]  ${cabin.className}`}
+            >
               Products
             </Link>
           </Breadcrumbs>
