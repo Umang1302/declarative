@@ -41,7 +41,7 @@ export default function Page({ params }: any) {
             <Link href="/" className="flex text-[#8E8E8E] hover:text-[#F65A27]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 mt-[2px] 4xl:w-6 4xl:h-6"
+                className="h-4 w-4 mt-[2px]"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
