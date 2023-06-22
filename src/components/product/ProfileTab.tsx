@@ -160,7 +160,7 @@ export default function ProfileTab({ data }: any) {
       {/* Main */}
       {/* <div className="h-[450px] lg:h-full px-3 relative flex justify-start overflow-x-auto overflow-y-hidden md:w-[50vw] lg:w-[58vw] xl:w-[45vw] 2xl:w-[54vw] 3xl:w-[60vw] 4xl:w-[60vw] max-w-[1115px] flex-grow"> */}
       <div className="h-[450px] gap-x-2 gap-y-1 relative grid grid-cols-3">
-        <div className="justify-center h-[500px]">
+        <div className="justify-center h-[450px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>Scope</p>
           </div>
@@ -198,7 +198,7 @@ export default function ProfileTab({ data }: any) {
           </div>
         </div>
 
-        <div className="justify-center h-[500px]">
+        <div className="justify-center h-[450px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>
               Schedule
@@ -289,7 +289,7 @@ export default function ProfileTab({ data }: any) {
           </div>
         </div>
 
-        <div className="justify-center h-[500px]">
+        <div className="justify-center h-[450px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p className={`${cabin.className} font-[900] text-[18px]`}>
               Results

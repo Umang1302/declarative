@@ -4,6 +4,9 @@ import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });
 import ProfileTab from "./ProfileTab";
 import Rules from "./Rules";
+import Security from "./Security";
+import Access from "./Access";
+import SharingTab from "./SharingTab";
 
 export default function Example({ data }: any) {
   const [activeTab, setActiveTab] = React.useState("profile");
@@ -85,9 +88,7 @@ export default function Example({ data }: any) {
           />
         </svg>
       ),
-      desc: `It really matters and then like it really doesn't matter.
-      What matters is the people who are sparked by it. And the people 
-      who are like offended by it, it doesn't matter.`,
+      desc: <Security />,
     },
     {
       label: "Lifecycle",
@@ -129,9 +130,7 @@ export default function Example({ data }: any) {
           />
         </svg>
       ),
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
+      desc: <Access />,
     },
     {
       label: "Sharing",
@@ -150,9 +149,7 @@ export default function Example({ data }: any) {
           />
         </svg>
       ),
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
+      desc: <SharingTab />,
     },
   ];
   return (

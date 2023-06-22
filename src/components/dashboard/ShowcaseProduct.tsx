@@ -53,17 +53,6 @@ export default function ShowcaseProduct({ page, prodData }: any) {
     setProductList(prodData);
   }, [page, prodData]);
 
-  const label = [
-    {
-      id: 1,
-      label: "Mutual Funds",
-    },
-    {
-      id: 2,
-      label: "Securities",
-    },
-  ];
-
   React.useEffect(() => {}, [activeLink]);
 
   return (
@@ -171,7 +160,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                         />
                         <div className="w-[46px] mr-[-6px]  rounded-lg bg-[#E3E1E1] flex justify-center">
                           <p className="font-bold text-[0.9rem] mt-[10px]">
-                            35+
+                            {element.reviews}
                           </p>
                         </div>
                       </div>
@@ -186,7 +175,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                         />
                         <div className="w-[46px] mr-[-6px]  rounded-lg bg-[#E3E1E1] flex justify-center">
                           <p className="font-bold text-[0.9rem] mt-[10px]">
-                            4.9
+                            {element.rating}
                           </p>
                         </div>
                       </div>
@@ -222,13 +211,13 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                             </div>
                           </div>
                           <div className="flex gap-x-3 ml-10 mt-4">
-                            {label.map((element, i) => (
+                            {element.label.map((element: any, i: number) => (
                               <button
                                 key={i}
                                 className={`rounded-[5px] h-[25px] px-4 border-gray-400 border-[2px] text-sm
          text-gray-600 font-[600] ${cabin.className} hover:bg-[#EAEAEA] hover:border-0`}
                               >
-                                {element.label}
+                                {element}
                               </button>
                             ))}
                           </div>

@@ -31,6 +31,7 @@ import { Option } from "@material-tailwind/react";
 import React, { useMemo, useEffect, useState } from "react";
 import Select from "react-select";
 import { Cabin } from "next/font/google";
+import { MultiSelect } from "react-multi-select-component";
 const cabin = Cabin({ subsets: ["latin"] });
 
 const TABS = [
@@ -228,23 +229,33 @@ export default function Example({ data }: any) {
       <div className={`${cabin.className} max:w-[1462px]`}>
         <div className="flex justify-between max:w-[1462px] mb-2">
           {showCol ? (
-            <Select
-              styles={{
-                control: (styles) => ({
-                  ...styles,
-                  marginTop: "10px",
-                  borderRadius: "10px",
-                }),
-              }}
-              defaultValue={selected}
-              isMulti={true}
+            // <Select
+            //   styles={{
+            //     control: (styles) => ({
+            //       ...styles,
+            //       marginTop: "10px",
+            //       borderRadius: "10px",
+            //     }),
+            //   }}
+            //   defaultValue={selected}
+            //   isMulti={true}
+            //   options={dropDownMenu}
+            //   onChange={(val) => {
+            //     console.log(val);
+            //     setSelected(val);
+            //   }}
+            //   className="basic-multi-select max-w-[80%]"
+            //   classNamePrefix="select"
+            // />
+            <MultiSelect
+              className="w-[1000px]"
+              labelledBy=""
               options={dropDownMenu}
-              onChange={(val) => {
+              onChange={(val: any) => {
                 console.log(val);
                 setSelected(val);
               }}
-              className="basic-multi-select max-w-[80%]"
-              classNamePrefix="select"
+              value={selected}
             />
           ) : (
             <div></div>
@@ -262,7 +273,8 @@ export default function Example({ data }: any) {
             Select Columns
           </button>
         </div>
-        <div className="md:w-[76vw] lg:w-[77vw] xl:w-[70vw] min-[1550px]:w-full 3xl:w-[75vw] overflow-x-auto">
+        {/***/}
+        <div className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[74vw] 3xl:w-[76.8vw] overflow-x-auto ">
           <table className="w-full table-auto text-left">
             <thead>
               <tr className="space-x-3">
@@ -380,8 +392,8 @@ export default function Example({ data }: any) {
                 ) => {
                   const isLast = index === TABLE_ROWS.length - 1;
                   const classes = isLast
-                    ? "p-4"
-                    : "p-4 border-b border-blue-gray-50";
+                    ? "p-2"
+                    : "py-1 px-2 min-w-[200px] border-b border-blue-gray-50";
 
                   return (
                     <tr key={name}>

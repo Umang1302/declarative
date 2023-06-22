@@ -8,7 +8,7 @@ export default function LabelSection() {
   const label = [
     {
       id: 1,
-      label: "Mutual",
+      label: `Mutual_Funds`,
     },
     {
       id: 2,
@@ -70,21 +70,10 @@ export default function LabelSection() {
       id: 2,
       label: "Securities",
     },
-    {
-      id: 3,
-      label: "Benchmarks",
-    },
+
     {
       id: 4,
       label: "ESG",
-    },
-    {
-      id: 5,
-      label: "Economy",
-    },
-    {
-      id: 6,
-      label: "Census",
     },
   ];
 
@@ -119,7 +108,7 @@ export default function LabelSection() {
           scroll(-40);
         }}
       >
-        <div className="relative w-[20px] mt-5 h-[20px]">
+        <div className="relative w-[20px]  mt-5 h-[20px]">
           <Image src={`/labelLeft.svg`} alt="brand" fill />
         </div>
       </button>
@@ -135,10 +124,10 @@ export default function LabelSection() {
         {label.map((element, i) => (
           <button
             key={i}
-            className={`rounded-[5px] hover:bg-[#EAEAEA] px-4 border-gray-400 border-[2px] text-sm 
+            className={`rounded-[5px] flex hover:bg-[#EAEAEA] px-2 h-[25px] border-gray-400 border-[2px] text-sm 
          text-gray-600 font-[600] ${cabin.className} hover:border-0`}
           >
-            {element.label}
+            <p>{element.label}</p>
           </button>
         ))}
         {/* </div> */}

@@ -108,7 +108,7 @@ export default function ProductHeading({ data }: any) {
       <div className={`${cabin.className} text-black w-full`}>
         <p className="text-[36px] font-bold">{data.name}</p>
         <div className="flex mt-1 gap-x-[6%] text-[#656565]">
-          <p className="text-[14px] flex gap-x-1">
+          <p className="text-[16px] flex gap-x-1">
             <span className="font-[800]">Product Id:</span>
             {"   "} {data.productId}
             <div className="relative w-3 mt-[4px] h-3">
@@ -119,10 +119,10 @@ export default function ProductHeading({ data }: any) {
             <div className="w-1 h-1 mt-[6px] mr-1 bg-blue-800 rounded-full"></div>
             {data.tier}
           </p> */}
-          <p className="text-[14px]">
+          <p className="text-[16px]">
             <span className="font-[800]">Source: </span> Dataset
           </p>
-          <p className="text-[14px] flex gap-x-1">
+          <p className="text-[16px] flex gap-x-1">
             <span className="font-[800]">Source Id: </span>
             {"   "}
             {data.sourceDatasetId}
@@ -260,15 +260,19 @@ export default function ProductHeading({ data }: any) {
             <div className="flex items-center">
               <Avatar src="/yahoo.svg" className="" alt="avatar" size="lg" />
               <div className="mt-[6px] ml-3 text-black">
-                <p className="font-bold">{data.ownerName}</p>
+                <p className="font-bold text-[18px]">{data.ownerName}</p>
               </div>
             </div>
 
             <div>
-              <p className="font-semibold max-w-[100%]">
+              <p className="font-semibold max-w-[100%] text-[18px]">
                 Description about the product:{" "}
               </p>
-              <p className={`max-w-[18rem] ${!open ? "truncate" : ""} `}>
+              <p
+                className={`max-w-[18rem] text-[16px] ${
+                  !open ? "truncate" : ""
+                } `}
+              >
                 {data.description} Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Aliquam nostrum animi, doloremque blanditiis,
                 facilis sapiente illum at molestiae porro ullam earum

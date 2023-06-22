@@ -34,7 +34,7 @@ export default function Page({ params }: any) {
   } else {
     return (
       <div
-        className={`w-full mt-2 ${cabin.className}  max-h-[79vh] overflow-y-auto pr-5`}
+        className={`w-full mt-2 ${cabin.className}  max-h-[79vh] max-w-[1560px] overflow-y-auto pr-5`}
       >
         <div className="w-full flex justify-end">
           <Breadcrumbs className="bg-transparent">
@@ -61,7 +61,7 @@ export default function Page({ params }: any) {
           </Breadcrumbs>
         </div>
 
-        <Card className="relative 4xl:mt-6">
+        <Card className="relative ">
           <CardBody>
             <ProductHeading data={data} />
 

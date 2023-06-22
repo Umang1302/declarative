@@ -49,7 +49,7 @@ export default function Sidebar({ active, setActive }: any) {
         <div className={`w-full h-full ${cabin.className}`}>
           {/* logo */}
           <div className="relative w-full mt-[34px] h-[8%] max-h-[70px]">
-            <Image src="/declarativeLogo1.svg" alt="brand" fill />
+            <Image src="/declarativeLogoBlack.svg" alt="brand" fill />
           </div>
 
           <hr className="border-[#C4C4C4] mt-[33px]" />
@@ -60,7 +60,7 @@ export default function Sidebar({ active, setActive }: any) {
               <div className="relative w-[18px] h-[18px]">
                 <Image src="/plusIcon.svg" alt="brand" fill />
               </div>
-              <p className="text-[20px] font-[600]">Create</p>
+              <p className="text-[20px] text-black font-[600]">Create</p>
             </button>
           </div>
 
