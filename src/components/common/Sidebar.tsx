@@ -56,7 +56,7 @@ export default function Sidebar({ active, setActive }: any) {
 
           {/* Create Botton */}
           <div className="w-full h-[8%] max-h-[60px] py-1 my-[38px] flex justify-start px-2">
-            <button className="w-[50%] h-[90%] gap-x-2 px-2 border-[1px] items-center rounded-[10px] shadow-xl flex">
+            <button className="w-[50%] h-[90%] gap-x-2 px-2 border-[1px] items-center rounded-[10px] hover:w-[50%] hover:z-50 hover:h-[98%] shadow-xl flex">
               <div className="relative w-[18px] h-[18px]">
                 <Image src="/plusIcon.svg" alt="brand" fill />
               </div>
@@ -72,7 +72,7 @@ export default function Sidebar({ active, setActive }: any) {
               <div
                 className={`hover:bg-[#F2F2F2] pl-4 ${
                   active === 0 && "bg-[#F2F2F2] border-l-4 border-[#F65A27]"
-                } w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3`}
+                } cursor-pointer w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3`}
                 onClick={() => {
                   router.push("/");
                 }}
@@ -85,7 +85,7 @@ export default function Sidebar({ active, setActive }: any) {
               </div>
 
               <div
-                className={`hover:bg-[#F2F2F2] pl-4 w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3 ${
+                className={`cursor-pointer hover:bg-[#F2F2F2] pl-4 w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3 ${
                   active === 1 && "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
                 }`}
                 onClick={() => {
@@ -100,7 +100,7 @@ export default function Sidebar({ active, setActive }: any) {
               </div>
 
               <div
-                className="hover:bg-[#F2F2F2] pl-4 w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
+                className="hover:bg-[#F2F2F2] cursor-pointer pl-4 w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
                 onClick={() => {
                   router.push("/");
                 }}
@@ -113,7 +113,7 @@ export default function Sidebar({ active, setActive }: any) {
               </div>
 
               <div
-                className="hover:bg-[#F2F2F2] pl-4 w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
+                className="hover:bg-[#F2F2F2] cursor-pointer pl-4 w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
                 onClick={() => {
                   router.push("/");
                 }}

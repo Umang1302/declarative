@@ -102,7 +102,8 @@ export default function LabelSection() {
   };
 
   return (
-    <div className="flex w-full h-full">
+    <div className="flex relative w-full h-full">
+      <div className="z-10 absolute w-[30px] h-[32px] top-4 left-5 bg-white opacity-80"></div>
       <button
         onClick={() => {
           scroll(-40);
@@ -141,6 +142,7 @@ export default function LabelSection() {
           <Image src={`/labelRight.svg`} alt="brand" fill />
         </div>
       </button>
+      <div className="z-10 absolute w-[30px] h-[32px] top-4 right-5 bg-white opacity-80"></div>
     </div>
   );
 }

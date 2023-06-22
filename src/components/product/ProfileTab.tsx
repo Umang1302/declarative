@@ -162,19 +162,23 @@ export default function ProfileTab({ data }: any) {
       <div className="h-[450px] gap-x-2 gap-y-1 relative grid grid-cols-3">
         <div className="justify-center h-[450px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
-            <p className={`${cabin.className} font-[900] text-[18px]`}>Scope</p>
+            <p
+              className={`${cabin.className} font-[900] text-[18px] text-black`}
+            >
+              Scope
+            </p>
           </div>
           <div className="bg-[#EEEEEE] w-full h-[90%]">
             <div
-              className={`items-center flex justify-center py-3 w-full md:flex-row ${cabin.className}`}
+              className={`items-center border-b-[1px] border-[#C4C4C4] flex justify-center py-3 w-full md:flex-row ${cabin.className}`}
             >
-              <div className="mt-4 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
+              <div className="h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
                 <p
                   onClick={() => {
                     setScopeTab(true);
                   }}
                   className={`${cabin.className} rounded-[10px] text-[18px] ${
-                    scopeTab && "bg-white"
+                    scopeTab && "bg-white text-black"
                   }`}
                 >
                   &nbsp;&nbsp;{"Product"}&nbsp;&nbsp;
@@ -184,15 +188,17 @@ export default function ProfileTab({ data }: any) {
                     setScopeTab(false);
                   }}
                   className={`${cabin.className} rounded-[10px] text-[18px] ${
-                    !scopeTab && "bg-white"
+                    !scopeTab && "bg-white text-black"
                   }`}
                 >
                   &nbsp;&nbsp;{"Series"}&nbsp;&nbsp;
                 </p>
               </div>
             </div>
-            <div className="w-full items-center flex h-[20%] justify-around gap-x-6 bg-white mt-10">
-              <p className={`${cabin.className} text-[18px]`}>Incremental</p>
+            <div className="w-full items-center flex border-b-[1px] border-[#C4C4C4] h-[20%] justify-around gap-x-6 mt-10">
+              <p className={`${cabin.className} text-[18px] text-black`}>
+                Incremental
+              </p>
               <Switch defaultChecked />
             </div>
           </div>
@@ -200,21 +206,23 @@ export default function ProfileTab({ data }: any) {
 
         <div className="justify-center h-[450px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
-            <p className={`${cabin.className} font-[900] text-[18px]`}>
+            <p
+              className={`${cabin.className} font-[900] text-[18px] text-black`}
+            >
               Schedule
             </p>
           </div>
           <div className="bg-[#EEEEEE] h-[90%] w-full">
             <div
-              className={`items-center flex justify-center py-3 w-full md:flex-row ${cabin.className}`}
+              className={`items-center flex border-b-[1px] border-[#C4C4C4] justify-center py-3 w-full md:flex-row ${cabin.className}`}
             >
-              <div className="mt-4 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
+              <div className="h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
                 <p
                   onClick={() => {
                     setScheduleTab(true);
                   }}
                   className={`${cabin.className} rounded-[10px] text-[18px] ${
-                    scheduleTab && "bg-white"
+                    scheduleTab && "bg-white text-black"
                   }`}
                 >
                   &nbsp;&nbsp;{"Event"}&nbsp;&nbsp;
@@ -224,14 +232,14 @@ export default function ProfileTab({ data }: any) {
                     setScheduleTab(false);
                   }}
                   className={`${cabin.className} rounded-[10px] text-[18px] ${
-                    !scheduleTab && "bg-white"
+                    !scheduleTab && "bg-white text-black"
                   }`}
                 >
                   &nbsp;&nbsp;{"Time"}&nbsp;&nbsp;
                 </p>
               </div>
             </div>
-            <div className="w-full min-h-[20%] max-h-[25%] overflow-y-auto py-2 px-2 justify-start gap-x-6 bg-white mt-10">
+            <div className="w-full  min-h-[20%] border-b-[1px] border-[#C4C4C4] max-h-[25%] overflow-y-auto py-2 px-4 justify-start gap-x-6  mt-10">
               <div
                 onClick={handleOpen}
                 className="flex justify-start item-center gap-x-2"
@@ -275,9 +283,9 @@ export default function ProfileTab({ data }: any) {
               ))}
             </div>
             <div
-              className={`mt-8 ml-2 flex flex-col gap-y-5 text-[18px] px-2 pr-[2.2rem] ${cabin.className}`}
+              className={`mt-8 ml-2 flex flex-col gap-y-5 text-[18px] ${cabin.className}`}
             >
-              <p className="w-full h-[30px] border-b-[1px] border-gray-400">
+              <p className="w-full h-[30px] text-black border-b-[1px] border-gray-400">
                 Event
               </p>
               <input
@@ -291,34 +299,40 @@ export default function ProfileTab({ data }: any) {
 
         <div className="justify-center h-[450px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
-            <p className={`${cabin.className} font-[900] text-[18px]`}>
+            <p
+              className={`${cabin.className} font-[900] text-black text-[18px]`}
+            >
               Results
             </p>
           </div>
           <div className="bg-[#EEEEEE] h-[90%] w-full">
             <div
-              className={`items-center flex justify-start py-3 w-full md:flex-row ${cabin.className}`}
+              className={`items-center border-b-[1px] border-[#C4C4C4] flex justify-start py-3 w-full md:flex-row ${cabin.className}`}
             >
-              <div className="mt-4 h-[40px] w-[90%] flex justify-between px-1 py-1">
-                <p className={`${cabin.className} ml-3 text-[18px]`}>Retain</p>
+              <div className="h-[40px] w-full  flex justify-between px-4 py-1">
+                <p className={`${cabin.className} text-[18px] text-black`}>
+                  Retain
+                </p>
                 <Switch defaultChecked />
               </div>
             </div>
-            <div className="w-full items-center flex px-2 pr-[2.5rem] h-[20%] justify-between gap-x-6 bg-white mt-10">
-              <p className={`${cabin.className} text-[18px]`}>Detect Anomaly</p>
+            <div className="w-full items-center flex px-4 h-[25%] border-b-[1px] border-[#C4C4C4] justify-between gap-x-6 mt-5">
+              <p className={`${cabin.className} text-[18px] text-black`}>
+                Detect Anomaly (Auto DQ)
+              </p>
               <Switch defaultChecked />
             </div>
             <div
-              className={`mt-8 ml-2 flex flex-col gap-y-5 text-[18px] px-2 pr-[2.2rem] ${cabin.className}`}
+              className={`mt-8 flex flex-col gap-y-5 text-[18px] ${cabin.className}`}
             >
-              <p className="w-full h-[30px] border-b-[1px] border-gray-400">
+              <p className="w-full text-black px-4 h-[30px] border-b-[1px] border-gray-400">
                 Notification
               </p>
-              <div className="w-full flex justify-between h-[40px] items-center border-b-[1px] border-gray-400">
+              <div className="w-full px-4 flex justify-between h-[40px] items-center border-b-[1px] border-gray-400">
                 <p>Owners</p>
                 <Switch defaultChecked />
               </div>
-              <div className="w-full flex justify-between h-[40px] items-center border-b-[1px] border-gray-400">
+              <div className="w-full px-4 flex justify-between h-[40px] items-center border-b-[1px] border-gray-400">
                 <p>Consumers</p>
                 <Switch defaultChecked />
               </div>

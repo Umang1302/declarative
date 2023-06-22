@@ -274,14 +274,14 @@ export default function Example({ data }: any) {
           </button>
         </div>
         {/***/}
-        <div className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[74vw] 3xl:w-[76.8vw] overflow-x-auto ">
+        <div className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[74vw] 3xl:w-[76.8vw] max-w-[1460px] overflow-x-auto ">
           <table className="w-full table-auto text-left">
             <thead>
               <tr className="space-x-3">
                 {tableHead.map((head: any, index: number) => (
                   <th
                     key={head.label}
-                    className={`cursor-pointer border-y border-blue-gray-100 p-4 min-w-[60px] bg-[#A0EDA7] transition-colors hover:bg-blue-gray-50 ${cabin.className}`}
+                    className={`cursor-pointer border-y border-blue-gray-100 p-4 min-w-[60px] bg-[#A0EDA7] transition-colors ${cabin.className}`}
                   >
                     <Typography
                       variant="small"
@@ -399,7 +399,7 @@ export default function Example({ data }: any) {
                     <tr key={name}>
                       {tableHead.indexOf("Attributes") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center items-center gap-3">
+                          <div className="flex items-center gap-3">
                             <div className="flex flex-col">
                               <Typography
                                 variant="small"
@@ -448,7 +448,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("Classification") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -461,7 +461,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("Description") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -474,7 +474,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("CreatedAt") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -487,7 +487,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("UpdatedAt") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -500,7 +500,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("AccountId") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -513,7 +513,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("ProductId") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -526,7 +526,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("NamespaceId") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -540,7 +540,7 @@ export default function Example({ data }: any) {
 
                       {tableHead.indexOf("SourceAttribute") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -553,7 +553,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("Transformation") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -566,7 +566,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("ClassificationCategory") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -579,7 +579,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("Length") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -592,7 +592,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("Type") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -605,7 +605,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("Precision") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -618,7 +618,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("Scale") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -631,7 +631,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("Status") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -644,7 +644,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("CreatedBy") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"
@@ -657,7 +657,7 @@ export default function Example({ data }: any) {
                       )}
                       {tableHead.indexOf("UpdatedBy") !== -1 && (
                         <td className={classes}>
-                          <div className="flex justify-center">
+                          <div className="flex">
                             <Typography
                               variant="small"
                               color="blue-gray"

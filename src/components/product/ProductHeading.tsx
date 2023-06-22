@@ -106,7 +106,7 @@ export default function ProductHeading({ data }: any) {
   return (
     <div className={`flex justify-between`}>
       <div className={`${cabin.className} text-black w-full`}>
-        <p className="text-[36px] font-bold">{data.name}</p>
+        <p className="text-[32px] font-bold">{data.name}</p>
         <div className="flex mt-1 gap-x-[6%] text-[#656565]">
           <p className="text-[16px] flex gap-x-1">
             <span className="font-[800]">Product Id:</span>
@@ -255,43 +255,44 @@ export default function ProductHeading({ data }: any) {
 
         <div className="w-full mt-3 bg-gray-300 h-[1px]" />
 
-        <div className="flex w-full">
-          <div className="flex py-2 justify-between w-[50%] border-r-2 border-gray-300 pr-3">
-            <div className="flex items-center">
-              <Avatar src="/yahoo.svg" className="" alt="avatar" size="lg" />
-              <div className="mt-[6px] ml-3 text-black">
-                <p className="font-bold text-[18px]">{data.ownerName}</p>
+        <div className="flex justify-between w-full">
+          <div className="flex py-2 justify-between w-[60%] border-r-2 border-gray-300 pr-3">
+            <div className="flex w-full justify-start gap-x-[9.6rem] ">
+              <div className="flex items-center">
+                <div className="w-[45px] h-[45px] relative">
+                  <Image src="/yahoo.svg" alt="brand" fill />
+                </div>
+                {/* <Avatar src="/yahoo.svg" className="" alt="avatar" size="md" /> */}
+                <div className="mt-[6px] ml-3 text-black">
+                  <p className="font-bold text-[16px]">{data.ownerName}</p>
+                </div>
               </div>
-            </div>
-
-            <div>
-              <p className="font-semibold max-w-[100%] text-[18px]">
-                Description about the product:{" "}
-              </p>
-              <p
-                className={`max-w-[18rem] text-[16px] ${
-                  !open ? "truncate" : ""
-                } `}
-              >
-                {data.description} Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Aliquam nostrum animi, doloremque blanditiis,
-                facilis sapiente illum at molestiae porro ullam earum
-                exercitationem explicabo eaque quis corporis dolor, corrupti
-                tempore fuga.
-              </p>
-              <div className={`${more ? "mt-[4.3rem]" : "mt-2"} flex gap-x-3`}>
-                {label.map((element, i) => (
-                  <button
-                    key={i}
-                    className={`hover:bg-[#EAEAEA] rounded-[5px] h-[25px] px-4 border-gray-400 border-[2px] text-sm 
+              <div>
+                <p className="font-semibold max-w-[100%] text-[16px]">
+                  Description about the product:{" "}
+                </p>
+                <p
+                  className={`max-w-[18rem] text-[16px] ${
+                    !open ? "truncate" : ""
+                  } `}
+                >
+                  {data.description}
+                </p>
+                <div
+                  className={`${more ? "mt-[4.3rem]" : "mt-2"} flex gap-x-3`}
+                >
+                  {label.map((element, i) => (
+                    <button
+                      key={i}
+                      className={`hover:bg-[#EAEAEA] rounded-[5px] h-[25px] px-4 border-gray-400 border-[2px] text-sm 
          text-gray-600 font-[600] ${cabin.className} hover:border-0`}
-                  >
-                    {element.label}
-                  </button>
-                ))}
+                    >
+                      {element.label}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
-
             <div
               onClick={() => {
                 handleOpen();
@@ -316,14 +317,15 @@ export default function ProductHeading({ data }: any) {
             </div>
           </div>
 
-          <div className="flex justify-between w-[50%] px-6 items-start mt-3">
+          <div className="flex justify-end gap-x-10 w-[35%] items-start mt-3">
             <div>
-              <p className={`${cabin.className} mb-2 text-[18px]`}>Frequency</p>
+              <p className={`${cabin.className} mb-2 text-[16px]`}>Frequency</p>
               <div className="min-w-[80px] ">
                 <Select
                   styles={{
                     control: (styles) => ({
                       ...styles,
+                      fontSize: "16px",
                       backgroundColor: "#EAEAEA",
                       borderRadius: "10px",
                     }),
@@ -335,12 +337,13 @@ export default function ProductHeading({ data }: any) {
               </div>
             </div>
             <div>
-              <p className={`${cabin.className} mb-2 text-[18px]`}>Status</p>
+              <p className={`${cabin.className} mb-2 text-[16px]`}>Status</p>
               <div className="min-w-[80px] ">
                 <Select
                   styles={{
                     control: (styles) => ({
                       ...styles,
+                      fontSize: "16px",
                       backgroundColor: "#EAEAEA",
                       borderRadius: "10px",
                     }),
@@ -352,12 +355,13 @@ export default function ProductHeading({ data }: any) {
               </div>
             </div>
             <div>
-              <p className={`${cabin.className} mb-2 text-[18px]`}>Type</p>
+              <p className={`${cabin.className} mb-2 text-[16px]`}>Type</p>
               <div className="min-w-[80px]">
                 <Select
                   styles={{
                     control: (styles) => ({
                       ...styles,
+                      fontSize: "16px",
                       backgroundColor: "#EAEAEA",
                       borderRadius: "10px",
                     }),
