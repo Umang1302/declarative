@@ -198,7 +198,7 @@ export default function ProductHeading({ data }: any) {
               className="ml-2"
             />
             <div className="w-[40px] mr-[-6px] rounded-lg bg-[#E3E1E1] flex justify-center">
-              <p className="font-bold mt-[2px]">39+</p>
+              <p className="font-bold mt-[2px]">{data.reviews}</p>
             </div>
           </div>
 
@@ -211,7 +211,7 @@ export default function ProductHeading({ data }: any) {
               className="ml-2"
             />
             <div className="w-[40px] mr-[-6px] rounded-lg bg-[#E3E1E1] flex justify-center">
-              <p className="font-bold mt-1">4.9</p>
+              <p className="font-bold mt-1">{data.rating}</p>
             </div>
           </div>
 
@@ -281,13 +281,13 @@ export default function ProductHeading({ data }: any) {
                 <div
                   className={`${more ? "mt-[4.3rem]" : "mt-2"} flex gap-x-3`}
                 >
-                  {label.map((element, i) => (
+                  {data.label.map((element: any, i: number) => (
                     <button
                       key={i}
                       className={`hover:bg-[#EAEAEA] rounded-[5px] h-[25px] px-4 border-gray-400 border-[2px] text-sm 
          text-gray-600 font-[600] ${cabin.className} hover:border-0`}
                     >
-                      {element.label}
+                      {element}
                     </button>
                   ))}
                 </div>
