@@ -300,7 +300,11 @@ export default function OverviewTable({ data }: any) {
       </div>
 
       {/* Rule info */}
-      <div className="bg-[#CCE0FF] flex items-center w-[97%] h-[20%] px-6 py-3 justify-between">
+      <div
+        className={`bg-[#CCE0FF] flex items-center w-[97%] h-[20%] px-6 py-3 justify-between  ${
+          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#F65A27] text-white"
+        }`}
+      >
         <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
       </div>
       <div className="mb-6 w-full py-3 px-3">
@@ -418,7 +422,7 @@ export default function OverviewTable({ data }: any) {
               Attributes
             </p>
           </div>
-          <div className="bg-[#EEEEEE] w-full h-[10%]">
+          <div className="bg-[#EEEEEE] w-full overflow-y-auto h-[350px]">
             <div className="relative w-full pt-3">
               <div className="absolute inset-y-0 left-0 top-3 flex items-center pl-3 pointer-events-none">
                 <svg
@@ -443,7 +447,8 @@ export default function OverviewTable({ data }: any) {
                 placeholder="Search"
               />
             </div>
-            {searchAttr.map((item, index) => (
+
+            {data.attributes.map((item: any, index: number) => (
               <Card
                 key={index}
                 className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
@@ -455,7 +460,7 @@ export default function OverviewTable({ data }: any) {
                     // className="rounded-none"
                     // onChange={() => {}}
                   />
-                  <p>{item.attribute}</p>
+                  <p>{item.name}</p>
                 </div>
               </Card>
             ))}

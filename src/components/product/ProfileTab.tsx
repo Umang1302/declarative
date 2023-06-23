@@ -158,9 +158,9 @@ export default function ProfileTab({ data }: any) {
       </div>
 
       {/* Main */}
-      {/* <div className="h-[450px] lg:h-full px-3 relative flex justify-start overflow-x-auto overflow-y-hidden md:w-[50vw] lg:w-[58vw] xl:w-[45vw] 2xl:w-[54vw] 3xl:w-[60vw] 4xl:w-[60vw] max-w-[1115px] flex-grow"> */}
-      <div className="h-[450px] gap-x-2 gap-y-1 relative grid grid-cols-3">
-        <div className="justify-center h-[450px]">
+      {/* <div className="h-[400px] lg:h-full px-3 relative flex justify-start overflow-x-auto overflow-y-hidden md:w-[50vw] lg:w-[58vw] xl:w-[45vw] 2xl:w-[54vw] 3xl:w-[60vw] 4xl:w-[60vw] max-w-[1115px] flex-grow"> */}
+      <div className="h-[400px] gap-x-2 gap-y-1 relative grid grid-cols-3">
+        <div className="justify-center h-[400px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p
               className={`${cabin.className} font-[900] text-[18px] text-black`}
@@ -170,7 +170,7 @@ export default function ProfileTab({ data }: any) {
           </div>
           <div className="bg-[#EEEEEE] w-full h-[90%]">
             <div
-              className={`items-center border-b-[1px] border-[#C4C4C4] flex justify-center py-3 w-full md:flex-row ${cabin.className}`}
+              className={`items-center border-b-[1px] border-white flex justify-center py-3 w-full md:flex-row ${cabin.className}`}
             >
               <div className="h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
                 <p
@@ -195,7 +195,7 @@ export default function ProfileTab({ data }: any) {
                 </p>
               </div>
             </div>
-            <div className="w-full items-center flex border-b-[1px] border-[#C4C4C4] h-[20%] justify-around gap-x-6 mt-10">
+            <div className="w-full items-center flex border-b-[1px] border-white h-[20%] justify-between px-5 mt-3">
               <p className={`${cabin.className} text-[18px] text-black`}>
                 Incremental
               </p>
@@ -204,7 +204,7 @@ export default function ProfileTab({ data }: any) {
           </div>
         </div>
 
-        <div className="justify-center h-[450px]">
+        <div className="justify-center h-[400px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p
               className={`${cabin.className} font-[900] text-[18px] text-black`}
@@ -214,7 +214,7 @@ export default function ProfileTab({ data }: any) {
           </div>
           <div className="bg-[#EEEEEE] h-[90%] w-full">
             <div
-              className={`items-center flex border-b-[1px] border-[#C4C4C4] justify-center py-3 w-full md:flex-row ${cabin.className}`}
+              className={`items-center flex border-b-[1px] border-white justify-center py-3 w-full md:flex-row ${cabin.className}`}
             >
               <div className="h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
                 <p
@@ -239,7 +239,7 @@ export default function ProfileTab({ data }: any) {
                 </p>
               </div>
             </div>
-            <div className="w-full  min-h-[20%] border-b-[1px] border-[#C4C4C4] max-h-[25%] overflow-y-auto py-2 px-4 justify-start gap-x-6  mt-10">
+            <div className="w-full min-h-[20%] border-b-[1px] border-white max-h-[25%] overflow-y-auto px-4 justify-start gap-x-6 mt-3">
               <div
                 onClick={handleOpen}
                 className="flex justify-start item-center gap-x-2"
@@ -285,7 +285,7 @@ export default function ProfileTab({ data }: any) {
             <div
               className={`mt-8 ml-2 flex flex-col gap-y-5 text-[18px] ${cabin.className}`}
             >
-              <p className="w-full h-[30px] text-black border-b-[1px] border-gray-400">
+              <p className="w-full h-[30px] text-black border-b-[1px] border-white">
                 Event
               </p>
               <input
@@ -297,7 +297,7 @@ export default function ProfileTab({ data }: any) {
           </div>
         </div>
 
-        <div className="justify-center h-[450px]">
+        <div className="justify-center h-[400px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
             <p
               className={`${cabin.className} font-[900] text-black text-[18px]`}
@@ -307,7 +307,7 @@ export default function ProfileTab({ data }: any) {
           </div>
           <div className="bg-[#EEEEEE] h-[90%] w-full">
             <div
-              className={`items-center border-b-[1px] border-[#C4C4C4] flex justify-start py-3 w-full md:flex-row ${cabin.className}`}
+              className={`items-center border-b-[1px] border-white flex justify-start py-3 w-full md:flex-row ${cabin.className}`}
             >
               <div className="h-[40px] w-full  flex justify-between px-4 py-1">
                 <p className={`${cabin.className} text-[18px] text-black`}>
@@ -316,7 +316,7 @@ export default function ProfileTab({ data }: any) {
                 <Switch defaultChecked />
               </div>
             </div>
-            <div className="w-full items-center flex px-4 h-[25%] border-b-[1px] border-[#C4C4C4] justify-between gap-x-6 mt-5">
+            <div className="w-full items-center flex px-4 h-[20%] border-b-[1px] border-white justify-between gap-x-6 mt-3">
               <p className={`${cabin.className} text-[18px] text-black`}>
                 Detect Anomaly (Auto DQ)
               </p>
@@ -325,14 +325,14 @@ export default function ProfileTab({ data }: any) {
             <div
               className={`mt-8 flex flex-col gap-y-5 text-[18px] ${cabin.className}`}
             >
-              <p className="w-full text-black px-4 h-[30px] border-b-[1px] border-gray-400">
+              <p className="w-full text-black px-4 h-[30px] border-b-[1px] border-white">
                 Notification
               </p>
-              <div className="w-full px-4 flex justify-between h-[40px] items-center border-b-[1px] border-gray-400">
+              <div className="w-full  -mt-3 px-4 flex justify-between h-[40px] items-center border-b-[1px] border-white">
                 <p>Owners</p>
                 <Switch defaultChecked />
               </div>
-              <div className="w-full px-4 flex justify-between h-[40px] items-center border-b-[1px] border-gray-400">
+              <div className="w-full -mt-3 px-4 flex justify-between h-[40px] items-center">
                 <p>Consumers</p>
                 <Switch defaultChecked />
               </div>

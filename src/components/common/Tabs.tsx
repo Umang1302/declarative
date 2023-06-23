@@ -48,9 +48,9 @@ export default function TransparentTabs({ data }: any) {
               ></div>
             )}
             <p
-              className={`text-[20px] ${activeTab === value && "text-black"} ${
-                cabin.className
-              } hover:text-black cursor-pointer`}
+              className={`text-[20px] ${
+                activeTab === value ? "text-black" : "hover:text-[#F65A27]"
+              } ${cabin.className} cursor-pointer`}
             >
               {label}
             </p>

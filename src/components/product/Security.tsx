@@ -62,9 +62,17 @@ export default function OverviewTable({ data }: any) {
   const [arg4, setArg4] = useState("hasing");
   const [arg5, setArg5] = useState("Reporting");
   const [arg6, setArg6] = useState("region");
-  const [arg7, setArg7] = useState("North America");
-  const [arg8, setArg8] = useState("region");
-  const [arg9, setArg9] = useState("US");
+  //   const [arg7, setArg7] = useState("North America");
+  //   const [arg8, setArg8] = useState("region");
+  //   const [arg9, setArg9] = useState("US");
+
+  const [multiValueArray, setMultivalueArray] = useState([
+    "Reporting",
+    "Sales",
+    "Marketing",
+  ]);
+  const [region, setRegion] = useState("US");
+  const [inputLocation, setInputLocation] = useState("North America");
 
   const [addRule, setAddRule] = useState<boolean>(false);
 
@@ -134,7 +142,7 @@ export default function OverviewTable({ data }: any) {
         <input
           type="text"
           id="simple-search"
-          className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block mx-3 w-[92%] outline-none pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-[#F2F2F2] border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block mx-3 w-[92%] outline-none pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           // className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Search"
         />
@@ -155,7 +163,7 @@ export default function OverviewTable({ data }: any) {
                   setNewRule(e.target.value);
                 }}
                 type="text"
-                className={`h-full min-w-[85%] appearance-none  py-2 focus:outline-none ${cabin.className}`}
+                className={`h-full min-w-[85%] appearance-none py-2 focus:outline-none ${cabin.className}`}
               />
 
               <div
@@ -173,7 +181,7 @@ export default function OverviewTable({ data }: any) {
         {rules?.map((rule: string, index: number) => (
           <Card
             key={index}
-            className={`h-[50px] rounded-none border-[1px] ${
+            className={`h-[50px] rounded-none shadow-none border-[1px] ${
               addRule && "blur-sm"
             }`}
           >
@@ -214,17 +222,21 @@ export default function OverviewTable({ data }: any) {
       </div>
 
       {/* Rule info */}
-      <div className="bg-[#CCE0FF] flex items-center w-[97%] h-[20%] px-6 py-3 justify-between">
+      <div
+        className={` flex items-center w-[97%] h-[20%] px-6 py-3 justify-between ${
+          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#F65A27] text-white"
+        }`}
+      >
         <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
       </div>
       <div className="mb-6 w-full py-3">
-        <div className="bg-[#EEEEEE] px-10 py-4 w-[93%]">
+        <div className="bg-[#EEEEEE] px-3 py-4 w-[93%]">
           <p className="font-[600]">Description:</p>
           <p>
             Mask Management Bio except for Reporting, Sales, and Marketing usage
           </p>
         </div>
-        <div className="flex relative py-3 px-10">
+        <div className="flex relative py-3 px-3">
           <p className="gap-x-1 w-full flex">
             <span onClick={toggleOpen}>
               <p className="font-[800]">{arg1}</p>
@@ -374,13 +386,15 @@ export default function OverviewTable({ data }: any) {
             </span>
           </p>
         </div>
-        <div className="flex relative py-3 px-10">
+        <div className="flex relative py-3 px-3">
           <p className="gap-x-1 w-full flex">
             Except For Usage
             <span onClick={toggleOpen4}>
-              <p className="font-[800]">{arg5}</p>
+              <p className="font-[800]">
+                {multiValueArray.map((item) => `${item}, `)}
+              </p>
               <Collapse
-                className="absolute z-50 w-[100px] bg-white"
+                className="absolute z-50 w-[120px] bg-white"
                 open={open4}
               >
                 <div className="border-[1px] flex flex-col items-center py-1 ">
@@ -388,16 +402,52 @@ export default function OverviewTable({ data }: any) {
                     onClick={() => {
                       setArg5("Reporting");
                     }}
-                    className="text-gray-700 flex justify-center px-3 py-2 text-sm border-b-[1px] w-full "
+                    className="text-gray-700 flex justify-start  py-2 text-sm border-b-[1px] w-full items-center "
                   >
+                    <Checkbox
+                      onChange={(e) => {
+                        if (e.currentTarget.checked) {
+                          console.log("add");
+                          const aa = [...multiValueArray];
+                          aa.push("Reporting");
+                          setMultivalueArray(aa);
+                        } else {
+                          console.log("remove");
+                          const index = multiValueArray.indexOf("Reporting");
+                          const aa = [...multiValueArray];
+                          aa.splice(index, 1);
+                          setMultivalueArray(aa);
+                        }
+                      }}
+                      checked={multiValueArray.indexOf("Reporting") !== -1}
+                      type="checkbox"
+                    />
                     Reporting
                   </p>
                   <p
                     onClick={() => {
                       setArg5("Sales");
                     }}
-                    className="text-gray-700 flex justify-center px-3 py-2 text-sm border-b-[1px] w-full "
+                    className="text-gray-700 flex items-center justify-start  py-2 text-sm border-b-[1px] w-full "
                   >
+                    <Checkbox
+                      onChange={(e) => {
+                        if (e.currentTarget.checked) {
+                          console.log("add");
+                          const aa = [...multiValueArray];
+                          aa.push("Sales");
+                          setMultivalueArray(aa);
+                        } else {
+                          console.log("remove");
+                          const index = multiValueArray.indexOf("Sales");
+                          const aa = [...multiValueArray];
+                          aa.splice(index, 1);
+                          setMultivalueArray(aa);
+                        }
+                      }}
+                      checked={multiValueArray.indexOf("Sales") !== -1}
+                      type="checkbox"
+                    />
                     Sales
                   </p>
 
@@ -405,9 +455,26 @@ export default function OverviewTable({ data }: any) {
                     onClick={() => {
                       setArg5("Marketing");
                     }}
-                    className="text-gray-700 py-2 flex justify-center text-sm"
+                    className="text-gray-700 py-2 flex items-center justify-start text-sm w-full"
                   >
-                    {" "}
+                    <Checkbox
+                      onChange={(e) => {
+                        if (e.currentTarget.checked) {
+                          console.log("add");
+                          const aa = [...multiValueArray];
+                          aa.push("Marketing");
+                          setMultivalueArray(aa);
+                        } else {
+                          console.log("remove");
+                          const index = multiValueArray.indexOf("Marketing");
+                          const aa = [...multiValueArray];
+                          aa.splice(index, 1);
+                          setMultivalueArray(aa);
+                        }
+                      }}
+                      checked={multiValueArray.indexOf("Marketing") !== -1}
+                      type="checkbox"
+                    />
                     Marketing
                   </p>
                 </div>
@@ -439,25 +506,13 @@ export default function OverviewTable({ data }: any) {
             as
             <span onClick={toggleOpen6}>
               {" "}
-              <p className="font-[800]">North America</p>
-              <Collapse
-                className="absolute z-50 bg-white w-[100px]"
-                open={open6}
-              >
-                <div className="border-[1px] flex flex-col items-center py-1 ">
-                  <p className="text-gray-700 flex justify-center px-3 py-2 text-sm border-b-[1px] w-full ">
-                    Reporting
-                  </p>
-                  <p className="text-gray-700 flex justify-center px-3 py-2 text-sm border-b-[1px] w-full ">
-                    Sales
-                  </p>
-
-                  <p className="text-gray-700 flex justify-center py-2 text-sm">
-                    {" "}
-                    Marketing
-                  </p>
-                </div>
-              </Collapse>
+              <input
+                className="font-[800] w-[100px]"
+                value={inputLocation}
+                onChange={(e) => {
+                  setInputLocation(e.target.value);
+                }}
+              />
             </span>
             For data having
             <span onClick={toggleOpen7}>
@@ -481,7 +536,14 @@ export default function OverviewTable({ data }: any) {
             </span>
             <span onClick={toggleOpen8}>
               {" "}
-              <p className="font-[800]">US</p>
+              <input
+                className="font-[800] w-[30px]"
+                value={region}
+                onChange={(e) => {
+                  setRegion(e.target.value);
+                }}
+              />
+              {/* <p className="font-[800]">US</p>
               <Collapse
                 className="absolute z-50 bg-white w-[100px]"
                 open={open8}
@@ -496,7 +558,7 @@ export default function OverviewTable({ data }: any) {
 
                   <p className="text-gray-700 py-2 text-sm"> Marketing</p>
                 </div>
-              </Collapse>
+              </Collapse> */}
             </span>
           </p>
         </div>

@@ -48,7 +48,7 @@ export default function Example({ data }: any) {
           />
         </svg>
       ),
-      desc: <Rules />,
+      desc: <Rules data={data} />,
     },
     {
       label: "Metrics",

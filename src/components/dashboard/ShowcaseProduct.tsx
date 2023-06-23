@@ -158,7 +158,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                           height={20}
                           className="ml-1"
                         />
-                        <div className="w-[46px] mr-[-6px]  rounded-lg bg-[#E3E1E1] flex justify-center">
+                        <div className="w-[46px] mr-[-8px]   rounded-lg bg-[#E3E1E1] flex justify-center">
                           <p className="font-bold text-[0.9rem] mt-[10px]">
                             {element.reviews}
                           </p>
@@ -173,7 +173,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                           height={22}
                           className="ml-1"
                         />
-                        <div className="w-[46px] mr-[-6px]  rounded-lg bg-[#E3E1E1] flex justify-center">
+                        <div className="w-[46px] mr-[-8px]  rounded-lg bg-[#E3E1E1] flex justify-center">
                           <p className="font-bold text-[0.9rem] mt-[10px]">
                             {element.rating}
                           </p>
@@ -223,33 +223,78 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                           </div>
                         </div>
                       </div>
-                      <div className="w-[40%] max-w-[430px] h-full grid lg:grid-cols-3 md:grid-cols-2 lg:gap-x-1 2xl:grid-cols-3 3xl:pl-8 gap-y-4 text-black font-[600]">
-                        <button className="w-[100px] rounded-lg h-[30px]  hover:scale-110 bg-[#A0EDA7]">
-                          Security (2)
+                      <div className="w-[40%] max-w-[430px] text-[14px] h-full grid lg:grid-cols-3 md:grid-cols-2 lg:gap-x-1 2xl:grid-cols-3 3xl:pl-8 gap-y-4 text-black font-[600]">
+                        <button className="w-[100px] items-center rounded-lg h-[30px] hover:scale-110 pl-3 bg-[#A0EDA7] flex justify-between">
+                          Security
+                          <div className="w-[30px] h-full rounded-lg bg-[#6AC673] flex justify-center">
+                            <p className="font-bold flex items-center text-[0.9rem]">
+                              02
+                            </p>
+                          </div>
                         </button>
-                        <button className="w-[100px] rounded-lg h-[30px] hover:scale-110 bg-[#A0EDA7]">
+                        <button className="w-[100px] items-center rounded-lg h-[30px] hover:scale-110 pl-4 bg-[#A0EDA7] flex justify-between">
                           Profile
+                          <div className="w-[30px] h-full rounded-lg bg-[#6AC673] flex justify-center">
+                            <p className="font-bold flex items-center text-[0.9rem]">
+                              02
+                            </p>
+                          </div>
                         </button>
-                        <button className="w-[100px] rounded-lg h-[30px] hover:scale-110 bg-[#A0EDA7]">
-                          Attributes (29)
+                        <button className="w-[100px] items-center rounded-lg h-[30px] hover:scale-110 pl-2 bg-[#A0EDA7] flex justify-between">
+                          Attributes
+                          <div className="w-[30px] h-full rounded-lg bg-[#6AC673] flex justify-center">
+                            <p className="font-bold flex items-center text-[0.9rem]">
+                              29
+                            </p>
+                          </div>
                         </button>
-                        <button className="w-[100px] rounded-lg h-[30px] hover:scale-110 bg-[#A0EDA7]">
-                          Privacy (2)
+                        <button className="w-[100px] items-center rounded-lg h-[30px] hover:scale-110 pl-4 bg-[#A0EDA7] flex justify-between">
+                          Privacy
+                          <div className="w-[30px] h-full rounded-lg bg-[#6AC673] flex justify-center">
+                            <p className="font-bold flex items-center text-[0.9rem]">
+                              02
+                            </p>
+                          </div>
                         </button>
-                        <button className="w-[100px] rounded-lg h-[30px] hover:scale-110  bg-[#A0EDA7]">
-                          Metrics (2)
+                        <button className="w-[100px] items-center rounded-lg h-[30px] hover:scale-110 pl-4 bg-[#A0EDA7] flex justify-between">
+                          Metrics
+                          <div className="w-[30px] h-full rounded-lg bg-[#6AC673] flex justify-center">
+                            <p className="font-bold flex items-center text-[0.9rem]">
+                              02
+                            </p>
+                          </div>
                         </button>
-                        <button className="w-[100px] rounded-lg h-[30px] hover:scale-110 bg-[#A0EDA7]">
-                          Access (2)
+                        <button className="w-[100px] items-center rounded-lg h-[30px] hover:scale-110 pl-4 bg-[#A0EDA7] flex justify-between">
+                          Access
+                          <div className="w-[30px] h-full rounded-lg bg-[#6AC673] flex justify-center">
+                            <p className="font-bold flex items-center text-[0.9rem]">
+                              02
+                            </p>
+                          </div>
                         </button>
-                        <button className="w-[100px] rounded-lg h-[30px] hover:scale-110  bg-[#A0EDA7]">
-                          Lifecycle (1)
+                        <button className="w-[100px] items-center rounded-lg h-[30px] hover:scale-110 pl-3 bg-[#A0EDA7] flex justify-between">
+                          Lifecycle
+                          <div className="w-[30px] h-full rounded-lg bg-[#6AC673] flex justify-center">
+                            <p className="font-bold flex items-center text-[0.9rem]">
+                              01
+                            </p>
+                          </div>
                         </button>
-                        <button className="w-[100px] rounded-lg h-[30px] hover:scale-110  bg-[#A0EDA7]">
-                          Rules (5)
+                        <button className="w-[100px] items-center rounded-lg h-[30px] hover:scale-110 pl-6 bg-[#A0EDA7] flex justify-between">
+                          Rules
+                          <div className="w-[30px] h-full rounded-lg bg-[#6AC673] flex justify-center">
+                            <p className="font-bold flex items-center text-[0.9rem]">
+                              05
+                            </p>
+                          </div>
                         </button>
-                        <button className="w-[100px] rounded-lg h-[30px] hover:scale-110  bg-[#A0EDA7]">
-                          Sharing (0)
+                        <button className="w-[100px] items-center rounded-lg h-[30px] hover:scale-110 pl-4 bg-[#A0EDA7] flex justify-between">
+                          Sharing
+                          <div className="w-[30px] h-full rounded-lg bg-[#6AC673] flex justify-center">
+                            <p className="font-bold flex items-center text-[0.9rem]">
+                              0
+                            </p>
+                          </div>
                         </button>
                       </div>
                     </div>

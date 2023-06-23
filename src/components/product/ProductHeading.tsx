@@ -256,8 +256,8 @@ export default function ProductHeading({ data }: any) {
         <div className="w-full mt-3 bg-gray-300 h-[1px]" />
 
         <div className="flex justify-between w-full">
-          <div className="flex py-2 justify-between w-[60%] border-r-2 border-gray-300 pr-3">
-            <div className="flex w-full justify-start gap-x-[9.6rem] ">
+          <div className="flex py-2 justify-between w-[50%] border-r-2 border-gray-300 pr-3">
+            <div className="flex w-full justify-between gap-x-3">
               <div className="flex items-center">
                 <div className="w-[45px] h-[45px] relative">
                   <Image src="/yahoo.svg" alt="brand" fill />
@@ -292,32 +292,32 @@ export default function ProductHeading({ data }: any) {
                   ))}
                 </div>
               </div>
-            </div>
-            <div
-              onClick={() => {
-                handleOpen();
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className={`${
-                  open ? "rotate-180" : ""
-                } h-5 w-5 transition-transform`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
+              <div
+                onClick={() => {
+                  handleOpen();
+                }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`${
+                    open ? "rotate-180" : ""
+                  } h-5 w-5 transition-transform`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
 
-          <div className="flex justify-end gap-x-10 w-[35%] items-start mt-3">
+          <div className="flex justify-end px-4 lg:gap-x-3 3xl:gap-x-20 w-[50%] items-start mt-3">
             <div>
               <p className={`${cabin.className} mb-2 text-[16px]`}>Frequency</p>
               <div className="min-w-[80px] ">
@@ -329,6 +329,16 @@ export default function ProductHeading({ data }: any) {
                       backgroundColor: "#EAEAEA",
                       borderRadius: "10px",
                     }),
+                    option: (
+                      styles,
+                      { data, isDisabled, isFocused, isSelected }
+                    ) => {
+                      return {
+                        ...styles,
+                        backgroundColor: isSelected ? "#4D91FF" : "white",
+                        color: isDisabled ? "#ccc" : isSelected ? "white" : "",
+                      };
+                    },
                   }}
                   defaultValue={dropDownValue[0]}
                   options={dropDownValue}
@@ -347,6 +357,16 @@ export default function ProductHeading({ data }: any) {
                       backgroundColor: "#EAEAEA",
                       borderRadius: "10px",
                     }),
+                    option: (
+                      styles,
+                      { data, isDisabled, isFocused, isSelected }
+                    ) => {
+                      return {
+                        ...styles,
+                        backgroundColor: isSelected ? "#4D91FF" : "white",
+                        color: isDisabled ? "#ccc" : isSelected ? "white" : "",
+                      };
+                    },
                   }}
                   defaultValue={dropDownValue2[0]}
                   options={dropDownValue2}
@@ -365,6 +385,16 @@ export default function ProductHeading({ data }: any) {
                       backgroundColor: "#EAEAEA",
                       borderRadius: "10px",
                     }),
+                    option: (
+                      styles,
+                      { data, isDisabled, isFocused, isSelected }
+                    ) => {
+                      return {
+                        ...styles,
+                        backgroundColor: isSelected ? "#4D91FF" : "white",
+                        color: isDisabled ? "#ccc" : isSelected ? "white" : "",
+                      };
+                    },
                   }}
                   defaultValue={dropDownValue1[0]}
                   options={dropDownValue1}
