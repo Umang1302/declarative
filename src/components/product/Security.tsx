@@ -239,7 +239,26 @@ export default function OverviewTable({ data }: any) {
         <div className="flex relative py-3 px-3">
           <p className="gap-x-1 w-full flex">
             <span onClick={toggleOpen}>
-              <p className="font-[800]">{arg1}</p>
+              <p className="font-[800] flex">
+                {arg1}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`${
+                    open ? "rotate-180" : ""
+                  } h-5 w-5 transition-transform`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#F65A27"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </p>
+
               <Collapse
                 className="absolute z-50 bg-white  w-[70px]"
                 open={open}
@@ -274,7 +293,25 @@ export default function OverviewTable({ data }: any) {
             </span>
             attributes{" "}
             <span onClick={toggleOpen1}>
-              <p className="font-[800]">{arg2}</p>
+              <p className="font-[800] flex">
+                {arg2}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`${
+                    open1 ? "rotate-180" : ""
+                  } h-5 w-5 transition-transform`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#F65A27"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </p>
               <Collapse
                 className="absolute z-50 bg-white w-[80px]"
                 open={open1}
@@ -310,7 +347,25 @@ export default function OverviewTable({ data }: any) {
             as{" "}
             <span onClick={toggleOpen2}>
               {" "}
-              <p className="font-[800]">{arg3}</p>
+              <p className="font-[800] flex">
+                {arg3}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`${
+                    open2 ? "rotate-180" : ""
+                  } h-5 w-5 transition-transform`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#F65A27"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </p>
               <Collapse
                 className="absolute z-50 bg-white w-[60px]"
                 open={open2}
@@ -347,7 +402,25 @@ export default function OverviewTable({ data }: any) {
             using{" "}
             <span onClick={toggleOpen3}>
               {" "}
-              <p className="font-[800]">{arg4}.</p>
+              <p className="font-[800] flex">
+                {arg4}.
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`${
+                    open3 ? "rotate-180" : ""
+                  } h-5 w-5 transition-transform`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#F65A27"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </p>
               <Collapse
                 className="absolute z-50 bg-white w-[160px]"
                 open={open3}
@@ -390,8 +463,24 @@ export default function OverviewTable({ data }: any) {
           <p className="gap-x-1 w-full flex">
             Except For Usage
             <span onClick={toggleOpen4}>
-              <p className="font-[800]">
-                {multiValueArray.map((item) => `${item}, `)}
+              <p className="font-[800] flex">
+                <div>{multiValueArray.map((item) => `${item}, `)}</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`${
+                    open4 ? "rotate-180" : ""
+                  } h-5 w-5 transition-transform`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#F65A27"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
               </p>
               <Collapse
                 className="absolute z-50 w-[120px] bg-white"
@@ -483,7 +572,25 @@ export default function OverviewTable({ data }: any) {
             By user having
             <span onClick={toggleOpen5}>
               {" "}
-              <p className="font-[800]">{arg6}</p>
+              <p className="font-[800] flex">
+                {arg6}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`${
+                    open5 ? "rotate-180" : ""
+                  } h-5 w-5 transition-transform`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#F65A27"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </p>
               <Collapse
                 className="absolute z-50 bg-white w-[100px]"
                 open={open5}
@@ -517,7 +624,25 @@ export default function OverviewTable({ data }: any) {
             For data having
             <span onClick={toggleOpen7}>
               {" "}
-              <p className="font-[800]">region</p>
+              <p className="font-[800] flex">
+                region
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`${
+                    open7 ? "rotate-180" : ""
+                  } h-5 w-5 transition-transform`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#F65A27"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </p>
               <Collapse
                 className="absolute z-50 w-[100px] bg-white"
                 open={open7}
