@@ -6,6 +6,10 @@ import {
   CardBody,
   Checkbox,
   Dialog,
+  Menu,
+  MenuHandler,
+  MenuItem,
+  MenuList,
   Switch,
 } from "@material-tailwind/react";
 import { Cabin } from "next/font/google";
@@ -180,6 +184,11 @@ export default function OverviewTable({ data }: any) {
     setRules(updatedRule);
     console.log(updatedRule);
   };
+  const [openMenu, setOpenMenu] = React.useState(false);
+  const triggers = {
+    onMouseEnter: () => setOpenMenu(true),
+    onMouseLeave: () => setOpenMenu(false),
+  };
 
   const [selectRule, setSelectRule] = useState("0");
 
@@ -345,23 +354,51 @@ export default function OverviewTable({ data }: any) {
                 </div>
               </div>
             </div>
-            <div className="mt-6">
-              <Select
-                styles={{
-                  control: (styles) => ({
-                    ...styles,
-                    backgroundColor: "#EAEAEA",
-                    borderRadius: "10px",
-                  }),
-                }}
-                defaultValue={dropDownValue1[0]}
-                options={dropDownValue1}
-                onChange={(val) => {
-                  console.log(val, "DD");
-                  setInterval(val.value);
-                }}
-                className={`rounded-[10px]  min-w-[200px] text-[18px] ${cabin.className}`}
-              />
+            <div className="mt-6 relative">
+              <Menu>
+                <MenuHandler>
+                  <input
+                    type="text"
+                    value={"Sum"}
+                    className={`${cabin.className} border-gray-300 border-[2px] text-[18px] font-[600] w-[200px] rounded-[10px] h-[40px] px-4 outline-none bg-[#EAEAEA]`}
+                  />
+                </MenuHandler>
+                <MenuList className="p-0">
+                  <Menu
+                    placement="right-start"
+                    offset={15}
+                    open={openMenu}
+                    handler={setOpenMenu}
+                  >
+                    <MenuHandler>
+                      <MenuItem className="border-b-[1px] rounded-none border-gray-300">
+                        Value Range
+                      </MenuItem>
+                    </MenuHandler>
+                    <MenuList {...triggers} className="w-[200px] h-[190px]">
+                      <div>
+                        <p className="border-b-[1px] border-gray-300">
+                          Value Range
+                        </p>
+                        <div>
+                          <div className="flex w-full justify-between">
+                            <p>Lower Bound</p>
+                            <p>Strict</p>
+                          </div>
+                          <div className="flex w-full justify-between">
+                            <p>Text</p>
+                            <Switch defaultChecked />
+                          </div>
+                        </div>
+                      </div>
+                    </MenuList>
+                  </Menu>
+                  <MenuItem>Not Null</MenuItem>
+                  <MenuItem>Pattern</MenuItem>
+                  <MenuItem>Enumeration</MenuItem>
+                  <MenuItem>Unique</MenuItem>
+                </MenuList>
+              </Menu>
             </div>
           </div>
 

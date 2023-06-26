@@ -2,7 +2,7 @@
   "success": true,
   "data": [
     {
-      "label": ["Yahoo Finance", "Mutual_Funds"],
+      "label": ["Mutual Funds"],
       "rating": "4",
       "reviews": "38",
       "description": "Listing of all Mutual Funds traded in USA",
@@ -516,7 +516,7 @@
     {
       "rating": "5",
       "reviews": "105",
-      "label": ["Yahoo Finance", "Mutual_Funds"],
+      "label": ["Mutual Funds"],
       "description": "Listing of all Mutual Funds traded in USA",
       "createdAt": "2023-05-30T14:15:55.963Z",
       "updatedAt": "2023-05-30T14:15:55.963Z",
@@ -732,7 +732,7 @@
 
       "description": "Listing of all Mutual Funds traded in USA",
       "createdAt": "2023-05-30T14:15:55.963Z",
-      "label": ["Yahoo Finance", "Mutual_Funds", "ESG"],
+      "label": ["Mutual Funds", "ESG"],
 
       "updatedAt": "2023-05-30T14:15:55.963Z",
       "accountId": "f48cda68-448b-4c67-9828-fae3a3a9d3d2",
@@ -896,7 +896,7 @@
       ]
     },
     {
-      "label": ["Yahoo Finance", "Securities"],
+      "label": ["Securities"],
       "rating": "5",
       "reviews": "356",
 
@@ -1593,7 +1593,7 @@
       ]
     },
     {
-      "label": ["Yahoo Finance", "Securities"],
+      "label": ["Securities"],
       "rating": "5",
       "reviews": "5",
 

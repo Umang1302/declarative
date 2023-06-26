@@ -8,7 +8,7 @@ export default function LabelSection() {
   const label = [
     {
       id: 1,
-      label: `Mutual_Funds`,
+      label: `Mutual`,
     },
     {
       id: 2,
@@ -125,10 +125,10 @@ export default function LabelSection() {
         {label.map((element, i) => (
           <button
             key={i}
-            className={`rounded-[5px] flex hover:bg-[#EAEAEA] px-2 h-[25px] border-gray-400 border-[2px] text-sm 
+            className={`rounded-[5px] hover:bg-[#EAEAEA] px-2 h-[25px]  border-gray-400 border-[2px] text-sm 
          text-gray-600 font-[600] ${cabin.className} hover:border-0`}
           >
-            <p>{element.label}</p>
+            {element.label}
           </button>
         ))}
         {/* </div> */}

@@ -7,6 +7,7 @@ import Rules from "./Rules";
 import Security from "./Security";
 import Access from "./Access";
 import SharingTab from "./SharingTab";
+import Metrics from "./Metrics";
 
 export default function Example({ data }: any) {
   const [activeTab, setActiveTab] = React.useState("profile");
@@ -67,9 +68,7 @@ export default function Example({ data }: any) {
           />
         </svg>
       ),
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
+      desc: <Metrics />,
     },
     {
       label: "Security & Privacy",
