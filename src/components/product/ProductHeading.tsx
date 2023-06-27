@@ -110,7 +110,7 @@ export default function ProductHeading({ data }: any) {
         <div className="flex mt-1 gap-x-[6%] text-[#656565]">
           <p className="text-[16px] flex gap-x-1">
             <span className="font-[800]">Product Id:</span>
-            {"   "} {data.productId}
+            {"   "} <p className="text-black">{data.productId}</p>
             <div className="relative w-3 mt-[4px] h-3">
               <Image alt="" src="/copy.svg" fill />
             </div>
@@ -119,13 +119,12 @@ export default function ProductHeading({ data }: any) {
             <div className="w-1 h-1 mt-[6px] mr-1 bg-blue-800 rounded-full"></div>
             {data.tier}
           </p> */}
-          <p className="text-[16px]">
-            <span className="font-[800]">Source: </span> Dataset
+          <p className="text-[16px] text-black">
+            <span className="font-[800] text-[#656565]">Source: </span> Dataset
           </p>
           <p className="text-[16px] flex gap-x-1">
             <span className="font-[800]">Source Id: </span>
-            {"   "}
-            {data.sourceDatasetId}
+            <p className="text-black">{data.sourceDatasetId}</p>
             <div className="relative w-3 mt-[4px] h-3">
               <Image alt="" src="/copy.svg" fill />
             </div>
@@ -268,11 +267,11 @@ export default function ProductHeading({ data }: any) {
                 </div>
               </div>
               <div>
-                <p className="font-semibold max-w-[100%] text-[16px]">
+                <p className="font-semibold max-w-[100%] text-[16px] text-[#656565]">
                   Description about the product:{" "}
                 </p>
                 <p
-                  className={`max-w-[18rem] text-[16px] ${
+                  className={`max-w-[18rem] text-[16px] text-black ${
                     !open ? "truncate" : ""
                   } `}
                 >
@@ -319,7 +318,11 @@ export default function ProductHeading({ data }: any) {
 
           <div className="flex justify-end px-4 lg:gap-x-3 3xl:gap-x-20 w-[50%] items-start mt-3">
             <div>
-              <p className={`${cabin.className} mb-2 text-[16px]`}>Frequency</p>
+              <p
+                className={`${cabin.className} mb-2 text-[16px] font-[600] text-[#656565]`}
+              >
+                Frequency
+              </p>
               <div className="min-w-[80px] ">
                 <Select
                   styles={{
@@ -347,7 +350,11 @@ export default function ProductHeading({ data }: any) {
               </div>
             </div>
             <div>
-              <p className={`${cabin.className} mb-2 text-[16px]`}>Status</p>
+              <p
+                className={`${cabin.className} mb-2 text-[16px] font-[600] text-[#656565]`}
+              >
+                Status
+              </p>
               <div className="min-w-[80px] ">
                 <Select
                   styles={{
@@ -375,7 +382,11 @@ export default function ProductHeading({ data }: any) {
               </div>
             </div>
             <div>
-              <p className={`${cabin.className} mb-2 text-[16px]`}>Type</p>
+              <p
+                className={`${cabin.className} mb-2 text-[16px] font-[600] text-[#656565]`}
+              >
+                Type
+              </p>
               <div className="min-w-[80px]">
                 <Select
                   styles={{

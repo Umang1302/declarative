@@ -10,16 +10,17 @@ import {
 } from "@material-tailwind/react";
 import { Cabin } from "next/font/google";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Select from "react-select";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
-
+import { MultiSelect } from "react-multi-select-component";
+import useState from "react-usestateref";
 Chart.register(ArcElement);
 
 const cabin = Cabin({ subsets: ["latin"] });
 
-export default function OverviewTable({ data }: any) {
+export default function Metrics({ data }: any) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
 
@@ -34,7 +35,7 @@ export default function OverviewTable({ data }: any) {
     ],
   };
 
-  const [week, setWeek] = useState<any>([
+  const [week, setWeek] = React.useState<any>([
     {
       name: "S",
       val: "Sunday",
@@ -81,7 +82,7 @@ export default function OverviewTable({ data }: any) {
     },
   ]);
 
-  const [dropDownValue, setDropDownValue] = useState<any>([
+  const [dropDownValue, setDropDownValue] = React.useState<any>([
     {
       label: "Week",
       value: "week",
@@ -92,7 +93,7 @@ export default function OverviewTable({ data }: any) {
     },
   ]);
 
-  const [dropDownValue1, setDropDownValue1] = useState<any>([
+  const [dropDownValue1, setDropDownValue1] = React.useState<any>([
     {
       label: "Sum",
       value: "sum",
@@ -103,12 +104,12 @@ export default function OverviewTable({ data }: any) {
     },
   ]);
 
-  const [weekNumber, setWeekNumber] = useState<string>("1");
-  const [interval, setInterval] = useState<string>("Week");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+  const [weekNumber, setWeekNumber] = React.useState<string>("1");
+  const [interval, setInterval] = React.useState<string>("Week");
+  const [date, setDate] = React.useState("");
+  const [time, setTime] = React.useState("");
 
-  const [schedule, setSchedule] = useState<any>([
+  const [schedule, setSchedule] = React.useState<any>([
     {
       weekNumber: "1",
       interval: "Week",
@@ -149,32 +150,92 @@ export default function OverviewTable({ data }: any) {
     handleOpen();
   };
 
-  const [tab1, setTab1] = useState("group");
-  const [tab2, setTab2] = useState("record");
+  const [tab1, setTab1] = React.useState("group");
+  const [tab2, setTab2] = React.useState("");
 
-  const [rules, setRules] = useState<any>([
-    "Count of funds in same category",
-    "YoY Growth in number of Funds ",
+  const [rules, setRules] = React.useState<any>([]);
+
+  useEffect(() => {
+    setRules(data.metrics.map((item: any) => item.name));
+  }, []);
+
+  const [addRule, setAddRule] = React.useState<boolean>(false);
+  const [searchAttr, setSearchArray] = React.useState([]);
+  const [newRule, setNewRule] = React.useState("");
+  const [profileArray, setProfileArray] = React.useState([
+    "Count",
+    "Count Distinct",
+    "Min",
+    "Max",
+    "Mean",
+    "Median",
+    "Std. Deviation",
+    "Category Values (Enumerations)",
+    "Null",
+    "Not Null",
   ]);
 
-  const [addRule, setAddRule] = useState<boolean>(false);
-  const [searchAttr, setSearchArray] = useState([
-    {
-      attribute: "initial_investment",
-      check: false,
-    },
-    {
-      attribute: "subsequent_investment",
-      check: false,
-    },
+  const [aggregateArray, setAggregateArray] = React.useState([
+    "Sum",
+    "Min",
+    "Max",
+    "Mean",
+    "Std. Deviation",
   ]);
-  const [newRule, setNewRule] = useState("");
+
+  const [periodArray, setPeriodArray] = React.useState([
+    "Year",
+    "Quarter",
+    "Month",
+    "Week",
+    "YTD",
+    "MTD",
+    "QRD",
+    "WTD",
+    "52 Week",
+    "12 Month",
+    "3 Month",
+    "1 Month",
+    "Series",
+    "Custom",
+  ]);
+
+  const [metric, setMetric] = React.useState([
+    "Growth-Absolute",
+    "Growth-Percentage",
+    "High",
+    "Low",
+    "Mean",
+    "Median",
+    "Range",
+  ]);
+  useEffect(() => {
+    let temp = data.attributes.map((item: any) => item.name);
+    setSearchArray(temp);
+  }, []);
 
   React.useEffect(() => {
     console.log("SSSSS");
   }, [addRule, searchAttr, tab1]);
 
-  const [metricsTab, setMetricsTab] = useState("");
+  const [metricsTab, setMetricsTab, metricsTabRef] = useState("");
+  const [selectRule, setSelectRule] = React.useState("0");
+  const [visible, setVisible] = React.useState(false);
+  const [visible1, setVisible1] = React.useState(false);
+  const [visible2, setVisible2] = React.useState(false);
+  const [visible3, setVisible3] = React.useState(false);
+  const [visible4, setVisible4] = React.useState(false);
+
+  useEffect(() => {
+    console.log(
+      data.metrics[+selectRule].type,
+      "data.metrics[+selectRule].type",
+      selectRule
+    );
+    setMetricsTab(data.metrics[+selectRule].type);
+    setTab1(data.metrics[+selectRule].scope);
+    setTab2(data.metrics[+selectRule].order);
+  }, [metricsTabRef.current, selectRule, rules]);
 
   const addRuleFun = (val: string) => {
     const addedRule = [...rules];
@@ -197,17 +258,15 @@ export default function OverviewTable({ data }: any) {
     console.log(updatedRule);
   };
 
-  const [selectRule, setSelectRule] = useState("0");
-
   React.useEffect(() => {
     console.log(selectRule);
-  }, [selectRule, rules]);
+  }, []);
 
   return (
     <div className={`w-full h-full overflow-x-auto px-2 ${cabin.className}`}>
       {/* Rule */}
       <div className="bg-[#CCE0FF] flex items-center w-[97%] px-6 py-3 justify-between">
-        <p className="text-[18px] font-[600]">Rules</p>
+        <p className="text-[18px] font-[600]">Metrics Information</p>
         <div
           onClick={() => {
             setAddRule(!addRule);
@@ -275,7 +334,7 @@ export default function OverviewTable({ data }: any) {
         {rules?.map((rule: string, index: number) => (
           <Card
             key={index}
-            className={`h-[50px] rounded-none border-[1px] ${
+            className={`h-[50px] shadow-none rounded-none border-[1px] ${
               addRule && "blur-sm"
             }`}
           >
@@ -317,59 +376,166 @@ export default function OverviewTable({ data }: any) {
 
       {/* Rule info */}
       <div
-        className={`bg-[#CCE0FF] flex items-center w-[97%] h-[20%] px-6 py-2 justify-between ${
-          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#F65A27] text-white"
+        className={`bg-[#CCE0FF] flex items-center w-[97%] text-black h-[20%] px-6 py-2 justify-between ${
+          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
         }`}
       >
         <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
         <div
-          className={`mt-2 h-[40px] w-[300px] items-center px-1 py-1  flex justify-between rounded-[10px] ${
-            selectRule == "0" ? "bg-white" : "bg-[#ffa283] text-black"
-          }`}
+          className={`mt-2 h-[40px] w-[380px] items-center px-1 py-1  flex justify-between rounded-[10px] bg-white`}
         >
           <p
-            onClick={() => {
-              setMetricsTab("0");
-            }}
+            // onClick={() => {
+            //   setMetricsTab("0");
+            // }}
             className={`${
               cabin.className
             } rounded-[10px] cursor-pointer text-[18px] ${
-              metricsTab === "0" && "bg-[#CCE0FF] px-4"
+              metricsTabRef.current === "0"
+                ? "bg-[#CCE0FF] px-4"
+                : "text-gray-500"
             }`}
           >
             &nbsp;&nbsp;{"Function"}&nbsp;&nbsp;
           </p>
           <p
-            onClick={() => {
-              setMetricsTab("1");
-            }}
+            // onClick={() => {
+            //   setMetricsTab("1");
+            // }}
             className={`${
               cabin.className
             } rounded-[10px] cursor-pointer text-[18px] ${
-              metricsTab === "1" && "bg-[#CCE0FF] px-4"
+              metricsTabRef.current === "1"
+                ? "bg-[#CCE0FF] px-4"
+                : "text-gray-500"
+            }`}
+          >
+            &nbsp;&nbsp;{"Auto-Period"}&nbsp;&nbsp;
+          </p>
+          <p
+            // onClick={() => {
+            //   setMetricsTab("2");
+            // }}
+            className={`${
+              cabin.className
+            } rounded-[10px] cursor-pointer text-[18px] ${
+              metricsTabRef.current === "2"
+                ? "bg-[#CCE0FF] px-4"
+                : "text-gray-500"
             }`}
           >
             &nbsp;&nbsp;{"Expression"}&nbsp;&nbsp;
           </p>
           <p
-            onClick={() => {
-              setMetricsTab("2");
-            }}
+            // onClick={() => {
+            //   setMetricsTab("3");
+            // }}
             className={`${
               cabin.className
             } rounded-[10px] cursor-pointer text-[18px] ${
-              metricsTab === "2" && "bg-[#CCE0FF] px-4"
+              metricsTabRef.current === "3"
+                ? "bg-[#CCE0FF] px-4"
+                : "text-gray-500"
             }`}
           >
             &nbsp;&nbsp;{"Job"}&nbsp;&nbsp;
           </p>
         </div>
       </div>
-      <div className="py-2 px-3">
+      <div className="py-2 h-[400px] px-3">
         {/*  */}
-        {metricsTab === "0" ? (
-          <div className="flex justify-center py-10 w-full">
-            <div className="grid grid-cols-2 gap-y-5 gap-x-72">
+        {metricsTabRef.current === "0" ? (
+          <div className="py-10 w-full">
+            <div className="flex justify-between">
+              <div className="">
+                <p className="font-[600]">Scope</p>
+                <div className="bg-[#EAEAEA] w-[280px] mt-3 min-w-[300px] h-[40px] flex items-center justify-around rounded-[10px]">
+                  <div
+                    onClick={() => {
+                      setTab1("series");
+                    }}
+                    className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab1 === "series" && "bg-white text-black"
+                    } `}
+                  >
+                    Series
+                  </div>
+                  <div
+                    onClick={() => {
+                      setTab1("record");
+                    }}
+                    className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab1 === "record" && "bg-white text-black"
+                    } `}
+                  >
+                    Record
+                  </div>
+                  <div
+                    onClick={() => {
+                      setTab1("product");
+                    }}
+                    className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab1 === "product" && "bg-white text-black"
+                    } `}
+                  >
+                    Product
+                  </div>
+                </div>
+              </div>
+              <div className="relative">
+                <p className="mb-3">Attribute</p>
+                <input
+                  type="text"
+                  readOnly
+                  value={data.metrics[+selectRule].attributes[0]}
+                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                />
+              </div>
+              <div className="relative">
+                <p className="mb-3">Function</p>
+                <input
+                  type="text"
+                  readOnly
+                  value={data.metrics[+selectRule].function}
+                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                />
+              </div>
+            </div>
+            <div className="flex items-center justify-between mt-5">
+              <div className="relative">
+                <p className="mb-3">Window</p>
+                <input
+                  type="text"
+                  readOnly
+                  value={data.metrics[+selectRule].window}
+                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                />
+              </div>
+              <div className="bg-[#EAEAEA] w-[250px] px-1 mt-8 -ml-[5.5rem] h-[40px] flex items-center justify-between rounded-[10px]">
+                <div
+                  onClick={() => {
+                    setTab2("ascending");
+                  }}
+                  className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
+                    tab2 === "ascending" && "bg-white text-black"
+                  } `}
+                >
+                  Ascending
+                </div>
+                <div
+                  onClick={() => {
+                    setTab2("desending");
+                  }}
+                  className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                    tab2 === "desending" && "bg-white text-black"
+                  } `}
+                >
+                  Desending
+                </div>
+              </div>
+              <div></div>
+            </div>
+            {/* <div className="grid grid-cols-2 gap-y-5 gap-x-72">
               <div>
                 <p className="w-full h-[30px] text-[18px] font-[600]">
                   Attributes
@@ -401,29 +567,362 @@ export default function OverviewTable({ data }: any) {
                 />
               </div>
               <div></div>
+            </div> */}
+          </div>
+        ) : metricsTabRef.current === "1" ? (
+          <div className="py-10 w-full">
+            <div className="flex justify-between">
+              <div className="">
+                <p className="font-[600]">Scope</p>
+                <div className="bg-[#EAEAEA] w-[280px] mt-3 min-w-[300px] h-[40px] flex items-center justify-around rounded-[10px]">
+                  <div
+                    onClick={() => {
+                      setTab1("series");
+                    }}
+                    className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab1 === "series" && "bg-white text-black"
+                    } `}
+                  >
+                    Series
+                  </div>
+                  <div
+                    onClick={() => {
+                      setTab1("record");
+                    }}
+                    className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab1 === "record" && "bg-white text-black"
+                    } `}
+                  >
+                    Record
+                  </div>
+                  <div
+                    onClick={() => {
+                      setTab1("product");
+                    }}
+                    className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab1 === "product" && "bg-white text-black"
+                    } `}
+                  >
+                    Product
+                  </div>
+                </div>
+              </div>
+              <div className="relative">
+                <p className="mb-3">Attribute</p>
+                <input
+                  type="text"
+                  readOnly
+                  value={
+                    data.metrics[+selectRule] &&
+                    data.metrics[+selectRule].attributes &&
+                    data.metrics[+selectRule].attributes[0]
+                  }
+                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                />
+                <div
+                  onClick={() => {
+                    setVisible(!visible);
+                  }}
+                  className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`
+
+                     h-5 w-5 transition-transform`}
+                    fill="none"
+                    viewBox="0 0 28 28"
+                    stroke="#b4b4b4"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
+                {visible && (
+                  <div className="absolute z-50 max-h-[200px] overflow-y-auto">
+                    {searchAttr.map((item: any, index: number) => (
+                      <Card
+                        key={index}
+                        className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
+                      >
+                        <div className="flex items-center">
+                          <Checkbox
+                            color="blue"
+                            // defaultChecked={item.check}
+                            defaultChecked={
+                              data.metrics[+selectRule].attributes.indexOf(
+                                item
+                              ) !== -1
+                            }
+                            // className="rounded-none"
+                            // onChange={() => {}}
+                          />
+                          <p className="text-black">{item}</p>
+                        </div>
+                      </Card>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div className="relative">
+                <p className="mb-3">Profile</p>
+                <input
+                  type="text"
+                  readOnly
+                  value={
+                    data.metrics[+selectRule] &&
+                    data.metrics[+selectRule].profile &&
+                    data.metrics[+selectRule].profile[0] &&
+                    data.metrics[+selectRule].profile[0]
+                  }
+                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                />
+                <div
+                  onClick={() => {
+                    setVisible1(!visible1);
+                  }}
+                  className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`
+
+                     h-5 w-5 transition-transform`}
+                    fill="none"
+                    viewBox="0 0 28 28"
+                    stroke="#b4b4b4"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
+                {visible1 && (
+                  <div className="absolute z-50 max-h-[200px] overflow-y-auto">
+                    {profileArray.map((item: any, index: number) => (
+                      <Card
+                        key={index}
+                        className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
+                      >
+                        <div className="flex items-center">
+                          <Checkbox
+                            color="blue"
+                            // defaultChecked={item.check}
+                            defaultChecked={
+                              data.metrics[+selectRule].profile.indexOf(
+                                item
+                              ) !== -1
+                            }
+                            // className="rounded-none"
+                            // onChange={() => {}}
+                          />
+                          <p className="text-black">{item}</p>
+                        </div>
+                      </Card>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="flex mt-4 justify-between">
+              <div className="relative">
+                <p className="mb-3">Aggregate</p>
+                <input
+                  type="text"
+                  readOnly
+                  value={
+                    data.metrics[+selectRule] &&
+                    data.metrics[+selectRule].aggregate &&
+                    data.metrics[+selectRule].aggregate[0]
+                      ? data.metrics[+selectRule].aggregate[0]
+                      : ""
+                  }
+                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                />
+                <div
+                  onClick={() => {
+                    setVisible2(!visible2);
+                  }}
+                  className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`
+
+                     h-5 w-5 transition-transform`}
+                    fill="none"
+                    viewBox="0 0 28 28"
+                    stroke="#b4b4b4"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
+                {visible2 && (
+                  <div className="absolute z-50 max-h-[200px] overflow-y-auto">
+                    {aggregateArray.map((item: any, index: number) => (
+                      <Card
+                        key={index}
+                        className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
+                      >
+                        <div className="flex items-center">
+                          <Checkbox
+                            color="blue"
+                            // defaultChecked={item.check}
+                            defaultChecked={
+                              data.metrics[+selectRule].aggregate.indexOf(
+                                item
+                              ) !== -1
+                            }
+                            // className="rounded-none"
+                            // onChange={() => {}}
+                          />
+                          <p className="text-black">{item}</p>
+                        </div>
+                      </Card>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div className="relative ml-20">
+                <p className="mb-3">Period</p>
+                <input
+                  type="text"
+                  readOnly
+                  value={
+                    data.metrics[+selectRule] &&
+                    data.metrics[+selectRule].period &&
+                    data.metrics[+selectRule].period[0]
+                      ? data.metrics[+selectRule].period[0]
+                      : ""
+                  }
+                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                />
+                <div
+                  onClick={() => {
+                    setVisible3(!visible3);
+                  }}
+                  className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`
+
+                     h-5 w-5 transition-transform`}
+                    fill="none"
+                    viewBox="0 0 28 28"
+                    stroke="#b4b4b4"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
+                {visible3 && (
+                  <div className="absolute z-50 max-h-[200px] overflow-y-auto">
+                    {periodArray.map((item: any, index: number) => (
+                      <Card
+                        key={index}
+                        className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
+                      >
+                        <div className="flex items-center">
+                          <Checkbox
+                            color="blue"
+                            // defaultChecked={item.check}
+                            defaultChecked={
+                              data.metrics[+selectRule].period.indexOf(item) !==
+                              -1
+                            }
+                            // className="rounded-none"
+                            // onChange={() => {}}
+                          />
+                          <p className="text-black">{item}</p>
+                        </div>
+                      </Card>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div className="relative">
+                <p className="mb-3">Metric</p>
+                <input
+                  type="text"
+                  readOnly
+                  value={
+                    data.metrics[+selectRule] &&
+                    data.metrics[+selectRule].metric &&
+                    data.metrics[+selectRule].metric[0]
+                      ? data.metrics[+selectRule].metric[0]
+                      : ""
+                  }
+                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                />
+                <div
+                  onClick={() => {
+                    setVisible4(!visible4);
+                  }}
+                  className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`
+
+                     h-5 w-5 transition-transform`}
+                    fill="none"
+                    viewBox="0 0 28 28"
+                    stroke="#b4b4b4"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
+                {visible4 && (
+                  <div className="absolute z-50 max-h-[200px] overflow-y-auto">
+                    {metric.map((item: any, index: number) => (
+                      <Card
+                        key={index}
+                        className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
+                      >
+                        <div className="flex items-center">
+                          <Checkbox
+                            color="blue"
+                            // defaultChecked={item.check}
+                            defaultChecked={
+                              data.metrics[+selectRule].metric.indexOf(item) !==
+                              -1
+                            }
+                            // className="rounded-none"
+                            // onChange={() => {}}
+                          />
+                          <p className="text-black">{item}</p>
+                        </div>
+                      </Card>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        ) : metricsTab === "1" ? (
-          <Doughnut
-            data={chartData}
-            options={{
-              plugins: {
-                legend: {
-                  display: false,
-                },
-                tooltip: {
-                  enabled: false,
-                },
-              },
-              rotation: -90,
-              circumference: 180,
-              cutout: "90%",
-              maintainAspectRatio: true,
-              responsive: true,
-            }}
-          />
         ) : (
-          <h5>Hello2</h5>
+          <h5>Hello3</h5>
         )}
       </div>
     </div>

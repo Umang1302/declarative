@@ -68,7 +68,7 @@ export default function Example({ data }: any) {
           />
         </svg>
       ),
-      desc: <Metrics />,
+      desc: <Metrics data={data} />,
     },
     {
       label: "Security & Privacy",
@@ -87,7 +87,7 @@ export default function Example({ data }: any) {
           />
         </svg>
       ),
-      desc: <Security />,
+      desc: <Security data={data} />,
     },
     {
       label: "Lifecycle",

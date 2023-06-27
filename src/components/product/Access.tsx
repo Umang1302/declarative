@@ -114,7 +114,7 @@ export default function OverviewTable({ data }: any) {
     <div className={`w-full h-full px-2 ${cabin.className}`}>
       {/* Rule */}
       <div className="bg-[#CCE0FF] flex items-center w-[97%] px-6 py-3 justify-between">
-        <p className="text-[18px] font-[600]">Rules</p>
+        <p className="text-[18px] font-[600] text-black">Access</p>
         <div
           onClick={() => {
             setAddRule(!addRule);
@@ -182,7 +182,7 @@ export default function OverviewTable({ data }: any) {
         {rules?.map((rule: string, index: number) => (
           <Card
             key={index}
-            className={`h-[50px] rounded-none border-[1px] ${
+            className={`h-[50px] shadow-none rounded-none border-[1px] ${
               addRule && "blur-sm"
             }`}
           >
@@ -205,7 +205,7 @@ export default function OverviewTable({ data }: any) {
                   }}
                   value={rules[index]}
                   type="text"
-                  className="w-[90%] outline-none"
+                  className="w-[90%] outline-none text-black"
                 />
               </div>
               <div
@@ -224,19 +224,21 @@ export default function OverviewTable({ data }: any) {
 
       {/* Rule info */}
       <div
-        className={`flex items-center w-[97%] h-[20%] px-6 py-3 justify-between  ${
-          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#F65A27] text-white"
+        className={`flex items-center w-[97%] h-[20%] px-6 py-3 text-black justify-between  ${
+          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
         }`}
       >
-        <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
+        <p className="text-[18px] font-[600] text-black">
+          {rules[+selectRule]}
+        </p>
       </div>
       <div className="mb-6 w-full py-3">
         <div className="bg-[#EEEEEE] px-10 py-4 w-[93%]">
           <p className="font-[600]">Description:</p>
-          <p>Limit access for US Registered Funds to US users only</p>
+          <p className="text-black">{rules[+selectRule]}</p>
         </div>
         <div className="flex relative py-3 px-10">
-          <p className="gap-x-1 w-full flex">
+          <p className="gap-x-1 w-full flex text-black">
             Only show
             <span onClick={toggleOpen}>
               <p className="font-[800] flex">
@@ -362,7 +364,7 @@ export default function OverviewTable({ data }: any) {
           </p>
         </div>
         <div className="flex relative py-3 px-10">
-          <p className="gap-x-1 w-full flex">
+          <p className="gap-x-1 w-full flex text-black">
             Except For Usage intent
             <span onClick={toggleOpen4}>
               <p className="font-[800] flex">

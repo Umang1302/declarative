@@ -9,6 +9,7 @@ import React, { useEffect } from "react";
 import OverviewTable from "../product/OverviewTab";
 import { Cabin } from "next/font/google";
 import Intents from "../product/Intents";
+import DataTab from "../data/DataTab";
 const cabin = Cabin({ subsets: ["latin"] });
 
 export default function TransparentTabs({ data }: any) {
@@ -28,6 +29,7 @@ export default function TransparentTabs({ data }: any) {
     {
       label: "Data",
       value: "data",
+      desc: <DataTab data={data} />,
     },
   ];
 

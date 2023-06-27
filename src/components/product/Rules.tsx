@@ -19,7 +19,7 @@ import Select from "react-select";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
-export default function OverviewTable({ data }: any) {
+export default function Rules({ data }: any) {
   const [open, setOpen] = React.useState(false);
   const [scheduleTab, setScheduleTab] = useState<boolean>(false);
   const handleOpen = () => setOpen((cur) => !cur);
@@ -139,30 +139,21 @@ export default function OverviewTable({ data }: any) {
     handleOpen();
   };
 
-  const [tab1, setTab1] = useState("group");
-  const [tab2, setTab2] = useState("record");
+  const [tab1, setTab1] = useState(data.rulesContent.rules[0].scope);
+  const [tab2, setTab2] = useState(data.rulesContent.rules[0].type);
 
-  const [rules, setRules] = useState<any>([
-    "Initial Investment Amount and Subsequent Investment Amount must be greater than 0",
-    "Management Name must be not null",
-  ]);
+  const [rules, setRules] = useState<any>([]);
 
   const [addRule, setAddRule] = useState<boolean>(false);
-  const [searchAttr, setSearchArray] = useState([
-    {
-      attribute: "initial_investment",
-      check: false,
-    },
-    {
-      attribute: "subsequent_investment",
-      check: false,
-    },
-  ]);
+  const [searchAttr, setSearchArray] = useState([]);
   const [newRule, setNewRule] = useState("");
 
+  const [selectRule, setSelectRule] = useState("0");
+
   React.useEffect(() => {
-    console.log("SSSSS");
-  }, [addRule, searchAttr, tab1]);
+    let tt = data.rulesContent.rules.map((item: any) => item.content);
+    setRules(tt);
+  }, [addRule, searchAttr, tab1, selectRule]);
 
   const addRuleFun = (val: string) => {
     const addedRule = [...rules];
@@ -170,6 +161,44 @@ export default function OverviewTable({ data }: any) {
     setRules(addedRule);
     setAddRule(false);
   };
+
+  useEffect(() => {
+    let attributess = data.rulesContent.rules[+selectRule].attributes.map(
+      (item: any) => {
+        return {
+          name: item,
+          check: true,
+        };
+      }
+    );
+    let tempArr = data.attributes.map((item: any) => {
+      return {
+        name: item.name,
+        check: false,
+      };
+    });
+    attributess = [...attributess, ...tempArr];
+    let finalArray = attributess.reduce((acc: any, element: any) => {
+      if (element.check) {
+        return [element, ...acc];
+      } else {
+        return [...acc, element];
+      }
+    }, []);
+
+    let uniqueNames = new Set();
+    let uniqueObjects: any = [];
+
+    for (let obj of finalArray) {
+      if (!uniqueNames.has(obj.name)) {
+        uniqueNames.add(obj.name);
+        uniqueObjects.push(obj);
+      }
+    }
+
+    console.log("finalArray", uniqueObjects);
+    setSearchArray(uniqueObjects);
+  }, []);
 
   const deleteRule = (index: number) => {
     const deletedArray = [...rules];
@@ -190,17 +219,11 @@ export default function OverviewTable({ data }: any) {
     onMouseLeave: () => setOpenMenu(false),
   };
 
-  const [selectRule, setSelectRule] = useState("0");
-
-  React.useEffect(() => {
-    console.log(selectRule);
-  }, [selectRule, rules]);
-
   return (
     <div className={`w-full h-full overflow-x-auto px-2 ${cabin.className}`}>
       {/* Rule */}
       <div className="bg-[#CCE0FF] flex items-center w-[97%] px-6 py-3 justify-between">
-        <p className="text-[18px] font-[600]">Rules</p>
+        <p className="text-[18px] font-[600] text-black">Rules</p>
         <div
           onClick={() => {
             setAddRule(!addRule);
@@ -268,7 +291,7 @@ export default function OverviewTable({ data }: any) {
         {rules?.map((rule: string, index: number) => (
           <Card
             key={index}
-            className={`h-[50px] rounded-none border-[1px] ${
+            className={`h-[50px] rounded-none shadow-none border-[1px] ${
               addRule && "blur-sm"
             }`}
           >
@@ -291,7 +314,7 @@ export default function OverviewTable({ data }: any) {
                   }}
                   value={rules[index]}
                   type="text"
-                  className="w-[90%] outline-none"
+                  className="w-[90%] outline-none text-black"
                 />
               </div>
               <div
@@ -310,24 +333,24 @@ export default function OverviewTable({ data }: any) {
 
       {/* Rule info */}
       <div
-        className={`bg-[#CCE0FF] flex items-center w-[97%] h-[20%] px-6 py-3 justify-between  ${
-          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#F65A27] text-white"
+        className={`bg-[#CCE0FF] flex items-center w-[97%] h-[20%] text-black px-6 py-3 justify-between  ${
+          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6] "
         }`}
       >
         <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
       </div>
       <div className="mb-6 w-full py-3 px-3">
         <div className="py-8 px-10">
-          <div className="flex justify-between w-[90%]">
+          <div className="flex justify-between w-[60%]">
             <div>
-              <p>Scope</p>
-              <div className="bg-[#EAEAEA] w-[280px]  min-w-[300px]  h-[40px] flex items-center justify-around rounded-[10px]">
+              <p className="">Scope</p>
+              <div className="bg-[#EAEAEA] w-[280px] mt-3  min-w-[300px]  h-[40px] flex items-center justify-around rounded-[10px]">
                 <div
                   onClick={() => {
                     setTab1("series");
                   }}
                   className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
-                    tab1 === "series" && "bg-white"
+                    tab1 === "series" && "bg-white text-black"
                   } `}
                 >
                   Series
@@ -337,7 +360,7 @@ export default function OverviewTable({ data }: any) {
                     setTab1("group");
                   }}
                   className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
-                    tab1 === "group" && "bg-white"
+                    tab1 === "group" && "bg-white text-black"
                   } `}
                 >
                   Group
@@ -347,7 +370,7 @@ export default function OverviewTable({ data }: any) {
                     setTab1("product");
                   }}
                   className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
-                    tab1 === "product" && "bg-white"
+                    tab1 === "product" && "bg-white text-black"
                   } `}
                 >
                   Product
@@ -357,13 +380,40 @@ export default function OverviewTable({ data }: any) {
             <div className="mt-6 relative">
               <Menu>
                 <MenuHandler>
-                  <input
-                    type="text"
-                    value={"Sum"}
-                    className={`${cabin.className} border-gray-300 border-[2px] text-[18px] font-[600] w-[200px] rounded-[10px] h-[40px] px-4 outline-none bg-[#EAEAEA]`}
-                  />
+                  <div>
+                    <input
+                      type="text"
+                      value={
+                        data.rulesContent.rules[+selectRule].results.template
+                      }
+                      className={`${cabin.className} border-gray-300 border-[2px] text-[18px] w-[200px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                    />
+
+                    <div className="absolute top-2  h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end right-2">
+                      {/* $
+                    {
+                       true ? "rotate-180" : ""
+                    } */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`
+                    
+                       h-5 w-5 transition-transform`}
+                        fill="none"
+                        viewBox="0 0 28 28"
+                        stroke="#b4b4b4"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </MenuHandler>
-                <MenuList className="p-0">
+                <MenuList className="p-0 text-black">
                   <Menu
                     placement="right-start"
                     offset={15}
@@ -371,31 +421,52 @@ export default function OverviewTable({ data }: any) {
                     handler={setOpenMenu}
                   >
                     <MenuHandler>
-                      <MenuItem className="border-b-[1px] rounded-none border-gray-300">
+                      <MenuItem className="border-b-[1px] rounded-none border-gray-300 ">
                         Value Range
                       </MenuItem>
                     </MenuHandler>
-                    <MenuList {...triggers} className="w-[200px] h-[190px]">
+                    <MenuList
+                      {...triggers}
+                      className="w-[250px] h-[190px] text-black"
+                    >
                       <div>
-                        <p className="border-b-[1px] border-gray-300">
+                        <p className="border-b-[1px] border-gray-300 font-[600] text-[#656565]">
                           Value Range
                         </p>
-                        <div>
-                          <div className="flex w-full justify-between">
-                            <p>Lower Bound</p>
+                        <div className="mt-2">
+                          <div className="flex  w-full justify-between ">
+                            <p className="text-[#656565] font-[600]">
+                              Lower Bound
+                            </p>
                             <p>Strict</p>
                           </div>
-                          <div className="flex w-full justify-between">
-                            <p>Text</p>
-                            <Switch defaultChecked />
+                          <div className="flex w-full mt-2 justify-between">
+                            <p>Text Input</p>
+                            <Switch />
+                          </div>
+                          <div className="flex w-full mt-3 justify-between">
+                            <p className="text-[#656565] font-[600] ">
+                              Upper Bound
+                            </p>
+                            <p>Strict</p>
+                          </div>
+                          <div className="flex w-full mt-2 justify-between">
+                            <p>Text Input</p>
+                            <Switch />
                           </div>
                         </div>
                       </div>
                     </MenuList>
                   </Menu>
-                  <MenuItem>Not Null</MenuItem>
-                  <MenuItem>Pattern</MenuItem>
-                  <MenuItem>Enumeration</MenuItem>
+                  <MenuItem className="border-b-[1px] border-gray-300">
+                    Not Null
+                  </MenuItem>
+                  <MenuItem className="border-b-[1px] border-gray-300">
+                    Pattern
+                  </MenuItem>
+                  <MenuItem className="border-b-[1px] border-gray-300">
+                    Enumeration
+                  </MenuItem>
                   <MenuItem>Unique</MenuItem>
                 </MenuList>
               </Menu>
@@ -403,16 +474,16 @@ export default function OverviewTable({ data }: any) {
           </div>
 
           <div className="flex mt-6">
-            <div className="flex w-[90%] justify-between">
+            <div className="flex w-[60%] justify-between">
               <div>
                 <p>Type</p>
-                <div className="bg-[#EAEAEA] px-1 h-[40px] flex items-center justify-around rounded-[10px]">
+                <div className="bg-[#EAEAEA] px-1 h-[40px] flex items-center mt-3 justify-around rounded-[10px]">
                   <div
                     onClick={() => {
                       setTab2("record");
                     }}
                     className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
-                      tab2 === "record" && "bg-white"
+                      tab2 === "record" && "bg-white text-black"
                     } `}
                   >
                     Record
@@ -422,7 +493,7 @@ export default function OverviewTable({ data }: any) {
                       setTab2("aggregate");
                     }}
                     className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
-                      tab2 === "aggregate" && "bg-white"
+                      tab2 === "aggregate" && "bg-white text-black"
                     } `}
                   >
                     Aggregate
@@ -444,7 +515,7 @@ export default function OverviewTable({ data }: any) {
                     console.log(val, "DD");
                     setInterval(val.value);
                   }}
-                  className={`rounded-[10px] min-w-[200px] text-[18px] ${cabin.className}`}
+                  className={`rounded-[10px] min-w-[200px] text-[18px] text-black ${cabin.className}`}
                 />
               </div>
             </div>
@@ -455,7 +526,9 @@ export default function OverviewTable({ data }: any) {
       <div className="h-[450px] gap-x-2 gap-y-1 relative grid grid-cols-3">
         <div className="justify-center h-[500px]">
           <div className="flex justify-evenly h-[10%] items-center bg-[#CCE0FF]">
-            <p className={`${cabin.className} font-[900] text-[18px]`}>
+            <p
+              className={`${cabin.className} font-[900] text-[18px] text-black`}
+            >
               Attributes
             </p>
           </div>
@@ -485,7 +558,7 @@ export default function OverviewTable({ data }: any) {
               />
             </div>
 
-            {data.attributes.map((item: any, index: number) => (
+            {searchAttr.map((item: any, index: number) => (
               <Card
                 key={index}
                 className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
@@ -493,11 +566,11 @@ export default function OverviewTable({ data }: any) {
                 <div className="flex items-center">
                   <Checkbox
                     color="blue"
-                    // checked={item.check}
+                    defaultChecked={item.check}
                     // className="rounded-none"
                     // onChange={() => {}}
                   />
-                  <p>{item.name}</p>
+                  <p className="text-black">{item.name}</p>
                 </div>
               </Card>
             ))}
@@ -506,13 +579,15 @@ export default function OverviewTable({ data }: any) {
 
         <div className="justify-center h-[500px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
-            <p className={`${cabin.className} font-[900] text-[18px]`}>
+            <p
+              className={`${cabin.className} font-[900] text-[18px] text-black`}
+            >
               Schedule
             </p>
           </div>
           <div className="bg-[#EEEEEE] h-[70%] w-full">
             <div
-              className={`items-center flex justify-center w-full  ${cabin.className}`}
+              className={`items-center flex justify-center w-full border-b-[1px] border-white py-4  ${cabin.className}`}
             >
               <div className="mt-2 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
                 <p
@@ -520,7 +595,7 @@ export default function OverviewTable({ data }: any) {
                     setScheduleTab(true);
                   }}
                   className={`${cabin.className} rounded-[10px] text-[18px] ${
-                    scheduleTab && "bg-white"
+                    scheduleTab && "bg-white text-black"
                   }`}
                 >
                   &nbsp;&nbsp;{"Event"}&nbsp;&nbsp;
@@ -530,7 +605,7 @@ export default function OverviewTable({ data }: any) {
                     setScheduleTab(false);
                   }}
                   className={`${cabin.className} rounded-[10px] text-[18px] ${
-                    !scheduleTab && "bg-white"
+                    !scheduleTab && "bg-white text-black"
                   }`}
                 >
                   &nbsp;&nbsp;{"Time"}&nbsp;&nbsp;
@@ -538,7 +613,7 @@ export default function OverviewTable({ data }: any) {
               </div>
             </div>
 
-            <div className="w-full min-h-[20%] max-h-[25%] overflow-y-auto py-2 px-2 justify-start gap-x-6 bg-white mt-8">
+            <div className="w-full min-h-[20%] max-h-[25%] overflow-y-auto py-2 px-2 justify-start gap-x-6 border-b-[1px] border-white">
               <div
                 onClick={handleOpen}
                 className="flex justify-start item-center gap-x-2"
@@ -547,7 +622,7 @@ export default function OverviewTable({ data }: any) {
                   <Image src={`/clock.svg`} alt="brand" fill />
                 </div>
                 <p
-                  className={`${cabin.className} text-[18px] hover:text-[#f65a27] cursor-pointer`}
+                  className={`${cabin.className} text-black text-[18px] hover:text-[#f65a27] cursor-pointer`}
                 >
                   Calender event schedule
                 </p>
@@ -583,16 +658,18 @@ export default function OverviewTable({ data }: any) {
             </div>
 
             <div
-              className={`mt-8 ml-2 flex flex-col gap-y-5 text-[18px] px-2 pr-[2.2rem] ${cabin.className}`}
+              className={`mt-8  flex flex-col gap-y-5 text-[18px] ${cabin.className}`}
             >
-              <p className="w-full h-[30px] border-b-[1px] border-gray-400">
+              <p className="w-full h-[30px] border-b-[1px] border-white px-2">
                 Event
               </p>
-              <input
-                type="text"
-                placeholder="Enter Event Type"
-                className="bg-transparent border-b-[1px] border-gray-400 w-[95%]"
-              />
+              <div className="px-2">
+                <input
+                  type="text"
+                  placeholder="Enter Event Type"
+                  className="bg-transparent border-b-[1px] outline-none border-gray-400 w-[95%] text-black"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -719,7 +796,9 @@ export default function OverviewTable({ data }: any) {
 
         <div className="justify-center h-[500px]">
           <div className="flex justify-center h-[10%] items-center bg-[#CCE0FF]">
-            <p className={`${cabin.className} font-[900] text-[18px]`}>
+            <p
+              className={`${cabin.className} font-[900] text-[18px] text-black`}
+            >
               Results
             </p>
           </div>
@@ -728,15 +807,17 @@ export default function OverviewTable({ data }: any) {
               className={`items-center flex justify-start py-3 w-full md:flex-row ${cabin.className}`}
             >
               <div className="mt-4 h-[40px] w-[90%] flex justify-between px-1 py-1">
-                <p className={`${cabin.className} ml-3 text-[18px]`}>Retain</p>
-                <Switch defaultChecked />
+                <p className={`${cabin.className} ml-3 text-[18px] text-black`}>
+                  Retain
+                </p>
+                <Switch id="1" defaultChecked />
               </div>
             </div>
-            <div className="w-full items-center flex px-2 pr-[2.5rem] h-[23%] justify-between gap-x-6 bg-white">
-              <p className={`${cabin.className} text-[18px]`}>
+            <div className="w-full items-center flex px-2 pr-[2.5rem] h-[23%] justify-between gap-x-6 border-y-[1px] border-white">
+              <p className={`${cabin.className} text-[18px] text-black`}>
                 Detect Anomaly (Auto DQ)
               </p>
-              <Switch defaultChecked />
+              <Switch id="2" defaultChecked />
             </div>
             <div
               className={`mt-8 ml-2 flex flex-col gap-y-5 text-[18px] px-2 pr-[2.2rem] ${cabin.className}`}
@@ -745,32 +826,32 @@ export default function OverviewTable({ data }: any) {
                 Notification
               </p>
               <div className="w-full flex justify-between h-[40px] items-center border-b-[1px] border-gray-400">
-                <p>Owners</p>
-                <Switch defaultChecked />
+                <p className="text-black">Owners</p>
+                <Switch id="3" defaultChecked />
               </div>
               <div className="w-full flex justify-between h-[40px] items-center">
-                <p>Consumers</p>
-                <Switch defaultChecked />
+                <p className="text-black">Consumers</p>
+                <Switch id="4" />
               </div>
             </div>
           </div>
           <div className="flex mt-5 justify-between items-center px-4 w-[95%]">
-            <div>Alerts Threshold</div>
+            <div className="text-black">Alerts Threshold</div>
             <div>
               <input
                 type="text"
-                value={"5%"}
-                className="outline-none border-b-[2px] border-gray-400 w-8 h-8 "
+                value={data.rulesContent.rules[+selectRule].results.alerts}
+                className="outline-none border-b-[2px] text-black border-gray-400 w-8 h-8 "
               />
             </div>
           </div>
           <div className="flex mt-5 justify-between items-center px-4 w-[95%]">
-            <div>Variance Threshold</div>
+            <div className="text-black">Variance Threshold</div>
             <div>
               <input
                 type="text"
                 value={"0"}
-                className="outline-none border-b-[2px] border-gray-400 w-8 h-8 px-2"
+                className="outline-none border-b-[2px] text-black border-gray-400 w-8 h-8 px-2"
               />
             </div>
           </div>

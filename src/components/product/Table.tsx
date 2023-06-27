@@ -285,8 +285,7 @@ export default function Example({ data }: any) {
                   >
                     <Typography
                       variant="small"
-                      color="blue-gray"
-                      className={` ${cabin.className} flex items-center justify-between gap-2 font-normal leading-none opacity-70`}
+                      className={` ${cabin.className} flex items-center justify-between gap-2 font-normal leading-none opacity-70 text-black`}
                     >
                       {head}{" "}
                       <div

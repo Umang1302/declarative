@@ -50,15 +50,22 @@ export default function NavSearchbar() {
         </div>
         {/* </div> */}
         <div>
-          <p className="font-bold text-[#000] text-[18px]">Demo User</p>
+          <p className="font-bold text-[#000] text-[16px]">Demo User</p>
           <p className="text-[0.7rem] flex gap-x-1">
-            Account ID: f48cda68-448b-4c67-9828-f48cda68
+            <span className="font-[600] text-[#656565]">Account ID: </span>
+            f48cda68-448b-4c67-9828-f48cda68
             <div className="relative w-2 mt-1 h-2">
               <Image alt="" src="/copy.svg" fill />
             </div>
           </p>
-          <p className="text-[0.7rem]">Namespace: Demo (c60c671bf1410535)</p>
-          <p className="text-[0.7rem]">Usage Intent: Basic Analysis</p>
+          <p className="text-[0.7rem]">
+            <span className="font-[600] text-[#656565]">Namespace: </span>
+            Demo (c60c671bf1410535)
+          </p>
+          <p className="text-[0.7rem]">
+            <span className="font-[600] text-[#656565]">Usage Intent: </span>
+            Basic Analysis
+          </p>
         </div>
         <div className=" absolute right-2 w-[20%] px-2 h-full flex gap-x-4 py-2">
           <div className=" flex items-center justify-center relative rounded-full bg-white px-2 py-2 text-center text-white shadow-lg dark:text-gray-200 w-8 h-8">

@@ -16,7 +16,7 @@ import Select from "react-select";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
-export default function OverviewTable({ data }: any) {
+export default function Security({ data }: any) {
   const [dropDownValue, setDropDownValue] = useState<any>([
     {
       label: "Week",
@@ -51,15 +51,44 @@ export default function OverviewTable({ data }: any) {
   const [open8, setOpen8] = useState(false);
   const toggleOpen8 = () => setOpen8((cur) => !cur);
 
-  const [rules, setRules] = useState<any>([
-    "Mask Management Bio: Mask Management Bio except for Reporting, Sales, and Marketing usage",
-    "Mask Management Name: Mask Management Bio except for Reporting, Sales, and Marketing usage",
-  ]);
+  const [rules, setRules] = useState<any>([]);
 
-  const [arg1, setArg1] = useState("Mask");
-  const [arg2, setArg2] = useState("named");
-  const [arg3, setArg3] = useState("MNPI");
-  const [arg4, setArg4] = useState("hasing");
+  const [description, setDescription] = useState([]);
+
+  useEffect(() => {
+    if (data.securityPolicies) {
+      const rr = data.securityPolicies.map(
+        (item: any) => `${item.name}: ${item.decription}`
+      );
+      const des = data.securityPolicies.map((item: any) => item.decription);
+      setRules(rr);
+      setDescription(des);
+    } else {
+      setRules([]);
+      setDescription([]);
+    }
+  }, []);
+
+  const [arg1, setArg1] = useState(
+    data && data.securityPolicies && data.securityPolicies[0][`1`]
+      ? data.securityPolicies[0][`1`]
+      : "Mask"
+  );
+  const [arg2, setArg2] = useState(
+    data && data.securityPolicies && data.securityPolicies[0][`2`]
+      ? data.securityPolicies[0][`2`]
+      : "named"
+  );
+  const [arg3, setArg3] = useState(
+    data && data.securityPolicies && data.securityPolicies[0][`3`]
+      ? data.securityPolicies[0][`3`]
+      : "MNPI"
+  );
+  const [arg4, setArg4] = useState(
+    data && data.securityPolicies && data.securityPolicies[0][`4`]
+      ? data.securityPolicies[0][`4`]
+      : "hasing"
+  );
   const [arg5, setArg5] = useState("Reporting");
   const [arg6, setArg6] = useState("region");
   //   const [arg7, setArg7] = useState("North America");
@@ -105,6 +134,29 @@ export default function OverviewTable({ data }: any) {
 
   const [selectRule, setSelectRule] = useState("0");
 
+  useEffect(() => {
+    setArg1(
+      data && data.securityPolicies && data.securityPolicies[+selectRule][`1`]
+        ? data.securityPolicies[+selectRule][`1`]
+        : "Mask"
+    );
+    setArg2(
+      data && data.securityPolicies && data.securityPolicies[+selectRule][`2`]
+        ? data.securityPolicies[+selectRule][`2`]
+        : "named"
+    );
+    setArg3(
+      data && data.securityPolicies && data.securityPolicies[+selectRule][`3`]
+        ? data.securityPolicies[+selectRule][`3`]
+        : "MNPI"
+    );
+    setArg4(
+      data && data.securityPolicies && data.securityPolicies[+selectRule][`4`]
+        ? data.securityPolicies[+selectRule][`4`]
+        : "hasing"
+    );
+  }, [selectRule]);
+
   React.useEffect(() => {
     console.log(selectRule);
   }, [selectRule, rules]);
@@ -113,7 +165,7 @@ export default function OverviewTable({ data }: any) {
     <div className={`w-full h-full px-2 ${cabin.className}`}>
       {/* Rule */}
       <div className="bg-[#CCE0FF] flex items-center w-[97%] px-6 py-3 justify-between">
-        <p className="text-[18px] font-[600]">Rules</p>
+        <p className="text-[18px] font-[600] text-black">Security Policy</p>
         <div
           onClick={() => {
             setAddRule(!addRule);
@@ -204,7 +256,7 @@ export default function OverviewTable({ data }: any) {
                   }}
                   value={rules[index]}
                   type="text"
-                  className="w-[90%] outline-none"
+                  className="w-[90%] outline-none text-black"
                 />
               </div>
               <div
@@ -223,21 +275,23 @@ export default function OverviewTable({ data }: any) {
 
       {/* Rule info */}
       <div
-        className={` flex items-center w-[97%] h-[20%] px-6 py-3 justify-between ${
-          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#F65A27] text-white"
+        className={` flex items-center w-[97%] h-[20%] px-6 py-3 text-black justify-between ${
+          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
         }`}
       >
-        <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
+        <p className="text-[18px] font-[600] text-black">
+          {rules[+selectRule] ? rules[+selectRule] : "NONE"}
+        </p>
       </div>
       <div className="mb-6 w-full py-3">
-        <div className="bg-[#EEEEEE] px-3 py-4 w-[93%]">
+        <div className="bg-[#EEEEEE] px-10 py-4 w-[93%]">
           <p className="font-[600]">Description:</p>
-          <p>
-            Mask Management Bio except for Reporting, Sales, and Marketing usage
+          <p className="text-black">
+            {rules[+selectRule] ? rules[+selectRule] : "NONE"}
           </p>
         </div>
-        <div className="flex relative py-3 px-3">
-          <p className="gap-x-1 w-full flex">
+        <div className="flex relative py-3 px-10">
+          <p className="gap-x-1 w-full flex text-black">
             <span onClick={toggleOpen}>
               <p className="font-[800] flex">
                 {arg1}
@@ -295,6 +349,7 @@ export default function OverviewTable({ data }: any) {
             <span onClick={toggleOpen1}>
               <p className="font-[800] flex">
                 {arg2}
+
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className={`${
@@ -349,6 +404,7 @@ export default function OverviewTable({ data }: any) {
               {" "}
               <p className="font-[800] flex">
                 {arg3}
+
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className={`${
@@ -459,8 +515,8 @@ export default function OverviewTable({ data }: any) {
             </span>
           </p>
         </div>
-        <div className="flex relative py-3 px-3">
-          <p className="gap-x-1 w-full flex">
+        <div className="flex relative py-3 px-10">
+          <p className="gap-x-1 w-full flex text-black">
             Except For Usage
             <span onClick={toggleOpen4}>
               <p className="font-[800] flex">

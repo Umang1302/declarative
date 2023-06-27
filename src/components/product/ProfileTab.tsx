@@ -248,7 +248,7 @@ export default function ProfileTab({ data }: any) {
                   <Image src={`/clock.svg`} alt="brand" fill />
                 </div>
                 <p
-                  className={`${cabin.className} text-[18px] hover:text-[#f65a27] cursor-pointer`}
+                  className={`${cabin.className} text-[18px] text-black hover:text-[#f65a27] cursor-pointer`}
                 >
                   Calender event schedule
                 </p>
@@ -285,13 +285,13 @@ export default function ProfileTab({ data }: any) {
             <div
               className={`mt-8 ml-2 flex flex-col gap-y-5 text-[18px] ${cabin.className}`}
             >
-              <p className="w-full h-[30px] text-black border-b-[1px] border-white">
+              <p className="w-full h-[30px] border-b-[1px] border-white">
                 Event
               </p>
               <input
                 type="text"
                 placeholder="Enter Event Type"
-                className="bg-transparent border-b-[1px] border-gray-400 w-[95%] outline-none"
+                className="bg-transparent border-b-[1px] border-gray-400 w-[95%] outline-none text-black"
               />
             </div>
           </div>
@@ -325,14 +325,14 @@ export default function ProfileTab({ data }: any) {
             <div
               className={`mt-8 flex flex-col gap-y-5 text-[18px] ${cabin.className}`}
             >
-              <p className="w-full text-black px-4 h-[30px] border-b-[1px] border-white">
+              <p className="w-full  px-4 h-[30px] border-b-[1px] border-white">
                 Notification
               </p>
-              <div className="w-full  -mt-3 px-4 flex justify-between h-[40px] items-center border-b-[1px] border-white">
+              <div className="w-full text-black  -mt-3 px-4 flex justify-between h-[40px] items-center border-b-[1px] border-white">
                 <p>Owners</p>
                 <Switch defaultChecked />
               </div>
-              <div className="w-full -mt-3 px-4 flex justify-between h-[40px] items-center">
+              <div className="w-full text-black -mt-3 px-4 flex justify-between h-[40px] items-center">
                 <p>Consumers</p>
                 <Switch defaultChecked />
               </div>

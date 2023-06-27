@@ -19,7 +19,7 @@ export default function Hero({
   setProdData,
 }: any) {
   const [sort, setSort] = React.useState<boolean>(false);
-
+  const [click, setClick] = React.useState(false);
   const getItemProps = (index: any) =>
     ({
       // variant: active === index ? "filled" : "text",
@@ -126,16 +126,25 @@ export default function Hero({
         >
           <ChevronRightIcon strokeWidth={2} className="h-4 w-4" />
         </Button>
-        <div className="h-full pt-[2.8rem]">
-          <div
-            className="relative w-6 h-6"
-            onClick={() => {
-              console.log("clicked");
-              sortFunctionality();
-            }}
+        <div
+          className="h-full pt-[2.8rem]"
+          onClick={() => {
+            setClick(!click);
+            sortFunctionality();
+          }}
+        >
+          <svg
+            width="34"
+            height="35"
+            viewBox="0 0 34 35"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <Image alt="" src="/sort.svg" fill />
-          </div>
+            <path
+              d="M0 26.25L6.5625 8.75H10.325L16.8875 26.25H13.3L11.8125 22.05H5.075L3.675 26.25H0ZM6.125 19.075H10.675L8.575 12.5125H8.3125L6.125 19.075ZM20.475 26.25V22.925L29.3125 11.9H20.825V8.75H33.1625V12.075L24.4125 23.1H33.25V26.25H20.475ZM12.25 5.25L17.5 0L22.75 5.25H12.25ZM17.5 35L12.25 29.75H22.75L17.5 35Z"
+              fill={`${click ? "#F65A27" : "#8E8E8E"}`}
+            />
+          </svg>
         </div>
       </div>
     </div>

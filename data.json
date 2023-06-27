@@ -5,12 +5,71 @@
       "label": ["Mutual Funds"],
       "rating": "4",
       "reviews": "38",
+      "rulesContent": {
+        "rules": [
+          {
+            "content": "ESG Scores cannot be null",
+            "scope": "product",
+            "type": "record",
+            "attributes": [
+              "esg_score",
+              "environment_score",
+              "social_score",
+              "governance_score"
+            ],
+            "results": {
+              "alerts": "0%",
+              "retain": true,
+              "owner": true,
+              "consumers": false,
+              "detectVariance": false,
+              "template": "Not Null"
+            }
+          }
+        ]
+      },
+      "securityPolicies": [
+        {
+          "name": "Redact sustainability_rank",
+          "decription": "The policy redacts sustainability rank for all users except for usage intent investment analysis",
+          "1": "Redact",
+          "3": "sustainability_rank",
+          "4": "hashing",
+          "2": "named"
+        }
+      ],
+      "accessContent": [
+        {
+          "name": "Only Investment Teams and Marketing teams can access ESG Scores",
+          "description": "Limit the access to ESG Scores"
+        }
+      ],
       "description": "Listing of all Mutual Funds traded in USA",
       "createdAt": "2023-05-30T14:15:55.963Z",
       "updatedAt": "2023-05-30T14:15:55.963Z",
       "accountId": "f48cda68-448b-4c67-9828-fae3a3a9d3d2",
       "namespaceId": "c60c671bf1410535",
       "productId": "cd1b1035ad5a04f7",
+      "metrics": [
+        {
+          "name": " Previous Sustainability Rank",
+          "type": "0",
+          "scope": "record",
+          "attributes": ["sustainability_rank"],
+          "window": "asof_date, fund_sumbol",
+          "function": "lag",
+          "order": "ascending"
+        },
+        {
+          "name": " Previous Sustainability Rank",
+          "type": "0",
+          "scope": "record",
+          "attributes": ["sustainability_rank"],
+          "window": "asof_date, fund_sumbol",
+          "function": "lag",
+          "order": "ascending"
+        }
+      ],
       "name": "US Mutual Funds ESG Scores",
       "type": "INCREMENTAL",
       "sourceDatasetId": "bac95341c0175f2d",
@@ -517,12 +576,42 @@
       "rating": "5",
       "reviews": "105",
       "label": ["Mutual Funds"],
+      "rulesContent": {
+        "rules": [
+          {
+            "content": "GICS Sector and Sub-Industry are not blank",
+            "scope": "product",
+            "type": "record",
+            "attributes": ["GICS Sector", "GICS Sub Industry"],
+            "results": {
+              "alerts": "5%",
+              "retain": true,
+              "owner": true,
+              "consumers": false,
+              "detectVariance": false,
+              "template": "Not Null"
+            }
+          }
+        ]
+      },
       "description": "Listing of all Mutual Funds traded in USA",
       "createdAt": "2023-05-30T14:15:55.963Z",
       "updatedAt": "2023-05-30T14:15:55.963Z",
       "accountId": "f48cda68-448b-4c67-9828-fae3a3a9d3d2",
       "namespaceId": "c60c671bf1410535",
       "productId": "31405ffde4ded2f1",
+      "metrics": [
+        {
+          "name": "Mom, QoQ, YoY growth in Securities Traded",
+          "type": "1",
+          "scope": "product",
+          "attributes": ["Ticket symbol"],
+          "profile": ["Count Distinct"],
+          "aggregate": [""],
+          "period": ["Year", "Quater", "Month"],
+          "metric": ["Growth-Percentage", "Growth-Absolute"]
+        }
+      ],
       "name": "NYSE Securities",
       "type": "STATIC",
       "sourceDatasetId": "31405ffde4ded2f1",
@@ -733,11 +822,48 @@
       "description": "Listing of all Mutual Funds traded in USA",
       "createdAt": "2023-05-30T14:15:55.963Z",
       "label": ["Mutual Funds", "ESG"],
-
+      "rulesContent": {
+        "rules": [
+          {
+            "content": "High Prices must be greater than Low price",
+            "scope": "product",
+            "type": "record",
+            "attributes": ["high", "low"],
+            "results": {
+              "alerts": "2%",
+              "retain": true,
+              "owner": true,
+              "consumers": false,
+              "detectVariance": false,
+              "template": "Compare"
+            }
+          }
+        ]
+      },
       "updatedAt": "2023-05-30T14:15:55.963Z",
       "accountId": "f48cda68-448b-4c67-9828-fae3a3a9d3d2",
       "namespaceId": "c60c671bf1410535",
       "productId": "23ccf1e691e59d16",
+      "metrics": [
+        {
+          "name": "52 Week High",
+          "type": "0",
+          "scope": "record",
+          "attributes": ["high"],
+          "window": "asof_date, ticker_symbol",
+          "function": "lag(52)",
+          "order": "high descending"
+        },
+        {
+          "name": "52 Week Low",
+          "type": "0",
+          "scope": "record",
+          "attributes": ["low"],
+          "window": "asof_date, ticker_symbol",
+          "function": "lag(52)",
+          "order": "low ascending"
+        }
+      ],
       "name": "NYSE Prices",
       "type": "INCREMENTAL",
       "sourceDatasetId": "23ccf1e691e59d16",
@@ -899,7 +1025,77 @@
       "label": ["Securities"],
       "rating": "5",
       "reviews": "356",
-
+      "rulesContent": {
+        "rules": [
+          {
+            "content": "Initial Investment Amount and Subsequent Investment Amount must be greater than 0",
+            "scope": "product",
+            "type": "record",
+            "attributes": ["initial_investment", "subsequent_investment"],
+            "results": {
+              "alerts": "5%",
+              "retain": true,
+              "owner": true,
+              "consumers": false,
+              "detectVariance": false,
+              "template": "Value Range"
+            }
+          },
+          {
+            "content": "Management Name must be not null",
+            "scope": "product",
+            "type": "record",
+            "attributes": ["initial_investment", "subsequent_investment"],
+            "results": {
+              "alerts": "5%",
+              "retain": true,
+              "owner": true,
+              "consumers": false,
+              "detectVariance": false,
+              "template": "Not Null"
+            }
+          }
+        ]
+      },
+      "securityPolicies": [
+        {
+          "name": "Mask Management Bio",
+          "decription": "Except for Reporting, Sales, and Marketing usage",
+          "1": "Mask",
+          "3": "management_bio",
+          "4": "hashing",
+          "2": "named"
+        },
+        {
+          "name": "Mask Management Name",
+          "decription": "Except for Reporting, Sales, and Marketing usage",
+          "1": "Mask",
+          "3": "management_name",
+          "4": "hashing",
+          "2": "named"
+        }
+      ],
+      "metrics": [
+        {
+          "name": "Count of funds in same category",
+          "type": "0",
+          "scope": "record",
+          "attributes": ["num_category_funds"],
+          "window": "fund_category",
+          "function": "count",
+          "order": "ascending"
+        },
+        {
+          "name": "YoY Growth in number of Funds",
+          "type": "1",
+          "scope": "product",
+          "attributes": ["fund_symbol"],
+          "profile": ["Count Distinct"],
+          "aggregate": [],
+          "period": ["Year"],
+          "metric": ["Growth-Percentage"]
+        }
+      ],
       "description": "Listing of all Mutual Funds traded in USA",
       "createdAt": "2023-05-30T14:15:55.963Z",
       "updatedAt": "2023-05-30T14:15:55.963Z",
@@ -1596,13 +1792,62 @@
       "label": ["Securities"],
       "rating": "5",
       "reviews": "5",
-
+      "rulesContent": {
+        "rules": [
+          {
+            "content": "Top 10 Holding Assets must be less than 90% of Total Assets",
+            "scope": "product",
+            "type": "record",
+            "attributes": ["top10_holdings_total_assets"],
+            "results": {
+              "alerts": "0%",
+              "retain": true,
+              "owner": true,
+              "consumers": false,
+              "detectVariance": false,
+              "template": "Value Range"
+            }
+          }
+        ]
+      },
+      "securityPolicies": [
+        {
+          "name": "Hide Top Holdings",
+          "decription": "This policy hides names of top holdings as this could be sensitive when new positions are taken",
+          "1": "Hide",
+          "3": "top_holdings",
+          "4": "hashing",
+          "2": "named"
+        }
+      ],
       "description": "Listing of all Mutual Funds traded in USA",
       "createdAt": "2023-05-30T14:15:55.963Z",
       "updatedAt": "2023-05-30T14:15:55.963Z",
       "accountId": "f48cda68-448b-4c67-9828-fae3a3a9d3d2",
       "namespaceId": "c60c671bf1410535",
       "productId": "b1490b6d75e92bcc",
+      "metrics": [
+        {
+          "name": "Total Assets Under Management",
+          "type": "1",
+          "scope": "series",
+          "attributes": ["total_net_assets"],
+          "profile": [],
+          "aggregate": ["Sum"],
+          "period": ["Series"],
+          "metric": []
+        },
+        {
+          "name": "YoY Assets Under Management Growth",
+          "type": "1",
+          "scope": "product",
+          "attributes": [""],
+          "profile": [""],
+          "aggregate": [""],
+          "period": ["Year"],
+          "metric": ["Growth-Percentage"]
+        }
+      ],
       "name": "US Mutual Funds Returns and Rankings",
       "type": "INCREMENTAL",
       "sourceDatasetId": "8d2f7277594504ca",
