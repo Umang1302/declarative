@@ -29,22 +29,99 @@ export default function OverviewTable({ data }: any) {
   ]);
 
   const [open, setOpen] = useState(false);
-  const toggleOpen = () => setOpen((cur) => !cur);
+  const toggleOpen = () => {
+    //  setOpen(false);
+    setOpen1(false);
+    setOpen2(false);
+    setOpen3(false);
+    setOpen4(false);
+    setOpen5(false);
+    setOpen6(false);
+    setOpen7(false);
+    setOpen8(false);
+    setOpen((cur) => !cur);
+  };
   const [open1, setOpen1] = useState(false);
-  const toggleOpen1 = () => setOpen1((cur) => !cur);
+  const toggleOpen1 = () => {
+    setOpen(false);
+    // setOpen1(false);
+    setOpen2(false);
+    setOpen3(false);
+    setOpen4(false);
+    setOpen5(false);
+    setOpen6(false);
+    setOpen7(false);
+    setOpen8(false);
+    setOpen1((cur) => !cur);
+  };
 
   const [open2, setOpen2] = useState(false);
-  const toggleOpen2 = () => setOpen2((cur) => !cur);
+  const toggleOpen2 = () => {
+    setOpen(false);
+    setOpen1(false);
+    // setOpen2(false);
+    setOpen3(false);
+    setOpen4(false);
+    setOpen5(false);
+    setOpen6(false);
+    setOpen7(false);
+    setOpen8(false);
+    setOpen2((cur) => !cur);
+  };
 
   const [open3, setOpen3] = useState(false);
-  const toggleOpen3 = () => setOpen3((cur) => !cur);
+  const toggleOpen3 = () => {
+    setOpen(false);
+    setOpen1(false);
+    setOpen2(false);
+    // setOpen3(false);
+    setOpen4(false);
+    setOpen5(false);
+    setOpen6(false);
+    setOpen7(false);
+    setOpen8(false);
+    setOpen3((cur) => !cur);
+  };
 
   const [open4, setOpen4] = useState(false);
-  const toggleOpen4 = () => setOpen4((cur) => !cur);
+  const toggleOpen4 = () => {
+    setOpen(false);
+    setOpen1(false);
+    setOpen2(false);
+    setOpen3(false);
+    // setOpen4(false);
+    setOpen5(false);
+    setOpen6(false);
+    setOpen7(false);
+    setOpen8(false);
+    setOpen4((cur) => !cur);
+  };
   const [open5, setOpen5] = useState(false);
-  const toggleOpen5 = () => setOpen5((cur) => !cur);
+  const toggleOpen5 = () => {
+    setOpen(false);
+    setOpen1(false);
+    setOpen2(false);
+    setOpen3(false);
+    setOpen4(false);
+    // setOpen5(false);
+    setOpen6(false);
+    setOpen7(false);
+    setOpen8(false);
+    setOpen5((cur) => !cur);
+  };
   const [open6, setOpen6] = useState(false);
-  const toggleOpen6 = () => setOpen6((cur) => !cur);
+  const toggleOpen6 = () => {
+    setOpen(false);
+    setOpen1(false);
+    setOpen2(false);
+    setOpen3(false);
+    setOpen4(false);
+    setOpen5(false);
+    // setOpen6(false);
+    setOpen7(false);
+    setOpen8(false);
+    setOpen6((cur) => !cur);
+  };
   const [open7, setOpen7] = useState(false);
   const toggleOpen7 = () => setOpen7((cur) => !cur);
   const [open8, setOpen8] = useState(false);

@@ -17,11 +17,13 @@ const aa = [1, 2, 4, 5, 6];
 
 export default function DataTab({ data }: any) {
   return (
-    <div className="w-full grid grid-cols-2">
+    <div>
+      <div className="flex justify-end"></div>
+
       {/* {aa.map((item, index) => ( */}
       {/* // <div></div>
         // <div className="w-1/2" key={index}> */}
-      <GraphCard data={data} />
+      {/* <GraphCard data={data} /> */}
       {/* // </div> */}
       {/* // ))} */}
     </div>

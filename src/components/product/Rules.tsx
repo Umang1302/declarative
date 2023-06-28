@@ -147,12 +147,13 @@ export default function Rules({ data }: any) {
   const [addRule, setAddRule] = useState<boolean>(false);
   const [searchAttr, setSearchArray] = useState([]);
   const [newRule, setNewRule] = useState("");
-
+  const [variable, setVariable] = useState("");
   const [selectRule, setSelectRule] = useState("0");
 
   React.useEffect(() => {
     let tt = data.rulesContent.rules.map((item: any) => item.content);
     setRules(tt);
+    setVariable(data.rulesContent.rules[+selectRule].results.template);
   }, [addRule, searchAttr, tab1, selectRule]);
 
   const addRuleFun = (val: string) => {
@@ -341,7 +342,7 @@ export default function Rules({ data }: any) {
       </div>
       <div className="mb-6 w-full py-3 px-3">
         <div className="py-8 px-10">
-          <div className="flex justify-between w-[60%]">
+          <div className="flex justify-start gap-x-40">
             <div>
               <p className="">Scope</p>
               <div className="bg-[#EAEAEA] w-[280px] mt-3  min-w-[300px]  h-[40px] flex items-center justify-around rounded-[10px]">
@@ -383,9 +384,7 @@ export default function Rules({ data }: any) {
                   <div>
                     <input
                       type="text"
-                      value={
-                        data.rulesContent.rules[+selectRule].results.template
-                      }
+                      value={variable}
                       className={`${cabin.className} border-gray-300 border-[2px] text-[18px] w-[200px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
                     />
 
@@ -458,23 +457,44 @@ export default function Rules({ data }: any) {
                       </div>
                     </MenuList>
                   </Menu>
-                  <MenuItem className="border-b-[1px] border-gray-300">
+                  <MenuItem
+                    onClick={() => {
+                      setVariable("Not Null");
+                    }}
+                    className="border-b-[1px] border-gray-300"
+                  >
                     Not Null
                   </MenuItem>
-                  <MenuItem className="border-b-[1px] border-gray-300">
+                  <MenuItem
+                    onClick={() => {
+                      setVariable("Pattern");
+                    }}
+                    className="border-b-[1px] border-gray-300"
+                  >
                     Pattern
                   </MenuItem>
-                  <MenuItem className="border-b-[1px] border-gray-300">
+                  <MenuItem
+                    onClick={() => {
+                      setVariable("Enumeration");
+                    }}
+                    className="border-b-[1px] border-gray-300"
+                  >
                     Enumeration
                   </MenuItem>
-                  <MenuItem>Unique</MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      setVariable("Unique");
+                    }}
+                  >
+                    Unique
+                  </MenuItem>
                 </MenuList>
               </Menu>
             </div>
           </div>
 
           <div className="flex mt-6">
-            <div className="flex w-[60%] justify-between">
+            <div className="flex w-full gap-x-64 justify-start">
               <div>
                 <p>Type</p>
                 <div className="bg-[#EAEAEA] px-1 h-[40px] flex items-center mt-3 justify-around rounded-[10px]">
@@ -532,7 +552,7 @@ export default function Rules({ data }: any) {
               Attributes
             </p>
           </div>
-          <div className="bg-[#EEEEEE] w-full overflow-y-auto h-[350px]">
+          <div className="bg-[#EEEEEE] w-full overflow-y-auto h-[480px]">
             <div className="relative w-full pt-3">
               <div className="absolute inset-y-0 left-0 top-3 flex items-center pl-3 pointer-events-none">
                 <svg
@@ -585,7 +605,7 @@ export default function Rules({ data }: any) {
               Schedule
             </p>
           </div>
-          <div className="bg-[#EEEEEE] h-[70%] w-full">
+          <div className="bg-[#EEEEEE] h-[480px] w-full">
             <div
               className={`items-center flex justify-center w-full border-b-[1px] border-white py-4  ${cabin.className}`}
             >
@@ -613,12 +633,12 @@ export default function Rules({ data }: any) {
               </div>
             </div>
 
-            <div className="w-full min-h-[20%] max-h-[25%] overflow-y-auto py-2 px-2 justify-start gap-x-6 border-b-[1px] border-white">
+            <div className="w-full min-h-[19%] max-h-[25%] overflow-y-auto py-2 px-2 justify-start gap-x-6 border-b-[1px] border-white">
               <div
                 onClick={handleOpen}
                 className="flex justify-start item-center gap-x-2"
               >
-                <div className="relative w-[20px] h-[20px] mt-1">
+                <div className="relative w-[20px] h-[20px] mt-1 px-4">
                   <Image src={`/clock.svg`} alt="brand" fill />
                 </div>
                 <p
@@ -630,10 +650,10 @@ export default function Rules({ data }: any) {
               {schedule.map((item: any, index: number) => (
                 <div
                   key={index}
-                  className="flex ml-1 justify-start items-center w-full gap-x-2"
+                  className="flex justify-start items-center w-full gap-x-2"
                 >
                   <p className="text-[11px] w-full mt-1">
-                    <div className="flex justify-between w-full">
+                    <div className="flex justify-between px-2 w-full">
                       <div>
                         <p>Schedule has been added</p>
                       </div>
@@ -646,7 +666,7 @@ export default function Rules({ data }: any) {
                         <Image src={`/bin.svg`} alt="brand" fill />
                       </div>
                     </div>
-                    <p>
+                    <p className="ml-2">
                       Repeats every {item.weekNumber} {item.interval} on{" "}
                       {item.day[0]}{" "}
                       {item.day.length > 1 && `${"+" + (item.day.length - 1)}`}{" "}
@@ -802,57 +822,57 @@ export default function Rules({ data }: any) {
               Results
             </p>
           </div>
-          <div className="bg-[#EEEEEE] h-[70%] w-full">
+          <div className="bg-[#EEEEEE] pb-3 w-full">
             <div
               className={`items-center flex justify-start py-3 w-full md:flex-row ${cabin.className}`}
             >
-              <div className="mt-4 h-[40px] w-[90%] flex justify-between px-1 py-1">
-                <p className={`${cabin.className} ml-3 text-[18px] text-black`}>
+              <div className="mt-4 h-[40px] w-[100%] flex justify-between px-4 py-1">
+                <p className={`${cabin.className}  text-[18px] text-black`}>
                   Retain
                 </p>
                 <Switch id="1" defaultChecked />
               </div>
             </div>
-            <div className="w-full items-center flex px-2 pr-[2.5rem] h-[23%] justify-between gap-x-6 border-y-[1px] border-white">
+            <div className="w-full items-center flex px-4 h-[92px] justify-between gap-x-6 border-y-[1px] border-white">
               <p className={`${cabin.className} text-[18px] text-black`}>
                 Detect Anomaly (Auto DQ)
               </p>
               <Switch id="2" defaultChecked />
             </div>
             <div
-              className={`mt-8 ml-2 flex flex-col gap-y-5 text-[18px] px-2 pr-[2.2rem] ${cabin.className}`}
+              className={`mt-8 flex flex-col gap-y-5 text-[18px] ${cabin.className}`}
             >
-              <p className="w-full h-[30px] border-b-[1px] border-gray-400">
+              <p className="w-full h-[30px] border-b-[1px] border-white px-4">
                 Notification
               </p>
-              <div className="w-full flex justify-between h-[40px] items-center border-b-[1px] border-gray-400">
+              <div className="w-full flex justify-between h-[40px] items-center border-b-[1px] px-4 border-white pb-4">
                 <p className="text-black">Owners</p>
                 <Switch id="3" defaultChecked />
               </div>
-              <div className="w-full flex justify-between h-[40px] items-center">
+              <div className="w-full flex justify-between h-[40px] items-center border-b-[1px] px-4 border-white pb-4">
                 <p className="text-black">Consumers</p>
                 <Switch id="4" />
               </div>
             </div>
-          </div>
-          <div className="flex mt-5 justify-between items-center px-4 w-[95%]">
-            <div className="text-black">Alerts Threshold</div>
-            <div>
-              <input
-                type="text"
-                value={data.rulesContent.rules[+selectRule].results.alerts}
-                className="outline-none border-b-[2px] text-black border-gray-400 w-8 h-8 "
-              />
+            <div className="flex mt-5 justify-between items-center border-b-[1px] px-4 border-white pb-4">
+              <div className="text-black">Alerts Threshold</div>
+              <div>
+                <input
+                  type="text"
+                  value={data.rulesContent.rules[+selectRule].results.alerts}
+                  className="outline-none border-b-[2px] bg-transparent text-black border-gray-400 w-8 h-8 "
+                />
+              </div>
             </div>
-          </div>
-          <div className="flex mt-5 justify-between items-center px-4 w-[95%]">
-            <div className="text-black">Variance Threshold</div>
-            <div>
-              <input
-                type="text"
-                value={"0"}
-                className="outline-none border-b-[2px] text-black border-gray-400 w-8 h-8 px-2"
-              />
+            <div className="flex mt-5 justify-between items-center px-4">
+              <div className="text-black">Variance Threshold</div>
+              <div>
+                <input
+                  type="text"
+                  value={"0"}
+                  className="outline-none border-b-[2px] text-black border-gray-400 w-8 h-8 px-2 bg-transparent"
+                />
+              </div>
             </div>
           </div>
         </div>

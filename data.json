@@ -1870,6 +1870,38 @@
           "metric": ["Growth-Percentage"]
         }
       ],
+      "lifeCycle": [
+        {
+          "name": "Archive Product 6 months after INACTIVE",
+          "type": true,
+          "key": "status",
+          "operation": "=",
+          "status": "INACTIVE",
+          "handling": "archive",
+          "afterNumber": "6",
+          "after": "months"
+        },
+        {
+          "name": "Delete Product 1 year after INACTIVE",
+          "type": true,
+          "key": "status",
+          "operation": "=",
+          "status": "INACTIVE",
+          "handling": "destroy",
+          "afterNumber": "1",
+          "after": "year"
+        },
+        {
+          "name": "Delete Returns 7 years later",
+          "type": true,
+          "key": "status",
+          "operation": "=",
+          "status": "INACTIVE",
+          "handling": "destroy",
+          "afterNumber": "7",
+          "after": "year"
+        }
+      ],
       "name": "US Mutual Funds Returns and Rankings",
       "type": "INCREMENTAL",
       "sourceDatasetId": "8d2f7277594504ca",

@@ -443,10 +443,10 @@ export default function Metrics({ data }: any) {
           </p>
         </div>
       </div>
-      <div className="py-2 h-[300px] px-3 w-[90%]">
+      <div className="py-2 h-[220px] px-3 w-[90%]">
         {/*  */}
         {metricsTabRef.current === "0" ? (
-          <div className="py-10 w-full">
+          <div className="w-full mt-3">
             <div className="flex justify-between">
               <div className="">
                 <p className="font-[600]">Scope</p>
@@ -502,7 +502,7 @@ export default function Metrics({ data }: any) {
                 />
               </div>
             </div>
-            <div className="flex items-center justify-between mt-5">
+            <div className="flex items-center justify-between mt-5 w-[66%]">
               <div className="relative">
                 <p className="mb-3">Window</p>
                 <input
@@ -512,29 +512,31 @@ export default function Metrics({ data }: any) {
                   className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
                 />
               </div>
-              <div className="bg-[#EAEAEA] w-[250px] px-1 mt-8 -ml-[5.5rem] h-[40px] flex items-center justify-between rounded-[10px]">
-                <div
-                  onClick={() => {
-                    setTab2("ascending");
-                  }}
-                  className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
-                    tab2 === "ascending" && "bg-white text-black"
-                  } `}
-                >
-                  Ascending
-                </div>
-                <div
-                  onClick={() => {
-                    setTab2("desending");
-                  }}
-                  className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
-                    tab2 === "desending" && "bg-white text-black"
-                  } `}
-                >
-                  Desending
+              <div className="">
+                <p>Order</p>
+                <div className="bg-[#EAEAEA] w-[250px] px-1 mt-3  h-[40px] flex items-center justify-between rounded-[10px]">
+                  <div
+                    onClick={() => {
+                      setTab2("ascending");
+                    }}
+                    className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab2 === "ascending" && "bg-white text-black"
+                    } `}
+                  >
+                    Ascending
+                  </div>
+                  <div
+                    onClick={() => {
+                      setTab2("desending");
+                    }}
+                    className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab2 === "desending" && "bg-white text-black"
+                    } `}
+                  >
+                    Desending
+                  </div>
                 </div>
               </div>
-              <div></div>
             </div>
             {/* <div className="grid grid-cols-2 gap-y-5 gap-x-72">
               <div>
@@ -571,7 +573,7 @@ export default function Metrics({ data }: any) {
             </div> */}
           </div>
         ) : metricsTabRef.current === "1" ? (
-          <div className="py-10 w-full">
+          <div className="w-full mt-3">
             <div className="flex justify-between">
               <div className="">
                 <p className="font-[600]">Scope</p>
