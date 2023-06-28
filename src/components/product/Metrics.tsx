@@ -502,7 +502,7 @@ export default function Metrics({ data }: any) {
                 />
               </div>
             </div>
-            <div className="flex items-center justify-between mt-5 w-[66%]">
+            <div className="flex items-center justify-between mt-5 w-full">
               <div className="relative">
                 <p className="mb-3">Window</p>
                 <input
@@ -536,6 +536,15 @@ export default function Metrics({ data }: any) {
                     Desending
                   </div>
                 </div>
+              </div>
+              <div className="relative w-[6%]">
+                {/* <p className="mb-3">Function</p>
+                <input
+                  type="text"
+                  readOnly
+                  value={data.metrics[+selectRule].function}
+                  className={`${cabin.className} border-gray-300 border-[2px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                /> */}
               </div>
             </div>
             {/* <div className="grid grid-cols-2 gap-y-5 gap-x-72">
