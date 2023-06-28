@@ -267,7 +267,7 @@ export default function Metrics({ data }: any) {
     <div className={`w-full h-full overflow-x-auto px-2 ${cabin.className}`}>
       {/* Rule */}
       <div className="bg-[#CCE0FF] flex items-center w-[97%] px-6 py-3 justify-between">
-        <p className="text-[18px] font-[600]">Metrics Information</p>
+        <p className="text-[18px] text-black font-[600]">Metrics Information</p>
         <div
           onClick={() => {
             setAddRule(!addRule);
@@ -358,7 +358,7 @@ export default function Metrics({ data }: any) {
                   }}
                   value={rules[index]}
                   type="text"
-                  className="w-[90%] outline-none"
+                  className="w-[90%] text-black outline-none"
                 />
               </div>
               <div
@@ -489,7 +489,7 @@ export default function Metrics({ data }: any) {
                   type="text"
                   readOnly
                   value={data.metrics[+selectRule].attributes[0]}
-                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                  className={`${cabin.className} border-gray-300 border-[2px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
                 />
               </div>
               <div className="relative">
@@ -498,7 +498,7 @@ export default function Metrics({ data }: any) {
                   type="text"
                   readOnly
                   value={data.metrics[+selectRule].function}
-                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                  className={`${cabin.className} border-gray-300 border-[2px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
                 />
               </div>
             </div>
@@ -958,7 +958,7 @@ export default function Metrics({ data }: any) {
             &nbsp;&nbsp;{"Time"}&nbsp;&nbsp;
           </p>
         </div>
-        <div className="w-[25%] min-h-[20%] max-h-[25%] overflow-y-auto py-2 px-2 justify-start gap-x-6 border-b-[1px] border-white">
+        <div className="w-[30%] max-h-[25%] overflow-y-auto py-2 px-2 justify-start gap-x-6 border-b-[1px] border-white">
           <div
             onClick={handleOpen}
             className="flex justify-start item-center gap-x-2"

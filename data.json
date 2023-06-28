@@ -70,6 +70,28 @@
           "order": "ascending"
         }
       ],
+      "lifeCycle": [
+        {
+          "name": "Archive Product 6 months after INACTIVE",
+          "type": true,
+          "key": "status",
+          "operation": "=",
+          "status": "INACTIVE",
+          "handling": "archive",
+          "afterNumber": "6",
+          "after": "months"
+        },
+        {
+          "name": "Delete Product 1 year after INACTIVE",
+          "type": true,
+          "key": "status",
+          "operation": "=",
+          "status": "INACTIVE",
+          "handling": "destroy",
+          "afterNumber": "1",
+          "after": "year"
+        }
+      ],
       "name": "US Mutual Funds ESG Scores",
       "type": "INCREMENTAL",
       "sourceDatasetId": "bac95341c0175f2d",
@@ -612,6 +634,28 @@
           "metric": ["Growth-Percentage", "Growth-Absolute"]
         }
       ],
+      "lifeCycle": [
+        {
+          "name": "Archive Product 6 months after INACTIVE",
+          "type": true,
+          "key": "status",
+          "operation": "=",
+          "status": "INACTIVE",
+          "handling": "archive",
+          "afterNumber": "6",
+          "after": "months"
+        },
+        {
+          "name": "Delete Product 1 year after INACTIVE",
+          "type": true,
+          "key": "status",
+          "operation": "=",
+          "status": "INACTIVE",
+          "handling": "destroy",
+          "afterNumber": "1",
+          "after": "year"
+        }
+      ],
       "name": "NYSE Securities",
       "type": "STATIC",
       "sourceDatasetId": "31405ffde4ded2f1",
@@ -862,6 +906,28 @@
           "window": "asof_date, ticker_symbol",
           "function": "lag(52)",
           "order": "low ascending"
+        }
+      ],
+      "lifeCycle": [
+        {
+          "name": "Archive Product 6 months after INACTIVE",
+          "type": true,
+          "key": "status",
+          "operation": "=",
+          "status": "INACTIVE",
+          "handling": "archive",
+          "afterNumber": "6",
+          "after": "months"
+        },
+        {
+          "name": "Delete Product 1 year after INACTIVE",
+          "type": true,
+          "key": "status",
+          "operation": "=",
+          "status": "INACTIVE",
+          "handling": "destroy",
+          "afterNumber": "1",
+          "after": "year"
         }
       ],
       "name": "NYSE Prices",

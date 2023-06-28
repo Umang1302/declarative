@@ -342,7 +342,7 @@ export default function Rules({ data }: any) {
       </div>
       <div className="mb-6 w-full py-3 px-3">
         <div className="py-8 px-10">
-          <div className="flex justify-start gap-x-40">
+          <div className="flex items-center justify-start gap-x-40">
             <div>
               <p className="">Scope</p>
               <div className="bg-[#EAEAEA] w-[280px] mt-3  min-w-[300px]  h-[40px] flex items-center justify-around rounded-[10px]">
@@ -378,17 +378,17 @@ export default function Rules({ data }: any) {
                 </div>
               </div>
             </div>
-            <div className="mt-6 relative">
+            <div className="mt-6 relative pt-4">
               <Menu>
                 <MenuHandler>
                   <div>
                     <input
                       type="text"
                       value={variable}
-                      className={`${cabin.className} border-gray-300 border-[2px] text-[18px] w-[200px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                      className={`${cabin.className} border-gray-300 border-[2px] text-[16px] w-[200px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
                     />
 
-                    <div className="absolute top-2  h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end right-2">
+                    <div className="absolute top-6 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end right-2">
                       {/* $
                     {
                        true ? "rotate-180" : ""
@@ -493,8 +493,8 @@ export default function Rules({ data }: any) {
             </div>
           </div>
 
-          <div className="flex mt-6">
-            <div className="flex w-full gap-x-64 justify-start">
+          <div className="flex mt-6 items-center">
+            <div className="flex w-full gap-x-64 items-center justify-start">
               <div>
                 <p>Type</p>
                 <div className="bg-[#EAEAEA] px-1 h-[40px] flex items-center mt-3 justify-around rounded-[10px]">
@@ -520,7 +520,7 @@ export default function Rules({ data }: any) {
                   </div>
                 </div>
               </div>
-              <div className="mt-6">
+              <div className="mt-6 pt-3">
                 <Select
                   styles={{
                     control: (styles) => ({
@@ -552,7 +552,7 @@ export default function Rules({ data }: any) {
               Attributes
             </p>
           </div>
-          <div className="bg-[#EEEEEE] w-full overflow-y-auto h-[480px]">
+          <div className="bg-[#EEEEEE] w-full overflow-y-auto h-[488px]">
             <div className="relative w-full pt-3">
               <div className="absolute inset-y-0 left-0 top-3 flex items-center pl-3 pointer-events-none">
                 <svg
@@ -678,9 +678,9 @@ export default function Rules({ data }: any) {
             </div>
 
             <div
-              className={`mt-8  flex flex-col gap-y-5 text-[18px] ${cabin.className}`}
+              className={`mt-8 h-[284px] bg-[#EEEEEE] flex flex-col gap-y-5 text-[18px] ${cabin.className}`}
             >
-              <p className="w-full h-[30px] border-b-[1px] border-white px-2">
+              <p className="w-full h-[30px]  border-b-[1px] border-white px-2">
                 Event
               </p>
               <div className="px-2">
