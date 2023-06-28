@@ -1096,6 +1096,28 @@
           "metric": ["Growth-Percentage"]
         }
       ],
+      "lifeCycle": [
+        {
+          "name": "Archive Product 6 months after INACTIVE",
+          "type": true,
+          "key": "status",
+          "operation": "=",
+          "status": "INACTIVE",
+          "handling": "archive",
+          "afterNumber": "6",
+          "after": "months"
+        },
+        {
+          "name": "Delete Product 1 year after INACTIVE",
+          "type": true,
+          "key": "status",
+          "operation": "=",
+          "status": "INACTIVE",
+          "handling": "destroy",
+          "afterNumber": "1",
+          "after": "year"
+        }
+      ],
       "description": "Listing of all Mutual Funds traded in USA",
       "createdAt": "2023-05-30T14:15:55.963Z",
       "updatedAt": "2023-05-30T14:15:55.963Z",

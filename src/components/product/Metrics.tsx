@@ -225,6 +225,7 @@ export default function Metrics({ data }: any) {
   const [visible2, setVisible2] = React.useState(false);
   const [visible3, setVisible3] = React.useState(false);
   const [visible4, setVisible4] = React.useState(false);
+  const [scheduleTab, setScheduleTab] = useState<boolean>(false);
 
   useEffect(() => {
     console.log(
@@ -442,7 +443,7 @@ export default function Metrics({ data }: any) {
           </p>
         </div>
       </div>
-      <div className="py-2 h-[400px] px-3">
+      <div className="py-2 h-[300px] px-3 w-[90%]">
         {/*  */}
         {metricsTabRef.current === "0" ? (
           <div className="py-10 w-full">
@@ -924,6 +925,90 @@ export default function Metrics({ data }: any) {
         ) : (
           <h5>Hello3</h5>
         )}
+      </div>
+      <div
+        className={`bg-[#CCE0FF] flex items-center w-[97%] text-black h-[20%] px-6 py-2 justify-between ${
+          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
+        }`}
+      >
+        <p className="text-[18px] font-[600]">Schedule</p>
+      </div>
+      <div className="w-[97%] flex justify-between items-center px-3">
+        <div className="mt-2 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
+          <p
+            onClick={() => {
+              setScheduleTab(true);
+            }}
+            className={`${cabin.className} rounded-[10px] text-[18px] ${
+              scheduleTab && "bg-white text-black"
+            }`}
+          >
+            &nbsp;&nbsp;{"Event"}&nbsp;&nbsp;
+          </p>
+          <p
+            onClick={() => {
+              setScheduleTab(false);
+            }}
+            className={`${cabin.className} rounded-[10px] text-[18px] ${
+              !scheduleTab && "bg-white text-black"
+            }`}
+          >
+            &nbsp;&nbsp;{"Time"}&nbsp;&nbsp;
+          </p>
+        </div>
+        <div className="w-[25%] min-h-[20%] max-h-[25%] overflow-y-auto py-2 px-2 justify-start gap-x-6 border-b-[1px] border-white">
+          <div
+            onClick={handleOpen}
+            className="flex justify-start item-center gap-x-2"
+          >
+            <div className="relative w-[20px] h-[20px] mt-1">
+              <Image src={`/clock.svg`} alt="brand" fill />
+            </div>
+            <p
+              className={`${cabin.className} text-black text-[18px] hover:text-[#f65a27] cursor-pointer`}
+            >
+              Calender event schedule
+            </p>
+          </div>
+          {schedule.map((item: any, index: number) => (
+            <div
+              key={index}
+              className="flex ml-1 justify-start items-center w-full gap-x-2"
+            >
+              <p className="text-[11px] w-full mt-1">
+                <div className="flex justify-between w-full">
+                  <div>
+                    <p>Schedule has been added</p>
+                  </div>
+                  <div
+                    onClick={() => {
+                      deleteSchedule(index);
+                    }}
+                    className="relative w-[9.43px] h-[12px]"
+                  >
+                    <Image src={`/bin.svg`} alt="brand" fill />
+                  </div>
+                </div>
+                <p>
+                  Repeats every {item.weekNumber} {item.interval} on{" "}
+                  {item.day[0]}{" "}
+                  {item.day.length > 1 && `${"+" + (item.day.length - 1)}`} at{" "}
+                  {item.time}
+                </p>
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className={`flex w-[20%] flex-col text-[18px] ${cabin.className}`}>
+          <p className="w-full border-b-[1px] border-white px-2">Event</p>
+          <div className="px-2">
+            <input
+              type="text"
+              placeholder="Enter Event Type"
+              className="bg-transparent border-b-[1px] outline-none border-gray-400 w-[95%] text-black"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -10,9 +10,17 @@ const MultiSelect = (props: any) => {
         styles={{
           control: (styles) => ({
             ...styles,
-            marginTop: "10px",
+            fontSize: "16px",
+            backgroundColor: "#EAEAEA",
             borderRadius: "10px",
           }),
+          option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+            return {
+              ...styles,
+              backgroundColor: isSelected ? "#4D91FF" : "white",
+              color: isDisabled ? "#ccc" : isSelected ? "white" : "",
+            };
+          },
         }}
         closeMenuOnSelect={false}
         hideSelectedOptions={false}

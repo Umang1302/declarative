@@ -8,6 +8,7 @@ import Security from "./Security";
 import Access from "./Access";
 import SharingTab from "./SharingTab";
 import Metrics from "./Metrics";
+import Lifecycle from "./Lifecycle";
 
 export default function Example({ data }: any) {
   const [activeTab, setActiveTab] = React.useState("profile");
@@ -109,8 +110,7 @@ export default function Example({ data }: any) {
           />
         </svg>
       ),
-      desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`,
+      desc: <Lifecycle data={data} />,
     },
     {
       label: "Access",
