@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Avatar,
   Badge,
@@ -27,42 +27,173 @@ import {
 } from "@material-tailwind/react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
+import MutualFunds1 from "../../../mutualFunds1.json";
 Chart.register(ArcElement);
 
 const chartData = {
   datasets: [
     {
-      data: [2, 2, 2],
-      backgroundColor: ["#336699", "#99CCFF", "#666666"],
+      data: [2],
+      backgroundColor: ["#4D91FF", "#99CCFF", "#666666"],
       display: true,
-      borderColor: "#D1D6DC",
+      borderColor: "white",
     },
   ],
 };
 
 export default function GraphCard({ data }: any) {
+  useEffect(() => {
+    console.log(
+      "HEllo",
+      MutualFunds1[0]!.tableColumnMetrics!.stringMetrics!.uniqueValueCount
+    );
+  });
+
   return (
-    <div className="w-full bg-green-400">
-      {/* <div className="flex justify-between">
-      </div> */}
-      <Doughnut
-        data={chartData}
-        options={{
-          plugins: {
-            legend: {
-              display: false,
-            },
-            tooltip: {
-              enabled: false,
-            },
-          },
-          rotation: -90,
-          circumference: 180,
-          cutout: "90%",
-          maintainAspectRatio: true,
-          responsive: true,
-        }}
-      />
+    <div className="w-full grid  gap-x-4 md:grid-cols-1 3xl:grid-cols-2 px-3 gap-y-2">
+      {MutualFunds1.map((item, index) => (
+        <div key={index}>
+          {item.tableColumnMetrics.stringMetrics &&
+          item.tableColumnMetrics.stringMetrics.uniqueValueCount ? (
+            <>
+              {" "}
+              <div className="shadow-xl rounded-lg px-9 py-5">
+                <div
+                  className={`flex justify-between border-b-[1px] border-[#C4C4C4] pb-3 ${cabin.className}`}
+                >
+                  <div className="w-[70%]">
+                    <p className="font-[600] text-[20px]">
+                      <span className="mr-3 font-[600] text-[20px] border-b-[2px] border-black">
+                        A
+                      </span>
+                      {item?.name}
+                    </p>
+                    <p className="text-[14px]">{item.description}</p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <p className="text-[48px] text-black">
+                      {item!.tableColumnMetrics!.stringMetrics &&
+                      item!.tableColumnMetrics!.stringMetrics.uniqueValueCount
+                        ? item!.tableColumnMetrics!.stringMetrics!
+                            .uniqueValueCount
+                        : "NONE"}
+                    </p>
+                    <p
+                      className={`text-[18px] font-[600] text-black ${cabin.className}`}
+                    >
+                      Unique Values
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full h-[230px] px-2 py-3 flex justify-between gap-x-3">
+                  <div className="w-[80%] mt-[-3rem]">
+                    <Doughnut
+                      data={chartData}
+                      options={{
+                        plugins: {
+                          legend: {
+                            display: false,
+                          },
+                          tooltip: {
+                            enabled: false,
+                          },
+                        },
+                        rotation: -90,
+                        circumference: 180,
+                        cutout: "90%",
+                        // maintainAspectRatio: true,
+                        // responsive: true,
+                      }}
+                    />
+                  </div>
+                  <div className="w-full flex flex-col gap-y-3">
+                    <div className="flex justify-between">
+                      <div className="flex items-center gap-x-2">
+                        <div className="w-4 h-4 bg-[#4D91FF] rounded-full"></div>
+                        <p>Valid</p>
+                      </div>
+                      <div className="flex w-full justify-end gap-x-5">
+                        <p>
+                          {(
+                            item!.tableColumnMetrics!.validCount / 1000
+                          ).toFixed(2)}
+                          k
+                        </p>
+                        <p>
+                          {(
+                            (item!.tableColumnMetrics!.validCount /
+                              item!.tableColumnMetrics!.totalCount) *
+                            100
+                          ).toFixed(2)}
+                          %
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex justify-between">
+                      <div className="flex items-center gap-x-2">
+                        <div className="w-4 h-4 bg-[#FFBC35] rounded-full"></div>
+                        <p>Mismatched</p>
+                      </div>
+                      <div className="flex w-full justify-end gap-x-5">
+                        <p>0</p>
+                        <p>0%</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-between">
+                      <div className="flex items-center gap-x-2">
+                        <div className="w-4 h-4 bg-[#F65A27] rounded-full"></div>
+                        <p>Missing</p>
+                      </div>
+                      <div className="flex w-full justify-end gap-x-5">
+                        <p>
+                          {item!.tableColumnMetrics!.nullCount
+                            ? String(item!.tableColumnMetrics!.nullCount)
+                            : 0}
+                        </p>
+                        <p>
+                          {" "}
+                          {item!.tableColumnMetrics!.nullCount
+                            ? (
+                                (item!.tableColumnMetrics!.nullCount /
+                                  item!.tableColumnMetrics!.totalCount) *
+                                100
+                              ).toFixed(2)
+                            : 0}
+                          %
+                        </p>
+                      </div>
+                    </div>
+                    <div className="w-full flex flex-col gap-y-3">
+                      <div className="flex justify-between">
+                        <p>Unique</p>
+                        <p>
+                          {" "}
+                          {(
+                            item!.tableColumnMetrics!.validCount / 1000
+                          ).toFixed(2)}
+                          k
+                        </p>
+                      </div>
+                      <div className="w-full flex justify-between ga-x-3">
+                        <p>Most Common</p>
+                        <p>
+                          {
+                            item!.tableColumnMetrics!.stringMetrics
+                              .mostCommonValue
+                          }
+                        </p>
+                        <p>0%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
+      ))}
     </div>
   );
 }

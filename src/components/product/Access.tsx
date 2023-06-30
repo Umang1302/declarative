@@ -190,7 +190,7 @@ export default function OverviewTable({ data }: any) {
   return (
     <div className={`w-full h-full px-2 ${cabin.className}`}>
       {/* Rule */}
-      <div className="bg-[#CCE0FF] flex items-center w-[97%] px-6 py-3 justify-between">
+      <div className="bg-[#FFBC35] flex items-center w-[97%] px-6 py-3 justify-between">
         <p className="text-[18px] font-[600] text-black">Access</p>
         <div
           onClick={() => {
@@ -225,7 +225,7 @@ export default function OverviewTable({ data }: any) {
           placeholder="Search"
         />
       </div>
-      <div className="w-[95%] px-3 h-[160px] overflow-y-auto">
+      <div className="w-[95%] px-3 mb-3 max-h-[160px] overflow-y-auto">
         {addRule && (
           <Card className="h-[60px] w-[100%] rounded-none border-[1px] z-40">
             <div className="px-6 justify-between flex items-center h-full">

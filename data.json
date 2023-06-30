@@ -57,16 +57,17 @@
           "scope": "record",
           "attributes": ["sustainability_rank"],
           "window": "asof_date, fund_sumbol",
-          "function": "lag",
+          "function": "lag(1)",
           "order": "ascending"
         },
         {
-          "name": " Previous Sustainability Rank",
-          "type": "0",
+          "name": "Rank Movement",
+          "type": "2",
           "scope": "record",
+          "expression": "sustainability_rank - previous_sustainability_rank",
           "attributes": ["sustainability_rank"],
           "window": "asof_date, fund_sumbol",
-          "function": "lag",
+          "function": "lag(1)",
           "order": "ascending"
         }
       ],

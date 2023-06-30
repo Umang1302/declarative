@@ -248,7 +248,7 @@ export default function Example({ data }: any) {
             //   classNamePrefix="select"
             // />
             <MultiSelect
-              className="w-[1000px]"
+              className="w-[1000px] text-black"
               labelledBy=""
               options={dropDownMenu}
               onChange={(val: any) => {

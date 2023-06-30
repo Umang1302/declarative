@@ -226,6 +226,10 @@ export default function Metrics({ data }: any) {
   const [visible3, setVisible3] = React.useState(false);
   const [visible4, setVisible4] = React.useState(false);
   const [scheduleTab, setScheduleTab] = useState<boolean>(false);
+  const [input1, setInput1] = useState(data.metrics[+selectRule].attributes[0]);
+  const [input2, setInput2] = useState(data.metrics[+selectRule].function);
+  const [input3, setInput3] = useState(data.metrics[+selectRule].window);
+  const [input4, setInput4] = useState("");
 
   useEffect(() => {
     console.log(
@@ -266,7 +270,7 @@ export default function Metrics({ data }: any) {
   return (
     <div className={`w-full h-full overflow-x-auto px-2 ${cabin.className}`}>
       {/* Rule */}
-      <div className="bg-[#CCE0FF] flex items-center w-[97%] px-6 py-3 justify-between">
+      <div className="bg-[#FFBC35] flex items-center w-[97%] px-6 py-3 justify-between">
         <p className="text-[18px] text-black font-[600]">Metrics Information</p>
         <div
           onClick={() => {
@@ -301,7 +305,7 @@ export default function Metrics({ data }: any) {
           placeholder="Search"
         />
       </div>
-      <div className="w-[95%] px-3 h-[160px] overflow-y-auto">
+      <div className="w-[95%] px-3 mb-3 max-h-[160px] overflow-y-auto">
         {addRule && (
           <Card className="h-[60px] w-[100%] rounded-none border-[1px] z-40">
             <div className="px-6 justify-between flex items-center h-full">
@@ -443,7 +447,11 @@ export default function Metrics({ data }: any) {
           </p>
         </div>
       </div>
-      <div className="py-2 h-[220px] px-3 w-[90%]">
+      <div
+        className={`py-2  px-3 w-[90%]  ${
+          metricsTabRef.current === "2" ? "mb-3" : "h-[220px]"
+        }`}
+      >
         {/*  */}
         {metricsTabRef.current === "0" ? (
           <div className="w-full mt-3">
@@ -487,8 +495,10 @@ export default function Metrics({ data }: any) {
                 <p className="mb-3">Attribute</p>
                 <input
                   type="text"
-                  readOnly
-                  value={data.metrics[+selectRule].attributes[0]}
+                  value={input1}
+                  onChange={(e) => {
+                    setInput1(e.target.value);
+                  }}
                   className={`${cabin.className} border-gray-300 border-[2px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
                 />
               </div>
@@ -496,8 +506,10 @@ export default function Metrics({ data }: any) {
                 <p className="mb-3">Function</p>
                 <input
                   type="text"
-                  readOnly
-                  value={data.metrics[+selectRule].function}
+                  value={input2}
+                  onChange={(e) => {
+                    setInput2(e.target.value);
+                  }}
                   className={`${cabin.className} border-gray-300 border-[2px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
                 />
               </div>
@@ -507,8 +519,10 @@ export default function Metrics({ data }: any) {
                 <p className="mb-3">Window</p>
                 <input
                   type="text"
-                  readOnly
-                  value={data.metrics[+selectRule].window}
+                  value={input3}
+                  onChange={(e) => {
+                    setInput3(e.target.value);
+                  }}
                   className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
                 />
               </div>
@@ -934,7 +948,14 @@ export default function Metrics({ data }: any) {
             </div>
           </div>
         ) : (
-          <h5>Hello3</h5>
+          <div>
+            <p className="mb-3">Expression</p>
+            <input
+              type="text"
+              value={data.metrics[+selectRule].expression}
+              className={`${cabin.className} border-gray-300 border-[2px] text-[18px] w-[400px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+            />
+          </div>
         )}
       </div>
       <div
@@ -944,7 +965,7 @@ export default function Metrics({ data }: any) {
       >
         <p className="text-[18px] font-[600]">Schedule</p>
       </div>
-      <div className="w-[97%] flex justify-between items-center px-3">
+      <div className={`w-[97%] flex justify-between items-center px-3`}>
         <div className="mt-2 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
           <p
             onClick={() => {

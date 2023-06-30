@@ -220,10 +220,13 @@ export default function Rules({ data }: any) {
     onMouseLeave: () => setOpenMenu(false),
   };
 
+  const [check1, setCheck1] = useState(false);
+  const [check2, setCheck2] = useState(false);
+
   return (
     <div className={`w-full h-full overflow-x-auto px-2 ${cabin.className}`}>
       {/* Rule */}
-      <div className="bg-[#CCE0FF] flex items-center w-[97%] px-6 py-3 justify-between">
+      <div className="bg-[#FFBC35] flex items-center w-[97%] px-6 py-3 justify-between">
         <p className="text-[18px] font-[600] text-black">Rules</p>
         <div
           onClick={() => {
@@ -258,7 +261,7 @@ export default function Rules({ data }: any) {
           placeholder="Search"
         />
       </div>
-      <div className="w-[95%] px-3 h-[160px] overflow-y-auto">
+      <div className="w-[95%] px-3 mb-3 max-h-[160px] overflow-y-auto">
         {addRule && (
           <Card className="h-[60px] w-[100%] rounded-none border-[1px] z-40">
             <div className="px-6 justify-between flex items-center h-full">
@@ -341,7 +344,7 @@ export default function Rules({ data }: any) {
         <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
       </div>
       <div className="mb-6 w-full py-3 px-3">
-        <div className="py-8 px-10">
+        <div className="px-3">
           <div className="flex items-center justify-start gap-x-40">
             <div>
               <p className="">Scope</p>
@@ -420,15 +423,18 @@ export default function Rules({ data }: any) {
                     handler={setOpenMenu}
                   >
                     <MenuHandler>
-                      <MenuItem className="border-b-[1px] rounded-none border-gray-300 ">
+                      <MenuItem className="border-b-[1px] rounded-none border-gray-300 py-4 text-[16px]">
                         Value Range
                       </MenuItem>
                     </MenuHandler>
-                    <MenuList
-                      {...triggers}
-                      className="w-[250px] h-[190px] text-black"
-                    >
-                      <div>
+                    <MenuList className="w-[250px] h-[190px] text-black">
+                      <div
+                        onClick={() => {
+                          console.log("RRR");
+                          setVariable("Value Range");
+                        }}
+                        className="outline-none"
+                      >
                         <p className="border-b-[1px] border-gray-300 font-[600] text-[#656565]">
                           Value Range
                         </p>
@@ -441,7 +447,13 @@ export default function Rules({ data }: any) {
                           </div>
                           <div className="flex w-full mt-2 justify-between">
                             <p>Text Input</p>
-                            <Switch />
+                            <Switch
+                              id={"rr"}
+                              onChange={() => {
+                                setCheck1(!check1);
+                              }}
+                              checked={check1}
+                            />
                           </div>
                           <div className="flex w-full mt-3 justify-between">
                             <p className="text-[#656565] font-[600] ">
@@ -451,7 +463,13 @@ export default function Rules({ data }: any) {
                           </div>
                           <div className="flex w-full mt-2 justify-between">
                             <p>Text Input</p>
-                            <Switch />
+                            <Switch
+                              id={"ss"}
+                              checked={check2}
+                              onChange={() => {
+                                setCheck2(!check2);
+                              }}
+                            />
                           </div>
                         </div>
                       </div>
@@ -461,7 +479,7 @@ export default function Rules({ data }: any) {
                     onClick={() => {
                       setVariable("Not Null");
                     }}
-                    className="border-b-[1px] border-gray-300"
+                    className="border-b-[1px] border-gray-300 hover:bg-[#4D91FF] py-4 text-[16px]"
                   >
                     Not Null
                   </MenuItem>
@@ -469,7 +487,7 @@ export default function Rules({ data }: any) {
                     onClick={() => {
                       setVariable("Pattern");
                     }}
-                    className="border-b-[1px] border-gray-300"
+                    className="border-b-[1px] border-gray-300 hover:bg-[#4D91FF] py-4 text-[16px]"
                   >
                     Pattern
                   </MenuItem>
@@ -477,11 +495,12 @@ export default function Rules({ data }: any) {
                     onClick={() => {
                       setVariable("Enumeration");
                     }}
-                    className="border-b-[1px] border-gray-300"
+                    className="border-b-[1px] border-gray-300 hover:bg-[#4D91FF] py-4 text-[16px]"
                   >
                     Enumeration
                   </MenuItem>
                   <MenuItem
+                    className=" py-4 text-[16px] hover:bg-[#4D91FF]"
                     onClick={() => {
                       setVariable("Unique");
                     }}

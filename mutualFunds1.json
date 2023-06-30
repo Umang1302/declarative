@@ -1,0 +1,594 @@
+[
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "WjsXXZVxhi1i7wRa1aQK",
+    "path": "IZdjVCRM5Xgaifd15Wqj/versions/IEWqQdhdfhnMF2HAOMAC/files/MutualFunds.csv/columns/WjsXXZVxhi1i7wRa1aQK",
+    "legacyEntityId": 0,
+    "name": "fund_symbol",
+    "description": "symbol of the Mutual Fund - it can be used to check where the scraped data comes from ",
+    "tableColumnInfo": {
+      "order": 0,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 23783,
+      "nonNullCount": 23783,
+      "validCount": 23783,
+      "stringMetrics": {
+        "mostCommonValue": "AAAAX",
+        "mostCommonValueCount": 1,
+        "counts": [
+          {
+            "key": "AAAAX",
+            "value": 1
+          },
+          {
+            "key": "AAAEX",
+            "value": 1
+          },
+          {
+            "key": "AAAFX",
+            "value": 1
+          },
+          {
+            "key": "AAAGX",
+            "value": 1
+          },
+          {
+            "key": "AAAHX",
+            "value": 1
+          }
+        ],
+        "uniqueValueCount": 23783
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "OfrEWId2ETqJH7FfM2AD",
+    "path": "IZdjVCRM5Xgaifd15Wqj/versions/IEWqQdhdfhnMF2HAOMAC/files/MutualFunds.csv/columns/OfrEWId2ETqJH7FfM2AD",
+    "legacyEntityId": 0,
+    "name": "quote_type",
+    "description": "type of quote (in this case \u0027MutualFund\u0027 for all records)",
+    "tableColumnInfo": {
+      "order": 1,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 23783,
+      "nonNullCount": 23783,
+      "validCount": 23783,
+      "stringMetrics": {
+        "mostCommonValue": "MutualFund",
+        "mostCommonValueCount": 23783,
+        "counts": [
+          {
+            "key": "MutualFund",
+            "value": 23783
+          }
+        ],
+        "uniqueValueCount": 1
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "E8bKeXWa9RmZihxndfHf",
+    "path": "IZdjVCRM5Xgaifd15Wqj/versions/IEWqQdhdfhnMF2HAOMAC/files/MutualFunds.csv/columns/E8bKeXWa9RmZihxndfHf",
+    "legacyEntityId": 0,
+    "name": "region",
+    "description": "name of the region in which the fund has the domicile",
+    "tableColumnInfo": {
+      "order": 2,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 23783,
+      "nonNullCount": 23783,
+      "validCount": 23783,
+      "stringMetrics": {
+        "mostCommonValue": "US",
+        "mostCommonValueCount": 23783,
+        "counts": [
+          {
+            "key": "US",
+            "value": 23783
+          }
+        ],
+        "uniqueValueCount": 1
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "APSdFCiNqGxmAfhScHPe",
+    "path": "IZdjVCRM5Xgaifd15Wqj/versions/IEWqQdhdfhnMF2HAOMAC/files/MutualFunds.csv/columns/APSdFCiNqGxmAfhScHPe",
+    "legacyEntityId": 0,
+    "name": "fund_short_name",
+    "description": "short name of the fund",
+    "tableColumnInfo": {
+      "order": 3,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 23783,
+      "nullCount": 824,
+      "nonNullCount": 22959,
+      "validCount": 22959,
+      "stringMetrics": {
+        "mostCommonValue": "Fidelity Advisor Freedom Blend ",
+        "mostCommonValueCount": 145,
+        "counts": [
+          {
+            "key": "Fidelity Advisor Freedom Blend ",
+            "value": 145
+          },
+          {
+            "key": "American Century International ",
+            "value": 88
+          },
+          {
+            "key": "American Century Strategic Allo",
+            "value": 72
+          },
+          {
+            "key": "Columbia Adaptive Retirement 20",
+            "value": 72
+          },
+          {
+            "key": "American Century Short Duration",
+            "value": 68
+          }
+        ],
+        "uniqueValueCount": 3044
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "3idxLm9ar4B3Tc8JM3fj",
+    "path": "IZdjVCRM5Xgaifd15Wqj/versions/IEWqQdhdfhnMF2HAOMAC/files/MutualFunds.csv/columns/3idxLm9ar4B3Tc8JM3fj",
+    "legacyEntityId": 0,
+    "name": "fund_long_name",
+    "description": "extended name of the fund",
+    "tableColumnInfo": {
+      "order": 4,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 23783,
+      "nullCount": 5,
+      "nonNullCount": 23778,
+      "validCount": 23778,
+      "stringMetrics": {
+        "mostCommonValue": "DWS RREEF Real Assets Fund - Class A",
+        "mostCommonValueCount": 4,
+        "counts": [
+          {
+            "key": "DWS RREEF Real Assets Fund - Class A",
+            "value": 4
+          },
+          {
+            "key": "Virtus AllianzGI Health Sciences Fund Class P",
+            "value": 4
+          },
+          {
+            "key": "American Century One Choice Blend\u002B 2015 Portfolio Investor Class",
+            "value": 4
+          },
+          {
+            "key": "Thrivent Large Cap Growth Fund Class A",
+            "value": 4
+          },
+          {
+            "key": "American Century One Choice Blend\u002B 2015 Portfolio I Class",
+            "value": 4
+          }
+        ],
+        "uniqueValueCount": 6644
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "OuzaVvqnE2yHVuLRqcQY",
+    "path": "IZdjVCRM5Xgaifd15Wqj/versions/IEWqQdhdfhnMF2HAOMAC/files/MutualFunds.csv/columns/OuzaVvqnE2yHVuLRqcQY",
+    "legacyEntityId": 0,
+    "name": "currency",
+    "description": "currency name",
+    "tableColumnInfo": {
+      "order": 5,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 23783,
+      "nonNullCount": 23783,
+      "validCount": 23783,
+      "stringMetrics": {
+        "mostCommonValue": "USD",
+        "mostCommonValueCount": 23783,
+        "counts": [
+          {
+            "key": "USD",
+            "value": 23783
+          }
+        ],
+        "uniqueValueCount": 1
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "blEtpcHJeO5pd0LblLsB",
+    "path": "IZdjVCRM5Xgaifd15Wqj/versions/IEWqQdhdfhnMF2HAOMAC/files/MutualFunds.csv/columns/blEtpcHJeO5pd0LblLsB",
+    "legacyEntityId": 0,
+    "name": "initial_investment",
+    "description": "minimum amount for initial investment",
+    "tableColumnInfo": {
+      "order": 6,
+      "originalType": "",
+      "type": "NUMERIC",
+      "extendedType": "INTEGER"
+    },
+    "tableColumnMetrics": {
+      "totalCount": 23783,
+      "nullCount": 7298,
+      "nonNullCount": 16485,
+      "validCount": 16485,
+      "numericMetrics": {
+        "finiteCount": 16485,
+        "mean": 5179181.074309979,
+        "standardDeviation": 92533033.509805,
+        "minimum": 10,
+        "minimumFinite": 10,
+        "maximum": 5000000000,
+        "maximumFinite": 5000000000,
+        "quantiles": [
+          {
+            "point": 0.25,
+            "value": 1000
+          },
+          {
+            "point": 0.5,
+            "value": 2500
+          },
+          {
+            "point": 0.75,
+            "value": 500000
+          }
+        ],
+        "histogram": {
+          "buckets": [
+            {
+              "label": "10.00 - 250000009.50",
+              "leftValue": "-Infinity",
+              "rightValue": 250000009.5,
+              "count": 16434
+            },
+            {
+              "index": 1,
+              "label": "250000009.50 - 500000009.00",
+              "leftValue": 250000009.5,
+              "rightValue": 500000009,
+              "count": 15
+            },
+            {
+              "index": 2,
+              "label": "500000009.00 - 750000008.50",
+              "leftValue": 500000009,
+              "rightValue": 750000008.5,
+              "count": 2
+            },
+            {
+              "index": 3,
+              "label": "750000008.50 - 1000000008.00",
+              "leftValue": 750000008.5,
+              "rightValue": 1000000008,
+              "count": 14
+            },
+            {
+              "index": 4,
+              "label": "1000000008.00 - 1250000007.50",
+              "leftValue": 1000000008,
+              "rightValue": 1250000007.5
+            },
+            {
+              "index": 5,
+              "label": "1250000007.50 - 1500000007.00",
+              "leftValue": 1250000007.5,
+              "rightValue": 1500000007
+            },
+            {
+              "index": 6,
+              "label": "1500000007.00 - 1750000006.50",
+              "leftValue": 1500000007,
+              "rightValue": 1750000006.5
+            },
+            {
+              "index": 7,
+              "label": "1750000006.50 - 2000000006.00",
+              "leftValue": 1750000006.5,
+              "rightValue": 2000000006,
+              "count": 14
+            },
+            {
+              "index": 8,
+              "label": "2000000006.00 - 2250000005.50",
+              "leftValue": 2000000006,
+              "rightValue": 2250000005.5
+            },
+            {
+              "index": 9,
+              "label": "2250000005.50 - 2500000005.00",
+              "leftValue": 2250000005.5,
+              "rightValue": 2500000005,
+              "count": 1
+            },
+            {
+              "index": 10,
+              "label": "2500000005.00 - 2750000004.50",
+              "leftValue": 2500000005,
+              "rightValue": 2750000004.5
+            },
+            {
+              "index": 11,
+              "label": "2750000004.50 - 3000000004.00",
+              "leftValue": 2750000004.5,
+              "rightValue": 3000000004,
+              "count": 4
+            },
+            {
+              "index": 12,
+              "label": "3000000004.00 - 3250000003.50",
+              "leftValue": 3000000004,
+              "rightValue": 3250000003.5
+            },
+            {
+              "index": 13,
+              "label": "3250000003.50 - 3500000003.00",
+              "leftValue": 3250000003.5,
+              "rightValue": 3500000003
+            },
+            {
+              "index": 14,
+              "label": "3500000003.00 - 3750000002.50",
+              "leftValue": 3500000003,
+              "rightValue": 3750000002.5
+            },
+            {
+              "index": 15,
+              "label": "3750000002.50 - 4000000002.00",
+              "leftValue": 3750000002.5,
+              "rightValue": 4000000002
+            },
+            {
+              "index": 16,
+              "label": "4000000002.00 - 4250000001.50",
+              "leftValue": 4000000002,
+              "rightValue": 4250000001.5
+            },
+            {
+              "index": 17,
+              "label": "4250000001.50 - 4500000001.00",
+              "leftValue": 4250000001.5,
+              "rightValue": 4500000001
+            },
+            {
+              "index": 18,
+              "label": "4500000001.00 - 4750000000.50",
+              "leftValue": 4500000001,
+              "rightValue": 4750000000.5
+            },
+            {
+              "index": 19,
+              "label": "4750000000.50 - 5000000000.00",
+              "leftValue": 4750000000.5,
+              "rightValue": "Infinity",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "qIFUmnvkPQWkwFEJvcnF",
+    "path": "IZdjVCRM5Xgaifd15Wqj/versions/IEWqQdhdfhnMF2HAOMAC/files/MutualFunds.csv/columns/qIFUmnvkPQWkwFEJvcnF",
+    "legacyEntityId": 0,
+    "name": "subsequent_investment",
+    "description": "minimum amount for subsequent investments",
+    "tableColumnInfo": {
+      "order": 7,
+      "originalType": "",
+      "type": "NUMERIC",
+      "extendedType": "INTEGER"
+    },
+    "tableColumnMetrics": {
+      "totalCount": 23783,
+      "nullCount": 14840,
+      "nonNullCount": 8943,
+      "validCount": 8943,
+      "numericMetrics": {
+        "finiteCount": 8943,
+        "mean": 1015.9257519847926,
+        "standardDeviation": 11023.353120706197,
+        "minimum": 1,
+        "minimumFinite": 1,
+        "maximum": 500000,
+        "maximumFinite": 500000,
+        "quantiles": [
+          {
+            "point": 0.25,
+            "value": 50
+          },
+          {
+            "point": 0.5,
+            "value": 50
+          },
+          {
+            "point": 0.75,
+            "value": 100
+          }
+        ],
+        "histogram": {
+          "buckets": [
+            {
+              "label": "1.00 - 50000.90",
+              "leftValue": "-Infinity",
+              "rightValue": 50000.9,
+              "count": 8906
+            },
+            {
+              "index": 1,
+              "label": "50000.90 - 100000.80",
+              "leftValue": 50000.9,
+              "rightValue": 100000.8,
+              "count": 28
+            },
+            {
+              "index": 2,
+              "label": "100000.80 - 150000.70",
+              "leftValue": 100000.8,
+              "rightValue": 150000.7
+            },
+            {
+              "index": 3,
+              "label": "150000.70 - 200000.60",
+              "leftValue": 150000.7,
+              "rightValue": 200000.6,
+              "count": 1
+            },
+            {
+              "index": 4,
+              "label": "200000.60 - 250000.50",
+              "leftValue": 200000.6,
+              "rightValue": 250000.5,
+              "count": 7
+            },
+            {
+              "index": 5,
+              "label": "250000.50 - 300000.40",
+              "leftValue": 250000.5,
+              "rightValue": 300000.4
+            },
+            {
+              "index": 6,
+              "label": "300000.40 - 350000.30",
+              "leftValue": 300000.4,
+              "rightValue": 350000.3
+            },
+            {
+              "index": 7,
+              "label": "350000.30 - 400000.20",
+              "leftValue": 350000.3,
+              "rightValue": 400000.2
+            },
+            {
+              "index": 8,
+              "label": "400000.20 - 450000.10",
+              "leftValue": 400000.2,
+              "rightValue": 450000.10000000003
+            },
+            {
+              "index": 9,
+              "label": "450000.10 - 500000.00",
+              "leftValue": 450000.10000000003,
+              "rightValue": "Infinity",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "QGoX0DtPvN2DkoU3LD6c",
+    "path": "IZdjVCRM5Xgaifd15Wqj/versions/IEWqQdhdfhnMF2HAOMAC/files/MutualFunds.csv/columns/QGoX0DtPvN2DkoU3LD6c",
+    "legacyEntityId": 0,
+    "name": "fund_category",
+    "description": "name of the fund category",
+    "tableColumnInfo": {
+      "order": 8,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 23783,
+      "nullCount": 663,
+      "nonNullCount": 23120,
+      "validCount": 23120,
+      "stringMetrics": {
+        "mostCommonValue": "Large Blend",
+        "mostCommonValueCount": 1235,
+        "counts": [
+          {
+            "key": "Large Blend",
+            "value": 1235
+          },
+          {
+            "key": "Large Growth",
+            "value": 1172
+          },
+          {
+            "key": "Large Value",
+            "value": 1080
+          },
+          {
+            "key": "Diversified Emerging Mkts",
+            "value": 741
+          },
+          {
+            "key": "Foreign Large Blend",
+            "value": 680
+          }
+        ],
+        "uniqueValueCount": 119
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "DAz2bW0kvjKSqCApIhal",
+    "path": "IZdjVCRM5Xgaifd15Wqj/versions/IEWqQdhdfhnMF2HAOMAC/files/MutualFunds.csv/columns/DAz2bW0kvjKSqCApIhal",
+    "legacyEntityId": 0,
+    "name": "fund_family",
+    "description": "name of the fund family",
+    "tableColumnInfo": {
+      "order": 9,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 23783,
+      "nonNullCount": 23783,
+      "validCount": 23783,
+      "stringMetrics": {
+        "mostCommonValue": "American Century Investments",
+        "mostCommonValueCount": 1839,
+        "counts": [
+          {
+            "key": "American Century Investments",
+            "value": 1839
+          },
+          {
+            "key": "Fidelity Investments",
+            "value": 1790
+          },
+          {
+            "key": "Columbia Threadneedle",
+            "value": 1667
+          },
+          {
+            "key": "American Funds",
+            "value": 1574
+          },
+          {
+            "key": "BlackRock",
+            "value": 1132
+          }
+        ],
+        "uniqueValueCount": 310
+      }
+    }
+  }
+]

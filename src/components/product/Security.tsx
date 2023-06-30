@@ -274,7 +274,7 @@ export default function Security({ data }: any) {
   return (
     <div className={`w-full h-full px-2 ${cabin.className}`}>
       {/* Rule */}
-      <div className="bg-[#CCE0FF] flex items-center w-[97%] px-6 py-3 justify-between">
+      <div className="bg-[#FFBC35] flex items-center w-[97%] px-6 py-3 justify-between">
         <p className="text-[18px] font-[600] text-black">Security Policy</p>
         <div
           onClick={() => {
@@ -309,532 +309,536 @@ export default function Security({ data }: any) {
           placeholder="Search"
         />
       </div>
-      <div className="w-[95%] px-3 h-[160px] overflow-y-auto">
-        {addRule && (
-          <Card className="h-[60px] w-[100%] rounded-none border-[1px] z-40">
-            <div className="px-6 justify-between flex items-center h-full">
-              <input
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    if (e.target && newRule) {
-                      if (newRule !== "") addRuleFun(newRule);
+      {rules[+selectRule] && (
+        <div className="w-[95%] px-3 mb-3 max-h-[160px] overflow-y-auto">
+          {addRule && (
+            <Card className="h-[60px] w-[100%] rounded-none border-[1px] z-40">
+              <div className="px-6 justify-between flex items-center h-full">
+                <input
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      if (e.target && newRule) {
+                        if (newRule !== "") addRuleFun(newRule);
+                      }
                     }
-                  }
-                }}
-                onChange={(e) => {
-                  setNewRule(e.target.value);
-                }}
-                type="text"
-                className={`h-full min-w-[85%] appearance-none py-2 focus:outline-none ${cabin.className}`}
-              />
+                  }}
+                  onChange={(e) => {
+                    setNewRule(e.target.value);
+                  }}
+                  type="text"
+                  className={`h-full min-w-[85%] appearance-none py-2 focus:outline-none ${cabin.className}`}
+                />
 
-              <div
-                onClick={() => {
-                  console.log("delete");
-                  setAddRule(false);
-                }}
-                className="relative w-[13.5px] h-[18px]"
-              >
-                <Image src={`/bin.svg`} alt="brand" fill />
+                <div
+                  onClick={() => {
+                    console.log("delete");
+                    setAddRule(false);
+                  }}
+                  className="relative w-[13.5px] h-[18px]"
+                >
+                  <Image src={`/bin.svg`} alt="brand" fill />
+                </div>
               </div>
-            </div>
-          </Card>
-        )}
-        {rules?.map((rule: string, index: number) => (
-          <Card
-            key={index}
-            className={`h-[50px] rounded-none shadow-none border-[1px] ${
-              addRule && "blur-sm"
+            </Card>
+          )}
+          {rules?.map((rule: string, index: number) => (
+            <Card
+              key={index}
+              className={`h-[50px] rounded-none shadow-none border-[1px] ${
+                addRule && "blur-sm"
+              }`}
+            >
+              <div className="px-6 justify-between flex items-center h-full">
+                <div className="w-full flex gap-x-3 items-center">
+                  <div>
+                    <Checkbox
+                      onChange={(e) => {
+                        if (e.currentTarget.checked) {
+                          setSelectRule(`${index}`);
+                        }
+                      }}
+                      checked={selectRule === String(index)}
+                      type="checkbox"
+                    />
+                  </div>
+                  <input
+                    onChange={(e) => {
+                      updateRule(+index, e.target.value);
+                    }}
+                    value={rules[index]}
+                    type="text"
+                    className="w-[90%] outline-none text-black"
+                  />
+                </div>
+                <div
+                  onClick={() => {
+                    console.log("delete");
+                    deleteRule(index);
+                  }}
+                  className="relative w-[13.5px] h-[18px]"
+                >
+                  <Image src={`/bin.svg`} alt="brand" fill />
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
+      )}
+      {rules[+selectRule] ? (
+        <>
+          <div
+            className={` flex items-center w-[97%] h-[20%] px-6 py-3 text-black justify-between ${
+              selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
             }`}
           >
-            <div className="px-6 justify-between flex items-center h-full">
-              <div className="w-full flex gap-x-3 items-center">
-                <div>
-                  <Checkbox
-                    onChange={(e) => {
-                      if (e.currentTarget.checked) {
-                        setSelectRule(`${index}`);
-                      }
-                    }}
-                    checked={selectRule === String(index)}
-                    type="checkbox"
-                  />
-                </div>
-                <input
-                  onChange={(e) => {
-                    updateRule(+index, e.target.value);
-                  }}
-                  value={rules[index]}
-                  type="text"
-                  className="w-[90%] outline-none text-black"
-                />
-              </div>
-              <div
-                onClick={() => {
-                  console.log("delete");
-                  deleteRule(index);
-                }}
-                className="relative w-[13.5px] h-[18px]"
-              >
-                <Image src={`/bin.svg`} alt="brand" fill />
-              </div>
+            <p className="text-[18px] font-[600] text-black">
+              {rules[+selectRule] ? rules[+selectRule] : "NONE"}
+            </p>
+          </div>
+          <div className="mb-6 w-full py-3">
+            <div className="bg-[#EEEEEE] px-10 py-4 w-[93%]">
+              <p className="font-[600]">Description:</p>
+              <p className="text-black">
+                {rules[+selectRule] ? rules[+selectRule] : "NONE"}
+              </p>
             </div>
-          </Card>
-        ))}
-      </div>
+            <div className="flex relative py-3 px-10">
+              <p className="gap-x-1 w-full flex text-black">
+                <span onClick={toggleOpen}>
+                  <p className="font-[800] flex">
+                    {arg1}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`${
+                        open ? "rotate-180" : ""
+                      } h-5 w-5 transition-transform`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="#F65A27"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </p>
 
-      {/* Rule info */}
-      <div
-        className={` flex items-center w-[97%] h-[20%] px-6 py-3 text-black justify-between ${
-          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
-        }`}
-      >
-        <p className="text-[18px] font-[600] text-black">
-          {rules[+selectRule] ? rules[+selectRule] : "NONE"}
-        </p>
-      </div>
-      <div className="mb-6 w-full py-3">
-        <div className="bg-[#EEEEEE] px-10 py-4 w-[93%]">
-          <p className="font-[600]">Description:</p>
-          <p className="text-black">
-            {rules[+selectRule] ? rules[+selectRule] : "NONE"}
-          </p>
-        </div>
-        <div className="flex relative py-3 px-10">
-          <p className="gap-x-1 w-full flex text-black">
-            <span onClick={toggleOpen}>
-              <p className="font-[800] flex">
-                {arg1}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    open ? "rotate-180" : ""
-                  } h-5 w-5 transition-transform`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="#F65A27"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
+                  <Collapse
+                    className="absolute z-50 bg-white  w-[70px]"
+                    open={open}
+                  >
+                    <div className="border-[1px] flex flex-col items-center py-1">
+                      <p
+                        onClick={() => {
+                          setArg1("Mask");
+                        }}
+                        className="text-gray-700  flex justify-center px-3 py-2 text-sm border-b-[1px] w-full "
+                      >
+                        Mask
+                      </p>
+                      <p
+                        onClick={() => {
+                          setArg1("Redact");
+                        }}
+                        className="text-gray-700 px-3 py-2 flex justify-center text-sm border-b-[1px] w-full "
+                      >
+                        Redact
+                      </p>
+                      <p
+                        onClick={() => {
+                          setArg1("Hide");
+                        }}
+                        className="text-gray-700 py-2 flex justify-center text-sm"
+                      >
+                        Hide
+                      </p>
+                    </div>
+                  </Collapse>
+                </span>
+                attributes{" "}
+                <span onClick={toggleOpen1}>
+                  <p className="font-[800] flex">
+                    {arg2}
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`${
+                        open1 ? "rotate-180" : ""
+                      } h-5 w-5 transition-transform`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="#F65A27"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </p>
+                  <Collapse
+                    className="absolute z-50 bg-white w-[80px]"
+                    open={open1}
+                  >
+                    <div className="border-[1px] flex flex-col items-center py-1">
+                      <p
+                        onClick={() => {
+                          setArg2("Classified");
+                        }}
+                        className="text-gray-700 py-2 flex justify-center text-sm border-b-[1px] w-full "
+                      >
+                        Classified
+                      </p>
+                      <p
+                        onClick={() => {
+                          setArg2("Labelled");
+                        }}
+                        className="text-gray-700 py-2  flex justify-center text-sm border-b-[1px] w-full"
+                      >
+                        Labelled
+                      </p>
+                      <p
+                        onClick={() => {
+                          setArg2("Named");
+                        }}
+                        className="text-gray-700 py-2  flex justify-center text-sm"
+                      >
+                        Named
+                      </p>
+                    </div>
+                  </Collapse>
+                </span>
+                as{" "}
+                <span onClick={toggleOpen2}>
+                  {" "}
+                  <p className="font-[800] flex">
+                    {arg3}
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`${
+                        open2 ? "rotate-180" : ""
+                      } h-5 w-5 transition-transform`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="#F65A27"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </p>
+                  <Collapse
+                    className="absolute z-50 bg-white w-[60px]"
+                    open={open2}
+                  >
+                    <div className="border-[1px] flex flex-col items-center py-1 ">
+                      <p
+                        onClick={() => {
+                          setArg3("PII");
+                        }}
+                        className="text-gray-700 px-3 py-2 text-sm border-b-[1px] w-full "
+                      >
+                        PII
+                      </p>
+                      <p
+                        onClick={() => {
+                          setArg3("MNPI");
+                        }}
+                        className="text-gray-700 px-3 py-2 text-sm border-b-[1px] w-full "
+                      >
+                        MNPI
+                      </p>
+                      <p
+                        onClick={() => {
+                          setArg3("Label");
+                        }}
+                        className="text-gray-700 px-3 py-2 text-sm border-b-[1px] w-full "
+                      >
+                        Label
+                      </p>
+                      <p className="text-gray-700 py-2 text-sm">Name</p>
+                    </div>
+                  </Collapse>
+                </span>
+                using{" "}
+                <span onClick={toggleOpen3}>
+                  {" "}
+                  <p className="font-[800] flex">
+                    {arg4}.
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`${
+                        open3 ? "rotate-180" : ""
+                      } h-5 w-5 transition-transform`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="#F65A27"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </p>
+                  <Collapse
+                    className="absolute z-50 bg-white w-[160px]"
+                    open={open3}
+                  >
+                    <div className="border-[1px] flex flex-col items-center py-1 ">
+                      <p
+                        onClick={() => {
+                          setArg4("hasing");
+                        }}
+                        className="text-gray-700 px-3 py-2 flex justify-center text-sm border-b-[1px] w-full "
+                      >
+                        hashing
+                      </p>
+                      <p
+                        onClick={() => {
+                          setArg4("lastn");
+                        }}
+                        className="text-gray-700 px-3 py-2 flex justify-center text-sm border-b-[1px] w-full "
+                      >
+                        lastn
+                      </p>
+                      <p
+                        onClick={() => {
+                          setArg4("firstn");
+                        }}
+                        className="text-gray-700 px-3 py-2 flex justify-center text-sm border-b-[1px] w-full "
+                      >
+                        firstn
+                      </p>
+
+                      <p className="text-gray-700  flex items-center px-6 justify-center py-2 text-sm w-full">
+                        random multiplier
+                      </p>
+                    </div>
+                  </Collapse>
+                </span>
               </p>
+            </div>
+            <div className="flex relative py-3 px-10">
+              <p className="gap-x-1 w-full flex text-black">
+                Except For Usage
+                <span onClick={toggleOpen4}>
+                  <p className="font-[800] flex">
+                    <div>{multiValueArray.map((item) => `${item}, `)}</div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`${
+                        open4 ? "rotate-180" : ""
+                      } h-5 w-5 transition-transform`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="#F65A27"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </p>
+                  <Collapse
+                    className="absolute z-50 w-[120px] bg-white"
+                    open={open4}
+                  >
+                    <div className="border-[1px] flex flex-col items-center py-1 ">
+                      <p
+                        onClick={() => {
+                          setArg5("Reporting");
+                        }}
+                        className="text-gray-700 flex justify-start  py-2 text-sm border-b-[1px] w-full items-center "
+                      >
+                        <Checkbox
+                          onChange={(e) => {
+                            if (e.currentTarget.checked) {
+                              console.log("add");
+                              const aa = [...multiValueArray];
+                              aa.push("Reporting");
+                              setMultivalueArray(aa);
+                            } else {
+                              console.log("remove");
+                              const index =
+                                multiValueArray.indexOf("Reporting");
+                              const aa = [...multiValueArray];
+                              aa.splice(index, 1);
+                              setMultivalueArray(aa);
+                            }
+                          }}
+                          checked={multiValueArray.indexOf("Reporting") !== -1}
+                          type="checkbox"
+                        />
+                        Reporting
+                      </p>
+                      <p
+                        onClick={() => {
+                          setArg5("Sales");
+                        }}
+                        className="text-gray-700 flex items-center justify-start  py-2 text-sm border-b-[1px] w-full "
+                      >
+                        <Checkbox
+                          onChange={(e) => {
+                            if (e.currentTarget.checked) {
+                              console.log("add");
+                              const aa = [...multiValueArray];
+                              aa.push("Sales");
+                              setMultivalueArray(aa);
+                            } else {
+                              console.log("remove");
+                              const index = multiValueArray.indexOf("Sales");
+                              const aa = [...multiValueArray];
+                              aa.splice(index, 1);
+                              setMultivalueArray(aa);
+                            }
+                          }}
+                          checked={multiValueArray.indexOf("Sales") !== -1}
+                          type="checkbox"
+                        />
+                        Sales
+                      </p>
 
-              <Collapse
-                className="absolute z-50 bg-white  w-[70px]"
-                open={open}
-              >
-                <div className="border-[1px] flex flex-col items-center py-1">
-                  <p
-                    onClick={() => {
-                      setArg1("Mask");
-                    }}
-                    className="text-gray-700  flex justify-center px-3 py-2 text-sm border-b-[1px] w-full "
-                  >
-                    Mask
+                      <p
+                        onClick={() => {
+                          setArg5("Marketing");
+                        }}
+                        className="text-gray-700 py-2 flex items-center justify-start text-sm w-full"
+                      >
+                        <Checkbox
+                          onChange={(e) => {
+                            if (e.currentTarget.checked) {
+                              console.log("add");
+                              const aa = [...multiValueArray];
+                              aa.push("Marketing");
+                              setMultivalueArray(aa);
+                            } else {
+                              console.log("remove");
+                              const index =
+                                multiValueArray.indexOf("Marketing");
+                              const aa = [...multiValueArray];
+                              aa.splice(index, 1);
+                              setMultivalueArray(aa);
+                            }
+                          }}
+                          checked={multiValueArray.indexOf("Marketing") !== -1}
+                          type="checkbox"
+                        />
+                        Marketing
+                      </p>
+                    </div>
+                  </Collapse>
+                </span>
+                By user having
+                <span onClick={toggleOpen5}>
+                  {" "}
+                  <p className="font-[800] flex">
+                    {arg6}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`${
+                        open5 ? "rotate-180" : ""
+                      } h-5 w-5 transition-transform`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="#F65A27"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
                   </p>
-                  <p
-                    onClick={() => {
-                      setArg1("Redact");
-                    }}
-                    className="text-gray-700 px-3 py-2 flex justify-center text-sm border-b-[1px] w-full "
+                  <Collapse
+                    className="absolute z-50 bg-white w-[100px]"
+                    open={open5}
                   >
-                    Redact
-                  </p>
-                  <p
-                    onClick={() => {
-                      setArg1("Hide");
-                    }}
-                    className="text-gray-700 py-2 flex justify-center text-sm"
-                  >
-                    Hide
-                  </p>
-                </div>
-              </Collapse>
-            </span>
-            attributes{" "}
-            <span onClick={toggleOpen1}>
-              <p className="font-[800] flex">
-                {arg2}
+                    <div className="border-[1px] flex flex-col items-center py-1 ">
+                      <p className="text-gray-700 flex justify-center px-3 py-2 text-sm border-b-[1px] w-full ">
+                        Reporting
+                      </p>
+                      <p className="text-gray-700 flex justify-center px-3 py-2 text-sm border-b-[1px] w-full ">
+                        Sales
+                      </p>
 
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    open1 ? "rotate-180" : ""
-                  } h-5 w-5 transition-transform`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="#F65A27"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
+                      <p className="text-gray-700 flex justify-center py-2 text-sm">
+                        {" "}
+                        Marketing
+                      </p>
+                    </div>
+                  </Collapse>
+                </span>
+                as
+                <span onClick={toggleOpen6}>
+                  {" "}
+                  <input
+                    className="font-[800] w-[100px]"
+                    value={inputLocation}
+                    onChange={(e) => {
+                      setInputLocation(e.target.value);
+                    }}
                   />
-                </svg>
-              </p>
-              <Collapse
-                className="absolute z-50 bg-white w-[80px]"
-                open={open1}
-              >
-                <div className="border-[1px] flex flex-col items-center py-1">
-                  <p
-                    onClick={() => {
-                      setArg2("Classified");
-                    }}
-                    className="text-gray-700 py-2 flex justify-center text-sm border-b-[1px] w-full "
-                  >
-                    Classified
+                </span>
+                For data having
+                <span onClick={toggleOpen7}>
+                  {" "}
+                  <p className="font-[800] flex">
+                    region
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`${
+                        open7 ? "rotate-180" : ""
+                      } h-5 w-5 transition-transform`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="#F65A27"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
                   </p>
-                  <p
-                    onClick={() => {
-                      setArg2("Labelled");
-                    }}
-                    className="text-gray-700 py-2  flex justify-center text-sm border-b-[1px] w-full"
+                  <Collapse
+                    className="absolute z-50 w-[100px] bg-white"
+                    open={open7}
                   >
-                    Labelled
-                  </p>
-                  <p
-                    onClick={() => {
-                      setArg2("Named");
-                    }}
-                    className="text-gray-700 py-2  flex justify-center text-sm"
-                  >
-                    Named
-                  </p>
-                </div>
-              </Collapse>
-            </span>
-            as{" "}
-            <span onClick={toggleOpen2}>
-              {" "}
-              <p className="font-[800] flex">
-                {arg3}
+                    <div className="border-[1px] flex flex-col items-center py-1">
+                      <p className="text-gray-700 px-3 py-2 text-sm border-b-[1px] w-full ">
+                        Reporting
+                      </p>
+                      <p className="text-gray-700 px-3 py-2 text-sm border-b-[1px] w-full ">
+                        Sales
+                      </p>
 
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    open2 ? "rotate-180" : ""
-                  } h-5 w-5 transition-transform`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="#F65A27"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
+                      <p className="text-gray-700 py-2 text-sm"> Marketing</p>
+                    </div>
+                  </Collapse>
+                </span>
+                <span onClick={toggleOpen8}>
+                  {" "}
+                  <input
+                    className="font-[800] w-[30px]"
+                    value={region}
+                    onChange={(e) => {
+                      setRegion(e.target.value);
+                    }}
                   />
-                </svg>
-              </p>
-              <Collapse
-                className="absolute z-50 bg-white w-[60px]"
-                open={open2}
-              >
-                <div className="border-[1px] flex flex-col items-center py-1 ">
-                  <p
-                    onClick={() => {
-                      setArg3("PII");
-                    }}
-                    className="text-gray-700 px-3 py-2 text-sm border-b-[1px] w-full "
-                  >
-                    PII
-                  </p>
-                  <p
-                    onClick={() => {
-                      setArg3("MNPI");
-                    }}
-                    className="text-gray-700 px-3 py-2 text-sm border-b-[1px] w-full "
-                  >
-                    MNPI
-                  </p>
-                  <p
-                    onClick={() => {
-                      setArg3("Label");
-                    }}
-                    className="text-gray-700 px-3 py-2 text-sm border-b-[1px] w-full "
-                  >
-                    Label
-                  </p>
-                  <p className="text-gray-700 py-2 text-sm">Name</p>
-                </div>
-              </Collapse>
-            </span>
-            using{" "}
-            <span onClick={toggleOpen3}>
-              {" "}
-              <p className="font-[800] flex">
-                {arg4}.
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    open3 ? "rotate-180" : ""
-                  } h-5 w-5 transition-transform`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="#F65A27"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </p>
-              <Collapse
-                className="absolute z-50 bg-white w-[160px]"
-                open={open3}
-              >
-                <div className="border-[1px] flex flex-col items-center py-1 ">
-                  <p
-                    onClick={() => {
-                      setArg4("hasing");
-                    }}
-                    className="text-gray-700 px-3 py-2 flex justify-center text-sm border-b-[1px] w-full "
-                  >
-                    hashing
-                  </p>
-                  <p
-                    onClick={() => {
-                      setArg4("lastn");
-                    }}
-                    className="text-gray-700 px-3 py-2 flex justify-center text-sm border-b-[1px] w-full "
-                  >
-                    lastn
-                  </p>
-                  <p
-                    onClick={() => {
-                      setArg4("firstn");
-                    }}
-                    className="text-gray-700 px-3 py-2 flex justify-center text-sm border-b-[1px] w-full "
-                  >
-                    firstn
-                  </p>
-
-                  <p className="text-gray-700  flex items-center px-6 justify-center py-2 text-sm w-full">
-                    random multiplier
-                  </p>
-                </div>
-              </Collapse>
-            </span>
-          </p>
-        </div>
-        <div className="flex relative py-3 px-10">
-          <p className="gap-x-1 w-full flex text-black">
-            Except For Usage
-            <span onClick={toggleOpen4}>
-              <p className="font-[800] flex">
-                <div>{multiValueArray.map((item) => `${item}, `)}</div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    open4 ? "rotate-180" : ""
-                  } h-5 w-5 transition-transform`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="#F65A27"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </p>
-              <Collapse
-                className="absolute z-50 w-[120px] bg-white"
-                open={open4}
-              >
-                <div className="border-[1px] flex flex-col items-center py-1 ">
-                  <p
-                    onClick={() => {
-                      setArg5("Reporting");
-                    }}
-                    className="text-gray-700 flex justify-start  py-2 text-sm border-b-[1px] w-full items-center "
-                  >
-                    <Checkbox
-                      onChange={(e) => {
-                        if (e.currentTarget.checked) {
-                          console.log("add");
-                          const aa = [...multiValueArray];
-                          aa.push("Reporting");
-                          setMultivalueArray(aa);
-                        } else {
-                          console.log("remove");
-                          const index = multiValueArray.indexOf("Reporting");
-                          const aa = [...multiValueArray];
-                          aa.splice(index, 1);
-                          setMultivalueArray(aa);
-                        }
-                      }}
-                      checked={multiValueArray.indexOf("Reporting") !== -1}
-                      type="checkbox"
-                    />
-                    Reporting
-                  </p>
-                  <p
-                    onClick={() => {
-                      setArg5("Sales");
-                    }}
-                    className="text-gray-700 flex items-center justify-start  py-2 text-sm border-b-[1px] w-full "
-                  >
-                    <Checkbox
-                      onChange={(e) => {
-                        if (e.currentTarget.checked) {
-                          console.log("add");
-                          const aa = [...multiValueArray];
-                          aa.push("Sales");
-                          setMultivalueArray(aa);
-                        } else {
-                          console.log("remove");
-                          const index = multiValueArray.indexOf("Sales");
-                          const aa = [...multiValueArray];
-                          aa.splice(index, 1);
-                          setMultivalueArray(aa);
-                        }
-                      }}
-                      checked={multiValueArray.indexOf("Sales") !== -1}
-                      type="checkbox"
-                    />
-                    Sales
-                  </p>
-
-                  <p
-                    onClick={() => {
-                      setArg5("Marketing");
-                    }}
-                    className="text-gray-700 py-2 flex items-center justify-start text-sm w-full"
-                  >
-                    <Checkbox
-                      onChange={(e) => {
-                        if (e.currentTarget.checked) {
-                          console.log("add");
-                          const aa = [...multiValueArray];
-                          aa.push("Marketing");
-                          setMultivalueArray(aa);
-                        } else {
-                          console.log("remove");
-                          const index = multiValueArray.indexOf("Marketing");
-                          const aa = [...multiValueArray];
-                          aa.splice(index, 1);
-                          setMultivalueArray(aa);
-                        }
-                      }}
-                      checked={multiValueArray.indexOf("Marketing") !== -1}
-                      type="checkbox"
-                    />
-                    Marketing
-                  </p>
-                </div>
-              </Collapse>
-            </span>
-            By user having
-            <span onClick={toggleOpen5}>
-              {" "}
-              <p className="font-[800] flex">
-                {arg6}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    open5 ? "rotate-180" : ""
-                  } h-5 w-5 transition-transform`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="#F65A27"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </p>
-              <Collapse
-                className="absolute z-50 bg-white w-[100px]"
-                open={open5}
-              >
-                <div className="border-[1px] flex flex-col items-center py-1 ">
-                  <p className="text-gray-700 flex justify-center px-3 py-2 text-sm border-b-[1px] w-full ">
-                    Reporting
-                  </p>
-                  <p className="text-gray-700 flex justify-center px-3 py-2 text-sm border-b-[1px] w-full ">
-                    Sales
-                  </p>
-
-                  <p className="text-gray-700 flex justify-center py-2 text-sm">
-                    {" "}
-                    Marketing
-                  </p>
-                </div>
-              </Collapse>
-            </span>
-            as
-            <span onClick={toggleOpen6}>
-              {" "}
-              <input
-                className="font-[800] w-[100px]"
-                value={inputLocation}
-                onChange={(e) => {
-                  setInputLocation(e.target.value);
-                }}
-              />
-            </span>
-            For data having
-            <span onClick={toggleOpen7}>
-              {" "}
-              <p className="font-[800] flex">
-                region
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`${
-                    open7 ? "rotate-180" : ""
-                  } h-5 w-5 transition-transform`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="#F65A27"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </p>
-              <Collapse
-                className="absolute z-50 w-[100px] bg-white"
-                open={open7}
-              >
-                <div className="border-[1px] flex flex-col items-center py-1">
-                  <p className="text-gray-700 px-3 py-2 text-sm border-b-[1px] w-full ">
-                    Reporting
-                  </p>
-                  <p className="text-gray-700 px-3 py-2 text-sm border-b-[1px] w-full ">
-                    Sales
-                  </p>
-
-                  <p className="text-gray-700 py-2 text-sm"> Marketing</p>
-                </div>
-              </Collapse>
-            </span>
-            <span onClick={toggleOpen8}>
-              {" "}
-              <input
-                className="font-[800] w-[30px]"
-                value={region}
-                onChange={(e) => {
-                  setRegion(e.target.value);
-                }}
-              />
-              {/* <p className="font-[800]">US</p>
+                  {/* <p className="font-[800]">US</p>
               <Collapse
                 className="absolute z-50 bg-white w-[100px]"
                 open={open8}
@@ -850,10 +854,20 @@ export default function Security({ data }: any) {
                   <p className="text-gray-700 py-2 text-sm"> Marketing</p>
                 </div>
               </Collapse> */}
-            </span>
-          </p>
-        </div>
-      </div>
+                </span>
+              </p>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="px-5 py-20">
+            No Security Policy exists for this product.
+          </div>
+        </>
+      )}
+
+      {/* Rule info */}
     </div>
   );
 }
