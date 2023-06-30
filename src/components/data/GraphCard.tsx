@@ -30,17 +30,6 @@ import { Chart, ArcElement } from "chart.js";
 import MutualFunds1 from "../../../mutualFunds1.json";
 Chart.register(ArcElement);
 
-const chartData = {
-  datasets: [
-    {
-      data: [2],
-      backgroundColor: ["#4D91FF", "#99CCFF", "#666666"],
-      display: true,
-      borderColor: "white",
-    },
-  ],
-};
-
 export default function GraphCard({ data }: any) {
   useEffect(() => {
     console.log(
@@ -88,7 +77,18 @@ export default function GraphCard({ data }: any) {
                 <div className="w-full h-[230px] px-2 py-3 flex justify-between gap-x-3">
                   <div className="w-[80%] mt-[-3rem]">
                     <Doughnut
-                      data={chartData}
+                      data={{
+                        datasets: [
+                          {
+                            data: [
+                              item!.tableColumnMetrics!.validCount,
+                              item!.tableColumnMetrics!.nullCount,
+                            ],
+                            backgroundColor: ["#4D91FF", "#F65A27"],
+                            borderColor: "white",
+                          },
+                        ],
+                      }}
                       options={{
                         plugins: {
                           legend: {

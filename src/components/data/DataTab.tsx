@@ -13,6 +13,7 @@ import Image from "next/image";
 import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });
 import GraphCard from "./GraphCard";
+import DataTable from "./DataTable";
 const aa = [1, 2, 4, 5, 6];
 
 export default function DataTab({ data }: any) {
@@ -38,7 +39,7 @@ export default function DataTab({ data }: any) {
           />
         </svg>
       ),
-      desc: <div>Hello</div>,
+      desc: <DataTable data={data} />,
     },
     {
       label: "Profile",

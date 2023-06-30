@@ -235,11 +235,6 @@ export default function Rules({ data }: any) {
       key: "Category",
       operation: "in",
     },
-    {
-      type: true,
-      key: "Category",
-      operation: "in",
-    },
   ]);
 
   const [dropDownMenu, setDropDownMenu] = useState<any>([
@@ -639,7 +634,7 @@ export default function Rules({ data }: any) {
       >
         <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
       </div>
-      <div className="px-3 overflow-y-auto h-[400px]">{parent()}</div>
+      <div className="px-3 py-3">{parent()}</div>
       <div
         className={`bg-[#CCE0FF] flex items-center w-[97%] h-[20%] text-black px-6 py-3 justify-between  ${
           selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6] "
