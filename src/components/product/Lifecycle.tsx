@@ -291,16 +291,24 @@ export default function Rules({ data }: any) {
     },
   ]);
 
+  const deleteLife = (i: any) => {
+    const updatedLifeArray = [...lifeCycleChild];
+    updatedLifeArray.splice(i, 1);
+    setLifeCycleChild(updatedLifeArray);
+  };
+
   const parent = () => {
     return (
       <div>
         <div className="flex gap-x-8 items-center">
-          <div className="mt-6 h-[40px] items-center w-[100px] px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
+          <div className="mt-6 h-[40px] items-center w-[150px] px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
             <p
               onClick={() => {
                 setScheduleTab(true);
               }}
-              className={`${cabin.className} rounded-[10px] text-[18px] ${
+              className={`${
+                cabin.className
+              } rounded-[6px] w-[75px] flex items-center justify-center text-[18px] ${
                 scheduleTab && "bg-white text-black"
               }`}
             >
@@ -310,7 +318,9 @@ export default function Rules({ data }: any) {
               onClick={() => {
                 setScheduleTab(false);
               }}
-              className={`${cabin.className} rounded-[10px] text-[18px] ${
+              className={`${
+                cabin.className
+              } rounded-[6px] w-[75px] flex items-center justify-center text-[18px] ${
                 !scheduleTab && "bg-white text-black"
               }`}
             >
@@ -393,14 +403,14 @@ export default function Rules({ data }: any) {
             {lifeCycleChild.map((item, i) => (
               <>
                 <div key={i} className="flex justify-between">
-                  <div className="mt-2 h-[40px] items-center w-[100px] px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
+                  <div className="mt-2 h-[40px] items-center w-[150px] px-1 bg-gray-300 flex justify-between rounded-[6px]">
                     <p
                       onClick={() => {
                         setScheduleTab(true);
                       }}
                       className={`${
                         cabin.className
-                      } rounded-[10px] text-[18px] ${
+                      } rounded-[6px] w-[75px] flex items-center justify-center text-[18px] ${
                         scheduleTab && "bg-white text-black"
                       }`}
                     >
@@ -412,12 +422,20 @@ export default function Rules({ data }: any) {
                       }}
                       className={`${
                         cabin.className
-                      } rounded-[10px] text-[18px] ${
+                      } rounded-[6px]  w-[75px] flex justify-center  text-[18px] ${
                         !scheduleTab && "bg-white text-black"
                       }`}
                     >
                       &nbsp;&nbsp;{"OR"}&nbsp;&nbsp;
                     </p>
+                  </div>
+                  <div
+                    onClick={() => {
+                      deleteLife(i);
+                    }}
+                    className="relative w-[13px] h-[18px] mt-6 cursor-pointer"
+                  >
+                    <Image src={`/bin.svg`} alt="brand" fill />
                   </div>
                 </div>
                 <div className="flex justify-between w-[100%] pl-10 py-8">
