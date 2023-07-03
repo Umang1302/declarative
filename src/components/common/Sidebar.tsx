@@ -56,7 +56,12 @@ export default function Sidebar({ active, setActive }: any) {
 
           {/* Create Botton */}
           <div className="w-full h-[8%] max-h-[60px] py-1 my-[38px] flex justify-start px-2">
-            <button className="w-[50%] h-[90%] gap-x-2 px-2 border-[1px] items-center rounded-[10px] hover:w-[50%] hover:z-50 hover:h-[98%] shadow-xl flex">
+            <button
+              onClick={() => {
+                router.push(`/onboarding`);
+              }}
+              className="w-[50%] h-[90%] gap-x-2 px-2 border-[1px] items-center rounded-[10px] hover:w-[50%] hover:z-50 hover:h-[98%] shadow-xl flex"
+            >
               <div className="relative w-[18px] h-[18px]">
                 <Image src="/plusIcon.svg" alt="brand" fill />
               </div>

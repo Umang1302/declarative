@@ -38,6 +38,12 @@ import USMutualFunds from "../../../US_MUTUAL_FUNDS.json";
 import NYSE_SECURITIES from "../../../NYSE_SECURITIES.json";
 import USMUTUALRETURNS1 from "../../../MutualFundsReturns1.json";
 import USMUTUALRETURNS2 from "../../../MutualFundsReturns2.json";
+import USMUTUALRETURNS3 from "../../../MutualFundsReturns3.json";
+import nysePrice1 from "../../../nyseprice1.json";
+import nysePrice2 from "../../../nyseprice2.json";
+import nysePrice3 from "../../../nyseprice3.json";
+import MutualFundsESG1 from "../../../MutualFundsESG1.json";
+import MutualFundsESG2 from "../../../MutualFundsESG2.json";
 
 const TABS = [
   {
@@ -175,7 +181,67 @@ export default function Example({ data }: any) {
     let tableData;
     let tableHeaders;
     switch (id) {
+      //nyse PRice
       case "2":
+        setDropDown([
+          {
+            label: "Default",
+            value: "default",
+          },
+          {
+            label: "Series 1",
+            value: "series1",
+          },
+          {
+            label: "Series 2",
+            value: "series2",
+          },
+          {
+            label: "Series 3",
+            value: "series3",
+          },
+        ]);
+        let obj2: any = [];
+        console.log(selected.value, "NYSEPRICE");
+        switch (selected.value) {
+          case "default":
+            console.log("WWWWWWWWW", nysePrice1[0]);
+            obj2 = nysePrice1[0];
+            tableData = nysePrice1;
+            setTableRowData(tableData);
+            tableHeaders = Object.keys(obj2);
+            console.log("HEADERS", tableHeaders);
+            setTableHead(tableHeaders);
+            break;
+          case "series1":
+            console.log("WWWWWWWWW");
+            obj2 = nysePrice2[0];
+            tableData = nysePrice2;
+            setTableRowData(tableData);
+            tableHeaders = Object.keys(obj2);
+            console.log("HEADERS", tableHeaders);
+            setTableHead(tableHeaders);
+            break;
+          case "series2":
+            console.log("WWWWWWWWW");
+            obj2 = nysePrice3[0];
+            tableData = nysePrice3;
+            setTableRowData(tableData);
+            tableHeaders = Object.keys(obj2);
+            console.log("HEADERS", tableHeaders);
+            setTableHead(tableHeaders);
+            break;
+          case "series3":
+            console.log("WWWWWWWWW");
+            obj2 = nysePrice1[0];
+            tableData = nysePrice1;
+            setTableRowData(tableData);
+            tableHeaders = Object.keys(obj2);
+            console.log("HEADERS", tableHeaders);
+            setTableHead(tableHeaders);
+            break;
+        }
+        break;
       case "4":
         setDropDown([
           {
@@ -209,8 +275,14 @@ export default function Example({ data }: any) {
             break;
           case "series1":
           case "series2":
+            obj1 = USMUTUALRETURNS3[0];
+            tableData = USMUTUALRETURNS3;
+            setTableRowData(tableData);
+            tableHeaders = Object.keys(obj1);
+            console.log("HEADERS", tableHeaders);
+            setTableHead(tableHeaders);
+            break;
           case "series3":
-            console.log("WWWWWWWWW");
             obj1 = USMUTUALRETURNS2[0];
             tableData = USMUTUALRETURNS2;
             setTableRowData(tableData);
@@ -239,6 +311,67 @@ export default function Example({ data }: any) {
         ]);
         break;
       case "0":
+        setDropDown([
+          {
+            label: "Default",
+            value: "default",
+          },
+          {
+            label: "Series 1",
+            value: "series1",
+          },
+          {
+            label: "Series 2",
+            value: "series2",
+          },
+          {
+            label: "Series 3",
+            value: "series3",
+          },
+        ]);
+        let obj3: any = [];
+        console.log(selected.value, "NYSEPRICE");
+        switch (selected.value) {
+          case "default":
+            //ts-ignore
+            console.log("WWWWWWWWW", MutualFundsESG1[0]);
+            //ts-ignore
+            obj3 = MutualFundsESG1[0];
+            tableData = MutualFundsESG1;
+            setTableRowData(tableData);
+            tableHeaders = Object.keys(obj3);
+            console.log("HEADERS", tableHeaders);
+            setTableHead(tableHeaders);
+            break;
+          case "series1":
+            console.log("WWWWWWWWW");
+            obj3 = MutualFundsESG2[0];
+            tableData = MutualFundsESG2;
+            setTableRowData(tableData);
+            tableHeaders = Object.keys(obj3);
+            console.log("HEADERS", tableHeaders);
+            setTableHead(tableHeaders);
+            break;
+          case "series2":
+            console.log("WWWWWWWWW");
+            obj3 = MutualFundsESG1[0];
+            tableData = MutualFundsESG2;
+            setTableRowData(tableData);
+            tableHeaders = Object.keys(obj3);
+            console.log("HEADERS", tableHeaders);
+            setTableHead(tableHeaders);
+            break;
+          case "series3":
+            console.log("WWWWWWWWW");
+            obj3 = MutualFundsESG2[0];
+            tableData = MutualFundsESG2;
+            setTableRowData(tableData);
+            tableHeaders = Object.keys(obj3);
+            console.log("HEADERS", tableHeaders);
+            setTableHead(tableHeaders);
+            break;
+        }
+        break;
       case "3":
         //ts-ignore
         obj = USMutualFunds[0];

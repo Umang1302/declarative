@@ -56,7 +56,6 @@ export default function Navsearchbar() {
           </div>
         </CardBody>
       </Card>
-
       <NavUserArea />
     </div>
   );
