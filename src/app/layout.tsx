@@ -1,7 +1,7 @@
 "use client";
 
 import "./globals.css";
-import React from "react";
+import React, { useEffect } from "react";
 
 import Sidebar from "../components/common/Sidebar";
 import Navsearchbar from "../components/common/NavSearchbar";
@@ -20,6 +20,13 @@ export default function RootLayout({
   const pathname = usePathname();
 
   const [active, setActive] = React.useState(0);
+  const [dataSetVal, setDataSetVal] = React.useState("");
+
+  useEffect(() => {
+    console.log("PathName", pathname);
+    setDataSetVal(pathname.split("/")[pathname.length - 1]);
+  }, [pathname]);
+
   return (
     <html lang="en">
       <body
@@ -34,14 +41,21 @@ export default function RootLayout({
             {!pathname.split("/").includes("onboarding") ? (
               <Sidebar active={active} setActive={setActive} />
             ) : (
-              <OnboardingSidebar active={active} setActive={setActive} />
+              <OnboardingSidebar
+                setDataSetVal={setDataSetVal}
+                active={active}
+                setActive={setActive}
+              />
             )}
           </div>
           <div className="w-full pl-6 h-full max-w-[2018px] 5xl:px-[10%] 5xl:mx-[5%]">
             {!pathname.split("/").includes("onboarding") ? (
               <Navsearchbar />
             ) : (
-              <OnboardingHeading />
+              <OnboardingHeading
+                dataSetVal={dataSetVal}
+                setDataSetVal={setDataSetVal}
+              />
             )}
             <div>{children}</div>
           </div>

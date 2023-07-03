@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Card,
   Typography,
@@ -26,13 +26,20 @@ import OnboardingPage1 from "../onboarding/Page1";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
-export default function OnboardingHeading() {
+export default function OnboardingHeading({ setDataSetVal, dataSetVal }: any) {
   const router = useRouter();
 
+  const [select, setSelected] = useState(0);
   const [tabs, setTabs] = useState([
     {
       header: "Select a Data Source",
-      content: <OnboardingPage1 />,
+      content: (
+        <OnboardingPage1
+          setSelected={setSelected}
+          dataSetVal={dataSetVal}
+          setDataSetVal={setDataSetVal}
+        />
+      ),
     },
     {
       header: "Explore Data Sets",
@@ -44,11 +51,11 @@ export default function OnboardingHeading() {
     },
   ]);
 
-  const [select, setSelected] = useState(0);
+  useEffect(() => {}, [select]);
 
   return (
     <>
-      <div className={`w-full h-full text-black ${cabin.className}`}>
+      <div className={`w-full h-full  py-10 text-black ${cabin.className}`}>
         <div className="w-full flex justify-center">
           <p className="text-[48px] font-[600]">Onboard a New Product</p>
         </div>

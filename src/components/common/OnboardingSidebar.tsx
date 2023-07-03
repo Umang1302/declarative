@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Card,
   Typography,
@@ -24,7 +24,11 @@ import { useRouter, usePathname } from "next/navigation";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
-export default function OnboardingSidebar({ active, setActive }: any) {
+export default function OnboardingSidebar({
+  active,
+  setActive,
+  setDataSetVal,
+}: any) {
   const [open, setOpen] = React.useState(0);
 
   const router = useRouter();
@@ -43,23 +47,62 @@ export default function OnboardingSidebar({ active, setActive }: any) {
     }
   }, [pathName]);
 
+  const [dataSource, setDataSource] = useState([
+    "Data Source 1",
+    "Data Source 2",
+    "Data Source 3",
+    "Data Source 4",
+    "Data Source 5",
+    "Data Source 6",
+    "Data Source 7",
+  ]);
+
   return (
     <>
-      <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] md:hidden xl:block max-w-[269px] min-w-[269px] py-2">
+      <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[20vw] md:hidden xl:block max-w-[369px] min-w-[269px] py-2">
         <div className={`w-full h-full ${cabin.className}`}>
           {/* logo */}
-          <div className="relative w-full mt-[34px] h-[8%] max-h-[70px]">
+          <div
+            onClick={() => {
+              router.push("/");
+            }}
+            className="relative cursor-pointer w-full mt-[34px] h-[8%] max-h-[70px]"
+          >
             <Image src="/declarativeLogoBlack.svg" alt="brand" fill />
           </div>
 
           <hr className="border-[#C4C4C4] mt-[33px]" />
+          <div className="h-full px-3 py-6">
+            <p className="mt-6 text-black font-[800] text-[24px]">
+              List of Data Sources
+            </p>
+            <div className="h-[70%] text-black text-[18px] py-5 gap-y-6 flex flex-col">
+              {dataSource.map((item, index) => (
+                <p
+                  className="cursor-pointer"
+                  onClick={() => {
+                    setDataSetVal(`Data Source ${index}`);
+                    router.push(`/onboarding/${index + 1}`);
+                  }}
+                  key={index}
+                >
+                  {item}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </Card>
       <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[80px] xl:hidden py-2">
         <div
           className={`w-full flex flex-col gap-y-6 pt-6 items-center ${cabin.className}`}
         >
-          <div className="relative  w-[36.6px] h-[36.6px]">
+          <div
+            onClick={() => {
+              router.push("/");
+            }}
+            className="relative  cursor-pointer w-[36.6px] h-[36.6px]"
+          >
             <Image src="/minLogo.svg" alt="brand" fill />
           </div>
           <div className="w-full h-[1px] bg-[#C4C4C4]" />
