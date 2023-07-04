@@ -303,7 +303,7 @@ export default function Rules({ data }: any) {
               }}
               className={`${
                 cabin.className
-              } rounded-[6px] w-[75px] flex items-center justify-center text-[18px] ${
+              } rounded-[6px] w-[75px] flex items-center justify-center text-[16px] ${
                 scheduleTab && "bg-white text-black"
               }`}
             >
@@ -315,21 +315,39 @@ export default function Rules({ data }: any) {
               }}
               className={`${
                 cabin.className
-              } rounded-[6px] w-[75px] flex items-center justify-center text-[18px] ${
+              } rounded-[6px] w-[75px] flex items-center justify-center text-[16px] ${
                 !scheduleTab && "bg-white text-black"
               }`}
             >
               &nbsp;&nbsp;{"OR"}&nbsp;&nbsp;
             </p>
           </div>
-          <div
+          <div className="hover:scale-110 mt-5 -ml-[1rem]">
+            <svg
+              onClick={() => {
+                addLife();
+              }}
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 20C9.59524 20 9.25571 19.8629 8.98143 19.5886C8.70714 19.3143 8.57048 18.9752 8.57143 18.5714V11.4286H1.42858C1.02381 11.4286 0.684291 11.2914 0.410005 11.0171C0.135719 10.7429 -0.000947437 10.4038 4.94314e-06 10C4.94314e-06 9.59524 0.137148 9.25571 0.411433 8.98143C0.685719 8.70714 1.02477 8.57048 1.42858 8.57143H8.57143V1.42858C8.57143 1.02381 8.70857 0.684291 8.98286 0.410005C9.25714 0.135719 9.59619 -0.000947437 10 4.94314e-06C10.4048 4.94314e-06 10.7443 0.137148 11.0186 0.411433C11.2929 0.685719 11.4295 1.02477 11.4286 1.42858V8.57143H18.5714C18.9762 8.57143 19.3157 8.70857 19.59 8.98286C19.8643 9.25714 20.0009 9.59619 20 10C20 10.4048 19.8629 10.7443 19.5886 11.0186C19.3143 11.2929 18.9752 11.4295 18.5714 11.4286H11.4286V18.5714C11.4286 18.9762 11.2914 19.3157 11.0171 19.59C10.7429 19.8643 10.4038 20.0009 10 20Z"
+                fill="black"
+              />
+            </svg>
+          </div>
+
+          {/* <div
             onClick={() => {
               addLife();
             }}
             className="relative w-[20px] h-[20px] mt-6 cursor-pointer"
           >
             <Image src={`/blackPlus.svg`} alt="brand" fill />
-          </div>
+          </div> */}
         </div>
         <div className="border-l-[1px] border-gray-400">
           <div className="flex justify-between px-10 py-8">
@@ -384,7 +402,7 @@ export default function Rules({ data }: any) {
               />
             </div>
             <MultiSelect
-              className="w-[200px]"
+              className="w-[200px] text-black"
               labelledBy=""
               options={dropDownMenu}
               onChange={(val: any) => {
@@ -405,7 +423,7 @@ export default function Rules({ data }: any) {
                       }}
                       className={`${
                         cabin.className
-                      } rounded-[6px] w-[75px] flex items-center justify-center text-[18px] ${
+                      } rounded-[6px] w-[75px] flex items-center justify-center text-[16px] ${
                         scheduleTab && "bg-white text-black"
                       }`}
                     >
@@ -417,7 +435,7 @@ export default function Rules({ data }: any) {
                       }}
                       className={`${
                         cabin.className
-                      } rounded-[6px]  w-[75px] flex justify-center  text-[18px] ${
+                      } rounded-[6px]  w-[75px] flex justify-center  text-[16px] ${
                         !scheduleTab && "bg-white text-black"
                       }`}
                     >
@@ -496,7 +514,7 @@ export default function Rules({ data }: any) {
                     />
                   </div>
                   <MultiSelect
-                    className="w-[200px]"
+                    className="w-[200px] text-black"
                     labelledBy=""
                     options={dropDownMenu1}
                     onChange={(val: any) => {
@@ -645,7 +663,7 @@ export default function Rules({ data }: any) {
       <div className="px-3">
         <div className="flex py-4 items-center gap-x-40">
           <div className="">
-            <p>Action</p>
+            <p className="text-[16px]">Action</p>
             <div className="mt-2 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
               <p
                 onClick={() => {
@@ -670,7 +688,7 @@ export default function Rules({ data }: any) {
             </div>
           </div>
           <div>
-            <p>After</p>
+            <p className="text-[16px]">After</p>
             <div className="flex gap-x-10">
               <input
                 type="number"
@@ -680,7 +698,7 @@ export default function Rules({ data }: any) {
                   console.log(e.target.value);
                   setWeekNumber(e.target.value);
                 }}
-                className="w-[53px] h-[48px] p-5 text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px] outline-none bg-gray-300"
+                className="w-[53px] h-[48px] p-5 text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px] outline-none bg-gray-300 text-black"
               />
               <div className="bg-[#EAEAEA] w-[280px] mt-1 min-w-[300px]  h-[40px] flex items-center justify-around rounded-[10px]">
                 <div

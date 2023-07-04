@@ -230,8 +230,10 @@ export default function Metrics({ data }: any) {
   const [input2, setInput2] = useState(data.metrics[+selectRule].function);
   const [input3, setInput3] = useState(data.metrics[+selectRule].window);
   const [input4, setInput4] = useState("");
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => {
+    setLoader(true);
     console.log(
       data.metrics[+selectRule].type,
       "data.metrics[+selectRule].type",
@@ -240,6 +242,9 @@ export default function Metrics({ data }: any) {
     setMetricsTab(data.metrics[+selectRule].type);
     setTab1(data.metrics[+selectRule].scope);
     setTab2(data.metrics[+selectRule].order);
+    setTimeout(() => {
+      setLoader(false);
+    }, 1000);
   }, [metricsTabRef.current, selectRule, rules]);
 
   const addRuleFun = (val: string) => {
@@ -380,188 +385,193 @@ export default function Metrics({ data }: any) {
       </div>
 
       {/* Rule info */}
-      <div
-        className={`bg-[#CCE0FF] flex items-center w-[97%] text-black h-[20%] px-6 py-2 justify-between ${
-          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
-        }`}
-      >
-        <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
-        <div
-          className={`mt-2 h-[40px] w-[380px] items-center px-1 py-1  flex justify-between rounded-[10px] bg-white`}
-        >
-          <p
-            // onClick={() => {
-            //   setMetricsTab("0");
-            // }}
-            className={`${
-              cabin.className
-            } rounded-[10px] cursor-pointer text-[18px] ${
-              metricsTabRef.current === "0"
-                ? "bg-[#CCE0FF] px-4"
-                : "text-gray-500"
-            }`}
-          >
-            &nbsp;&nbsp;{"Function"}&nbsp;&nbsp;
-          </p>
-          <p
-            // onClick={() => {
-            //   setMetricsTab("1");
-            // }}
-            className={`${
-              cabin.className
-            } rounded-[10px] cursor-pointer text-[18px] ${
-              metricsTabRef.current === "1"
-                ? "bg-[#CCE0FF] px-4"
-                : "text-gray-500"
-            }`}
-          >
-            &nbsp;&nbsp;{"Auto-Period"}&nbsp;&nbsp;
-          </p>
-          <p
-            // onClick={() => {
-            //   setMetricsTab("2");
-            // }}
-            className={`${
-              cabin.className
-            } rounded-[10px] cursor-pointer text-[18px] ${
-              metricsTabRef.current === "2"
-                ? "bg-[#CCE0FF] px-4"
-                : "text-gray-500"
-            }`}
-          >
-            &nbsp;&nbsp;{"Expression"}&nbsp;&nbsp;
-          </p>
-          <p
-            // onClick={() => {
-            //   setMetricsTab("3");
-            // }}
-            className={`${
-              cabin.className
-            } rounded-[10px] cursor-pointer text-[18px] ${
-              metricsTabRef.current === "3"
-                ? "bg-[#CCE0FF] px-4"
-                : "text-gray-500"
-            }`}
-          >
-            &nbsp;&nbsp;{"Job"}&nbsp;&nbsp;
-          </p>
-        </div>
-      </div>
-      <div
-        className={`py-2  px-3 w-[90%]  ${
-          metricsTabRef.current === "2" ? "mb-3" : "h-[220px]"
-        }`}
-      >
-        {/*  */}
-        {metricsTabRef.current === "0" ? (
-          <div className="w-full mt-3">
-            <div className="flex justify-between">
-              <div className="">
-                <p className="font-[600]">Scope</p>
-                <div className="bg-[#EAEAEA] w-[280px] mt-3 min-w-[300px] h-[40px] flex items-center justify-around rounded-[10px]">
-                  <div
-                    onClick={() => {
-                      setTab1("series");
-                    }}
-                    className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
-                      tab1 === "series" && "bg-white text-black"
-                    } `}
-                  >
-                    Series
-                  </div>
-                  <div
-                    onClick={() => {
-                      setTab1("record");
-                    }}
-                    className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
-                      tab1 === "record" && "bg-white text-black"
-                    } `}
-                  >
-                    Record
-                  </div>
-                  <div
-                    onClick={() => {
-                      setTab1("product");
-                    }}
-                    className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
-                      tab1 === "product" && "bg-white text-black"
-                    } `}
-                  >
-                    Product
-                  </div>
-                </div>
-              </div>
-              <div className="relative">
-                <p className="mb-3">Attribute</p>
-                <input
-                  type="text"
-                  value={input1}
-                  onChange={(e) => {
-                    setInput1(e.target.value);
-                  }}
-                  className={`${cabin.className} border-gray-300 border-[2px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
-                />
-              </div>
-              <div className="relative">
-                <p className="mb-3">Function</p>
-                <input
-                  type="text"
-                  value={input2}
-                  onChange={(e) => {
-                    setInput2(e.target.value);
-                  }}
-                  className={`${cabin.className} border-gray-300 border-[2px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
-                />
+      <>
+        {loader ? (
+          <>Loading..................</>
+        ) : (
+          <>
+            <div
+              className={`bg-[#CCE0FF] flex items-center w-[97%] text-black h-[20%] px-6 py-2 justify-between ${
+                selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
+              }`}
+            >
+              <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
+              <div
+                className={`mt-2 h-[40px] w-[380px] items-center px-1 py-1  flex justify-between rounded-[10px] bg-white`}
+              >
+                <p
+                  // onClick={() => {
+                  //   setMetricsTab("0");
+                  // }}
+                  className={`${
+                    cabin.className
+                  } rounded-[10px] cursor-pointer text-[18px] ${
+                    metricsTabRef.current === "0"
+                      ? "bg-[#CCE0FF] px-4"
+                      : "text-gray-500"
+                  }`}
+                >
+                  &nbsp;&nbsp;{"Function"}&nbsp;&nbsp;
+                </p>
+                <p
+                  // onClick={() => {
+                  //   setMetricsTab("1");
+                  // }}
+                  className={`${
+                    cabin.className
+                  } rounded-[10px] cursor-pointer text-[18px] ${
+                    metricsTabRef.current === "1"
+                      ? "bg-[#CCE0FF] px-4"
+                      : "text-gray-500"
+                  }`}
+                >
+                  &nbsp;&nbsp;{"Auto-Period"}&nbsp;&nbsp;
+                </p>
+                <p
+                  // onClick={() => {
+                  //   setMetricsTab("2");
+                  // }}
+                  className={`${
+                    cabin.className
+                  } rounded-[10px] cursor-pointer text-[18px] ${
+                    metricsTabRef.current === "2"
+                      ? "bg-[#CCE0FF] px-4"
+                      : "text-gray-500"
+                  }`}
+                >
+                  &nbsp;&nbsp;{"Expression"}&nbsp;&nbsp;
+                </p>
+                <p
+                  // onClick={() => {
+                  //   setMetricsTab("3");
+                  // }}
+                  className={`${
+                    cabin.className
+                  } rounded-[10px] cursor-pointer text-[18px] ${
+                    metricsTabRef.current === "3"
+                      ? "bg-[#CCE0FF] px-4"
+                      : "text-gray-500"
+                  }`}
+                >
+                  &nbsp;&nbsp;{"Job"}&nbsp;&nbsp;
+                </p>
               </div>
             </div>
-            <div className="flex items-center justify-between mt-5 w-full">
-              <div className="relative">
-                <p className="mb-3">Window</p>
-                <input
-                  type="text"
-                  value={input3}
-                  onChange={(e) => {
-                    setInput3(e.target.value);
-                  }}
-                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
-                />
-              </div>
-              <div className="">
-                <p>Order</p>
-                <div className="bg-[#EAEAEA] w-[250px] px-1 mt-3  h-[40px] flex items-center justify-between rounded-[10px]">
-                  <div
-                    onClick={() => {
-                      setTab2("ascending");
-                    }}
-                    className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
-                      tab2 === "ascending" && "bg-white text-black"
-                    } `}
-                  >
-                    Ascending
+            <div
+              className={`py-2  px-3 w-[90%]  ${
+                metricsTabRef.current === "2" ? "mb-3" : "h-[220px]"
+              }`}
+            >
+              {/*  */}
+              {metricsTabRef.current === "0" ? (
+                <div className="w-full mt-3">
+                  <div className="flex justify-between">
+                    <div className="">
+                      <p className="font-[600]">Scope</p>
+                      <div className="bg-[#EAEAEA] w-[280px] mt-3 min-w-[300px] h-[40px] flex items-center justify-around rounded-[10px]">
+                        <div
+                          onClick={() => {
+                            setTab1("series");
+                          }}
+                          className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
+                            tab1 === "series" && "bg-white text-black"
+                          } `}
+                        >
+                          Series
+                        </div>
+                        <div
+                          onClick={() => {
+                            setTab1("record");
+                          }}
+                          className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                            tab1 === "record" && "bg-white text-black"
+                          } `}
+                        >
+                          Record
+                        </div>
+                        <div
+                          onClick={() => {
+                            setTab1("product");
+                          }}
+                          className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                            tab1 === "product" && "bg-white text-black"
+                          } `}
+                        >
+                          Product
+                        </div>
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <p className="mb-3">Attribute</p>
+                      <input
+                        type="text"
+                        value={input1}
+                        onChange={(e) => {
+                          setInput1(e.target.value);
+                        }}
+                        className={`${cabin.className} border-gray-300 border-[2px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                      />
+                    </div>
+                    <div className="relative">
+                      <p className="mb-3">Function</p>
+                      <input
+                        type="text"
+                        value={input2}
+                        onChange={(e) => {
+                          setInput2(e.target.value);
+                        }}
+                        className={`${cabin.className} border-gray-300 border-[2px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                      />
+                    </div>
                   </div>
-                  <div
-                    onClick={() => {
-                      setTab2("desending");
-                    }}
-                    className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
-                      tab2 === "desending" && "bg-white text-black"
-                    } `}
-                  >
-                    Desending
-                  </div>
-                </div>
-              </div>
-              <div className="relative w-[6%]">
-                {/* <p className="mb-3">Function</p>
+                  <div className="flex items-center justify-between mt-5 w-full">
+                    <div className="relative">
+                      <p className="mb-3">Window</p>
+                      <input
+                        type="text"
+                        value={input3}
+                        onChange={(e) => {
+                          setInput3(e.target.value);
+                        }}
+                        className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                      />
+                    </div>
+                    <div className="">
+                      <p>Order</p>
+                      <div className="bg-[#EAEAEA] w-[250px] px-1 mt-3  h-[40px] flex items-center justify-between rounded-[10px]">
+                        <div
+                          onClick={() => {
+                            setTab2("ascending");
+                          }}
+                          className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
+                            tab2 === "ascending" && "bg-white text-black"
+                          } `}
+                        >
+                          Ascending
+                        </div>
+                        <div
+                          onClick={() => {
+                            setTab2("desending");
+                          }}
+                          className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                            tab2 === "desending" && "bg-white text-black"
+                          } `}
+                        >
+                          Desending
+                        </div>
+                      </div>
+                    </div>
+                    <div className="relative w-[6%]">
+                      {/* <p className="mb-3">Function</p>
                 <input
                   type="text"
                   readOnly
                   value={data.metrics[+selectRule].function}
                   className={`${cabin.className} border-gray-300 border-[2px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
                 /> */}
-              </div>
-            </div>
-            {/* <div className="grid grid-cols-2 gap-y-5 gap-x-72">
+                    </div>
+                  </div>
+                  {/* <div className="grid grid-cols-2 gap-y-5 gap-x-72">
               <div>
                 <p className="w-full h-[30px] text-[18px] font-[600]">
                   Attributes
@@ -594,454 +604,462 @@ export default function Metrics({ data }: any) {
               </div>
               <div></div>
             </div> */}
-          </div>
-        ) : metricsTabRef.current === "1" ? (
-          <div className="w-full mt-3">
-            <div className="flex justify-between">
-              <div className="">
-                <p className="font-[600]">Scope</p>
-                <div className="bg-[#EAEAEA] w-[280px] mt-3 min-w-[300px] h-[40px] flex items-center justify-around rounded-[10px]">
-                  <div
-                    onClick={() => {
-                      setTab1("series");
-                    }}
-                    className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
-                      tab1 === "series" && "bg-white text-black"
-                    } `}
-                  >
-                    Series
-                  </div>
-                  <div
-                    onClick={() => {
-                      setTab1("record");
-                    }}
-                    className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
-                      tab1 === "record" && "bg-white text-black"
-                    } `}
-                  >
-                    Record
-                  </div>
-                  <div
-                    onClick={() => {
-                      setTab1("product");
-                    }}
-                    className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
-                      tab1 === "product" && "bg-white text-black"
-                    } `}
-                  >
-                    Product
-                  </div>
                 </div>
-              </div>
-              <div className="relative">
-                <p className="mb-3">Attribute</p>
-                <input
-                  type="text"
-                  readOnly
-                  value={
-                    data.metrics[+selectRule] &&
-                    data.metrics[+selectRule].attributes &&
-                    data.metrics[+selectRule].attributes[0]
-                  }
-                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
-                />
-                <div
-                  onClick={() => {
-                    setVisible(!visible);
-                  }}
-                  className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`
+              ) : metricsTabRef.current === "1" ? (
+                <div className="w-full mt-3">
+                  <div className="flex justify-between">
+                    <div className="">
+                      <p className="font-[600]">Scope</p>
+                      <div className="bg-[#EAEAEA] w-[280px] mt-3 min-w-[300px] h-[40px] flex items-center justify-around rounded-[10px]">
+                        <div
+                          onClick={() => {
+                            setTab1("series");
+                          }}
+                          className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
+                            tab1 === "series" && "bg-white text-black"
+                          } `}
+                        >
+                          Series
+                        </div>
+                        <div
+                          onClick={() => {
+                            setTab1("record");
+                          }}
+                          className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                            tab1 === "record" && "bg-white text-black"
+                          } `}
+                        >
+                          Record
+                        </div>
+                        <div
+                          onClick={() => {
+                            setTab1("product");
+                          }}
+                          className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                            tab1 === "product" && "bg-white text-black"
+                          } `}
+                        >
+                          Product
+                        </div>
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <p className="mb-3">Attribute</p>
+                      <input
+                        type="text"
+                        readOnly
+                        value={
+                          data.metrics[+selectRule] &&
+                          data.metrics[+selectRule].attributes &&
+                          data.metrics[+selectRule].attributes[0]
+                        }
+                        className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                      />
+                      <div
+                        onClick={() => {
+                          setVisible(!visible);
+                        }}
+                        className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`
 
                      h-5 w-5 transition-transform`}
-                    fill="none"
-                    viewBox="0 0 28 28"
-                    stroke="#b4b4b4"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
-                {visible && (
-                  <div className="absolute z-50 max-h-[200px] overflow-y-auto">
-                    {searchAttr.map((item: any, index: number) => (
-                      <Card
-                        key={index}
-                        className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
-                      >
-                        <div className="flex items-center">
-                          <Checkbox
-                            color="blue"
-                            // defaultChecked={item.check}
-                            defaultChecked={
-                              data.metrics[+selectRule].attributes.indexOf(
-                                item
-                              ) !== -1
-                            }
-                            // className="rounded-none"
-                            // onChange={() => {}}
+                          fill="none"
+                          viewBox="0 0 28 28"
+                          stroke="#b4b4b4"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19 9l-7 7-7-7"
                           />
-                          <p className="text-black">{item}</p>
+                        </svg>
+                      </div>
+                      {visible && (
+                        <div className="absolute z-50 max-h-[200px] overflow-y-auto">
+                          {searchAttr.map((item: any, index: number) => (
+                            <Card
+                              key={index}
+                              className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
+                            >
+                              <div className="flex items-center">
+                                <Checkbox
+                                  color="blue"
+                                  // defaultChecked={item.check}
+                                  defaultChecked={
+                                    data.metrics[
+                                      +selectRule
+                                    ].attributes.indexOf(item) !== -1
+                                  }
+                                  // className="rounded-none"
+                                  // onChange={() => {}}
+                                />
+                                <p className="text-black">{item}</p>
+                              </div>
+                            </Card>
+                          ))}
                         </div>
-                      </Card>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className="relative">
-                <p className="mb-3">Profile</p>
-                <input
-                  type="text"
-                  readOnly
-                  value={
-                    data.metrics[+selectRule] &&
-                    data.metrics[+selectRule].profile &&
-                    data.metrics[+selectRule].profile[0] &&
-                    data.metrics[+selectRule].profile[0]
-                  }
-                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
-                />
-                <div
-                  onClick={() => {
-                    setVisible1(!visible1);
-                  }}
-                  className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`
+                      )}
+                    </div>
+                    <div className="relative">
+                      <p className="mb-3">Profile</p>
+                      <input
+                        type="text"
+                        readOnly
+                        value={
+                          data.metrics[+selectRule] &&
+                          data.metrics[+selectRule].profile &&
+                          data.metrics[+selectRule].profile[0] &&
+                          data.metrics[+selectRule].profile[0]
+                        }
+                        className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                      />
+                      <div
+                        onClick={() => {
+                          setVisible1(!visible1);
+                        }}
+                        className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`
 
                      h-5 w-5 transition-transform`}
-                    fill="none"
-                    viewBox="0 0 28 28"
-                    stroke="#b4b4b4"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
-                {visible1 && (
-                  <div className="absolute z-50 max-h-[200px] overflow-y-auto">
-                    {profileArray.map((item: any, index: number) => (
-                      <Card
-                        key={index}
-                        className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
-                      >
-                        <div className="flex items-center">
-                          <Checkbox
-                            color="blue"
-                            // defaultChecked={item.check}
-                            defaultChecked={
-                              data.metrics[+selectRule].profile.indexOf(
-                                item
-                              ) !== -1
-                            }
-                            // className="rounded-none"
-                            // onChange={() => {}}
+                          fill="none"
+                          viewBox="0 0 28 28"
+                          stroke="#b4b4b4"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19 9l-7 7-7-7"
                           />
-                          <p className="text-black">{item}</p>
+                        </svg>
+                      </div>
+                      {visible1 && (
+                        <div className="absolute z-50 max-h-[200px] overflow-y-auto">
+                          {profileArray.map((item: any, index: number) => (
+                            <Card
+                              key={index}
+                              className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
+                            >
+                              <div className="flex items-center">
+                                <Checkbox
+                                  color="blue"
+                                  // defaultChecked={item.check}
+                                  defaultChecked={
+                                    data.metrics[+selectRule].profile.indexOf(
+                                      item
+                                    ) !== -1
+                                  }
+                                  // className="rounded-none"
+                                  // onChange={() => {}}
+                                />
+                                <p className="text-black">{item}</p>
+                              </div>
+                            </Card>
+                          ))}
                         </div>
-                      </Card>
-                    ))}
+                      )}
+                    </div>
                   </div>
-                )}
-              </div>
+                  <div className="flex mt-4 justify-between">
+                    <div className="relative">
+                      <p className="mb-3">Aggregate</p>
+                      <input
+                        type="text"
+                        readOnly
+                        value={
+                          data.metrics[+selectRule] &&
+                          data.metrics[+selectRule].aggregate &&
+                          data.metrics[+selectRule].aggregate[0]
+                            ? data.metrics[+selectRule].aggregate[0]
+                            : ""
+                        }
+                        className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                      />
+                      <div
+                        onClick={() => {
+                          setVisible2(!visible2);
+                        }}
+                        className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`
+
+                     h-5 w-5 transition-transform`}
+                          fill="none"
+                          viewBox="0 0 28 28"
+                          stroke="#b4b4b4"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </div>
+                      {visible2 && (
+                        <div className="absolute z-50 max-h-[200px] overflow-y-auto">
+                          {aggregateArray.map((item: any, index: number) => (
+                            <Card
+                              key={index}
+                              className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
+                            >
+                              <div className="flex items-center">
+                                <Checkbox
+                                  color="blue"
+                                  // defaultChecked={item.check}
+                                  defaultChecked={
+                                    data.metrics[+selectRule].aggregate.indexOf(
+                                      item
+                                    ) !== -1
+                                  }
+                                  // className="rounded-none"
+                                  // onChange={() => {}}
+                                />
+                                <p className="text-black">{item}</p>
+                              </div>
+                            </Card>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <div className="relative ml-20">
+                      <p className="mb-3">Period</p>
+                      <input
+                        type="text"
+                        readOnly
+                        value={
+                          data.metrics[+selectRule] &&
+                          data.metrics[+selectRule].period &&
+                          data.metrics[+selectRule].period[0]
+                            ? data.metrics[+selectRule].period[0]
+                            : ""
+                        }
+                        className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                      />
+                      <div
+                        onClick={() => {
+                          setVisible3(!visible3);
+                        }}
+                        className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`
+
+                     h-5 w-5 transition-transform`}
+                          fill="none"
+                          viewBox="0 0 28 28"
+                          stroke="#b4b4b4"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </div>
+                      {visible3 && (
+                        <div className="absolute z-50 max-h-[200px] overflow-y-auto">
+                          {periodArray.map((item: any, index: number) => (
+                            <Card
+                              key={index}
+                              className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
+                            >
+                              <div className="flex items-center">
+                                <Checkbox
+                                  color="blue"
+                                  // defaultChecked={item.check}
+                                  defaultChecked={
+                                    data.metrics[+selectRule].period.indexOf(
+                                      item
+                                    ) !== -1
+                                  }
+                                  // className="rounded-none"
+                                  // onChange={() => {}}
+                                />
+                                <p className="text-black">{item}</p>
+                              </div>
+                            </Card>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <div className="relative">
+                      <p className="mb-3">Metric</p>
+                      <input
+                        type="text"
+                        readOnly
+                        value={
+                          data.metrics[+selectRule] &&
+                          data.metrics[+selectRule].metric &&
+                          data.metrics[+selectRule].metric[0]
+                            ? data.metrics[+selectRule].metric[0]
+                            : ""
+                        }
+                        className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                      />
+                      <div
+                        onClick={() => {
+                          setVisible4(!visible4);
+                        }}
+                        className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`
+
+                     h-5 w-5 transition-transform`}
+                          fill="none"
+                          viewBox="0 0 28 28"
+                          stroke="#b4b4b4"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </div>
+                      {visible4 && (
+                        <div className="absolute z-50 max-h-[200px] overflow-y-auto">
+                          {metric.map((item: any, index: number) => (
+                            <Card
+                              key={index}
+                              className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
+                            >
+                              <div className="flex items-center">
+                                <Checkbox
+                                  color="blue"
+                                  // defaultChecked={item.check}
+                                  defaultChecked={
+                                    data.metrics[+selectRule].metric.indexOf(
+                                      item
+                                    ) !== -1
+                                  }
+                                  // className="rounded-none"
+                                  // onChange={() => {}}
+                                />
+                                <p className="text-black">{item}</p>
+                              </div>
+                            </Card>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <p className="mb-3">Expression</p>
+                  <input
+                    type="text"
+                    value={data.metrics[+selectRule].expression}
+                    className={`${cabin.className} border-gray-300 border-[2px] text-[18px] w-[400px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                  />
+                </div>
+              )}
             </div>
-            <div className="flex mt-4 justify-between">
-              <div className="relative">
-                <p className="mb-3">Aggregate</p>
-                <input
-                  type="text"
-                  readOnly
-                  value={
-                    data.metrics[+selectRule] &&
-                    data.metrics[+selectRule].aggregate &&
-                    data.metrics[+selectRule].aggregate[0]
-                      ? data.metrics[+selectRule].aggregate[0]
-                      : ""
-                  }
-                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
-                />
-                <div
-                  onClick={() => {
-                    setVisible2(!visible2);
-                  }}
-                  className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`
-
-                     h-5 w-5 transition-transform`}
-                    fill="none"
-                    viewBox="0 0 28 28"
-                    stroke="#b4b4b4"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
-                {visible2 && (
-                  <div className="absolute z-50 max-h-[200px] overflow-y-auto">
-                    {aggregateArray.map((item: any, index: number) => (
-                      <Card
-                        key={index}
-                        className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
-                      >
-                        <div className="flex items-center">
-                          <Checkbox
-                            color="blue"
-                            // defaultChecked={item.check}
-                            defaultChecked={
-                              data.metrics[+selectRule].aggregate.indexOf(
-                                item
-                              ) !== -1
-                            }
-                            // className="rounded-none"
-                            // onChange={() => {}}
-                          />
-                          <p className="text-black">{item}</p>
-                        </div>
-                      </Card>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className="relative ml-20">
-                <p className="mb-3">Period</p>
-                <input
-                  type="text"
-                  readOnly
-                  value={
-                    data.metrics[+selectRule] &&
-                    data.metrics[+selectRule].period &&
-                    data.metrics[+selectRule].period[0]
-                      ? data.metrics[+selectRule].period[0]
-                      : ""
-                  }
-                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
-                />
-                <div
-                  onClick={() => {
-                    setVisible3(!visible3);
-                  }}
-                  className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`
-
-                     h-5 w-5 transition-transform`}
-                    fill="none"
-                    viewBox="0 0 28 28"
-                    stroke="#b4b4b4"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
-                {visible3 && (
-                  <div className="absolute z-50 max-h-[200px] overflow-y-auto">
-                    {periodArray.map((item: any, index: number) => (
-                      <Card
-                        key={index}
-                        className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
-                      >
-                        <div className="flex items-center">
-                          <Checkbox
-                            color="blue"
-                            // defaultChecked={item.check}
-                            defaultChecked={
-                              data.metrics[+selectRule].period.indexOf(item) !==
-                              -1
-                            }
-                            // className="rounded-none"
-                            // onChange={() => {}}
-                          />
-                          <p className="text-black">{item}</p>
-                        </div>
-                      </Card>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className="relative">
-                <p className="mb-3">Metric</p>
-                <input
-                  type="text"
-                  readOnly
-                  value={
-                    data.metrics[+selectRule] &&
-                    data.metrics[+selectRule].metric &&
-                    data.metrics[+selectRule].metric[0]
-                      ? data.metrics[+selectRule].metric[0]
-                      : ""
-                  }
-                  className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
-                />
-                <div
-                  onClick={() => {
-                    setVisible4(!visible4);
-                  }}
-                  className="absolute top-11 left-44 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end "
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`
-
-                     h-5 w-5 transition-transform`}
-                    fill="none"
-                    viewBox="0 0 28 28"
-                    stroke="#b4b4b4"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
-                {visible4 && (
-                  <div className="absolute z-50 max-h-[200px] overflow-y-auto">
-                    {metric.map((item: any, index: number) => (
-                      <Card
-                        key={index}
-                        className="h-[50px] rounded-none border-[1px] flex justify-start px-2 py-1"
-                      >
-                        <div className="flex items-center">
-                          <Checkbox
-                            color="blue"
-                            // defaultChecked={item.check}
-                            defaultChecked={
-                              data.metrics[+selectRule].metric.indexOf(item) !==
-                              -1
-                            }
-                            // className="rounded-none"
-                            // onChange={() => {}}
-                          />
-                          <p className="text-black">{item}</p>
-                        </div>
-                      </Card>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div>
-            <p className="mb-3">Expression</p>
-            <input
-              type="text"
-              value={data.metrics[+selectRule].expression}
-              className={`${cabin.className} border-gray-300 border-[2px] text-[18px] w-[400px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
-            />
-          </div>
-        )}
-      </div>
-      <div
-        className={`bg-[#CCE0FF] flex items-center w-[97%] text-black h-[20%] px-6 py-2 justify-between ${
-          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
-        }`}
-      >
-        <p className="text-[18px] font-[600]">Schedule</p>
-      </div>
-      <div className={`w-[97%] flex justify-between items-center px-3`}>
-        <div className="mt-2 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
-          <p
-            onClick={() => {
-              setScheduleTab(true);
-            }}
-            className={`${cabin.className} rounded-[10px] text-[18px] ${
-              scheduleTab && "bg-white text-black"
-            }`}
-          >
-            &nbsp;&nbsp;{"Event"}&nbsp;&nbsp;
-          </p>
-          <p
-            onClick={() => {
-              setScheduleTab(false);
-            }}
-            className={`${cabin.className} rounded-[10px] text-[18px] ${
-              !scheduleTab && "bg-white text-black"
-            }`}
-          >
-            &nbsp;&nbsp;{"Time"}&nbsp;&nbsp;
-          </p>
-        </div>
-        <div className="w-[30%] max-h-[25%] overflow-y-auto py-2 px-2 justify-start gap-x-6 border-b-[1px] border-white">
-          <div
-            onClick={handleOpen}
-            className="flex justify-start item-center gap-x-2"
-          >
-            <div className="relative w-[20px] h-[20px] mt-1">
-              <Image src={`/clock.svg`} alt="brand" fill />
-            </div>
-            <p
-              className={`${cabin.className} text-black text-[18px] hover:text-[#f65a27] cursor-pointer`}
-            >
-              Calender event schedule
-            </p>
-          </div>
-          {schedule.map((item: any, index: number) => (
             <div
-              key={index}
-              className="flex ml-1 justify-start items-center w-full gap-x-2"
+              className={`bg-[#CCE0FF] flex items-center w-[97%] text-black h-[20%] px-6 py-2 justify-between ${
+                selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
+              }`}
             >
-              <p className="text-[11px] w-full mt-1">
-                <div className="flex justify-between w-full">
-                  <div>
-                    <p>Schedule has been added</p>
-                  </div>
-                  <div
-                    onClick={() => {
-                      deleteSchedule(index);
-                    }}
-                    className="relative w-[9.43px] h-[12px]"
-                  >
-                    <Image src={`/bin.svg`} alt="brand" fill />
-                  </div>
-                </div>
-                <p>
-                  Repeats every {item.weekNumber} {item.interval} on{" "}
-                  {item.day[0]}{" "}
-                  {item.day.length > 1 && `${"+" + (item.day.length - 1)}`} at{" "}
-                  {item.time}
-                </p>
-              </p>
+              <p className="text-[18px] font-[600]">Schedule</p>
             </div>
-          ))}
-        </div>
-        <div className={`flex w-[20%] flex-col text-[18px] ${cabin.className}`}>
-          <p className="w-full border-b-[1px] border-white px-2">Event</p>
-          <div className="px-2">
-            <input
-              type="text"
-              placeholder="Enter Event Type"
-              className="bg-transparent border-b-[1px] outline-none border-gray-400 w-[95%] text-black"
-            />
-          </div>
-        </div>
-      </div>
+            <div className={`w-[97%] flex justify-between items-center px-3`}>
+              <div className="mt-2 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
+                <p
+                  onClick={() => {
+                    setScheduleTab(true);
+                  }}
+                  className={`${cabin.className} rounded-[10px] text-[18px] ${
+                    scheduleTab && "bg-white text-black"
+                  }`}
+                >
+                  &nbsp;&nbsp;{"Event"}&nbsp;&nbsp;
+                </p>
+                <p
+                  onClick={() => {
+                    setScheduleTab(false);
+                  }}
+                  className={`${cabin.className} rounded-[10px] text-[18px] ${
+                    !scheduleTab && "bg-white text-black"
+                  }`}
+                >
+                  &nbsp;&nbsp;{"Time"}&nbsp;&nbsp;
+                </p>
+              </div>
+              <div className="w-[30%] max-h-[25%] overflow-y-auto py-2 px-2 justify-start gap-x-6 border-b-[1px] border-white">
+                <div
+                  onClick={handleOpen}
+                  className="flex justify-start item-center gap-x-2"
+                >
+                  <div className="relative w-[20px] h-[20px] mt-1">
+                    <Image src={`/clock.svg`} alt="brand" fill />
+                  </div>
+                  <p
+                    className={`${cabin.className} text-black text-[18px] hover:text-[#f65a27] cursor-pointer`}
+                  >
+                    Calender event schedule
+                  </p>
+                </div>
+                {schedule.map((item: any, index: number) => (
+                  <div
+                    key={index}
+                    className="flex ml-1 justify-start items-center w-full gap-x-2"
+                  >
+                    <p className="text-[11px] w-full mt-1">
+                      <div className="flex justify-between w-full">
+                        <div>
+                          <p>Schedule has been added</p>
+                        </div>
+                        <div
+                          onClick={() => {
+                            deleteSchedule(index);
+                          }}
+                          className="relative w-[9.43px] h-[12px]"
+                        >
+                          <Image src={`/bin.svg`} alt="brand" fill />
+                        </div>
+                      </div>
+                      <p>
+                        Repeats every {item.weekNumber} {item.interval} on{" "}
+                        {item.day[0]}{" "}
+                        {item.day.length > 1 &&
+                          `${"+" + (item.day.length - 1)}`}{" "}
+                        at {item.time}
+                      </p>
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div
+                className={`flex w-[20%] flex-col text-[18px] ${cabin.className}`}
+              >
+                <p className="w-full border-b-[1px] border-white px-2">Event</p>
+                <div className="px-2">
+                  <input
+                    type="text"
+                    placeholder="Enter Event Type"
+                    className="bg-transparent border-b-[1px] outline-none border-gray-400 w-[95%] text-black"
+                  />
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+      </>
     </div>
   );
 }

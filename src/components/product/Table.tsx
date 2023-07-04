@@ -283,9 +283,8 @@ export default function Example({ data }: any) {
                     key={head.label}
                     className={`cursor-pointer border-y border-blue-gray-100 p-4 min-w-[60px] bg-[#A0EDA7] transition-colors ${cabin.className}`}
                   >
-                    <Typography
-                      variant="small"
-                      className={` ${cabin.className} flex items-center justify-between gap-2 font-normal leading-none opacity-70 text-black`}
+                    <p
+                      className={` ${cabin.className} flex items-center justify-between gap-2 leading-none opacity-70 text-black font-[600]`}
                     >
                       {head}{" "}
                       <div
@@ -356,7 +355,7 @@ export default function Example({ data }: any) {
                           />
                         </svg>
                       </div>
-                    </Typography>
+                    </p>
                   </th>
                 ))}
               </tr>

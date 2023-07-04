@@ -28,8 +28,9 @@ import {
 import Image from "next/image";
 
 import { Option } from "@material-tailwind/react";
-import React, { useMemo, useEffect, useState } from "react";
+import React, { useMemo, useEffect, useRef } from "react";
 import Select from "react-select";
+import useState from "react-usestateref";
 import { Cabin } from "next/font/google";
 import { MultiSelect } from "react-multi-select-component";
 const cabin = Cabin({ subsets: ["latin"] });
@@ -72,10 +73,18 @@ const TABS1 = [
 ];
 
 export default function Example({ data }: any) {
+  const labelRef = useRef<any>(null);
+
+  const scroll = (scrollOffset: any) => {
+    console.group(labelRef.current.pageYOffset);
+    // if (labelRef.current && labelRef.current.scrollLeft)
+    labelRef.current.scrollLeft += scrollOffset;
+  };
+
   const pathname = usePathname();
 
   const TABLE_ROWS = data.attributes;
-  const [dropDownMenu, setDropDownMenu] = useState<any>([
+  const [dropDownMenu, setDropDownMenu] = React.useState<any>([
     {
       label: "Attributes",
       value: "attributes",
@@ -153,12 +162,12 @@ export default function Example({ data }: any) {
       value: "updatedBy",
     },
   ]);
-  const [tableHead, setTableHead] = useState<any>([]);
-  const [selected, setSelected] = useState<any>({
-    label: "Default",
-    value: "default",
+  const [tableHead, setTableHead] = React.useState<any>([]);
+  const [selected, setSelected, selectedRef] = useState<any>({
+    label: "20230131",
+    value: "20230131",
   });
-  const [tableRowData, setTableRowData] = useState<any>([]);
+  const [tableRowData, setTableRowData] = React.useState<any>([]);
   const [sort, setSort] = React.useState<boolean>(false);
   const [showCol, setShowCol] = React.useState<boolean>(false);
 
@@ -185,26 +194,26 @@ export default function Example({ data }: any) {
       case "2":
         setDropDown([
           {
-            label: "Default",
-            value: "default",
+            label: "20230131",
+            value: "20230131",
           },
           {
-            label: "Series 1",
-            value: "series1",
+            label: "20230228",
+            value: "20230228",
           },
           {
-            label: "Series 2",
-            value: "series2",
+            label: "20230331",
+            value: "20230331",
           },
           {
-            label: "Series 3",
-            value: "series3",
+            label: "20230430",
+            value: "20230430",
           },
         ]);
         let obj2: any = [];
-        console.log(selected.value, "NYSEPRICE");
-        switch (selected.value) {
-          case "default":
+        console.log(selectedRef.current.value, "NYSEPRICE");
+        switch (selectedRef.current.value) {
+          case "20230131":
             console.log("WWWWWWWWW", nysePrice1[0]);
             obj2 = nysePrice1[0];
             tableData = nysePrice1;
@@ -213,7 +222,7 @@ export default function Example({ data }: any) {
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
             break;
-          case "series1":
+          case "20230228":
             console.log("WWWWWWWWW");
             obj2 = nysePrice2[0];
             tableData = nysePrice2;
@@ -222,7 +231,7 @@ export default function Example({ data }: any) {
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
             break;
-          case "series2":
+          case "20230331":
             console.log("WWWWWWWWW");
             obj2 = nysePrice3[0];
             tableData = nysePrice3;
@@ -231,7 +240,7 @@ export default function Example({ data }: any) {
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
             break;
-          case "series3":
+          case "20230430":
             console.log("WWWWWWWWW");
             obj2 = nysePrice1[0];
             tableData = nysePrice1;
@@ -245,26 +254,27 @@ export default function Example({ data }: any) {
       case "4":
         setDropDown([
           {
-            label: "Default",
-            value: "default",
+            label: "20230131",
+            value: "20230131",
           },
           {
-            label: "Series 1",
-            value: "series1",
+            label: "20230228",
+            value: "20230228",
           },
           {
-            label: "Series 2",
-            value: "series2",
+            label: "20230331",
+            value: "20230331",
           },
           {
-            label: "Series 3",
-            value: "series3",
+            label: "20230430",
+            value: "20230430",
           },
         ]);
+
         let obj1: any = [];
-        console.log(selected.value);
-        switch (selected.value) {
-          case "default":
+        console.log(selectedRef.current.value);
+        switch (selectedRef.current.value) {
+          case "20230131":
             console.log("WWWWWWWWW");
             obj1 = USMUTUALRETURNS1[0];
             tableData = USMUTUALRETURNS1;
@@ -273,8 +283,8 @@ export default function Example({ data }: any) {
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
             break;
-          case "series1":
-          case "series2":
+          case "20230430":
+          case "20230331":
             obj1 = USMUTUALRETURNS3[0];
             tableData = USMUTUALRETURNS3;
             setTableRowData(tableData);
@@ -282,7 +292,7 @@ export default function Example({ data }: any) {
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
             break;
-          case "series3":
+          case "20230228":
             obj1 = USMUTUALRETURNS2[0];
             tableData = USMUTUALRETURNS2;
             setTableRowData(tableData);
@@ -297,6 +307,10 @@ export default function Example({ data }: any) {
         break;
       case "5":
       case "1":
+        setSelected({
+          label: "Default",
+          value: "default",
+        });
         obj = NYSE_SECURITIES[0];
         tableData = NYSE_SECURITIES;
         setTableRowData(tableData);
@@ -313,26 +327,26 @@ export default function Example({ data }: any) {
       case "0":
         setDropDown([
           {
-            label: "Default",
-            value: "default",
+            label: "20230131",
+            value: "20230131",
           },
           {
-            label: "Series 1",
-            value: "series1",
+            label: "20230228",
+            value: "20230228",
           },
           {
-            label: "Series 2",
-            value: "series2",
+            label: "20230331",
+            value: "20230331",
           },
           {
-            label: "Series 3",
-            value: "series3",
+            label: "20230430",
+            value: "20230430",
           },
         ]);
         let obj3: any = [];
-        console.log(selected.value, "NYSEPRICE");
-        switch (selected.value) {
-          case "default":
+
+        switch (selectedRef.current.value) {
+          case "20230131":
             //ts-ignore
             console.log("WWWWWWWWW", MutualFundsESG1[0]);
             //ts-ignore
@@ -343,7 +357,7 @@ export default function Example({ data }: any) {
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
             break;
-          case "series1":
+          case "20230228":
             console.log("WWWWWWWWW");
             obj3 = MutualFundsESG2[0];
             tableData = MutualFundsESG2;
@@ -352,7 +366,7 @@ export default function Example({ data }: any) {
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
             break;
-          case "series2":
+          case "20230331":
             console.log("WWWWWWWWW");
             obj3 = MutualFundsESG1[0];
             tableData = MutualFundsESG2;
@@ -361,7 +375,7 @@ export default function Example({ data }: any) {
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
             break;
-          case "series3":
+          case "20230430":
             console.log("WWWWWWWWW");
             obj3 = MutualFundsESG2[0];
             tableData = MutualFundsESG2;
@@ -374,6 +388,10 @@ export default function Example({ data }: any) {
         break;
       case "3":
         //ts-ignore
+        setSelected({
+          label: "Default",
+          value: "default",
+        });
         obj = USMutualFunds[0];
         tableData = USMutualFunds;
         setTableRowData(tableData);
@@ -407,7 +425,7 @@ export default function Example({ data }: any) {
 
   return (
     <div className="shadow-none mt-2 flex flex-col">
-      <div className={`${cabin.className} max:w-[1462px]`}>
+      <div className={`${cabin.className} w-full`}>
         <div className="flex justify-between max:w-[1462px] mb-2">
           {!showCol ? (
             // <Select
@@ -428,15 +446,17 @@ export default function Example({ data }: any) {
             //   className="basic-multi-select max-w-[80%]"
             //   classNamePrefix="select"
             // />
-            <Select
-              options={dropDown}
-              value={selected}
-              className="w-[300px] text-black"
-              onChange={(val: any) => {
-                console.log(val);
-                setSelected(val);
-              }}
-            />
+            <div className="flex relative w-full justify-between">
+              <Select
+                options={dropDown}
+                value={selected}
+                className="w-[300px] absolute top-[-3.5rem] text-black"
+                onChange={(val: any) => {
+                  console.log(val);
+                  setSelected(val);
+                }}
+              />
+            </div>
           ) : (
             <div></div>
           )}
@@ -454,122 +474,146 @@ export default function Example({ data }: any) {
           </button> */}
         </div>
         {/***/}
-        <div className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[74vw] 3xl:w-[76.8vw] max-w-[1460px] overflow-x-auto ">
-          <table className="w-full table-auto text-left">
-            <thead>
-              <tr className="space-x-3">
-                {tableHead.map((head: any, index: number) => (
-                  <th
-                    key={head.label}
-                    className={`cursor-pointer border-y border-blue-gray-100 p-4 min-w-[60px] bg-[#A0EDA7] transition-colors ${cabin.className}`}
-                  >
-                    <Typography
-                      variant="small"
-                      className={` ${cabin.className} flex items-center justify-between gap-2 font-normal leading-none opacity-70 text-black`}
+        <div className="w-[102%] -mt-[3rem] flex gap-x-3">
+          <button
+            onClick={() => {
+              scroll(-40);
+            }}
+            className="h-[30px] mt-3"
+          >
+            <div className="relative w-[20px] h-[20px]">
+              <Image src={`/labelLeft.svg`} alt="brand" fill />
+            </div>
+          </button>
+          <div
+            ref={labelRef}
+            className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[74vw] 3xl:w-[79vw] max-w-[1460px] overflow-x-auto flex justify-between"
+          >
+            <table className="w-full table-auto text-left">
+              <thead>
+                <tr className="space-x-3">
+                  {tableHead.map((head: any, index: number) => (
+                    <th
+                      key={head.label}
+                      className={`cursor-pointer border-y border-blue-gray-100 p-4 min-w-[60px] bg-[#FFF0D3] transition-colors ${cabin.className}`}
                     >
-                      {head}{" "}
-                      <div
-                        onClick={() => {
-                          console.log("clicked", sort);
-                          if (!sort) {
-                            setSort(true);
-                          } else {
-                            setSort(false);
-                          }
-
-                          if (!sort) {
-                            let sortedData = data.attributes.sort(
-                              (a: any, b: any) =>
-                                a.name > b.name
-                                  ? 1
-                                  : a.name === b.name
-                                  ? a.name > b.name
-                                    ? 1
-                                    : -1
-                                  : -1
-                            );
-                            console.log(sortedData);
-                            setTableRowData(sortedData);
-                          } else {
-                            let unSortedData = data.attributes.sort(
-                              (a: any, b: any) =>
-                                a.name < b.name
-                                  ? 1
-                                  : a.name === b.name
-                                  ? a.name < b.name
-                                    ? 1
-                                    : -1
-                                  : -1
-                            );
-                            setTableRowData(unSortedData);
-                          }
-                        }}
+                      <p
+                        className={` ${cabin.className} flex items-center justify-between gap-2 font-[600] leading-none opacity-70 text-black`}
                       >
-                        <svg
-                          width="22"
-                          height="16"
-                          viewBox="0 0 22 16"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <rect
-                            width="21.3333"
-                            height="2.66666"
-                            rx="1.33333"
-                            fill="black"
-                          />
-                          <rect
-                            x="2.66406"
-                            y="6.66699"
-                            width="16"
-                            height="2.66666"
-                            rx="1.33333"
-                            fill="black"
-                          />
-                          <rect
-                            x="6.66406"
-                            y="13.333"
-                            width="7.99999"
-                            height="2.66666"
-                            rx="1.33333"
-                            fill="black"
-                          />
-                        </svg>
-                      </div>
-                    </Typography>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {tableRowData.map((item: any, index: any) => {
-                const isLast = index === TABLE_ROWS.length - 1;
-                const classes = isLast
-                  ? "p-2"
-                  : "py-1 px-2 min-w-[200px] border-b border-blue-gray-50";
+                        {head}{" "}
+                        <div
+                          onClick={() => {
+                            console.log("clicked", sort);
+                            if (!sort) {
+                              setSort(true);
+                            } else {
+                              setSort(false);
+                            }
 
-                return (
-                  <tr key={index}>
-                    {tableHead.map((item1: any, index: any) => (
-                      <td key={index} className={classes}>
-                        <div className="flex items-center gap-3">
-                          <div className="flex flex-col">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal w-[100px] truncate`}
-                            >
-                              {item[item1]}
-                            </Typography>
-                          </div>
+                            if (!sort) {
+                              let sortedData = tableRowData.sort(
+                                (a: any, b: any) =>
+                                  a.name > b.name
+                                    ? 1
+                                    : a.name === b.name
+                                    ? a.name > b.name
+                                      ? 1
+                                      : -1
+                                    : -1
+                              );
+                              console.log("sortedData", sortedData);
+                              setTableRowData(sortedData);
+                            } else {
+                              let unSortedData = tableRowData.sort(
+                                (a: any, b: any) =>
+                                  a.name < b.name
+                                    ? 1
+                                    : a.name === b.name
+                                    ? a.name < b.name
+                                      ? 1
+                                      : -1
+                                    : -1
+                              );
+                              console.log("un SortedData", unSortedData);
+
+                              setTableRowData(unSortedData);
+                            }
+                          }}
+                        >
+                          <svg
+                            width="22"
+                            height="16"
+                            viewBox="0 0 22 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              width="21.3333"
+                              height="2.66666"
+                              rx="1.33333"
+                              fill="black"
+                            />
+                            <rect
+                              x="2.66406"
+                              y="6.66699"
+                              width="16"
+                              height="2.66666"
+                              rx="1.33333"
+                              fill="black"
+                            />
+                            <rect
+                              x="6.66406"
+                              y="13.333"
+                              width="7.99999"
+                              height="2.66666"
+                              rx="1.33333"
+                              fill="black"
+                            />
+                          </svg>
                         </div>
-                      </td>
-                    ))}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                      </p>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {tableRowData.map((item: any, index: any) => {
+                  const isLast = index === TABLE_ROWS.length - 1;
+                  const classes = isLast
+                    ? "p-2"
+                    : "py-1 px-2 min-w-[200px] border-b border-blue-gray-50";
+
+                  return (
+                    <tr key={index}>
+                      {tableHead.map((item1: any, index: any) => (
+                        <td key={index} className={classes}>
+                          <div className="flex items-center gap-3">
+                            <div className="flex flex-col">
+                              <p
+                                className={` ${cabin.className} font-normal w-[100px] truncate text-black`}
+                              >
+                                {item[item1]}
+                              </p>
+                            </div>
+                          </div>
+                        </td>
+                      ))}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <button
+            onClick={() => {
+              scroll(40);
+            }}
+            className="h-[30px] mt-3"
+          >
+            <div className="relative w-[20px] h-[20px]">
+              <Image src={`/labelRight.svg`} alt="brand" fill />
+            </div>
+          </button>
         </div>
       </div>
     </div>

@@ -93,7 +93,7 @@ export default function TransparentTabs({
                 <div className="mt-5 text-[16px]">
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quas assumenda unde iure dolorem dolores autem voluptate
+                    Quas assumenda unde iure dolorem dolores autem voluptate.
                   </p>
                 </div>
                 <div className="mt-10">{item.label}</div>
