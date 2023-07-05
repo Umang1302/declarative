@@ -178,6 +178,23 @@ export default function Example({ data }: any) {
   const handleOpen = () => setOpen(!open);
 
   useEffect(() => {
+    console.log("data Table", pathname);
+
+    const tt = pathname.split("/");
+    const id = tt[tt.length - 1];
+    switch (id) {
+      case "5":
+      case "1":
+      case "3":
+        setSelected({
+          label: "Default",
+          value: "default",
+        });
+        break;
+    }
+  }, []);
+
+  useEffect(() => {
     // const modifiedHead = selected.map(
     //   (element: any, i: number) => element.label
     // );
@@ -307,10 +324,6 @@ export default function Example({ data }: any) {
         break;
       case "5":
       case "1":
-        setSelected({
-          label: "Default",
-          value: "default",
-        });
         obj = NYSE_SECURITIES[0];
         tableData = NYSE_SECURITIES;
         setTableRowData(tableData);
@@ -388,10 +401,6 @@ export default function Example({ data }: any) {
         break;
       case "3":
         //ts-ignore
-        setSelected({
-          label: "Default",
-          value: "default",
-        });
         obj = USMutualFunds[0];
         tableData = USMutualFunds;
         setTableRowData(tableData);
@@ -475,19 +484,22 @@ export default function Example({ data }: any) {
         </div>
         {/***/}
         <div className="w-[102%] -mt-[3rem] flex gap-x-3">
-          <button
-            onClick={() => {
-              scroll(-40);
-            }}
-            className="h-[30px] mt-3"
-          >
-            <div className="relative w-[20px] h-[20px]">
-              <Image src={`/labelLeft.svg`} alt="brand" fill />
-            </div>
-          </button>
+          {tableHead.length > 7 && (
+            <button
+              onClick={() => {
+                scroll(-40);
+              }}
+              className="h-[30px] mt-3"
+            >
+              <div className="relative w-[20px] h-[20px]">
+                <Image src={`/labelLeft.svg`} alt="brand" fill />
+              </div>
+            </button>
+          )}
+
           <div
             ref={labelRef}
-            className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[74vw] 3xl:w-[79vw] max-w-[1460px] overflow-x-auto flex justify-between"
+            className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[74vw] 3xl:w-[76.5vw] max-w-[1460px] overflow-x-auto flex justify-between"
           >
             <table className="w-full table-auto text-left">
               <thead>
@@ -604,16 +616,18 @@ export default function Example({ data }: any) {
               </tbody>
             </table>
           </div>
-          <button
-            onClick={() => {
-              scroll(40);
-            }}
-            className="h-[30px] mt-3"
-          >
-            <div className="relative w-[20px] h-[20px]">
-              <Image src={`/labelRight.svg`} alt="brand" fill />
-            </div>
-          </button>
+          {tableHead.length > 7 && (
+            <button
+              onClick={() => {
+                scroll(40);
+              }}
+              className="h-[30px] mt-3"
+            >
+              <div className="relative w-[20px] h-[20px]">
+                <Image src={`/labelRight.svg`} alt="brand" fill />
+              </div>
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -1,0 +1,2001 @@
+[
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "dTeJmjsmg26yAL1Me09J",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/prices.csv/columns/dTeJmjsmg26yAL1Me09J",
+    "legacyEntityId": 0,
+    "name": "symbol",
+    "tableColumnInfo": {
+      "order": 1,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 851264,
+      "nonNullCount": 851264,
+      "validCount": 851264,
+      "stringMetrics": {
+        "mostCommonValue": "A",
+        "mostCommonValueCount": 1762,
+        "counts": [
+          {
+            "key": "A",
+            "value": 1762
+          },
+          {
+            "key": "AAL",
+            "value": 1762
+          },
+          {
+            "key": "AAP",
+            "value": 1762
+          },
+          {
+            "key": "AAPL",
+            "value": 1762
+          },
+          {
+            "key": "ABC",
+            "value": 1762
+          }
+        ],
+        "uniqueValueCount": 501
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "cbwya1QAyMnJqb1RhfVl",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/prices.csv/columns/cbwya1QAyMnJqb1RhfVl",
+    "legacyEntityId": 0,
+    "name": "open",
+    "tableColumnInfo": {
+      "order": 2,
+      "originalType": "",
+      "type": "NUMERIC",
+      "extendedType": "DECIMAL"
+    },
+    "tableColumnMetrics": {
+      "totalCount": 851264,
+      "nonNullCount": 851264,
+      "validCount": 851264,
+      "numericMetrics": {
+        "finiteCount": 851264,
+        "mean": 70.83698605624988,
+        "standardDeviation": 83.69582718796461,
+        "minimum": 0.85,
+        "minimumFinite": 0.85,
+        "maximum": 1584.439941,
+        "maximumFinite": 1584.439941,
+        "quantiles": [
+          {
+            "point": 0.25,
+            "value": 33.84
+          },
+          {
+            "point": 0.5,
+            "value": 52.77
+          },
+          {
+            "point": 0.75,
+            "value": 79.879997
+          }
+        ],
+        "histogram": {
+          "buckets": [
+            {
+              "label": "0.85 - 32.52",
+              "leftValue": "-Infinity",
+              "rightValue": 32.52179882,
+              "count": 196535
+            },
+            {
+              "index": 1,
+              "label": "32.52 - 64.19",
+              "leftValue": 32.52179882,
+              "rightValue": 64.19359764000001,
+              "count": 331671
+            },
+            {
+              "index": 2,
+              "label": "64.19 - 95.87",
+              "leftValue": 64.19359764000001,
+              "rightValue": 95.86539646,
+              "count": 180098
+            },
+            {
+              "index": 3,
+              "label": "95.87 - 127.54",
+              "leftValue": 95.86539646,
+              "rightValue": 127.53719528,
+              "count": 68792
+            },
+            {
+              "index": 4,
+              "label": "127.54 - 159.21",
+              "leftValue": 127.53719528,
+              "rightValue": 159.2089941,
+              "count": 26719
+            },
+            {
+              "index": 5,
+              "label": "159.21 - 190.88",
+              "leftValue": 159.2089941,
+              "rightValue": 190.88079292,
+              "count": 15008
+            },
+            {
+              "index": 6,
+              "label": "190.88 - 222.55",
+              "leftValue": 190.88079292,
+              "rightValue": 222.55259174000003,
+              "count": 7696
+            },
+            {
+              "index": 7,
+              "label": "222.55 - 254.22",
+              "leftValue": 222.55259174000003,
+              "rightValue": 254.22439056000002,
+              "count": 4797
+            },
+            {
+              "index": 8,
+              "label": "254.22 - 285.90",
+              "leftValue": 254.22439056000002,
+              "rightValue": 285.89618938000007,
+              "count": 3473
+            },
+            {
+              "index": 9,
+              "label": "285.90 - 317.57",
+              "leftValue": 285.89618938000007,
+              "rightValue": 317.56798820000006,
+              "count": 2418
+            },
+            {
+              "index": 10,
+              "label": "317.57 - 349.24",
+              "leftValue": 317.56798820000006,
+              "rightValue": 349.23978702000005,
+              "count": 1649
+            },
+            {
+              "index": 11,
+              "label": "349.24 - 380.91",
+              "leftValue": 349.23978702000005,
+              "rightValue": 380.91158584000004,
+              "count": 1428
+            },
+            {
+              "index": 12,
+              "label": "380.91 - 412.58",
+              "leftValue": 380.91158584000004,
+              "rightValue": 412.58338466000004,
+              "count": 1010
+            },
+            {
+              "index": 13,
+              "label": "412.58 - 444.26",
+              "leftValue": 412.58338466000004,
+              "rightValue": 444.2551834800001,
+              "count": 927
+            },
+            {
+              "index": 14,
+              "label": "444.26 - 475.93",
+              "leftValue": 444.2551834800001,
+              "rightValue": 475.9269823000001,
+              "count": 558
+            },
+            {
+              "index": 15,
+              "label": "475.93 - 507.60",
+              "leftValue": 475.9269823000001,
+              "rightValue": 507.59878112000007,
+              "count": 779
+            },
+            {
+              "index": 16,
+              "label": "507.60 - 539.27",
+              "leftValue": 507.59878112000007,
+              "rightValue": 539.2705799400001,
+              "count": 1337
+            },
+            {
+              "index": 17,
+              "label": "539.27 - 570.94",
+              "leftValue": 539.2705799400001,
+              "rightValue": 570.9423787600001,
+              "count": 918
+            },
+            {
+              "index": 18,
+              "label": "570.94 - 602.61",
+              "leftValue": 570.9423787600001,
+              "rightValue": 602.61417758,
+              "count": 771
+            },
+            {
+              "index": 19,
+              "label": "602.61 - 634.29",
+              "leftValue": 602.61417758,
+              "rightValue": 634.2859764000001,
+              "count": 685
+            },
+            {
+              "index": 20,
+              "label": "634.29 - 665.96",
+              "leftValue": 634.2859764000001,
+              "rightValue": 665.95777522,
+              "count": 491
+            },
+            {
+              "index": 21,
+              "label": "665.96 - 697.63",
+              "leftValue": 665.95777522,
+              "rightValue": 697.6295740400001,
+              "count": 536
+            },
+            {
+              "index": 22,
+              "label": "697.63 - 729.30",
+              "leftValue": 697.6295740400001,
+              "rightValue": 729.3013728600001,
+              "count": 425
+            },
+            {
+              "index": 23,
+              "label": "729.30 - 760.97",
+              "leftValue": 729.3013728600001,
+              "rightValue": 760.9731716800001,
+              "count": 462
+            },
+            {
+              "index": 24,
+              "label": "760.97 - 792.64",
+              "leftValue": 760.9731716800001,
+              "rightValue": 792.6449705000001,
+              "count": 412
+            },
+            {
+              "index": 25,
+              "label": "792.64 - 824.32",
+              "leftValue": 792.6449705000001,
+              "rightValue": 824.31676932,
+              "count": 272
+            },
+            {
+              "index": 26,
+              "label": "824.32 - 855.99",
+              "leftValue": 824.31676932,
+              "rightValue": 855.9885681400001,
+              "count": 72
+            },
+            {
+              "index": 27,
+              "label": "855.99 - 887.66",
+              "leftValue": 855.9885681400001,
+              "rightValue": 887.6603669600001,
+              "count": 139
+            },
+            {
+              "index": 28,
+              "label": "887.66 - 919.33",
+              "leftValue": 887.6603669600001,
+              "rightValue": 919.3321657800001,
+              "count": 95
+            },
+            {
+              "index": 29,
+              "label": "919.33 - 951.00",
+              "leftValue": 919.3321657800001,
+              "rightValue": 951.0039646000001,
+              "count": 26
+            },
+            {
+              "index": 30,
+              "label": "951.00 - 982.68",
+              "leftValue": 951.0039646000001,
+              "rightValue": 982.6757634200001,
+              "count": 16
+            },
+            {
+              "index": 31,
+              "label": "982.68 - 1014.35",
+              "leftValue": 982.6757634200001,
+              "rightValue": 1014.3475622400001,
+              "count": 34
+            },
+            {
+              "index": 32,
+              "label": "1014.35 - 1046.02",
+              "leftValue": 1014.3475622400001,
+              "rightValue": 1046.01936106,
+              "count": 60
+            },
+            {
+              "index": 33,
+              "label": "1046.02 - 1077.69",
+              "leftValue": 1046.01936106,
+              "rightValue": 1077.69115988,
+              "count": 66
+            },
+            {
+              "index": 34,
+              "label": "1077.69 - 1109.36",
+              "leftValue": 1077.69115988,
+              "rightValue": 1109.3629587,
+              "count": 36
+            },
+            {
+              "index": 35,
+              "label": "1109.36 - 1141.03",
+              "leftValue": 1109.3629587,
+              "rightValue": 1141.03475752,
+              "count": 78
+            },
+            {
+              "index": 36,
+              "label": "1141.03 - 1172.71",
+              "leftValue": 1141.03475752,
+              "rightValue": 1172.70655634,
+              "count": 142
+            },
+            {
+              "index": 37,
+              "label": "1172.71 - 1204.38",
+              "leftValue": 1172.70655634,
+              "rightValue": 1204.37835516,
+              "count": 122
+            },
+            {
+              "index": 38,
+              "label": "1204.38 - 1236.05",
+              "leftValue": 1204.37835516,
+              "rightValue": 1236.05015398,
+              "count": 111
+            },
+            {
+              "index": 39,
+              "label": "1236.05 - 1267.72",
+              "leftValue": 1236.05015398,
+              "rightValue": 1267.7219528,
+              "count": 74
+            },
+            {
+              "index": 40,
+              "label": "1267.72 - 1299.39",
+              "leftValue": 1267.7219528,
+              "rightValue": 1299.39375162,
+              "count": 95
+            },
+            {
+              "index": 41,
+              "label": "1299.39 - 1331.07",
+              "leftValue": 1299.39375162,
+              "rightValue": 1331.06555044,
+              "count": 63
+            },
+            {
+              "index": 42,
+              "label": "1331.07 - 1362.74",
+              "leftValue": 1331.06555044,
+              "rightValue": 1362.73734926,
+              "count": 45
+            },
+            {
+              "index": 43,
+              "label": "1362.74 - 1394.41",
+              "leftValue": 1362.73734926,
+              "rightValue": 1394.40914808,
+              "count": 11
+            },
+            {
+              "index": 44,
+              "label": "1394.41 - 1426.08",
+              "leftValue": 1394.40914808,
+              "rightValue": 1426.0809469,
+              "count": 23
+            },
+            {
+              "index": 45,
+              "label": "1426.08 - 1457.75",
+              "leftValue": 1426.0809469,
+              "rightValue": 1457.7527457200001,
+              "count": 23
+            },
+            {
+              "index": 46,
+              "label": "1457.75 - 1489.42",
+              "leftValue": 1457.7527457200001,
+              "rightValue": 1489.42454454,
+              "count": 32
+            },
+            {
+              "index": 47,
+              "label": "1489.42 - 1521.10",
+              "leftValue": 1489.42454454,
+              "rightValue": 1521.09634336,
+              "count": 19
+            },
+            {
+              "index": 48,
+              "label": "1521.10 - 1552.77",
+              "leftValue": 1521.09634336,
+              "rightValue": 1552.76814218,
+              "count": 11
+            },
+            {
+              "index": 49,
+              "label": "1552.77 - 1584.44",
+              "leftValue": 1552.76814218,
+              "rightValue": "Infinity",
+              "count": 4
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "o8I0Q8g5P6EJaU5ZpJVx",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/prices.csv/columns/o8I0Q8g5P6EJaU5ZpJVx",
+    "legacyEntityId": 0,
+    "name": "close",
+    "tableColumnInfo": {
+      "order": 3,
+      "originalType": "",
+      "type": "NUMERIC",
+      "extendedType": "DECIMAL"
+    },
+    "tableColumnMetrics": {
+      "totalCount": 851264,
+      "nonNullCount": 851264,
+      "validCount": 851264,
+      "numericMetrics": {
+        "finiteCount": 851264,
+        "mean": 70.85710894065136,
+        "standardDeviation": 83.68963682110164,
+        "minimum": 0.86,
+        "minimumFinite": 0.86,
+        "maximum": 1578.130005,
+        "maximumFinite": 1578.130005,
+        "quantiles": [
+          {
+            "point": 0.25,
+            "value": 33.849998
+          },
+          {
+            "point": 0.5,
+            "value": 52.799999
+          },
+          {
+            "point": 0.75,
+            "value": 79.889999
+          }
+        ],
+        "histogram": {
+          "buckets": [
+            {
+              "label": "0.86 - 32.41",
+              "leftValue": "-Infinity",
+              "rightValue": 32.4054001,
+              "count": 194927
+            },
+            {
+              "index": 1,
+              "label": "32.41 - 63.95",
+              "leftValue": 32.4054001,
+              "rightValue": 63.9508002,
+              "count": 331003
+            },
+            {
+              "index": 2,
+              "label": "63.95 - 95.50",
+              "leftValue": 63.9508002,
+              "rightValue": 95.49620030000001,
+              "count": 181101
+            },
+            {
+              "index": 3,
+              "label": "95.50 - 127.04",
+              "leftValue": 95.49620030000001,
+              "rightValue": 127.04160040000001,
+              "count": 69373
+            },
+            {
+              "index": 4,
+              "label": "127.04 - 158.59",
+              "leftValue": 127.04160040000001,
+              "rightValue": 158.58700050000002,
+              "count": 26939
+            },
+            {
+              "index": 5,
+              "label": "158.59 - 190.13",
+              "leftValue": 158.58700050000002,
+              "rightValue": 190.13240060000004,
+              "count": 15248
+            },
+            {
+              "index": 6,
+              "label": "190.13 - 221.68",
+              "leftValue": 190.13240060000004,
+              "rightValue": 221.67780070000003,
+              "count": 7735
+            },
+            {
+              "index": 7,
+              "label": "221.68 - 253.22",
+              "leftValue": 221.67780070000003,
+              "rightValue": 253.22320080000003,
+              "count": 4853
+            },
+            {
+              "index": 8,
+              "label": "253.22 - 284.77",
+              "leftValue": 253.22320080000003,
+              "rightValue": 284.7686009,
+              "count": 3490
+            },
+            {
+              "index": 9,
+              "label": "284.77 - 316.31",
+              "leftValue": 284.7686009,
+              "rightValue": 316.314001,
+              "count": 2459
+            },
+            {
+              "index": 10,
+              "label": "316.31 - 347.86",
+              "leftValue": 316.314001,
+              "rightValue": 347.8594011,
+              "count": 1660
+            },
+            {
+              "index": 11,
+              "label": "347.86 - 379.40",
+              "leftValue": 347.8594011,
+              "rightValue": 379.40480120000007,
+              "count": 1439
+            },
+            {
+              "index": 12,
+              "label": "379.40 - 410.95",
+              "leftValue": 379.40480120000007,
+              "rightValue": 410.95020130000006,
+              "count": 1023
+            },
+            {
+              "index": 13,
+              "label": "410.95 - 442.50",
+              "leftValue": 410.95020130000006,
+              "rightValue": 442.49560140000006,
+              "count": 925
+            },
+            {
+              "index": 14,
+              "label": "442.50 - 474.04",
+              "leftValue": 442.49560140000006,
+              "rightValue": 474.04100150000005,
+              "count": 568
+            },
+            {
+              "index": 15,
+              "label": "474.04 - 505.59",
+              "leftValue": 474.04100150000005,
+              "rightValue": 505.58640160000004,
+              "count": 765
+            },
+            {
+              "index": 16,
+              "label": "505.59 - 537.13",
+              "leftValue": 505.58640160000004,
+              "rightValue": 537.1318017000001,
+              "count": 1285
+            },
+            {
+              "index": 17,
+              "label": "537.13 - 568.68",
+              "leftValue": 537.1318017000001,
+              "rightValue": 568.6772018,
+              "count": 951
+            },
+            {
+              "index": 18,
+              "label": "568.68 - 600.22",
+              "leftValue": 568.6772018,
+              "rightValue": 600.2226019000001,
+              "count": 786
+            },
+            {
+              "index": 19,
+              "label": "600.22 - 631.77",
+              "leftValue": 600.2226019000001,
+              "rightValue": 631.768002,
+              "count": 697
+            },
+            {
+              "index": 20,
+              "label": "631.77 - 663.31",
+              "leftValue": 631.768002,
+              "rightValue": 663.3134021000001,
+              "count": 489
+            },
+            {
+              "index": 21,
+              "label": "663.31 - 694.86",
+              "leftValue": 663.3134021000001,
+              "rightValue": 694.8588022,
+              "count": 534
+            },
+            {
+              "index": 22,
+              "label": "694.86 - 726.40",
+              "leftValue": 694.8588022,
+              "rightValue": 726.4042023000001,
+              "count": 432
+            },
+            {
+              "index": 23,
+              "label": "726.40 - 757.95",
+              "leftValue": 726.4042023000001,
+              "rightValue": 757.9496024000001,
+              "count": 455
+            },
+            {
+              "index": 24,
+              "label": "757.95 - 789.50",
+              "leftValue": 757.9496024000001,
+              "rightValue": 789.4950025,
+              "count": 423
+            },
+            {
+              "index": 25,
+              "label": "789.50 - 821.04",
+              "leftValue": 789.4950025,
+              "rightValue": 821.0404026000001,
+              "count": 296
+            },
+            {
+              "index": 26,
+              "label": "821.04 - 852.59",
+              "leftValue": 821.0404026000001,
+              "rightValue": 852.5858027,
+              "count": 78
+            },
+            {
+              "index": 27,
+              "label": "852.59 - 884.13",
+              "leftValue": 852.5858027,
+              "rightValue": 884.1312028000001,
+              "count": 116
+            },
+            {
+              "index": 28,
+              "label": "884.13 - 915.68",
+              "leftValue": 884.1312028000001,
+              "rightValue": 915.6766029,
+              "count": 118
+            },
+            {
+              "index": 29,
+              "label": "915.68 - 947.22",
+              "leftValue": 915.6766029,
+              "rightValue": 947.2220030000001,
+              "count": 28
+            },
+            {
+              "index": 30,
+              "label": "947.22 - 978.77",
+              "leftValue": 947.2220030000001,
+              "rightValue": 978.7674031,
+              "count": 16
+            },
+            {
+              "index": 31,
+              "label": "978.77 - 1010.31",
+              "leftValue": 978.7674031,
+              "rightValue": 1010.3128032000001,
+              "count": 20
+            },
+            {
+              "index": 32,
+              "label": "1010.31 - 1041.86",
+              "leftValue": 1010.3128032000001,
+              "rightValue": 1041.8582033,
+              "count": 73
+            },
+            {
+              "index": 33,
+              "label": "1041.86 - 1073.40",
+              "leftValue": 1041.8582033,
+              "rightValue": 1073.4036034,
+              "count": 61
+            },
+            {
+              "index": 34,
+              "label": "1073.40 - 1104.95",
+              "leftValue": 1073.4036034,
+              "rightValue": 1104.9490035,
+              "count": 43
+            },
+            {
+              "index": 35,
+              "label": "1104.95 - 1136.49",
+              "leftValue": 1104.9490035,
+              "rightValue": 1136.4944036,
+              "count": 79
+            },
+            {
+              "index": 36,
+              "label": "1136.49 - 1168.04",
+              "leftValue": 1136.4944036,
+              "rightValue": 1168.0398037,
+              "count": 127
+            },
+            {
+              "index": 37,
+              "label": "1168.04 - 1199.59",
+              "leftValue": 1168.0398037,
+              "rightValue": 1199.5852038,
+              "count": 125
+            },
+            {
+              "index": 38,
+              "label": "1199.59 - 1231.13",
+              "leftValue": 1199.5852038,
+              "rightValue": 1231.1306038999999,
+              "count": 110
+            },
+            {
+              "index": 39,
+              "label": "1231.13 - 1262.68",
+              "leftValue": 1231.1306038999999,
+              "rightValue": 1262.676004,
+              "count": 74
+            },
+            {
+              "index": 40,
+              "label": "1262.68 - 1294.22",
+              "leftValue": 1262.676004,
+              "rightValue": 1294.2214041,
+              "count": 99
+            },
+            {
+              "index": 41,
+              "label": "1294.22 - 1325.77",
+              "leftValue": 1294.2214041,
+              "rightValue": 1325.7668042,
+              "count": 59
+            },
+            {
+              "index": 42,
+              "label": "1325.77 - 1357.31",
+              "leftValue": 1325.7668042,
+              "rightValue": 1357.3122043,
+              "count": 55
+            },
+            {
+              "index": 43,
+              "label": "1357.31 - 1388.86",
+              "leftValue": 1357.3122043,
+              "rightValue": 1388.8576044,
+              "count": 13
+            },
+            {
+              "index": 44,
+              "label": "1388.86 - 1420.40",
+              "leftValue": 1388.8576044,
+              "rightValue": 1420.4030045,
+              "count": 20
+            },
+            {
+              "index": 45,
+              "label": "1420.40 - 1451.95",
+              "leftValue": 1420.4030045,
+              "rightValue": 1451.9484046,
+              "count": 23
+            },
+            {
+              "index": 46,
+              "label": "1451.95 - 1483.49",
+              "leftValue": 1451.9484046,
+              "rightValue": 1483.4938047,
+              "count": 36
+            },
+            {
+              "index": 47,
+              "label": "1483.49 - 1515.04",
+              "leftValue": 1483.4938047,
+              "rightValue": 1515.0392048,
+              "count": 19
+            },
+            {
+              "index": 48,
+              "label": "1515.04 - 1546.58",
+              "leftValue": 1515.0392048,
+              "rightValue": 1546.5846049,
+              "count": 11
+            },
+            {
+              "index": 49,
+              "label": "1546.58 - 1578.13",
+              "leftValue": 1546.5846049,
+              "rightValue": "Infinity",
+              "count": 5
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "AUDTOKoycsoWje7q2Uj2",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/prices.csv/columns/AUDTOKoycsoWje7q2Uj2",
+    "legacyEntityId": 0,
+    "name": "low",
+    "tableColumnInfo": {
+      "order": 4,
+      "originalType": "",
+      "type": "NUMERIC",
+      "extendedType": "DECIMAL"
+    },
+    "tableColumnMetrics": {
+      "totalCount": 851264,
+      "nonNullCount": 851264,
+      "validCount": 851264,
+      "numericMetrics": {
+        "finiteCount": 851264,
+        "mean": 70.11841409278267,
+        "standardDeviation": 82.87724553955108,
+        "minimum": 0.83,
+        "minimumFinite": 0.83,
+        "maximum": 1549.939941,
+        "maximumFinite": 1549.939941,
+        "quantiles": [
+          {
+            "point": 0.25,
+            "value": 33.48
+          },
+          {
+            "point": 0.5,
+            "value": 52.23
+          },
+          {
+            "point": 0.75,
+            "value": 79.110001
+          }
+        ],
+        "histogram": {
+          "buckets": [
+            {
+              "label": "0.83 - 31.81",
+              "leftValue": "-Infinity",
+              "rightValue": 31.812198820000003,
+              "count": 192213
+            },
+            {
+              "index": 1,
+              "label": "31.81 - 62.79",
+              "leftValue": 31.812198820000003,
+              "rightValue": 62.79439764000001,
+              "count": 329327
+            },
+            {
+              "index": 2,
+              "label": "62.79 - 93.78",
+              "leftValue": 62.79439764000001,
+              "rightValue": 93.77659646000001,
+              "count": 182958
+            },
+            {
+              "index": 3,
+              "label": "93.78 - 124.76",
+              "leftValue": 93.77659646000001,
+              "rightValue": 124.75879528000002,
+              "count": 70401
+            },
+            {
+              "index": 4,
+              "label": "124.76 - 155.74",
+              "leftValue": 124.75879528000002,
+              "rightValue": 155.74099410000002,
+              "count": 27625
+            },
+            {
+              "index": 5,
+              "label": "155.74 - 186.72",
+              "leftValue": 155.74099410000002,
+              "rightValue": 186.72319292000003,
+              "count": 15474
+            },
+            {
+              "index": 6,
+              "label": "186.72 - 217.71",
+              "leftValue": 186.72319292000003,
+              "rightValue": 217.70539174000004,
+              "count": 7999
+            },
+            {
+              "index": 7,
+              "label": "217.71 - 248.69",
+              "leftValue": 217.70539174000004,
+              "rightValue": 248.68759056000005,
+              "count": 4914
+            },
+            {
+              "index": 8,
+              "label": "248.69 - 279.67",
+              "leftValue": 248.68759056000005,
+              "rightValue": 279.66978938,
+              "count": 3589
+            },
+            {
+              "index": 9,
+              "label": "279.67 - 310.65",
+              "leftValue": 279.66978938,
+              "rightValue": 310.6519882,
+              "count": 2514
+            },
+            {
+              "index": 10,
+              "label": "310.65 - 341.63",
+              "leftValue": 310.6519882,
+              "rightValue": 341.63418702,
+              "count": 1674
+            },
+            {
+              "index": 11,
+              "label": "341.63 - 372.62",
+              "leftValue": 341.63418702,
+              "rightValue": 372.61638584,
+              "count": 1415
+            },
+            {
+              "index": 12,
+              "label": "372.62 - 403.60",
+              "leftValue": 372.61638584,
+              "rightValue": 403.59858466000003,
+              "count": 1088
+            },
+            {
+              "index": 13,
+              "label": "403.60 - 434.58",
+              "leftValue": 403.59858466000003,
+              "rightValue": 434.58078348000004,
+              "count": 935
+            },
+            {
+              "index": 14,
+              "label": "434.58 - 465.56",
+              "leftValue": 434.58078348000004,
+              "rightValue": 465.56298230000004,
+              "count": 587
+            },
+            {
+              "index": 15,
+              "label": "465.56 - 496.55",
+              "leftValue": 465.56298230000004,
+              "rightValue": 496.54518112000005,
+              "count": 682
+            },
+            {
+              "index": 16,
+              "label": "496.55 - 527.53",
+              "leftValue": 496.54518112000005,
+              "rightValue": 527.5273799400001,
+              "count": 1165
+            },
+            {
+              "index": 17,
+              "label": "527.53 - 558.51",
+              "leftValue": 527.5273799400001,
+              "rightValue": 558.5095787600001,
+              "count": 1059
+            },
+            {
+              "index": 18,
+              "label": "558.51 - 589.49",
+              "leftValue": 558.5095787600001,
+              "rightValue": 589.4917775800001,
+              "count": 798
+            },
+            {
+              "index": 19,
+              "label": "589.49 - 620.47",
+              "leftValue": 589.4917775800001,
+              "rightValue": 620.4739764000001,
+              "count": 702
+            },
+            {
+              "index": 20,
+              "label": "620.47 - 651.46",
+              "leftValue": 620.4739764000001,
+              "rightValue": 651.4561752200001,
+              "count": 498
+            },
+            {
+              "index": 21,
+              "label": "651.46 - 682.44",
+              "leftValue": 651.4561752200001,
+              "rightValue": 682.4383740400001,
+              "count": 550
+            },
+            {
+              "index": 22,
+              "label": "682.44 - 713.42",
+              "leftValue": 682.4383740400001,
+              "rightValue": 713.4205728600001,
+              "count": 425
+            },
+            {
+              "index": 23,
+              "label": "713.42 - 744.40",
+              "leftValue": 713.4205728600001,
+              "rightValue": 744.4027716800001,
+              "count": 454
+            },
+            {
+              "index": 24,
+              "label": "744.40 - 775.38",
+              "leftValue": 744.4027716800001,
+              "rightValue": 775.3849705000001,
+              "count": 426
+            },
+            {
+              "index": 25,
+              "label": "775.38 - 806.37",
+              "leftValue": 775.3849705000001,
+              "rightValue": 806.3671693200001,
+              "count": 336
+            },
+            {
+              "index": 26,
+              "label": "806.37 - 837.35",
+              "leftValue": 806.3671693200001,
+              "rightValue": 837.3493681400001,
+              "count": 116
+            },
+            {
+              "index": 27,
+              "label": "837.35 - 868.33",
+              "leftValue": 837.3493681400001,
+              "rightValue": 868.3315669600001,
+              "count": 75
+            },
+            {
+              "index": 28,
+              "label": "868.33 - 899.31",
+              "leftValue": 868.3315669600001,
+              "rightValue": 899.3137657800002,
+              "count": 152
+            },
+            {
+              "index": 29,
+              "label": "899.31 - 930.30",
+              "leftValue": 899.3137657800002,
+              "rightValue": 930.2959646000002,
+              "count": 35
+            },
+            {
+              "index": 30,
+              "label": "930.30 - 961.28",
+              "leftValue": 930.2959646000002,
+              "rightValue": 961.2781634200002,
+              "count": 22
+            },
+            {
+              "index": 31,
+              "label": "961.28 - 992.26",
+              "leftValue": 961.2781634200002,
+              "rightValue": 992.2603622400002,
+              "count": 16
+            },
+            {
+              "index": 32,
+              "label": "992.26 - 1023.24",
+              "leftValue": 992.2603622400002,
+              "rightValue": 1023.2425610600002,
+              "count": 61
+            },
+            {
+              "index": 33,
+              "label": "1023.24 - 1054.22",
+              "leftValue": 1023.2425610600002,
+              "rightValue": 1054.22475988,
+              "count": 63
+            },
+            {
+              "index": 34,
+              "label": "1054.22 - 1085.21",
+              "leftValue": 1054.22475988,
+              "rightValue": 1085.2069587,
+              "count": 53
+            },
+            {
+              "index": 35,
+              "label": "1085.21 - 1116.19",
+              "leftValue": 1085.2069587,
+              "rightValue": 1116.18915752,
+              "count": 59
+            },
+            {
+              "index": 36,
+              "label": "1116.19 - 1147.17",
+              "leftValue": 1116.18915752,
+              "rightValue": 1147.17135634,
+              "count": 106
+            },
+            {
+              "index": 37,
+              "label": "1147.17 - 1178.15",
+              "leftValue": 1147.17135634,
+              "rightValue": 1178.15355516,
+              "count": 130
+            },
+            {
+              "index": 38,
+              "label": "1178.15 - 1209.14",
+              "leftValue": 1178.15355516,
+              "rightValue": 1209.1357539800001,
+              "count": 126
+            },
+            {
+              "index": 39,
+              "label": "1209.14 - 1240.12",
+              "leftValue": 1209.1357539800001,
+              "rightValue": 1240.1179528,
+              "count": 88
+            },
+            {
+              "index": 40,
+              "label": "1240.12 - 1271.10",
+              "leftValue": 1240.1179528,
+              "rightValue": 1271.1001516200001,
+              "count": 78
+            },
+            {
+              "index": 41,
+              "label": "1271.10 - 1302.08",
+              "leftValue": 1271.1001516200001,
+              "rightValue": 1302.08235044,
+              "count": 75
+            },
+            {
+              "index": 42,
+              "label": "1302.08 - 1333.06",
+              "leftValue": 1302.08235044,
+              "rightValue": 1333.0645492600001,
+              "count": 56
+            },
+            {
+              "index": 43,
+              "label": "1333.06 - 1364.05",
+              "leftValue": 1333.0645492600001,
+              "rightValue": 1364.04674808,
+              "count": 30
+            },
+            {
+              "index": 44,
+              "label": "1364.05 - 1395.03",
+              "leftValue": 1364.04674808,
+              "rightValue": 1395.0289469000002,
+              "count": 5
+            },
+            {
+              "index": 45,
+              "label": "1395.03 - 1426.01",
+              "leftValue": 1395.0289469000002,
+              "rightValue": 1426.01114572,
+              "count": 26
+            },
+            {
+              "index": 46,
+              "label": "1426.01 - 1456.99",
+              "leftValue": 1426.01114572,
+              "rightValue": 1456.9933445400002,
+              "count": 31
+            },
+            {
+              "index": 47,
+              "label": "1456.99 - 1487.98",
+              "leftValue": 1456.9933445400002,
+              "rightValue": 1487.97554336,
+              "count": 29
+            },
+            {
+              "index": 48,
+              "label": "1487.98 - 1518.96",
+              "leftValue": 1487.97554336,
+              "rightValue": 1518.9577421800002,
+              "count": 14
+            },
+            {
+              "index": 49,
+              "label": "1518.96 - 1549.94",
+              "leftValue": 1518.9577421800002,
+              "rightValue": "Infinity",
+              "count": 10
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "a6OWFzXDw6RPtYTzUjqS",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/prices.csv/columns/a6OWFzXDw6RPtYTzUjqS",
+    "legacyEntityId": 0,
+    "name": "high",
+    "tableColumnInfo": {
+      "order": 5,
+      "originalType": "",
+      "type": "NUMERIC",
+      "extendedType": "DECIMAL"
+    },
+    "tableColumnMetrics": {
+      "totalCount": 851264,
+      "nonNullCount": 851264,
+      "validCount": 851264,
+      "numericMetrics": {
+        "finiteCount": 851264,
+        "mean": 71.54347589405448,
+        "standardDeviation": 84.46545422738427,
+        "minimum": 0.88,
+        "minimumFinite": 0.88,
+        "maximum": 1600.930054,
+        "maximumFinite": 1600.930054,
+        "quantiles": [
+          {
+            "point": 0.25,
+            "value": 34.189999
+          },
+          {
+            "point": 0.5,
+            "value": 53.310001
+          },
+          {
+            "point": 0.75,
+            "value": 80.610001
+          }
+        ],
+        "histogram": {
+          "buckets": [
+            {
+              "label": "0.88 - 32.88",
+              "leftValue": "-Infinity",
+              "rightValue": 32.88100108,
+              "count": 196430
+            },
+            {
+              "index": 1,
+              "label": "32.88 - 64.88",
+              "leftValue": 32.88100108,
+              "rightValue": 64.88200215999998,
+              "count": 332334
+            },
+            {
+              "index": 2,
+              "label": "64.88 - 96.88",
+              "leftValue": 64.88200215999998,
+              "rightValue": 96.88300323999998,
+              "count": 179972
+            },
+            {
+              "index": 3,
+              "label": "96.88 - 128.88",
+              "leftValue": 96.88300323999998,
+              "rightValue": 128.88400431999997,
+              "count": 68512
+            },
+            {
+              "index": 4,
+              "label": "128.88 - 160.89",
+              "leftValue": 128.88400431999997,
+              "rightValue": 160.88500539999995,
+              "count": 26632
+            },
+            {
+              "index": 5,
+              "label": "160.89 - 192.89",
+              "leftValue": 160.88500539999995,
+              "rightValue": 192.88600647999996,
+              "count": 15015
+            },
+            {
+              "index": 6,
+              "label": "192.89 - 224.89",
+              "leftValue": 192.88600647999996,
+              "rightValue": 224.88700755999997,
+              "count": 7630
+            },
+            {
+              "index": 7,
+              "label": "224.89 - 256.89",
+              "leftValue": 224.88700755999997,
+              "rightValue": 256.88800863999995,
+              "count": 4805
+            },
+            {
+              "index": 8,
+              "label": "256.89 - 288.89",
+              "leftValue": 256.88800863999995,
+              "rightValue": 288.88900971999993,
+              "count": 3447
+            },
+            {
+              "index": 9,
+              "label": "288.89 - 320.89",
+              "leftValue": 288.88900971999993,
+              "rightValue": 320.8900107999999,
+              "count": 2406
+            },
+            {
+              "index": 10,
+              "label": "320.89 - 352.89",
+              "leftValue": 320.8900107999999,
+              "rightValue": 352.89101187999995,
+              "count": 1656
+            },
+            {
+              "index": 11,
+              "label": "352.89 - 384.89",
+              "leftValue": 352.89101187999995,
+              "rightValue": 384.89201295999993,
+              "count": 1450
+            },
+            {
+              "index": 12,
+              "label": "384.89 - 416.89",
+              "leftValue": 384.89201295999993,
+              "rightValue": 416.8930140399999,
+              "count": 998
+            },
+            {
+              "index": 13,
+              "label": "416.89 - 448.89",
+              "leftValue": 416.8930140399999,
+              "rightValue": 448.89401511999995,
+              "count": 908
+            },
+            {
+              "index": 14,
+              "label": "448.89 - 480.90",
+              "leftValue": 448.89401511999995,
+              "rightValue": 480.89501619999993,
+              "count": 580
+            },
+            {
+              "index": 15,
+              "label": "480.90 - 512.90",
+              "leftValue": 480.89501619999993,
+              "rightValue": 512.8960172799999,
+              "count": 776
+            },
+            {
+              "index": 16,
+              "label": "512.90 - 544.90",
+              "leftValue": 512.8960172799999,
+              "rightValue": 544.89701836,
+              "count": 1378
+            },
+            {
+              "index": 17,
+              "label": "544.90 - 576.90",
+              "leftValue": 544.89701836,
+              "rightValue": 576.8980194399999,
+              "count": 897
+            },
+            {
+              "index": 18,
+              "label": "576.90 - 608.90",
+              "leftValue": 576.8980194399999,
+              "rightValue": 608.8990205199999,
+              "count": 781
+            },
+            {
+              "index": 19,
+              "label": "608.90 - 640.90",
+              "leftValue": 608.8990205199999,
+              "rightValue": 640.9000215999998,
+              "count": 685
+            },
+            {
+              "index": 20,
+              "label": "640.90 - 672.90",
+              "leftValue": 640.9000215999998,
+              "rightValue": 672.9010226799999,
+              "count": 483
+            },
+            {
+              "index": 21,
+              "label": "672.90 - 704.90",
+              "leftValue": 672.9010226799999,
+              "rightValue": 704.9020237599999,
+              "count": 529
+            },
+            {
+              "index": 22,
+              "label": "704.90 - 736.90",
+              "leftValue": 704.9020237599999,
+              "rightValue": 736.9030248399998,
+              "count": 434
+            },
+            {
+              "index": 23,
+              "label": "736.90 - 768.90",
+              "leftValue": 736.9030248399998,
+              "rightValue": 768.9040259199999,
+              "count": 475
+            },
+            {
+              "index": 24,
+              "label": "768.90 - 800.91",
+              "leftValue": 768.9040259199999,
+              "rightValue": 800.9050269999999,
+              "count": 406
+            },
+            {
+              "index": 25,
+              "label": "800.91 - 832.91",
+              "leftValue": 800.9050269999999,
+              "rightValue": 832.9060280799998,
+              "count": 260
+            },
+            {
+              "index": 26,
+              "label": "832.91 - 864.91",
+              "leftValue": 832.9060280799998,
+              "rightValue": 864.9070291599999,
+              "count": 66
+            },
+            {
+              "index": 27,
+              "label": "864.91 - 896.91",
+              "leftValue": 864.9070291599999,
+              "rightValue": 896.9080302399999,
+              "count": 148
+            },
+            {
+              "index": 28,
+              "label": "896.91 - 928.91",
+              "leftValue": 896.9080302399999,
+              "rightValue": 928.9090313199998,
+              "count": 88
+            },
+            {
+              "index": 29,
+              "label": "928.91 - 960.91",
+              "leftValue": 928.9090313199998,
+              "rightValue": 960.9100323999999,
+              "count": 18
+            },
+            {
+              "index": 30,
+              "label": "960.91 - 992.91",
+              "leftValue": 960.9100323999999,
+              "rightValue": 992.9110334799998,
+              "count": 12
+            },
+            {
+              "index": 31,
+              "label": "992.91 - 1024.91",
+              "leftValue": 992.9110334799998,
+              "rightValue": 1024.91203456,
+              "count": 36
+            },
+            {
+              "index": 32,
+              "label": "1024.91 - 1056.91",
+              "leftValue": 1024.91203456,
+              "rightValue": 1056.9130356399999,
+              "count": 61
+            },
+            {
+              "index": 33,
+              "label": "1056.91 - 1088.91",
+              "leftValue": 1056.9130356399999,
+              "rightValue": 1088.91403672,
+              "count": 63
+            },
+            {
+              "index": 34,
+              "label": "1088.91 - 1120.92",
+              "leftValue": 1088.91403672,
+              "rightValue": 1120.9150378,
+              "count": 50
+            },
+            {
+              "index": 35,
+              "label": "1120.92 - 1152.92",
+              "leftValue": 1120.9150378,
+              "rightValue": 1152.9160388799999,
+              "count": 81
+            },
+            {
+              "index": 36,
+              "label": "1152.92 - 1184.92",
+              "leftValue": 1152.9160388799999,
+              "rightValue": 1184.91703996,
+              "count": 136
+            },
+            {
+              "index": 37,
+              "label": "1184.92 - 1216.92",
+              "leftValue": 1184.91703996,
+              "rightValue": 1216.91804104,
+              "count": 134
+            },
+            {
+              "index": 38,
+              "label": "1216.92 - 1248.92",
+              "leftValue": 1216.91804104,
+              "rightValue": 1248.9190421199999,
+              "count": 89
+            },
+            {
+              "index": 39,
+              "label": "1248.92 - 1280.92",
+              "leftValue": 1248.9190421199999,
+              "rightValue": 1280.9200431999998,
+              "count": 79
+            },
+            {
+              "index": 40,
+              "label": "1280.92 - 1312.92",
+              "leftValue": 1280.9200431999998,
+              "rightValue": 1312.92104428,
+              "count": 100
+            },
+            {
+              "index": 41,
+              "label": "1312.92 - 1344.92",
+              "leftValue": 1312.92104428,
+              "rightValue": 1344.9220453599999,
+              "count": 55
+            },
+            {
+              "index": 42,
+              "label": "1344.92 - 1376.92",
+              "leftValue": 1344.9220453599999,
+              "rightValue": 1376.9230464399998,
+              "count": 48
+            },
+            {
+              "index": 43,
+              "label": "1376.92 - 1408.92",
+              "leftValue": 1376.9230464399998,
+              "rightValue": 1408.92404752,
+              "count": 9
+            },
+            {
+              "index": 44,
+              "label": "1408.92 - 1440.93",
+              "leftValue": 1408.92404752,
+              "rightValue": 1440.9250485999999,
+              "count": 25
+            },
+            {
+              "index": 45,
+              "label": "1440.93 - 1472.93",
+              "leftValue": 1440.9250485999999,
+              "rightValue": 1472.9260496799998,
+              "count": 27
+            },
+            {
+              "index": 46,
+              "label": "1472.93 - 1504.93",
+              "leftValue": 1472.9260496799998,
+              "rightValue": 1504.92705076,
+              "count": 34
+            },
+            {
+              "index": 47,
+              "label": "1504.93 - 1536.93",
+              "leftValue": 1504.92705076,
+              "rightValue": 1536.9280518399999,
+              "count": 16
+            },
+            {
+              "index": 48,
+              "label": "1536.93 - 1568.93",
+              "leftValue": 1536.9280518399999,
+              "rightValue": 1568.9290529199998,
+              "count": 7
+            },
+            {
+              "index": 49,
+              "label": "1568.93 - 1600.93",
+              "leftValue": 1568.9290529199998,
+              "rightValue": "Infinity",
+              "count": 3
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "78Pl28CK7bwg8X9mr4lP",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/prices.csv/columns/78Pl28CK7bwg8X9mr4lP",
+    "legacyEntityId": 0,
+    "name": "volume",
+    "tableColumnInfo": {
+      "order": 6,
+      "originalType": "",
+      "type": "NUMERIC",
+      "extendedType": "DECIMAL"
+    },
+    "tableColumnMetrics": {
+      "totalCount": 851264,
+      "nonNullCount": 851264,
+      "validCount": 851264,
+      "numericMetrics": {
+        "finiteCount": 851264,
+        "mean": 5415112.640027066,
+        "standardDeviation": 12494674.094182365,
+        "maximum": 859643400,
+        "maximumFinite": 859643400,
+        "quantiles": [
+          {
+            "point": 0.25,
+            "value": 1221500
+          },
+          {
+            "point": 0.5,
+            "value": 2476300
+          },
+          {
+            "point": 0.75,
+            "value": 5222500
+          }
+        ],
+        "histogram": {
+          "buckets": [
+            {
+              "label": "0.00 - 17192868.00",
+              "leftValue": "-Infinity",
+              "rightValue": 17192868,
+              "count": 805792
+            },
+            {
+              "index": 1,
+              "label": "17192868.00 - 34385736.00",
+              "leftValue": 17192868,
+              "rightValue": 34385736,
+              "count": 29308
+            },
+            {
+              "index": 2,
+              "label": "34385736.00 - 51578604.00",
+              "leftValue": 34385736,
+              "rightValue": 51578604,
+              "count": 8126
+            },
+            {
+              "index": 3,
+              "label": "51578604.00 - 68771472.00",
+              "leftValue": 51578604,
+              "rightValue": 68771472,
+              "count": 3278
+            },
+            {
+              "index": 4,
+              "label": "68771472.00 - 85964340.00",
+              "leftValue": 68771472,
+              "rightValue": 85964340,
+              "count": 1561
+            },
+            {
+              "index": 5,
+              "label": "85964340.00 - 103157208.00",
+              "leftValue": 85964340,
+              "rightValue": 103157208,
+              "count": 895
+            },
+            {
+              "index": 6,
+              "label": "103157208.00 - 120350076.00",
+              "leftValue": 103157208,
+              "rightValue": 120350076,
+              "count": 593
+            },
+            {
+              "index": 7,
+              "label": "120350076.00 - 137542944.00",
+              "leftValue": 120350076,
+              "rightValue": 137542944,
+              "count": 417
+            },
+            {
+              "index": 8,
+              "label": "137542944.00 - 154735812.00",
+              "leftValue": 137542944,
+              "rightValue": 154735812,
+              "count": 310
+            },
+            {
+              "index": 9,
+              "label": "154735812.00 - 171928680.00",
+              "leftValue": 154735812,
+              "rightValue": 171928680,
+              "count": 221
+            },
+            {
+              "index": 10,
+              "label": "171928680.00 - 189121548.00",
+              "leftValue": 171928680,
+              "rightValue": 189121548,
+              "count": 152
+            },
+            {
+              "index": 11,
+              "label": "189121548.00 - 206314416.00",
+              "leftValue": 189121548,
+              "rightValue": 206314416,
+              "count": 139
+            },
+            {
+              "index": 12,
+              "label": "206314416.00 - 223507284.00",
+              "leftValue": 206314416,
+              "rightValue": 223507284,
+              "count": 96
+            },
+            {
+              "index": 13,
+              "label": "223507284.00 - 240700152.00",
+              "leftValue": 223507284,
+              "rightValue": 240700152,
+              "count": 81
+            },
+            {
+              "index": 14,
+              "label": "240700152.00 - 257893020.00",
+              "leftValue": 240700152,
+              "rightValue": 257893020,
+              "count": 70
+            },
+            {
+              "index": 15,
+              "label": "257893020.00 - 275085888.00",
+              "leftValue": 257893020,
+              "rightValue": 275085888,
+              "count": 41
+            },
+            {
+              "index": 16,
+              "label": "275085888.00 - 292278756.00",
+              "leftValue": 275085888,
+              "rightValue": 292278756,
+              "count": 34
+            },
+            {
+              "index": 17,
+              "label": "292278756.00 - 309471624.00",
+              "leftValue": 292278756,
+              "rightValue": 309471624,
+              "count": 31
+            },
+            {
+              "index": 18,
+              "label": "309471624.00 - 326664492.00",
+              "leftValue": 309471624,
+              "rightValue": 326664492,
+              "count": 23
+            },
+            {
+              "index": 19,
+              "label": "326664492.00 - 343857360.00",
+              "leftValue": 326664492,
+              "rightValue": 343857360,
+              "count": 18
+            },
+            {
+              "index": 20,
+              "label": "343857360.00 - 361050228.00",
+              "leftValue": 343857360,
+              "rightValue": 361050228,
+              "count": 13
+            },
+            {
+              "index": 21,
+              "label": "361050228.00 - 378243096.00",
+              "leftValue": 361050228,
+              "rightValue": 378243096,
+              "count": 12
+            },
+            {
+              "index": 22,
+              "label": "378243096.00 - 395435964.00",
+              "leftValue": 378243096,
+              "rightValue": 395435964,
+              "count": 6
+            },
+            {
+              "index": 23,
+              "label": "395435964.00 - 412628832.00",
+              "leftValue": 395435964,
+              "rightValue": 412628832,
+              "count": 3
+            },
+            {
+              "index": 24,
+              "label": "412628832.00 - 429821700.00",
+              "leftValue": 412628832,
+              "rightValue": 429821700,
+              "count": 3
+            },
+            {
+              "index": 25,
+              "label": "429821700.00 - 447014568.00",
+              "leftValue": 429821700,
+              "rightValue": 447014568,
+              "count": 8
+            },
+            {
+              "index": 26,
+              "label": "447014568.00 - 464207436.00",
+              "leftValue": 447014568,
+              "rightValue": 464207436,
+              "count": 4
+            },
+            {
+              "index": 27,
+              "label": "464207436.00 - 481400304.00",
+              "leftValue": 464207436,
+              "rightValue": 481400304,
+              "count": 5
+            },
+            {
+              "index": 28,
+              "label": "481400304.00 - 498593172.00",
+              "leftValue": 481400304,
+              "rightValue": 498593172,
+              "count": 6
+            },
+            {
+              "index": 29,
+              "label": "498593172.00 - 515786040.00",
+              "leftValue": 498593172,
+              "rightValue": 515786040,
+              "count": 2
+            },
+            {
+              "index": 30,
+              "label": "515786040.00 - 532978908.00",
+              "leftValue": 515786040,
+              "rightValue": 532978908
+            },
+            {
+              "index": 31,
+              "label": "532978908.00 - 550171776.00",
+              "leftValue": 532978908,
+              "rightValue": 550171776,
+              "count": 2
+            },
+            {
+              "index": 32,
+              "label": "550171776.00 - 567364644.00",
+              "leftValue": 550171776,
+              "rightValue": 567364644,
+              "count": 4
+            },
+            {
+              "index": 33,
+              "label": "567364644.00 - 584557512.00",
+              "leftValue": 567364644,
+              "rightValue": 584557512,
+              "count": 2
+            },
+            {
+              "index": 34,
+              "label": "584557512.00 - 601750380.00",
+              "leftValue": 584557512,
+              "rightValue": 601750380,
+              "count": 2
+            },
+            {
+              "index": 35,
+              "label": "601750380.00 - 618943248.00",
+              "leftValue": 601750380,
+              "rightValue": 618943248,
+              "count": 2
+            },
+            {
+              "index": 36,
+              "label": "618943248.00 - 636136116.00",
+              "leftValue": 618943248,
+              "rightValue": 636136116
+            },
+            {
+              "index": 37,
+              "label": "636136116.00 - 653328984.00",
+              "leftValue": 636136116,
+              "rightValue": 653328984
+            },
+            {
+              "index": 38,
+              "label": "653328984.00 - 670521852.00",
+              "leftValue": 653328984,
+              "rightValue": 670521852,
+              "count": 2
+            },
+            {
+              "index": 39,
+              "label": "670521852.00 - 687714720.00",
+              "leftValue": 670521852,
+              "rightValue": 687714720,
+              "count": 1
+            },
+            {
+              "index": 40,
+              "label": "687714720.00 - 704907588.00",
+              "leftValue": 687714720,
+              "rightValue": 704907588
+            },
+            {
+              "index": 41,
+              "label": "704907588.00 - 722100456.00",
+              "leftValue": 704907588,
+              "rightValue": 722100456
+            },
+            {
+              "index": 42,
+              "label": "722100456.00 - 739293324.00",
+              "leftValue": 722100456,
+              "rightValue": 739293324
+            },
+            {
+              "index": 43,
+              "label": "739293324.00 - 756486192.00",
+              "leftValue": 739293324,
+              "rightValue": 756486192
+            },
+            {
+              "index": 44,
+              "label": "756486192.00 - 773679060.00",
+              "leftValue": 756486192,
+              "rightValue": 773679060
+            },
+            {
+              "index": 45,
+              "label": "773679060.00 - 790871928.00",
+              "leftValue": 773679060,
+              "rightValue": 790871928
+            },
+            {
+              "index": 46,
+              "label": "790871928.00 - 808064796.00",
+              "leftValue": 790871928,
+              "rightValue": 808064796
+            },
+            {
+              "index": 47,
+              "label": "808064796.00 - 825257664.00",
+              "leftValue": 808064796,
+              "rightValue": 825257664
+            },
+            {
+              "index": 48,
+              "label": "825257664.00 - 842450532.00",
+              "leftValue": 825257664,
+              "rightValue": 842450532
+            },
+            {
+              "index": 49,
+              "label": "842450532.00 - 859643400.00",
+              "leftValue": 842450532,
+              "rightValue": "Infinity",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  }
+]

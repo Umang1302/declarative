@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Avatar,
   Badge,
@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import Image from "next/image";
-
+import { Progress } from "@material-tailwind/react";
 import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -26,26 +26,83 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { Doughnut } from "react-chartjs-2";
-import { Chart, ArcElement } from "chart.js";
+import {
+  Chart,
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import MutualFunds1 from "../../../mutualFunds1.json";
+import NYSESecurity from "../../../NYSE_SECURITY_GRAPH.json";
+import NYSEPrice from "../../../NYSE_PRICE_GRAPH.json";
+import { Bar } from "react-chartjs-2";
+import { usePathname } from "next/navigation";
+
 Chart.register(ArcElement);
+Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top" as const,
+    },
+    title: {
+      display: true,
+      text: "Chart.js Bar Chart",
+    },
+  },
+};
+
+export const data2 = {
+  datasets: [
+    {
+      label: "Dataset 1",
+      data: 2,
+      backgroundColor: "rgba(255, 99, 132, 0.5)",
+    },
+  ],
+};
 
 export default function GraphCard({ data }: any) {
+  const pathname = usePathname();
+
+  const [json, setJson] = useState<any>([]);
+
   useEffect(() => {
+    const arr = pathname.split("/");
+    const id = arr[arr.length - 1];
     console.log(
       "HEllo",
       MutualFunds1[0]!.tableColumnMetrics!.stringMetrics!.uniqueValueCount
     );
-  });
+    switch (id) {
+      case "0":
+      case "3":
+      case "4":
+        setJson(MutualFunds1);
+        break;
+      case "1":
+        setJson(NYSESecurity);
+        break;
+      default:
+        setJson(NYSEPrice);
+        break;
+    }
+  }, []);
 
   return (
     <div className="w-full grid  gap-x-4 md:grid-cols-1 3xl:grid-cols-2 px-3 gap-y-2">
-      {MutualFunds1.map((item, index) => (
+      {json.map((item: any, index: any) => (
         <div key={index}>
-          {item.tableColumnMetrics.stringMetrics &&
+          {item.tableColumnMetrics &&
+          item.tableColumnMetrics.stringMetrics &&
           item.tableColumnMetrics.stringMetrics.uniqueValueCount ? (
             <>
-              {" "}
               <div className="shadow-xl rounded-lg px-9 py-5">
                 <div
                   className={`flex justify-between border-b-[1px] border-[#C4C4C4] pb-3 ${cabin.className}`}
@@ -176,7 +233,7 @@ export default function GraphCard({ data }: any) {
                       </div>
                       <div className="w-full flex justify-between ga-x-3">
                         <p>Most Common</p>
-                        <p>
+                        <p className="w-[60px] truncate">
                           {
                             item!.tableColumnMetrics!.stringMetrics
                               .mostCommonValue
@@ -190,7 +247,214 @@ export default function GraphCard({ data }: any) {
               </div>
             </>
           ) : (
-            <></>
+            <div className="shadow-xl w-full h-[380px] rounded-lg px-9 py-5">
+              <div>
+                <div
+                  className={`flex justify-between border-b-[1px] border-[#C4C4C4] pb-3 ${cabin.className}`}
+                >
+                  <div className="w-[70%]">
+                    <p className="font-[600] text-[20px]">
+                      <span className="mr-3 font-[600] text-[20px] border-b-[2px] border-black">
+                        #
+                      </span>
+                      {item?.name}
+                    </p>
+                    <p className="text-[14px] w-[70%] truncate">
+                      {item.description}
+                    </p>
+                  </div>
+                  {/* <div className="flex flex-col items-center">
+                    <p className="text-[48px] text-black">
+                      {item!.tableColumnMetrics!.stringMetrics &&
+                      item!.tableColumnMetrics!.stringMetrics.uniqueValueCount
+                        ? item!.tableColumnMetrics!.stringMetrics!
+                            .uniqueValueCount
+                        : "NONE"}
+                    </p>
+                    <p
+                      className={`text-[18px] font-[600] text-black ${cabin.className}`}
+                    >
+                      Unique Values
+                    </p>
+                  </div> */}
+                </div>
+              </div>
+              <div className=" h-[350px] ">
+                <div className="flex">
+                  <div className="w-[70%] h-[180px]">
+                    <Bar
+                      data={{
+                        labels: [""],
+                        datasets: [
+                          {
+                            label: `${item.name}`,
+                            data: [
+                              `${
+                                item.tableColumnMetrics &&
+                                item.tableColumnMetrics.numericMetrics &&
+                                item.tableColumnMetrics.numericMetrics.mean
+                              }`,
+                            ],
+                            backgroundColor: ["#7FE588"],
+                            borderColor: "white",
+                          },
+                        ],
+                      }}
+                      options={{
+                        plugins: {
+                          legend: {
+                            position: "top" as const,
+                          },
+                          title: {
+                            display: true,
+                            text: "",
+                          },
+                          tooltip: {
+                            enabled: false,
+                          },
+                        },
+                      }}
+                    />
+                  </div>
+                  <div className="w-[50%] px-4">
+                    <div
+                      key={index}
+                      className="flex w-full justify-between gap-x-6 text-black"
+                    >
+                      <p>Mean</p>
+                      <p>
+                        {/**ts-ignore */}
+                        {(
+                          item!.tableColumnMetrics!.numericMetrics!.mean /
+                          1000000
+                        ).toFixed(2)}
+                        k
+                      </p>
+                    </div>
+                    <div
+                      key={index}
+                      className="flex w-full justify-between gap-x-6 text-black"
+                    >
+                      <p>Standard Deviation</p>
+                      <p>
+                        {(
+                          +item.tableColumnMetrics.numericMetrics
+                            ?.standardDeviation / 1000000
+                        ).toFixed(2)}
+                        k
+                      </p>
+                    </div>
+                    <div
+                      key={index}
+                      className="flex gap-x-6 mt-3 text-black w-full justify-between"
+                    >
+                      <p>Point</p>
+                      <p>Value</p>
+                    </div>
+                    {item.tableColumnMetrics &&
+                      item.tableColumnMetrics.numericMetrics &&
+                      item.tableColumnMetrics.numericMetrics.quantiles.map(
+                        (i: any, index: number) => (
+                          <div key={index}>
+                            <div className="flex gap-x-6 w-full justify-between">
+                              <p>{i.point}</p>
+                              <p>{i.value}</p>
+                            </div>
+                          </div>
+                        )
+                      )}
+                  </div>
+                </div>
+                <div className="w-full flex justify-between">
+                  <div className="w-[56%] mt-2">
+                    <Progress
+                      className="bg-[#F65A27]"
+                      value={
+                        +(
+                          +(
+                            (item!.tableColumnMetrics!.validCount /
+                              item!.tableColumnMetrics!.totalCount) *
+                            100
+                          ) - 10
+                        ).toFixed(2)
+                      }
+                    />
+                    <div className="w-full mt-5 flex flex-col gap-y-3">
+                      <div className="flex justify-between">
+                        <p>Unique</p>
+                        <p>
+                          {" "}
+                          {(
+                            item!.tableColumnMetrics!.validCount / 1000
+                          ).toFixed(2)}
+                          k
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-[40%]">
+                    <div className="w-full flex flex-col gap-y-3">
+                      <div className="flex justify-between">
+                        <div className="flex items-center gap-x-2">
+                          <div className="w-4 h-4 bg-[#4D91FF] rounded-full"></div>
+                          <p>Valid</p>
+                        </div>
+                        <div className="flex w-full justify-end gap-x-5">
+                          <p>
+                            {(
+                              item!.tableColumnMetrics!.validCount / 1000
+                            ).toFixed(2)}
+                            k
+                          </p>
+                          <p>
+                            {(
+                              (item!.tableColumnMetrics!.validCount /
+                                item!.tableColumnMetrics!.totalCount) *
+                              100
+                            ).toFixed(2)}
+                            %
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex justify-between">
+                        <div className="flex items-center gap-x-2">
+                          <div className="w-4 h-4 bg-[#FFBC35] rounded-full"></div>
+                          <p>Mismatched</p>
+                        </div>
+                        <div className="flex w-full justify-end gap-x-5">
+                          <p>0</p>
+                          <p>0%</p>
+                        </div>
+                      </div>
+                      <div className="flex justify-between">
+                        <div className="flex items-center gap-x-2">
+                          <div className="w-4 h-4 bg-[#F65A27] rounded-full"></div>
+                          <p>Missing</p>
+                        </div>
+                        <div className="flex w-full justify-end gap-x-5">
+                          <p>
+                            {item!.tableColumnMetrics!.nullCount
+                              ? String(item!.tableColumnMetrics!.nullCount)
+                              : 0}
+                          </p>
+                          <p>
+                            {" "}
+                            {item!.tableColumnMetrics!.nullCount
+                              ? (
+                                  (item!.tableColumnMetrics!.nullCount /
+                                    item!.tableColumnMetrics!.totalCount) *
+                                  100
+                                ).toFixed(2)
+                              : 0}
+                            %
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
         </div>
       ))}

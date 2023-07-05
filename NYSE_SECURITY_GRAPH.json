@@ -1,0 +1,359 @@
+[
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "QBHYSRhC4Gjm00S3mpn6",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/securities.csv/columns/QBHYSRhC4Gjm00S3mpn6",
+    "legacyEntityId": 0,
+    "name": "Ticker symbol",
+    "tableColumnInfo": {
+      "order": 0,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 505,
+      "nonNullCount": 505,
+      "validCount": 505,
+      "stringMetrics": {
+        "mostCommonValue": "MMM",
+        "mostCommonValueCount": 1,
+        "counts": [
+          {
+            "key": "MMM",
+            "value": 1
+          },
+          {
+            "key": "ABT",
+            "value": 1
+          },
+          {
+            "key": "ABBV",
+            "value": 1
+          },
+          {
+            "key": "ACN",
+            "value": 1
+          },
+          {
+            "key": "ATVI",
+            "value": 1
+          }
+        ],
+        "uniqueValueCount": 505
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "nnKXVBZoaFNrXDXZ95Ao",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/securities.csv/columns/nnKXVBZoaFNrXDXZ95Ao",
+    "legacyEntityId": 0,
+    "name": "Security",
+    "tableColumnInfo": {
+      "order": 1,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 505,
+      "nonNullCount": 505,
+      "validCount": 505,
+      "stringMetrics": {
+        "mostCommonValue": "Under Armour",
+        "mostCommonValueCount": 2,
+        "counts": [
+          {
+            "key": "Under Armour",
+            "value": 2
+          },
+          {
+            "key": "3M Company",
+            "value": 1
+          },
+          {
+            "key": "Abbott Laboratories",
+            "value": 1
+          },
+          {
+            "key": "AbbVie",
+            "value": 1
+          },
+          {
+            "key": "Accenture plc",
+            "value": 1
+          }
+        ],
+        "uniqueValueCount": 504
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "t8vjWvbBktw16ZgCin4Y",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/securities.csv/columns/t8vjWvbBktw16ZgCin4Y",
+    "legacyEntityId": 0,
+    "name": "SEC filings",
+    "tableColumnInfo": {
+      "order": 2,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 505,
+      "nonNullCount": 505,
+      "validCount": 505,
+      "stringMetrics": {
+        "mostCommonValue": "reports",
+        "mostCommonValueCount": 505,
+        "counts": [
+          {
+            "key": "reports",
+            "value": 505
+          }
+        ],
+        "uniqueValueCount": 1
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "VhAaaxOBv9yLDkIePha0",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/securities.csv/columns/VhAaaxOBv9yLDkIePha0",
+    "legacyEntityId": 0,
+    "name": "GICS Sector",
+    "tableColumnInfo": {
+      "order": 3,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 505,
+      "nonNullCount": 505,
+      "validCount": 505,
+      "stringMetrics": {
+        "mostCommonValue": "Consumer Discretionary",
+        "mostCommonValueCount": 85,
+        "counts": [
+          {
+            "key": "Consumer Discretionary",
+            "value": 85
+          },
+          {
+            "key": "Industrials",
+            "value": 69
+          },
+          {
+            "key": "Information Technology",
+            "value": 68
+          },
+          {
+            "key": "Financials",
+            "value": 64
+          },
+          {
+            "key": "Health Care",
+            "value": 59
+          }
+        ],
+        "uniqueValueCount": 11
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "xTx81N1KAnoUNanwKiFO",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/securities.csv/columns/xTx81N1KAnoUNanwKiFO",
+    "legacyEntityId": 0,
+    "name": "GICS Sub Industry",
+    "tableColumnInfo": {
+      "order": 4,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 505,
+      "nonNullCount": 505,
+      "validCount": 505,
+      "stringMetrics": {
+        "mostCommonValue": "Industrial Conglomerates",
+        "mostCommonValueCount": 21,
+        "counts": [
+          {
+            "key": "Industrial Conglomerates",
+            "value": 21
+          },
+          {
+            "key": "Internet Software \u0026 Services",
+            "value": 20
+          },
+          {
+            "key": "Oil \u0026 Gas Exploration \u0026 Production",
+            "value": 18
+          },
+          {
+            "key": "Health Care Equipment",
+            "value": 17
+          },
+          {
+            "key": "REITs",
+            "value": 16
+          }
+        ],
+        "uniqueValueCount": 124
+      }
+    }
+  },
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "r6v1HjpGA3gya0oOG0jS",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/securities.csv/columns/r6v1HjpGA3gya0oOG0jS",
+    "legacyEntityId": 0,
+    "name": "Address of Headquarters",
+    "tableColumnInfo": {
+      "order": 5,
+      "originalType": ""
+    },
+    "tableColumnMetrics": {
+      "totalCount": 505,
+      "nonNullCount": 505,
+      "validCount": 505,
+      "stringMetrics": {
+        "mostCommonValue": "New York, New York",
+        "mostCommonValueCount": 47,
+        "counts": [
+          {
+            "key": "New York, New York",
+            "value": 47
+          },
+          {
+            "key": "Houston, Texas",
+            "value": 19
+          },
+          {
+            "key": "Atlanta, Georgia",
+            "value": 13
+          },
+          {
+            "key": "Dublin, Ireland",
+            "value": 10
+          },
+          {
+            "key": "Chicago, Illinois",
+            "value": 9
+          }
+        ],
+        "uniqueValueCount": 264
+      }
+    }
+  },
+
+  {
+    "type": "OBJECT_TYPE_TABLE_COLUMN",
+    "key": "R8EcEKUKm4j8ICi3XdbJ",
+    "path": "J6TuKzaFf4jaSo7XIDwU/versions/vkKTMrAP1lYIwqxNy9f1/files/securities.csv/columns/R8EcEKUKm4j8ICi3XdbJ",
+    "legacyEntityId": 0,
+    "name": "CIK",
+    "description": "Central Index Key, Used to identify company, person, or entity.",
+    "tableColumnInfo": {
+      "order": 7,
+      "originalType": "",
+      "type": "NUMERIC",
+      "extendedType": "INTEGER"
+    },
+    "tableColumnMetrics": {
+      "totalCount": 505,
+      "nonNullCount": 505,
+      "validCount": 505,
+      "numericMetrics": {
+        "finiteCount": 505,
+        "mean": 707448.9663366337,
+        "standardDeviation": 513927.8984555592,
+        "minimum": 1800,
+        "minimumFinite": 1800,
+        "maximum": 1659166,
+        "maximumFinite": 1659166,
+        "quantiles": [
+          {
+            "point": 0.25,
+            "value": 86312
+          },
+          {
+            "point": 0.5,
+            "value": 831001
+          },
+          {
+            "point": 0.75,
+            "value": 1075531
+          }
+        ],
+        "histogram": {
+          "buckets": [
+            {
+              "label": "1800.00 - 167536.60",
+              "leftValue": "-Infinity",
+              "rightValue": 167536.6,
+              "count": 157
+            },
+            {
+              "index": 1,
+              "label": "167536.60 - 333273.20",
+              "leftValue": 167536.6,
+              "rightValue": 333273.2,
+              "count": 20
+            },
+            {
+              "index": 2,
+              "label": "333273.20 - 499009.80",
+              "leftValue": 333273.2,
+              "rightValue": 499009.80000000005,
+              "count": 7
+            },
+            {
+              "index": 3,
+              "label": "499009.80 - 664746.40",
+              "leftValue": 499009.80000000005,
+              "rightValue": 664746.4
+            },
+            {
+              "index": 4,
+              "label": "664746.40 - 830483.00",
+              "leftValue": 664746.4,
+              "rightValue": 830483,
+              "count": 68
+            },
+            {
+              "index": 5,
+              "label": "830483.00 - 996219.60",
+              "leftValue": 830483,
+              "rightValue": 996219.6000000001,
+              "count": 70
+            },
+            {
+              "index": 6,
+              "label": "996219.60 - 1161956.20",
+              "leftValue": 996219.6000000001,
+              "rightValue": 1161956.2,
+              "count": 100
+            },
+            {
+              "index": 7,
+              "label": "1161956.20 - 1327692.80",
+              "leftValue": 1161956.2,
+              "rightValue": 1327692.8,
+              "count": 20
+            },
+            {
+              "index": 8,
+              "label": "1327692.80 - 1493429.40",
+              "leftValue": 1327692.8,
+              "rightValue": 1493429.4000000001,
+              "count": 33
+            },
+            {
+              "index": 9,
+              "label": "1493429.40 - 1659166.00",
+              "leftValue": 1493429.4000000001,
+              "rightValue": "Infinity",
+              "count": 30
+            }
+          ]
+        }
+      }
+    }
+  }
+]
