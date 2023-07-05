@@ -23,6 +23,7 @@ import Image from "next/image";
 import { Cabin } from "next/font/google";
 import { useRouter, usePathname } from "next/navigation";
 import OnboardingPage1 from "../onboarding/Page1";
+import OnboardingPage2 from "../onboarding/Page2";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -35,6 +36,16 @@ export default function OnboardingHeading({ setDataSetVal, dataSetVal }: any) {
       header: "Select a Data Source",
       content: (
         <OnboardingPage1
+          setSelected={setSelected}
+          dataSetVal={dataSetVal}
+          setDataSetVal={setDataSetVal}
+        />
+      ),
+    },
+    {
+      header: "Congifure Data Source",
+      content: (
+        <OnboardingPage2
           setSelected={setSelected}
           dataSetVal={dataSetVal}
           setDataSetVal={setDataSetVal}
@@ -55,7 +66,9 @@ export default function OnboardingHeading({ setDataSetVal, dataSetVal }: any) {
 
   return (
     <>
-      <div className={`w-full h-full  py-10 text-black ${cabin.className}`}>
+      <div
+        className={`w-full h-[95vh] overflow-y-auto py-10 text-black ${cabin.className} pr-4`}
+      >
         <div className="w-full flex justify-center">
           <p className="text-[48px] font-[600]">Onboard a New Product</p>
         </div>
@@ -76,7 +89,7 @@ export default function OnboardingHeading({ setDataSetVal, dataSetVal }: any) {
             </button>
           ))}
         </div>
-        <div>
+        <div className="">
           {tabs.map((item, i) => {
             if (i === select) {
               return <>{item.content && item.content}</>;

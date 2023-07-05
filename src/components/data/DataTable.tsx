@@ -421,7 +421,7 @@ export default function Example({ data }: any) {
 
           <div
             ref={labelRef}
-            className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[74vw] 3xl:w-[76.5vw] max-w-[1460px] overflow-x-auto flex justify-between"
+            className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[70vw] 3xl:w-[76.5vw] max-w-[1460px] overflow-x-auto flex justify-between"
           >
             <table className="w-full table-auto text-left">
               <thead>
@@ -524,7 +524,7 @@ export default function Example({ data }: any) {
                           <div className="flex items-center gap-3">
                             <div className="flex flex-col">
                               <p
-                                className={` ${cabin.className} font-normal w-[100px] truncate text-black`}
+                                className={` ${cabin.className} font-normal w-[100px] text-[14px] truncate text-black`}
                               >
                                 {item[item1]}
                               </p>

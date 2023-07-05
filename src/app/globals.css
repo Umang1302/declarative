@@ -30,3 +30,10 @@ input::-webkit-inner-spin-button {
 ::-webkit-scrollbar:horizontal {
   display: none;
 }
+
+.descriptionOn {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}

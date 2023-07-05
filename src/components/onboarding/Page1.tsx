@@ -12,6 +12,7 @@ import { Cabin } from "next/font/google";
 import Intents from "../product/Intents";
 import DataTab from "../data/DataTab";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 const cabin = Cabin({ subsets: ["latin"] });
 
 export default function TransparentTabs({
@@ -31,34 +32,40 @@ export default function TransparentTabs({
   const [showNext, setShowNext] = useState(false);
   const categoryData = [
     {
-      title: "Title 1",
-      label: "Label 1",
-      description: "Description 1",
+      title: "Amazon Aurora MySQL",
+      icon: "https://uploads-ssl.webflow.com/6130fa1501794e37c21867cf/6376b04c7e468449da371dba_amazon%20aurora.svg",
+      description:
+        "Amazon Aurora is a MySQL and PostgreSQL compatible relational database built for the cloud, that combines the performance and availability of high-end commercial databases with the simplicity and cost-effectiveness of open source databases.",
     },
     {
-      title: "Title 2",
-      label: "Label 2",
-      description: "Description 2",
+      title: "BigQuery",
+      icon: "https://uploads-ssl.webflow.com/6130fa1501794e37c21867cf/63f4eb0ae7eeb0527efa85a2_bigquery.svg",
+      description:
+        "Fivetran has recently partnered with BigQuery Data Transfer Service; allowing users to manage Fivetran data connectors within the Google Cloud Platform.",
     },
     {
-      title: "Title 3",
-      label: "Label 3",
-      description: "Description 3",
+      title: "Cosmos DB",
+      icon: "	https://uploads-ssl.webflow.com/6130fa1501794e37c21867cf/6446892493b55c2da0048d12_azure.svg",
+      description:
+        "Fivetran’s Cosmos DB connector is a fully managed data integration. Our ELT connector extracts a deep level of data from the source, replicates and loads that data in your centralized data warehouse or data lake, represented in an easy-to-navigate schema, where analysts can easily access and query it alongside the rest of your organization’s critical information.",
     },
     {
-      title: "Title 4",
-      label: "Label 4",
-      description: "Description 4",
+      title: "Db2 for i",
+      icon: "https://uploads-ssl.webflow.com/6130fa1501794e37c21867cf/638e6257d0b8def9e6ffc6d6_db2.svg",
+      description:
+        "Db2 for i is a Relational Database Management System integrated with IBM i. Fivetran's integration platform replicates data from your Db2 for i source database and loads it into your destination.",
     },
     {
-      title: "Title 5",
-      label: "Label 5",
-      description: "Description 5",
+      title: "FireBase",
+      icon: "https://uploads-ssl.webflow.com/6130fa1501794e37c21867cf/64468900abf5d66a3613de28_Firebase.svg",
+      description:
+        "Fivetran’s Firebase connector is a fully managed data integration. Our ELT connector extracts a deep level of data from the source, replicates and loads that data in your centralized data warehouse or data lake, represented in an easy-to-navigate schema, where analysts can easily access and query it alongside the rest of your organization’s critical information.",
     },
     {
-      title: "Title 6",
-      label: "Label 6",
-      description: "Description 6",
+      title: "Elasticsearch",
+      icon: "	https://uploads-ssl.webflow.com/6130fa1501794e37c21867cf/644688f682774adccda1d7cb_Elasticsearch.svg",
+      description:
+        "Fivetran’s Elasticsearch connector is a fully managed data integration. Our ELT connector extracts a deep level of data from the source, replicates and loads that data in your centralized data warehouse or data lake, represented in an easy-to-navigate schema, where analysts can easily access and query it alongside the rest of your organization’s critical information.",
     },
   ];
 
@@ -69,12 +76,19 @@ export default function TransparentTabs({
           <div className="grid grid-cols-3 mt-[4rem] gap-x-10 gap-y-10">
             {categoryData.map((item, index) => (
               <div
+                onClick={() => {}}
                 key={index}
                 className="bg-white cursor-pointer rounded-[10px] shadow-xl h-[250px] p-5"
               >
                 <div className="flex justify-between">
-                  <p className="text-[24px] font-[900]">{item.title}</p>
+                  <div>
+                    <div className="relative w-10 h-10">
+                      <Image src={`${item.icon}`} alt="brand" fill />
+                    </div>
+                    <p className="mt-3 text-[24px] font-[900]">{item.title}</p>
+                  </div>
                   <svg
+                    className="mt-1"
                     width="14"
                     height="25"
                     viewBox="0 0 14 25"
@@ -91,12 +105,9 @@ export default function TransparentTabs({
                   </svg>
                 </div>
                 <div className="mt-5 text-[16px]">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quas assumenda unde iure dolorem dolores autem voluptate.
-                  </p>
+                  <p className="descriptionOn">{item.description}</p>
                 </div>
-                <div className="mt-10">{item.label}</div>
+                {/* <div className="mt-10">{item.label}</div> */}
               </div>
             ))}
           </div>
@@ -124,7 +135,7 @@ export default function TransparentTabs({
           <div className="w-full flex justify-center mt-4">
             <button
               onClick={() => {
-                setShowNext(true);
+                setSelected(1);
               }}
               className="bg-[#F65A27] w-[14%] rounded-[10px] text-[18px] text-white"
             >
