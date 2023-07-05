@@ -233,7 +233,7 @@ export default function Metrics({ data }: any) {
   const [loader, setLoader] = useState(false);
 
   useEffect(() => {
-    setLoader(true);
+    setLoader(false);
     console.log(
       data.metrics[+selectRule].type,
       "data.metrics[+selectRule].type",
@@ -242,9 +242,9 @@ export default function Metrics({ data }: any) {
     setMetricsTab(data.metrics[+selectRule].type);
     setTab1(data.metrics[+selectRule].scope);
     setTab2(data.metrics[+selectRule].order);
-    setTimeout(() => {
-      setLoader(false);
-    }, 1000);
+    // setTimeout(() => {
+    //   setLoader(false);
+    // }, 1000);
   }, [metricsTabRef.current, selectRule, rules]);
 
   const addRuleFun = (val: string) => {

@@ -336,9 +336,9 @@ export default function Rules({ data }: any) {
       </div>
 
       {/* Rule info */}
-      <div className="px-3">
+      <div className="">
         <div
-          className={`bg-[#CCE0FF] px-6 flex items-center w-[97%] h-[20%] text-black px-6 py-3 justify-between  ${
+          className={`bg-[#CCE0FF] flex items-center w-[97%] h-[20%] text-black px-6 py-3 justify-between  ${
             selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6] "
           }`}
         >

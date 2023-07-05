@@ -177,7 +177,7 @@ export default function Example({ data }: any) {
             </div>
           ))}
         </div>
-        <div className="w-[86%] h-full">
+        <div className="w-[86%] h-full mt-2">
           {tabData.map((item, i) => {
             if (item.value === activeTab) {
               return <>{item.desc && item.desc}</>;
