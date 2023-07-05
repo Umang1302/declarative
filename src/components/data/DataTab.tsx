@@ -14,6 +14,7 @@ import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });
 import GraphCard from "./GraphCard";
 import DataTable from "./DataTable";
+import DataRules from "./DataRules";
 const aa = [1, 2, 4, 5, 6];
 
 export default function DataTab({ data }: any) {
@@ -77,7 +78,7 @@ export default function DataTab({ data }: any) {
           />
         </svg>
       ),
-      desc: <div>Hello</div>,
+      desc: <DataRules data={data} />,
     },
     {
       label: "Metrics",

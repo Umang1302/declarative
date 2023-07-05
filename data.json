@@ -93,6 +93,18 @@
           "after": "year"
         }
       ],
+      "graphData": {
+        "health": 65,
+        "min": 62,
+        "max": 65,
+        "rules": [
+          {
+            "name": "ESG Scores cannot be null",
+            "score": "65%",
+            "trend": "2"
+          }
+        ]
+      },
       "name": "US Mutual Funds ESG Scores",
       "type": "INCREMENTAL",
       "sourceDatasetId": "bac95341c0175f2d",
@@ -657,6 +669,18 @@
           "after": "year"
         }
       ],
+      "graphData": {
+        "health": 100,
+        "min": 100,
+        "max": 100,
+        "rules": [
+          {
+            "name": "GICS Sector and Sub-Industry are not blank",
+            "score": "100%",
+            "trend": "3"
+          }
+        ]
+      },
       "name": "NYSE Securities",
       "type": "STATIC",
       "sourceDatasetId": "31405ffde4ded2f1",
@@ -931,6 +955,18 @@
           "after": "year"
         }
       ],
+      "graphData": {
+        "health": 100,
+        "min": 100,
+        "max": 100,
+        "rules": [
+          {
+            "name": "High Prices must be greater than Low price",
+            "score": "100%",
+            "trend": "3"
+          }
+        ]
+      },
       "name": "NYSE Prices",
       "type": "INCREMENTAL",
       "sourceDatasetId": "23ccf1e691e59d16",
@@ -1191,6 +1227,23 @@
       "accountId": "f48cda68-448b-4c67-9828-fae3a3a9d3d2",
       "namespaceId": "c60c671bf1410535",
       "productId": "fdf5d8d74cb52362",
+      "graphData": {
+        "health": 69,
+        "min": 63,
+        "max": 69,
+        "rules": [
+          {
+            "name": "Initial Investment Amount and Subsequent Investment Amount must be greater than 0",
+            "score": "38%",
+            "trend": "2"
+          },
+          {
+            "name": "Management Name must be not null",
+            "score": "100%",
+            "trend": "2"
+          }
+        ]
+      },
       "name": "US Mutual Funds",
       "type": "STATIC",
       "sourceDatasetId": "777d4e50d54b0406",
@@ -1969,6 +2022,18 @@
           "after": "year"
         }
       ],
+      "graphData": {
+        "health": 90,
+        "min": 88,
+        "max": 92,
+        "rules": [
+          {
+            "name": "Top 10 Holding Assets must be less than 90% of Total Assets",
+            "score": "90%",
+            "trend": "2"
+          }
+        ]
+      },
       "name": "US Mutual Funds Returns and Rankings",
       "type": "INCREMENTAL",
       "sourceDatasetId": "8d2f7277594504ca",
