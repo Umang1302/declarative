@@ -128,11 +128,11 @@ export default function DataRules({ data }: any) {
       <div
         className={`w-full flex gap-x-6 gap-y-2 -mt-[2.6rem] ${cabin.className}`}
       >
-        <div className=" md:w-[50%] 3xl:w-[40%] shadow-xl p-5 border-[1px] rounded-[10px] border-black">
-          <p className="text-[18px] w-full border-b-[1px] border-black">
-            Health
+        <div className="md:w-[50%] 3xl:w-[40%] shadow-xl border-[2px] h-[500px] rounded-[10px] border-[#C4C4C4]">
+          <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-4 text-black">
+            Overall Health
           </p>
-          <div className="mt-5 w-full h-[90%] relative flex justify-center">
+          <div className="mt-5 w-full h-[80%] relative flex justify-center">
             <Doughnut
               data={{
                 datasets: [
@@ -167,45 +167,47 @@ export default function DataRules({ data }: any) {
             </div>
           </div>
         </div>
-        <div className=" md:w-[50%] 3xl:w-[60%] shadow-xl border-[1px] rounded-[10px] border-black p-5">
-          <p className="text-[18px] w-full border-b-[1px] border-black">
+        <div className=" md:w-[50%] 3xl:w-[60%] shadow-xl border-[2px] rounded-[10px] border-[#c4c4c4] pb-4">
+          <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-4 text-black">
             Trend
           </p>
-          <Line
-            data={{
-              //
-              labels,
-              datasets: [
-                {
-                  label: "",
-                  data: labels.map(() =>
-                    getRandomArbitrary(data.graphData.min, data.graphData.max)
-                  ),
-                  borderColor: "#4D91FF",
-                  backgroundColor: "#4D91FF",
+          <div className="mt-[-2rem] px-4">
+            <Line
+              data={{
+                //
+                labels,
+                datasets: [
+                  {
+                    label: "Score",
+                    data: labels.map(() =>
+                      getRandomArbitrary(data.graphData.min, data.graphData.max)
+                    ),
+                    borderColor: "#4D91FF",
+                    backgroundColor: "#4D91FF",
+                  },
+                ],
+              }}
+              options={{
+                responsive: true,
+                plugins: {
+                  legend: {
+                    position: "top" as const,
+                  },
+                  title: {
+                    display: true,
+                    text: "",
+                  },
                 },
-              ],
-            }}
-            options={{
-              responsive: true,
-              plugins: {
-                legend: {
-                  position: "top" as const,
-                },
-                title: {
-                  display: true,
-                  text: "",
-                },
-              },
-            }}
-          />
+              }}
+            />
+          </div>
         </div>
       </div>
-      <div className="w-full mt-5 rounded-[5px] border-[1px] border-black py-2 px-3">
-        <p className="border-b-[1px] border-black text-[18px] font-[600]">
+      <div className="w-full mt-5 rounded-[10px] border-[2px] border-[#c4c4c4]">
+        <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-4 text-black">
           Rule Summary
         </p>
-        <div className="flex gap-x-2 mt-2 text-black font-[600]">
+        <div className="flex gap-x-2 text-black font-[600]">
           <div className="w-[60%] bg-[#FFF0D3] px-3 py-2">Rules</div>
           <div className="w-[20%] bg-[#FFF0D3] px-3 py-2">Score</div>
           <div className="w-[20%] bg-[#FFF0D3] px-3 py-2">Trend</div>
@@ -214,7 +216,9 @@ export default function DataRules({ data }: any) {
           <div
             className={`flex gap-x-2 items-center  text-black font-[600] ${
               index % 2 === 0 ? "bg-[#ECECEC]" : "bg-white"
-            }`}
+            }
+            ${index === data.graphData.rules.length - 1 && "rounded-b-[10px]"}
+            `}
             key={index}
           >
             <div className="w-[60%]  px-3 py-2">{i.name}</div>

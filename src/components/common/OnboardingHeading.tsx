@@ -24,6 +24,8 @@ import { Cabin } from "next/font/google";
 import { useRouter, usePathname } from "next/navigation";
 import OnboardingPage1 from "../onboarding/Page1";
 import OnboardingPage2 from "../onboarding/Page2";
+import OnboardingPage3 from "../onboarding/ExploreTable";
+import OnboardingPage4 from "../onboarding/OboardProduct";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -54,11 +56,23 @@ export default function OnboardingHeading({ setDataSetVal, dataSetVal }: any) {
     },
     {
       header: "Explore Data Sets",
-      content: <></>,
+      content: (
+        <OnboardingPage3
+          setSelected={setSelected}
+          dataSetVal={dataSetVal}
+          setDataSetVal={setDataSetVal}
+        />
+      ),
     },
     {
       header: "Onboard Product",
-      content: <></>,
+      content: (
+        <OnboardingPage4
+          setSelected={setSelected}
+          dataSetVal={dataSetVal}
+          setDataSetVal={setDataSetVal}
+        />
+      ),
     },
   ]);
 

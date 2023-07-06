@@ -96,7 +96,7 @@ export default function GraphCard({ data }: any) {
   }, []);
 
   return (
-    <div className="w-full grid  gap-x-4 md:grid-cols-1 3xl:grid-cols-2 px-3 gap-y-2">
+    <div className="w-full grid gap-x-4 md:grid-cols-1 3xl:grid-cols-2 px-3 gap-y-2">
       {json.map((item: any, index: any) => (
         <div key={index}>
           {item.tableColumnMetrics &&
@@ -117,7 +117,7 @@ export default function GraphCard({ data }: any) {
                     <p className="text-[14px]">{item.description}</p>
                   </div>
                   <div className="flex flex-col items-center">
-                    <p className="text-[48px] text-black">
+                    <p className="text-[48px] ">
                       {item!.tableColumnMetrics!.stringMetrics &&
                       item!.tableColumnMetrics!.stringMetrics.uniqueValueCount
                         ? item!.tableColumnMetrics!.stringMetrics!
@@ -231,23 +231,37 @@ export default function GraphCard({ data }: any) {
                           k
                         </p>
                       </div>
-                      <div className="w-full flex justify-between ga-x-3">
-                        <p>Most Common</p>
-                        <p className="w-[60px] truncate">
-                          {
-                            item!.tableColumnMetrics!.stringMetrics
-                              .mostCommonValue
-                          }
-                        </p>
-                        <p>0%</p>
-                      </div>
                     </div>
                   </div>
+                </div>
+                <div className="w-full flex -mt-[3rem] flex-col justify-between">
+                  <p>Most Common</p>
+                  <p className="flex flex-col justify-between items-center">
+                    {item!.tableColumnMetrics!.stringMetrics.counts.map(
+                      (item: any, i: number) => {
+                        if (i < 4) {
+                          return (
+                            <div
+                              key={i}
+                              className="w-full mt-3 flex justify-between"
+                            >
+                              <p className="flex gap-x-3 w-[80%]">
+                                <p>{i + 1}.</p>
+                                <p>{item.key}</p>
+                              </p>
+                              <p>{item.value}</p>
+                            </div>
+                          );
+                        }
+                        return null;
+                      }
+                    )}
+                  </p>
                 </div>
               </div>
             </>
           ) : (
-            <div className="shadow-xl w-full h-[380px] rounded-lg px-9 py-5">
+            <div className="shadow-xl w-full rounded-lg px-9 py-5">
               <div>
                 <div
                   className={`flex justify-between border-b-[1px] border-[#C4C4C4] pb-3 ${cabin.className}`}
@@ -279,12 +293,19 @@ export default function GraphCard({ data }: any) {
                   </div> */}
                 </div>
               </div>
-              <div className=" h-[350px] ">
+              <div className="">
                 <div className="flex">
                   <div className="w-[70%] h-[180px]">
                     <Bar
                       data={{
-                        labels: [""],
+                        labels: [
+                          item.tableColumnMetrics.numericMetrics.quantiles[0]
+                            .point,
+                          item.tableColumnMetrics.numericMetrics.quantiles[1]
+                            .point,
+                          item.tableColumnMetrics.numericMetrics.quantiles[2]
+                            .point,
+                        ],
                         datasets: [
                           {
                             label: `${item.name}`,
@@ -292,10 +313,23 @@ export default function GraphCard({ data }: any) {
                               `${
                                 item.tableColumnMetrics &&
                                 item.tableColumnMetrics.numericMetrics &&
-                                item.tableColumnMetrics.numericMetrics.mean
+                                item.tableColumnMetrics.numericMetrics
+                                  .quantiles[0].value
+                              }`,
+                              `${
+                                item.tableColumnMetrics &&
+                                item.tableColumnMetrics.numericMetrics &&
+                                item.tableColumnMetrics.numericMetrics
+                                  .quantiles[1].value
+                              }`,
+                              `${
+                                item.tableColumnMetrics &&
+                                item.tableColumnMetrics.numericMetrics &&
+                                item.tableColumnMetrics.numericMetrics
+                                  .quantiles[2].value
                               }`,
                             ],
-                            backgroundColor: ["#7FE588"],
+                            backgroundColor: ["#7FE588", "#7FE588", "#7FE588"],
                             borderColor: "white",
                           },
                         ],
@@ -319,7 +353,7 @@ export default function GraphCard({ data }: any) {
                   <div className="w-[50%] px-4">
                     <div
                       key={index}
-                      className="flex w-full justify-between gap-x-6 text-black"
+                      className="flex w-full justify-between gap-x-6 "
                     >
                       <p>Mean</p>
                       <p>
@@ -333,7 +367,7 @@ export default function GraphCard({ data }: any) {
                     </div>
                     <div
                       key={index}
-                      className="flex w-full justify-between gap-x-6 text-black"
+                      className="flex w-full justify-between gap-x-6 "
                     >
                       <p>Standard Deviation</p>
                       <p>
@@ -346,7 +380,37 @@ export default function GraphCard({ data }: any) {
                     </div>
                     <div
                       key={index}
-                      className="flex gap-x-6 mt-3 text-black w-full justify-between"
+                      className="flex w-full justify-between gap-x-6 "
+                    >
+                      <p>Finite Count</p>
+                      <p>
+                        {+item.tableColumnMetrics.numericMetrics?.finiteCount}
+                      </p>
+                    </div>
+                    <div
+                      key={index}
+                      className="flex w-full justify-between gap-x-6 "
+                    >
+                      <p>Minimum</p>
+                      <p>{+item.tableColumnMetrics.numericMetrics?.minimum}</p>
+                    </div>
+                    <div
+                      key={index}
+                      className="flex w-full justify-between gap-x-6 "
+                    >
+                      <p>Maximum</p>
+                      <p>
+                        {(
+                          +item.tableColumnMetrics.numericMetrics?.maximum /
+                          1000000
+                        ).toFixed(2)}
+                        k
+                      </p>
+                    </div>
+
+                    <div
+                      key={index}
+                      className="flex  gap-x-6 my-2 text-black w-full justify-between"
                     >
                       <p>Point</p>
                       <p>Value</p>
@@ -355,7 +419,7 @@ export default function GraphCard({ data }: any) {
                       item.tableColumnMetrics.numericMetrics &&
                       item.tableColumnMetrics.numericMetrics.quantiles.map(
                         (i: any, index: number) => (
-                          <div key={index}>
+                          <div key={index} className="">
                             <div className="flex gap-x-6 w-full justify-between">
                               <p>{i.point}</p>
                               <p>{i.value}</p>
@@ -365,18 +429,16 @@ export default function GraphCard({ data }: any) {
                       )}
                   </div>
                 </div>
-                <div className="w-full flex justify-between">
+                <div className="w-full flex mt-2 justify-between">
                   <div className="w-[56%] mt-2">
                     <Progress
                       className="bg-[#F65A27]"
                       value={
-                        +(
-                          +(
-                            (item!.tableColumnMetrics!.validCount /
-                              item!.tableColumnMetrics!.totalCount) *
-                            100
-                          ) - 10
-                        ).toFixed(2)
+                        +(+(
+                          (item!.tableColumnMetrics!.validCount /
+                            item!.tableColumnMetrics!.totalCount) *
+                          100
+                        )).toFixed(2)
                       }
                     />
                     <div className="w-full mt-5 flex flex-col gap-y-3">

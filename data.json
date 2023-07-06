@@ -105,6 +105,9 @@
           }
         ]
       },
+      "dataMetrics": {
+        "series": true
+      },
       "name": "US Mutual Funds ESG Scores",
       "type": "INCREMENTAL",
       "sourceDatasetId": "bac95341c0175f2d",
@@ -681,6 +684,25 @@
           }
         ]
       },
+      "dataMetrics": {
+        "metrics": [
+          {
+            "name": "YoY Growth in Securities Traded",
+            "percentage": 8,
+            "date": "As Of Jan 2023"
+          },
+          {
+            "name": "QoQ Growth in Securities Traded",
+            "percentage": 2,
+            "date": "As Of Mar 2023"
+          },
+          {
+            "name": "MoM Growth in Securities Traded",
+            "percentage": 1,
+            "date": "As Of May 2023"
+          }
+        ]
+      },
       "name": "NYSE Securities",
       "type": "STATIC",
       "sourceDatasetId": "31405ffde4ded2f1",
@@ -1243,6 +1265,16 @@
             "trend": "2"
           }
         ]
+      },
+      "dataMetrics": {
+        "metrics": [
+          {
+            "name": "YoY Growth in Securities Traded",
+            "percentage": 20,
+            "date": "As Of Jan 2023"
+          }
+        ],
+        "series": true
       },
       "name": "US Mutual Funds",
       "type": "STATIC",
@@ -2033,6 +2065,19 @@
             "trend": "2"
           }
         ]
+      },
+      "dataMetrics": {
+        "metrics": [
+          {
+            "name": "YoY AUM Growth",
+            "percentage": 16,
+            "date": "As Of Jan 2023"
+          }
+        ],
+        "record": {
+          "name": "Total AUM",
+          "val": "22.1 T"
+        }
       },
       "name": "US Mutual Funds Returns and Rankings",
       "type": "INCREMENTAL",

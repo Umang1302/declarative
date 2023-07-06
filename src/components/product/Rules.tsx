@@ -688,10 +688,7 @@ export default function Rules({ data }: any) {
                       </div>
                       <p className="ml-2">
                         Repeats every {item.weekNumber} {item.interval} on{" "}
-                        {item.day[0]}{" "}
-                        {item.day.length > 1 &&
-                          `${"+" + (item.day.length - 1)}`}{" "}
-                        at {item.time}
+                        {item.day[0]} at {item.time}
                       </p>
                     </p>
                   </div>

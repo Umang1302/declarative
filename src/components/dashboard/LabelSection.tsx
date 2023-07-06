@@ -30,51 +30,6 @@ export default function LabelSection() {
       id: 6,
       label: "Census",
     },
-    {
-      id: 5,
-      label: "Economy",
-    },
-    {
-      id: 6,
-      label: "Census",
-    },
-    {
-      id: 6,
-      label: "Economy",
-    },
-    {
-      id: 1,
-      label: "Mutual",
-    },
-    {
-      id: 2,
-      label: "Securities",
-    },
-    {
-      id: 3,
-      label: "Benchmarks",
-    },
-    {
-      id: 4,
-      label: "ESG",
-    },
-    {
-      id: 5,
-      label: "Economy",
-    },
-    {
-      id: 6,
-      label: "Census",
-    },
-    {
-      id: 2,
-      label: "Securities",
-    },
-
-    {
-      id: 4,
-      label: "ESG",
-    },
   ];
 
   //  ${
@@ -103,7 +58,7 @@ export default function LabelSection() {
 
   return (
     <div className="flex relative w-full h-full">
-      <div className="z-10 absolute w-[30px] h-[32px] top-4 left-5 bg-white opacity-80"></div>
+      {/* <div className="z-10 absolute w-[30px] h-[32px] top-4 left-5 bg-white opacity-80"></div>
       <button
         onClick={() => {
           scroll(-40);
@@ -112,7 +67,7 @@ export default function LabelSection() {
         <div className="relative w-[20px]  mt-5 h-[20px]">
           <Image src={`/labelLeft.svg`} alt="brand" fill />
         </div>
-      </button>
+      </button> */}
       <div
         style={{
           background:
@@ -133,7 +88,7 @@ export default function LabelSection() {
         ))}
         {/* </div> */}
       </div>
-      <button
+      {/* <button
         onClick={() => {
           scroll(40);
         }}
@@ -141,8 +96,8 @@ export default function LabelSection() {
         <div className="relative w-[20px] mt-5 h-[20px]">
           <Image src={`/labelRight.svg`} alt="brand" fill />
         </div>
-      </button>
-      <div className="z-10 absolute w-[30px] h-[32px] top-4 right-5 bg-white opacity-80"></div>
+      </button> */}
+      {/* <div className="z-10 absolute w-[30px] h-[32px] top-4 right-5 bg-white opacity-80"></div> */}
     </div>
   );
 }

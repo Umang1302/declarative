@@ -1036,8 +1036,8 @@ export default function Metrics({ data }: any) {
                       <p>
                         Repeats every {item.weekNumber} {item.interval} on{" "}
                         {item.day[0]}{" "}
-                        {item.day.length > 1 &&
-                          `${"+" + (item.day.length - 1)}`}{" "}
+                        {/* {item.day.length > 1 &&
+                          `${"+" + (item.day.length - 1)}`}{" "} */}
                         at {item.time}
                       </p>
                     </p>

@@ -229,12 +229,12 @@ export default function Rules({ data }: any) {
 
   const [handling, setHandling] = useState();
 
-  const [lifeCycleChild, setLifeCycleChild] = useState([
-    {
-      type: true,
-      key: "Category",
-      operation: "in",
-    },
+  const [lifeCycleChild, setLifeCycleChild] = useState<any>([
+    // {
+    //   type: true,
+    //   key: "Category",
+    //   operation: "in",
+    // },
   ]);
 
   const [dropDownMenu, setDropDownMenu] = useState<any>([
@@ -413,7 +413,7 @@ export default function Rules({ data }: any) {
             />
           </div>
           <div className="px-10">
-            {lifeCycleChild.map((item, i) => (
+            {lifeCycleChild.map((item: any, i: number) => (
               <>
                 <div key={i} className="flex justify-between">
                   <div className="mt-2 h-[40px] items-center w-[150px] px-1 bg-gray-300 flex justify-between rounded-[6px]">

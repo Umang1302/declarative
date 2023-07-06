@@ -1,0 +1,3495 @@
+[
+  {
+    "fund_symbol": "AAAAX",
+    "fund_short_name": "DWS RREEF Real Assets Fund - Cl",
+    "fund_long_name": "DWS RREEF Real Assets Fund - Class A",
+    "fund_category": "World Allocation",
+    "num_cagegory_funds": "448"
+  },
+  {
+    "fund_symbol": "AAAPX",
+    "fund_short_name": "DWS RREEF Real Assets Fund - Cl",
+    "fund_long_name": "DWS RREEF Real Assets Fund - Class C",
+    "fund_category": "World Allocation",
+    "num_cagegory_funds": "448"
+  },
+  {
+    "fund_symbol": "AAAWX",
+    "fund_short_name": "DWS RREEF Real Assets Fund - Cl",
+    "fund_long_name": "DWS RREEF Real Assets Fund - Class T",
+    "fund_category": "World Allocation",
+    "num_cagegory_funds": "448"
+  },
+  {
+    "fund_symbol": "AACFX",
+    "fund_short_name": "Invesco Greater China Fund Cl A",
+    "fund_long_name": "Invesco Greater China Fund Class A",
+    "fund_category": "China Region",
+    "num_cagegory_funds": "82"
+  },
+  {
+    "fund_symbol": "AADAX",
+    "fund_short_name": "Invesco Select Risk: Growth Inv",
+    "fund_long_name": "Invesco Select Risk: Growth Investor Fund Class A",
+    "fund_category": "Allocation--70% to 85% Equity",
+    "num_cagegory_funds": "282"
+  },
+  {
+    "fund_symbol": "AADCX",
+    "fund_short_name": "Invesco Select Risk: Growth Inv",
+    "fund_long_name": "Invesco Select Risk: Growth Investor Fund Class C",
+    "fund_category": "Allocation--70% to 85% Equity",
+    "num_cagegory_funds": "282"
+  },
+  {
+    "fund_symbol": "AADRX",
+    "fund_short_name": "Invesco Select Risk: Growth Inv",
+    "fund_long_name": "Invesco Select Risk: Growth Investor Fund Class R",
+    "fund_category": "Allocation--70% to 85% Equity",
+    "num_cagegory_funds": "282"
+  },
+  {
+    "fund_symbol": "AADYX",
+    "fund_short_name": "Invesco Select Risk: Growth Inv",
+    "fund_long_name": "Invesco Select Risk: Growth Investor Fund Class Y",
+    "fund_category": "Allocation--70% to 85% Equity",
+    "num_cagegory_funds": "282"
+  },
+  {
+    "fund_symbol": "AAECX",
+    "fund_short_name": "",
+    "fund_long_name": "American Beacon AHL TargetRisk Core Fund C Class",
+    "fund_category": "World Allocation",
+    "num_cagegory_funds": "448"
+  },
+  {
+    "fund_symbol": "AAEMX",
+    "fund_short_name": "The Alger Fds II, Alger Emergin",
+    "fund_long_name": "Alger Emerging Markets Fund Class A",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "AAHMX",
+    "fund_short_name": "Aberdeen Short Duration High Yi",
+    "fund_long_name": "Aberdeen Short Duration High Yield Municipal Fund Class A",
+    "fund_category": "High Yield Muni",
+    "num_cagegory_funds": "199"
+  },
+  {
+    "fund_symbol": "ABCCX",
+    "fund_short_name": "American Beacon Balanced Fund C",
+    "fund_long_name": "American Beacon Balanced Fund C Class",
+    "fund_category": "Allocation--50% to 70% Equity",
+    "num_cagegory_funds": "658"
+  },
+  {
+    "fund_symbol": "ABECX",
+    "fund_short_name": "American Beacon The London Comp",
+    "fund_long_name": "American Beacon The London Company Income Equity Fund C Class",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "ABRCX",
+    "fund_short_name": "Invesco Balanced-Risk Allocatio",
+    "fund_long_name": "Invesco Balanced-Risk Allocation Fund Class C",
+    "fund_category": "World Allocation",
+    "num_cagegory_funds": "448"
+  },
+  {
+    "fund_symbol": "ABRFX",
+    "fund_short_name": "AmericaFirst Monthly Risk-On Ri",
+    "fund_long_name": "AmericaFirst Monthly Risk-On Risk-Off Fund Class A",
+    "fund_category": "Tactical Allocation",
+    "num_cagegory_funds": "241"
+  },
+  {
+    "fund_symbol": "ABRUX",
+    "fund_short_name": "AmericaFirst Monthly Risk-On Ri",
+    "fund_long_name": "AmericaFirst Monthly Risk-On Risk-Off Fund Class U",
+    "fund_category": "Tactical Allocation",
+    "num_cagegory_funds": "241"
+  },
+  {
+    "fund_symbol": "ABRYX",
+    "fund_short_name": "Invesco Balanced-Risk Allocatio",
+    "fund_long_name": "Invesco Balanced-Risk Allocation Fund Class Y",
+    "fund_category": "World Allocation",
+    "num_cagegory_funds": "448"
+  },
+  {
+    "fund_symbol": "ABRZX",
+    "fund_short_name": "Invesco Balanced-Risk Allocatio",
+    "fund_long_name": "Invesco Balanced-Risk Allocation Fund Class A",
+    "fund_category": "World Allocation",
+    "num_cagegory_funds": "448"
+  },
+  {
+    "fund_symbol": "ACAAX",
+    "fund_short_name": "Alger Capital Appreciation Fund",
+    "fund_long_name": "Alger Capital Appreciation Fund Class A",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "ACCBX",
+    "fund_short_name": "Invesco Corporate Bond Fund Cla",
+    "fund_long_name": "Invesco Corporate Bond Fund Class A",
+    "fund_category": "Corporate Bond",
+    "num_cagegory_funds": "183"
+  },
+  {
+    "fund_symbol": "ACCEX",
+    "fund_short_name": "Invesco Corporate Bond Fund Cla",
+    "fund_long_name": "Invesco Corporate Bond Fund Class C",
+    "fund_category": "Corporate Bond",
+    "num_cagegory_funds": "183"
+  },
+  {
+    "fund_symbol": "ACCHX",
+    "fund_short_name": "Invesco Corporate Bond Fund Cla",
+    "fund_long_name": "Invesco Corporate Bond Fund Class Y",
+    "fund_category": "Corporate Bond",
+    "num_cagegory_funds": "183"
+  },
+  {
+    "fund_symbol": "ACEIX",
+    "fund_short_name": "Invesco Equity and Income Fund",
+    "fund_long_name": "Invesco Equity and Income Fund Class A",
+    "fund_category": "Allocation--50% to 70% Equity",
+    "num_cagegory_funds": "658"
+  },
+  {
+    "fund_symbol": "ACEMX",
+    "fund_short_name": "The Alger Fds II, Alger Emergin",
+    "fund_long_name": "Alger Emerging Markets Fund Class C",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "ACERX",
+    "fund_short_name": "Invesco Equity and Income Fund",
+    "fund_long_name": "Invesco Equity and Income Fund Class C",
+    "fund_category": "Allocation--50% to 70% Equity",
+    "num_cagegory_funds": "658"
+  },
+  {
+    "fund_symbol": "ACETX",
+    "fund_short_name": "Invesco Equity and Income Fund",
+    "fund_long_name": "Invesco Equity and Income Fund Class Y",
+    "fund_category": "Allocation--50% to 70% Equity",
+    "num_cagegory_funds": "658"
+  },
+  {
+    "fund_symbol": "ACGIX",
+    "fund_short_name": "Invesco Growth & Income Fund Cl",
+    "fund_long_name": "Invesco Growth and Income Fund Class A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "ACGKX",
+    "fund_short_name": "Invesco Growth & Income Fund In",
+    "fund_long_name": "Invesco Growth and Income Fund Class C",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "ACGMX",
+    "fund_short_name": "Invesco Growth and Income Fund",
+    "fund_long_name": "Invesco Growth and Income Fund Class Y",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "ACHMX",
+    "fund_short_name": "",
+    "fund_long_name": "Aberdeen Short Duration High Yield Municipal Fund Class C",
+    "fund_category": "High Yield Muni",
+    "num_cagegory_funds": "199"
+  },
+  {
+    "fund_symbol": "ACPSX",
+    "fund_short_name": "Invesco Core Plus Bond Fund Cla",
+    "fund_long_name": "Invesco Core Plus Bond Fund Class A",
+    "fund_category": "Intermediate Core-Plus Bond",
+    "num_cagegory_funds": "566"
+  },
+  {
+    "fund_symbol": "ACSDX",
+    "fund_short_name": "Invesco Comstock Fund Class Y",
+    "fund_long_name": "Invesco Comstock Fund Class Y",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "ACSTX",
+    "fund_short_name": "Invesco Comstock Fund Class A",
+    "fund_long_name": "Invesco Comstock Fund Class A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "ACSYX",
+    "fund_short_name": "Invesco Comstock Fund Class C",
+    "fund_long_name": "Invesco Comstock Fund Class C",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "ACTDX",
+    "fund_short_name": "Invesco High Yield Municipal Fu",
+    "fund_long_name": "Invesco High Yield Municipal Fund Class Y",
+    "fund_category": "High Yield Muni",
+    "num_cagegory_funds": "199"
+  },
+  {
+    "fund_symbol": "ACTFX",
+    "fund_short_name": "Invesco High Yield Municipal Cl",
+    "fund_long_name": "Invesco High Yield Municipal Fund Class C",
+    "fund_category": "High Yield Muni",
+    "num_cagegory_funds": "199"
+  },
+  {
+    "fund_symbol": "ACTHX",
+    "fund_short_name": "Invesco High Yld Muni Cl A",
+    "fund_long_name": "Invesco High Yield Municipal Fund Class A",
+    "fund_category": "High Yield Muni",
+    "num_cagegory_funds": "199"
+  },
+  {
+    "fund_symbol": "ADAVX",
+    "fund_short_name": "Aberdeen Dynamic Dividend Fund",
+    "fund_long_name": "Aberdeen Dynamic Dividend Fund Class A",
+    "fund_category": "World Large-Stock Blend",
+    "num_cagegory_funds": "322"
+  },
+  {
+    "fund_symbol": "ADJEX",
+    "fund_short_name": "Azzad Ethical Fund",
+    "fund_long_name": "Azzad Ethical Fund",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "ADNCX",
+    "fund_short_name": "American Beacon ARK Transformat",
+    "fund_long_name": "American Beacon ARK Transformational Innovation Fund Class C",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "ADOCX",
+    "fund_short_name": "Alger Dynamic Opportunities Fun",
+    "fund_long_name": "Alger Dynamic Opportunities Fund Class C",
+    "fund_category": "Long-Short Equity",
+    "num_cagegory_funds": "191"
+  },
+  {
+    "fund_symbol": "AEDAX",
+    "fund_short_name": "Invesco European Growth Fund Cl",
+    "fund_long_name": "Invesco European Growth Fund Class A",
+    "fund_category": "Europe Stock",
+    "num_cagegory_funds": "64"
+  },
+  {
+    "fund_symbol": "AEDCX",
+    "fund_short_name": "Invesco European Growth Fund Cl",
+    "fund_long_name": "Invesco European Growth Fund Class C",
+    "fund_category": "Europe Stock",
+    "num_cagegory_funds": "64"
+  },
+  {
+    "fund_symbol": "AEDYX",
+    "fund_short_name": "Invesco European Growth Fund Cl",
+    "fund_long_name": "Invesco European Growth Fund Class Y",
+    "fund_category": "Europe Stock",
+    "num_cagegory_funds": "64"
+  },
+  {
+    "fund_symbol": "AFALX",
+    "fund_short_name": "Applied Finance Core Fund Inves",
+    "fund_long_name": "Applied Finance Core Fund Investor Class",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "AFDDX",
+    "fund_short_name": "Yorktown Capital Income Fund Cl",
+    "fund_long_name": "Yorktown Capital Appreciation Fund Class L",
+    "fund_category": "Allocation--70% to 85% Equity",
+    "num_cagegory_funds": "282"
+  },
+  {
+    "fund_symbol": "AFDVX",
+    "fund_short_name": "Applied Finance Explorer fund I",
+    "fund_long_name": "Applied Finance Explorer Fund Investor Shares",
+    "fund_category": "Small Value",
+    "num_cagegory_funds": "409"
+  },
+  {
+    "fund_symbol": "AFFCX",
+    "fund_short_name": "Yorktown Multi-Asset Income Fun",
+    "fund_long_name": "Yorktown Multi-Sector Bond Fund Class C",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "AFFIX",
+    "fund_short_name": "Yorktown Multi-Asset Income Fun",
+    "fund_long_name": "Yorktown Multi-Sector Bond Fund Class L",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "AFGGX",
+    "fund_short_name": "Yorktown Growth Fund Class A",
+    "fund_long_name": "Yorktown Growth Fund Class A",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "AFGPX",
+    "fund_short_name": "Alger International Focus Fund",
+    "fund_long_name": "Alger International Focus Fund Class B",
+    "fund_category": "Foreign Large Growth",
+    "num_cagegory_funds": "431"
+  },
+  {
+    "fund_symbol": "AFLCX",
+    "fund_short_name": "Angel Oak Financials Income Fun",
+    "fund_long_name": "Angel Oak Financials Income Fund Class C",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "AFMMX",
+    "fund_short_name": "Yorktown Short Term Bond Fund C",
+    "fund_long_name": "Yorktown Short Term Bond Fund Class L",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "AFPAX",
+    "fund_short_name": "AmericaFirst Income Fund Class",
+    "fund_long_name": "AmericaFirst Income Fund Class A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "AFPUX",
+    "fund_short_name": "AmericaFirst Income Fund Class",
+    "fund_long_name": "AmericaFirst Income Fund Class U",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "AFRAX",
+    "fund_short_name": "Invesco Floating Rate ESG Fund",
+    "fund_long_name": "Invesco Floating Rate ESG Fund Class A",
+    "fund_category": "Bank Loan",
+    "num_cagegory_funds": "228"
+  },
+  {
+    "fund_symbol": "AFRCX",
+    "fund_short_name": "Invesco Floating Rate ESG Fund",
+    "fund_long_name": "Invesco Floating Rate ESG Fund Class C",
+    "fund_category": "Bank Loan",
+    "num_cagegory_funds": "228"
+  },
+  {
+    "fund_symbol": "AFRYX",
+    "fund_short_name": "Invesco Floating Rate ESG Fund",
+    "fund_long_name": "Invesco Floating Rate ESG Fund Class Y",
+    "fund_category": "Bank Loan",
+    "num_cagegory_funds": "228"
+  },
+  {
+    "fund_symbol": "AFVLX",
+    "fund_short_name": "Applied Finance Select Fund Inv",
+    "fund_long_name": "Applied Finance Select Fund Investor Class Shares",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "AGECX",
+    "fund_short_name": "American Beacon Frontier Market",
+    "fund_long_name": "American Beacon Frontier Markets Income Fund C Class",
+    "fund_category": "Emerging Markets Bond",
+    "num_cagegory_funds": "261"
+  },
+  {
+    "fund_symbol": "AGFCX",
+    "fund_short_name": "Alger Funds II - Alger Responsi",
+    "fund_long_name": "Alger Responsible Investing Fund Class C",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "AGGAX",
+    "fund_short_name": "Invesco Global Growth Fund Clas",
+    "fund_long_name": "Invesco Global Growth Fund Class A",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "AGGCX",
+    "fund_short_name": "Invesco Global Growth Fund Clas",
+    "fund_long_name": "Invesco Global Growth Fund Class C",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "AGGYX",
+    "fund_short_name": "Invesco Global Growth Fund Clas",
+    "fund_long_name": "Invesco Global Growth Fund Class Y",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "AGIVX",
+    "fund_short_name": "Invesco U.S. Government Fund In",
+    "fund_long_name": "Invesco Income Fund Investor Class",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "AGLOX",
+    "fund_short_name": "Ariel Global Equity Fd Inv Cl",
+    "fund_long_name": "Ariel Global Fund Investor Class",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "AGOCX",
+    "fund_short_name": "PGIM Jennison Global Equity Inc",
+    "fund_long_name": "PGIM Jennison Global Equity Income Fund- Class C",
+    "fund_category": "World Large-Stock Blend",
+    "num_cagegory_funds": "322"
+  },
+  {
+    "fund_symbol": "AGOVX",
+    "fund_short_name": "Invesco U.S. Government Fund Cl",
+    "fund_long_name": "Invesco Income Fund Class A",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "AGREX",
+    "fund_short_name": "Invesco Global Real Estate Clas",
+    "fund_long_name": "Invesco Global Real Estate Fund Class A",
+    "fund_category": "Global Real Estate",
+    "num_cagegory_funds": "186"
+  },
+  {
+    "fund_symbol": "AGSCX",
+    "fund_short_name": "Alger Small Cap Growth Fund Cla",
+    "fund_long_name": "Alger Small Cap Growth Fund Class C",
+    "fund_category": "Small Growth",
+    "num_cagegory_funds": "578"
+  },
+  {
+    "fund_symbol": "AGVCX",
+    "fund_short_name": "Invesco U.S. Government Fund Cl",
+    "fund_long_name": "Invesco Income Fund Class C",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "AGVYX",
+    "fund_short_name": "Invesco U.S. Government Fund Cl",
+    "fund_long_name": "Invesco Income Fund Class Y",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "AHACX",
+    "fund_short_name": "American Beacon AHL TargetRisk",
+    "fund_long_name": "American Beacon AHL TargetRisk Fund C",
+    "fund_category": "Tactical Allocation",
+    "num_cagegory_funds": "241"
+  },
+  {
+    "fund_symbol": "AHHYX",
+    "fund_short_name": "Invesco High Yield Fund Class Y",
+    "fund_long_name": "Invesco High Yield Fund Class Y",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "AHLCX",
+    "fund_short_name": "American Beacon AHL Managed Fut",
+    "fund_long_name": "American Beacon AHL Managed Futures Strategy Fund C Class",
+    "fund_category": "Systematic Trend",
+    "num_cagegory_funds": "77"
+  },
+  {
+    "fund_symbol": "AHSAX",
+    "fund_short_name": "Alger Health Sciences Fund Clas",
+    "fund_long_name": "Alger Health Sciences Fund Class A",
+    "fund_category": "Health",
+    "num_cagegory_funds": "120"
+  },
+  {
+    "fund_symbol": "AHYCX",
+    "fund_short_name": "Invesco High Yield Fund Class C",
+    "fund_long_name": "Invesco High Yield Fund Class C",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "AIAFX",
+    "fund_short_name": "Aberdeen Global Infrastructure",
+    "fund_long_name": "Aberdeen Global Infrastructure Fund Class A",
+    "fund_category": "Infrastructure",
+    "num_cagegory_funds": "85"
+  },
+  {
+    "fund_symbol": "AIAGX",
+    "fund_short_name": "Aberdeen Realty Income and Grow",
+    "fund_long_name": "Aberdeen Realty Income & Growth Fund Class A",
+    "fund_category": "Real Estate",
+    "num_cagegory_funds": "210"
+  },
+  {
+    "fund_symbol": "AIBLX",
+    "fund_short_name": "Cavanal Hill Active Core Fd Ins",
+    "fund_long_name": "Cavanal Hill Active Core Fund Institutional Class",
+    "fund_category": "Allocation--50% to 70% Equity",
+    "num_cagegory_funds": "658"
+  },
+  {
+    "fund_symbol": "AIBNX",
+    "fund_short_name": "Cavanal Hill Bond Fund Insti Sh",
+    "fund_long_name": "Cavanal Hill Bond Fund Institutional Class",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "AIECX",
+    "fund_short_name": "Invesco International Growth Fu",
+    "fund_long_name": "Invesco International Growth Fund Class C",
+    "fund_category": "Foreign Large Growth",
+    "num_cagegory_funds": "431"
+  },
+  {
+    "fund_symbol": "AIENX",
+    "fund_short_name": "Strategic Enhanced Yield Fund I",
+    "fund_long_name": "Cavanal Hill Strategic Enhanced Yield Fund Institutional",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "AIFBX",
+    "fund_short_name": "Cavanal Hill Moderate Duration",
+    "fund_long_name": "Cavanal Hill Moderate Duration Fund Institutional Class",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "AIIEX",
+    "fund_short_name": "Invesco International Growth Fu",
+    "fund_long_name": "Invesco International Growth Fund Class A",
+    "fund_category": "Foreign Large Growth",
+    "num_cagegory_funds": "431"
+  },
+  {
+    "fund_symbol": "AIIFX",
+    "fund_short_name": "Timber Point Alternative Income",
+    "fund_long_name": "Timber Point Alternative Income Fund Institutional Class Shares",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "AIIYX",
+    "fund_short_name": "Invesco International Growth Fu",
+    "fund_long_name": "Invesco International Growth Fund Class Y",
+    "fund_category": "Foreign Large Growth",
+    "num_cagegory_funds": "431"
+  },
+  {
+    "fund_symbol": "AILCX",
+    "fund_short_name": "American Beacon International E",
+    "fund_long_name": "American Beacon International Equity Fund Class C",
+    "fund_category": "Foreign Large Value",
+    "num_cagegory_funds": "306"
+  },
+  {
+    "fund_symbol": "AILIX",
+    "fund_short_name": "",
+    "fund_long_name": "Cavanal Hill Hedged Income Fund Institutional",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "AINTX",
+    "fund_short_name": "Ariel International Fund Invest",
+    "fund_long_name": "Ariel International Fund Investor Class",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "AIOPX",
+    "fund_short_name": "Cavanal Hill Opportunistic Fd I",
+    "fund_long_name": "Cavanal Hill Opportunistic Fund Institutional",
+    "fund_category": "Allocation--70% to 85% Equity",
+    "num_cagegory_funds": "282"
+  },
+  {
+    "fund_symbol": "AISTX",
+    "fund_short_name": "Cavanal Hill Limited Duration F",
+    "fund_long_name": "Cavanal Hill Limited Duration Fund Institutional Class",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "AITFX",
+    "fund_short_name": "Invesco Limited Term Muni Inc F",
+    "fund_long_name": "Invesco Limited Term Municipal Income Fund Class A2",
+    "fund_category": "Muni National Short",
+    "num_cagegory_funds": "218"
+  },
+  {
+    "fund_symbol": "AIUSX",
+    "fund_short_name": "Ultra Short Tax-Free Income Fun",
+    "fund_long_name": "Cavanal HillUltra Short Tax-Free Income Fund Institutional",
+    "fund_category": "Muni National Short",
+    "num_cagegory_funds": "218"
+  },
+  {
+    "fund_symbol": "AIWEX",
+    "fund_short_name": "Cavanal Hill World Energy Fund",
+    "fund_long_name": "Cavanal Hill World Energy Fund Institutional",
+    "fund_category": "Equity Energy",
+    "num_cagegory_funds": "48"
+  },
+  {
+    "fund_symbol": "AIWVX",
+    "fund_short_name": "MID CAP CORE EQUITY FUND - INST",
+    "fund_long_name": "Cavanal Hill Mid Cap Diverse Leadership Fund Institutional Shares",
+    "fund_category": "Mid-Cap Blend",
+    "num_cagegory_funds": "340"
+  },
+  {
+    "fund_symbol": "AKFAX",
+    "fund_short_name": "Aberdeen Emerging Markets Debt",
+    "fund_long_name": "Aberdeen Emerging Markets Debt Fund Class A",
+    "fund_category": "Emerging Markets Bond",
+    "num_cagegory_funds": "261"
+  },
+  {
+    "fund_symbol": "AKFCX",
+    "fund_short_name": "Aberdeen Emerging Markets Debt",
+    "fund_long_name": "Aberdeen Emerging Markets Debt Fund Class C",
+    "fund_category": "Emerging Markets Bond",
+    "num_cagegory_funds": "261"
+  },
+  {
+    "fund_symbol": "ALAAX",
+    "fund_short_name": "Invesco Income Allocation Fund",
+    "fund_long_name": "Invesco Income Allocation Fund Class A",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "ALAFX",
+    "fund_short_name": "Alger Focus Equity Fund Class A",
+    "fund_long_name": "Alger Focus Equity Fund Class A",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "ALAYX",
+    "fund_short_name": "Invesco Income Allocation Fund",
+    "fund_long_name": "Invesco Income Allocation Fund Class Y",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "ALBAX",
+    "fund_short_name": "Alger Growth & Income Fund Cla",
+    "fund_long_name": "Alger Growth & Income Fund Class A",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "ALBCX",
+    "fund_short_name": "Alger Growth & Income Fund Cla",
+    "fund_long_name": "Alger Growth & Income Fund Class C",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "ALCCX",
+    "fund_short_name": "Alger Capital Appreciation Fund",
+    "fund_long_name": "Alger Capital Appreciation Fund Class C",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "ALCFX",
+    "fund_short_name": "Alger Focus Equity Fund Class C",
+    "fund_long_name": "Alger Focus Equity Fund Class C",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "ALGAX",
+    "fund_short_name": "Alger International Focus Fund",
+    "fund_long_name": "Alger International Focus Fund Class A",
+    "fund_category": "Foreign Large Growth",
+    "num_cagegory_funds": "431"
+  },
+  {
+    "fund_symbol": "ALGCX",
+    "fund_short_name": "Alger International Focus Fund",
+    "fund_long_name": "Alger International Focus Fund Class C",
+    "fund_category": "Foreign Large Growth",
+    "num_cagegory_funds": "431"
+  },
+  {
+    "fund_symbol": "ALMAX",
+    "fund_short_name": "Alger Weatherbie Specialized Gr",
+    "fund_long_name": "Alger Weatherbie Specialized Growth Fund Class A",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "ALMCX",
+    "fund_short_name": "Alger Weatherbie Specialized Gr",
+    "fund_long_name": "Alger Weatherbie Specialized Growth FundClass C",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "ALSAX",
+    "fund_short_name": "Alger Small Cap Growth Fund Cla",
+    "fund_long_name": "Alger Small Cap Growth Fund Class A",
+    "fund_category": "Small Growth",
+    "num_cagegory_funds": "578"
+  },
+  {
+    "fund_symbol": "ALSCX",
+    "fund_short_name": "Alger Small Cap Growth Fund Cla",
+    "fund_long_name": "Alger Small Cap Growth Fund Class B",
+    "fund_category": "Small Growth",
+    "num_cagegory_funds": "578"
+  },
+  {
+    "fund_symbol": "AMCCX",
+    "fund_short_name": "American Beacon Mid-Cap Value F",
+    "fund_long_name": "American Beacon Mid-Cap Value Fund C Class",
+    "fund_category": "Mid-Cap Value",
+    "num_cagegory_funds": "368"
+  },
+  {
+    "fund_symbol": "AMCGX",
+    "fund_short_name": "Alger Mid Cap Growth Fund Class",
+    "fund_long_name": "Alger Mid Cap Growth Fund Class B",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "AMCYX",
+    "fund_short_name": "Invesco Greater China Fund Cl Y",
+    "fund_long_name": "Invesco Greater China Fund Class Y",
+    "fund_category": "China Region",
+    "num_cagegory_funds": "82"
+  },
+  {
+    "fund_symbol": "AMGAX",
+    "fund_short_name": "Alger Mid Cap Growth Fund Class",
+    "fund_long_name": "Alger Mid Cap Growth Fund Class A",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "AMGCX",
+    "fund_short_name": "Alger Mid Cap Growth Fund Class",
+    "fund_long_name": "Alger Mid Cap Growth Fund Class C",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "AMHYX",
+    "fund_short_name": "Invesco High Yield Fund Class A",
+    "fund_long_name": "Invesco High Yield Fund Class A",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "AMLCX",
+    "fund_short_name": "AlphaMark Fund",
+    "fund_long_name": "AlphaMark Fund",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "ANFLX",
+    "fund_short_name": "Angel Oak Financials Income Fun",
+    "fund_long_name": "Angel Oak Financials Income Fund Class A",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "ANGCX",
+    "fund_short_name": "Angel Oak Multi-Strategy Income",
+    "fund_long_name": "Angel Oak Multi-Strategy Income Fund Class C",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "ANGLX",
+    "fund_short_name": "Angel Oak Multi-Strategy Income",
+    "fund_long_name": "Angel Oak Multi-Strategy Income Fund A Shares",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "ANHAX",
+    "fund_short_name": "Angel Oak High Yield Opportunit",
+    "fund_long_name": "Angel Oak High Yield Opportunities Fund Class A",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "AOBLX",
+    "fund_short_name": "Pioneer Balanced ESG Fund Class",
+    "fund_long_name": "Pioneer Balanced ESG Fund Class A",
+    "fund_category": "Allocation--50% to 70% Equity",
+    "num_cagegory_funds": "658"
+  },
+  {
+    "fund_symbol": "AOFAX",
+    "fund_short_name": "Alger Small Cap Focus Fund Clas",
+    "fund_long_name": "Alger Small Cap Focus Fund Class A",
+    "fund_category": "Small Growth",
+    "num_cagegory_funds": "578"
+  },
+  {
+    "fund_symbol": "AOFCX",
+    "fund_short_name": "Alger Small Cap Focus Fund Clas",
+    "fund_long_name": "Alger Small Cap Focus Fund Class C",
+    "fund_category": "Small Growth",
+    "num_cagegory_funds": "578"
+  },
+  {
+    "fund_symbol": "AOUAX",
+    "fund_short_name": "Angel Oak UltraShort Income Fun",
+    "fund_long_name": "Angel Oak UltraShort Income Fund Class A",
+    "fund_category": "Ultrashort Bond",
+    "num_cagegory_funds": "202"
+  },
+  {
+    "fund_symbol": "APFDX",
+    "fund_short_name": "Artisan Global Discovery Fund -",
+    "fund_long_name": "Artisan Global Discovery Fund Investor Shares",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "APIFX",
+    "fund_short_name": "Yorktown Master Allocation Fund",
+    "fund_long_name": "Yorktown Master Allocation Fund Class A",
+    "fund_category": "Allocation--85%+ Equity",
+    "num_cagegory_funds": "156"
+  },
+  {
+    "fund_symbol": "APIGX",
+    "fund_short_name": "Yorktown Capital Income Fund Cl",
+    "fund_long_name": "Yorktown Capital Appreciation Fund Class A",
+    "fund_category": "Allocation--70% to 85% Equity",
+    "num_cagegory_funds": "282"
+  },
+  {
+    "fund_symbol": "APILX",
+    "fund_short_name": "Yorktown Master Allocation Fund",
+    "fund_long_name": "Yorktown Master Allocation Fund Class L",
+    "fund_category": "Allocation--85%+ Equity",
+    "num_cagegory_funds": "156"
+  },
+  {
+    "fund_symbol": "APIMX",
+    "fund_short_name": "Yorktown Short Term Bond Fund C",
+    "fund_long_name": "Yorktown Short Term Bond Fund Class A",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "APITX",
+    "fund_short_name": "Yorktown Growth Fund Class L",
+    "fund_long_name": "Yorktown Growth Fund Class L",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "APIUX",
+    "fund_short_name": "Yorktown Multi-Asset Income Fun",
+    "fund_long_name": "Yorktown Multi-Sector Bond Fund Class A",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "APSRX",
+    "fund_short_name": "Fiera Capital Small/Mid-Cap Gro",
+    "fund_long_name": "Fiera Capital Small/Mid-Cap Growth Fund Investor Class",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "ARFFX",
+    "fund_short_name": "Ariel Focus Fund Investor Cl",
+    "fund_long_name": "Ariel Focus Fund Investor Class",
+    "fund_category": "Mid-Cap Value",
+    "num_cagegory_funds": "368"
+  },
+  {
+    "fund_symbol": "ARGFX",
+    "fund_short_name": "Ariel Fund Investor Cl",
+    "fund_long_name": "Ariel Fund Investor Class",
+    "fund_category": "Mid-Cap Value",
+    "num_cagegory_funds": "368"
+  },
+  {
+    "fund_symbol": "ARGYX",
+    "fund_short_name": "Invesco Global Real Estate Fund",
+    "fund_long_name": "Invesco Global Real Estate Fund Class Y",
+    "fund_category": "Global Real Estate",
+    "num_cagegory_funds": "186"
+  },
+  {
+    "fund_symbol": "ARMGX",
+    "fund_short_name": "Western Asset Ultra-Short Incom",
+    "fund_long_name": "Western Asset Ultra-Short Income Fund Class C1",
+    "fund_category": "Ultrashort Bond",
+    "num_cagegory_funds": "202"
+  },
+  {
+    "fund_symbol": "ARMZX",
+    "fund_short_name": "Western Asset Ultra-Short Incom",
+    "fund_long_name": "Western Asset Ultra-Short Income Fund Class A",
+    "fund_category": "Ultrashort Bond",
+    "num_cagegory_funds": "202"
+  },
+  {
+    "fund_symbol": "ARTFX",
+    "fund_short_name": "Artisan High Income Fund Invest",
+    "fund_long_name": "Artisan High Income Fund Investor Shares",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "ARTGX",
+    "fund_short_name": "Artisan Global Value Fund Inves",
+    "fund_long_name": "Artisan Global Value Fund Investor Class",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "ARTHX",
+    "fund_short_name": "Artisan Global Equity Fund Inve",
+    "fund_long_name": "Artisan Global Equity Fund Investor Class",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "ARTIX",
+    "fund_short_name": "Artisan International Fund Inv",
+    "fund_long_name": "Artisan International Fund Investor Class",
+    "fund_category": "Foreign Large Growth",
+    "num_cagegory_funds": "431"
+  },
+  {
+    "fund_symbol": "ARTJX",
+    "fund_short_name": "Artisan International Small-Mid",
+    "fund_long_name": "Artisan International Small-Mid Fund Investor Share",
+    "fund_category": "Foreign Small/Mid Growth",
+    "num_cagegory_funds": "134"
+  },
+  {
+    "fund_symbol": "ARTKX",
+    "fund_short_name": "Artisan International Value Fun",
+    "fund_long_name": "Artisan International Value Fund Investor Class",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "ARTLX",
+    "fund_short_name": "Artisan Value Fund Inv Shs",
+    "fund_long_name": "Artisan Value Fund Investor Class",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "ARTNX",
+    "fund_short_name": "Artisan Select Equity Fund - In",
+    "fund_long_name": "Artisan Select Equity Fund Investor Shares",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "ARTQX",
+    "fund_short_name": "Artisan Mid Cap Value Fd Invest",
+    "fund_long_name": "Artisan Mid Cap Value Fund Investor Class",
+    "fund_category": "Mid-Cap Value",
+    "num_cagegory_funds": "368"
+  },
+  {
+    "fund_symbol": "ARTSX",
+    "fund_short_name": "Artisan Small Cap Fund Inv Shs",
+    "fund_long_name": "Artisan Small Cap Fund Investor Shares",
+    "fund_category": "Small Growth",
+    "num_cagegory_funds": "578"
+  },
+  {
+    "fund_symbol": "ARTYX",
+    "fund_short_name": "Artisan Developing World Fund -",
+    "fund_long_name": "Artisan Developing World Fund Investor Shares",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "ARTZX",
+    "fund_short_name": "Artisan Sustainable Emerging Ma",
+    "fund_long_name": "Artisan Sustainable Emerging Markets Fund Investor Class",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "ASGTX",
+    "fund_short_name": "Transamerica Small Cap Growth C",
+    "fund_long_name": "Transamerica Small Cap Growth A",
+    "fund_category": "Small Growth",
+    "num_cagegory_funds": "578"
+  },
+  {
+    "fund_symbol": "ASIAX",
+    "fund_short_name": "Invesco Asian Pacific Growth Fu",
+    "fund_long_name": "Invesco Asia Pacific Growth Fund Class A",
+    "fund_category": "Pacific/Asia ex-Japan Stk",
+    "num_cagegory_funds": "41"
+  },
+  {
+    "fund_symbol": "ASICX",
+    "fund_short_name": "Invesco Asian Pacific Growth Fu",
+    "fund_long_name": "Invesco Asia Pacific Growth Fund Class C",
+    "fund_category": "Pacific/Asia ex-Japan Stk",
+    "num_cagegory_funds": "41"
+  },
+  {
+    "fund_symbol": "ASIYX",
+    "fund_short_name": "Invesco Asia Pacific Growth Fun",
+    "fund_long_name": "Invesco Asia Pacific Growth Fund Class Y",
+    "fund_category": "Pacific/Asia ex-Japan Stk",
+    "num_cagegory_funds": "41"
+  },
+  {
+    "fund_symbol": "ASMMX",
+    "fund_short_name": "Invesco Summit Fund Class A",
+    "fund_long_name": "Invesco Summit Fund Class A",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "ASMYX",
+    "fund_short_name": "Invesco Summit Fund Class Y",
+    "fund_long_name": "Invesco Summit Fund Class Y",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "ASPCX",
+    "fund_short_name": "Alger Spectra Fund Class C",
+    "fund_long_name": "Alger Spectra Fund Class C",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "ASRAX",
+    "fund_short_name": "Invesco Global Real Estate Inco",
+    "fund_long_name": "Invesco Global Real Estate Income Fund Class A",
+    "fund_category": "Global Real Estate",
+    "num_cagegory_funds": "186"
+  },
+  {
+    "fund_symbol": "ASRCX",
+    "fund_short_name": "Invesco Global Real Estate Inco",
+    "fund_long_name": "Invesco Global Real Estate Income Fund Class C",
+    "fund_category": "Global Real Estate",
+    "num_cagegory_funds": "186"
+  },
+  {
+    "fund_symbol": "ASRYX",
+    "fund_short_name": "Invesco Global Real Estate Inco",
+    "fund_long_name": "Invesco Global Real Estate Income Fund Class Y",
+    "fund_category": "Global Real Estate",
+    "num_cagegory_funds": "186"
+  },
+  {
+    "fund_symbol": "ASVCX",
+    "fund_short_name": "American Beacon Small Cap Value",
+    "fund_long_name": "American Beacon Small Cap Value Fund C Class",
+    "fund_category": "Small Value",
+    "num_cagegory_funds": "409"
+  },
+  {
+    "fund_symbol": "ATAGX",
+    "fund_short_name": "Anchor Risk Managed Global Stra",
+    "fund_long_name": "Anchor Risk Managed Global Strategies Fund Advisor Class Shares",
+    "fund_category": "Long-Short Equity",
+    "num_cagegory_funds": "191"
+  },
+  {
+    "fund_symbol": "ATAMX",
+    "fund_short_name": "Anchor Risk Managed Municipal S",
+    "fund_long_name": "Anchor Risk Managed Municipal Strategies Fund Advisor Class Shares",
+    "fund_category": "High Yield Muni",
+    "num_cagegory_funds": "199"
+  },
+  {
+    "fund_symbol": "ATCAX",
+    "fund_short_name": "Anchor Risk Managed Credit Stra",
+    "fund_long_name": "Anchor Risk Managed Credit Strategies Fund Advisor Class Shares",
+    "fund_category": "Relative Value Arbitrage",
+    "num_cagegory_funds": "20"
+  },
+  {
+    "fund_symbol": "ATCSX",
+    "fund_short_name": "Anchor Risk Managed Credit Stra",
+    "fund_long_name": "Anchor Risk Managed Credit Strategies Fund Institutional Class",
+    "fund_category": "Relative Value Arbitrage",
+    "num_cagegory_funds": "20"
+  },
+  {
+    "fund_symbol": "ATEAX",
+    "fund_short_name": "Anchor Risk Managed Equity Stra",
+    "fund_long_name": "Anchor Risk Managed Equity Strategies Fund Advisor Class",
+    "fund_category": "Long-Short Equity",
+    "num_cagegory_funds": "191"
+  },
+  {
+    "fund_symbol": "ATESX",
+    "fund_short_name": "Anchor Risk Managed Equity Stra",
+    "fund_long_name": "Anchor Risk Managed Equity Strategies Fund Institutional Class",
+    "fund_category": "Long-Short Equity",
+    "num_cagegory_funds": "191"
+  },
+  {
+    "fund_symbol": "ATFAX",
+    "fund_short_name": "Invesco Limited Term Muni Inc F",
+    "fund_long_name": "Invesco Limited Term Municipal Income Fund Class A",
+    "fund_category": "Muni National Short",
+    "num_cagegory_funds": "218"
+  },
+  {
+    "fund_symbol": "ATFCX",
+    "fund_short_name": "Invesco Limited Term Muni Inc F",
+    "fund_long_name": "Invesco Limited Term Municipal Income Fund Class C",
+    "fund_category": "Muni National Short",
+    "num_cagegory_funds": "218"
+  },
+  {
+    "fund_symbol": "ATFYX",
+    "fund_short_name": "Invesco Limited Term Muni Inc F",
+    "fund_long_name": "Invesco Limited Term Municipal Income Fund Class Y",
+    "fund_category": "Muni National Short",
+    "num_cagegory_funds": "218"
+  },
+  {
+    "fund_symbol": "ATGAX",
+    "fund_short_name": "Aquila Three Peaks Opportunity",
+    "fund_long_name": "Aquila Three Peaks Opportunity Growth Fund Class A",
+    "fund_category": "Mid-Cap Blend",
+    "num_cagegory_funds": "340"
+  },
+  {
+    "fund_symbol": "ATGCX",
+    "fund_short_name": "Aquila Three Peaks Opportunity",
+    "fund_long_name": "Aquila Three Peaks Opportunity Growth Fund Class C",
+    "fund_category": "Mid-Cap Blend",
+    "num_cagegory_funds": "340"
+  },
+  {
+    "fund_symbol": "ATGSX",
+    "fund_short_name": "Anchor Risk Managed Global Stra",
+    "fund_long_name": "Anchor Risk Managed Global Strategies Fund Institutional Class Shares",
+    "fund_category": "Long-Short Equity",
+    "num_cagegory_funds": "191"
+  },
+  {
+    "fund_symbol": "ATMAX",
+    "fund_short_name": "PIMCO Strategic Bond Fund Class",
+    "fund_long_name": "PIMCO Strategic Bond Fund Class A",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "ATMCX",
+    "fund_short_name": "PIMCO Strategic Bond Fund Class",
+    "fund_long_name": "PIMCO Strategic Bond Fund Class C",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "ATMSX",
+    "fund_short_name": "Anchor Risk Managed Municipal S",
+    "fund_long_name": "Anchor Risk Managed Municipal Strategies Fund Institutional Class",
+    "fund_category": "High Yield Muni",
+    "num_cagegory_funds": "199"
+  },
+  {
+    "fund_symbol": "ATOAX",
+    "fund_short_name": "Aberdeen Ultra Short Municipal",
+    "fund_long_name": "Aberdeen Ultra Short Municipal Income Fund Class A",
+    "fund_category": "Muni National Short",
+    "num_cagegory_funds": "218"
+  },
+  {
+    "fund_symbol": "ATOBX",
+    "fund_short_name": "Aberdeen Ultra Short Municipal",
+    "fund_long_name": "Aberdeen Ultra Short Municipal Income Fund Class A1",
+    "fund_category": "Muni National Short",
+    "num_cagegory_funds": "218"
+  },
+  {
+    "fund_symbol": "ATPAX",
+    "fund_short_name": "Aquila Three Peaks High Income",
+    "fund_long_name": "Aquila Three Peaks High Income Fund Class A",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "ATPCX",
+    "fund_short_name": "Aquila Three Peaks High Income",
+    "fund_long_name": "Aquila Three Peaks High Income Fund Class C",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "AUBAX",
+    "fund_short_name": "Invesco World Bond Factor Fund",
+    "fund_long_name": "Invesco World Bond Factor Fund Class A",
+    "fund_category": "World Bond",
+    "num_cagegory_funds": "201"
+  },
+  {
+    "fund_symbol": "AUBCX",
+    "fund_short_name": "Invesco World Bond Factor Fund",
+    "fund_long_name": "Invesco World Bond Factor Fund Class C",
+    "fund_category": "World Bond",
+    "num_cagegory_funds": "201"
+  },
+  {
+    "fund_symbol": "AUBYX",
+    "fund_short_name": "Invesco World Bond Factor Fund",
+    "fund_long_name": "Invesco World Bond Factor Fund Class Y",
+    "fund_category": "World Bond",
+    "num_cagegory_funds": "201"
+  },
+  {
+    "fund_symbol": "AVGAX",
+    "fund_short_name": "BNY Mellon Dynamic Total Return",
+    "fund_long_name": "BNY Mellon Dynamic Total Return Fund Class A",
+    "fund_category": "Macro Trading",
+    "num_cagegory_funds": "100"
+  },
+  {
+    "fund_symbol": "AVGCX",
+    "fund_short_name": "BNY Mellon Dynamic Total Return",
+    "fund_long_name": "BNY Mellon Dynamic Total Return Fund Class C",
+    "fund_category": "Macro Trading",
+    "num_cagegory_funds": "100"
+  },
+  {
+    "fund_symbol": "AVGRX",
+    "fund_short_name": "BNY Mellon Dynamic Total Return",
+    "fund_long_name": "BNY Mellon Dynamic Total Return Fund Class I",
+    "fund_category": "Macro Trading",
+    "num_cagegory_funds": "100"
+  },
+  {
+    "fund_symbol": "AWSAX",
+    "fund_short_name": "Invesco Global Core Equity Fund",
+    "fund_long_name": "Invesco Global Core Equity Fund Class A",
+    "fund_category": "World Large-Stock Blend",
+    "num_cagegory_funds": "322"
+  },
+  {
+    "fund_symbol": "AWSCX",
+    "fund_short_name": "Invesco Global Core Equity Fund",
+    "fund_long_name": "Invesco Global Core Equity Fund Class C",
+    "fund_category": "World Large-Stock Blend",
+    "num_cagegory_funds": "322"
+  },
+  {
+    "fund_symbol": "AWSRX",
+    "fund_short_name": "Invesco Global Core Equity Fund",
+    "fund_long_name": "Invesco Global Core Equity Fund ClassR",
+    "fund_category": "World Large-Stock Blend",
+    "num_cagegory_funds": "322"
+  },
+  {
+    "fund_symbol": "AWSYX",
+    "fund_short_name": "Invesco Global Core Equity Fund",
+    "fund_long_name": "Invesco Global Core Equity Fund Class Y",
+    "fund_category": "World Large-Stock Blend",
+    "num_cagegory_funds": "322"
+  },
+  {
+    "fund_symbol": "AZSCX",
+    "fund_short_name": "American Beacon Zebra Small Cap",
+    "fund_long_name": "American Beacon Zebra Small Cap Equity Fund C Class",
+    "fund_category": "Small Blend",
+    "num_cagegory_funds": "579"
+  },
+  {
+    "fund_symbol": "AZTCX",
+    "fund_short_name": "Aquila Tax-Free Trust of Arizon",
+    "fund_long_name": "Aquila Tax-Free Trust of Arizona Class C",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  },
+  {
+    "fund_symbol": "AZTFX",
+    "fund_short_name": "Aquila Tax-Free Trust of Arizon",
+    "fund_long_name": "Aquila Tax-Free Trust of Arizona Class A",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  },
+  {
+    "fund_symbol": "BAAPX",
+    "fund_short_name": "BlackRock 80/20 Target Allocati",
+    "fund_long_name": "BlackRock 80/20 Target Allocation Fund Class A",
+    "fund_category": "Allocation--70% to 85% Equity",
+    "num_cagegory_funds": "282"
+  },
+  {
+    "fund_symbol": "BABDX",
+    "fund_short_name": "BlackRock Global Dividend Ptf I",
+    "fund_long_name": "BlackRock Global Dividend Portfolio Investor A Shares",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "BABYX",
+    "fund_short_name": "BMO Growth Allocation - Y",
+    "fund_long_name": "BMO Growth Allocation Fund Class Y",
+    "fund_category": "Allocation--70% to 85% Equity",
+    "num_cagegory_funds": "282"
+  },
+  {
+    "fund_symbol": "BACAX",
+    "fund_short_name": "BlackRock Fds, All-Cap Energy &",
+    "fund_long_name": "BlackRock Energy Opportunities Fund Investor A Class",
+    "fund_category": "Equity Energy",
+    "num_cagegory_funds": "48"
+  },
+  {
+    "fund_symbol": "BACCX",
+    "fund_short_name": "BlackRock Fds, All-Cap Energy &",
+    "fund_long_name": "BlackRock Energy Opportunities Fund Investor C Class",
+    "fund_category": "Equity Energy",
+    "num_cagegory_funds": "48"
+  },
+  {
+    "fund_symbol": "BACPX",
+    "fund_short_name": "BlackRock 20/80 Target Allocati",
+    "fund_long_name": "BlackRock 20/80 Target Allocation Fund Investor A Shares",
+    "fund_category": "Allocation--15% to 30% Equity",
+    "num_cagegory_funds": "182"
+  },
+  {
+    "fund_symbol": "BACVX",
+    "fund_short_name": "BMO Small Cap Value Fund Class",
+    "fund_long_name": "BMO Small-Cap Value Fund Class A",
+    "fund_category": "Small Value",
+    "num_cagegory_funds": "409"
+  },
+  {
+    "fund_symbol": "BADEX",
+    "fund_short_name": "",
+    "fund_long_name": "BlackRock Defensive Advantage Emerging Markets Fund Investor A",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "BADIX",
+    "fund_short_name": "BMO Dividend Income Fund Class",
+    "fund_long_name": "BMO Dividend Income Fund Class A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BADUX",
+    "fund_short_name": "",
+    "fund_long_name": "BlackRock Defensive Advantage U.S. Fund Investor A",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "BAEDX",
+    "fund_short_name": "BlackRock Emerging Markets Flex",
+    "fund_long_name": "BlackRock Emerging Markets Flexible Dynamic Bond Portfolio Investor A Shares",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BAEGX",
+    "fund_short_name": "BMO Global Low Volatility Equit",
+    "fund_long_name": "BMO Global Low Volatility Equity Fund Class A",
+    "fund_category": "World Large-Stock Blend",
+    "num_cagegory_funds": "322"
+  },
+  {
+    "fund_symbol": "BAEIX",
+    "fund_short_name": "Sterling Capital Equity Income",
+    "fund_long_name": "Sterling Capital Equity Income Fund Class A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BAEMX",
+    "fund_short_name": "BMO LGM Emerging Markets Equity",
+    "fund_long_name": "BMO LGM Emerging Markets Equity Fund Class A",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "BAERX",
+    "fund_short_name": "Sterling Capital Equity Income",
+    "fund_long_name": "Sterling Capital Equity Income Fund Class R",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BAGPX",
+    "fund_short_name": "BlackRock 60/40 Target Allocati",
+    "fund_long_name": "BlackRock 60/40 Target Allocation Fund Investor A Shares",
+    "fund_category": "Allocation--50% to 70% Equity",
+    "num_cagegory_funds": "658"
+  },
+  {
+    "fund_symbol": "BAICX",
+    "fund_short_name": "BlackRock Funds II, BlackRock M",
+    "fund_long_name": "BlackRock Multi-Asset Income Portfolio Investor A Shares",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "BAIPX",
+    "fund_short_name": "iShares Short-Term TIPS Bond In",
+    "fund_long_name": "iShares Short-Term TIPS Bond Index Fund Investor A Shares",
+    "fund_category": "Inflation-Protected Bond",
+    "num_cagegory_funds": "188"
+  },
+  {
+    "fund_symbol": "BALGX",
+    "fund_short_name": "BMO Large Cap Growth Fund Class",
+    "fund_long_name": "BMO Large-Cap Growth Fund Class A",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "BALPX",
+    "fund_short_name": "BlackRock Large Cap Srs Fds, Bl",
+    "fund_long_name": "BlackRock Event Driven Equity Fund Investor A Shares",
+    "fund_category": "Event Driven",
+    "num_cagegory_funds": "39"
+  },
+  {
+    "fund_symbol": "BALVX",
+    "fund_short_name": "BMO Large Cap Value Fund Class",
+    "fund_long_name": "BMO Large-Cap Value Fund Class A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BAMBX",
+    "fund_short_name": "BlackRock Systematic Multi-Stra",
+    "fund_long_name": "BlackRock Systematic Multi-Strategy Fund Investor A Shares",
+    "fund_category": "Multistrategy",
+    "num_cagegory_funds": "148"
+  },
+  {
+    "fund_symbol": "BAMCX",
+    "fund_short_name": "BMO Mid Cap Value Fund Class A",
+    "fund_long_name": "BMO Mid-Cap Value Fund Class A",
+    "fund_category": "Mid-Cap Value",
+    "num_cagegory_funds": "368"
+  },
+  {
+    "fund_symbol": "BAMPX",
+    "fund_short_name": "BlackRock 40/60 Target Allocati",
+    "fund_long_name": "BlackRock 40/60 Target Allocation Fund Investor A Shares",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "BARDX",
+    "fund_short_name": "iShares Developed Real Estate I",
+    "fund_long_name": "iShares Developed Real Estate Index Fund Investor A Shares",
+    "fund_category": "Global Real Estate",
+    "num_cagegory_funds": "186"
+  },
+  {
+    "fund_symbol": "BAREX",
+    "fund_short_name": "BlackRock Real Estate Securitie",
+    "fund_long_name": "BlackRock Real Estate Securities Fund Investor A Shares",
+    "fund_category": "Real Estate",
+    "num_cagegory_funds": "210"
+  },
+  {
+    "fund_symbol": "BASCX",
+    "fund_short_name": "Sterling Capital South Carolin",
+    "fund_long_name": "Sterling Capital South Carolina Intermediate Tax Free Fund Class A",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  },
+  {
+    "fund_symbol": "BASFX",
+    "fund_short_name": "BMO Short Tax-Free Fund Class A",
+    "fund_long_name": "BMO Short Tax-Free Fund Class A",
+    "fund_category": "Muni National Short",
+    "num_cagegory_funds": "218"
+  },
+  {
+    "fund_symbol": "BASGX",
+    "fund_short_name": "",
+    "fund_long_name": "BlackRock Sustainable U.S. Growth Equity Fund Investor A Shares",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "BASIX",
+    "fund_short_name": "BlackRock Strategic Income Oppo",
+    "fund_long_name": "BlackRock Strategic Income Opportunities Portfolio Investor A Shares",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BASMX",
+    "fund_short_name": "iShares Total U.S. Stock Market",
+    "fund_long_name": "iShares Total U.S. Stock Market Index Fund Investor A Shares",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "BASOX",
+    "fund_short_name": "BlackRock Short Obligations Fun",
+    "fund_long_name": "BlackRock Short Obligations Fund Investor A Shares",
+    "fund_category": "Ultrashort Bond",
+    "num_cagegory_funds": "202"
+  },
+  {
+    "fund_symbol": "BASTX",
+    "fund_short_name": "",
+    "fund_long_name": "BlackRock Sustainable Total Return Fund Investor A",
+    "fund_category": "Intermediate Core-Plus Bond",
+    "num_cagegory_funds": "566"
+  },
+  {
+    "fund_symbol": "BATCX",
+    "fund_short_name": "BMO TCH Core Plus Bond Fund Cla",
+    "fund_long_name": "BMO Core Plus Bond Fund Class A",
+    "fund_category": "Intermediate Core-Plus Bond",
+    "num_cagegory_funds": "566"
+  },
+  {
+    "fund_symbol": "BATIX",
+    "fund_short_name": "BMO TCH Corp Income Fund Class",
+    "fund_long_name": "BMO Corporate Income Fund Class A",
+    "fund_category": "Corporate Bond",
+    "num_cagegory_funds": "183"
+  },
+  {
+    "fund_symbol": "BAUSX",
+    "fund_short_name": "BMO Ultra Short Tax-Free Fund C",
+    "fund_long_name": "BMO Ultra Short Tax-Free Fund Class A",
+    "fund_category": "Muni National Short",
+    "num_cagegory_funds": "218"
+  },
+  {
+    "fund_symbol": "BBNCX",
+    "fund_short_name": "Sterling Capital North Carolina",
+    "fund_long_name": "Sterling Capital North Carolina Intermediate Tax-Free Fund C Shares",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  },
+  {
+    "fund_symbol": "BBSCX",
+    "fund_short_name": "Sterling Capital Short Duration",
+    "fund_long_name": "Sterling Capital Short Duration Bond Fund Class C",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "BBTGX",
+    "fund_short_name": "Sterling Capital Behavioral Lar",
+    "fund_long_name": "Sterling Capital Behavioral Large Cap Value Equity Fund A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BCAPX",
+    "fund_short_name": "BlackRock 80/20 Target Allocati",
+    "fund_long_name": "BlackRock 80/20 Target Allocation Fund Class C",
+    "fund_category": "Allocation--70% to 85% Equity",
+    "num_cagegory_funds": "282"
+  },
+  {
+    "fund_symbol": "BCBAX",
+    "fund_short_name": "BlackRock Core Bond Portfolio -",
+    "fund_long_name": "BlackRock Core Bond Portfolio Investor A Shares",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "BCBCX",
+    "fund_short_name": "BlackRock Core Bond Portfolio -",
+    "fund_long_name": "BlackRock Core Bond Portfolio Investor C Shares",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "BCBDX",
+    "fund_short_name": "BlackRock Global Dividend Ptf I",
+    "fund_long_name": "BlackRock Global Dividend Portfolio Investor C Shares",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "BCCPX",
+    "fund_short_name": "BlackRock 20/80 Target Allocati",
+    "fund_long_name": "BlackRock 20/80 Target Allocation Fund Investor C Shares",
+    "fund_category": "Allocation--15% to 30% Equity",
+    "num_cagegory_funds": "182"
+  },
+  {
+    "fund_symbol": "BCEDX",
+    "fund_short_name": "BlackRock Emerging Markets Flex",
+    "fund_long_name": "BlackRock Emerging Markets Flexible Dynamic Bond Portfolio Investor C Shares",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BCEGX",
+    "fund_short_name": "Sterling Capital Equity Income",
+    "fund_long_name": "Sterling Capital Equity Income Fund Class C",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BCGPX",
+    "fund_short_name": "BlackRock 60/40 Target Allocati",
+    "fund_long_name": "BlackRock 60/40 Target Allocation Fund Investor C Shares",
+    "fund_category": "Allocation--50% to 70% Equity",
+    "num_cagegory_funds": "658"
+  },
+  {
+    "fund_symbol": "BCICX",
+    "fund_short_name": "BlackRock Funds II, BlackRock M",
+    "fund_long_name": "BlackRock Multi-Asset Income Portfolio Investor C Shares",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "BCLPX",
+    "fund_short_name": "BlackRock Large Cap Srs Fds, Bl",
+    "fund_long_name": "BlackRock Event Driven Equity Fund Investor C Shares",
+    "fund_category": "Event Driven",
+    "num_cagegory_funds": "39"
+  },
+  {
+    "fund_symbol": "BCMPX",
+    "fund_short_name": "BlackRock 40/60 Target Allocati",
+    "fund_long_name": "BlackRock 40/60 Target Allocation Fund Investor C Shares",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "BCRAX",
+    "fund_short_name": "BlackRock CoreAlpha Bond Fund -",
+    "fund_long_name": "BlackRock CoreAlpha Bond Fund Investor A Shares",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "BCRCX",
+    "fund_short_name": "BlackRock CoreAlpha Bond Fund -",
+    "fund_long_name": "BlackRock CoreAlpha Bond Fund Investor C Shares",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "BCREX",
+    "fund_short_name": "BlackRock Real Estate Securitie",
+    "fund_long_name": "BlackRock Real Estate Securities Fund Investor C Shares",
+    "fund_category": "Real Estate",
+    "num_cagegory_funds": "210"
+  },
+  {
+    "fund_symbol": "BCSAX",
+    "fund_short_name": "BlackRock Commodity Strategies",
+    "fund_long_name": "BlackRock Commodity Strategies Portfolio Investor A Shares",
+    "fund_category": "Commodities Broad Basket",
+    "num_cagegory_funds": "89"
+  },
+  {
+    "fund_symbol": "BCSCX",
+    "fund_short_name": "BlackRock Commodity Strategies",
+    "fund_long_name": "BlackRock Commodity Strategies Portfolio Investor C Shares",
+    "fund_category": "Commodities Broad Basket",
+    "num_cagegory_funds": "89"
+  },
+  {
+    "fund_symbol": "BCVCX",
+    "fund_short_name": "Sterling Capital Behavioral Lar",
+    "fund_long_name": "Sterling Capital Behavioral Large Cap Value Equity Fund C",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BDAAX",
+    "fund_short_name": "",
+    "fund_long_name": "BlackRock Defensive Advantage International Fund Investor A",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BDAQX",
+    "fund_short_name": "BMO Disciplined International E",
+    "fund_long_name": "BMO Disciplined International Equity Fund Class A",
+    "fund_category": "Foreign Large Value",
+    "num_cagegory_funds": "306"
+  },
+  {
+    "fund_symbol": "BDBPX",
+    "fund_short_name": "iShares Russell 2000 Small Cap",
+    "fund_long_name": "iShares Russell 2000 Small-Cap Index Fund Investor P Shares",
+    "fund_category": "Small Blend",
+    "num_cagegory_funds": "579"
+  },
+  {
+    "fund_symbol": "BDHAX",
+    "fund_short_name": "BlackRock Dynamic High Income P",
+    "fund_long_name": "BlackRock Dynamic High Income Portfolio Investor A",
+    "fund_category": "World Allocation",
+    "num_cagegory_funds": "448"
+  },
+  {
+    "fund_symbol": "BDHCX",
+    "fund_short_name": "BlackRock Dynamic High Income P",
+    "fund_long_name": "BlackRock Dynamic High Income Portfolio Investor C",
+    "fund_category": "World Allocation",
+    "num_cagegory_funds": "448"
+  },
+  {
+    "fund_symbol": "BDLAX",
+    "fund_short_name": "Lord Abbett Bond Debenture Fund",
+    "fund_long_name": "Lord Abbett Bond Debenture Fund Class C",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "BDMAX",
+    "fund_short_name": "BlackRock Global Long/Short Equ",
+    "fund_long_name": "BlackRock Global Long/Short Equity Fund Investor A Shares",
+    "fund_category": "Equity Market Neutral",
+    "num_cagegory_funds": "40"
+  },
+  {
+    "fund_symbol": "BDMCX",
+    "fund_short_name": "BlackRock Global Long/Short Equ",
+    "fund_long_name": "BlackRock Global Long/Short Equity Fund Investor C Shares",
+    "fund_category": "Equity Market Neutral",
+    "num_cagegory_funds": "40"
+  },
+  {
+    "fund_symbol": "BDOAX",
+    "fund_short_name": "iShares MSCI Total Internationa",
+    "fund_long_name": "iShares MSCI Total International Index Fund Investor A Shares",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BDSAX",
+    "fund_short_name": "BlackRock Advantage Small Cap C",
+    "fund_long_name": "BlackRock Advantage Small Cap Core Fund Investor A Shares",
+    "fund_category": "Small Blend",
+    "num_cagegory_funds": "579"
+  },
+  {
+    "fund_symbol": "BDSCX",
+    "fund_short_name": "BlackRock Advantage Small Cap C",
+    "fund_long_name": "BlackRock Advantage Small Cap Core Fund Investor C Shares",
+    "fund_category": "Small Blend",
+    "num_cagegory_funds": "579"
+  },
+  {
+    "fund_symbol": "BDSYX",
+    "fund_short_name": "BMO Aggressive Allocation Fund-",
+    "fund_long_name": "BMO Aggressive Allocation Fund Class Y",
+    "fund_category": "Allocation--85%+ Equity",
+    "num_cagegory_funds": "156"
+  },
+  {
+    "fund_symbol": "BDVYX",
+    "fund_short_name": "BMO Conservative Allocation Fun",
+    "fund_long_name": "BMO Conservative Allocation Fund Class Y",
+    "fund_category": "Allocation--15% to 30% Equity",
+    "num_cagegory_funds": "182"
+  },
+  {
+    "fund_symbol": "BEEAX",
+    "fund_short_name": "BlackRock Emerging Markets Allo",
+    "fund_long_name": "BlackRock Total Emerging Markets Fund Investor A",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "BEECX",
+    "fund_short_name": "BlackRock Emerging Markets Allo",
+    "fund_long_name": "BlackRock Total Emerging Markets Fund Investor C",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "BERCX",
+    "fund_short_name": "Chartwell Mid Cap Value Fund",
+    "fund_long_name": "Chartwell Mid Cap Value Fund",
+    "fund_category": "Mid-Cap Value",
+    "num_cagegory_funds": "368"
+  },
+  {
+    "fund_symbol": "BERIX",
+    "fund_short_name": "Chartwell Income Fund",
+    "fund_long_name": "Chartwell Income Fund",
+    "fund_category": "Allocation--15% to 30% Equity",
+    "num_cagegory_funds": "182"
+  },
+  {
+    "fund_symbol": "BFONX",
+    "fund_short_name": "Biondo Focus Fund",
+    "fund_long_name": "Biondo Focus Fund Investor Class",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "BFRAX",
+    "fund_short_name": "BlackRock Floating Rate Income",
+    "fund_long_name": "BlackRock Floating Rate Income Portfolio Investor A Shares",
+    "fund_category": "Bank Loan",
+    "num_cagegory_funds": "228"
+  },
+  {
+    "fund_symbol": "BFRCX",
+    "fund_short_name": "BlackRock Floating Rate Income",
+    "fund_long_name": "BlackRock Floating Rate Income Fund Investor C shares",
+    "fund_category": "Bank Loan",
+    "num_cagegory_funds": "228"
+  },
+  {
+    "fund_symbol": "BFSAX",
+    "fund_short_name": "BFS Equity Fund",
+    "fund_long_name": "BFS Equity Fund",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "BGAMX",
+    "fund_short_name": "BlackRock Global Impact Fund In",
+    "fund_long_name": "BlackRock Global Impact Fund Investor A",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "BGCAX",
+    "fund_short_name": "BlackRock Global Long/Short Cre",
+    "fund_long_name": "BlackRock Global Long/Short Credit Fund Investor A Shares",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BGCCX",
+    "fund_short_name": "BlackRock Global Long/Short Cre",
+    "fund_long_name": "BlackRock Global Long/Short Credit Fund Investor C Shares",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BGLAX",
+    "fund_short_name": "Brookfield Global Listed Infras",
+    "fund_long_name": "Brookfield Global Listed Infrastructure Fund Class A",
+    "fund_category": "Infrastructure",
+    "num_cagegory_funds": "85"
+  },
+  {
+    "fund_symbol": "BGLCX",
+    "fund_short_name": "Brookfield Global Listed Infras",
+    "fund_long_name": "Brookfield Global Listed Infrastructure Fund Class C",
+    "fund_category": "Infrastructure",
+    "num_cagegory_funds": "85"
+  },
+  {
+    "fund_symbol": "BGMAX",
+    "fund_short_name": "BMO Mid Cap Growth Fund Class A",
+    "fund_long_name": "BMO Mid-Cap Growth Fund Class A",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "BGPCX",
+    "fund_short_name": "BlackRock GNMA Portfolio - Clas",
+    "fund_long_name": "BlackRock GNMA Portfolio Investor C Shares",
+    "fund_category": "Intermediate Government",
+    "num_cagegory_funds": "219"
+  },
+  {
+    "fund_symbol": "BGRYX",
+    "fund_short_name": "BMO Balanced Allocation Fund -",
+    "fund_long_name": "BMO Balanced Allocation Fund Class Y",
+    "fund_category": "Allocation--50% to 70% Equity",
+    "num_cagegory_funds": "658"
+  },
+  {
+    "fund_symbol": "BGSAX",
+    "fund_short_name": "BlackRock Science and Technolog",
+    "fund_long_name": "BlackRock Technology Opportunities Fund Investor A Shares",
+    "fund_category": "Technology",
+    "num_cagegory_funds": "175"
+  },
+  {
+    "fund_symbol": "BGSCX",
+    "fund_short_name": "BlackRock Science and Technolog",
+    "fund_long_name": "BlackRock Technology Opportunities Fund Investor C Shares",
+    "fund_category": "Technology",
+    "num_cagegory_funds": "175"
+  },
+  {
+    "fund_symbol": "BGVAX",
+    "fund_short_name": "Sterling Capital Intermediate",
+    "fund_long_name": "Sterling Capital Intermediate U.S. Government Fund Class A",
+    "fund_category": "Intermediate Government",
+    "num_cagegory_funds": "219"
+  },
+  {
+    "fund_symbol": "BHIAX",
+    "fund_short_name": "Bishop Street Hawaii Municipal",
+    "fund_long_name": "Bishop Street Hawaii Municipal Bond Fund Class A",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  },
+  {
+    "fund_symbol": "BHYAX",
+    "fund_short_name": "BlackRock High Yield Bond Portf",
+    "fund_long_name": "BlackRock High Yield Bond Portfolio Investor A Shares",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "BHYCX",
+    "fund_short_name": "BlackRock High Yield Bond Portf",
+    "fund_long_name": "BlackRock High Yield Bond Portfolio Investor C Shares",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "BIAAX",
+    "fund_short_name": "BlackRock Impact Bond Fund - Cl",
+    "fund_long_name": "BlackRock Systematic ESG Bond Fund Investor A",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "BIACX",
+    "fund_short_name": "BlackRock Impact Bond Fund - Cl",
+    "fund_long_name": "BlackRock Systematic ESG Bond Fund Investor C",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "BIBGX",
+    "fund_short_name": "BlackRock International Impact",
+    "fund_long_name": "BlackRock International Impact Fund Investor A",
+    "fund_category": "Foreign Large Growth",
+    "num_cagegory_funds": "431"
+  },
+  {
+    "fund_symbol": "BICAX",
+    "fund_short_name": "Sterling Capital Total Return B",
+    "fund_long_name": "Sterling Capital Total Return Bond Fund Class A",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "BICCX",
+    "fund_short_name": "Sterling Capital Total Return B",
+    "fund_long_name": "Sterling Capital Total Return Bond Fund Class C",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "BICRX",
+    "fund_short_name": "Sterling Capital Total Return",
+    "fund_long_name": "Sterling Capital Total Return Bond Fund Class R",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "BIDAX",
+    "fund_short_name": "iShares Municipal Bond Index Fu",
+    "fund_long_name": "iShares Municipal Bond Index Fund Investor A Shares",
+    "fund_category": "Muni National Interm",
+    "num_cagegory_funds": "293"
+  },
+  {
+    "fund_symbol": "BIDPX",
+    "fund_short_name": "iShares Municipal Bond Index Fu",
+    "fund_long_name": "iShares Municipal Bond Index Fund Investor P Shares",
+    "fund_category": "Muni National Interm",
+    "num_cagegory_funds": "293"
+  },
+  {
+    "fund_symbol": "BIGCX",
+    "fund_short_name": "BlackRock U.S. Government Bond",
+    "fund_long_name": "BlackRock U.S. Government Bond Portfolio Investor C Shares",
+    "fund_category": "Intermediate Government",
+    "num_cagegory_funds": "219"
+  },
+  {
+    "fund_symbol": "BIRAX",
+    "fund_short_name": "BlackRock Impact U.S. Equity Fu",
+    "fund_long_name": "BlackRock Advantage ESG U.S. Equity Fund Investor A Shares",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "BIRCX",
+    "fund_short_name": "BlackRock Impact U.S. Equity Fu",
+    "fund_long_name": "BlackRock Advantage ESG U.S. Equity Fund Investor C Shares",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "BITAX",
+    "fund_short_name": "BMO Inter Tax Free Fund Class A",
+    "fund_long_name": "BMO Intermediate Tax-Free Fund Class A",
+    "fund_category": "Muni National Interm",
+    "num_cagegory_funds": "293"
+  },
+  {
+    "fund_symbol": "BIUCX",
+    "fund_short_name": "Sterling Capital Intermediate U",
+    "fund_long_name": "Sterling Capital Intermediate U.S. Government Fund Class C",
+    "fund_category": "Intermediate Government",
+    "num_cagegory_funds": "219"
+  },
+  {
+    "fund_symbol": "BJBGX",
+    "fund_short_name": "Aberdeen Total Return Bond Fund",
+    "fund_long_name": "Aberdeen Total Return Bond Fund Class A",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "BJBHX",
+    "fund_short_name": "Aberdeen Global High Income Fun",
+    "fund_long_name": "Aberdeen Global High Income Fund Class A",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "BJBIX",
+    "fund_short_name": "Aberdeen Select International E",
+    "fund_long_name": "Aberdeen International Sustainable Leaders Fund Class A",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BLADX",
+    "fund_short_name": "BlackRock Managed Income Fund -",
+    "fund_long_name": "BlackRock Managed Income Fund Investor A Shares",
+    "fund_category": "Allocation--15% to 30% Equity",
+    "num_cagegory_funds": "182"
+  },
+  {
+    "fund_symbol": "BLDAX",
+    "fund_short_name": "BlackRock Low Duration Bond Por",
+    "fund_long_name": "BlackRock Low Duration Bond Portfolio Investor A Shares",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "BLDCX",
+    "fund_short_name": "BlackRock Low Duration Bond Por",
+    "fund_long_name": "BlackRock Low Duration Bond Portfolio Investor C Shares",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "BLRAX",
+    "fund_short_name": "Brookfield Global Listed Real E",
+    "fund_long_name": "Brookfield Global Listed Real Estate Fund Class A",
+    "fund_category": "Global Real Estate",
+    "num_cagegory_funds": "186"
+  },
+  {
+    "fund_symbol": "BLRCX",
+    "fund_short_name": "Brookfield Global Listed Real E",
+    "fund_long_name": "Brookfield Global Listed Real Estate Fund Class C",
+    "fund_category": "Global Real Estate",
+    "num_cagegory_funds": "186"
+  },
+  {
+    "fund_symbol": "BLRYX",
+    "fund_short_name": "Brookfield Global Listed Real E",
+    "fund_long_name": "Brookfield Global Listed Real Estate Fund Class I",
+    "fund_category": "Global Real Estate",
+    "num_cagegory_funds": "186"
+  },
+  {
+    "fund_symbol": "BLSAX",
+    "fund_short_name": "BlackRock Advantage Emerging Ma",
+    "fund_long_name": "BlackRock Advantage Emerging Markets Fund Investor A Shares",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "BLSCX",
+    "fund_short_name": "BlackRock Advantage Emerging Ma",
+    "fund_long_name": "BlackRock Advantage Emerging Markets Fund Investor C Shares",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "BLVAX",
+    "fund_short_name": "BMO Low Volatility Equity Fund",
+    "fund_long_name": "BMO Low Volatility Equity Fund Class A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BLYCX",
+    "fund_short_name": "American Beacon Bridgeway Large",
+    "fund_long_name": "American Beacon Bridgeway Large Cap Growth Fund C Class",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "BLZAX",
+    "fund_short_name": "BlackRock Advantage ESG Emergin",
+    "fund_long_name": "BlackRock Advantage ESG Emerging Markets Equity Fund Investor A",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "BMBCX",
+    "fund_short_name": "BlackRock Systematic Multi-Stra",
+    "fund_long_name": "BlackRock Systematic Multi-Strategy Fund Investor C Shares",
+    "fund_category": "Multistrategy",
+    "num_cagegory_funds": "148"
+  },
+  {
+    "fund_symbol": "BMBYX",
+    "fund_short_name": "BMO Moderate Allocation Fund -",
+    "fund_long_name": "BMO Moderate Allocation Fund Class Y",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "BMCAX",
+    "fund_short_name": "BlackRock Advantage Large Cap G",
+    "fund_long_name": "BlackRock Advantage Large Cap Growth Fund Investor A Shares",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "BMCCX",
+    "fund_short_name": "BlackRock Advantage Large Cap G",
+    "fund_long_name": "BlackRock Advantage Large Cap Growth Fund Investor C Shares",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "BMEAX",
+    "fund_short_name": "BlackRock High Equity Income Fu",
+    "fund_long_name": "BlackRock High Equity Income Fund Investor A Shares",
+    "fund_category": "Derivative Income",
+    "num_cagegory_funds": "45"
+  },
+  {
+    "fund_symbol": "BMECX",
+    "fund_short_name": "BlackRock High Equity Income Fu",
+    "fund_long_name": "BlackRock High Equity Income Fund Investor C Shares",
+    "fund_category": "Derivative Income",
+    "num_cagegory_funds": "45"
+  },
+  {
+    "fund_symbol": "BMGAX",
+    "fund_short_name": "BlackRock Mid Cap Growth Equity",
+    "fund_long_name": "BlackRock Mid-Cap Growth Equity Portfolio Investor A Shares",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "BMGCX",
+    "fund_short_name": "BlackRock Mid Cap Growth Equity",
+    "fund_long_name": "BlackRock Mid-Cap Growth Equity Portfolio Investor C Shares",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "BMIAX",
+    "fund_short_name": "BNY Mellon Income Stock Fund -",
+    "fund_long_name": "BNY Mellon Income Stock Fund Class A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BMICX",
+    "fund_short_name": "BlackRock Managed Income Fund -",
+    "fund_long_name": "BlackRock Managed Income Fund Investor C Shares",
+    "fund_category": "Allocation--15% to 30% Equity",
+    "num_cagegory_funds": "182"
+  },
+  {
+    "fund_symbol": "BMIIX",
+    "fund_short_name": "BNY Mellon Income Stock Fund -",
+    "fund_long_name": "BNY Mellon Income Stock Fund Class I",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BMISX",
+    "fund_short_name": "BNY Mellon Income Stock Fund -",
+    "fund_long_name": "BNY Mellon Income Stock Fund Class C",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BMOAX",
+    "fund_short_name": "iShares U.S.A.gregate Bond Ind",
+    "fund_long_name": "iShares U.S.A.gregate Bond Index Fund Investor A Shares",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "BMOPX",
+    "fund_short_name": "iShares U.S.A.gregate Bond Ind",
+    "fund_long_name": "iShares U.S.A.gregate Bond Index Fund Investor P Shares",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "BMPAX",
+    "fund_short_name": "BlackRock U.S. Mortgage Portfol",
+    "fund_long_name": "BlackRock US Mortgage Portfolio Investor A Shares",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "BMPCX",
+    "fund_short_name": "BlackRock U.S. Mortgage Portfol",
+    "fund_long_name": "BlackRock US Mortgage Portfolio Investor C Shares",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "BMSAX",
+    "fund_short_name": "BlackRock Credit Strategies Inc",
+    "fund_long_name": "BlackRock Income Fund Investor A Shares",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "BMSBX",
+    "fund_short_name": "MFS Blended Research Mid Cap Eq",
+    "fund_long_name": "MFS Blended Research Mid Cap Equity Fund B",
+    "fund_category": "Mid-Cap Blend",
+    "num_cagegory_funds": "340"
+  },
+  {
+    "fund_symbol": "BMSCX",
+    "fund_short_name": "BlackRock Credit Strategies Inc",
+    "fund_long_name": "BlackRock Income Fund Investor C Shares",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "BMSDX",
+    "fund_short_name": "MFS Blended Research Mid Cap Eq",
+    "fund_long_name": "MFS Blended Research Mid Cap Equity Fund C",
+    "fund_category": "Mid-Cap Blend",
+    "num_cagegory_funds": "340"
+  },
+  {
+    "fund_symbol": "BMSFX",
+    "fund_short_name": "MFS Blended Research Mid Cap Eq",
+    "fund_long_name": "MFS Blended Research Mid Cap Equity Fund A",
+    "fund_category": "Mid-Cap Blend",
+    "num_cagegory_funds": "340"
+  },
+  {
+    "fund_symbol": "BMTAX",
+    "fund_short_name": "BMO Strategic Income Fund - A",
+    "fund_long_name": "BMO Strategic Income Fund Class A",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "BNAAX",
+    "fund_short_name": "UBS Dynamic Alpha Fund Class A",
+    "fund_long_name": "UBS Dynamic Alpha Fund Class A",
+    "fund_category": "Macro Trading",
+    "num_cagegory_funds": "100"
+  },
+  {
+    "fund_symbol": "BNCAX",
+    "fund_short_name": "Sterling Capital North Carolina",
+    "fund_long_name": "Sterling Capital North Carolina Intermediate Tax-Free Fund Class A",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  },
+  {
+    "fund_symbol": "BNGLX",
+    "fund_short_name": "UBS Global Allocation Fund Clas",
+    "fund_long_name": "UBS Global Allocation Fund Class A",
+    "fund_category": "World Allocation",
+    "num_cagegory_funds": "448"
+  },
+  {
+    "fund_symbol": "BNIEX",
+    "fund_short_name": "UBS International Sustainable E",
+    "fund_long_name": "UBS International Sustainable Equity Fund Class A",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BNSCX",
+    "fund_short_name": "UBS U.S. Small Cap Growth Fund",
+    "fund_long_name": "UBS U.S. Small Cap Growth Fund Class A",
+    "fund_category": "Small Growth",
+    "num_cagegory_funds": "578"
+  },
+  {
+    "fund_symbol": "BOPAX",
+    "fund_short_name": "Sterling Capital Special Opport",
+    "fund_long_name": "Sterling Capital Special Opportunities Fund Class A",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "BOPCX",
+    "fund_short_name": "Sterling Capital Special Opport",
+    "fund_long_name": "Sterling Capital Special Opportunities Fund Class C",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "BOPRX",
+    "fund_short_name": "Sterling Capital Special Opport",
+    "fund_long_name": "Sterling Capital Special Opportunities Fund Class R",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "BOSCX",
+    "fund_short_name": "BNY Mellon Small Cap Value Fund",
+    "fund_long_name": "BNY Mellon Small Cap Value Fund Class C",
+    "fund_category": "Small Blend",
+    "num_cagegory_funds": "579"
+  },
+  {
+    "fund_symbol": "BPIAX",
+    "fund_short_name": "BMO Pyrford Intl Stock Fd - Cla",
+    "fund_long_name": "BMO Pyrford International Stock Fund Class A",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BPRAX",
+    "fund_short_name": "BlackRock Inflation Protected B",
+    "fund_long_name": "BlackRock Inflation Protected Bond Fund Investor A Shares",
+    "fund_category": "Inflation-Protected Bond",
+    "num_cagegory_funds": "188"
+  },
+  {
+    "fund_symbol": "BPRCX",
+    "fund_short_name": "BlackRock Inflation Protected B",
+    "fund_long_name": "BlackRock Inflation Protected Bond Fund Investor C Shares",
+    "fund_category": "Inflation-Protected Bond",
+    "num_cagegory_funds": "188"
+  },
+  {
+    "fund_symbol": "BRBCX",
+    "fund_short_name": "BlackRock Tactical Opportunitie",
+    "fund_long_name": "BlackRock Tactical Opportunities Fund Investor C Shares",
+    "fund_category": "Macro Trading",
+    "num_cagegory_funds": "100"
+  },
+  {
+    "fund_symbol": "BRCAX",
+    "fund_short_name": "Invesco Balanced-Risk Commodity",
+    "fund_long_name": "Invesco Balanced-Risk Commodity Strategy Fund Class A",
+    "fund_category": "Commodities Broad Basket",
+    "num_cagegory_funds": "89"
+  },
+  {
+    "fund_symbol": "BRCCX",
+    "fund_short_name": "Invesco Balanced-Risk Commodity",
+    "fund_long_name": "Invesco Balanced-Risk Commodity Strategy Fund Class C",
+    "fund_category": "Commodities Broad Basket",
+    "num_cagegory_funds": "89"
+  },
+  {
+    "fund_symbol": "BRCRX",
+    "fund_short_name": "Invesco Balanced-Risk Commodity",
+    "fund_long_name": "Invesco Balanced-Risk Commodity Strategy Fund Class R",
+    "fund_category": "Commodities Broad Basket",
+    "num_cagegory_funds": "89"
+  },
+  {
+    "fund_symbol": "BRCYX",
+    "fund_short_name": "Invesco Balanced-Risk Commodity",
+    "fund_long_name": "Invesco Balanced-Risk Commodity Strategy Fund Class Y",
+    "fund_category": "Commodities Broad Basket",
+    "num_cagegory_funds": "89"
+  },
+  {
+    "fund_symbol": "BREAX",
+    "fund_short_name": "BlackRock International Dividen",
+    "fund_long_name": "BlackRock International Dividend Fund Investor A Shares",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BRECX",
+    "fund_short_name": "BlackRock International Dividen",
+    "fund_long_name": "BlackRock International Dividend Fund Investor C Shares",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BRGAX",
+    "fund_short_name": "iShares Russell 1000 Large-Cap",
+    "fund_long_name": "iShares Russell 1000 Large-Cap Index Fund Investor A Shares",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "BRGIX",
+    "fund_short_name": "Bridges Investment Fund, Inc.",
+    "fund_long_name": "Bridges Investment Fund",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "BRIAX",
+    "fund_short_name": "BlackRock Retirement Income 203",
+    "fund_long_name": "BlackRock Retirement Income 2030 Fund Investor A",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "BRIDX",
+    "fund_short_name": "BlackRock Retirement Income 204",
+    "fund_long_name": "BlackRock Retirement Income 2040 Fund Investor A",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "BRKAX",
+    "fund_short_name": "MFS Blended Research Emerging M",
+    "fund_long_name": "MFS Blended Research Emerging Markets Equity Fund Class A",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "BRKBX",
+    "fund_short_name": "MFS Blended Research Emerging M",
+    "fund_long_name": "MFS Blended Research Emerging Markets Equity Fund Class B",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "BRKCX",
+    "fund_short_name": "MFS Blended Research Emerging M",
+    "fund_long_name": "MFS Blended Research Emerging Markets Equity Fund Class C",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "BRMAX",
+    "fund_short_name": "iShares Russell Mid-Cap Index F",
+    "fund_long_name": "iShares Russell Mid-Cap Index Fund Investor A Shares",
+    "fund_category": "Mid-Cap Blend",
+    "num_cagegory_funds": "340"
+  },
+  {
+    "fund_symbol": "BROAX",
+    "fund_short_name": "BlackRock Advantage Internation",
+    "fund_long_name": "BlackRock Advantage International Fund Investor A Shares",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BROCX",
+    "fund_short_name": "BlackRock Advantage Internation",
+    "fund_long_name": "BlackRock Advantage International Fund Investor C Shares",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BRSBX",
+    "fund_short_name": "MFS Blended Research Small Cap",
+    "fund_long_name": "MFS Blended Research Small Cap Equity Fund Class B",
+    "fund_category": "Small Blend",
+    "num_cagegory_funds": "579"
+  },
+  {
+    "fund_symbol": "BRSDX",
+    "fund_short_name": "MFS Blended Research Small Cap",
+    "fund_long_name": "MFS Blended Research Small Cap Equity Fund Class A",
+    "fund_category": "Small Blend",
+    "num_cagegory_funds": "579"
+  },
+  {
+    "fund_symbol": "BRSHX",
+    "fund_short_name": "MFS Blended Research Small Cap",
+    "fund_long_name": "MFS Blended Research Small Cap Equity Fund Class C",
+    "fund_category": "Small Blend",
+    "num_cagegory_funds": "579"
+  },
+  {
+    "fund_symbol": "BRUDX",
+    "fund_short_name": "MFS Blended Research Value Equi",
+    "fund_long_name": "MFS Blended Research Value Equity Fund Class A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BRUEX",
+    "fund_short_name": "MFS Blended Research Value Equi",
+    "fund_long_name": "MFS Blended Research Value Equity Fund Class B",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BRUFX",
+    "fund_short_name": "Bruce Fund, Inc.",
+    "fund_long_name": "Bruce Fund",
+    "fund_category": "Allocation--50% to 70% Equity",
+    "num_cagegory_funds": "658"
+  },
+  {
+    "fund_symbol": "BRUGX",
+    "fund_short_name": "MFS Blended Research Value Equi",
+    "fund_long_name": "MFS Blended Research Value Equity Fund Class C",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BRWAX",
+    "fund_short_name": "MFS Blended Research Growth Equ",
+    "fund_long_name": "MFS Blended Research Growth Equity Fund Class A",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "BRWBX",
+    "fund_short_name": "MFS Blended Research Growth Equ",
+    "fund_long_name": "MFS Blended Research Growth Equity Fund Class B",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "BRWCX",
+    "fund_short_name": "MFS Blended Research Growth Equ",
+    "fund_long_name": "MFS Blended Research Growth Equity Fund Class C",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "BRXAX",
+    "fund_short_name": "MFS Blended Research Internatio",
+    "fund_long_name": "MFS Blended Research International Equity Fund Class A",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BRXBX",
+    "fund_short_name": "MFS Blended Research Internatio",
+    "fund_long_name": "MFS Blended Research International Equity Fund Class B",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BRXCX",
+    "fund_short_name": "MFS Blended Research Internatio",
+    "fund_long_name": "MFS Blended Research International Equity Fund Class C",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BRZAX",
+    "fund_short_name": "BlackRock Advantage ESG Interna",
+    "fund_long_name": "BlackRock Advantage ESG International Equity Fund Investor A",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BSCCX",
+    "fund_short_name": "Sterling Capital South Carolina",
+    "fund_long_name": "Sterling Capital South Carolina Intermediate Tax-Free Fund C Shares",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  },
+  {
+    "fund_symbol": "BSDAX",
+    "fund_short_name": "",
+    "fund_long_name": "BlackRock SMID-Cap Growth Equity Fund Investor A",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "BSGAX",
+    "fund_short_name": "Sterling Capital Short Duration",
+    "fund_long_name": "Sterling Capital Short Duration Bond Fund Class A",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "BSHAX",
+    "fund_short_name": "",
+    "fund_long_name": "BlackRock Sustainable High Yield Bond Fund Investor A",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "BSIAX",
+    "fund_short_name": "",
+    "fund_long_name": "BlackRock Sustainable International Equity Fund Investor A Shares",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BSICX",
+    "fund_short_name": "BlackRock Strategic Income Oppo",
+    "fund_long_name": "BlackRock Strategic Income Opportunities Portfolio Investor C Shares",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BSLAX",
+    "fund_short_name": "BMO Small-Cap Growth Fund - Cla",
+    "fund_long_name": "BMO Small-Cap Growth Fund Class A",
+    "fund_category": "Small Growth",
+    "num_cagegory_funds": "578"
+  },
+  {
+    "fund_symbol": "BSMAX",
+    "fund_short_name": "iShares Russell Small/Mid-Cap I",
+    "fund_long_name": "iShares Russell Small/Mid-Cap Index Fund Investor A Shares",
+    "fund_category": "Small Blend",
+    "num_cagegory_funds": "579"
+  },
+  {
+    "fund_symbol": "BSPAX",
+    "fund_short_name": "iShares S&P 500 Index Fund - Cl",
+    "fund_long_name": "iShares S&P 500 Index Fund Investor A Shares",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "BSPPX",
+    "fund_short_name": "iShares S&P 500 Index Fund - In",
+    "fund_long_name": "iShares S&P 500 Index Fund Investor P Shares",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "BSTAX",
+    "fund_short_name": "BlackRock Total Factor Fund - C",
+    "fund_long_name": "BlackRock Total Factor Fund Investor A Shares",
+    "fund_category": "Multistrategy",
+    "num_cagegory_funds": "148"
+  },
+  {
+    "fund_symbol": "BSTCX",
+    "fund_short_name": "BlackRock Total Factor Fund - C",
+    "fund_long_name": "BlackRock Total Factor Fund Investor C Shares",
+    "fund_category": "Multistrategy",
+    "num_cagegory_funds": "148"
+  },
+  {
+    "fund_symbol": "BSVAX",
+    "fund_short_name": "",
+    "fund_long_name": "BlackRock Sustainable U.S. Value Equity Fund Investor A Shares",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BTCFX",
+    "fund_short_name": "",
+    "fund_long_name": "Bitcoin Strategy ProFund Investor Class",
+    "fund_category": "Trading--Miscellaneous",
+    "num_cagegory_funds": "9"
+  },
+  {
+    "fund_symbol": "BTFAX",
+    "fund_short_name": "BTS Tactical Fixed Income Fund",
+    "fund_long_name": "BTS Tactical Fixed Income Fund Class A",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BTFCX",
+    "fund_short_name": "BTS Tactical Fixed Income Fund",
+    "fund_long_name": "BTS Tactical Fixed Income Fund Class C",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BTFRX",
+    "fund_short_name": "BTS Tactical Fixed Income Fund",
+    "fund_long_name": "BTS Tactical Fixed Income Fund Class R",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BTMAX",
+    "fund_short_name": "BMO Short Term Income Fund Clas",
+    "fund_long_name": "BMO Short-Term Income Fund Class A",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "BTMPX",
+    "fund_short_name": "iShares MSCI EAFE International",
+    "fund_long_name": "iShares MSCI EAFE International Index Fund Investor P Shares",
+    "fund_category": "Foreign Large Blend",
+    "num_cagegory_funds": "680"
+  },
+  {
+    "fund_symbol": "BTSAX",
+    "fund_short_name": "BTS Managed Income Fund Class A",
+    "fund_long_name": "BTS Managed Income Fund Class A Shares",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BTSCX",
+    "fund_short_name": "BTS Managed Income Fund Class C",
+    "fund_long_name": "BTS Managed Income Fund Class C Shares",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BTSRX",
+    "fund_short_name": "BTS Managed Income Fund Class R",
+    "fund_long_name": "BTS Managed Income Fund Class R Shares",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BUAGX",
+    "fund_short_name": "Cboe Vest S&P 500 Buffer Strate",
+    "fund_long_name": "CBOE Vest S&P 500 Buffer Strategy Fund Class A Shares",
+    "fund_category": "Options Trading",
+    "num_cagegory_funds": "107"
+  },
+  {
+    "fund_symbol": "BUAMX",
+    "fund_short_name": "BlackRock U.S. Impact Fund Inve",
+    "fund_long_name": "BlackRock U.S. Impact Fund Investor A",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "BUCGX",
+    "fund_short_name": "Cboe Vest S&P 500 Buffer Strate",
+    "fund_long_name": "CBOE Vest S&P 500 Buffer Strategy Fund Class C Shares",
+    "fund_category": "Options Trading",
+    "num_cagegory_funds": "107"
+  },
+  {
+    "fund_symbol": "BUMGX",
+    "fund_short_name": "Cboe Vest S&P 500 Buffer Strate",
+    "fund_long_name": "CBOE Vest S&P 500 Buffer Strategy Fund Class Investor Shares",
+    "fund_category": "Options Trading",
+    "num_cagegory_funds": "107"
+  },
+  {
+    "fund_symbol": "BUSRX",
+    "fund_short_name": "Sterling Capital Ultra Short Bo",
+    "fund_long_name": "Sterling Capital Ultra Short Bond Fund Class A Shares",
+    "fund_category": "Ultrashort Bond",
+    "num_cagegory_funds": "202"
+  },
+  {
+    "fund_symbol": "BVAAX",
+    "fund_short_name": "Sterling Capital Virginia Inter",
+    "fund_long_name": "Sterling Capital Virginia Intermediate Tax-Free Fund Class A",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  },
+  {
+    "fund_symbol": "BVACX",
+    "fund_short_name": "Sterling Capital Virginia Inter",
+    "fund_long_name": "Sterling Capital Virginia Intermediate Tax-Free Fund C Shares",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  },
+  {
+    "fund_symbol": "BVAOX",
+    "fund_short_name": "Madison Small Cap Fund Class Y",
+    "fund_long_name": "Madison Small Cap Fund Class Y",
+    "fund_category": "Small Blend",
+    "num_cagegory_funds": "579"
+  },
+  {
+    "fund_symbol": "BWDAX",
+    "fund_short_name": "Boyd Watterson Limited Duration",
+    "fund_long_name": "Boyd Watterson Limited Duration Enhanced Income Fund Class A Shares",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "BWDCX",
+    "fund_short_name": "Boyd Watterson Limited Duration",
+    "fund_long_name": "Boyd Watterson Limited Duration Enhanced Income Fund Class C Shares",
+    "fund_category": "Multisector Bond",
+    "num_cagegory_funds": "351"
+  },
+  {
+    "fund_symbol": "BWLCX",
+    "fund_short_name": "American Beacon Bridgeway Large",
+    "fund_long_name": "American Beacon Bridgeway Large Cap Value Fund C Class",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "BWVCX",
+    "fund_short_name": "Sterling Capital West Virginia",
+    "fund_long_name": "Sterling Capital West Virginia Intermediate Tax-Free Fund C Shares",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  },
+  {
+    "fund_symbol": "BXDAX",
+    "fund_short_name": "Barings Active Short Duration B",
+    "fund_long_name": "Barings Active Short Duration Bond Fund Class A",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "BXDCX",
+    "fund_short_name": "Barings Active Short Duration B",
+    "fund_long_name": "Barings Active Short Duration Bond Fund Class C",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "BXEAX",
+    "fund_short_name": "Barings Emerging Markets Debt B",
+    "fund_long_name": "Barings Emerging Markets Debt Blended Total Return Fund Class A",
+    "fund_category": "Emerging Markets Bond",
+    "num_cagegory_funds": "261"
+  },
+  {
+    "fund_symbol": "BXECX",
+    "fund_short_name": "Barings Emerging Markets Debt B",
+    "fund_long_name": "Barings Emerging Markets Debt Blended Total Return Fund Class C",
+    "fund_category": "Emerging Markets Bond",
+    "num_cagegory_funds": "261"
+  },
+  {
+    "fund_symbol": "BXFAX",
+    "fund_short_name": "Barings Global Floating Rate Fu",
+    "fund_long_name": "Barings Global Floating Rate Fund Class A",
+    "fund_category": "Bank Loan",
+    "num_cagegory_funds": "228"
+  },
+  {
+    "fund_symbol": "BXFCX",
+    "fund_short_name": "Barings Global Floating Rate Fu",
+    "fund_long_name": "Barings Global Floating Rate Fund Class C",
+    "fund_category": "Bank Loan",
+    "num_cagegory_funds": "228"
+  },
+  {
+    "fund_symbol": "BXHAX",
+    "fund_short_name": "Barings U.S. High Yield Fund Cl",
+    "fund_long_name": "Barings U.S. High Yield Fund Class A",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "BXHCX",
+    "fund_short_name": "Barings U.S. High Yield Fund Cl",
+    "fund_long_name": "Barings U.S. High Yield Fund Class C",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "BXIAX",
+    "fund_short_name": "Barings Global Credit Income Op",
+    "fund_long_name": "Barings Global Credit Income Opportunities Fund Class A",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "BXICX",
+    "fund_short_name": "Barings Global Credit Income Op",
+    "fund_long_name": "Barings Global Credit Income Opportunities Fund Class C",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "BXQAX",
+    "fund_short_name": "Barings Global Emerging Markets",
+    "fund_long_name": "Barings Global Emerging Markets Equity Fund Class A",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "BXQCX",
+    "fund_short_name": "Barings Global Emerging Markets",
+    "fund_long_name": "Barings Global Emerging Markets Equity Fund Class C",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "BXTAX",
+    "fund_short_name": "Barings Diversified Income Fund",
+    "fund_long_name": "Barings Diversified Income Fund Class A",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "BXTCX",
+    "fund_short_name": "Barings Diversified Income Fund",
+    "fund_long_name": "Barings Diversified Income Fund Class C",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "CAAAX",
+    "fund_short_name": "Calvert Growth Allocation Fund",
+    "fund_long_name": "Calvert Growth Allocation Fund Class A",
+    "fund_category": "Allocation--85%+ Equity",
+    "num_cagegory_funds": "156"
+  },
+  {
+    "fund_symbol": "CAACX",
+    "fund_short_name": "Calvert Growth Allocation Fund",
+    "fund_long_name": "Calvert Growth Allocation Fund Class C",
+    "fund_category": "Allocation--85%+ Equity",
+    "num_cagegory_funds": "156"
+  },
+  {
+    "fund_symbol": "CAAMX",
+    "fund_short_name": "Invesco Select Risk: Moderately",
+    "fund_long_name": "Invesco Select Risk: Moderately Conservative Investor Fund Class A",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "CAAPX",
+    "fund_short_name": "Ariel Appreciation Fund Investo",
+    "fund_long_name": "Ariel Appreciation Fund Investor Class",
+    "fund_category": "Mid-Cap Value",
+    "num_cagegory_funds": "368"
+  },
+  {
+    "fund_symbol": "CAAYX",
+    "fund_short_name": "Invesco Select Risk: Moderately",
+    "fund_long_name": "Invesco Select Risk: Moderately Conservative Investor Fund Class Y",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "CACFX",
+    "fund_short_name": "Invesco Greater China Fund Cl C",
+    "fund_long_name": "Invesco Greater China Fund Class C",
+    "fund_category": "China Region",
+    "num_cagegory_funds": "82"
+  },
+  {
+    "fund_symbol": "CACMX",
+    "fund_short_name": "Invesco Select Risk: Moderately",
+    "fund_long_name": "Invesco Select Risk: Moderately Conservative Investor Fund Class C",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "CADAX",
+    "fund_short_name": "Adaptive Hedged Income Fund Cla",
+    "fund_long_name": "Adaptive Hedged Multi-Asset Income Fund C Class",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "CADTX",
+    "fund_short_name": "Adaptive Hedged Income Fund Ins",
+    "fund_long_name": "Adaptive Hedged Multi-Asset Income Fund Institutional Class",
+    "fund_category": "Nontraditional Bond",
+    "num_cagegory_funds": "342"
+  },
+  {
+    "fund_symbol": "CAFGX",
+    "fund_short_name": "Adaptive Fundamental Growth Fun",
+    "fund_long_name": "Adaptive Fundamental Growth Fund Institutional Class",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "CAHIX",
+    "fund_short_name": "Adaptive Hedged High Income Fun",
+    "fund_long_name": "Adaptive Hedged High Income Fund C Class",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "CALAX",
+    "fund_short_name": "Lord Abbett Tax-Free Income Fun",
+    "fund_long_name": "Lord Abbett California Tax Free Fund Class C",
+    "fund_category": "Muni California Long",
+    "num_cagegory_funds": "100"
+  },
+  {
+    "fund_symbol": "CALCX",
+    "fund_short_name": "Calvert Conservative Allocation",
+    "fund_long_name": "Calvert Conservative Allocation Fund Class C",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "CATOX",
+    "fund_short_name": "Adaptive Tactical Rotation Fund",
+    "fund_long_name": "Adaptive Tactical Rotation Fund C Class",
+    "fund_category": "Tactical Allocation",
+    "num_cagegory_funds": "241"
+  },
+  {
+    "fund_symbol": "CAUKX",
+    "fund_short_name": "U.S. Govt Securities Fund Class",
+    "fund_long_name": "Shelton Capital Management U.S. Government Securities Fund Class K",
+    "fund_category": "Intermediate Government",
+    "num_cagegory_funds": "219"
+  },
+  {
+    "fund_symbol": "CAUSX",
+    "fund_short_name": "U.S. Government Securities Fund",
+    "fund_long_name": "Shelton Capital Management U.S. Government Securities Fund Direct Shares",
+    "fund_category": "Intermediate Government",
+    "num_cagegory_funds": "219"
+  },
+  {
+    "fund_symbol": "CAVMX",
+    "fund_short_name": "Adaptive Tactical Economic Fund",
+    "fund_long_name": "Adaptive Tactical Outlook Fund A Class",
+    "fund_category": "Tactical Allocation",
+    "num_cagegory_funds": "241"
+  },
+  {
+    "fund_symbol": "CAVTX",
+    "fund_short_name": "Adaptive Tactical Rotation Fund",
+    "fund_long_name": "Adaptive Tactical Rotation Fund Class A",
+    "fund_category": "Tactical Allocation",
+    "num_cagegory_funds": "241"
+  },
+  {
+    "fund_symbol": "CBEAX",
+    "fund_short_name": "Wells Fargo C&B Large Cap Value",
+    "fund_long_name": "Wells Fargo C&B Large Cap Value Fund - Class A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "CBECX",
+    "fund_short_name": "Wells Fargo C&B Large Cap Value",
+    "fund_long_name": "Wells Fargo C&B Large Cap Value Fund - Class C",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "CBMAX",
+    "fund_short_name": "Wells Fargo C&B Mid Cap Value F",
+    "fund_long_name": "Wells Fargo C&B Mid Cap Value Fund - Class A",
+    "fund_category": "Mid-Cap Value",
+    "num_cagegory_funds": "368"
+  },
+  {
+    "fund_symbol": "CBMCX",
+    "fund_short_name": "Wells Fargo C&B Mid Cap Value F",
+    "fund_long_name": "Wells Fargo C&B Mid Cap Value Fund - Class C",
+    "fund_category": "Mid-Cap Value",
+    "num_cagegory_funds": "368"
+  },
+  {
+    "fund_symbol": "CBRAX",
+    "fund_short_name": "JPMorgan Corporate Bond Fund- A",
+    "fund_long_name": "JPMorgan Corporate Bond Fund Class A",
+    "fund_category": "Corporate Bond",
+    "num_cagegory_funds": "183"
+  },
+  {
+    "fund_symbol": "CBRCX",
+    "fund_short_name": "JPMorgan Corporate Bond Fund- C",
+    "fund_long_name": "JPMorgan Corporate Bond Fund Class C",
+    "fund_category": "Corporate Bond",
+    "num_cagegory_funds": "183"
+  },
+  {
+    "fund_symbol": "CCACX",
+    "fund_short_name": "Calvert Mid-Cap Fund Class C",
+    "fund_long_name": "Calvert Mid-Cap Fund Class C",
+    "fund_category": "Mid-Cap Blend",
+    "num_cagegory_funds": "340"
+  },
+  {
+    "fund_symbol": "CCAFX",
+    "fund_short_name": "Calvert Mid-Cap Fund Class A",
+    "fund_long_name": "Calvert Mid-Cap Fund Class A",
+    "fund_category": "Mid-Cap Blend",
+    "num_cagegory_funds": "340"
+  },
+  {
+    "fund_symbol": "CCCAX",
+    "fund_short_name": "Center Coast Brookfield Midstre",
+    "fund_long_name": "Center Coast Brookfield Midstream Focus Fund Class A",
+    "fund_category": "Energy Limited Partnership",
+    "num_cagegory_funds": "87"
+  },
+  {
+    "fund_symbol": "CCCCX",
+    "fund_short_name": "Center Coast Brookfield Midstre",
+    "fund_long_name": "Center Coast Brookfield Midstream Focus Fund Class C",
+    "fund_category": "Energy Limited Partnership",
+    "num_cagegory_funds": "87"
+  },
+  {
+    "fund_symbol": "CCCNX",
+    "fund_short_name": "Center Coast Brookfield Midstre",
+    "fund_long_name": "Center Coast Brookfield Midstream Focus Fund Class I",
+    "fund_category": "Energy Limited Partnership",
+    "num_cagegory_funds": "87"
+  },
+  {
+    "fund_symbol": "CCHIX",
+    "fund_short_name": "Principal Fds, Inc. High Yield",
+    "fund_long_name": "Principal High Yield Fund Class C",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "CCLAX",
+    "fund_short_name": "Calvert Conservative Allocation",
+    "fund_long_name": "Calvert Conservative Allocation Fund Class A",
+    "fund_category": "Allocation--30% to 50% Equity",
+    "num_cagegory_funds": "491"
+  },
+  {
+    "fund_symbol": "CCLCX",
+    "fund_short_name": "",
+    "fund_long_name": "American Beacon Continuous Capital Emerging Markets Fund C Class",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "CCMNX",
+    "fund_short_name": "Alternative Income Fund- Instit",
+    "fund_long_name": "CCM Alternative Income Fund Institutional Shares",
+    "fund_category": "Multistrategy",
+    "num_cagegory_funds": "148"
+  },
+  {
+    "fund_symbol": "CCUGX",
+    "fund_short_name": "Principal Fds, Inc. - Governmen",
+    "fund_long_name": "Principal Government & High Quality Bond Fund Class C",
+    "fund_category": "Intermediate Government",
+    "num_cagegory_funds": "219"
+  },
+  {
+    "fund_symbol": "CCVAX",
+    "fund_short_name": "Calvert Small Cap Fund Class A",
+    "fund_long_name": "Calvert Small-Cap Fund Class A",
+    "fund_category": "Small Blend",
+    "num_cagegory_funds": "579"
+  },
+  {
+    "fund_symbol": "CDCRX",
+    "fund_short_name": "Copeland Risk Managed Dividend",
+    "fund_long_name": "Copeland Dividend Growth Fund Class C",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "CDGRX",
+    "fund_short_name": "Copeland Risk Managed Dividend",
+    "fund_long_name": "Copeland Dividend Growth Fund Class A",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "CDICX",
+    "fund_short_name": "Calvert Short Duration Income F",
+    "fund_long_name": "Calvert Short Duration Income Fund Class C",
+    "fund_category": "Short-Term Bond",
+    "num_cagegory_funds": "570"
+  },
+  {
+    "fund_symbol": "CEFAX",
+    "fund_short_name": "Calvert Emerging Markets Advanc",
+    "fund_long_name": "Calvert Emerging Markets Advancement Fund Class A",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "CEMDX",
+    "fund_short_name": "Cullen Emerging Markets High Di",
+    "fund_long_name": "Cullen Emerging Markets High Dividend Fund Retail Class",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "CEMGX",
+    "fund_short_name": "Cullen Emerging Markets High Di",
+    "fund_long_name": "Cullen Emerging Markets High Dividend Fund Class C",
+    "fund_category": "Diversified Emerging Mkts",
+    "num_cagegory_funds": "741"
+  },
+  {
+    "fund_symbol": "CFAGX",
+    "fund_short_name": "Commerce Funds Midcap Growth Fu",
+    "fund_long_name": "Commerce MidCap Growth Fund",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "CFBNX",
+    "fund_short_name": "Commerce Funds The Bond Fund",
+    "fund_long_name": "Commerce Bond Fund",
+    "fund_category": "Intermediate Core Bond",
+    "num_cagegory_funds": "413"
+  },
+  {
+    "fund_symbol": "CFDAX",
+    "fund_short_name": "Adaptive Fundamental Growth Fun",
+    "fund_long_name": "Adaptive Fundamental Growth Fund A Class",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "CFGAX",
+    "fund_short_name": "Adaptive Fundamental Growth Fun",
+    "fund_long_name": "Adaptive Fundamental Growth Fund C Class",
+    "fund_category": "Mid-Cap Growth",
+    "num_cagegory_funds": "562"
+  },
+  {
+    "fund_symbol": "CFGRX",
+    "fund_short_name": "Commerce Funds The Growth Fund",
+    "fund_long_name": "Commerce Growth Fund",
+    "fund_category": "Large Growth",
+    "num_cagegory_funds": "1172"
+  },
+  {
+    "fund_symbol": "CFICX",
+    "fund_short_name": "Calvert Income Fund Class A",
+    "fund_long_name": "Calvert Income Fund Class A",
+    "fund_category": "Corporate Bond",
+    "num_cagegory_funds": "183"
+  },
+  {
+    "fund_symbol": "CFIPX",
+    "fund_short_name": "QS Global Equity Fund Class A",
+    "fund_long_name": "Franklin Global Equity Fund A",
+    "fund_category": "",
+    "num_cagegory_funds": ""
+  },
+  {
+    "fund_symbol": "CFLGX",
+    "fund_short_name": "ClearBridge Tactical Dividend I",
+    "fund_long_name": "ClearBridge Tactical Dividend Income Fund Class A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "CFMOX",
+    "fund_short_name": "Commerce Funds The Missouri Tax",
+    "fund_long_name": "Commerce Missouri Tax Free Intermediate Bond Fund",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  },
+  {
+    "fund_symbol": "CFNLX",
+    "fund_short_name": "Commerce Funds The National Tax",
+    "fund_long_name": "Commerce National Tax Free Intermediate Bond Fund",
+    "fund_category": "Muni National Interm",
+    "num_cagegory_funds": "293"
+  },
+  {
+    "fund_symbol": "CFNTX",
+    "fund_short_name": "California Tax-Free Income Fund",
+    "fund_long_name": "Green California Tax-Free Income Fund",
+    "fund_category": "Muni California Intermediate",
+    "num_cagegory_funds": "67"
+  },
+  {
+    "fund_symbol": "CFOAX",
+    "fund_short_name": "Calvert Floating-Rate Advantage",
+    "fund_long_name": "Calvert Floating-Rate Advantage Fund Class A",
+    "fund_category": "Bank Loan",
+    "num_cagegory_funds": "228"
+  },
+  {
+    "fund_symbol": "CFSTX",
+    "fund_short_name": "Commerce Funds The Short-Term G",
+    "fund_long_name": "Commerce Short Term Government Fund",
+    "fund_category": "Short Government",
+    "num_cagegory_funds": "74"
+  },
+  {
+    "fund_symbol": "CFVLX",
+    "fund_short_name": "Commerce Funds Value Fund, Inst",
+    "fund_long_name": "Commerce Value Fund",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "CFWAX",
+    "fund_short_name": "Calvert Global Water Fund Class",
+    "fund_long_name": "Calvert Global Water Fund Class A",
+    "fund_category": "Natural Resources",
+    "num_cagegory_funds": "74"
+  },
+  {
+    "fund_symbol": "CFWCX",
+    "fund_short_name": "Calvert Global Water Fund Class",
+    "fund_long_name": "Calvert Global Water Fund Class C",
+    "fund_category": "Natural Resources",
+    "num_cagegory_funds": "74"
+  },
+  {
+    "fund_symbol": "CGACX",
+    "fund_short_name": "Calvert Global Energy Solutions",
+    "fund_long_name": "Calvert Global Energy Solutions Fund Class C",
+    "fund_category": "World Small/Mid Stock",
+    "num_cagegory_funds": "149"
+  },
+  {
+    "fund_symbol": "CGAEX",
+    "fund_short_name": "Calvert Global Energy Solutions",
+    "fund_long_name": "Calvert Global Energy Solutions Fund Class A",
+    "fund_category": "World Small/Mid Stock",
+    "num_cagegory_funds": "149"
+  },
+  {
+    "fund_symbol": "CGAFX",
+    "fund_short_name": "Calvert Green Bond Fund Class A",
+    "fund_long_name": "Calvert Green Bond Fund Class A",
+    "fund_category": "Intermediate Core-Plus Bond",
+    "num_cagegory_funds": "566"
+  },
+  {
+    "fund_symbol": "CGBCX",
+    "fund_short_name": "Aberdeen Global Absolute Return",
+    "fund_long_name": "Aberdeen Global Absolute Return Strategies Fund Class C",
+    "fund_category": "Macro Trading",
+    "num_cagegory_funds": "100"
+  },
+  {
+    "fund_symbol": "CGHIX",
+    "fund_short_name": "Timber Point Global Tactical Al",
+    "fund_long_name": "Timber Point Global Allocations Fund Institutional Class Shares",
+    "fund_category": "Tactical Allocation",
+    "num_cagegory_funds": "241"
+  },
+  {
+    "fund_symbol": "CGICX",
+    "fund_short_name": "BlackRock Advantage Small Cap G",
+    "fund_long_name": "BlackRock Advantage Small Cap Growth Fund Investor C Shares",
+    "fund_category": "Small Growth",
+    "num_cagegory_funds": "578"
+  },
+  {
+    "fund_symbol": "CGRCX",
+    "fund_short_name": "Invesco Comstock Select Fund Cl",
+    "fund_long_name": "Invesco Comstock Select Fund Class C",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "CGREX",
+    "fund_short_name": "Invesco Global Real Estate Clas",
+    "fund_long_name": "Invesco Global Real Estate Fund Class C",
+    "fund_category": "Global Real Estate",
+    "num_cagegory_funds": "186"
+  },
+  {
+    "fund_symbol": "CGRWX",
+    "fund_short_name": "Invesco Comstock Select Fund Cl",
+    "fund_long_name": "Invesco Comstock Select Fund Class A",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "CGRYX",
+    "fund_short_name": "Invesco Comstock Select Fund Cl",
+    "fund_long_name": "Invesco Comstock Select Fund Class Y",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "CHBCX",
+    "fund_short_name": "Calvert High Yield Bond Fund Cl",
+    "fund_long_name": "Calvert High Yield Bond Fund Class C",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "CHDEX",
+    "fund_short_name": "Cullen High Dividend Equity Fun",
+    "fund_long_name": "Cullen High Dividend Equity Fund Retail Class",
+    "fund_category": "Large Value",
+    "num_cagegory_funds": "1080"
+  },
+  {
+    "fund_symbol": "CHIIX",
+    "fund_short_name": "Adaptive Hedged High Income Fun",
+    "fund_long_name": "Adaptive Hedged High Income Fund Institutional Class",
+    "fund_category": "High Yield Bond",
+    "num_cagegory_funds": "629"
+  },
+  {
+    "fund_symbol": "CHKCX",
+    "fund_short_name": "Aquila Churchill Tax-Free Fund",
+    "fund_long_name": "Aquila Churchill Tax Free Fund of Kentucky Class C",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  },
+  {
+    "fund_symbol": "CHRRX",
+    "fund_short_name": "Invesco Charter Fund Class R",
+    "fund_long_name": "Invesco Charter Fund Class R",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "CHTCX",
+    "fund_short_name": "Invesco Charter Fund Class C",
+    "fund_long_name": "Invesco Charter Fund Class C",
+    "fund_category": "Large Blend",
+    "num_cagegory_funds": "1235"
+  },
+  {
+    "fund_symbol": "CHTFX",
+    "fund_short_name": "Aquila Churchill Tax-Free Fund",
+    "fund_long_name": "Aquila Churchill Tax Free Fund of Kentucky Class A",
+    "fund_category": "Muni Single State Interm",
+    "num_cagegory_funds": "133"
+  }
+]
