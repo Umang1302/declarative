@@ -74,7 +74,7 @@ export default function LabelSection() {
             "linear-gradient(to right, rgba(251, 251, 251, 1) 0%, rgba(251, 251, 251, 0) 100%)",
         }}
         ref={labelRef}
-        className="mt-5 h-full md:w-[5vw] xl:w-[15vw] 2xl:w-[10vw] 3xl:w-[10vw] 4xl:w-[10vw] min-[1500px]:w-[80%] flex-grow flex gap-x-3 overflow-x-auto"
+        className="mt-5 h-full md:w-[5vw] xl:w-[15vw] 2xl:w-[10vw] 3xl:w-[10vw] 4xl:w-[10vw] min-[1500px]:w-[80%] flex-grow flex gap-x-5 overflow-x-auto"
       >
         {/* <div className="flex h-full gap-x-3"> */}
         {label.map((element, i) => (

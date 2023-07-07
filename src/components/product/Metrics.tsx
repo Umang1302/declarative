@@ -275,123 +275,126 @@ export default function Metrics({ data }: any) {
   return (
     <div className={`w-full h-full overflow-x-auto px-2 ${cabin.className}`}>
       {/* Rule */}
-      <div className="bg-[#FFBC35] flex items-center w-[97%] px-6 py-3 justify-between">
-        <p className="text-[18px] text-black font-[600]">Metrics Information</p>
-        <div
-          onClick={() => {
-            setAddRule(!addRule);
-          }}
-          className="relative w-[20px] h-[20px]"
-        >
-          <Image src={`/blackPlus.svg`} alt="brand" fill />
-        </div>
-      </div>
-      <div className="relative my-2 w-full">
-        <div className="absolute inset-y-0 left-4 flex items-center pl-3 pointer-events-none">
-          <svg
-            aria-hidden="true"
-            className="w-5 h-5 text-gray-500 dark:text-gray-400"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+      <div className="border-2 border-[#c4c4c4]">
+        <div className="bg-[#FFBC35] flex items-center px-6 py-3 justify-between">
+          <p className="text-[18px] text-black font-[600]">
+            Metrics Information
+          </p>
+          <div
+            onClick={() => {
+              setAddRule(!addRule);
+            }}
+            className="relative w-[20px] h-[20px]"
           >
-            <path
-              fillRule="evenodd"
-              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
+            <Image src={`/blackPlus.svg`} alt="brand" fill />
+          </div>
         </div>
-        <input
-          type="text"
-          id="simple-search"
-          className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block mx-3 w-[92%] outline-none pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          // className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Search"
-        />
-      </div>
-      <div className="w-[95%] px-3 mb-3 max-h-[160px] overflow-y-auto">
-        {addRule && (
-          <Card className="h-[60px] w-[100%] rounded-none border-[1px] z-40">
-            <div className="px-6 justify-between flex items-center h-full">
-              <input
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    if (e.target && newRule) {
-                      if (newRule !== "") addRuleFun(newRule);
-                    }
-                  }
-                }}
-                onChange={(e) => {
-                  setNewRule(e.target.value);
-                }}
-                type="text"
-                className={`h-full min-w-[85%] appearance-none  py-2 focus:outline-none ${cabin.className}`}
-              />
-
-              <div
-                onClick={() => {
-                  console.log("delete");
-                  setAddRule(false);
-                }}
-                className="relative w-[13.5px] h-[18px]"
-              >
-                <Image src={`/bin.svg`} alt="brand" fill />
-              </div>
-            </div>
-          </Card>
-        )}
-        {rules?.map((rule: string, index: number) => (
-          <Card
-            key={index}
-            className={`h-[50px] shadow-none rounded-none border-[1px] ${
-              addRule && "blur-sm"
-            }`}
-          >
-            <div className="px-6 justify-between flex items-center h-full">
-              <div className="w-full flex gap-x-3 items-center">
-                <div>
-                  <Checkbox
-                    onChange={(e) => {
-                      if (e.currentTarget.checked) {
-                        setSelectRule(`${index}`);
+        <div className="relative my-2 w-full">
+          <div className="absolute inset-y-0 left-4 flex items-center pl-3 pointer-events-none">
+            <svg
+              aria-hidden="true"
+              className="w-5 h-5 text-gray-500 dark:text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clipRule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="simple-search"
+            className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block mx-3 w-[96%] outline-none pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            // className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Search"
+          />
+        </div>
+        <div className="w-[98%] px-3 mb-3 max-h-[160px] overflow-y-auto">
+          {addRule && (
+            <Card className="h-[60px] w-[100%] rounded-none border-[1px] z-40">
+              <div className="px-6 justify-between flex items-center h-full">
+                <input
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      if (e.target && newRule) {
+                        if (newRule !== "") addRuleFun(newRule);
                       }
+                    }
+                  }}
+                  onChange={(e) => {
+                    setNewRule(e.target.value);
+                  }}
+                  type="text"
+                  className={`h-full min-w-[85%] appearance-none  py-2 focus:outline-none ${cabin.className}`}
+                />
+
+                <div
+                  onClick={() => {
+                    console.log("delete");
+                    setAddRule(false);
+                  }}
+                  className="relative w-[13.5px] h-[18px]"
+                >
+                  <Image src={`/bin.svg`} alt="brand" fill />
+                </div>
+              </div>
+            </Card>
+          )}
+          {rules?.map((rule: string, index: number) => (
+            <Card
+              key={index}
+              className={`h-[50px] shadow-none rounded-none border-[1px] ${
+                addRule && "blur-sm"
+              }`}
+            >
+              <div className="px-6 justify-between flex items-center h-full">
+                <div className="w-full flex gap-x-3 items-center">
+                  <div>
+                    <Checkbox
+                      onChange={(e) => {
+                        if (e.currentTarget.checked) {
+                          setSelectRule(`${index}`);
+                        }
+                      }}
+                      checked={selectRule === String(index)}
+                      type="checkbox"
+                    />
+                  </div>
+                  <input
+                    onChange={(e) => {
+                      updateRule(+index, e.target.value);
                     }}
-                    checked={selectRule === String(index)}
-                    type="checkbox"
+                    value={rules[index]}
+                    type="text"
+                    className="w-[90%] text-black outline-none"
                   />
                 </div>
-                <input
-                  onChange={(e) => {
-                    updateRule(+index, e.target.value);
+                <div
+                  onClick={() => {
+                    console.log("delete");
+                    deleteRule(index);
                   }}
-                  value={rules[index]}
-                  type="text"
-                  className="w-[90%] text-black outline-none"
-                />
+                  className="relative w-[13.5px] h-[18px]"
+                >
+                  <Image src={`/bin.svg`} alt="brand" fill />
+                </div>
               </div>
-              <div
-                onClick={() => {
-                  console.log("delete");
-                  deleteRule(index);
-                }}
-                className="relative w-[13.5px] h-[18px]"
-              >
-                <Image src={`/bin.svg`} alt="brand" fill />
-              </div>
-            </div>
-          </Card>
-        ))}
+            </Card>
+          ))}
+        </div>
       </div>
-
       {/* Rule info */}
-      <>
+      <div className="border-2 border-[#c4c4c4] mt-3">
         {loader ? (
           <>Loading..................</>
         ) : (
           <>
             <div
-              className={`bg-[#CCE0FF] flex items-center w-[97%] text-black h-[20%] px-6 py-2 justify-between ${
+              className={`bg-[#CCE0FF] flex items-center text-black h-[20%] px-6 py-2 justify-between ${
                 selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
               }`}
             >
@@ -971,7 +974,7 @@ export default function Metrics({ data }: any) {
               )}
             </div>
             <div
-              className={`bg-[#CCE0FF] flex items-center w-[97%] text-black h-[20%] px-6 py-2 justify-between ${
+              className={`bg-[#CCE0FF] flex items-center  text-black h-[20%] px-6 py-2 justify-between ${
                 selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
               }`}
             >
@@ -1059,7 +1062,7 @@ export default function Metrics({ data }: any) {
             </div>
           </>
         )}
-      </>
+      </div>
     </div>
   );
 }

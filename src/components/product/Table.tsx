@@ -32,6 +32,8 @@ import React, { useMemo, useEffect, useState } from "react";
 import Select from "react-select";
 import { Cabin } from "next/font/google";
 import { MultiSelect } from "react-multi-select-component";
+import { usePathname } from "next/navigation";
+import JSONDATA from "../../../data.json";
 const cabin = Cabin({ subsets: ["latin"] });
 
 const TABS = [
@@ -61,6 +63,8 @@ const TABS1 = [
 ];
 
 export default function Example({ data }: any) {
+  const pathname = usePathname();
+
   const TABLE_ROWS = data.attributes;
   const [dropDownMenu, setDropDownMenu] = useState<any>([
     {
@@ -193,15 +197,21 @@ export default function Example({ data }: any) {
     },
   ]);
   const [tableRowData, setTableRowData] = useState<any>([]);
+  const [originalData, setOriginalData] = useState<any>([]);
   const [sort, setSort] = React.useState<boolean>(false);
   const [showCol, setShowCol] = React.useState<boolean>(false);
-
+  const [selectCol, setSelectCol] = React.useState<any>();
+  const [selectAttribute, setSelectAttribute] = React.useState<any>();
+  const [checkboxData, setCheckboxData] = useState<any>();
   const [open, setOpen] = useState(false);
-
+  const [uniqueArray, setUniqueArray] = useState<any>();
   const handleOpen = () => setOpen(!open);
 
   useEffect(() => {
     setTableRowData(data.attributes);
+    const arr = pathname.split("/");
+    const id: any = arr[arr.length - 1];
+    setOriginalData(JSONDATA.data[+id].attributes);
   }, []);
 
   useEffect(() => {
@@ -211,6 +221,11 @@ export default function Example({ data }: any) {
     console.log("data Table", modifiedHead);
     setTableHead(modifiedHead);
   }, [selected]);
+
+  useEffect(() => {
+    console.log(tableRowData, "tableRowData");
+    //ts-ignore
+  }, [tableRowData]);
 
   {
     /* <Checkbox
@@ -281,47 +296,107 @@ export default function Example({ data }: any) {
                 {tableHead.map((head: any, index: number) => (
                   <th
                     key={head.label}
-                    className={`cursor-pointer border-y border-blue-gray-100 p-4 min-w-[60px] bg-[#A0EDA7] transition-colors ${cabin.className}`}
+                    className={`cursor-pointer relative border-y border-blue-gray-100 p-4 min-w-[60px] bg-[#A0EDA7] transition-colors ${cabin.className}`}
                   >
                     <p
-                      className={` ${cabin.className} flex items-center justify-between gap-2 leading-none opacity-70 text-black font-[600]`}
+                      className={` ${cabin.className}  flex items-center justify-between gap-2 leading-none opacity-70 text-black font-[600]`}
                     >
                       {head}{" "}
                       <div
-                        onClick={() => {
-                          console.log("clicked", sort);
-                          if (!sort) {
-                            setSort(true);
-                          } else {
-                            setSort(false);
-                          }
+                        // onClick={() => {
+                        //   console.log("clicked", sort);
+                        //   if (!sort) {
+                        //     setSort(true);
+                        //   } else {
+                        //     setSort(false);
+                        //   }
 
-                          if (!sort) {
-                            let sortedData = data.attributes.sort(
-                              (a: any, b: any) =>
-                                a.name > b.name
-                                  ? 1
-                                  : a.name === b.name
-                                  ? a.name > b.name
-                                    ? 1
-                                    : -1
-                                  : -1
-                            );
-                            console.log(sortedData);
-                            setTableRowData(sortedData);
-                          } else {
-                            let unSortedData = data.attributes.sort(
-                              (a: any, b: any) =>
-                                a.name < b.name
-                                  ? 1
-                                  : a.name === b.name
-                                  ? a.name < b.name
-                                    ? 1
-                                    : -1
-                                  : -1
-                            );
-                            setTableRowData(unSortedData);
+                        //   if (!sort) {
+                        //     let sortedData = data.attributes.sort(
+                        //       (a: any, b: any) =>
+                        //         a.name > b.name
+                        //           ? 1
+                        //           : a.name === b.name
+                        //           ? a.name > b.name
+                        //             ? 1
+                        //             : -1
+                        //           : -1
+                        //     );
+                        //     console.log(sortedData);
+                        //     setTableRowData(sortedData);
+                        //   } else {
+                        //     let unSortedData = data.attributes.sort(
+                        //       (a: any, b: any) =>
+                        //         a.name < b.name
+                        //           ? 1
+                        //           : a.name === b.name
+                        //           ? a.name < b.name
+                        //             ? 1
+                        //             : -1
+                        //           : -1
+                        //     );
+                        //     setTableRowData(unSortedData);
+                        //   }
+                        // }}
+                        onClick={() => {
+                          setSelectCol(index);
+                          let hh: any;
+                          switch (head) {
+                            case "Attributes":
+                              hh = "name";
+                              break;
+                            case "Is Record Key":
+                              hh = "isRecordKey";
+                              break;
+                            case "Is Series Key":
+                              hh = "isSeriesKey";
+                              break;
+                            case "Classification":
+                              hh = "classification";
+                              break;
+                            case "Description":
+                              hh = "description";
+                              break;
+                            case "CreatedAt":
+                              hh = "createdAt";
+                              break;
+                            case "UpdatedAt":
+                              hh = "updatedAt";
+
+                              break;
+                            case "AccountId":
+                              hh = "accountId";
+                              break;
+                            case "ProductId":
+                              hh = "productId";
+                              break;
+                            case "NamespaceId":
+                              hh = "NamespaceId";
+                              break;
+                            case "SourceAttribute":
+                              hh = "sourceAttribute";
+                              break;
                           }
+                          setSelectAttribute(hh);
+                          handleOpen();
+                          const dat = tableRowData.map((item: any) => {
+                            if (item) {
+                              return true;
+                            }
+                          });
+                          setCheckboxData(dat);
+                          let resArr: any = [];
+                          tableRowData.filter(function (item: any) {
+                            var i = resArr.findIndex(
+                              (x: any) => x[hh] == item[hh]
+                            );
+                            if (i <= -1) {
+                              resArr.push(item);
+                            }
+                            return null;
+                          });
+                          console.log("RESARR", resArr);
+                          setUniqueArray(resArr);
                         }}
                       >
                         <svg
@@ -356,6 +431,191 @@ export default function Example({ data }: any) {
                         </svg>
                       </div>
                     </p>
+                    {open && selectCol === index && (
+                      <div className="bg-white  absolute gap-y-4 rounded-[10px] shadow-md py-3 px-2 z-[50] w-[250px] max-h-[300px]">
+                        <div className="w-full flex justify-between border-b-[1px] border-[#c4c4c4]">
+                          <p className="">Filters</p>
+                          <div
+                            onClick={() => {
+                              console.log(
+                                originalData,
+                                tableRowData,
+                                data.attributes
+                              );
+                              let unSortedData = data.attributes.sort(
+                                (a: any, b: any) =>
+                                  a[`createdAt`] > b[`createdAt`]
+                                    ? 1
+                                    : a[`createdAt`] === b[`createdAt`]
+                                    ? a[`createdAt`] > b[`createdAt`]
+                                      ? 1
+                                      : -1
+                                    : -1
+                              );
+                              setTableRowData(unSortedData);
+                              handleOpen();
+                            }}
+                            className="relative w-3 h-3"
+                          >
+                            <Image alt="" src="/reset.svg" fill />
+                          </div>
+                        </div>
+                        <p
+                          className="px-2 py-1 hover:bg-[#ededed]"
+                          onClick={() => {
+                            let hh: any;
+                            switch (head) {
+                              case "Attributes":
+                                hh = "name";
+                                break;
+                              case "Is Record Key":
+                                hh = "isRecordKey";
+                                break;
+                              case "Is Series Key":
+                                hh = "isSeriesKey";
+                                break;
+                              case "Classification":
+                                hh = "classification";
+                                break;
+                              case "Description":
+                                hh = "description";
+                                break;
+                              case "CreatedAt":
+                                hh = "createdAt";
+                                break;
+                              case "UpdatedAt":
+                                hh = "updatedAt";
+
+                                break;
+                              case "AccountId":
+                                hh = "accountId";
+                                break;
+                              case "ProductId":
+                                hh = "productId";
+                                break;
+                              case "NamespaceId":
+                                hh = "NamespaceId";
+                                break;
+                              case "SourceAttribute":
+                                hh = "sourceAttribute";
+                                break;
+                            }
+                            console.log(hh);
+
+                            let sortedData = data.attributes.sort(
+                              (a: any, b: any) =>
+                                a[`${hh}`] > b[`${hh}`]
+                                  ? 1
+                                  : a[`${hh}`] === b[`${hh}`]
+                                  ? a[`${hh}`] > b[`${hh}`]
+                                    ? 1
+                                    : -1
+                                  : -1
+                            );
+                            console.log(sortedData);
+                            setTableRowData(sortedData);
+                            handleOpen();
+                          }}
+                        >
+                          Ascending Order
+                        </p>
+                        <p
+                          className="px-2 py-1 hover:bg-[#ededed] border-b-[1px] border-[#c4c4c4]"
+                          onClick={() => {
+                            console.log(head);
+                            let hh: any;
+                            switch (head) {
+                              case "Attributes":
+                                hh = "name";
+                                break;
+                              case "Is Record Key":
+                                hh = "isRecordKey";
+                                break;
+                              case "Is Series Key":
+                                hh = "isSeriesKey";
+                                break;
+                              case "Classification":
+                                hh = "classification";
+                                break;
+                              case "Description":
+                                hh = "description";
+                                break;
+                              case "CreatedAt":
+                                hh = "createdAt";
+                                break;
+                              case "UpdatedAt":
+                                hh = "updatedAt";
+
+                                break;
+                              case "AccountId":
+                                hh = "accountId";
+                                break;
+                              case "ProductId":
+                                hh = "productId";
+                                break;
+                              case "NamespaceId":
+                                hh = "NamespaceId";
+                                break;
+                              case "SourceAttribute":
+                                hh = "sourceAttribute";
+                                break;
+                            }
+                            console.log(hh);
+
+                            let unSortedData = data.attributes.sort(
+                              (a: any, b: any) =>
+                                a[`${hh}`] < b[`${hh}`]
+                                  ? 1
+                                  : a[`${hh}`] === b[`${hh}`]
+                                  ? a[`${hh}`] < b[`${hh}`]
+                                    ? 1
+                                    : -1
+                                  : -1
+                            );
+                            setTableRowData(unSortedData);
+                            handleOpen();
+                          }}
+                        >
+                          Descending Order
+                        </p>
+                        {head !== "Is Record Key" &&
+                          head !== "Is Series Key" && (
+                            <div className="mt-2 h-[180px] overflow-y-auto">
+                              <p>Select Value</p>
+                              {uniqueArray.map((item: any, index: number) => {
+                                if (item[`${selectAttribute}`] !== "") {
+                                  return (
+                                    <div
+                                      key={index}
+                                      className="gap-x-2 flex items-center"
+                                    >
+                                      <Checkbox
+                                        id={`${index}`}
+                                        color="blue"
+                                        // defaultChecked={item.check}
+                                        defaultChecked={checkboxData[index]}
+                                        // className="rounded-none"
+                                        onChange={(e) => {
+                                          const aa = [...checkboxData];
+                                          if (e.currentTarget.checked) {
+                                            aa[index] = true;
+                                          } else {
+                                            aa[index] = false;
+                                          }
+                                          setCheckboxData(aa);
+                                        }}
+                                      />
+                                      <p>{item[`${selectAttribute}`]}</p>
+                                    </div>
+                                  );
+                                } else {
+                                  return null;
+                                }
+                              })}
+                            </div>
+                          )}
+                      </div>
+                    )}
                   </th>
                 ))}
               </tr>

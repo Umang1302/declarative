@@ -535,206 +535,209 @@ export default function Rules({ data }: any) {
   return (
     <div className={`w-full h-full overflow-x-auto px-2 ${cabin.className}`}>
       {/* Rule */}
-      <div className="bg-[#FFBC35] flex items-center w-[97%] px-6 py-3 justify-between">
-        <p className="text-[18px] font-[600] text-black">Lifecycle</p>
-        <div
-          onClick={() => {
-            setAddRule(!addRule);
-          }}
-          className="relative w-[20px] h-[20px]"
-        >
-          <Image src={`/blackPlus.svg`} alt="brand" fill />
-        </div>
-      </div>
-      <div className="relative my-2 w-full">
-        <div className="absolute inset-y-0 left-4 flex items-center pl-3 pointer-events-none">
-          <svg
-            aria-hidden="true"
-            className="w-5 h-5 text-gray-500 dark:text-gray-400"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+      <div className="border-2 border-[#c4c4c4]">
+        <div className="bg-[#FFBC35] flex items-center px-6 py-3 justify-between">
+          <p className="text-[18px] font-[600] text-black">Lifecycle</p>
+          <div
+            onClick={() => {
+              setAddRule(!addRule);
+            }}
+            className="relative w-[20px] h-[20px]"
           >
-            <path
-              fillRule="evenodd"
-              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
+            <Image src={`/blackPlus.svg`} alt="brand" fill />
+          </div>
         </div>
-        <input
-          type="text"
-          id="simple-search"
-          className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block mx-3 w-[92%] outline-none pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          // className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Search"
-        />
-      </div>
-      <div className="w-[95%] px-3 mb-3 max-h-[160px] overflow-y-auto">
-        {addRule && (
-          <Card className="h-[60px] w-[100%] rounded-none border-[1px] z-40">
-            <div className="px-6 justify-between flex items-center h-full">
-              <input
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    if (e.target && newRule) {
-                      if (newRule !== "") addRuleFun(newRule);
-                    }
-                  }
-                }}
-                onChange={(e) => {
-                  setNewRule(e.target.value);
-                }}
-                type="text"
-                className={`h-full min-w-[85%] appearance-none  py-2 focus:outline-none ${cabin.className}`}
-              />
-
-              <div
-                onClick={() => {
-                  console.log("delete");
-                  setAddRule(false);
-                }}
-                className="relative w-[13.5px] h-[18px]"
-              >
-                <Image src={`/bin.svg`} alt="brand" fill />
-              </div>
-            </div>
-          </Card>
-        )}
-        {rules?.map((rule: string, index: number) => (
-          <Card
-            key={index}
-            className={`h-[50px] rounded-none shadow-none border-[1px] ${
-              addRule && "blur-sm"
-            }`}
-          >
-            <div className="px-6 justify-between flex items-center h-full">
-              <div className="w-full flex gap-x-3 items-center">
-                <div>
-                  <Checkbox
-                    onChange={(e) => {
-                      if (e.currentTarget.checked) {
-                        setSelectRule(`${index}`);
+        <div className="relative my-2 w-full">
+          <div className="absolute inset-y-0 left-4 flex items-center pl-3 pointer-events-none">
+            <svg
+              aria-hidden="true"
+              className="w-5 h-5 text-gray-500 dark:text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clipRule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="simple-search"
+            className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block mx-3 w-[96%] outline-none pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            // className="bg-gray-300 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-black dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Search"
+          />
+        </div>
+        <div className="w-[98%] px-3 mb-3 max-h-[160px] overflow-y-auto">
+          {addRule && (
+            <Card className="h-[60px] w-[100%] rounded-none border-[1px] z-40">
+              <div className="px-6 justify-between flex items-center h-full">
+                <input
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      if (e.target && newRule) {
+                        if (newRule !== "") addRuleFun(newRule);
                       }
+                    }
+                  }}
+                  onChange={(e) => {
+                    setNewRule(e.target.value);
+                  }}
+                  type="text"
+                  className={`h-full min-w-[85%] appearance-none  py-2 focus:outline-none ${cabin.className}`}
+                />
+
+                <div
+                  onClick={() => {
+                    console.log("delete");
+                    setAddRule(false);
+                  }}
+                  className="relative w-[13.5px] h-[18px]"
+                >
+                  <Image src={`/bin.svg`} alt="brand" fill />
+                </div>
+              </div>
+            </Card>
+          )}
+          {rules?.map((rule: string, index: number) => (
+            <Card
+              key={index}
+              className={`h-[50px] rounded-none shadow-none border-[1px] ${
+                addRule && "blur-sm"
+              }`}
+            >
+              <div className="px-6 justify-between flex items-center h-full">
+                <div className="w-full flex gap-x-3 items-center">
+                  <div>
+                    <Checkbox
+                      onChange={(e) => {
+                        if (e.currentTarget.checked) {
+                          setSelectRule(`${index}`);
+                        }
+                      }}
+                      checked={selectRule === String(index)}
+                      type="checkbox"
+                    />
+                  </div>
+                  <input
+                    onChange={(e) => {
+                      updateRule(+index, e.target.value);
                     }}
-                    checked={selectRule === String(index)}
-                    type="checkbox"
+                    value={rules[index]}
+                    type="text"
+                    className="w-[90%] outline-none text-black"
                   />
                 </div>
-                <input
-                  onChange={(e) => {
-                    updateRule(+index, e.target.value);
+                <div
+                  onClick={() => {
+                    console.log("delete");
+                    deleteRule(index);
                   }}
-                  value={rules[index]}
-                  type="text"
-                  className="w-[90%] outline-none text-black"
-                />
+                  className="relative w-[13.5px] h-[18px]"
+                >
+                  <Image src={`/bin.svg`} alt="brand" fill />
+                </div>
               </div>
-              <div
-                onClick={() => {
-                  console.log("delete");
-                  deleteRule(index);
-                }}
-                className="relative w-[13.5px] h-[18px]"
-              >
-                <Image src={`/bin.svg`} alt="brand" fill />
-              </div>
-            </div>
-          </Card>
-        ))}
+            </Card>
+          ))}
+        </div>
       </div>
-
       {/* Rule info */}
-      <div
-        className={`bg-[#CCE0FF] flex items-center w-[97%] h-[20%] text-black px-6 py-3 justify-between  ${
-          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6] "
-        }`}
-      >
-        <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
-      </div>
-      <div className="px-3 py-3">{parent()}</div>
-      <div
-        className={`bg-[#CCE0FF] flex items-center w-[97%] h-[20%] text-black px-6 py-3 justify-between  ${
-          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6] "
-        }`}
-      >
-        <p className="text-[18px] font-[600]">Handling</p>
-      </div>
-      <div className="px-3">
-        <div className="flex py-4 items-center gap-x-40">
-          <div className="">
-            <p className="text-[16px]">Action</p>
-            <div className="mt-2 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
-              <p
-                onClick={() => {
-                  setScheduleTab(true);
-                }}
-                className={`${cabin.className} rounded-[10px] text-[18px] ${
-                  handling === "destroy" && "bg-white text-black"
-                }`}
-              >
-                &nbsp;&nbsp;{"Destroy"}&nbsp;&nbsp;
-              </p>
-              <p
-                onClick={() => {
-                  setScheduleTab(false);
-                }}
-                className={`${cabin.className} rounded-[10px] text-[18px] ${
-                  handling === "archive" && "bg-white text-black"
-                }`}
-              >
-                &nbsp;&nbsp;{"Archive"}&nbsp;&nbsp;
-              </p>
-            </div>
-          </div>
-          <div>
-            <p className="text-[16px]">After</p>
-            <div className="flex gap-x-10">
-              <input
-                type="number"
-                defaultValue={data.lifeCycle[0].afterNumber}
-                value={data.lifeCycle[+selectRule].afterNumber}
-                onChange={(e) => {
-                  console.log(e.target.value);
-                  setWeekNumber(e.target.value);
-                }}
-                className="w-[53px] h-[48px] p-5 text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px] outline-none bg-gray-300 text-black"
-              />
-              <div className="bg-[#EAEAEA] w-[280px] mt-1 min-w-[300px]  h-[40px] flex items-center justify-around rounded-[10px]">
-                <div
+      <div className="border-2 border-[#c4c4c4] mt-3">
+        <div
+          className={`bg-[#CCE0FF] flex items-center h-[20%] text-black px-6 py-3 justify-between  ${
+            selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6] "
+          }`}
+        >
+          <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
+        </div>
+        <div className="px-3 py-3">{parent()}</div>
+        <div
+          className={`bg-[#CCE0FF] flex items-center h-[20%] text-black px-6 py-3 justify-between  ${
+            selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6] "
+          }`}
+        >
+          <p className="text-[18px] font-[600]">Handling</p>
+        </div>
+        <div className="px-3">
+          <div className="flex py-4 items-center gap-x-40">
+            <div className="">
+              <p className="text-[16px]">Action</p>
+              <div className="mt-2 h-[40px] items-center px-1 py-1 bg-gray-300 flex justify-between rounded-[10px]">
+                <p
                   onClick={() => {
-                    setTab1("days");
+                    setScheduleTab(true);
                   }}
-                  className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
-                    tab1 === "days" && "bg-white text-black"
-                  } `}
+                  className={`${cabin.className} rounded-[10px] text-[18px] ${
+                    handling === "destroy" && "bg-white text-black"
+                  }`}
                 >
-                  Days
-                </div>
-                <div
+                  &nbsp;&nbsp;{"Destroy"}&nbsp;&nbsp;
+                </p>
+                <p
                   onClick={() => {
-                    setTab1("months");
+                    setScheduleTab(false);
                   }}
-                  className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
-                    tab1 === "months" && "bg-white text-black"
-                  } `}
+                  className={`${cabin.className} rounded-[10px] text-[18px] ${
+                    handling === "archive" && "bg-white text-black"
+                  }`}
                 >
-                  Months
-                </div>
-                <div
-                  onClick={() => {
-                    setTab1("year");
-                  }}
-                  className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
-                    tab1 === "year" && "bg-white text-black"
-                  } `}
-                >
-                  Years
-                </div>
+                  &nbsp;&nbsp;{"Archive"}&nbsp;&nbsp;
+                </p>
               </div>
             </div>
+            <div>
+              <p className="text-[16px]">After</p>
+              <div className="flex gap-x-10">
+                <input
+                  type="number"
+                  defaultValue={data.lifeCycle[0].afterNumber}
+                  value={data.lifeCycle[+selectRule].afterNumber}
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    setWeekNumber(e.target.value);
+                  }}
+                  className="w-[53px] h-[48px] p-5 text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px] outline-none bg-gray-300 text-black"
+                />
+                <div className="bg-[#EAEAEA] w-[280px] mt-1 min-w-[300px]  h-[40px] flex items-center justify-around rounded-[10px]">
+                  <div
+                    onClick={() => {
+                      setTab1("days");
+                    }}
+                    className={`px-5 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab1 === "days" && "bg-white text-black"
+                    } `}
+                  >
+                    Days
+                  </div>
+                  <div
+                    onClick={() => {
+                      setTab1("months");
+                    }}
+                    className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab1 === "months" && "bg-white text-black"
+                    } `}
+                  >
+                    Months
+                  </div>
+                  <div
+                    onClick={() => {
+                      setTab1("year");
+                    }}
+                    className={`px-6 h-[85%] py-1 flex items-center rounded-[10px] ${
+                      tab1 === "year" && "bg-white text-black"
+                    } `}
+                  >
+                    Years
+                  </div>
+                </div>
+              </div>
 
-            <div></div>
+              <div></div>
+            </div>
           </div>
         </div>
       </div>
