@@ -76,7 +76,7 @@ export default function Sidebar({ active, setActive }: any) {
             >
               <div
                 className={`hover:bg-[#F2F2F2] pl-4 ${
-                  active === 0 && "bg-[#F2F2F2] border-l-4 border-[#F65A27]"
+                  active === 0 ? "bg-[#F2F2F2] border-l-4 border-[#F65A27]" : ""
                 } cursor-pointer w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3`}
                 onClick={() => {
                   router.push("/");
@@ -91,7 +91,9 @@ export default function Sidebar({ active, setActive }: any) {
 
               <div
                 className={`cursor-pointer hover:bg-[#F2F2F2] pl-4 w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3 ${
-                  active === 1 && "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
+                  active === 1
+                    ? "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
+                    : ""
                 }`}
                 onClick={() => {
                   router.push("/");

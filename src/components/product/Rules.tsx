@@ -97,6 +97,8 @@ export default function Rules({ data }: any) {
   const [interval, setInterval] = useState<string>("Week");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [input1, setInput1] = useState("");
+  const [input2, setInput2] = useState("");
 
   const [schedule, setSchedule] = useState<any>([
     {
@@ -199,6 +201,7 @@ export default function Rules({ data }: any) {
 
     console.log("finalArray", uniqueObjects);
     setSearchArray(uniqueObjects);
+    setInput2("High > Low");
   }, []);
 
   const deleteRule = (index: number) => {
@@ -215,6 +218,8 @@ export default function Rules({ data }: any) {
     console.log(updatedRule);
   };
   const [openMenu, setOpenMenu] = React.useState(false);
+  const [openMenu1, setOpenMenu1] = React.useState(false);
+
   const triggers = {
     onMouseEnter: () => setOpenMenu(true),
     onMouseLeave: () => setOpenMenu(false),
@@ -226,18 +231,19 @@ export default function Rules({ data }: any) {
   return (
     <div className={`w-full h-full overflow-x-auto px-2 ${cabin.className}`}>
       {/* Rule */}
-      <div className="border-2 border-[#c4c4c4]">
-        <div className="bg-[#FFBC35] flex items-center px-6 py-3 justify-between">
-          <p className="text-[18px] font-[600] text-black">Rules</p>
-          <div
-            onClick={() => {
-              setAddRule(!addRule);
-            }}
-            className="relative w-[20px] h-[20px]"
-          >
-            <Image src={`/blackPlus.svg`} alt="brand" fill />
-          </div>
+
+      <div className="bg-[#FFBC35] flex items-center px-6 py-3 justify-between">
+        <p className="text-[18px] font-[600] text-black">Rules</p>
+        <div
+          onClick={() => {
+            setAddRule(!addRule);
+          }}
+          className="relative w-[20px] h-[20px]"
+        >
+          <Image src={`/blackPlus.svg`} alt="brand" fill />
         </div>
+      </div>
+      <div className="border-[1px] border-gray-300">
         <div className="relative my-2 w-full">
           <div className="absolute inset-y-0 left-4 flex items-center pl-3 pointer-events-none">
             <svg
@@ -337,14 +343,14 @@ export default function Rules({ data }: any) {
         </div>
       </div>
       {/* Rule info */}
-      <div className=" mt-3 border-2 border-[#c4c4c4] h-[52rem]">
-        <div
-          className={`bg-[#CCE0FF] flex items-center text-black px-6 py-3 justify-between  ${
-            selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6] "
-          }`}
-        >
-          <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
-        </div>
+      <div
+        className={`bg-[#CCE0FF] mt-3 flex items-center text-black px-6 py-3 justify-between  ${
+          selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6] "
+        }`}
+      >
+        <p className="text-[18px] font-[600]">{rules[+selectRule]}</p>
+      </div>
+      <div className="border-[1px] border-gray-300 h-[52rem]">
         <div className="mb-6 w-full py-3 px-3">
           <div className="px-3">
             <div className="flex items-center justify-start gap-x-40">
@@ -383,72 +389,82 @@ export default function Rules({ data }: any) {
                   </div>
                 </div>
               </div>
-              <div className="mt-6 relative pt-4">
-                <Menu>
-                  <MenuHandler>
-                    <div>
-                      <input
-                        type="text"
-                        value={variable}
-                        className={`${cabin.className} border-gray-300 border-[2px] text-[16px] w-[200px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
-                      />
+              <div className="">
+                <p>Template</p>
+                <div className="relative pt-4">
+                  <Menu
+                    dismiss={{
+                      itemPress: false,
+                    }}
+                  >
+                    <MenuHandler>
+                      <div>
+                        <input
+                          type="text"
+                          value={variable}
+                          className={`${cabin.className} border-gray-300 border-[2px] text-[16px] w-[200px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                        />
 
-                      <div className="absolute top-6 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end right-2">
-                        {/* $
+                        <div className="absolute top-6 h-[24px] border-l-[1px] border-[#b4b4b4] w-[30px] py-1 flex justify-end right-2">
+                          {/* $
                     {
                        true ? "rotate-180" : ""
                     } */}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className={`
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className={`
                     
                        h-5 w-5 transition-transform`}
-                          fill="none"
-                          viewBox="0 0 28 28"
-                          stroke="#b4b4b4"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
+                            fill="none"
+                            viewBox="0 0 28 28"
+                            stroke="#b4b4b4"
+                            strokeWidth={2}
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </div>
                       </div>
-                    </div>
-                  </MenuHandler>
-                  <MenuList className="p-0 text-black">
-                    <Menu
-                      placement="right-start"
-                      offset={15}
-                      open={openMenu}
-                      handler={setOpenMenu}
-                    >
-                      <MenuHandler>
-                        <MenuItem className="border-b-[1px] rounded-none border-gray-300 py-4 text-[16px]">
-                          Value Range
-                        </MenuItem>
-                      </MenuHandler>
-                      <MenuList className="w-[250px] h-[190px] text-black">
-                        <div
-                          onClick={() => {
-                            console.log("RRR");
-                            setVariable("Value Range");
-                          }}
-                          className="outline-none"
-                        >
-                          <p className="border-b-[1px] border-gray-300 font-[600] text-[#656565]">
+                    </MenuHandler>
+                    <MenuList className={`p-0 text-black ${cabin.className}`}>
+                      <Menu
+                        dismiss={{
+                          itemPress: false,
+                        }}
+                        placement="right-start"
+                        offset={15}
+                        open={openMenu}
+                        handler={setOpenMenu}
+                      >
+                        <MenuHandler>
+                          <MenuItem className="border-b-[1px] rounded-none border-gray-300 py-4 text-[16px]">
+                            <div
+                              onClick={() => {
+                                console.log("RRR");
+                                setVariable("Value Range");
+                                setOpenMenu(false);
+                              }}
+                            >
+                              Value Range
+                            </div>
+                          </MenuItem>
+                        </MenuHandler>
+                        <MenuList className="relative w-[250px] h-[190px] text-black">
+                          {/* <div className={`outline-none ${cabin.className}`}> */}
+                          <p className="border-b-[1px] border-gray-300 outline-none font-[600] text-[#656565]">
                             Value Range
                           </p>
-                          <div className="mt-2">
+                          <div className="mt-2 outline-none">
                             <div className="flex  w-full justify-between ">
                               <p className="text-[#656565] font-[600]">
                                 Lower Bound
                               </p>
                               <p>Strict</p>
                             </div>
-                            <div className="flex w-full mt-2 justify-between">
-                              <p>Text Input</p>
+                            <div className="flex w-full mt-2 justify-end">
                               <Switch
                                 id={"rr"}
                                 onChange={() => {
@@ -457,60 +473,126 @@ export default function Rules({ data }: any) {
                                 checked={check1}
                               />
                             </div>
-                            <div className="flex w-full mt-3 justify-between">
-                              <p className="text-[#656565] font-[600] ">
-                                Upper Bound
-                              </p>
-                              <p>Strict</p>
+                            {/* <div className="flex w-full mt-3 justify-between">
+                            <p className="text-[#656565] font-[600] ">
+                              Upper Bound
+                            </p>
+                            <p>Strict</p>
+                          </div>
+                          <div className="flex w-full mt-2 justify-between">
+                            <p>Text Input</p>
+                            <Switch
+                              id={"ss"}
+                              checked={check2}
+                              onChange={() => {
+                                setCheck2(!check2);
+                              }}
+                            />
+                          </div> */}
+                          </div>
+                          <input
+                            type="text"
+                            className="absolute left-4 top-[4rem] outline-none py-1 text-black"
+                            value={input1 ? input1 : "Text Input"}
+                            onChange={(e) => {
+                              setInput1(e.target.value);
+                            }}
+                          />
+                          {/* </div> */}
+                        </MenuList>
+                      </Menu>
+                      <MenuItem
+                        onClick={() => {
+                          setVariable("Not Null");
+                        }}
+                        className="border-b-[1px] border-gray-300 hover:bg-[#4D91FF] py-4 text-[16px]"
+                      >
+                        Not Null
+                      </MenuItem>
+                      <MenuItem
+                        onClick={() => {
+                          setVariable("Pattern");
+                        }}
+                        className="border-b-[1px] border-gray-300 hover:bg-[#4D91FF] py-4 text-[16px]"
+                      >
+                        Pattern
+                      </MenuItem>
+                      <MenuItem
+                        onClick={() => {
+                          setVariable("Enumeration");
+                        }}
+                        className="border-b-[1px] border-gray-300 hover:bg-[#4D91FF] py-4 text-[16px]"
+                      >
+                        Enumeration
+                      </MenuItem>
+                      <MenuItem
+                        className=" py-4 text-[16px] hover:bg-[#4D91FF] border-b-[1px] border-gray-300"
+                        onClick={() => {
+                          setVariable("Unique");
+                        }}
+                      >
+                        Unique
+                      </MenuItem>
+                      {/*                     
+                    <MenuItem
+                      onClick={() => {
+                        console.log("RRR");
+                        setVariable("Compare");
+                      }}
+                    > */}
+                      <Menu
+                        dismiss={{
+                          itemPress: false,
+                        }}
+                        placement="right-start"
+                        offset={15}
+                      >
+                        <MenuHandler>
+                          <MenuItem className="border-b-[1px] rounded-none border-gray-300 py-4 text-[16px]">
+                            <div
+                              onClick={() => {
+                                console.log("RRR");
+                                setVariable("Compare");
+                                setOpenMenu(false);
+                              }}
+                            >
+                              Compare
+                            </div>
+                          </MenuItem>
+                        </MenuHandler>
+                        <MenuList>
+                          <p
+                            className={`w-full px-1 py-2 border-b-[1px] text-gray-700 border-gray-300 text-[14px] font-[600] outline-none ${cabin.className}`}
+                          >
+                            Compare
+                          </p>
+                          <input
+                            type="text"
+                            className="outline-none py-2 border-b-[1px] border-gray-300 text-black"
+                            value={input2}
+                            onChange={(e) => {
+                              setInput2(e.target.value);
+                            }}
+                          />
+                          {/* <div >
+                          <p className="border-b-[1px] border-gray-300 font-[600] text-[#656565]">
+                            Compare
+                          </p>
+                          <div className="mt-2">
+                            <div className="flex  w-full justify-between ">
+                              <p className="text-[#656565]">Expression</p>
                             </div>
                             <div className="flex w-full mt-2 justify-between">
-                              <p>Text Input</p>
-                              <Switch
-                                id={"ss"}
-                                checked={check2}
-                                onChange={() => {
-                                  setCheck2(!check2);
-                                }}
-                              />
+                              <input type="text" />
                             </div>
                           </div>
-                        </div>
-                      </MenuList>
-                    </Menu>
-                    <MenuItem
-                      onClick={() => {
-                        setVariable("Not Null");
-                      }}
-                      className="border-b-[1px] border-gray-300 hover:bg-[#4D91FF] py-4 text-[16px]"
-                    >
-                      Not Null
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => {
-                        setVariable("Pattern");
-                      }}
-                      className="border-b-[1px] border-gray-300 hover:bg-[#4D91FF] py-4 text-[16px]"
-                    >
-                      Pattern
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => {
-                        setVariable("Enumeration");
-                      }}
-                      className="border-b-[1px] border-gray-300 hover:bg-[#4D91FF] py-4 text-[16px]"
-                    >
-                      Enumeration
-                    </MenuItem>
-                    <MenuItem
-                      className=" py-4 text-[16px] hover:bg-[#4D91FF]"
-                      onClick={() => {
-                        setVariable("Unique");
-                      }}
-                    >
-                      Unique
-                    </MenuItem>
-                  </MenuList>
-                </Menu>
+                        </div> */}
+                        </MenuList>
+                      </Menu>
+                      {/* </MenuItem> */}
+                    </MenuList>
+                  </Menu>
+                </div>
               </div>
             </div>
 
@@ -541,24 +623,27 @@ export default function Rules({ data }: any) {
                     </div>
                   </div>
                 </div>
-                <div className="mt-6 pt-3">
-                  <Select
-                    styles={{
-                      control: (styles) => ({
-                        ...styles,
-                        backgroundColor: "#EAEAEA",
-                        borderRadius: "10px",
-                      }),
-                    }}
-                    defaultValue={dropDownValue1[0]}
-                    options={dropDownValue1}
-                    onChange={(val) => {
-                      console.log(val, "DD");
-                      setInterval(val.value);
-                    }}
-                    className={`rounded-[10px] min-w-[200px] text-[18px] text-black ${cabin.className}`}
-                  />
-                </div>
+                {tab2 === "aggregate" && (
+                  <div className="">
+                    <p>Aggregate Function</p>
+                    <Select
+                      styles={{
+                        control: (styles) => ({
+                          ...styles,
+                          backgroundColor: "#EAEAEA",
+                          borderRadius: "10px",
+                        }),
+                      }}
+                      defaultValue={dropDownValue1[0]}
+                      options={dropDownValue1}
+                      onChange={(val) => {
+                        console.log(val, "DD");
+                        setInterval(val.value);
+                      }}
+                      className={`rounded-[10px] min-w-[200px] text-[18px] mt-3 text-black ${cabin.className}`}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>

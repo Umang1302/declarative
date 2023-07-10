@@ -58,7 +58,9 @@
           "attributes": ["sustainability_rank"],
           "window": "asof_date, fund_sumbol",
           "function": "lag(1)",
-          "order": "ascending"
+          "order": "ascending",
+          "productMetric": "",
+          "seriesMetric": ""
         },
         {
           "name": "Rank Movement",
@@ -68,7 +70,9 @@
           "attributes": ["sustainability_rank"],
           "window": "asof_date, fund_sumbol",
           "function": "lag(1)",
-          "order": "ascending"
+          "order": "ascending",
+          "productMetric": "",
+          "seriesMetric": ""
         }
       ],
       "lifeCycle": [
@@ -125,6 +129,7 @@
       "createdBy": "Dave",
       "updatedBy": "Dave",
       "attributes": [
+        { "name": "asofDate", "isSeriesKey": true },
         {
           "createdAt": "2023-05-30T19:53:18.108Z",
           "updatedAt": "2023-05-30T19:53:18.108Z",
@@ -643,11 +648,13 @@
           "name": "Mom, QoQ, YoY growth in Securities Traded",
           "type": "1",
           "scope": "product",
-          "attributes": ["Ticket symbol"],
+          "attributes": ["Ticker symbol"],
           "profile": ["Count Distinct"],
           "aggregate": [""],
-          "period": ["Year", "Quater", "Month"],
-          "metric": ["Growth-Percentage", "Growth-Absolute"]
+          "period": ["Year", "Quarter", "Month"],
+          "metric": ["Growth-Percentage", "Growth-Absolute"],
+          "productMetric": "",
+          "seriesMetric": ""
         }
       ],
       "lifeCycle": [
@@ -689,17 +696,17 @@
           {
             "name": "YoY Growth in Securities Traded",
             "percentage": 8,
-            "date": "As Of Jan 2023"
+            "date": "January"
           },
           {
             "name": "QoQ Growth in Securities Traded",
             "percentage": 2,
-            "date": "As Of Mar 2023"
+            "date": "March"
           },
           {
             "name": "MoM Growth in Securities Traded",
             "percentage": 1,
-            "date": "As Of May 2023"
+            "date": "May"
           }
         ]
       },
@@ -720,6 +727,7 @@
       "createdBy": "Dave",
       "updatedBy": "Dave",
       "attributes": [
+        { "name": "asofDate", "isSeriesKey": true },
         {
           "createdAt": "2023-05-30T20:18:02.878Z",
           "updatedAt": "2023-05-30T20:18:02.878Z",
@@ -926,7 +934,8 @@
               "owner": true,
               "consumers": false,
               "detectVariance": false,
-              "template": "Compare"
+              "template": "Compare",
+              "text": "High > Low"
             }
           }
         ]
@@ -943,7 +952,9 @@
           "attributes": ["high"],
           "window": "asof_date, ticker_symbol",
           "function": "lag(52)",
-          "order": "high descending"
+          "order": "high descending",
+          "productMetric": "",
+          "seriesMetric": ""
         },
         {
           "name": "52 Week Low",
@@ -952,7 +963,9 @@
           "attributes": ["low"],
           "window": "asof_date, ticker_symbol",
           "function": "lag(52)",
-          "order": "low ascending"
+          "order": "low ascending",
+          "productMetric": "",
+          "seriesMetric": ""
         }
       ],
       "lifeCycle": [
@@ -1006,6 +1019,7 @@
       "createdBy": "Dave",
       "updatedBy": "Dave",
       "attributes": [
+        { "name": "asofDate", "isSeriesKey": true },
         {
           "createdAt": "2023-05-30T20:47:57.965Z",
           "updatedAt": "2023-05-30T20:47:57.965Z",
@@ -1163,7 +1177,8 @@
               "owner": true,
               "consumers": false,
               "detectVariance": false,
-              "template": "Value Range"
+              "template": "Value Range",
+              "text": ""
             }
           },
           {
@@ -1208,7 +1223,9 @@
           "attributes": ["num_category_funds"],
           "window": "fund_category",
           "function": "count",
-          "order": "ascending"
+          "order": "ascending",
+          "productMetric": "",
+          "seriesMetric": ""
         },
         {
           "name": "YoY Growth in number of Funds",
@@ -1218,7 +1235,9 @@
           "profile": ["Count Distinct"],
           "aggregate": [],
           "period": ["Year"],
-          "metric": ["Growth-Percentage"]
+          "metric": ["Growth-Percentage"],
+          "productMetric": "",
+          "seriesMetric": ""
         }
       ],
       "lifeCycle": [
@@ -1271,7 +1290,7 @@
           {
             "name": "YoY Growth in Securities Traded",
             "percentage": 20,
-            "date": "As Of Jan 2023"
+            "date": "January"
           }
         ],
         "series": true
@@ -1979,7 +1998,8 @@
               "owner": true,
               "consumers": false,
               "detectVariance": false,
-              "template": "Value Range"
+              "template": "Value Range",
+              "text": ""
             }
           }
         ]
@@ -2009,7 +2029,9 @@
           "profile": [],
           "aggregate": ["Sum"],
           "period": ["Series"],
-          "metric": []
+          "metric": [],
+          "productMetric": "",
+          "seriesMetric": ""
         },
         {
           "name": "YoY Assets Under Management Growth",
@@ -2019,7 +2041,9 @@
           "profile": [""],
           "aggregate": [""],
           "period": ["Year"],
-          "metric": ["Growth-Percentage"]
+          "metric": ["Growth-Percentage"],
+          "productMetric": "",
+          "seriesMetric": "total_assets_under_management"
         }
       ],
       "lifeCycle": [
@@ -2071,13 +2095,15 @@
           {
             "name": "YoY AUM Growth",
             "percentage": 16,
-            "date": "As Of Jan 2023"
+            "date": "January"
           }
         ],
-        "record": {
-          "name": "Total AUM",
-          "val": "22.1 T"
-        }
+        "record": [
+          {
+            "name": "Total AUM",
+            "val": "22.1 T"
+          }
+        ]
       },
       "name": "US Mutual Funds Returns and Rankings",
       "type": "INCREMENTAL",

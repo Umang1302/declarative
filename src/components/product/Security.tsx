@@ -274,7 +274,7 @@ export default function Security({ data }: any) {
   return (
     <div className={`w-full h-full px-2 ${cabin.className}`}>
       {/* Rule */}
-      <div className="border-2 border-[#c4c4c4]">
+      <div className="border-[1px] border-gray-300">
         <div className="bg-[#FFBC35] flex items-center px-6 py-3 justify-between">
           <p className="text-[18px] font-[600] text-black">Security Policy</p>
           <div
@@ -386,7 +386,7 @@ export default function Security({ data }: any) {
           </div>
         )}
       </div>
-      <div className="border-2 border-[#c4c4c4] mt-3">
+      <div className="border-[1px] border-gray-300 mt-3">
         {rules[+selectRule] ? (
           <>
             <div

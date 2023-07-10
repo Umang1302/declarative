@@ -11,7 +11,7 @@ import OverviewTable from "../product/OverviewTab";
 import { Cabin } from "next/font/google";
 import Intents from "../product/Intents";
 import DataTab from "../data/DataTab";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -69,6 +69,18 @@ export default function TransparentTabs({
     },
   ];
 
+  const router = useRouter();
+
+  const [dataSource, setDataSource] = useState([
+    "Data Source 1",
+    "Data Source 2",
+    "Data Source 3",
+    "Data Source 4",
+    "Data Source 5",
+    "Data Source 6",
+    "Data Source 7",
+  ]);
+
   return (
     <>
       {showNext ? (
@@ -116,34 +128,55 @@ export default function TransparentTabs({
           </div>
         </>
       ) : (
-        <div
-          className={`w-full relative flex flex-col gap-y-3 items-center justify-center h-[70vh] py-3`}
-        >
-          <div className="text-[#656565] font-[600] text-[18px]">
-            Name your Data Source
+        <div className="mt-8">
+          <div className="w-full px-3 flex flex-col">
+            <p className="w-full flex justify-center text-[24px] font-[600]">
+              Select an Existing Data Source
+            </p>
+            <div className="flex mt-8 justify-center gap-x-14">
+              {dataSource.map((item, index) => (
+                <p
+                  className="cursor-pointer border-[1px] px-3 rounded-[5px] py-2 border-gray-400 hover:bg-gray-400"
+                  onClick={() => {
+                    setDataSetVal(`Data Source ${index}`);
+                    router.push(`/onboarding/${index + 1}`);
+                  }}
+                  key={index}
+                >
+                  {item}
+                </p>
+              ))}
+            </div>
           </div>
-          <div className="w-full flex justify-center">
-            <input
-              value={val}
-              type="text"
-              onChange={(e) => {
-                setVal(e.target.value);
-              }}
-              className="rounded-[10px] text-[24px] text-center py-1 w-[30%] flex justify-center items-center outline-none"
-            />
-          </div>
-          <div className="w-full flex justify-center mt-4">
-            <button
-              onClick={() => {
-                setSelected(1);
-              }}
-              className="bg-[#F65A27] w-[14%] rounded-[10px] text-[18px] text-white"
-            >
-              Continue
-            </button>
-          </div>
-          <div className="text-[#656565] absolute flex justify-center -bottom-[5rem] text-[18px] font-[600]">
-            <p>More data sources will be added soon!</p>
+          <div
+            className={`w-full mt-20 relative flex flex-col gap-y-3 items-center justify-center py-3`}
+          >
+            <div className="text-[#656565] font-[600] text-[18px]">
+              Name your Data Source
+            </div>
+            <div className="w-full flex justify-center">
+              <input
+                value={val}
+                type="text"
+                onChange={(e) => {
+                  setVal(e.target.value);
+                }}
+                className="rounded-[10px] text-[24px] text-center py-1 w-[30%] flex justify-center items-center outline-none"
+              />
+            </div>
+            <div className="w-full flex justify-center mt-4">
+              <button
+                onClick={() => {
+                  setSelected(1);
+                }}
+                className="bg-[#F65A27] w-[14%] rounded-[10px] text-[18px] text-white"
+              >
+                Continue
+              </button>
+            </div>
+            <div className="text-[#656565] absolute flex justify-center -bottom-[15rem] text-[18px] font-[600]">
+              <p>More data sources will be added soon!</p>
+            </div>
           </div>
         </div>
       )}

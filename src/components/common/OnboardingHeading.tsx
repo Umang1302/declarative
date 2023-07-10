@@ -83,25 +83,27 @@ export default function OnboardingHeading({ setDataSetVal, dataSetVal }: any) {
       <div
         className={`w-full h-[95vh] overflow-y-auto py-10 text-black ${cabin.className} pr-4`}
       >
-        <div className="w-full flex justify-center">
-          <p className="text-[48px] font-[600]">Onboard a New Product</p>
-        </div>
-        <div className="flex w-full justify-center gap-x-4">
-          {tabs.map((item: any, index: any) => (
-            <button
-              key={index}
-              onClick={() => {
-                setSelected(index);
-              }}
-              className={`px-8 py-1 rounded-[10px] ${
-                select === index
-                  ? "bg-[#4D91FF] text-white"
-                  : "border-[1px] border-black"
-              }`}
-            >
-              {item.header}
-            </button>
-          ))}
+        <div className="pb-8 border-gray-300 border-b-[1px]">
+          <div className="w-full flex justify-center">
+            <p className="text-[48px] font-[600]">Onboard a New Product</p>
+          </div>
+          <div className="flex w-full justify-center gap-x-4">
+            {tabs.map((item: any, index: any) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setSelected(index);
+                }}
+                className={`px-8 py-1 rounded-[10px] ${
+                  select === index
+                    ? "bg-[#4D91FF] text-white"
+                    : "border-[1px] border-black"
+                }`}
+              >
+                {item.header}
+              </button>
+            ))}
+          </div>
         </div>
         <div className="">
           {tabs.map((item, i) => {

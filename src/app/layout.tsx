@@ -43,7 +43,7 @@ export default function RootLayout({
             ) : (
               <OnboardingSidebar
                 setDataSetVal={setDataSetVal}
-                active={active}
+                active={null}
                 setActive={setActive}
               />
             )}

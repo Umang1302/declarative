@@ -16,6 +16,7 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
 import { MultiSelect } from "react-multi-select-component";
 import useState from "react-usestateref";
+
 Chart.register(ArcElement);
 
 const cabin = Cabin({ subsets: ["latin"] });
@@ -254,6 +255,16 @@ export default function Metrics({ data }: any) {
     setAddRule(false);
   };
 
+  const multipleText = () => {
+    let text = "";
+    data.metrics[+selectRule] &&
+      data.metrics[+selectRule].period &&
+      data.metrics[+selectRule].period.map((item: any, index: any) => {
+        text += item + ", ";
+      });
+    return text;
+  };
+
   const deleteRule = (index: number) => {
     const deletedArray = [...rules];
     deletedArray.splice(index, 1);
@@ -275,7 +286,7 @@ export default function Metrics({ data }: any) {
   return (
     <div className={`w-full h-full overflow-x-auto px-2 ${cabin.className}`}>
       {/* Rule */}
-      <div className="border-2 border-[#c4c4c4]">
+      <div className="border-[1px] border-gray-300">
         <div className="bg-[#FFBC35] flex items-center px-6 py-3 justify-between">
           <p className="text-[18px] text-black font-[600]">
             Metrics Information
@@ -388,11 +399,11 @@ export default function Metrics({ data }: any) {
         </div>
       </div>
       {/* Rule info */}
-      <div className="border-2 border-[#c4c4c4] mt-3">
+      <div className="border-[1px] border-gray-300 mt-3">
         {loader ? (
           <>Loading..................</>
         ) : (
-          <>
+          <div className="w-full">
             <div
               className={`bg-[#CCE0FF] flex items-center text-black h-[20%] px-6 py-2 justify-between ${
                 selectRule == "0" ? "bg-[#CCE0FF]" : "bg-[#FFECC6]"
@@ -512,7 +523,7 @@ export default function Metrics({ data }: any) {
                         onChange={(e) => {
                           setInput1(e.target.value);
                         }}
-                        className={`${cabin.className} border-gray-300 border-[2px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                        className={`${cabin.className} border-gray-300 border-[1px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
                       />
                     </div>
                     <div className="relative">
@@ -523,7 +534,7 @@ export default function Metrics({ data }: any) {
                         onChange={(e) => {
                           setInput2(e.target.value);
                         }}
-                        className={`${cabin.className} border-gray-300 border-[2px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                        className={`${cabin.className} border-gray-300 border-[1px] text-[16px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
                       />
                     </div>
                   </div>
@@ -609,8 +620,8 @@ export default function Metrics({ data }: any) {
             </div> */}
                 </div>
               ) : metricsTabRef.current === "1" ? (
-                <div className="w-full mt-3">
-                  <div className="flex justify-between">
+                <div className=" mt-3">
+                  <div className="flex justify-between gap-x-6">
                     <div className="">
                       <p className="font-[600]">Scope</p>
                       <div className="bg-[#EAEAEA] w-[280px] mt-3 min-w-[300px] h-[40px] flex items-center justify-around rounded-[10px]">
@@ -769,8 +780,22 @@ export default function Metrics({ data }: any) {
                         </div>
                       )}
                     </div>
+                    <div className="relative">
+                      <p className="mb-3">Series Metric</p>
+                      <input
+                        type="text"
+                        value={
+                          data.metrics[+selectRule] &&
+                          data.metrics[+selectRule].seriesMetric &&
+                          data.metrics[+selectRule].seriesMetric
+                            ? data.metrics[+selectRule].seriesMetric
+                            : ""
+                        }
+                        className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                      />
+                    </div>
                   </div>
-                  <div className="flex mt-4 justify-between">
+                  <div className="flex mt-4 justify-between gap-x-6">
                     <div className="relative">
                       <p className="mb-3">Aggregate</p>
                       <input
@@ -839,13 +864,7 @@ export default function Metrics({ data }: any) {
                       <input
                         type="text"
                         readOnly
-                        value={
-                          data.metrics[+selectRule] &&
-                          data.metrics[+selectRule].period &&
-                          data.metrics[+selectRule].period[0]
-                            ? data.metrics[+selectRule].period[0]
-                            : ""
-                        }
+                        value={multipleText()}
                         className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
                       />
                       <div
@@ -960,6 +979,20 @@ export default function Metrics({ data }: any) {
                         </div>
                       )}
                     </div>
+                    <div className="relative">
+                      <p className="mb-3">Product Metric</p>
+                      <input
+                        type="text"
+                        value={
+                          data.metrics[+selectRule] &&
+                          data.metrics[+selectRule].productMetric &&
+                          data.metrics[+selectRule].productMetric
+                            ? data.metrics[+selectRule].productMetric
+                            : ""
+                        }
+                        className={`${cabin.className} border-gray-300 border-[2px] text-[18px] rounded-[10px] h-[40px] px-2 outline-none bg-[#EAEAEA] text-black`}
+                      />
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -1060,7 +1093,7 @@ export default function Metrics({ data }: any) {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         )}
       </div>
     </div>

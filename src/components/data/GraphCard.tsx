@@ -236,7 +236,7 @@ export default function GraphCard({ data }: any) {
                 </div>
                 <div className="w-full flex -mt-[3rem] flex-col justify-between">
                   <p>Most Common Values (Top 4 )</p>
-                  <p className="flex flex-col justify-between items-center">
+                  <p className="flex flex-col h-[85px] overflow-y-auto pr-3 justify-between items-center">
                     {item!.tableColumnMetrics!.stringMetrics.counts.map(
                       (item: any, i: number) => {
                         if (i < 4) {

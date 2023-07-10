@@ -76,6 +76,11 @@ export default function DataRules({ data }: any) {
     // if (labelRef.current && labelRef.current.scrollLeft)
     labelRef.current.scrollLeft += scrollOffset;
   };
+
+  function getRandomArbitrary(min: any, max: any) {
+    return Math.random() * (max - min) + min;
+  }
+
   useEffect(() => {
     console.log("data Table", pathname, data);
 
@@ -321,6 +326,8 @@ export default function DataRules({ data }: any) {
     }
   }, [selected]);
 
+  const labels = ["January", "March", "May", "July", "September", "November"];
+
   useEffect(() => {
     const tt = pathname.split("/");
     const id = tt[tt.length - 1];
@@ -363,71 +370,148 @@ export default function DataRules({ data }: any) {
       <div>
         <div> </div>
         {/**Main Content */}
-        <div className="w-full border-[2px] rounded-[10px] border-[#c4c4c4]">
-          <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
-            Rule Summary
-          </p>
-          {data.dataMetrics.metrics ? (
-            <div className="w-full flex justify-around py-2">
-              {data.dataMetrics.metrics.map((item: any, index: number) => (
-                <div
-                  className={`flex ${
-                    data.dataMetrics.metrics.length === 2
-                      ? "w-1/2"
-                      : "w-1/3 px-28"
-                  } relative flex-col items-center justify-center ${
-                    index === data.dataMetrics.metrics.length - 1
-                      ? ""
-                      : "border-r-[2px] border-[#c4c4c4]"
-                  }`}
-                  key={index}
-                >
-                  <p className="mb-2 text-black text-[18px]">{item.name}</p>
-                  <Doughnut
+        <div className="w-full flex gap-x-6">
+          <div className="w-[60%] rounded-[10px] border-[2px] border-[#c4c4c4]">
+            <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
+              Rule Summary
+            </p>
+
+            {data.dataMetrics.metrics ? (
+              <>
+                <div>
+                  <Line
                     data={{
-                      datasets: [
-                        {
-                          data: [item.percentage, 100 - item.percentage],
-                          backgroundColor: ["#4D91FF", "#F65A27"],
-                          borderColor: "white",
-                        },
-                      ],
+                      //
+                      labels,
+                      // datasets: [
+                      //   {
+                      //     label: "Score",
+                      //     data: labels.map(() =>
+                      //       getRandomArbitrary(
+                      //         data.graphData.min,
+                      //         data.graphData.max
+                      //       )
+                      //     ),
+                      //     borderColor: "#4D91FF",
+                      //     backgroundColor: "#4D91FF",
+                      //   },
+                      // ],
+                      datasets: data.dataMetrics.metrics.map(
+                        (item: any, index: any) => ({
+                          label: `${item.name}`,
+                          data: labels.map((i, ind) => {
+                            return getRandomArbitrary(0, 100);
+                          }),
+                          borderColor:
+                            index === 0
+                              ? "#3984FF"
+                              : index === 1
+                              ? "#F65A27"
+                              : "#7FE588",
+                          backgroundColor:
+                            index === 0
+                              ? "#3984FF"
+                              : index === 1
+                              ? "#F65A27"
+                              : "#7FE588",
+                        })
+                      ),
                     }}
                     options={{
+                      responsive: true,
                       plugins: {
                         legend: {
-                          display: false,
+                          position: "top" as const,
                         },
-                        tooltip: {
-                          enabled: false,
+                        title: {
+                          display: true,
+                          text: "",
                         },
                       },
-                      //   rotation: -90,
-                      circumference: 360,
-                      cutout: "90%",
-                      // maintainAspectRatio: true,
-                      responsive: true,
                     }}
                   />
-                  <div className="absolute top-[40%] items-center flex justify-center text-[55px] font-[900]">
-                    <p>{item.percentage}%</p>
-                    {/* <div className="relative w-16 h-16">
-                  <Image src="/healthUp.svg" alt="brand" fill />
-                </div> */}
-                  </div>
                 </div>
-              ))}
-            </div>
-          ) : (
-            <p className="px-3 py-2 text-[18px] text-black">
-              No Rule Summary for this Product
+              </>
+            ) : (
+              // <div className="w-full flex justify-around py-2">
+              //   {data.dataMetrics.metrics.map((item: any, index: number) => (
+              //     <div
+              //       className={`flex ${
+              //         data.dataMetrics.metrics.length === 2
+              //           ? "w-1/2"
+              //           : "w-1/3 px-28"
+              //       } relative flex-col items-center justify-center ${
+              //         index === data.dataMetrics.metrics.length - 1
+              //           ? ""
+              //           : "border-r-[2px] border-[#c4c4c4]"
+              //       }`}
+              //       key={index}
+              //     >
+              //       <p className="mb-2 text-black text-[18px]">{item.name}</p>
+              //       <Doughnut
+              //         data={{
+              //           datasets: [
+              //             {
+              //               data: [item.percentage, 100 - item.percentage],
+              //               backgroundColor: ["#4D91FF", "#F65A27"],
+              //               borderColor: "white",
+              //             },
+              //           ],
+              //         }}
+              //         options={{
+              //           plugins: {
+              //             legend: {
+              //               display: false,
+              //             },
+              //             tooltip: {
+              //               enabled: false,
+              //             },
+              //           },
+              //           //   rotation: -90,
+              //           circumference: 360,
+              //           cutout: "90%",
+              //           // maintainAspectRatio: true,
+              //           responsive: true,
+              //         }}
+              //       />
+              //       <div className="absolute top-[40%] items-center flex justify-center text-[55px] font-[900]">
+              //         <p>{item.percentage}%</p>
+              //         {/* <div className="relative w-16 h-16">
+              //     <Image src="/healthUp.svg" alt="brand" fill />
+              //   </div> */}
+              //       </div>
+              //     </div>
+              //   ))}
+              // </div>
+              <p className="px-3 py-2 text-[18px] text-black">
+                No Rule Summary for this Product
+              </p>
+            )}
+          </div>
+          <div className="w-[40%] rounded-[10px] border-[2px] border-[#c4c4c4]">
+            <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
+              Record Metrics
             </p>
-          )}
+            <div>
+              {data.dataMetrics.record ? (
+                <>
+                  <div className="w-full text-[24px] py-6 border-b-[1px] border-gray-300 flex justify-between px-3">
+                    <p className="text-black">Total AUM</p>
+                    <p className="text-black">22.1</p>
+                  </div>
+                </>
+              ) : (
+                <p className="px-3 py-2 text-[18px] text-black">
+                  No Series Metrics for this product
+                </p>
+              )}
+            </div>
+          </div>
         </div>
 
         <div className="w-full border-[2px] rounded-[10px] mt-3 border-[#c4c4c4]">
           <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
-            Series & Record Metrics
+            Series Metrics
           </p>
           {data.dataMetrics.series ? (
             <>
@@ -435,7 +519,7 @@ export default function DataRules({ data }: any) {
                 <Select
                   options={dropDown}
                   value={selected}
-                  className="w-[300px] absolute  text-black"
+                  className="w-[300px] absolute text-black"
                   onChange={(val: any) => {
                     console.log(val);
                     setSelected(val);
@@ -506,7 +590,6 @@ export default function DataRules({ data }: any) {
                                           : -1
                                     );
                                     console.log("un SortedData", unSortedData);
-
                                     setTableRowData(unSortedData);
                                   }
                                 }}
@@ -589,28 +672,10 @@ export default function DataRules({ data }: any) {
                 )}
               </div>
             </>
-          ) : data.dataMetrics.record ? (
-            <>
-              <div className="flex relative w-full mt-2 ml-2 justify-between">
-                <Select
-                  options={dropDown}
-                  value={selected}
-                  className="w-[300px] absolute  text-black"
-                  onChange={(val: any) => {
-                    console.log(val);
-                    setSelected(val);
-                  }}
-                />
-              </div>
-              <div className="w-[20%] text-[18px] rounded-[10px]  flex border-[2px] py-5 ml-6 flex-col items-center my-3 justify-center border-[#c4c4c4]">
-                <p>{data.dataMetrics.record.name}</p>
-                <p className="text-black">{data.dataMetrics.record.val}</p>
-              </div>
-            </>
           ) : (
             <>
               <p className="px-3 py-2 text-[18px] text-black">
-                No Series and Record for this product
+                No Series Metrics for this product
               </p>
             </>
           )}
@@ -621,7 +686,7 @@ export default function DataRules({ data }: any) {
   } else {
     return (
       <p className="px-3 py-2 text-[18px] text-black">
-        No Metrics Data for this product
+        No Product Metrics available{" "}
       </p>
     );
   }
