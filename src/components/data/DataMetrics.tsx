@@ -502,7 +502,7 @@ export default function DataRules({ data }: any) {
                 </>
               ) : (
                 <p className="px-3 py-2 text-[18px] text-black">
-                  No Series Metrics for this product
+                  No Record Metrics for this product
                 </p>
               )}
             </div>
