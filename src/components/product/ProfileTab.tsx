@@ -273,8 +273,8 @@ export default function ProfileTab({ data }: any) {
                       </div>
                     </div>
                     <p>
-                      Repeats every {item.weekNumber} {item.interval} on{" "}
-                      {item.day[0]}{" "}
+                      Repeats every {item.weekNumber} {item.interval} on
+                      {item.day[0]}
                       {/* {item.day.length > 1 && `${"+" + (item.day.length - 1)}`}{" "} */}
                       at {item.time}
                     </p>
@@ -355,16 +355,16 @@ export default function ProfileTab({ data }: any) {
               <p className="font-[700] text-[16px]">Calender Event Schedule</p>
 
               <div className="flex items-center gap-x-5">
-                <div className="relative w-[20px] h-[20px]">
-                  <Image src={`/watch.svg`} alt="brand" fill />
-                </div>
+                {/* <div className="relative w-[20px] h-[20px]">
+                      <Image src={`/watch.svg`} alt="brand" fill />
+                    </div> */}
                 <input
                   onChange={(e) => {
                     console.log(e.target.value);
                     setDate(e.target.value);
                   }}
                   type="date"
-                  className="border-[#EAEAEA] border-[2px] rounded-[10px] px-2"
+                  className="border-[#c4c4c4] outline-none bg-[#EAEAEA] border-[1px] rounded-[10px] px-2"
                 />
                 <div>
                   <input
@@ -373,7 +373,8 @@ export default function ProfileTab({ data }: any) {
                       console.log(e.target.value);
                       setTime(e.target.value);
                     }}
-                    // className="w-[53px] h-[48px] p-5 text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px]"
+                    value={time}
+                    className="bg-[#EAEAEA] border-[#c4c4c4] border-[1px] outline-none px-2 rounded-[10px]"
                   />
                 </div>
               </div>
@@ -388,7 +389,7 @@ export default function ProfileTab({ data }: any) {
                     console.log(e.target.value);
                     setWeekNumber(e.target.value);
                   }}
-                  className="w-[53px] h-[48px] p-5 text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px]"
+                  className="w-[50px] -mt-1 outline-none h-[44px] border-[1px] p-5 bg-[#eaeaea] text-[18px] font-[500] border-[#c4c4c4] rounded-[10px]"
                 />
                 <div>
                   <Select

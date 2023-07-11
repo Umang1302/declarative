@@ -821,7 +821,7 @@ export default function Rules({ data }: any) {
                         setDate(e.target.value);
                       }}
                       type="date"
-                      className="border-[#EAEAEA] outline-none bg-[#EAEAEA] border-[2px] rounded-[10px] px-2"
+                      className="border-[#c4c4c4] outline-none bg-[#EAEAEA] border-[1px] rounded-[10px] px-2"
                     />
                     <div>
                       <input
@@ -831,7 +831,7 @@ export default function Rules({ data }: any) {
                           setTime(e.target.value);
                         }}
                         value={time}
-                        className="bg-[#EAEAEA] outline-none px-2 rounded-[10px]"
+                        className="bg-[#EAEAEA] border-[#c4c4c4] border-[1px] outline-none px-2 rounded-[10px]"
                       />
                     </div>
                   </div>
@@ -846,7 +846,7 @@ export default function Rules({ data }: any) {
                         console.log(e.target.value);
                         setWeekNumber(e.target.value);
                       }}
-                      className="w-[53px] outline-none h-[48px] p-5 bg-[#eaeaea] text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px]"
+                      className="w-[50px] -mt-1 outline-none h-[44px] border-[1px] p-5 bg-[#eaeaea] text-[18px] font-[500] border-[#c4c4c4] rounded-[10px]"
                     />
                     <div>
                       <Select

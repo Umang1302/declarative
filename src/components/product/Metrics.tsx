@@ -1092,6 +1092,123 @@ export default function Metrics({ data }: any) {
           </div>
         )}
       </div>
+
+      <Dialog
+        size="xs"
+        open={open}
+        handler={handleOpen}
+        className="bg-transparent shadow-none"
+      >
+        <Card className="mx-auto w-full max-w-[24rem]">
+          <CardBody className={`${cabin.className}`}>
+            <div className="text-black flex flex-col gap-4">
+              <p className="font-[700] text-[16px]">Calender Event Schedule</p>
+
+              <div className="flex items-center gap-x-5">
+                {/* <div className="relative w-[20px] h-[20px]">
+                      <Image src={`/watch.svg`} alt="brand" fill />
+                    </div> */}
+                <input
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    setDate(e.target.value);
+                  }}
+                  type="date"
+                  className="border-[#c4c4c4] outline-none bg-[#EAEAEA] border-[1px] rounded-[10px] px-2"
+                />
+                <div>
+                  <input
+                    type="time"
+                    onChange={(e) => {
+                      console.log(e.target.value);
+                      setTime(e.target.value);
+                    }}
+                    value={time}
+                    className="bg-[#EAEAEA] border-[#c4c4c4] border-[1px] outline-none px-2 rounded-[10px]"
+                  />
+                </div>
+              </div>
+
+              <div className="flex items-center gap-x-5">
+                <p className="text-[18px]">Repeat every</p>
+                <input
+                  type="number"
+                  defaultValue={"1"}
+                  value={weekNumber}
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    setWeekNumber(e.target.value);
+                  }}
+                  className="w-[50px] -mt-1 outline-none h-[44px] border-[1px] p-5 bg-[#eaeaea] text-[18px] font-[500] border-[#c4c4c4] rounded-[10px]"
+                />
+                <div>
+                  <Select
+                    styles={{
+                      control: (styles) => ({
+                        ...styles,
+                        backgroundColor: "#EAEAEA",
+                        borderRadius: "10px",
+                      }),
+                    }}
+                    defaultValue={dropDownValue[0]}
+                    options={dropDownValue}
+                    onChange={(val) => {
+                      console.log(val, "DD");
+                      setInterval(val.value);
+                    }}
+                    className={`h-[48px] w-[117px] rounded-[10px] text-[18px] ${cabin.className}`}
+                  />
+                </div>
+              </div>
+              <div>
+                <p>Repeat on</p>
+                <div className="flex mt-2 gap-x-2">
+                  {week.map((element: any, index: number) => (
+                    <div
+                      onClick={() => {
+                        const updateWeek = [...week];
+                        for (let i = 0; i < week.length; i++) {
+                          if (updateWeek[i].val === element.val) {
+                            updateWeek[i].selected = !updateWeek[i].selected;
+                          }
+                        }
+                        setWeek(updateWeek);
+                      }}
+                      className={`w-[30px] items-center flex justify-center h-[30px] rounded-full  ${
+                        element.selected ? `${element.color}` : "bg-[#EAEAEA]"
+                      }`}
+                      key={index}
+                    >
+                      {element.name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-end mt-4 w-full ml-[0.5rem]">
+              <Button
+                variant="text"
+                className="bg-transparent hover:bg-transparent normal-case shadow-none text-[#656565]"
+                onClick={handleOpen}
+              >
+                <span className={`text-[14px] ${cabin.className}`}>Cancel</span>
+              </Button>
+              <Button
+                variant="text"
+                color="red"
+                onClick={() => {
+                  addSchedule();
+                }}
+                className=" hover:bg-transparent normal-case"
+              >
+                <span className={`text-[14px] before:${cabin.className}`}>
+                  Done
+                </span>
+              </Button>
+            </div>
+          </CardBody>
+        </Card>
+      </Dialog>
     </div>
   );
 }

@@ -63,14 +63,10 @@ export default function TransparentTabs({
     // let obj2: any = JSONDATA.data[0].attributes[0];
     let tableData: any = JSONDATA.data[0].attributes;
     setTableRowData(tableData);
-    // let tableHeaders = Object.keys(obj2);
-    // console.log("HEADERS", tableHeaders);
-    // setTableHead(tableHeaders);
     console.log("DDDD", JSONDATA.data[1]);
   }, []);
   const scroll = (scrollOffset: any) => {
     console.group(labelRef.current.pageYOffset);
-    // if (labelRef.current && labelRef.current.scrollLeft)
     labelRef.current.scrollLeft += scrollOffset;
   };
 

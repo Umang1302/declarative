@@ -200,7 +200,7 @@ export default function ExploreTable({
                             />
                           </svg>
                           {open && selectCol === index && (
-                            <div className="bg-white absolute gap-y-4 rounded-[10px] py-3 px-2 z-[50] w-[250px] h-[300px]">
+                            <div className="bg-white absolute gap-y-4 shadow-md rounded-[10px] py-3 px-2 z-[50] w-[250px] h-[300px]">
                               <p className="border-b-[1px] border-[#c4c4c4]">
                                 Filters
                               </p>
