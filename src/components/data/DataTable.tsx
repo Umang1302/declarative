@@ -440,7 +440,7 @@ export default function Example({ data }: any) {
                       className={`cursor-pointer relative border-y border-blue-gray-100 p-4 min-w-[60px] bg-[#FFF0D3] transition-colors ${cabin.className}`}
                     >
                       <p
-                        className={` ${cabin.className} flex items-center justify-between gap-2 font-[600] leading-none opacity-70 text-black`}
+                        className={` ${cabin.className} flex items-center justify-between gap-2 font-[600] leading-none  text-black`}
                       >
                         {head}{" "}
                         <div

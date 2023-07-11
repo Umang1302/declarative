@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {
   Avatar,
   Badge,
   Card,
   CardBody,
+  Checkbox,
   Typography,
 } from "@material-tailwind/react";
 import Image from "next/image";
@@ -44,6 +45,12 @@ export default function ExploreTable({
     "CreatedBy",
     "UpdatedBy",
   ]);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(!open);
+  const [selectCol, setSelectCol] = React.useState<any>();
+  const [checkboxData, setCheckboxData] = useState<any>();
+  const [selectAttribute, setSelectAttribute] = React.useState<any>();
+  const [uniqueArray, setUniqueArray] = useState<any>();
 
   const labelRef = useRef<any>(null);
 
@@ -94,49 +101,72 @@ export default function ExploreTable({
                   {tableHead.map((head: any, index: number) => (
                     <th
                       key={head.label}
-                      className={`cursor-pointer border-y border-blue-gray-100 p-4 min-w-[60px] bg-[#FFF0D3] transition-colors ${cabin.className}`}
+                      className={`cursor-pointer relative border-y border-blue-gray-100 p-4 min-w-[60px] bg-[#FFF0D3] transition-colors ${cabin.className}`}
                     >
                       <p
-                        className={` ${cabin.className} flex items-center justify-between gap-2 font-[600] leading-none opacity-70 text-black`}
+                        className={` ${cabin.className} flex items-center justify-between gap-2 font-[600] leading-none text-black`}
                       >
                         {head}{" "}
                         <div
                           onClick={() => {
-                            console.log("clicked", sort);
-                            if (!sort) {
-                              setSort(true);
-                            } else {
-                              setSort(false);
-                            }
+                            setSelectCol(index);
+                            let hh: any;
+                            switch (head) {
+                              case "Attributes":
+                                hh = "name";
+                                break;
+                              case "Is Record Key":
+                                hh = "isRecordKey";
+                                break;
+                              case "Is Series Key":
+                                hh = "isSeriesKey";
+                                break;
+                              case "Classification":
+                                hh = "classification";
+                                break;
+                              case "Description":
+                                hh = "description";
+                                break;
+                              case "CreatedAt":
+                                hh = "createdAt";
+                                break;
+                              case "UpdatedAt":
+                                hh = "updatedAt";
 
-                            if (!sort) {
-                              let sortedData = tableRowData.sort(
-                                (a: any, b: any) =>
-                                  a.name > b.name
-                                    ? 1
-                                    : a.name === b.name
-                                    ? a.name > b.name
-                                      ? 1
-                                      : -1
-                                    : -1
-                              );
-                              console.log("sortedData", sortedData);
-                              setTableRowData(sortedData);
-                            } else {
-                              let unSortedData = tableRowData.sort(
-                                (a: any, b: any) =>
-                                  a.name < b.name
-                                    ? 1
-                                    : a.name === b.name
-                                    ? a.name < b.name
-                                      ? 1
-                                      : -1
-                                    : -1
-                              );
-                              console.log("un SortedData", unSortedData);
-
-                              setTableRowData(unSortedData);
+                                break;
+                              case "AccountId":
+                                hh = "accountId";
+                                break;
+                              case "ProductId":
+                                hh = "productId";
+                                break;
+                              case "NamespaceId":
+                                hh = "NamespaceId";
+                                break;
+                              case "SourceAttribute":
+                                hh = "sourceAttribute";
+                                break;
                             }
+                            setSelectAttribute(hh);
+                            handleOpen();
+                            const dat = tableRowData.map((item: any) => {
+                              if (item) {
+                                return true;
+                              }
+                            });
+                            setCheckboxData(dat);
+                            let resArr: any = [];
+                            tableRowData.filter(function (item: any) {
+                              var i = resArr.findIndex(
+                                (x: any) => x[hh] == item[hh]
+                              );
+                              if (i <= -1) {
+                                resArr.push(item);
+                              }
+                              return null;
+                            });
+                            console.log("RESARR", resArr);
+                            setUniqueArray(resArr);
                           }}
                         >
                           <svg
@@ -169,6 +199,100 @@ export default function ExploreTable({
                               fill="black"
                             />
                           </svg>
+                          {open && selectCol === index && (
+                            <div className="bg-white absolute gap-y-4 rounded-[10px] py-3 px-2 z-[50] w-[250px] h-[300px]">
+                              <p className="border-b-[1px] border-[#c4c4c4]">
+                                Filters
+                              </p>
+                              <p
+                                className="px-2 py-1 hover:bg-[#ededed]"
+                                onClick={() => {
+                                  let hh: any;
+                                  let sortedData = tableRowData.sort(
+                                    (a: any, b: any) =>
+                                      a[`${hh}`] > b[`${hh}`]
+                                        ? 1
+                                        : a[`${hh}`] === b[`${hh}`]
+                                        ? a[`${hh}`] > b[`${hh}`]
+                                          ? 1
+                                          : -1
+                                        : -1
+                                  );
+                                  console.log(sortedData);
+                                  setTableRowData(sortedData);
+                                  handleOpen();
+                                }}
+                              >
+                                Ascending Order
+                              </p>
+                              <p
+                                className="px-2 py-1 hover:bg-[#ededed]"
+                                onClick={() => {
+                                  console.log(head);
+                                  let hh: any;
+
+                                  console.log(hh);
+
+                                  let unSortedData = tableRowData.sort(
+                                    (a: any, b: any) =>
+                                      a[`${hh}`] < b[`${hh}`]
+                                        ? 1
+                                        : a[`${hh}`] === b[`${hh}`]
+                                        ? a[`${hh}`] < b[`${hh}`]
+                                          ? 1
+                                          : -1
+                                        : -1
+                                  );
+                                  setTableRowData(unSortedData);
+                                  handleOpen();
+                                }}
+                              >
+                                Descending Order
+                              </p>
+                              {head !== "Is Record Key" &&
+                                head !== "Is Series Key" && (
+                                  <div className="mt-2 h-[180px] overflow-y-auto">
+                                    <p>Select Value</p>
+                                    {uniqueArray.map(
+                                      (item: any, index: number) => {
+                                        if (item[`${selectAttribute}`] !== "") {
+                                          return (
+                                            <div
+                                              key={index}
+                                              className="gap-x-2 flex items-center"
+                                            >
+                                              <Checkbox
+                                                id={`${index}`}
+                                                color="blue"
+                                                // defaultChecked={item.check}
+                                                defaultChecked={
+                                                  checkboxData[index]
+                                                }
+                                                // className="rounded-none"
+                                                onChange={(e) => {
+                                                  const aa = [...checkboxData];
+                                                  if (e.currentTarget.checked) {
+                                                    aa[index] = true;
+                                                  } else {
+                                                    aa[index] = false;
+                                                  }
+                                                  setCheckboxData(aa);
+                                                }}
+                                              />
+                                              <p>
+                                                {item[`${selectAttribute}`]}
+                                              </p>
+                                            </div>
+                                          );
+                                        } else {
+                                          return null;
+                                        }
+                                      }
+                                    )}
+                                  </div>
+                                )}
+                            </div>
+                          )}
                         </div>
                       </p>
                     </th>

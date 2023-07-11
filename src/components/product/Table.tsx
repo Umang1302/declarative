@@ -299,7 +299,7 @@ export default function Example({ data }: any) {
                     className={`cursor-pointer relative border-y border-blue-gray-100 p-4 min-w-[60px] bg-[#A0EDA7] transition-colors ${cabin.className}`}
                   >
                     <p
-                      className={` ${cabin.className}  flex items-center justify-between gap-2 leading-none opacity-70 text-black font-[600]`}
+                      className={` ${cabin.className}  flex items-center justify-between gap-2 leading-none text-black font-[600]`}
                     >
                       {head}{" "}
                       <div

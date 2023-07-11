@@ -41,3 +41,12 @@ input::-webkit-inner-spin-button {
 .graphBox {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+}
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+}

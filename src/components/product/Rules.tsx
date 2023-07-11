@@ -95,8 +95,8 @@ export default function Rules({ data }: any) {
 
   const [weekNumber, setWeekNumber] = useState<string>("1");
   const [interval, setInterval] = useState<string>("Week");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+  const [date, setDate] = useState("2023-07-12");
+  const [time, setTime] = useState("17:23");
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
 
@@ -812,16 +812,16 @@ export default function Rules({ data }: any) {
                   </p>
 
                   <div className="flex items-center gap-x-5">
-                    <div className="relative w-[20px] h-[20px]">
+                    {/* <div className="relative w-[20px] h-[20px]">
                       <Image src={`/watch.svg`} alt="brand" fill />
-                    </div>
+                    </div> */}
                     <input
                       onChange={(e) => {
                         console.log(e.target.value);
                         setDate(e.target.value);
                       }}
                       type="date"
-                      className="border-[#EAEAEA] border-[2px] rounded-[10px] px-2"
+                      className="border-[#EAEAEA] outline-none bg-[#EAEAEA] border-[2px] rounded-[10px] px-2"
                     />
                     <div>
                       <input
@@ -830,7 +830,8 @@ export default function Rules({ data }: any) {
                           console.log(e.target.value);
                           setTime(e.target.value);
                         }}
-                        // className="w-[53px] h-[48px] p-5 text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px]"
+                        value={time}
+                        className="bg-[#EAEAEA] outline-none px-2 rounded-[10px]"
                       />
                     </div>
                   </div>
@@ -845,7 +846,7 @@ export default function Rules({ data }: any) {
                         console.log(e.target.value);
                         setWeekNumber(e.target.value);
                       }}
-                      className="w-[53px] h-[48px] p-5 text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px]"
+                      className="w-[53px] outline-none h-[48px] p-5 bg-[#eaeaea] text-[18px] font-[500] border-[#EAEAEA] border-[2px] rounded-[10px]"
                     />
                     <div>
                       <Select
