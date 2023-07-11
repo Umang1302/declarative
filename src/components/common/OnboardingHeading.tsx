@@ -80,7 +80,7 @@ export default function OnboardingHeading({ setDataSetVal, dataSetVal }: any) {
 
   return (
     <>
-      <div
+      <Card
         className={`w-full h-[95vh] overflow-y-auto py-10 text-black ${cabin.className} pr-4`}
       >
         <div className="pb-8 border-gray-300 border-b-[1px]">
@@ -112,7 +112,7 @@ export default function OnboardingHeading({ setDataSetVal, dataSetVal }: any) {
             }
           })}
         </div>
-      </div>
+      </Card>
     </>
   );
 }

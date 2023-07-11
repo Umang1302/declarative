@@ -40,6 +40,9 @@ Chart.register(
   Tooltip,
   Legend
 );
+
+Chart.defaults.color = "black";
+
 export default function DataRules({ data }: any) {
   const [selected, setSelected, selectedRef] = useStateRef<any>({
     label: "20230131",
@@ -47,7 +50,37 @@ export default function DataRules({ data }: any) {
   });
   const pathname = usePathname();
 
-  const labels = ["January", "March", "May", "July", "September", "November"];
+  const labels = [
+    {
+      label: "Jan",
+      text: "January",
+    },
+    {
+      label: "Mar",
+      text: "March",
+    },
+    {
+      label: "Mar",
+      text: "March",
+    },
+    {
+      label: "May",
+      text: "May",
+    },
+    {
+      label: "July",
+      text: "Jul",
+    },
+    {
+      text: "September",
+
+      label: "Sept",
+    },
+    {
+      text: "November",
+      label: "Nov",
+    },
+  ];
 
   const [dropDown, setDropDown] = useState<any>([]);
   useEffect(() => {
@@ -128,11 +161,11 @@ export default function DataRules({ data }: any) {
       <div
         className={`w-full flex gap-x-6 gap-y-2 -mt-[2.6rem] ${cabin.className}`}
       >
-        <div className="md:w-[50%] 3xl:w-[40%] shadow-xl border-[2px] h-[500px] rounded-[10px] border-[#C4C4C4]">
-          <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-4 text-black">
+        <div className="md:w-[50%] 3xl:w-[40%] shadow-xl border-[2px] h-[440px] rounded-[10px] border-[#C4C4C4]">
+          <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
             Overall Health
           </p>
-          <div className="mt-5 w-full h-[80%] relative flex justify-center">
+          <div className="mt-12 w-full h-[300px] relative flex justify-center">
             <Doughnut
               data={{
                 datasets: [
@@ -154,12 +187,12 @@ export default function DataRules({ data }: any) {
                 },
                 //   rotation: -90,
                 circumference: 360,
-                cutout: "90%",
+                cutout: "80%",
                 // maintainAspectRatio: true,
                 responsive: true,
               }}
             />
-            <div className="absolute top-[40%] items-center flex justify-center text-[55px] font-[900]">
+            <div className="absolute top-[36%] text-black items-center flex justify-center text-[55px] font-[900]">
               <p>{data.graphData.health}%</p>
               <div className="relative w-16 h-16">
                 <Image src="/healthUp.svg" alt="brand" fill />
@@ -167,15 +200,16 @@ export default function DataRules({ data }: any) {
             </div>
           </div>
         </div>
-        <div className=" md:w-[50%] 3xl:w-[60%] shadow-xl border-[2px] rounded-[10px] border-[#c4c4c4] pb-4">
-          <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-4 text-black">
+        <div className=" md:w-[50%] 3xl:w-[60%] shadow-xl border-[2px] h-[440px] rounded-[10px] border-[#c4c4c4]">
+          <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
             Trend
           </p>
           <div className="mt-[-2rem] px-4">
             <Line
+              className="text-black"
               data={{
                 //
-                labels,
+                labels: labels.map((item, i) => item.label),
                 datasets: [
                   {
                     label: "Score",
@@ -204,7 +238,7 @@ export default function DataRules({ data }: any) {
         </div>
       </div>
       <div className="w-full mt-5 rounded-[10px] border-[2px] border-[#c4c4c4]">
-        <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-4 text-black">
+        <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
           Rule Summary
         </p>
         <div className="flex gap-x-2 text-black font-[600]">

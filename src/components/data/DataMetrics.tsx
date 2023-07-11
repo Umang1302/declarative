@@ -373,7 +373,7 @@ export default function DataRules({ data }: any) {
         <div className="w-full flex gap-x-6">
           <div className="w-[60%] rounded-[10px] border-[2px] border-[#c4c4c4]">
             <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
-              Rule Summary
+              Product Summary
             </p>
 
             {data.dataMetrics.metrics ? (
@@ -490,7 +490,7 @@ export default function DataRules({ data }: any) {
           </div>
           <div className="w-[40%] rounded-[10px] border-[2px] border-[#c4c4c4]">
             <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
-              Record Metrics
+              Series Metrics
             </p>
             <div>
               {data.dataMetrics.record ? (
@@ -502,7 +502,7 @@ export default function DataRules({ data }: any) {
                 </>
               ) : (
                 <p className="px-3 py-2 text-[18px] text-black">
-                  No Record Metrics for this product
+                  No Series Metrics for this product
                 </p>
               )}
             </div>
@@ -511,7 +511,7 @@ export default function DataRules({ data }: any) {
 
         <div className="w-full border-[2px] rounded-[10px] mt-3 border-[#c4c4c4]">
           <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
-            Series Metrics
+            Record Metrics
           </p>
           {data.dataMetrics.series ? (
             <>
@@ -675,7 +675,7 @@ export default function DataRules({ data }: any) {
           ) : (
             <>
               <p className="px-3 py-2 text-[18px] text-black">
-                No Series Metrics for this product
+                No record Metrics for this product
               </p>
             </>
           )}

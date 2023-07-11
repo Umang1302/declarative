@@ -64,12 +64,12 @@ export default function ExploreTable({
   };
 
   return (
-    <div className="flex gap-x-2 w-full  h-full py-10 mt-7">
+    <div className="flex gap-x-2 w-full  h-full py-10 px-3">
       <div className="w-[10%] h-[80vh] flex flex-col gap-y-3 ">
-        <p className="text-[24px]">Data Sets</p>
-        <p className="bg-gray-300 py-2 text-[18px] px-2">NYSE</p>
+        <p className="text-[20px] font-bold">Data Sets</p>
+        <p className="bg-[#f2f2f2] py-2 text-[16px] px-2">NYSE</p>
       </div>
-      <div className="w-[90%] h-full border-l-[1px] border-gray-500">
+      <div className="w-[90%] h-full border-l-[1px] pl-2 border-gray-500">
         <div className="flex gap-x-3">
           {tableHead.length > 7 && (
             <button
@@ -86,7 +86,7 @@ export default function ExploreTable({
 
           <div
             ref={labelRef}
-            className="md:w-[66vw] lg:w-[71vw] xl:w-[60vw] 2xl:w-[55vw] 3xl:w-[66.5vw] max-w-[1460px] overflow-x-auto flex justify-between"
+            className="md:w-[69vw] lg:w-[74vw] xl:w-[63vw] 2xl:w-[58vw] 3xl:w-[69.5vw] max-w-[1460px] overflow-x-auto flex justify-between"
           >
             <table className="w-full table-auto text-left">
               <thead>

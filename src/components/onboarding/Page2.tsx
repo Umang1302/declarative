@@ -87,21 +87,21 @@ export default function TransparentTabs({
     <div className="mt-4">
       {!showNext ? (
         <>
-          <div className="grid grid-cols-3 mt-[4rem] gap-x-10 gap-y-10 overflow-y-auto h-[600px]">
+          <div className="grid grid-cols-3 mt-[4rem] gap-x-10 gap-y-6 overflow-y-auto h-[600px] py-2 px-5">
             {categoryData.map((item, index) => (
               <div
                 onClick={() => {
                   setShowNext(true);
                 }}
                 key={index}
-                className="bg-white cursor-pointer rounded-[10px] shadow-xl h-[250px] p-5"
+                className="bg-white cursor-pointer rounded-[10px] graphBox h-[250px] p-5"
               >
                 <div className="flex justify-between items-center">
                   <div className="flex gap-x-2 items-center">
                     <div className="relative w-8 h-8">
                       <Image src={`${item.icon}`} alt="brand" fill />
                     </div>
-                    <p className="mt-3 text-[24px] font-[900]">{item.title}</p>
+                    <p className="mt-3 text-[20px] font-[900]">{item.title}</p>
                   </div>
                   <svg
                     className="mt-1"
@@ -120,7 +120,7 @@ export default function TransparentTabs({
                     />
                   </svg>
                 </div>
-                <div className="mt-5 text-[16px]">
+                <div className="mt-5 text-[14px] w-[80%] h-[100px]">
                   <p className="descriptionOn">{item.description}</p>
                 </div>
 

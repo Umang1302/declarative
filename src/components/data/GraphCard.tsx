@@ -96,20 +96,20 @@ export default function GraphCard({ data }: any) {
   }, []);
 
   return (
-    <div className="w-full grid gap-x-4 md:grid-cols-1 3xl:grid-cols-2 px-3 gap-y-2">
+    <div className="w-full text-black grid gap-x-4 md:grid-cols-1 3xl:grid-cols-2 px-3 gap-y-4">
       {json.map((item: any, index: any) => (
         <div key={index}>
           {item.tableColumnMetrics &&
           item.tableColumnMetrics.stringMetrics &&
           item.tableColumnMetrics.stringMetrics.uniqueValueCount ? (
             <>
-              <div className="shadow-xl rounded-lg px-9 py-5">
+              <div className="shadow- rounded-lg px-9 py-5 graphBox">
                 <div
                   className={`flex justify-between border-b-[1px] border-[#C4C4C4] pb-3 ${cabin.className}`}
                 >
                   <div className="w-[70%]">
-                    <p className="font-[600] text-[20px]">
-                      <span className="mr-3 font-[600] text-[20px] border-b-[2px] border-black">
+                    <p className="font-[600] text-[18px]">
+                      <span className="mr-3 font-[600] text-[18px] border-b-[2px] border-black">
                         A
                       </span>
                       {item?.name}
@@ -117,7 +117,7 @@ export default function GraphCard({ data }: any) {
                     <p className="text-[14px]">{item.description}</p>
                   </div>
                   <div className="flex flex-col items-center">
-                    <p className="text-[48px] ">
+                    <p className="text-[48px] font-bold">
                       {item!.tableColumnMetrics!.stringMetrics &&
                       item!.tableColumnMetrics!.stringMetrics.uniqueValueCount
                         ? item!.tableColumnMetrics!.stringMetrics!
@@ -125,7 +125,7 @@ export default function GraphCard({ data }: any) {
                         : "NONE"}
                     </p>
                     <p
-                      className={`text-[18px] font-[600] text-black ${cabin.className}`}
+                      className={`text-[18px] font-bold text-black ${cabin.className}`}
                     >
                       Unique Values
                     </p>
@@ -157,7 +157,7 @@ export default function GraphCard({ data }: any) {
                         },
                         rotation: -90,
                         circumference: 180,
-                        cutout: "90%",
+                        cutout: "80%",
                         // maintainAspectRatio: true,
                         // responsive: true,
                       }}
@@ -261,7 +261,7 @@ export default function GraphCard({ data }: any) {
               </div>
             </>
           ) : (
-            <div className="shadow-xl w-full rounded-lg px-9 py-5">
+            <div className="graphBox w-full rounded-lg px-9 py-5">
               <div>
                 <div
                   className={`flex justify-between border-b-[1px] border-[#C4C4C4] pb-3 ${cabin.className}`}

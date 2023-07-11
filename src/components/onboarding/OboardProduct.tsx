@@ -76,7 +76,7 @@ export default function TransparentTabs({
 
   return (
     <>
-      <Card className="relative mt-5">
+      <div className="relative mt-5">
         <CardBody>
           <ProductHeading data={JSONDATA.data[0]} editable />
 
@@ -99,7 +99,7 @@ export default function TransparentTabs({
 
               <div
                 ref={labelRef}
-                className="md:w-[76vw] lg:w-[81vw] xl:w-[63vw] 2xl:w-[65vw] 3xl:w-[69.5vw] max-w-[1460px] overflow-x-auto flex justify-between"
+                className="md:w-[76vw] lg:w-[81vw] xl:w-[69vw] 2xl:w-[71vw] 3xl:w-[75.5vw] 4xl:w-[80.5vw] max-w-[1960px] overflow-x-auto flex justify-between"
               >
                 <table className="w-full table-auto text-left">
                   <thead>
@@ -517,7 +517,7 @@ export default function TransparentTabs({
             </div>
           </div>
         </CardBody>
-      </Card>
+      </div>
     </>
   );
 }

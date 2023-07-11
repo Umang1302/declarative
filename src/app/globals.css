@@ -37,3 +37,7 @@ input::-webkit-inner-spin-button {
   -webkit-line-clamp: 4;
   overflow: hidden;
 }
+
+.graphBox {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}

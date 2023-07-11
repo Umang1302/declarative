@@ -128,7 +128,7 @@ export default function TransparentTabs({
           </div>
         </>
       ) : (
-        <div className="mt-8">
+        <div className="mt-12">
           <div className="w-full px-3 flex flex-col">
             <p className="w-full flex justify-center text-[24px] font-[600]">
               Select an Existing Data Source
@@ -136,7 +136,7 @@ export default function TransparentTabs({
             <div className="flex mt-8 justify-center gap-x-14">
               {dataSource.map((item, index) => (
                 <p
-                  className="cursor-pointer border-[1px] px-3 rounded-[5px] py-2 border-gray-400 hover:bg-gray-400"
+                  className="cursor-pointer border-[1px] px-3 rounded-[5px] py-2 border-black hover:bg-[#F65A27] hover:border-none hover:text-white"
                   onClick={() => {
                     setDataSetVal(`Data Source ${index}`);
                     router.push(`/onboarding/${index + 1}`);
@@ -152,7 +152,7 @@ export default function TransparentTabs({
             className={`w-full mt-20 relative flex flex-col gap-y-3 items-center justify-center py-3`}
           >
             <div className="text-[#656565] font-[600] text-[18px]">
-              Name your Data Source
+              Create New Data Source
             </div>
             <div className="w-full flex justify-center">
               <input
@@ -161,7 +161,7 @@ export default function TransparentTabs({
                 onChange={(e) => {
                   setVal(e.target.value);
                 }}
-                className="rounded-[10px] text-[24px] text-center py-1 w-[30%] flex justify-center items-center outline-none"
+                className="rounded-[10px] border-[1px] border-[#a4a4a4] text-[24px] text-center py-1 w-[30%] flex justify-center items-center outline-none"
               />
             </div>
             <div className="w-full flex justify-center mt-4">

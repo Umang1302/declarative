@@ -659,13 +659,11 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex items-center gap-3">
                             <div className="flex flex-col">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black`}
                               >
                                 {name}
-                              </Typography>
+                              </p>
                             </div>
                           </div>
                         </td>
@@ -673,10 +671,8 @@ export default function Example({ data }: any) {
                       {tableHead.indexOf("Is Record Key") !== -1 && (
                         <td className={classes}>
                           <div className="flex justify-center">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {isRecordKey && (
                                 <Image
@@ -686,7 +682,7 @@ export default function Example({ data }: any) {
                                   height={10}
                                 />
                               )}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
@@ -707,91 +703,77 @@ export default function Example({ data }: any) {
                       {tableHead.indexOf("Classification") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {classification}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("Description") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {description}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("CreatedAt") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {createdAt}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("UpdatedAt") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {updatedAt}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("AccountId") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {accountId}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("ProductId") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {productId}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("NamespaceId") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {namespaceId}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
@@ -799,130 +781,110 @@ export default function Example({ data }: any) {
                       {tableHead.indexOf("SourceAttribute") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {sourceAttribute}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("Transformation") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {transformation}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("ClassificationCategory") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {classificationCategory}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("Length") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {length}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("Type") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {type}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("Precision") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {precision}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("Scale") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {scale}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("Status") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {status}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("CreatedBy") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {updatedBy}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
                       {tableHead.indexOf("UpdatedBy") !== -1 && (
                         <td className={classes}>
                           <div className="flex">
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className={` ${cabin.className} font-normal`}
+                            <p
+                              className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {createdBy}
-                            </Typography>
+                            </p>
                           </div>
                         </td>
                       )}
