@@ -130,7 +130,7 @@ export default function DataTab({ data }: any) {
           {tabData.map((item, index) => (
             <div
               key={index}
-              className={`h-[54px] flex items-center justify-start gap-x-3 ${
+              className={`h-[54px] flex items-center justify-start cursor-pointer gap-x-3 ${
                 activeTab === item.value && "text-black"
               }`}
               onClick={() => {
@@ -152,7 +152,7 @@ export default function DataTab({ data }: any) {
         <div className="w-full h-full">
           {tabData.map((item, i) => {
             if (item.value === activeTab) {
-              return <>{item.desc && item.desc}</>;
+              return <div key={i}>{item.desc && item.desc}</div>;
             }
           })}
         </div>

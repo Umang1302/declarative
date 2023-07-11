@@ -521,7 +521,13 @@ export default function DataRules({ data }: any) {
           </p>
           {data.dataMetrics.series ? (
             <>
-              <div className="flex relative w-full mt-2 ml-2 justify-between">
+              <div
+                onClick={() => {
+                  console.log("SSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
+                  setOpen(false);
+                }}
+                className="flex relative w-full mt-2 ml-2 justify-between"
+              >
                 <Select
                   options={dropDown}
                   value={selected}

@@ -385,7 +385,13 @@ export default function Example({ data }: any) {
             //   className="basic-multi-select max-w-[80%]"
             //   classNamePrefix="select"
             // />
-            <div className="flex relative w-full justify-between">
+            <div
+              onClick={() => {
+                console.log("SSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
+                setOpen(false);
+              }}
+              className="flex relative w-full justify-between"
+            >
               <Select
                 options={dropDown}
                 value={selected}
