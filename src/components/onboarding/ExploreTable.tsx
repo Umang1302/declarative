@@ -14,6 +14,7 @@ import Image from "next/image";
 import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });
 import JSONDATA from "../../../data.json";
+import { usePathname } from "next/navigation";
 
 export default function ExploreTable({
   dataSetVal,
@@ -51,8 +52,11 @@ export default function ExploreTable({
   const [checkboxData, setCheckboxData] = useState<any>();
   const [selectAttribute, setSelectAttribute] = React.useState<any>();
   const [uniqueArray, setUniqueArray] = useState<any>();
+  const [originalData, setOriginalData] = useState<any>([]);
 
   const labelRef = useRef<any>(null);
+
+  const pathname = usePathname();
 
   useEffect(() => {
     // let obj2: any = JSONDATA.data[0].attributes[0];
@@ -61,7 +65,7 @@ export default function ExploreTable({
     // let tableHeaders = Object.keys(obj2);
     // console.log("HEADERS", tableHeaders);
     // setTableHead(tableHeaders);
-    console.log("DDDD", JSONDATA.data[1]);
+    setOriginalData(JSONDATA.data[1].attributes);
   }, []);
 
   const scroll = (scrollOffset: any) => {
@@ -201,9 +205,29 @@ export default function ExploreTable({
                           </svg>
                           {open && selectCol === index && (
                             <div className="bg-white absolute gap-y-4 shadow-md rounded-[10px] py-3 px-2 z-[50] w-[250px] h-[300px]">
-                              <p className="border-b-[1px] border-[#c4c4c4]">
-                                Filters
-                              </p>
+                              <div className="w-full flex justify-between border-b-[1px] border-[#c4c4c4]">
+                                <p className="">Filters</p>
+                                <div
+                                  onClick={() => {
+                                    console.log(originalData, tableRowData);
+                                    let unSortedData = tableRowData.sort(
+                                      (a: any, b: any) =>
+                                        a[`createdAt`] > b[`createdAt`]
+                                          ? 1
+                                          : a[`createdAt`] === b[`createdAt`]
+                                          ? a[`createdAt`] > b[`createdAt`]
+                                            ? 1
+                                            : -1
+                                          : -1
+                                    );
+                                    setTableRowData(unSortedData);
+                                    handleOpen();
+                                  }}
+                                  className="relative w-3 h-3"
+                                >
+                                  <Image alt="" src="/reset.svg" fill />
+                                </div>
+                              </div>
                               <p
                                 className="px-2 py-1 hover:bg-[#ededed]"
                                 onClick={() => {
@@ -226,7 +250,7 @@ export default function ExploreTable({
                                 Ascending Order
                               </p>
                               <p
-                                className="px-2 py-1 hover:bg-[#ededed]"
+                                className="px-2 py-1 hover:bg-[#ededed] border-b-[1px] border-[#c4c4c4] mb-1"
                                 onClick={() => {
                                   console.log(head);
                                   let hh: any;

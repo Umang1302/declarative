@@ -525,10 +525,10 @@ export default function Example({ data }: any) {
                         </div>
                       </p>
                       {open && selectCol === index && (
-                        <div className="bg-white absolute gap-y-4 rounded-[10px] shadow-md py-3 px-2 z-[50] w-[250px] h-[300px]">
-                          <p className="border-b-[1px] border-[#c4c4c4]">
-                            Filters
-                          </p>
+                        <div className="bg-white absolute gap-y-4 rounded-[10px] shadow-md py-3 px-2 z-[50] w-[250px] max-h-[300px]">
+                          <div className="w-full flex justify-between border-b-[1px] border-[#c4c4c4]">
+                            <p className="">Filters</p>
+                          </div>
                           <p
                             className="px-2 py-1 hover:bg-[#ededed]"
                             onClick={() => {
@@ -551,7 +551,7 @@ export default function Example({ data }: any) {
                             Ascending Order
                           </p>
                           <p
-                            className="px-2 py-1 hover:bg-[#ededed]"
+                            className="px-2 py-1 hover:bg-[#ededed] border-b-[1px] border-[#c4c4c4] mb-1"
                             onClick={() => {
                               console.log(head);
                               let hh: any;
@@ -572,7 +572,7 @@ export default function Example({ data }: any) {
                               handleOpen();
                             }}
                           >
-                            Descending Order
+                            Descending Orderr
                           </p>
                           {head !== "Is Record Key" &&
                             head !== "Is Series Key" && (
