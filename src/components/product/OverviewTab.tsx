@@ -3,7 +3,7 @@
 import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });
 import Table from "./Table";
-export default function OverviewTable({ data }: any) {
+export default function OverviewTable({ data, editable = false }: any) {
   const label = [
     {
       id: 1,
@@ -33,7 +33,7 @@ export default function OverviewTable({ data }: any) {
 
   return (
     <div className="p-0">
-      <Table data={data} />
+      <Table editable={editable} data={data} />
     </div>
   );
 }

@@ -75,10 +75,9 @@ export default function TransparentTabs({
       <div className="relative mt-5">
         <CardBody>
           <ProductHeading data={JSONDATA.data[0]} editable />
-
           <div className="w-[100%] bg-gray-300 h-[1px] mt-2" />
-
-          <div className="w-full h-full">
+          <OverviewTable editable data={JSONDATA.data[1]} />,
+          {/* <div className="w-full h-full">
             <div className="flex gap-x-3">
               {tableHead.length > 7 && (
                 <button
@@ -511,7 +510,7 @@ export default function TransparentTabs({
                 </button>
               )}
             </div>
-          </div>
+          </div> */}
         </CardBody>
       </div>
     </>

@@ -62,7 +62,7 @@ const TABS1 = [
   },
 ];
 
-export default function Example({ data }: any) {
+export default function Example({ data, editable }: any) {
   const pathname = usePathname();
 
   const TABLE_ROWS = data.attributes;
@@ -660,7 +660,8 @@ export default function Example({ data }: any) {
                           <div className="flex items-center gap-3">
                             <div className="flex flex-col">
                               <p
-                                className={` ${cabin.className} font-normal text-black`}
+                                contentEditable={editable}
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {name}
                               </p>
@@ -672,6 +673,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex justify-center">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {isRecordKey && (
@@ -704,6 +706,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {classification}
@@ -715,6 +718,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {description}
@@ -726,6 +730,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {createdAt}
@@ -737,6 +742,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {updatedAt}
@@ -748,6 +754,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {accountId}
@@ -759,6 +766,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {productId}
@@ -770,6 +778,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {namespaceId}
@@ -782,6 +791,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {sourceAttribute}
@@ -793,6 +803,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {transformation}
@@ -804,6 +815,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {classificationCategory}
@@ -815,6 +827,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {length}
@@ -826,6 +839,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {type}
@@ -837,6 +851,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {precision}
@@ -848,6 +863,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {scale}
@@ -859,6 +875,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {status}
@@ -870,6 +887,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {updatedBy}
@@ -881,6 +899,7 @@ export default function Example({ data }: any) {
                         <td className={classes}>
                           <div className="flex">
                             <p
+                              contentEditable={editable}
                               className={` ${cabin.className} font-normal text-black text-[16px]`}
                             >
                               {createdBy}
