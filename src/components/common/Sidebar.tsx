@@ -38,6 +38,10 @@ export default function Sidebar({ active, setActive }: any) {
     console.log(window.location.href, pathName, "____________________");
     if (window.location.href.includes("/product")) {
       setActive(1);
+    } else if (window.location.href.includes("/intents")) {
+      setActive(3);
+    } else if (window.location.href.includes("/policy")) {
+      setActive(2);
     } else {
       setActive(0);
     }
@@ -104,6 +108,40 @@ export default function Sidebar({ active, setActive }: any) {
                 </div>
 
                 <p className="text-[18px] font-[500] text-black">Products</p>
+              </div>
+
+              <div
+                className={`cursor-pointer hover:bg-[#F2F2F2] pl-4 w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3 ${
+                  active === 2
+                    ? "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
+                    : ""
+                }`}
+                onClick={() => {
+                  router.push("/policy");
+                }}
+              >
+                <div className="relative w-[18px] h-[18px]">
+                  <Image src="/policies.svg" alt="brand" fill />
+                </div>
+
+                <p className="text-[18px] font-[500] text-black">Policies</p>
+              </div>
+
+              <div
+                className={`cursor-pointer hover:bg-[#F2F2F2] pl-4 w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3 ${
+                  active === 3
+                    ? "bg-[#F2F2F2] border-l-4 border-[#F65A27] "
+                    : ""
+                }`}
+                onClick={() => {
+                  router.push("/intents/0");
+                }}
+              >
+                <div className="relative w-[18px] h-[18px]">
+                  <Image src="/intents.svg" alt="brand" fill />
+                </div>
+
+                <p className="text-[18px] font-[500] text-black">Intents</p>
               </div>
 
               <div

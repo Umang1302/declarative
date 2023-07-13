@@ -70,7 +70,11 @@ export default function DataRules({ data }: any) {
   const [open, setOpen] = useState(false);
   const [selectCol, setSelectCol] = React.useState<any>();
   const [selectAttribute, setSelectAttribute] = React.useState<any>();
-  const [checkboxData, setCheckboxData] = useState<any>();
+
+  const [originalData, setOriginalData] = useState<any>([]);
+  const [filteredArray, setFilteredArray] = useState<any>([]);
+  const [checkboxData, setCheckboxData, checkboxDataRef] = useStateRef<any>();
+  const [selectAll, setSelectAll] = useState<any>(true);
 
   const handleOpen = () => setOpen(!open);
   const [dropDown, setDropDown] = useState<any>([]);
@@ -144,6 +148,8 @@ export default function DataRules({ data }: any) {
             obj2 = nysePrice1[0];
             tableData = nysePrice1;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj2);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -153,6 +159,8 @@ export default function DataRules({ data }: any) {
             obj2 = nysePrice2[0];
             tableData = nysePrice2;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj2);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -162,6 +170,8 @@ export default function DataRules({ data }: any) {
             obj2 = nysePrice3[0];
             tableData = nysePrice3;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj2);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -171,6 +181,8 @@ export default function DataRules({ data }: any) {
             obj2 = nysePrice1[0];
             tableData = nysePrice1;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj2);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -205,6 +217,8 @@ export default function DataRules({ data }: any) {
             obj1 = USMUTUALRETURNS1[0];
             tableData = USMUTUALRETURNS1;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj1);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -214,6 +228,8 @@ export default function DataRules({ data }: any) {
             obj1 = USMUTUALRETURNS3[0];
             tableData = USMUTUALRETURNS3;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj1);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -222,6 +238,8 @@ export default function DataRules({ data }: any) {
             obj1 = USMUTUALRETURNS2[0];
             tableData = USMUTUALRETURNS2;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj1);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -236,6 +254,8 @@ export default function DataRules({ data }: any) {
         obj = NYSE_SECURITIES[0];
         tableData = NYSE_SECURITIES;
         setTableRowData(tableData);
+        setOriginalData(tableData);
+        setFilteredArray(tableData);
         tableHeaders = Object.keys(obj);
         console.log("HEADERS", tableHeaders);
         setTableHead(tableHeaders);
@@ -278,6 +298,8 @@ export default function DataRules({ data }: any) {
             obj3 = USMUTUALFUNDSESGDATA[0];
             tableData = USMUTUALFUNDSESGDATA;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj3);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -287,6 +309,8 @@ export default function DataRules({ data }: any) {
           //     obj3 = MutualFundsESG2[0];
           //     tableData = MutualFundsESG2;
           //     setTableRowData(tableData);
+          //  setOriginalData(tableData);
+          //              setFilteredArray(tableData);
           //     tableHeaders = Object.keys(obj3);
           //     console.log("HEADERS", tableHeaders);
           //     setTableHead(tableHeaders);
@@ -296,6 +320,8 @@ export default function DataRules({ data }: any) {
           //     obj3 = MutualFundsESG1[0];
           //     tableData = MutualFundsESG2;
           //     setTableRowData(tableData);
+          //  setOriginalData(tableData);
+          //              setFilteredArray(tableData);
           //     tableHeaders = Object.keys(obj3);
           //     console.log("HEADERS", tableHeaders);
           //     setTableHead(tableHeaders);
@@ -305,6 +331,8 @@ export default function DataRules({ data }: any) {
           //     obj3 = MutualFundsESG2[0];
           //     tableData = MutualFundsESG2;
           //     setTableRowData(tableData);
+          //  setOriginalData(tableData);
+          //              setFilteredArray(tableData);
           //     tableHeaders = Object.keys(obj3);
           //     console.log("HEADERS", tableHeaders);
           //     setTableHead(tableHeaders);
@@ -316,6 +344,8 @@ export default function DataRules({ data }: any) {
         obj = USMUTUALFUNDSDATA[0];
         tableData = USMUTUALFUNDSDATA;
         setTableRowData(tableData);
+        setOriginalData(tableData);
+        setFilteredArray(tableData);
         tableHeaders = Object.keys(obj);
         console.log("HEADERS", tableHeaders);
         setTableHead(tableHeaders);
@@ -378,8 +408,8 @@ export default function DataRules({ data }: any) {
         {/**Main Content */}
         <div className="w-full flex gap-x-6">
           <div className="w-[60%] rounded-[10px] border-[2px] border-[#c4c4c4]">
-            <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
-              Product Summary
+            <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-4 text-black">
+              Product Metrics
             </p>
 
             {data.dataMetrics.metrics ? (
@@ -495,8 +525,25 @@ export default function DataRules({ data }: any) {
             )}
           </div>
           <div className="w-[40%] rounded-[10px] border-[2px] border-[#c4c4c4]">
-            <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
-              Series Metrics
+            <p className="bg-[#CCE0FF] w-full px-3 font-[900] items-center rounded-t-[10px] text-[18px] flex justify-between py-2 text-black">
+              <p>Series & Record Metrics</p>
+              <div
+                onClick={() => {
+                  console.log("SSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
+                  setOpen(false);
+                }}
+                className="flex relative"
+              >
+                <Select
+                  options={dropDown}
+                  value={selected}
+                  className="w-[150px] absolute text-black"
+                  onChange={(val: any) => {
+                    console.log(val);
+                    setSelected(val);
+                  }}
+                />
+              </div>
             </p>
             <div>
               {data.dataMetrics.record ? (
@@ -516,29 +563,12 @@ export default function DataRules({ data }: any) {
         </div>
 
         <div className="w-full border-[2px] rounded-[10px] mt-3 border-[#c4c4c4]">
-          <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
+          {/* <p className="bg-[#CCE0FF] px-3 font-[900] rounded-t-[10px] text-[18px] w-full py-2 text-black">
             Record Metrics
-          </p>
+          </p> */}
           {data.dataMetrics.series ? (
             <>
-              <div
-                onClick={() => {
-                  console.log("SSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
-                  setOpen(false);
-                }}
-                className="flex relative w-full mt-2 ml-2 justify-between"
-              >
-                <Select
-                  options={dropDown}
-                  value={selected}
-                  className="w-[300px] absolute text-black"
-                  onChange={(val: any) => {
-                    console.log(val);
-                    setSelected(val);
-                  }}
-                />
-              </div>
-              <div className="w-full mt-3  flex gap-x-3 px-1">
+              <div className="w-full flex gap-x-3 px-1">
                 {tableHead.length > 7 && (
                   <button
                     onClick={() => {
@@ -556,7 +586,7 @@ export default function DataRules({ data }: any) {
                   ref={labelRef}
                   className="w-full overflow-x-auto flex justify-between"
                 >
-                  <table className="w-full table-auto text-left">
+                  <table className="w-full table-auto text-left min-h-[300px]">
                     <thead>
                       <tr className="space-x-3">
                         {tableHead.map((head: any, index: number) => (
@@ -616,6 +646,22 @@ export default function DataRules({ data }: any) {
                                   <div className="bg-white absolute gap-y-4 rounded-[10px] shadow-md py-3 px-2 z-[50] w-[250px] max-h-[300px]">
                                     <div className="w-full flex justify-between border-b-[1px] border-[#c4c4c4]">
                                       <p className="">Filters</p>
+                                      <div
+                                        onClick={() => {
+                                          console.log(
+                                            originalData,
+                                            tableRowData,
+                                            data.attributes
+                                          );
+                                          let unSortedData = originalData;
+                                          setTableRowData(unSortedData);
+                                          setFilteredArray(unSortedData);
+                                          handleOpen();
+                                        }}
+                                        className="relative w-3 h-3"
+                                      >
+                                        <Image alt="" src="/reset.svg" fill />
+                                      </div>
                                     </div>
                                     <p
                                       className="px-2 py-1 hover:bg-[#ededed]"
@@ -633,6 +679,8 @@ export default function DataRules({ data }: any) {
                                         );
                                         console.log(sortedData);
                                         setTableRowData(sortedData);
+
+                                        setFilteredArray(sortedData);
                                         handleOpen();
                                       }}
                                     >
@@ -656,6 +704,7 @@ export default function DataRules({ data }: any) {
                                                 : -1
                                               : -1
                                         );
+                                        setFilteredArray(unSortedData);
                                         setTableRowData(unSortedData);
                                         handleOpen();
                                       }}
@@ -666,7 +715,58 @@ export default function DataRules({ data }: any) {
                                       head !== "Is Series Key" && (
                                         <div className="mt-2 h-[180px] overflow-y-auto">
                                           <p>Select Value</p>
-                                          {tableRowData.map(
+                                          <div
+                                            key={index}
+                                            className="gap-x-2 flex items-center"
+                                          >
+                                            <Checkbox
+                                              id={`${index}`}
+                                              color="blue"
+                                              // defaultChecked={item.check}
+                                              defaultChecked={true}
+                                              checked={selectAll}
+                                              // className="rounded-none"
+                                              onChange={(e) => {
+                                                const aa = [
+                                                  ...checkboxDataRef.current,
+                                                ];
+                                                let tempRowData = [
+                                                  ...originalData,
+                                                ];
+                                                console.log("HELLO");
+                                                if (e.currentTarget.checked) {
+                                                  for (
+                                                    let i = 0;
+                                                    i < aa.length;
+                                                    i++
+                                                  ) {
+                                                    aa[i] = true;
+                                                  }
+                                                  setSelectAll(true);
+                                                } else {
+                                                  for (
+                                                    let i = 0;
+                                                    i < aa.length;
+                                                    i++
+                                                  ) {
+                                                    aa[i] = false;
+                                                  }
+                                                  tempRowData = [];
+                                                  setSelectAll(false);
+                                                }
+                                                console.log(
+                                                  "FILTERED ARRAY",
+                                                  tempRowData,
+                                                  aa
+                                                );
+                                                setFilteredArray(tempRowData);
+                                                setTableRowData(tempRowData);
+                                                setCheckboxData(aa);
+                                              }}
+                                            />
+                                            <p>Select All</p>
+                                          </div>
+                                          {originalData.map(
                                             (item: any, index: number) => {
                                               if (item[head] !== "") {
                                                 return (
@@ -679,23 +779,116 @@ export default function DataRules({ data }: any) {
                                                       color="blue"
                                                       // defaultChecked={item.check}
                                                       defaultChecked={
-                                                        checkboxData[index]
+                                                        checkboxDataRef.current[
+                                                          index
+                                                        ]
                                                       }
                                                       // className="rounded-none"
                                                       onChange={(e) => {
                                                         const aa = [
-                                                          ...checkboxData,
+                                                          ...checkboxDataRef.current,
                                                         ];
+                                                        console.log(
+                                                          checkboxDataRef
+                                                            .current[index]
+                                                        );
+                                                        let tempRowData: any;
+                                                        console.log("HELLO");
                                                         if (
                                                           e.currentTarget
                                                             .checked
                                                         ) {
                                                           aa[index] = true;
+                                                          if (selectAll) {
+                                                            tempRowData = [
+                                                              ...filteredArray,
+                                                            ];
+                                                            console.log(
+                                                              "index",
+                                                              index,
+                                                              tempRowData
+                                                            );
+
+                                                            tempRowData.splice(
+                                                              index,
+                                                              0,
+                                                              originalData[
+                                                                index
+                                                              ]
+                                                            );
+                                                          } else {
+                                                            tempRowData = [
+                                                              ...filteredArray,
+                                                            ];
+                                                            tempRowData.push(
+                                                              originalData[
+                                                                index
+                                                              ]
+                                                            );
+                                                            console.log(
+                                                              "Sssss",
+                                                              originalData[
+                                                                index
+                                                              ],
+                                                              tempRowData
+                                                            );
+                                                            console.log(
+                                                              "index",
+                                                              index,
+                                                              tempRowData
+                                                            );
+                                                          }
                                                         } else {
                                                           aa[index] = false;
+                                                          tempRowData = [
+                                                            ...filteredArray,
+                                                          ];
+                                                          let val =
+                                                            originalData[index];
+                                                          let ind;
+                                                          for (
+                                                            let i = 0;
+                                                            i <
+                                                            tempRowData.length;
+                                                            i++
+                                                          ) {
+                                                            if (
+                                                              tempRowData[i]
+                                                                .name ===
+                                                              val.name
+                                                            ) {
+                                                              ind = i;
+                                                            }
+                                                          }
+                                                          tempRowData.splice(
+                                                            ind,
+                                                            1
+                                                          );
+                                                          console.log(
+                                                            val,
+                                                            ind,
+                                                            "index",
+                                                            index,
+                                                            tempRowData
+                                                          );
                                                         }
+                                                        console.log(
+                                                          "FILTERED ARRAY",
+                                                          tempRowData
+                                                        );
+                                                        setTableRowData(
+                                                          tempRowData
+                                                        );
+                                                        setFilteredArray(
+                                                          tempRowData
+                                                        );
                                                         setCheckboxData(aa);
                                                       }}
+                                                      checked={
+                                                        checkboxDataRef.current[
+                                                          index
+                                                        ]
+                                                      }
                                                     />
                                                     <p>
                                                       {
@@ -722,7 +915,7 @@ export default function DataRules({ data }: any) {
                       </tr>
                     </thead>
                     <tbody>
-                      {tableRowData.map((item: any, index: any) => {
+                      {filteredArray.map((item: any, index: any) => {
                         const isLast = index === TABLE_ROWS.length - 1;
                         const classes = isLast
                           ? "p-2"

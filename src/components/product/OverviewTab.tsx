@@ -33,7 +33,8 @@ export default function OverviewTable({ data, editable = false }: any) {
 
   return (
     <div className="p-0">
-      <Table editable={editable} data={data} />
+      {" "}
+      <Table editable={editable} data={data} />{" "}
     </div>
   );
 }

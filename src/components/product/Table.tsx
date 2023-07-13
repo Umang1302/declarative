@@ -34,6 +34,7 @@ import { Cabin } from "next/font/google";
 import { MultiSelect } from "react-multi-select-component";
 import { usePathname } from "next/navigation";
 import JSONDATA from "../../../data.json";
+import useStateRef from "react-usestateref";
 const cabin = Cabin({ subsets: ["latin"] });
 
 const TABS = [
@@ -62,7 +63,7 @@ const TABS1 = [
   },
 ];
 
-export default function Example({ data, editable }: any) {
+export default function Table({ data, editable }: any) {
   const pathname = usePathname();
 
   const TABLE_ROWS = data.attributes;
@@ -198,20 +199,22 @@ export default function Example({ data, editable }: any) {
   ]);
   const [tableRowData, setTableRowData] = useState<any>([]);
   const [originalData, setOriginalData] = useState<any>([]);
-  const [sort, setSort] = React.useState<boolean>(false);
   const [showCol, setShowCol] = React.useState<boolean>(false);
   const [selectCol, setSelectCol] = React.useState<any>();
   const [selectAttribute, setSelectAttribute] = React.useState<any>();
-  const [checkboxData, setCheckboxData] = useState<any>();
+  const [checkboxData, setCheckboxData, checkboxDataRef] = useStateRef<any>();
   const [open, setOpen] = useState(false);
   const [uniqueArray, setUniqueArray] = useState<any>();
+  const [filteredArray, setFilteredArray] = useState<any>([]);
+  const [selectAll, setSelectAll] = useState<any>(true);
   const handleOpen = () => setOpen(!open);
 
   useEffect(() => {
     setTableRowData(data.attributes);
     const arr = pathname.split("/");
     const id: any = arr[arr.length - 1];
-    setOriginalData(JSONDATA.data[+id].attributes);
+    setOriginalData(data.attributes);
+    setFilteredArray(data.attributes);
   }, []);
 
   useEffect(() => {
@@ -225,7 +228,7 @@ export default function Example({ data, editable }: any) {
   useEffect(() => {
     console.log(tableRowData, "tableRowData");
     //ts-ignore
-  }, [tableRowData]);
+  }, [tableRowData, checkboxDataRef.current]);
 
   {
     /* <Checkbox
@@ -289,7 +292,7 @@ export default function Example({ data, editable }: any) {
           </button>
         </div>
         {/***/}
-        <div className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[74vw] 3xl:w-[76.8vw] max-w-[1460px] overflow-x-auto ">
+        <div className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[74vw] 3xl:w-[76.8vw] max-w-[1460px] min-h-[700px] overflow-x-auto ">
           <table className="w-full table-auto text-left">
             <thead>
               <tr className="space-x-3">
@@ -442,17 +445,9 @@ export default function Example({ data, editable }: any) {
                                 tableRowData,
                                 data.attributes
                               );
-                              let unSortedData = data.attributes.sort(
-                                (a: any, b: any) =>
-                                  a[`createdAt`] > b[`createdAt`]
-                                    ? 1
-                                    : a[`createdAt`] === b[`createdAt`]
-                                    ? a[`createdAt`] > b[`createdAt`]
-                                      ? 1
-                                      : -1
-                                    : -1
-                              );
+                              let unSortedData = originalData;
                               setTableRowData(unSortedData);
+                              setFilteredArray(unSortedData);
                               handleOpen();
                             }}
                             className="relative w-3 h-3"
@@ -582,6 +577,43 @@ export default function Example({ data, editable }: any) {
                           head !== "Is Series Key" && (
                             <div className="mt-2 h-[180px] overflow-y-auto">
                               <p>Select Value</p>
+                              <div
+                                key={index}
+                                className="gap-x-2 flex items-center"
+                              >
+                                <Checkbox
+                                  id={`${index}`}
+                                  color="blue"
+                                  // defaultChecked={item.check}
+                                  defaultChecked={true}
+                                  // className="rounded-none"
+                                  onChange={(e) => {
+                                    const aa = [...checkboxDataRef.current];
+                                    let tempRowData = [...originalData];
+                                    console.log("HELLO");
+                                    if (e.currentTarget.checked) {
+                                      for (let i = 0; i < aa.length; i++) {
+                                        aa[i] = true;
+                                      }
+                                      setSelectAll(true);
+                                    } else {
+                                      for (let i = 0; i < aa.length; i++) {
+                                        aa[i] = false;
+                                      }
+                                      tempRowData = [];
+                                      setSelectAll(false);
+                                    }
+                                    console.log(
+                                      "FILTERED ARRAY",
+                                      tempRowData,
+                                      aa
+                                    );
+                                    setFilteredArray(tempRowData);
+                                    setCheckboxData(aa);
+                                  }}
+                                />
+                                <p>Select All</p>
+                              </div>
                               {uniqueArray.map((item: any, index: number) => {
                                 if (item[`${selectAttribute}`] !== "") {
                                   return (
@@ -589,22 +621,91 @@ export default function Example({ data, editable }: any) {
                                       key={index}
                                       className="gap-x-2 flex items-center"
                                     >
+                                      {/* {`${
+                                        checkboxDataRef.current[index] &&
+                                        "  qqqqqq"
+                                      } `} */}
+
                                       <Checkbox
                                         id={`${index}`}
                                         color="blue"
                                         // defaultChecked={item.check}
-                                        defaultChecked={checkboxData[index]}
+                                        defaultChecked={
+                                          checkboxDataRef.current[index]
+                                        }
                                         // className="rounded-none"
                                         onChange={(e) => {
-                                          const aa = [...checkboxData];
+                                          const aa = [
+                                            ...checkboxDataRef.current,
+                                          ];
+                                          console.log(
+                                            checkboxDataRef.current[index]
+                                          );
+                                          let tempRowData: any;
+                                          console.log("HELLO");
                                           if (e.currentTarget.checked) {
                                             aa[index] = true;
+                                            if (selectAll) {
+                                              tempRowData = [...tableRowData];
+
+                                              console.log(
+                                                "index",
+                                                index,
+                                                tempRowData
+                                              );
+
+                                              tempRowData.splice(
+                                                index,
+                                                0,
+                                                originalData[index]
+                                              );
+                                            } else {
+                                              tempRowData = [];
+                                              tempRowData.push(
+                                                originalData[index]
+                                              );
+                                              console.log(
+                                                "index",
+                                                index,
+                                                tempRowData
+                                              );
+                                            }
                                           } else {
                                             aa[index] = false;
+                                            tempRowData = [...filteredArray];
+                                            let val = originalData[index];
+                                            let ind;
+                                            for (
+                                              let i = 0;
+                                              i < tempRowData.length;
+                                              i++
+                                            ) {
+                                              if (
+                                                tempRowData[i].name === val.name
+                                              ) {
+                                                ind = i;
+                                              }
+                                            }
+                                            tempRowData.splice(ind, 1);
+                                            console.log(
+                                              val,
+                                              ind,
+                                              "index",
+                                              index,
+                                              tempRowData
+                                            );
                                           }
+                                          console.log(
+                                            "FILTERED ARRAY",
+                                            tempRowData
+                                          );
+                                          setTableRowData(tempRowData);
+                                          setFilteredArray(tempRowData);
                                           setCheckboxData(aa);
                                         }}
+                                        checked={checkboxDataRef.current[index]}
                                       />
+
                                       <p>{item[`${selectAttribute}`]}</p>
                                     </div>
                                   );
@@ -621,7 +722,7 @@ export default function Example({ data, editable }: any) {
               </tr>
             </thead>
             <tbody>
-              {tableRowData.map(
+              {filteredArray.map(
                 (
                   {
                     isRecordKey,

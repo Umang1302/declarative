@@ -15,6 +15,7 @@ import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });
 import JSONDATA from "../../../data.json";
 import { usePathname } from "next/navigation";
+import useStateRef from "react-usestateref";
 
 export default function ExploreTable({
   dataSetVal,
@@ -49,23 +50,28 @@ export default function ExploreTable({
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);
   const [selectCol, setSelectCol] = React.useState<any>();
-  const [checkboxData, setCheckboxData] = useState<any>();
+
   const [selectAttribute, setSelectAttribute] = React.useState<any>();
   const [uniqueArray, setUniqueArray] = useState<any>();
   const [originalData, setOriginalData] = useState<any>([]);
+  const [filteredArray, setFilteredArray] = useState<any>([]);
+  const [selectAll, setSelectAll] = useState<any>(true);
+  const [checkboxData, setCheckboxData, checkboxDataRef] = useStateRef<any>();
 
   const labelRef = useRef<any>(null);
-
+  const data = JSONDATA.data[1];
+  const TABLE_ROWS = data.attributes;
   const pathname = usePathname();
 
   useEffect(() => {
     // let obj2: any = JSONDATA.data[0].attributes[0];
-    let tableData: any = JSONDATA.data[0].attributes;
+    let tableData: any = JSONDATA.data[1].attributes;
     setTableRowData(tableData);
     // let tableHeaders = Object.keys(obj2);
     // console.log("HEADERS", tableHeaders);
     // setTableHead(tableHeaders);
     setOriginalData(JSONDATA.data[1].attributes);
+    setFilteredArray(JSONDATA.data[1].attributes);
   }, []);
 
   const scroll = (scrollOffset: any) => {
@@ -97,7 +103,7 @@ export default function ExploreTable({
 
           <div
             ref={labelRef}
-            className="md:w-[69vw] lg:w-[74vw] xl:w-[63vw] 2xl:w-[58vw] 3xl:w-[69.5vw] max-w-[1460px] overflow-x-auto flex justify-between"
+            className="md:w-[69vw] lg:w-[74vw] xl:w-[63vw] 2xl:w-[58vw] 3xl:w-[69.5vw] max-w-[1460px] overflow-x-auto flex justify-between min-h-[300px]"
           >
             <table className="w-full table-auto text-left">
               <thead>
@@ -108,10 +114,45 @@ export default function ExploreTable({
                       className={`cursor-pointer relative border-y border-blue-gray-100 p-4 min-w-[60px] bg-[#FFF0D3] transition-colors ${cabin.className}`}
                     >
                       <p
-                        className={` ${cabin.className} flex items-center justify-between gap-2 font-[600] leading-none text-black`}
+                        className={` ${cabin.className}  flex items-center justify-between gap-2 leading-none text-black font-[600]`}
                       >
                         {head}{" "}
                         <div
+                          // onClick={() => {
+                          //   console.log("clicked", sort);
+                          //   if (!sort) {
+                          //     setSort(true);
+                          //   } else {
+                          //     setSort(false);
+                          //   }
+
+                          //   if (!sort) {
+                          //     let sortedData = data.attributes.sort(
+                          //       (a: any, b: any) =>
+                          //         a.name > b.name
+                          //           ? 1
+                          //           : a.name === b.name
+                          //           ? a.name > b.name
+                          //             ? 1
+                          //             : -1
+                          //           : -1
+                          //     );
+                          //     console.log(sortedData);
+                          //     setTableRowData(sortedData);
+                          //   } else {
+                          //     let unSortedData = data.attributes.sort(
+                          //       (a: any, b: any) =>
+                          //         a.name < b.name
+                          //           ? 1
+                          //           : a.name === b.name
+                          //           ? a.name < b.name
+                          //             ? 1
+                          //             : -1
+                          //           : -1
+                          //     );
+                          //     setTableRowData(unSortedData);
+                          //   }
+                          // }}
                           onClick={() => {
                             setSelectCol(index);
                             let hh: any;
@@ -203,128 +244,300 @@ export default function ExploreTable({
                               fill="black"
                             />
                           </svg>
-                          {open && selectCol === index && (
-                            <div className="bg-white absolute gap-y-4 shadow-md rounded-[10px] py-3 px-2 z-[50] w-[250px] h-[300px]">
-                              <div className="w-full flex justify-between border-b-[1px] border-[#c4c4c4]">
-                                <p className="">Filters</p>
-                                <div
-                                  onClick={() => {
-                                    console.log(originalData, tableRowData);
-                                    let unSortedData = tableRowData.sort(
-                                      (a: any, b: any) =>
-                                        a[`createdAt`] > b[`createdAt`]
-                                          ? 1
-                                          : a[`createdAt`] === b[`createdAt`]
-                                          ? a[`createdAt`] > b[`createdAt`]
-                                            ? 1
-                                            : -1
-                                          : -1
-                                    );
-                                    setTableRowData(unSortedData);
-                                    handleOpen();
-                                  }}
-                                  className="relative w-3 h-3"
-                                >
-                                  <Image alt="" src="/reset.svg" fill />
-                                </div>
-                              </div>
-                              <p
-                                className="px-2 py-1 hover:bg-[#ededed]"
-                                onClick={() => {
-                                  let hh: any;
-                                  let sortedData = tableRowData.sort(
-                                    (a: any, b: any) =>
-                                      a[`${hh}`] > b[`${hh}`]
-                                        ? 1
-                                        : a[`${hh}`] === b[`${hh}`]
-                                        ? a[`${hh}`] > b[`${hh}`]
-                                          ? 1
-                                          : -1
-                                        : -1
-                                  );
-                                  console.log(sortedData);
-                                  setTableRowData(sortedData);
-                                  handleOpen();
-                                }}
-                              >
-                                Ascending Order
-                              </p>
-                              <p
-                                className="px-2 py-1 hover:bg-[#ededed] border-b-[1px] border-[#c4c4c4] mb-1"
-                                onClick={() => {
-                                  console.log(head);
-                                  let hh: any;
-
-                                  console.log(hh);
-
-                                  let unSortedData = tableRowData.sort(
-                                    (a: any, b: any) =>
-                                      a[`${hh}`] < b[`${hh}`]
-                                        ? 1
-                                        : a[`${hh}`] === b[`${hh}`]
-                                        ? a[`${hh}`] < b[`${hh}`]
-                                          ? 1
-                                          : -1
-                                        : -1
-                                  );
-                                  setTableRowData(unSortedData);
-                                  handleOpen();
-                                }}
-                              >
-                                Descending Order
-                              </p>
-                              {head !== "Is Record Key" &&
-                                head !== "Is Series Key" && (
-                                  <div className="mt-2 h-[180px] overflow-y-auto">
-                                    <p>Select Value</p>
-                                    {uniqueArray.map(
-                                      (item: any, index: number) => {
-                                        if (item[`${selectAttribute}`] !== "") {
-                                          return (
-                                            <div
-                                              key={index}
-                                              className="gap-x-2 flex items-center"
-                                            >
-                                              <Checkbox
-                                                id={`${index}`}
-                                                color="blue"
-                                                // defaultChecked={item.check}
-                                                defaultChecked={
-                                                  checkboxData[index]
-                                                }
-                                                // className="rounded-none"
-                                                onChange={(e) => {
-                                                  const aa = [...checkboxData];
-                                                  if (e.currentTarget.checked) {
-                                                    aa[index] = true;
-                                                  } else {
-                                                    aa[index] = false;
-                                                  }
-                                                  setCheckboxData(aa);
-                                                }}
-                                              />
-                                              <p>
-                                                {item[`${selectAttribute}`]}
-                                              </p>
-                                            </div>
-                                          );
-                                        } else {
-                                          return null;
-                                        }
-                                      }
-                                    )}
-                                  </div>
-                                )}
-                            </div>
-                          )}
                         </div>
                       </p>
+                      {open && selectCol === index && (
+                        <div className="bg-white  absolute gap-y-4 rounded-[10px] shadow-md py-3 px-2 z-[50] w-[250px] max-h-[300px]">
+                          <div className="w-full flex justify-between border-b-[1px] border-[#c4c4c4]">
+                            <p className="">Filters</p>
+                            <div
+                              onClick={() => {
+                                console.log(
+                                  originalData,
+                                  tableRowData,
+                                  data.attributes
+                                );
+                                let unSortedData = originalData;
+                                setTableRowData(unSortedData);
+                                setFilteredArray(unSortedData);
+                                handleOpen();
+                              }}
+                              className="relative w-3 h-3"
+                            >
+                              <Image alt="" src="/reset.svg" fill />
+                            </div>
+                          </div>
+                          <p
+                            className="px-2 py-1 hover:bg-[#ededed]"
+                            onClick={() => {
+                              let hh: any;
+                              switch (head) {
+                                case "Attributes":
+                                  hh = "name";
+                                  break;
+                                case "Is Record Key":
+                                  hh = "isRecordKey";
+                                  break;
+                                case "Is Series Key":
+                                  hh = "isSeriesKey";
+                                  break;
+                                case "Classification":
+                                  hh = "classification";
+                                  break;
+                                case "Description":
+                                  hh = "description";
+                                  break;
+                                case "CreatedAt":
+                                  hh = "createdAt";
+                                  break;
+                                case "UpdatedAt":
+                                  hh = "updatedAt";
+
+                                  break;
+                                case "AccountId":
+                                  hh = "accountId";
+                                  break;
+                                case "ProductId":
+                                  hh = "productId";
+                                  break;
+                                case "NamespaceId":
+                                  hh = "NamespaceId";
+                                  break;
+                                case "SourceAttribute":
+                                  hh = "sourceAttribute";
+                                  break;
+                              }
+                              console.log(hh);
+
+                              let sortedData = data.attributes.sort(
+                                (a: any, b: any) =>
+                                  a[`${hh}`] > b[`${hh}`]
+                                    ? 1
+                                    : a[`${hh}`] === b[`${hh}`]
+                                    ? a[`${hh}`] > b[`${hh}`]
+                                      ? 1
+                                      : -1
+                                    : -1
+                              );
+                              console.log(sortedData);
+                              setTableRowData(sortedData);
+                              handleOpen();
+                            }}
+                          >
+                            Ascending Order
+                          </p>
+                          <p
+                            className="px-2 py-1 hover:bg-[#ededed] border-b-[1px] border-[#c4c4c4]"
+                            onClick={() => {
+                              console.log(head);
+                              let hh: any;
+                              switch (head) {
+                                case "Attributes":
+                                  hh = "name";
+                                  break;
+                                case "Is Record Key":
+                                  hh = "isRecordKey";
+                                  break;
+                                case "Is Series Key":
+                                  hh = "isSeriesKey";
+                                  break;
+                                case "Classification":
+                                  hh = "classification";
+                                  break;
+                                case "Description":
+                                  hh = "description";
+                                  break;
+                                case "CreatedAt":
+                                  hh = "createdAt";
+                                  break;
+                                case "UpdatedAt":
+                                  hh = "updatedAt";
+
+                                  break;
+                                case "AccountId":
+                                  hh = "accountId";
+                                  break;
+                                case "ProductId":
+                                  hh = "productId";
+                                  break;
+                                case "NamespaceId":
+                                  hh = "NamespaceId";
+                                  break;
+                                case "SourceAttribute":
+                                  hh = "sourceAttribute";
+                                  break;
+                              }
+                              console.log(hh);
+
+                              let unSortedData = data.attributes.sort(
+                                (a: any, b: any) =>
+                                  a[`${hh}`] < b[`${hh}`]
+                                    ? 1
+                                    : a[`${hh}`] === b[`${hh}`]
+                                    ? a[`${hh}`] < b[`${hh}`]
+                                      ? 1
+                                      : -1
+                                    : -1
+                              );
+                              setTableRowData(unSortedData);
+                              handleOpen();
+                            }}
+                          >
+                            Descending Order
+                          </p>
+                          {head !== "Is Record Key" &&
+                            head !== "Is Series Key" && (
+                              <div className="mt-2 h-[180px] overflow-y-auto">
+                                <p>Select Value</p>
+                                <div
+                                  key={index}
+                                  className="gap-x-2 flex items-center"
+                                >
+                                  <Checkbox
+                                    id={`${index}`}
+                                    color="blue"
+                                    // defaultChecked={item.check}
+                                    defaultChecked={true}
+                                    // className="rounded-none"
+                                    onChange={(e) => {
+                                      const aa = [...checkboxDataRef.current];
+                                      let tempRowData = [...originalData];
+                                      console.log("HELLO");
+                                      if (e.currentTarget.checked) {
+                                        for (let i = 0; i < aa.length; i++) {
+                                          aa[i] = true;
+                                        }
+                                        setSelectAll(true);
+                                      } else {
+                                        for (let i = 0; i < aa.length; i++) {
+                                          aa[i] = false;
+                                        }
+                                        tempRowData = [];
+                                        setSelectAll(false);
+                                      }
+                                      console.log(
+                                        "FILTERED ARRAY",
+                                        tempRowData,
+                                        aa
+                                      );
+                                      setFilteredArray(tempRowData);
+                                      setCheckboxData(aa);
+                                    }}
+                                  />
+                                  <p>Select All</p>
+                                </div>
+                                {uniqueArray.map((item: any, index: number) => {
+                                  if (item[`${selectAttribute}`] !== "") {
+                                    return (
+                                      <div
+                                        key={index}
+                                        className="gap-x-2 flex items-center"
+                                      >
+                                        {/* {`${
+                                        checkboxDataRef.current[index] &&
+                                        "  qqqqqq"
+                                      } `} */}
+
+                                        <Checkbox
+                                          id={`${index}`}
+                                          color="blue"
+                                          // defaultChecked={item.check}
+                                          defaultChecked={
+                                            checkboxDataRef.current[index]
+                                          }
+                                          // className="rounded-none"
+                                          onChange={(e) => {
+                                            const aa = [
+                                              ...checkboxDataRef.current,
+                                            ];
+                                            console.log(
+                                              checkboxDataRef.current[index]
+                                            );
+                                            let tempRowData: any;
+                                            console.log("HELLO");
+                                            if (e.currentTarget.checked) {
+                                              aa[index] = true;
+                                              if (selectAll) {
+                                                tempRowData = [...tableRowData];
+
+                                                console.log(
+                                                  "index",
+                                                  index,
+                                                  tempRowData
+                                                );
+
+                                                tempRowData.splice(
+                                                  index,
+                                                  0,
+                                                  originalData[index]
+                                                );
+                                              } else {
+                                                tempRowData = [];
+                                                tempRowData.push(
+                                                  originalData[index]
+                                                );
+                                                console.log(
+                                                  "index",
+                                                  index,
+                                                  tempRowData
+                                                );
+                                              }
+                                            } else {
+                                              aa[index] = false;
+                                              tempRowData = [...filteredArray];
+                                              let val = originalData[index];
+                                              let ind;
+                                              for (
+                                                let i = 0;
+                                                i < tempRowData.length;
+                                                i++
+                                              ) {
+                                                if (
+                                                  tempRowData[i].name ===
+                                                  val.name
+                                                ) {
+                                                  ind = i;
+                                                }
+                                              }
+                                              tempRowData.splice(ind, 1);
+                                              console.log(
+                                                val,
+                                                ind,
+                                                "index",
+                                                index,
+                                                tempRowData
+                                              );
+                                            }
+                                            console.log(
+                                              "FILTERED ARRAY",
+                                              tempRowData
+                                            );
+                                            setTableRowData(tempRowData);
+                                            setFilteredArray(tempRowData);
+                                            setCheckboxData(aa);
+                                          }}
+                                          checked={
+                                            checkboxDataRef.current[index]
+                                          }
+                                        />
+
+                                        <p>{item[`${selectAttribute}`]}</p>
+                                      </div>
+                                    );
+                                  } else {
+                                    return null;
+                                  }
+                                })}
+                              </div>
+                            )}
+                        </div>
+                      )}
                     </th>
                   ))}
                 </tr>
               </thead>
               <tbody>
-                {tableRowData.map(
+                {filteredArray.map(
                   (
                     {
                       isRecordKey,
@@ -351,7 +564,7 @@ export default function ExploreTable({
                     }: any,
                     index: any
                   ) => {
-                    const isLast = index === tableHead.length - 1;
+                    const isLast = index === TABLE_ROWS.length - 1;
                     const classes = isLast
                       ? "p-2"
                       : "py-1 px-2 min-w-[200px] border-b border-blue-gray-50";
@@ -362,13 +575,11 @@ export default function ExploreTable({
                           <td className={classes}>
                             <div className="flex items-center gap-3">
                               <div className="flex flex-col">
-                                <Typography
-                                  variant="small"
-                                  color="blue-gray"
-                                  className={` ${cabin.className} font-normal`}
+                                <p
+                                  className={` ${cabin.className} font-normal text-black text-[16px]`}
                                 >
                                   {name}
-                                </Typography>
+                                </p>
                               </div>
                             </div>
                           </td>
@@ -376,10 +587,8 @@ export default function ExploreTable({
                         {tableHead.indexOf("Is Record Key") !== -1 && (
                           <td className={classes}>
                             <div className="flex justify-center">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {isRecordKey && (
                                   <Image
@@ -389,7 +598,7 @@ export default function ExploreTable({
                                     height={10}
                                   />
                                 )}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
@@ -410,91 +619,77 @@ export default function ExploreTable({
                         {tableHead.indexOf("Classification") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {classification}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("Description") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {description}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("CreatedAt") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {createdAt}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("UpdatedAt") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {updatedAt}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("AccountId") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {accountId}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("ProductId") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {productId}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("NamespaceId") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {namespaceId}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
@@ -502,130 +697,110 @@ export default function ExploreTable({
                         {tableHead.indexOf("SourceAttribute") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {sourceAttribute}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("Transformation") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {transformation}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("ClassificationCategory") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {classificationCategory}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("Length") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {length}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("Type") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {type}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("Precision") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {precision}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("Scale") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {scale}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("Status") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {status}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("CreatedBy") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {updatedBy}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}
                         {tableHead.indexOf("UpdatedBy") !== -1 && (
                           <td className={classes}>
                             <div className="flex">
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className={` ${cabin.className} font-normal`}
+                              <p
+                                className={` ${cabin.className} font-normal text-black text-[16px]`}
                               >
                                 {createdBy}
-                              </Typography>
+                              </p>
                             </div>
                           </td>
                         )}

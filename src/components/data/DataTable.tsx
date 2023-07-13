@@ -45,6 +45,8 @@ import nysePrice2 from "../../../nyseprice2.json";
 import nysePrice3 from "../../../nyseprice3.json";
 import MutualFundsESG1 from "../../../MutualFundsESG1.json";
 import MutualFundsESG2 from "../../../MutualFundsESG2.json";
+import JSONData from "../../../data.json";
+import useStateRef from "react-usestateref";
 
 const TABS = [
   {
@@ -74,8 +76,6 @@ const TABS1 = [
 
 export default function Example({ data }: any) {
   const labelRef = useRef<any>(null);
-  const [checkboxData, setCheckboxData] = useState<any>();
-
   const scroll = (scrollOffset: any) => {
     console.group(labelRef.current.pageYOffset);
     // if (labelRef.current && labelRef.current.scrollLeft)
@@ -99,6 +99,11 @@ export default function Example({ data }: any) {
 
   const [dropDown, setDropDown] = useState<any>([]);
   const [selectCol, setSelectCol] = React.useState<any>();
+
+  const [originalData, setOriginalData] = useState<any>([]);
+  const [filteredArray, setFilteredArray] = useState<any>([]);
+  const [checkboxData, setCheckboxData, checkboxDataRef] = useStateRef<any>();
+  const [selectAll, setSelectAll] = useState<any>(true);
 
   const handleOpen = () => setOpen(!open);
 
@@ -160,6 +165,8 @@ export default function Example({ data }: any) {
             obj2 = nysePrice1[0];
             tableData = nysePrice1;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj2);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -169,6 +176,8 @@ export default function Example({ data }: any) {
             obj2 = nysePrice2[0];
             tableData = nysePrice2;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj2);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -178,6 +187,8 @@ export default function Example({ data }: any) {
             obj2 = nysePrice3[0];
             tableData = nysePrice3;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj2);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -187,6 +198,8 @@ export default function Example({ data }: any) {
             obj2 = nysePrice1[0];
             tableData = nysePrice1;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj2);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -221,6 +234,8 @@ export default function Example({ data }: any) {
             obj1 = USMUTUALRETURNS1[0];
             tableData = USMUTUALRETURNS1;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj1);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -230,6 +245,8 @@ export default function Example({ data }: any) {
             obj1 = USMUTUALRETURNS3[0];
             tableData = USMUTUALRETURNS3;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj1);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -238,6 +255,8 @@ export default function Example({ data }: any) {
             obj1 = USMUTUALRETURNS2[0];
             tableData = USMUTUALRETURNS2;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj1);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -252,6 +271,8 @@ export default function Example({ data }: any) {
         obj = NYSE_SECURITIES[0];
         tableData = NYSE_SECURITIES;
         setTableRowData(tableData);
+        setOriginalData(tableData);
+        setFilteredArray(tableData);
         tableHeaders = Object.keys(obj);
         console.log("HEADERS", tableHeaders);
         setTableHead(tableHeaders);
@@ -291,6 +312,8 @@ export default function Example({ data }: any) {
             obj3 = MutualFundsESG1[0];
             tableData = MutualFundsESG1;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj3);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -300,6 +323,8 @@ export default function Example({ data }: any) {
             obj3 = MutualFundsESG2[0];
             tableData = MutualFundsESG2;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj3);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -309,6 +334,8 @@ export default function Example({ data }: any) {
             obj3 = MutualFundsESG1[0];
             tableData = MutualFundsESG2;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj3);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -318,6 +345,8 @@ export default function Example({ data }: any) {
             obj3 = MutualFundsESG2[0];
             tableData = MutualFundsESG2;
             setTableRowData(tableData);
+            setOriginalData(tableData);
+            setFilteredArray(tableData);
             tableHeaders = Object.keys(obj3);
             console.log("HEADERS", tableHeaders);
             setTableHead(tableHeaders);
@@ -329,6 +358,8 @@ export default function Example({ data }: any) {
         obj = USMutualFunds[0];
         tableData = USMutualFunds;
         setTableRowData(tableData);
+        setOriginalData(tableData);
+        setFilteredArray(tableData);
         tableHeaders = Object.keys(obj);
         console.log("HEADERS", tableHeaders);
         setTableHead(tableHeaders);
@@ -435,7 +466,7 @@ export default function Example({ data }: any) {
 
           <div
             ref={labelRef}
-            className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[65vw] 3xl:w-[76.5vw] max-w-[1460px] overflow-x-auto flex justify-between"
+            className="md:w-[76vw] lg:w-[81vw] xl:w-[70vw] 2xl:w-[65vw] 3xl:w-[76.5vw] max-w-[1460px] overflow-x-auto flex justify-between min-h-[300px]"
           >
             <table className="w-full table-auto text-left">
               <thead>
@@ -534,6 +565,22 @@ export default function Example({ data }: any) {
                         <div className="bg-white absolute gap-y-4 rounded-[10px] shadow-md py-3 px-2 z-[50] w-[250px] max-h-[300px]">
                           <div className="w-full flex justify-between border-b-[1px] border-[#c4c4c4]">
                             <p className="">Filters</p>
+                            <div
+                              onClick={() => {
+                                console.log(
+                                  originalData,
+                                  tableRowData,
+                                  data.attributes
+                                );
+                                let unSortedData = originalData;
+                                setTableRowData(unSortedData);
+                                setFilteredArray(unSortedData);
+                                handleOpen();
+                              }}
+                              className="relative w-3 h-3"
+                            >
+                              <Image alt="" src="/reset.svg" fill />
+                            </div>
                           </div>
                           <p
                             className="px-2 py-1 hover:bg-[#ededed]"
@@ -551,6 +598,7 @@ export default function Example({ data }: any) {
                               );
                               console.log(sortedData);
                               setTableRowData(sortedData);
+                              setFilteredArray(sortedData);
                               handleOpen();
                             }}
                           >
@@ -575,6 +623,7 @@ export default function Example({ data }: any) {
                                     : -1
                               );
                               setTableRowData(unSortedData);
+                              setFilteredArray(unSortedData);
                               handleOpen();
                             }}
                           >
@@ -584,7 +633,46 @@ export default function Example({ data }: any) {
                             head !== "Is Series Key" && (
                               <div className="mt-2 h-[180px] overflow-y-auto">
                                 <p>Select Value</p>
-                                {tableRowData.map(
+                                <div
+                                  key={index}
+                                  className="gap-x-2 flex items-center"
+                                >
+                                  <Checkbox
+                                    id={`${index}`}
+                                    color="blue"
+                                    // defaultChecked={item.check}
+                                    defaultChecked={true}
+                                    checked={selectAll}
+                                    // className="rounded-none"
+                                    onChange={(e) => {
+                                      const aa = [...checkboxDataRef.current];
+                                      let tempRowData = [...originalData];
+                                      console.log("HELLO");
+                                      if (e.currentTarget.checked) {
+                                        for (let i = 0; i < aa.length; i++) {
+                                          aa[i] = true;
+                                        }
+                                        setSelectAll(true);
+                                      } else {
+                                        for (let i = 0; i < aa.length; i++) {
+                                          aa[i] = false;
+                                        }
+                                        tempRowData = [];
+                                        setSelectAll(false);
+                                      }
+                                      console.log(
+                                        "FILTERED ARRAY",
+                                        tempRowData,
+                                        aa
+                                      );
+                                      setFilteredArray(tempRowData);
+                                      setTableRowData(tempRowData);
+                                      setCheckboxData(aa);
+                                    }}
+                                  />
+                                  <p>Select All</p>
+                                </div>
+                                {originalData.map(
                                   (item: any, index: number) => {
                                     if (item[head] !== "") {
                                       return (
@@ -596,17 +684,93 @@ export default function Example({ data }: any) {
                                             id={`${index}`}
                                             color="blue"
                                             // defaultChecked={item.check}
-                                            defaultChecked={checkboxData[index]}
+                                            defaultChecked={
+                                              checkboxDataRef.current[index]
+                                            }
                                             // className="rounded-none"
                                             onChange={(e) => {
-                                              const aa = [...checkboxData];
+                                              const aa = [
+                                                ...checkboxDataRef.current,
+                                              ];
+                                              console.log(
+                                                checkboxDataRef.current[index]
+                                              );
+                                              let tempRowData: any;
+                                              console.log("HELLO");
                                               if (e.currentTarget.checked) {
                                                 aa[index] = true;
+                                                if (selectAll) {
+                                                  tempRowData = [
+                                                    ...filteredArray,
+                                                  ];
+                                                  console.log(
+                                                    "index",
+                                                    index,
+                                                    tempRowData
+                                                  );
+
+                                                  tempRowData.splice(
+                                                    index,
+                                                    0,
+                                                    originalData[index]
+                                                  );
+                                                } else {
+                                                  tempRowData = [
+                                                    ...filteredArray,
+                                                  ];
+                                                  tempRowData.push(
+                                                    originalData[index]
+                                                  );
+                                                  console.log(
+                                                    "Sssss",
+                                                    originalData[index],
+                                                    tempRowData
+                                                  );
+                                                  console.log(
+                                                    "index",
+                                                    index,
+                                                    tempRowData
+                                                  );
+                                                }
                                               } else {
                                                 aa[index] = false;
+                                                tempRowData = [
+                                                  ...filteredArray,
+                                                ];
+                                                let val = originalData[index];
+                                                let ind;
+                                                for (
+                                                  let i = 0;
+                                                  i < tempRowData.length;
+                                                  i++
+                                                ) {
+                                                  if (
+                                                    tempRowData[i].name ===
+                                                    val.name
+                                                  ) {
+                                                    ind = i;
+                                                  }
+                                                }
+                                                tempRowData.splice(ind, 1);
+                                                console.log(
+                                                  val,
+                                                  ind,
+                                                  "index",
+                                                  index,
+                                                  tempRowData
+                                                );
                                               }
+                                              console.log(
+                                                "FILTERED ARRAY",
+                                                tempRowData
+                                              );
+                                              setTableRowData(tempRowData);
+                                              setFilteredArray(tempRowData);
                                               setCheckboxData(aa);
                                             }}
+                                            checked={
+                                              checkboxDataRef.current[index]
+                                            }
                                           />
                                           <p>{item[`${selectAttribute}`]}</p>
                                         </div>
@@ -625,7 +789,7 @@ export default function Example({ data }: any) {
                 </tr>
               </thead>
               <tbody>
-                {tableRowData.map((item: any, index: any) => {
+                {filteredArray.map((item: any, index: any) => {
                   const isLast = index === TABLE_ROWS.length - 1;
                   const classes = isLast
                     ? "p-2"

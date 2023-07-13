@@ -14,6 +14,7 @@ import { Switch } from "@material-tailwind/react";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Select from "react-select";
+import { usePathname, useRouter } from "next/navigation";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -97,6 +98,16 @@ export default function ProfileTab({ data }: any) {
   const [interval, setInterval] = useState<string>("Week");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [showMe, setShowMe] = useState(false);
+  const pathName = usePathname();
+
+  const arr = pathName.split("/");
+  const id = arr[arr.length - 1];
+  useEffect(() => {
+    const arr = pathName.split("/");
+
+    setShowMe(arr.includes("intents"));
+  }, []);
 
   const [schedule, setSchedule] = useState<any>([
     {
@@ -118,6 +129,31 @@ export default function ProfileTab({ data }: any) {
     console.log(afterDeleteArray);
     setSchedule(afterDeleteArray);
   };
+
+  const router = useRouter();
+
+  const [dropDownProduct, setDropDownProduct] = useState<any>([
+    {
+      label: "US Mutual Funds ESG Scores",
+      value: 0,
+    },
+    {
+      label: "NYSE Securities",
+      value: 1,
+    },
+    {
+      label: "NYSE Prices",
+      value: 2,
+    },
+    {
+      label: "US Mutual Funds",
+      value: 3,
+    },
+    {
+      label: "US Mutual Funds Returns and Ranking",
+      value: 4,
+    },
+  ]);
 
   const addSchedule = () => {
     console.log(weekNumber, interval, time, week, date, time);
@@ -154,6 +190,38 @@ export default function ProfileTab({ data }: any) {
             <p className="text-[#656565]">Label</p>
             <span>{data.name}</span>
           </div>
+          {showMe && (
+            <div className="flex flex-col">
+              <div className="min-w-[80px] ">
+                <Select
+                  styles={{
+                    control: (styles) => ({
+                      ...styles,
+                      fontSize: "16px",
+                      backgroundColor: "#EAEAEA",
+                      borderRadius: "10px",
+                    }),
+                    option: (
+                      styles,
+                      { data, isDisabled, isFocused, isSelected }
+                    ) => {
+                      return {
+                        ...styles,
+                        backgroundColor: isSelected ? "#4D91FF" : "white",
+                        color: isDisabled ? "#ccc" : isSelected ? "white" : "",
+                      };
+                    },
+                  }}
+                  onChange={(val) => {
+                    router.push(`/intents/${val.value}`);
+                  }}
+                  defaultValue={dropDownProduct[+id]}
+                  options={dropDownProduct}
+                  className={`max-w-[300px] rounded-[10px] min-w-[140px] text-[16px] ${cabin.className}`}
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
