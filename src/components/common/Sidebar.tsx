@@ -124,7 +124,7 @@ export default function Sidebar({ active, setActive }: any) {
                   <Image src="/policies.svg" alt="brand" fill />
                 </div>
 
-                <p className="text-[18px] font-[500] text-black">Policies</p>
+                <p className="text-[18px] font-[500] text-black">Frameworks</p>
               </div>
 
               <div

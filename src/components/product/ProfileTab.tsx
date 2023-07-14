@@ -191,7 +191,8 @@ export default function ProfileTab({ data }: any) {
             <span>{data.name}</span>
           </div>
           {showMe && (
-            <div className="flex flex-col">
+            <div className="flex flex-col mt-[-1rem]">
+              <p className="text-[#656565]">Product Selector</p>
               <div className="min-w-[80px] ">
                 <Select
                   styles={{
