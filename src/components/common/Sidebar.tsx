@@ -54,7 +54,7 @@ export default function Sidebar({ active, setActive }: any) {
       <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] sm:hidden xl:block max-w-[269px] min-w-[269px] py-2">
         <div className={`w-full h-full ${cabin.className}`}>
           {/* logo */}
-          <div className="relative w-full mt-[34px] h-[8.1%] max-h-[70px]">
+          <div className="relative w-full scale-110 mt-[34px] h-[8.1%] max-h-[70px]">
             <Image src="/Logo1.svg" alt="brand" fill />
           </div>
 
