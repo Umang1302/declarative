@@ -22,5 +22,5 @@ export default function page({ params }: any) {
 
   // const [select, setSelected] = useState(0);
 
-  return <div></div>;
+  return "";
 }

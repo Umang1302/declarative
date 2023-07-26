@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import jsonData from "../../../../data.json";
+import jsonData from "../../../../../data.json";
 import { RingLoader } from "react-spinners";
 import { Breadcrumbs, Card, CardBody } from "@material-tailwind/react";
-import ProductHeading from "../../../components/product/ProductHeading";
-import RelatedProducts from "../../../components/product/RelatedProducts";
-import Tabs from "../../../components/common/Tabs";
+import ProductHeading from "../../../../components/product/ProductHeading";
+import RelatedProducts from "../../../../components/product/RelatedProducts";
+import Tabs from "../../../../components/common/Tabs";
 import Link from "next/link";
 import { Cabin } from "next/font/google";
 import Image from "next/image";
