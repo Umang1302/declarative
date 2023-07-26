@@ -54,8 +54,8 @@ export default function Sidebar({ active, setActive }: any) {
       <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] sm:hidden xl:block max-w-[269px] min-w-[269px] py-2">
         <div className={`w-full h-full ${cabin.className}`}>
           {/* logo */}
-          <div className="relative w-full mt-[34px] h-[8%] max-h-[70px]">
-            <Image src="/declarativeLogoBlack.svg" alt="brand" fill />
+          <div className="relative w-full mt-[34px] h-[8.1%] max-h-[70px]">
+            <Image src="/Logo1.svg" alt="brand" fill />
           </div>
 
           <hr className="border-[#C4C4C4] mt-[33px]" />
@@ -182,7 +182,7 @@ export default function Sidebar({ active, setActive }: any) {
           className={`w-full flex flex-col gap-y-6 pt-6 items-center ${cabin.className}`}
         >
           <div className="relative  w-[36.6px] h-[36.6px]">
-            <Image src="/minLogo.svg" alt="brand" fill />
+            <Image src="/minLogo1.svg" alt="brand" fill />
           </div>
           <div className="w-full h-[1px] bg-[#C4C4C4]" />
 

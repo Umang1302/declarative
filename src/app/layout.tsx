@@ -11,6 +11,7 @@ import OnboardingHeading from "../components/common/OnboardingHeading";
 import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });
 import { usePathname } from "next/navigation";
+import Head from "next/head";
 
 export default function RootLayout({
   children,
