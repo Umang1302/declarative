@@ -42,6 +42,8 @@ export default function Sidebar({ active, setActive }: any) {
       setActive(3);
     } else if (window.location.href.includes("/policy")) {
       setActive(2);
+    } else if (window.location.href.includes("/settings")) {
+      setActive(4);
     } else {
       setActive(0);
     }
@@ -49,7 +51,7 @@ export default function Sidebar({ active, setActive }: any) {
 
   return (
     <>
-      <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] md:hidden xl:block max-w-[269px] min-w-[269px] py-2">
+      <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] sm:hidden xl:block max-w-[269px] min-w-[269px] py-2">
         <div className={`w-full h-full ${cabin.className}`}>
           {/* logo */}
           <div className="relative w-full mt-[34px] h-[8%] max-h-[70px]">
@@ -62,7 +64,7 @@ export default function Sidebar({ active, setActive }: any) {
           <div className="w-full h-[8%] max-h-[60px] py-1 my-[38px] flex justify-start px-2">
             <button
               onClick={() => {
-                router.push(`/onboarding/1`);
+                router.push(`/onboarding`);
               }}
               className="w-[50%] h-[90%] gap-x-2 px-2 border-[1px] items-center rounded-[10px] hover:w-[50%] hover:z-50 hover:h-[98%] shadow-xl flex"
             >
@@ -76,7 +78,7 @@ export default function Sidebar({ active, setActive }: any) {
           {/* start Menu */}
           <div className="w-full">
             <div
-              className={`w-full gap-y-[30px] flex flex-col ${cabin.className}`}
+              className={`w-full gap-y-[3vh] flex flex-col ${cabin.className}`}
             >
               <div
                 className={`hover:bg-[#F2F2F2] pl-4 ${
@@ -145,9 +147,11 @@ export default function Sidebar({ active, setActive }: any) {
               </div>
 
               <div
-                className="hover:bg-[#F2F2F2] cursor-pointer pl-4 w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
+                className={`hover:bg-[#F2F2F2] pl-4 ${
+                  active === 4 ? "bg-[#F2F2F2] border-l-4 border-[#F65A27]" : ""
+                } cursor-pointer w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3`}
                 onClick={() => {
-                  router.push("/");
+                  router.push("/settings");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">

@@ -2,7 +2,7 @@
 
 import { Checkbox } from "@material-tailwind/react";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });
 

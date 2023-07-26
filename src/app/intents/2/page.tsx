@@ -12,8 +12,8 @@ export default function Page({ params }: any) {
   const [data, setData] = useState<any>();
   const [loading, setLoading] = useState<any>(true);
 
+  const id = 2;
   React.useEffect(() => {
-    const id = params.id;
     setData(jsonData.data[id]);
     console.log("DATA OF ID : ", id, jsonData.data[id]);
   }, []);

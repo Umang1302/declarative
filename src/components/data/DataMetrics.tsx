@@ -520,7 +520,7 @@ export default function DataRules({ data }: any) {
               //   ))}
               // </div>
               <p className="px-3 py-2 text-[18px] text-black">
-                No Rule Summary for this Product
+                No Product Metrics for this Product
               </p>
             )}
           </div>

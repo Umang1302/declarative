@@ -74,7 +74,7 @@ export default function TransparentTabs({
     <>
       <div className="relative mt-5">
         <CardBody>
-          <ProductHeading data={JSONDATA.data[0]} editable />
+          <ProductHeading data={JSONDATA.data[1]} editable />
           <div className="w-[100%] bg-gray-300 h-[1px] mt-2" />
           <OverviewTable editable data={JSONDATA.data[1]} />,
           {/* <div className="w-full h-full">

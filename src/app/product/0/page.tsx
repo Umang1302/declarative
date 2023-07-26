@@ -16,8 +16,9 @@ export default function Page({ params }: any) {
   const [data, setData] = useState<any>();
   const [loading, setLoading] = useState<any>(true);
 
+  const id = 0;
+
   React.useEffect(() => {
-    const id = params.id;
     setData(jsonData.data[id]);
     console.log("DATA OF ID : ", id, jsonData.data[id]);
   }, []);
@@ -50,16 +51,16 @@ export default function Page({ params }: any) {
               <span className={`ml-1 ${cabin.className}`}>Home</span>
             </Link>
             <Link
-              href={`/product/${params.id}`}
+              href={`/product/${id}`}
               className={`${cabin.className} text-[#8E8E8E] hover:text-[#F65A27]`}
             >
               Products
             </Link>
             <Link
-              href="/product/0"
+              href={`/product/${id}`}
               className={` text-[#F65A27] ${cabin.className}`}
             >
-              {jsonData.data[params.id].name}
+              {jsonData.data[id].name}
             </Link>
           </Breadcrumbs>
         </div>

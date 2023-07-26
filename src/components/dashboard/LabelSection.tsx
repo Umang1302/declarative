@@ -8,7 +8,7 @@ export default function LabelSection() {
   const label = [
     {
       id: 1,
-      label: `Mutual`,
+      label: `Mutual Funds`,
     },
     {
       id: 2,

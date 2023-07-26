@@ -26,7 +26,7 @@ export default function TransparentTabs({
 
   useEffect(() => {
     const arr = pathname.split("/");
-    setVal(`Data Source ${arr[arr.length - 1]}`);
+    setVal(`Data Source 1`);
   }, [pathname]);
 
   const [showNext, setShowNext] = useState(false);
@@ -139,7 +139,7 @@ export default function TransparentTabs({
                   className="cursor-pointer border-[1px] px-3 rounded-[5px] py-2 border-black hover:bg-[#F65A27] hover:border-none hover:text-white"
                   onClick={() => {
                     setDataSetVal(`Data Source ${index}`);
-                    router.push(`/onboarding/${index + 1}`);
+                    router.push(`/onboarding`);
                   }}
                   key={index}
                 >
