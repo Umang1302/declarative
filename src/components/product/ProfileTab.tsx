@@ -214,7 +214,7 @@ export default function ProfileTab({ data }: any) {
                     },
                   }}
                   onChange={(val) => {
-                    router.push(`/intents/${val.value}`);
+                    router.push(`/dome/intents/${val.value}`);
                   }}
                   defaultValue={dropDownProduct[+id]}
                   options={dropDownProduct}

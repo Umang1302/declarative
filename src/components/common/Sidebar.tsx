@@ -54,7 +54,12 @@ export default function Sidebar({ active, setActive }: any) {
       <Card className="shadow-xl shadow-blue-gray-900/5 rounded-lg w-[15vw] sm:hidden xl:block max-w-[269px] min-w-[269px] py-2">
         <div className={`w-full h-full ${cabin.className}`}>
           {/* logo */}
-          <div className="relative w-full mt-[34px] h-[8.1%] max-h-[70px]">
+          <div
+            onClick={() => {
+              router.push("/");
+            }}
+            className="relative w-full mt-[34px] h-[8.1%] max-h-[70px] cursor-pointer"
+          >
             <Image src="/Logo1.svg" alt="brand" fill />
           </div>
 
@@ -64,7 +69,7 @@ export default function Sidebar({ active, setActive }: any) {
           <div className="w-full h-[8%] max-h-[60px] py-1 my-[38px] flex justify-start px-2">
             <button
               onClick={() => {
-                router.push(`/onboarding`);
+                router.push(`/dome/onboarding`);
               }}
               className="w-[50%] h-[90%] gap-x-2 px-2 border-[1px] items-center rounded-[10px] hover:w-[50%] hover:z-50 hover:h-[98%] shadow-xl flex"
             >
@@ -85,7 +90,7 @@ export default function Sidebar({ active, setActive }: any) {
                   active === 0 ? "bg-[#F2F2F2] border-l-4 border-[#F65A27]" : ""
                 } cursor-pointer w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3`}
                 onClick={() => {
-                  router.push("/");
+                  router.push("/dome");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">
@@ -102,7 +107,7 @@ export default function Sidebar({ active, setActive }: any) {
                     : ""
                 }`}
                 onClick={() => {
-                  router.push("/");
+                  router.push("/dome");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">
@@ -119,7 +124,7 @@ export default function Sidebar({ active, setActive }: any) {
                     : ""
                 }`}
                 onClick={() => {
-                  router.push("/policy");
+                  router.push("/dome/policy");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">
@@ -136,7 +141,7 @@ export default function Sidebar({ active, setActive }: any) {
                     : ""
                 }`}
                 onClick={() => {
-                  router.push("/intents/0");
+                  router.push("/dome/intents/0");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">
@@ -151,7 +156,7 @@ export default function Sidebar({ active, setActive }: any) {
                   active === 4 ? "bg-[#F2F2F2] border-l-4 border-[#F65A27]" : ""
                 } cursor-pointer w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3`}
                 onClick={() => {
-                  router.push("/settings");
+                  router.push("/dome/settings");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">
@@ -164,7 +169,7 @@ export default function Sidebar({ active, setActive }: any) {
               <div
                 className="hover:bg-[#F2F2F2] cursor-pointer pl-4 w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
                 onClick={() => {
-                  router.push("/");
+                  router.push("/dome");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">

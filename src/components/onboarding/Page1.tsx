@@ -26,7 +26,7 @@ export default function TransparentTabs({
 
   useEffect(() => {
     const arr = pathname.split("/");
-    setVal(`Data Source 1`);
+    setVal(`My S3`);
   }, [pathname]);
 
   const [showNext, setShowNext] = useState(false);
@@ -72,13 +72,13 @@ export default function TransparentTabs({
   const router = useRouter();
 
   const [dataSource, setDataSource] = useState([
-    "Data Source 1",
-    "Data Source 2",
-    "Data Source 3",
-    "Data Source 4",
-    "Data Source 5",
-    "Data Source 6",
-    "Data Source 7",
+    "My S3",
+    "My GCS",
+    "My Azure Blob Store",
+    "My Warehouse",
+    "My Lakehouse",
+    "My MySQL store",
+    "My Postgres",
   ]);
 
   return (
@@ -133,13 +133,13 @@ export default function TransparentTabs({
             <p className="w-full flex justify-center text-[24px] font-[600]">
               Select an Existing Data Source
             </p>
-            <div className="flex mt-8 justify-center gap-x-14">
+            <div className="flex mt-8 justify-center gap-x-6">
               {dataSource.map((item, index) => (
                 <p
                   className="cursor-pointer border-[1px] px-3 rounded-[5px] py-2 border-black hover:bg-[#F65A27] hover:border-none hover:text-white"
                   onClick={() => {
                     setDataSetVal(`Data Source ${index}`);
-                    router.push(`/onboarding`);
+                    router.push(`/dome/onboarding`);
                   }}
                   key={index}
                 >
