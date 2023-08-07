@@ -11,7 +11,6 @@ import OnboardingHeading from "../../components/common/OnboardingHeading";
 import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });
 import { usePathname } from "next/navigation";
-import Head from "next/head";
 
 export default function RootLayout({
   children,
@@ -29,8 +28,8 @@ export default function RootLayout({
   }, [pathname]);
 
   return (
-    <html lang="en">
-      <body
+    <div lang="en">
+      <div
         className={
           cabin.className +
           " bg-[#F2F2F2]" +
@@ -61,7 +60,7 @@ export default function RootLayout({
             <div>{children}</div>
           </div>
         </div>
-      </body>
-    </html>
+      </div>
+    </div>
   );
 }

@@ -10,6 +10,7 @@ export default function Dashboard() {
   return (
     <div className={`w-full ${cabin.className} h-full`}>
       <Navbar />
+      <p>lorem*100</p>
     </div>
   );
 }
