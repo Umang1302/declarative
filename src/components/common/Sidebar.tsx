@@ -60,7 +60,7 @@ export default function Sidebar({ active, setActive }: any) {
             }}
             className="relative w-full mt-[34px] h-[8.1%] max-h-[70px] cursor-pointer"
           >
-            <Image src="/Logo1.svg" alt="brand" fill />
+            <Image src="/Logo3.svg" alt="brand" fill />
           </div>
 
           <hr className="border-[#C4C4C4] mt-[33px]" />
