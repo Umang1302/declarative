@@ -11,16 +11,17 @@ export default function Section1() {
   const router = useRouter();
 
   return (
-    <div className="w-full flex flex-col justify-center items-center px-3">
+    <div className="w-full flex flex-col mt-[-6rem] justify-center items-center px-3">
       <p className="w-[70%] text-center text-[20px] px-3">
         Complement your Data Engineering and Analytics efforts with the most
         comprehensive end to end Data Management capabilities made available via
         Dome Platform.
       </p>
-      <div className="w-full h-full flex justify-center">
-        <div className="relative w-[80vw] h-[70vh] cursor-pointer">
-          <Image src="/landingPage/DOME2.svg" alt="brand" fill />
-        </div>
+      <div className="w-full mt-5 h-full flex justify-center">
+        <video autoPlay loop muted controls className="w-[1200px]">
+          <source src="/landingPage/DomeEngine.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   );

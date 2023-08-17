@@ -51,7 +51,7 @@ export default function Section1() {
   const router = useRouter();
 
   return (
-    <div className={`mb-4 pr-1 w-full ${cabin.className}`}>
+    <div className={`mb-4 mt-[5rem] pr-1 w-full ${cabin.className}`}>
       <div className="w-full flex justify-center mb-6">
         <p className="text-[60px] font-[700]">
           Key <span className="text-[#4D91FF]">Features</span>
@@ -65,7 +65,7 @@ export default function Section1() {
                 <Image src={`/landingPage/${index + 1}.svg`} alt="brand" fill />
               </div>
               <div className="h-[50%] mt-8">
-                <div className="px-10 text-[24px] font-[700] h-[40%]">
+                <div className="px-10 text-[24px] font-[700] h-[30%]">
                   {element.heading}
                 </div>
                 <div className="px-10 text-[24px] text-[#555] h-[60%]">

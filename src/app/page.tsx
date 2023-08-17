@@ -9,7 +9,6 @@ import Section2 from "@/components/landingpage/Section2";
 import Section3 from "@/components/landingpage/Section3";
 import Footer from "@/components/landingpage/Footer";
 
-
 const cabin = Cabin({ subsets: ["latin"] });
 
 export default function Dashboard() {
@@ -19,11 +18,9 @@ export default function Dashboard() {
       <div className="">
         <Hero />
         <div className="mt-[-3rem]">
-
-        <Section1 />
-        <Section2 />
-        <Section3 />
-
+          <Section1 />
+          <Section2 />
+          <Section3 />
         </div>
         <Footer />
       </div>
