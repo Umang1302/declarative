@@ -85,7 +85,7 @@ export default function Section1() {
                     />
                     <button
                       type="submit"
-                      className="w-[160px] h-[57px] px-3 py-1 font-[700] rounded-[5px] text-white text-[20px] bg-[#F65A27]"
+                      className="w-[200px] h-[50px] px-3 font-[700] rounded-[5px] text-white text-[18px] bg-[#F65A27]"
                     >
                       Schedule a Demo!
                     </button>
