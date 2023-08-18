@@ -10,6 +10,7 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@material-tailwind/react": "^2.0.1",
     "@tailwindcss/forms": "^0.5.3",
     "@types/node": "20.2.5",

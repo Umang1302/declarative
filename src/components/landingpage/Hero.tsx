@@ -4,11 +4,11 @@ import { Cabin } from "next/font/google";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import useStateRef from "react-usestateref";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
 export default function Hero() {
-  const router = useRouter();
 
   const array = [
     "Observable",
@@ -17,18 +17,26 @@ export default function Hero() {
     "Secure",
     "Governed",
     "Intelligent",
-    "collaborative",
+    "Collaborative",
   ];
 
-  const [word, setWord] = useState("Observable");
+  const [word, setWord, wordRef] = useStateRef(0);
 
-  useEffect(()=>{
-   const i = setInterval(()=>{
-      console.log("HELLO")
-    },3000);
+  useEffect(() => {
+    console.log("HHHHHHHHH");
+    const i = setInterval(() => {
+      let index = word;
+      if (index === array.length - 1) {
+        index = 0;
+      } else {
+        index = wordRef.current + 1;
+      }
+      console.log(index);
+      setWord(index);
+    }, 4000);
 
-    return clearInterval(i);
-  },[])
+    return () => clearInterval(i);
+  }, []);
 
   return (
     <div className="relative flex items-center justify-center h-[800px] overflow-hidden">
@@ -38,7 +46,9 @@ export default function Hero() {
         </p>
         <p className="text-[24px] 2xl:text-[20px]">
           Convert your data into{" "}
-          <span className="text-[#4D91FF] font-[700]">Observable </span>
+          <span className="text-[#4D91FF] font-[700] animate-pulse duration-1000">
+            {array[wordRef.current]}{" "}
+          </span>
           Business aligned Data Products in minutes
         </p>
       </div>

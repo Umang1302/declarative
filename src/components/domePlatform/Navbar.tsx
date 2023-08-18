@@ -29,7 +29,7 @@ export default function Navbar() {
           onClick={() => {
             router.push("/");
           }}
-          className={`text-[#F65A27] font-[700] cursor-pointer`}
+          className="cursor-pointer"
         >
           Home
         </p>
@@ -37,7 +37,7 @@ export default function Navbar() {
           onClick={() => {
             router.push("/domePlatform");
           }}
-          className="cursor-pointer"
+          className={`text-[#F65A27] font-[700] cursor-pointer`}
         >
           Dome Platform
         </p>

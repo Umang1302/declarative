@@ -2,12 +2,12 @@
 
 import { Cabin } from "next/font/google";
 import React from "react";
-import Navbar from "@/components/landingpage/Navbar";
-import Hero from "@/components/landingpage/Hero";
-import Section1 from "@/components/landingpage/Section1";
-import Section2 from "@/components/landingpage/Section2";
+import Navbar from "@/components/domePlatform/Navbar";
+import Hero from "@/components/domePlatform/Hero";
+import Section1 from "@/components/domePlatform/Section1";
+import Section2 from "@/components/domePlatform/Section2";
 import Section3 from "@/components/landingpage/Section3";
-import Footer from "@/components/landingpage/Footer";
+import Footer from "@/components/domePlatform/Footer";
 
 const cabin = Cabin({ subsets: ["latin"] });
 

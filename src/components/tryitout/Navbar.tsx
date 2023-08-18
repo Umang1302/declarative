@@ -29,7 +29,7 @@ export default function Navbar() {
           onClick={() => {
             router.push("/");
           }}
-          className={`text-[#F65A27] font-[700] cursor-pointer`}
+          className="cursor-pointer"
         >
           Home
         </p>
@@ -38,6 +38,7 @@ export default function Navbar() {
             router.push("/domePlatform");
           }}
           className="cursor-pointer"
+
         >
           Dome Platform
         </p>
@@ -46,6 +47,7 @@ export default function Navbar() {
             router.push("/about");
           }}
           className="cursor-pointer"
+
         >
           About Declarative
         </p>
@@ -53,7 +55,7 @@ export default function Navbar() {
           onClick={() => {
             router.push("/tryitout");
           }}
-          className="cursor-pointer"
+          className={`text-[#F65A27] font-[700] cursor-pointer`}
         >
           Try it Now!
         </p>

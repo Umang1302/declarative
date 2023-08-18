@@ -58,17 +58,17 @@ export default function Section1() {
         </p>
       </div>
       <div className="flex w-full">
-        <div className="w-full grid grid-cols-3 gap-x-7 gap-y-9 px-10">
+        <div className="w-full grid grid-cols-3 gap-x-5 gap-y-6 px-20">
           {data.map((element, index) => (
-            <div key={`${index}`} className="rounded-[10px] h-[1000px] landingBox">
-              <div className="relative w-[100%] h-[409.02px] cursor-pointer">
+            <div key={`${index}`} className="rounded-[10px] h-[700px] landingBox">
+              <div className="relative w-[100%] h-[309.02px] cursor-pointer">
                 <Image src={`/landingPage/${index + 1}.svg`} alt="brand" fill />
               </div>
               <div className="h-[50%] mt-8">
-                <div className="px-10 text-[24px] font-[700] h-[30%]">
+                <div className="px-10 text-[20px] font-[700] h-[30%]">
                   {element.heading}
                 </div>
-                <div className="px-10 text-[24px] text-[#555] h-[60%]">
+                <div className="px-10 text-[20px] text-[#555] h-[60%]">
                   {element.content}
                 </div>
               </div>

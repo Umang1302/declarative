@@ -2,12 +2,11 @@
 
 import { Cabin } from "next/font/google";
 import React from "react";
-import Navbar from "@/components/landingpage/Navbar";
-import Hero from "@/components/landingpage/Hero";
-import Section1 from "@/components/landingpage/Section1";
-import Section2 from "@/components/landingpage/Section2";
-import Section3 from "@/components/landingpage/Section3";
-import Footer from "@/components/landingpage/Footer";
+import Navbar from "@/components/about/Navbar";
+import Hero from "@/components/about/Hero";
+import Section1 from "@/components/about/Section1";
+import Section2 from "@/components/about/Section2";
+import Footer from "@/components/about/Footer";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -20,7 +19,6 @@ export default function Dashboard() {
         <div className="mt-[-3rem]">
           <Section1 />
           <Section2 />
-          <Section3 />
         </div>
         <Footer />
       </div>
