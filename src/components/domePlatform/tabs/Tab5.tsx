@@ -100,7 +100,7 @@ export default function Hero() {
         </button>
         <div className="px-6">
           <p className="text-[36px] font-[700]">{data[active].heading}</p>
-          <p className="text-[24px] mt-5">{data[active].content}</p>
+          <p className="text-[18px] mt-5">{data[active].content}</p>
         </div>
         <button
           onClick={() => {

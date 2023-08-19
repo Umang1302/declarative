@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="relative w-[50%] h-[400px]">
         <Image src={`/landingPage/domePlatform2.svg`} alt="brand" fill />
       </div>
-      <p className="w-[40%] flex justify-start items-center text-[20px]">
+      <p className="w-[40%] flex justify-start items-center text-[18px]">
         All features and capabilities in Dome are powered with a deep knowledge
         graph that maintains information about Products, Attributes, their
         relationships, as well as all management Intents applied to them. Use

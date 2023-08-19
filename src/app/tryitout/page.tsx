@@ -4,7 +4,7 @@ import { Cabin } from "next/font/google";
 import React from "react";
 import Navbar from "@/components/tryitout/Navbar";
 import Section3 from "@/components/landingpage/Section3";
-import Footer from "@/components/domePlatform/Footer";
+import Footer from "@/components/landingpage/Footer";
 
 const cabin = Cabin({ subsets: ["latin"] });
 

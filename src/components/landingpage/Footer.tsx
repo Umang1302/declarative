@@ -20,14 +20,35 @@ export default function Footer() {
           <div className="w-[30%]">
             <p className="px-1 py-2">Site Map</p>
             <div className="h-[2px] w-[83px] bg-white ml-1" />
-            <div className="flex justify-between font-[400] mt-4 gap-x-20">
-              <p>Home</p>
-              <p>About</p>
-              <p>Try Out!</p>
-            </div>
-            <div className="flex mt-3 font-[400] justify-start gap-x-16">
-              <p>Privacy Policy</p>
-              <p>Terms & Conditions</p>
+            <div className="grid grid-cols-3 w-[500px] gap-x-10 gap-y-4 mt-6">
+              {/* <div className="flex bg-red-700 justify-between font-[400] mt-4 gap-x-20"> */}
+              <p onClick={()=>{
+                router.push("/")
+              }} className="hover:scale-105 cursor-pointer">Home</p>
+              <p 
+              onClick={()=>{
+                router.push("/domePlatform")
+              }}
+              className="hover:scale-105 cursor-pointer">Dome Platform</p>
+
+              <p 
+              onClick={()=>{
+                router.push("/about")
+              }}
+              className="hover:scale-105 cursor-pointer">About</p>
+
+              <p
+               onClick={()=>{
+                router.push("/tryitout")
+              }}
+              className="hover:scale-105 cursor-pointer">Try Out!</p>
+              {/* </div> */}
+              {/* <div className="flex mt-3 font-[400] justify-start gap-x-16"> */}
+              <p className="hover:scale-105 cursor-pointer">Privacy Policy</p>
+              <p className="hover:scale-105 cursor-pointer">
+                Terms & Conditions
+              </p>
+              {/* </div> */}
             </div>
           </div>
           <div className="flex justify-center">
@@ -53,10 +74,10 @@ export default function Footer() {
               <p className="px-1 py-2">Follow Us</p>
               <div className="h-[2px] w-[70px] bg-white ml-1" />
               <div className="flex justify-between font-[400] mt-4 gap-x-5">
-                <div className="relative w-[28px] h-[28px]">
+                <div className="relative w-[28px] h-[28px] hover:scale-105">
                   <Image src="/landingPage/linkedIn.svg" alt="brand" fill />
                 </div>
-                <div className="relative w-[28px] h-[28px]">
+                <div className="relative w-[28px] h-[28px] hover:scale-105">
                   <Image src="/landingPage/Twitter.svg" alt="brand" fill />
                 </div>
               </div>
@@ -64,9 +85,15 @@ export default function Footer() {
           </div>
         </div>
         <div className="h-[2px] w-full bg-white mt-16" />
-        <div className="w-full flex justify-between px-8 mt-7">
+        <div className="w-full flex justify-between px-2 mt-7">
           <p>Copyright © 2023. All Rights Reserved</p>
-          <p>Powered By TechAutoCode</p>
+          <p
+            onClick={() => {
+              router.push("http://techautocode.com");
+            }}
+          >
+            Powered By TechAutoCode
+          </p>
         </div>
       </div>
     </div>

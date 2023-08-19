@@ -6,7 +6,7 @@ import Navbar from "@/components/about/Navbar";
 import Hero from "@/components/about/Hero";
 import Section1 from "@/components/about/Section1";
 import Section2 from "@/components/about/Section2";
-import Footer from "@/components/about/Footer";
+import Footer from "@/components/landingpage/Footer";
 
 const cabin = Cabin({ subsets: ["latin"] });
 

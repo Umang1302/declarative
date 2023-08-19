@@ -2,7 +2,7 @@
 
 import { Cabin } from "next/font/google";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useRef } from "react";
 import { Checkbox, Textarea } from "@material-tailwind/react";
 import emailjs from "@emailjs/browser";
@@ -11,6 +11,7 @@ const cabin = Cabin({ subsets: ["latin"] });
 
 export default function Section1() {
   const router = useRouter();
+  const pathName = usePathname();
   const form: any = useRef();
 
   const sendEmail = (e: any) => {
@@ -25,19 +26,19 @@ export default function Section1() {
   };
 
   return (
-    <div className="w-full bg-[#F5FAFF] ">
+    <div className={`w-full ${pathName.includes("tryitout") ? "mt-[1rem]" : "mt-[8rem]"}  pt-[0.6rem] bg-[#F5FAFF] `}>
       <div className="h-[500px] mt-20 pt-10 w-full">
         <div className="w-full flex justify-center items-center">
           <div className="w-full flex flex-col justify-center">
             <div className="w-full flex gap-x-3 justify-center items-center">
-              <div className="relative w-[50px] h-[50px] cursor-pointer">
+              {/* <div className="relative w-[50px] h-[50px] cursor-pointer">
                 <Image src={`/landingPage/hand.svg`} alt="brand" fill />
-              </div>
+              </div> */}
               <p className="text-[50px] text-[#4D91FF]">
                 Let’s Connect To Learn More!
               </p>
             </div>
-            <div>
+            <div className="mt-8">
               <form ref={form} onSubmit={sendEmail}>
                 <div className="flex justify-center gap-x-5">
                   <input
@@ -75,7 +76,7 @@ export default function Section1() {
                   />
                 </div>
                 <div className="flex justify-center items-center">
-                  <div className="w-[68%] mt-4 h-full flex justify-between gap-x-5">
+                  <div className="w-[67%] mt-4 h-full flex justify-between gap-x-5">
                     <Checkbox
                       label={
                         <p className="text-[20px] text-black">
@@ -85,7 +86,7 @@ export default function Section1() {
                     />
                     <button
                       type="submit"
-                      className="w-[200px] h-[50px] px-3 font-[700] rounded-[5px] text-white text-[18px] bg-[#F65A27]"
+                      className="w-[200px] hover:scale-105 h-[50px] px-3 font-[700] rounded-[5px] text-white text-[18px] bg-[#F65A27]"
                     >
                       Schedule a Demo!
                     </button>

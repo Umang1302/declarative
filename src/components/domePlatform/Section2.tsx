@@ -53,7 +53,7 @@ export default function Section1() {
 
   return (
     <div className={`mb-4 mt-[5rem] pr-1 w-full ${cabin.className}`}>
-      <div className="w-full flex justify-start px-5 mb-6">
+      <div className="w-full flex justify-start px-28 mb-6">
         <p className="text-[60px] font-[700]">
           DOME <span className="text-[#4D91FF]">Capabilities</span>
         </p>

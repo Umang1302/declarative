@@ -29,7 +29,7 @@ export default function Navbar() {
           onClick={() => {
             router.push("/");
           }}
-          className="cursor-pointer"
+          className="cursor-pointer hover:text-[#F65A27]"
         >
           Home
         </p>
@@ -45,7 +45,7 @@ export default function Navbar() {
           onClick={() => {
             router.push("/about");
           }}
-          className="cursor-pointer"
+          className="cursor-pointer hover:text-[#F65A27]"
         >
           About Declarative
         </p>
@@ -53,7 +53,7 @@ export default function Navbar() {
           onClick={() => {
             router.push("/tryitout");
           }}
-          className="cursor-pointer"
+          className="cursor-pointer hover:text-[#F65A27]"
         >
           Try it Now!
         </p>

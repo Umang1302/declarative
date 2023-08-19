@@ -14,7 +14,6 @@ export default function Landingpage({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en">
       <body className="">

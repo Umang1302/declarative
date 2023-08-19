@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="relative w-[50%] h-[400px]">
         <Image src={`/landingPage/domePlatform1.svg`} alt="brand" fill />
       </div>
-      <p className="w-[40%] flex justify-start items-center text-[20px]">
+      <p className="w-[40%] flex justify-start items-center text-[18px]">
         Leverage comprehensive library of Dome connectors to integrate with your
         on-prem or on-cloud data sources. Dome connects with most Databases,
         Cloud Storage systems, Data Warehouses and Data Lakes.

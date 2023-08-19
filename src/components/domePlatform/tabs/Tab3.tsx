@@ -51,7 +51,7 @@ export default function Hero() {
           {data.map((element, index) => (
             <div
               key={`${index}`}
-              className="rounded-[10px] h-[600px] landingBox"
+              className="rounded-[10px] h-[550px] landingBox"
             >
               <div className="relative w-[100%] h-[259.02px] cursor-pointer">
                 <Image src={`/domePlaform/${index + 1}.svg`} alt="brand" fill />
@@ -60,7 +60,7 @@ export default function Hero() {
                 <div className="flex justify-center text-[20px] font-[700] h-[10%]">
                   {element.heading}
                 </div>
-                <div className="px-10 mt-8 text-[20px] text-[#555] h-[60%]">
+                <div className="px-10 mt-8 text-[18px] text-[#555] h-[60%]">
                   {element.content}
                 </div>
               </div>

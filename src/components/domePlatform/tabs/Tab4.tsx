@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="relative w-[50%] h-[400px]">
         <Image src={`/domePlaform/7.svg`} alt="brand" fill />
       </div>
-      <p className="w-[40%] flex justify-start items-center text-[20px]">
+      <p className="w-[40%] flex justify-start items-center text-[18px]">
         Dome Products are higher order business aligned data products that
         include raw data with all management intents applied and rich profile as
         well as meta data. Products are discoverable, shareable, and

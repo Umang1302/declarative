@@ -44,7 +44,7 @@ export default function Hero() {
         <p className="lg:text-[40px] 2xl:text-[60px] text-[72px] font-[700]">
           Manage your Data assets with ease at scale
         </p>
-        <p className="text-[24px] 2xl:text-[20px]">
+        <p className="text-[28px]">
           Convert your data into{" "}
           <span className="text-[#4D91FF] font-[700] animate-pulse duration-1000">
             {array[wordRef.current]}{" "}
@@ -58,7 +58,7 @@ export default function Hero() {
         muted
         className="absolute lg:top-[-6rem] xl:top-[-6rem] 2xl:top-[-5.5rem] 3xl:top-0 z-10 w-[150vw] h-[700px]"
       >
-        <source src="/landingPage/Homevideo-Comp.m4v" type="video/mp4" />
+        <source src="/landingPage/Homevideo-Comp.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>

@@ -7,7 +7,7 @@ import Hero from "@/components/domePlatform/Hero";
 import Section1 from "@/components/domePlatform/Section1";
 import Section2 from "@/components/domePlatform/Section2";
 import Section3 from "@/components/landingpage/Section3";
-import Footer from "@/components/domePlatform/Footer";
+import Footer from "@/components/landingpage/Footer";
 
 const cabin = Cabin({ subsets: ["latin"] });
 

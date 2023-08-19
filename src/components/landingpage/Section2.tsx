@@ -19,9 +19,9 @@ Managed Micro Data Products`,
     content: (
       <p>
         Dome combines the best of Data Management, Data Mesh and Data Fabric
-        principles in a single platform. It comes equipped with Industry&apos;s best
-        Data Management Frameworks & Controls that are applied to data using
-        simple declarative Intents.
+        principles in a single platform. It comes equipped with Industry&apos;s
+        best Data Management Frameworks & Controls that are applied to data
+        using simple declarative Intents.
       </p>
     ),
   },
@@ -53,14 +53,19 @@ export default function Section1() {
   return (
     <div className={`mb-4 mt-[5rem] pr-1 w-full ${cabin.className}`}>
       <div className="w-full flex justify-center mb-6">
-        <p className="text-[60px] font-[700]">
+        <p className="text-[48px] font-[700]">
           Key <span className="text-[#4D91FF]">Features</span>
         </p>
       </div>
       <div className="flex w-full">
         <div className="w-full grid grid-cols-3 gap-x-5 gap-y-6 px-20">
           {data.map((element, index) => (
-            <div key={`${index}`} className="rounded-[10px] h-[700px] landingBox">
+            <div
+              key={`${index}`}
+              className={`rounded-[10px]  landingBox ${
+                index > 2 ? "h-[620px]" : "h-[660px]"
+              }`}
+            >
               <div className="relative w-[100%] h-[309.02px] cursor-pointer">
                 <Image src={`/landingPage/${index + 1}.svg`} alt="brand" fill />
               </div>
@@ -68,7 +73,7 @@ export default function Section1() {
                 <div className="px-10 text-[20px] font-[700] h-[30%]">
                   {element.heading}
                 </div>
-                <div className="px-10 text-[20px] text-[#555] h-[60%]">
+                <div className="px-10 text-[18px] text-[#555] h-[60%]">
                   {element.content}
                 </div>
               </div>
