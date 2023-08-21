@@ -25,8 +25,8 @@ export default function Hero() {
   useEffect(() => {
     console.log("HHHHHHHHH");
     const i = setInterval(() => {
-      let index = word;
-      if (index === array.length - 1) {
+      let index = wordRef.current;
+      if (index > 5) {
         index = 0;
       } else {
         index = wordRef.current + 1;
