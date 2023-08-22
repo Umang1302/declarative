@@ -47,12 +47,12 @@ export default function Navbar() {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:mx-auto">
               <li className="nav-item">
-                <a className="px-3 py-2 flex items-center text-xs  font-bold leading-snug hover:opacity-75">
+                <a className="px-3 py-2 flex items-center text-xs leading-snug hover:opacity-75">
                   <p
                     onClick={() => {
                       router.push("/");
                     }}
-                    className={`hover:text-[#F65A27] font-[700] cursor-pointer`}
+                    className={`hover:text-[#F65A27] cursor-pointer`}
                   >
                     Home
                   </p>
@@ -76,7 +76,7 @@ export default function Navbar() {
                     onClick={() => {
                       router.push("/about");
                     }}
-                    className="cursor-pointer text-[#F65A27]"
+                    className="cursor-pointer font-[700] text-[#F65A27]"
                   >
                     About Declarative
                   </p>
@@ -131,7 +131,7 @@ export default function Navbar() {
             onClick={() => {
               router.push("/");
             }}
-            className={`hover:text-[#F65A27] font-[700] cursor-pointer`}
+            className={`hover:text-[#F65A27] cursor-pointer`}
           >
             Home
           </p>
@@ -147,7 +147,7 @@ export default function Navbar() {
             onClick={() => {
               router.push("/about");
             }}
-            className="cursor-pointer text-[#F65A27]"
+            className="cursor-pointer font-[700] text-[#F65A27]"
           >
             About Declarative
           </p>

@@ -33,7 +33,7 @@ export default function Hero() {
       }
       console.log(index);
       setWord(index);
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(i);
   }, []);
@@ -46,7 +46,7 @@ export default function Hero() {
         </p>
         <p className="text-[24px] flex">
           Convert your data into{" "}
-          <div className="text-[#4D91FF] flex justify-center font-[700] animate-pulse duration-1000 w-[150px]">
+          <div className="text-[#4D91FF] change-text flex justify-center font-[700] animate-pulse duration-1000 w-[150px]">
             {array[wordRef.current]}{" "}
           </div>
           Business aligned Data Products in minutes.

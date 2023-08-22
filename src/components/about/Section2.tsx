@@ -12,10 +12,10 @@ export default function Section1() {
 
   return (
     <div
-      className={`mb-4  mt-[2rem] pr-1 w-full flex justify-center ${cabin.className}`}
+      className={`mb-[5rem] mt-[5rem] pr-1 w-full flex justify-center ${cabin.className}`}
     >
-      <div className="max-w-[1400px] min-w-[1200px]">
-        <div className="landingBox  px-10 py-5">
+      <div className="max-w-[1450px] min-w-[1400px]">
+        <div className="landingBox px-10 py-5">
           <p className="border-[#8E8E8E] border-b-[2px] py-3 text-[36px] font-[700]">
             Meet the Leadership team
           </p>

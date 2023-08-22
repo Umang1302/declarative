@@ -12,7 +12,7 @@ export default function Section1() {
 
   return (
     <div className="w-full flex justify-center gap-x-10 mt-[3rem]">
-     <div className="max-w-[1400px] flex">
+     <div className="max-w-[1450px] flex">
       <div className="relative w-[720px] h-[520px]">
         <Image src={`/about/1.svg`} alt="brand" fill />
       </div>

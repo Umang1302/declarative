@@ -12,8 +12,8 @@ export default function Hero() {
 
   return (
     <div className="w-full flex justify-center -mt-20">
-      <div className="max-w-[1400px]">
-      <div className="relative w-[1220px] h-[390px]">
+      <div className="max-w-[1450px]">
+      <div className="relative w-[1450px] h-[390px]">
         <Image src={`/about/bg.svg`} alt="brand" fill />
       </div>
       </div>

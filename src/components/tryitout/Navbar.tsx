@@ -52,7 +52,7 @@ export default function Navbar() {
                     onClick={() => {
                       router.push("/");
                     }}
-                    className={`hover:text-[#F65A27] font-[700] cursor-pointer`}
+                    className={`hover:text-[#F65A27] cursor-pointer`}
                   >
                     Home
                   </p>
@@ -88,7 +88,7 @@ export default function Navbar() {
                     onClick={() => {
                       router.push("/tryitout");
                     }}
-                    className="cursor-pointer text-[#F65A27]"
+                    className="cursor-pointer font-[700] text-[#F65A27]"
                   >
                     Try it Now!
                   </p>
@@ -131,7 +131,7 @@ export default function Navbar() {
             onClick={() => {
               router.push("/");
             }}
-            className={`hover:text-[#F65A27] font-[700] cursor-pointer`}
+            className={`hover:text-[#F65A27] cursor-pointer`}
           >
             Home
           </p>
@@ -155,7 +155,7 @@ export default function Navbar() {
             onClick={() => {
               router.push("/tryitout");
             }}
-            className="cursor-pointer text-[#F65A27]]"
+            className="cursor-pointer font-[700] text-[#F65A27]"
           >
             Try it Now!
           </p>
