@@ -53,12 +53,12 @@ export default function Section1() {
   return (
     <div className={`mb-4 mt-[5rem] pr-1 w-full ${cabin.className}`}>
       <div className="w-full flex justify-center mb-6">
-        <p className="text-[48px] font-[700]">
+        <p className="text-[40px] font-[700]">
           Key <span className="text-[#4D91FF]">Features</span>
         </p>
       </div>
-      <div className="flex w-full">
-        <div className="w-full grid grid-cols-3 gap-x-5 gap-y-6 px-20">
+      <div className="flex w-full justify-center">
+        <div className="w-full max-w-[1500px] grid grid-cols-3 gap-x-5 gap-y-6 px-20">
           {data.map((element, index) => (
             <div
               key={`${index}`}

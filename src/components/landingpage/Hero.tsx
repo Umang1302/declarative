@@ -44,12 +44,12 @@ export default function Hero() {
         <p className="lg:text-[40px] 2xl:text-[60px] text-[72px] font-[700]">
           Manage your Data assets with ease at scale
         </p>
-        <p className="text-[28px]">
+        <p className="text-[24px] flex">
           Convert your data into{" "}
-          <span className="text-[#4D91FF] font-[700] animate-pulse duration-1000">
+          <div className="text-[#4D91FF] flex justify-center font-[700] animate-pulse duration-1000 w-[150px]">
             {array[wordRef.current]}{" "}
-          </span>
-          Business aligned Data Products in minutes
+          </div>
+          Business aligned Data Products in minutes.
         </p>
       </div>
       <video

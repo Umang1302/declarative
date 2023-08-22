@@ -11,8 +11,6 @@ import Tab4 from "@/components/domePlatform/tabs/Tab4";
 import Tab5 from "@/components/domePlatform/tabs/Tab5";
 import Tab6 from "@/components/domePlatform/tabs/Tab6";
 
-
-
 const cabin = Cabin({ subsets: ["latin"] });
 
 export default function Section1() {
@@ -32,52 +30,52 @@ export default function Section1() {
     {
       label: "AI/ML Powered features",
       component: <Tab3 />,
-      
     },
     {
       label: "Declarative Products",
       component: <Tab4 />,
-      
     },
     {
       label: "Declarative Management Intents",
       component: <Tab5 />,
-
     },
     {
       label: "Optimal Transparency & Collaboration",
       component: <Tab6 />,
-
     },
   ];
 
   return (
-    <div className={`mb-4 mt-[5rem] pr-1 w-full ${cabin.className}`}>
-      <div className="w-full flex justify-start px-28 mb-6">
-        <p className="text-[60px] font-[700]">
-          DOME <span className="text-[#4D91FF]">Capabilities</span>
-        </p>
-      </div>
-      <div className="flex w-full">
-        <div className="w-full flex justify-around border-b-[1px] border-[#8E8E8E]">
-          {tab.map((item, index) => (
-            <p
-              onClick={() => {
-                setActive(index);
-              }}
-              className={` cursor-pointer text-[18px] py-3 ${
-                active === index
-                  ? "border-b-[4px] rounded-[2px] border-[#F65A27] font-[700]"
-                  : ""
-              } `}
-              key={index}
-            >
-              {item.label}
-            </p>
-          ))}
+    <div
+      className={`mb-4 flex justify-center mt-[5rem] w-full ${cabin.className}`}
+    >
+      <div className="max-w-[1200px]">
+        <div className="w-full mb-6">
+          <p className="text-[40px] font-[700]">
+            DOME <span className="text-[#4D91FF]">Capabilities</span>
+          </p>
         </div>
+        <div className="flex w-[1200px] max-w-[1200px]">
+          <div className="flex gap-x-20 border-b-[1px] border-[#8E8E8E]">
+            {tab.map((item, index) => (
+              <div
+                onClick={() => {
+                  setActive(index);
+                }}
+                className={`cursor-pointer flex justify-center text-[16px] py-3 ${
+                  active === index
+                    ? "border-b-[4px] rounded-[2px] border-[#F65A27] font-[700]"
+                    : ""
+                } `}
+                key={index}
+              >
+                <p>{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="w-full px-6 py-4">{tab[active].component}</div>
       </div>
-      <div className="w-full px-6 py-4">{tab[active].component}</div>
     </div>
   );
 }

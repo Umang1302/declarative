@@ -45,15 +45,15 @@ export default function Hero() {
   ];
 
   return (
-    <div className="w-full flex justify-center roll-out gap-x-10 mt-6">
+    <div className="w-[1200px] flex justify-center roll-out gap-x-10 mt-6">
       <div className="flex w-full">
         <div className="w-full grid grid-cols-3 gap-x-5 gap-y-6 px-20">
           {data.map((element, index) => (
             <div
               key={`${index}`}
-              className="rounded-[10px] h-[550px] landingBox"
+              className="rounded-[10px] h-[650px] landingBox"
             >
-              <div className="relative w-[100%] h-[259.02px] cursor-pointer">
+              <div className="relative w-[100%] h-[270.02px] cursor-pointer">
                 <Image src={`/domePlaform/${index + 1}.svg`} alt="brand" fill />
               </div>
               <div className="h-[50%] mt-8">

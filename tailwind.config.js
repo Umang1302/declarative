@@ -8,6 +8,7 @@ module.exports = withMT({
   ],
   theme: {
     screens: {
+      sm:"375px",
       md: "768px",
       lg: "1064px",
       xl: "1260px",

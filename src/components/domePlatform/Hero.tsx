@@ -36,14 +36,14 @@ export default function Hero() {
         <Image src={`/landingPage/Hero.svg`} alt="brand" fill />
       </div>
       <div className="w-full mt-8 flex justify-center">
-        <p className="w-[60%] text-[24px] text-center">
+        <p className="w-[60%] max-w-[1200px] text-[24px] text-center">
           Dome offers the most complete and comprehensive Data Management
           capabilities to drive your organization to be truly and responsibly
           data driven.
         </p>
       </div>
-      <div className="bg-[#8E8E8E] mt-10 w-full h-[2px]">
-      </div>
+      {/* <div className="bg-[#8E8E8E] mt-10 w-full h-[2px]">
+      </div> */}
     </div>
   );
 }

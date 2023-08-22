@@ -17,7 +17,7 @@ export default function Dashboard() {
       <Navbar />
       <div className="">
         <Hero />
-        <div className="mt-[-3rem]">
+        <div className="mt-[-9rem]">
           <Section1 />
           <Section2 />
           <Section3 />

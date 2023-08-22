@@ -11,11 +11,12 @@ export default function Hero() {
   const router = useRouter();
 
   return (
-    <div className="relative w-[99.5vw] md:mt-[-5rem] xl:mt-[-3rem]">
-      <div className="relative w-full h-[390px]">
+    <div className="w-full flex justify-center -mt-20">
+      <div className="max-w-[1400px]">
+      <div className="relative w-[1220px] h-[390px]">
         <Image src={`/about/bg.svg`} alt="brand" fill />
       </div>
-      {/* <p className="absolute top-6  text-[80px] px-10 text-white font-[900]">On a mission to automate Data Management</p> */}
+      </div>
     </div>
   );
 }

@@ -34,7 +34,7 @@ export default function Section1() {
               {/* <div className="relative w-[50px] h-[50px] cursor-pointer">
                 <Image src={`/landingPage/hand.svg`} alt="brand" fill />
               </div> */}
-              <p className="text-[50px] text-[#4D91FF]">
+              <p className="text-[40px] font-[700] text-[#4D91FF]">
                 Let’s Connect To Learn More!
               </p>
             </div>
@@ -75,11 +75,11 @@ export default function Section1() {
                     name="message"
                   />
                 </div>
-                <div className="flex justify-center items-center">
-                  <div className="w-[67%] mt-4 h-full flex justify-between gap-x-5">
+                <div className="flex w-full justify-center items-center">
+                  <div className="w-[986px] mt-4 h-full flex justify-between gap-x-5">
                     <Checkbox
                       label={
-                        <p className="text-[20px] text-black">
+                        <p className="text-[18px] text-black">
                           I agree to the Privacy Policy and Terms of Service
                         </p>
                       }

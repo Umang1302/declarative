@@ -41,7 +41,7 @@ export default function Footer() {
                onClick={()=>{
                 router.push("/tryitout")
               }}
-              className="hover:scale-105 cursor-pointer">Try Out!</p>
+              className="hover:scale-105 cursor-pointer">Try it Now!</p>
               {/* </div> */}
               {/* <div className="flex mt-3 font-[400] justify-start gap-x-16"> */}
               <p className="hover:scale-105 cursor-pointer">Privacy Policy</p>
