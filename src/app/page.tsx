@@ -22,7 +22,7 @@ export default function Dashboard() {
           <Section2 />
           <Section3 />
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );
