@@ -26,7 +26,7 @@ export default function Section1() {
   };
 
   return (
-    <div className={`w-full ${pathName.includes("tryitout") ? "mt-[1rem]" : "mt-[8rem]"}  pt-[0.6rem] bg-[#F5FAFF] `}>
+    <div className={`w-full sm:px-10 ${pathName.includes("tryitout") ? "mt-[1rem]" : "mt-[8rem]"}  pt-[0.6rem] bg-[#F5FAFF] `}>
       <div className="h-[500px] mt-20 pt-10 w-full">
         <div className="w-full flex justify-center items-center">
           <div className="w-full flex flex-col justify-center">
@@ -86,7 +86,7 @@ export default function Section1() {
                     />
                     <button
                       type="submit"
-                      className="w-[200px] hover:scale-105 h-[50px] px-3 font-[700] rounded-[5px] text-white text-[18px] bg-[#F65A27]"
+                      className="w-[200px] hover:scale-105 sm:h-[55px] lg:h-[50px] px-3 font-[700] rounded-[5px] text-white text-[18px] bg-[#F65A27]"
                     >
                       Schedule a Demo!
                     </button>

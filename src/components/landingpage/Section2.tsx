@@ -58,7 +58,7 @@ export default function Section1() {
         </p>
       </div>
       <div className="flex w-full justify-center">
-        <div className="w-full max-w-[1500px] grid grid-cols-3 gap-x-5 gap-y-6 px-20">
+        <div className="w-full max-w-[1500px] grid sm:grid-col-1 md:grid-col-1 lg:grid-cols-3 gap-x-5 gap-y-6 px-20">
           {data.map((element, index) => (
             <div
               key={`${index}`}

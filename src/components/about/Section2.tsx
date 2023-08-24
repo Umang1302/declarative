@@ -26,12 +26,12 @@ export default function Section1() {
               </div>
               <div className="mt-3">
                 <div className="flex gap-x-10  items-center">
-                  <p className="text-[30px] font-[700]">Bhavin Dave</p>
+                  <p className="text-[36px] font-[700]">Bhavin Dave</p>
                   <div className="relative w-[25px] h-[25px]">
                     <Image src={`/about/linkedIn.svg`} alt="brand" fill />
                   </div>
                 </div>
-                <div className="w-[250px] flex flex-col gap-y-4 mt-5">
+                <div className="w-[250px] text-[18px] flex flex-col gap-y-4 mt-5">
                   <p className="font-[700]">Founder and CEO</p>
                   <p>
                     25+ years experience in Enterprise Data Strategy,

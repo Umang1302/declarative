@@ -15,14 +15,14 @@ export default function Dashboard() {
   return (
     <div className={`w-full ${cabin.className} h-full`}>
       <Navbar />
-      <div className="">
+      <div className="z-40">
         <Hero />
-        <div className="mt-[-3rem]">
+        <div className="sm:mt-[-35rem] lg:mt-[-3rem] ">
           <Section1 />
           <Section2 />
           <Section3 />
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

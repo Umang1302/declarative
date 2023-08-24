@@ -25,7 +25,7 @@ export default function Section1() {
             Security, Privacy, Access, Quality, Lifecycle & other framework
             controls combined with active use of Profile, Metrics and Meta data
             to achieve maximum Observability, Auditability, and Compliance.
-             Organizations in the digital era will require effective Data
+            Organizations in the digital era will require effective Data
             Management tools complementing their investments in Data
             Engineering, ML & AI in order to be truly and responsibly data
             driven.
@@ -33,7 +33,7 @@ export default function Section1() {
         </div>
         <div className="mt-9">
           <p className="text-[36px] font-[700]">Our Mission</p>
-          <p className="text-[16px] text-[#555]">
+          <p className="text-[18px] text-[#555]">
             We are on a mission to automate end to end Data Management and help
             organizations to be truly and responsibly data driven.
           </p>
