@@ -12,7 +12,7 @@ export default function Section1() {
 
   return (
     <div className="w-full flex flex-col mt-[-6rem] justify-center items-center px-3">
-      <p className="sm:w-full lg:w-[75%] text-center sm:text-[18px] lg:text-[24px] px-3">
+      <p className="sm:w-full lg:w-[75%] text-center sm:text-[16px] lg:text-[24px] px-3">
         Complement your Data Engineering and Analytics efforts with the most
         comprehensive end to end Data Management capabilities made available via
         Dome Platform.

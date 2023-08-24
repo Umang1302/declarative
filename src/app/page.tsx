@@ -17,7 +17,7 @@ export default function Dashboard() {
       <Navbar />
       <div className="z-40">
         <Hero />
-        <div className="sm:mt-[-35rem] lg:mt-[-3rem] ">
+        <div className="sm:mt-[-40rem] lg:mt-[-3rem] ">
           <Section1 />
           <Section2 />
           <Section3 />
