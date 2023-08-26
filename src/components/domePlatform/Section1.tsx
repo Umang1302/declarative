@@ -41,11 +41,12 @@ export default function Section1() {
           data product.
         </p>
         <div>
-          <div className="flex justify-center w-full">
-            <div className="relative w-[400px] h-[200px]">
-              <Image src={`/domePlaform/dome.svg`} alt="brand" fill />
-            </div>
-          </div>
+        <div className="w-full mt-5 h-full flex justify-center">
+        <video autoPlay loop muted className="w-[1250px]">
+          <source src="/domePlaform/video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
         </div>
       </div>
     </div>

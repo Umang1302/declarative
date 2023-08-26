@@ -66,7 +66,7 @@ export default function Section1() {
                 index > 2 ? "sm:h-[500px] lg:h-[620px]" : "sm:h-[600px] lg:h-[660px]"
               }`}
             >
-              <div className="relative w-[100%] sm:h-[250px] lg:h-[309.02px] cursor-pointer">
+              <div className="relative w-full flex justify-center sm:h-[250px] lg:h-[309.02px] cursor-pointer">
                 <Image src={`/landingPage/${index + 1}.svg`} alt="brand" fill />
               </div>
               <div className="h-[50%] mt-8">
