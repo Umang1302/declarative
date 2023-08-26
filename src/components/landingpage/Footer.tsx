@@ -70,13 +70,15 @@ export default function Footer() {
               <div>
                 <p className="px-1 py-2">Contact</p>
                 <div className="h-[2px] w-[75px] bg-white ml-1" />
-                <div className="flex justify-start items-center font-[400] mt-4 gap-x-2">
+                <div className="flex hover:scale-105 cursor-pointer justify-start items-center font-[700] mt-4 gap-x-2">
                   <div className="relative w-[18px] h-[18px]">
                     <Image src="/landingPage/mailWhite.svg" alt="brand" fill />
                   </div>
-                  <p>info@declarativedata.com</p>
+                  <a href="mailto:info@declarativedata.com">
+                    <p>info@declarativedata.com</p>
+                  </a>
                 </div>
-                <div className="flex mt-3 font-[400] items-center justify-start gap-x-2">
+                <div className="flex mt-3 font-[700] items-center justify-start gap-x-2">
                   <div className="relative w-[18px] h-[18px]">
                     <Image src="/landingPage/location.svg" alt="brand" fill />
                   </div>
@@ -106,6 +108,7 @@ export default function Footer() {
               onClick={() => {
                 router.push("http://techautocode.com");
               }}
+              className="cursor-pointer hover:scale-105"
             >
               Powered By TechAutoCode
             </p>
