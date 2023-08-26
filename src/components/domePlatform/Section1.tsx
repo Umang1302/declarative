@@ -12,45 +12,45 @@ export default function Section1() {
 
   return (
     <div>
-    <div className="w-full sm:hidden lg:flex justify-center">
-      <div className="max-w-[1200px]">
-        <p className="text-[40px] font-[700]">
-          Getting started with <span className="text-[#4D91FF]">DOME</span>
-        </p>
-        <p className="text-[24px] px-1">
-          It only takes four easy steps to convert your data to a fully managed
-          data product.
-        </p>
-        <div>
-          <div className="mt-8 flex justify-center w-full">
-            <div className="relative w-[1200px] h-[400px]">
-              <Image src={`/domePlaform/dome.svg`} alt="brand" fill />
+      <div className="w-full sm:hidden lg:flex justify-center">
+        <div className="max-w-[1200px]">
+          <p className="text-[40px] font-[700]">
+            Getting started with <span className="text-[#4D91FF]">DOME</span>
+          </p>
+          <p className="text-[24px] px-1">
+            It only takes four easy steps to convert your data to a fully
+            managed data product.
+          </p>
+          <div>
+            <div className="w-full mt-5 h-full flex justify-center">
+              <video autoPlay loop muted className="w-[1250px]">
+                <source src="/domePlaform/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div className="w-full sm:flex lg:hidden justify-center mt-[-28rem]">
-      <div className="flex flex-col justify-center items-center">
-        <p className="text-[30px] font-[700]">
-          Getting started with <span className="text-[#4D91FF]">DOME</span>
-        </p>
-        <p className="text-[16px] px-8">
-          It only takes four easy steps to convert your data to a fully managed
-          data product.
-        </p>
-        <div>
-        <div className="w-full mt-5 h-full flex justify-center">
-        <video autoPlay loop muted className="w-[1250px]">
-          <source src="/domePlaform/video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      <div className="w-full sm:flex lg:hidden justify-center mt-[-28rem]">
+        <div className="flex flex-col justify-center items-center">
+          <p className="text-[30px] font-[700]">
+            Getting started with <span className="text-[#4D91FF]">DOME</span>
+          </p>
+          <p className="text-[16px] px-8">
+            It only takes four easy steps to convert your data to a fully
+            managed data product.
+          </p>
+          <div>
+            <div className="w-full mt-5 h-full flex justify-center">
+              <video autoPlay loop muted className="w-[1250px]">
+                <source src="/domePlaform/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
     </div>
   );
 }
