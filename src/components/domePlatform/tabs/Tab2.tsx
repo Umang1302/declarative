@@ -11,17 +11,31 @@ export default function Hero() {
   const router = useRouter();
 
   return (
-    <div className="w-full flex justify-center roll-out mt-6 px-10">
-      <div className="relative w-[50%] h-[400px]">
-        <Image src={`/landingPage/domePlatform2.svg`} alt="brand" fill />
+    <div>
+      <div className="sm:hidden lg:flex w-full roll-out justify-center gap-x-10 mt-6">
+        <div className="relative w-[50%] h-[400px]">
+          <Image src={`/landingPage/domePlatform2.svg`} alt="brand" fill />
+        </div>
+        <p className="w-[40%] flex justify-start items-center text-[18px]">
+          All features and capabilities in Dome are powered with a deep
+          knowledge graph that maintains information about Products, Attributes,
+          their relationships, as well as all management Intents applied to
+          them. Use Dome&apos;s simple yet highly effective knowledge graph
+          Search to quickly discover data products of interest.
+        </p>
       </div>
-      <p className="w-[50%] flex justify-start items-center text-[18px]">
-        All features and capabilities in Dome are powered with a deep knowledge
-        graph that maintains information about Products, Attributes, their
-        relationships, as well as all management Intents applied to them. Use
-        Dome&apos;s simple yet highly effective knowledge graph Search to
-        quickly discover data products of interest.
-      </p>
+      <div className="sm:visible lg:hidden w-full roll-out flex flex-col justify-center gap-x-10">
+        <div className="relative w-full h-[250px]">
+          <Image src={`/landingPage/domePlatform2.svg`} alt="brand" fill />
+        </div>
+        <p className="w-full mt-5 flex justify-start items-center text-[16px] text-center">
+          All features and capabilities in Dome are powered with a deep
+          knowledge graph that maintains information about Products, Attributes,
+          their relationships, as well as all management Intents applied to
+          them. Use Dome&apos;s simple yet highly effective knowledge graph
+          Search to quickly discover data products of interest.
+        </p>
+      </div>
     </div>
   );
 }

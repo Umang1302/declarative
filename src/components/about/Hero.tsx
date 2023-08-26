@@ -11,12 +11,23 @@ export default function Hero() {
   const router = useRouter();
 
   return (
-    <div className="w-full flex justify-center -mt-20">
+    <div>
+
+    <div className="sm:hidden lg:flex w-full justify-center">
       <div className="max-w-[1450px]">
       <div className="relative w-[1450px] h-[390px]">
         <Image src={`/about/bg.svg`} alt="brand" fill />
       </div>
       </div>
+    </div>
+
+    <div className="sm:visible lg:hidden w-full flex justify-center">
+      <div className="w-full">
+      <div className="relative w-full h-[85px]">
+        <Image src={`/about/bg.svg`} alt="brand" fill />
+      </div>
+      </div>
+    </div>
     </div>
   );
 }

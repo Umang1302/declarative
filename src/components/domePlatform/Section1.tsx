@@ -11,7 +11,8 @@ export default function Section1() {
   const router = useRouter();
 
   return (
-    <div className="w-full flex justify-center">
+    <div>
+    <div className="w-full sm:hidden lg:flex justify-center">
       <div className="max-w-[1200px]">
         <p className="text-[40px] font-[700]">
           Getting started with <span className="text-[#4D91FF]">DOME</span>
@@ -28,6 +29,27 @@ export default function Section1() {
           </div>
         </div>
       </div>
+    </div>
+
+    <div className="w-full sm:flex lg:hidden justify-center mt-[-28rem]">
+      <div className="flex flex-col justify-center items-center">
+        <p className="text-[30px] font-[700]">
+          Getting started with <span className="text-[#4D91FF]">DOME</span>
+        </p>
+        <p className="text-[16px] px-8">
+          It only takes four easy steps to convert your data to a fully managed
+          data product.
+        </p>
+        <div>
+          <div className="flex justify-center w-full">
+            <div className="relative w-[400px] h-[200px]">
+              <Image src={`/domePlaform/dome.svg`} alt="brand" fill />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </div>
   );
 }

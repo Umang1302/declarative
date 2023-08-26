@@ -140,7 +140,7 @@ export default function Navbar() {
           <div
             className={
               "absolute items-center" +
-              (navbarOpen ? "flex flex-col bg-white shadow-lg w-full py-4 px-6 left-0 top-[3rem]" : " hidden")
+              (navbarOpen ? "flex flex-col bg-white shadow-lg w-full py-4 px-6 left-0 top-[5rem]" : " hidden")
             }
             id="example-navbar-danger"
           >

@@ -77,7 +77,15 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     transform: translateY(40px);
     opacity: 0;
   }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
   50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60% {
     transform: translateY(0);
     opacity: 1;
   }

@@ -11,15 +11,27 @@ export default function Hero() {
   const router = useRouter();
 
   return (
-    <div className="w-full roll-out flex justify-center gap-x-10 mt-6">
-      <div className="relative w-[50%] h-[400px]">
-        <Image src={`/landingPage/domePlatform1.svg`} alt="brand" fill />
+    <div>
+      <div className="sm:hidden lg:flex w-full roll-out justify-center gap-x-10 mt-6">
+        <div className="relative w-[50%] h-[400px]">
+          <Image src={`/landingPage/domePlatform1.svg`} alt="brand" fill />
+        </div>
+        <p className="w-[40%] flex justify-start items-center text-[18px]">
+          Leverage comprehensive library of Dome connectors to integrate with
+          your on-prem or on-cloud data sources. Dome connects with most
+          Databases, Cloud Storage systems, Data Warehouses and Data Lakes.
+        </p>
       </div>
-      <p className="w-[40%] flex justify-start items-center text-[18px]">
-        Leverage comprehensive library of Dome connectors to integrate with your
-        on-prem or on-cloud data sources. Dome connects with most Databases,
-        Cloud Storage systems, Data Warehouses and Data Lakes.
-      </p>
+      <div className="sm:visible lg:hidden w-full roll-out flex flex-col justify-center gap-x-10">
+        <div className="relative w-full h-[250px]">
+          <Image src={`/landingPage/domePlatform1.svg`} alt="brand" fill />
+        </div>
+        <p className="w-full flex justify-start items-center text-[16px] text-center">
+          Leverage comprehensive library of Dome connectors to integrate with
+          your on-prem or on-cloud data sources. Dome connects with most
+          Databases, Cloud Storage systems, Data Warehouses and Data Lakes.
+        </p>
+      </div>
     </div>
   );
 }

@@ -45,7 +45,8 @@ export default function Hero() {
   ];
 
   return (
-    <div className="w-[1200px] flex justify-center roll-out gap-x-10 mt-6">
+    <div>
+    <div className="w-[1200px] sm:hidden lg:flex justify-center roll-out gap-x-10 mt-6">
       <div className="flex w-full">
         <div className="w-full grid grid-cols-3 gap-x-5 gap-y-6 px-20">
           {data.map((element, index) => (
@@ -68,6 +69,32 @@ export default function Hero() {
           ))}
         </div>
       </div>
+    </div>
+
+    <div className="w-full flex justify-center roll-out gap-x-10 mt-6">
+      <div className="flex w-full">
+        <div className="w-full grid grid-cols-1 gap-y-6 px-6">
+          {data.map((element, index) => (
+            <div
+              key={`${index}`}
+              className="rounded-[10px] h-[500px] landingBox"
+            >
+              <div className="relative w-[100%] h-[200.02px] cursor-pointer">
+                <Image src={`/domePlaform/${index + 1}.svg`} alt="brand" fill />
+              </div>
+              <div className="h-[50%] mt-2">
+                <div className="flex justify-center text-[16px] font-[700] h-[10%]">
+                  {element.heading}
+                </div>
+                <div className="px-10 mt-5 text-[16px] text-[#555] h-[60%]">
+                  {element.content}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
     </div>
   );
 }

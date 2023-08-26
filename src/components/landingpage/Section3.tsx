@@ -26,7 +26,7 @@ export default function Section1() {
   };
 
   return (
-    <div className={`w-full sm:px-10 ${pathName.includes("tryitout") ? "lg:mt-[1rem]" : "sm:mt-[2rem] lg:mt-[8rem]"}  pt-[0.6rem] bg-[#F5FAFF] `}>
+    <div className={`w-full sm:px-10 ${pathName.includes("tryitout") ? "lg:mt-[1rem] sm:mt-[5rem]" : "sm:mt-[2rem] lg:mt-[8rem]"}  pt-[0.6rem] bg-[#F5FAFF] `}>
       <div className="h-[500px] lg:mt-20 pt-10 w-full">
         <div className="w-full flex justify-center items-center">
           <div className="w-full flex flex-col justify-center">

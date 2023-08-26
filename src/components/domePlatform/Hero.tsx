@@ -32,11 +32,11 @@ export default function Hero() {
 
   return (
     <div className="relative h-[800px] overflow-hidden">
-      <div className="relative w-[100%] h-[450px] cursor-pointer">
+      <div className="relative w-[100%] sm:h-[200px] lg:h-[450px] cursor-pointer">
         <Image src={`/landingPage/Hero.svg`} alt="brand" fill />
       </div>
       <div className="w-full mt-8 flex justify-center">
-        <p className="w-[60%] max-w-[1200px] text-[24px] text-center">
+        <p className="sm:w-full sm:px-4 sm:text-[16px] lg:w-[60%] max-w-[1200px] text-[24px] text-center">
           Dome offers the most complete and comprehensive Data Management
           capabilities to drive your organization to be truly and responsibly
           data driven.

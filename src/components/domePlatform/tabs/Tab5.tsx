@@ -4,6 +4,7 @@ import { Cabin } from "next/font/google";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import useStateRef from "react-usestateref";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -62,7 +63,7 @@ export default function Hero() {
     },
   ];
 
-  const [active, setActive] = useState(0);
+  const [active, setActive,activeRef] = useStateRef(0);
 
   const handleSlideRight = (active: any) => {
     let index: any;
@@ -86,8 +87,25 @@ export default function Hero() {
     setActive(index);
   };
 
+  useEffect(() => {
+    console.log("HHHHHHHHH");
+    const i = setInterval(() => {
+      let index = activeRef.current;
+      if (index > 6) {
+        index = 0;
+      } else {
+        index = activeRef.current + 1;
+      }
+      console.log(index);
+      setActive(index);
+    }, 2000);
+
+    return () => clearInterval(i);
+  }, []);
+
   return (
-    <div className="w-full roll-out flex justify-center mt-6">
+    <div>
+    <div className="sm:hidden lg:flex w-full roll-out justify-center mt-6">
       <div className="w-[50%] px-16 flex gap-x-6 items-center">
         <button
           onClick={() => {
@@ -117,6 +135,40 @@ export default function Hero() {
           <Image src={`/domePlaform/8.svg`} alt="brand" fill />
         </div>
       </div>
+    </div>
+
+    <div className="w-full roll-out flex flex-col justify-center mt-6">
+      <div className="w-full h-[400px] flex gap-x-6 items-center">
+        <button
+          onClick={() => {
+            handleSlideLeft(activeRef.current);
+          }}
+        >
+          <div className="relative w-[20px] h-[20px]">
+            <Image src={`/domePlaform/left.svg`} alt="brand" fill />
+          </div>
+        </button>
+        <div className="px-6">
+          <p className="text-[36px] font-[700]">{data[active].heading}</p>
+          <p className="text-[18px] mt-5">{data[active].content}</p>
+        </div>
+        <button
+          onClick={() => {
+            handleSlideRight(activeRef.current);
+          }}
+        >
+          <div className="relative w-[20px] h-[20px]">
+            <Image src={`/domePlaform/right.svg`} alt="brand" fill />
+          </div>
+        </button>
+      </div>
+      <div className="flex w-full px-3 justify-center">
+        <div className="relative w-full h-[400px]">
+          <Image src={`/domePlaform/8.svg`} alt="brand" fill />
+        </div>
+      </div>
+    </div>
+
     </div>
   );
 }
