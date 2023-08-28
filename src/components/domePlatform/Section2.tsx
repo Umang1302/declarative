@@ -145,7 +145,7 @@ export default function Section1() {
               </button>
             </div>
           </div>
-          <div className="w-full px-6 py-4">{tab[active].component}</div>
+          <div className="w-full md:px-16 lg:px-6 py-4">{tab[active].component}</div>
         </div>
       </div>
     </div>

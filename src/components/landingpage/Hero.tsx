@@ -63,7 +63,7 @@ export default function Hero() {
         </video>
       </div>
 
-      <div className="relative flex items-center justify-center h-[800px] overflow-hidden">
+      <div className="sm:visible lg:hidden relative flex items-center justify-center h-[800px] overflow-hidden">
         <div className="relative  z-30  sm:mt-[-35rem] lg:mt-[-18rem] -mt-[8rem] 2xl:mt-[-19rem] rounded-xl flex flex-col justify-center items-center">
           <p className="sm:text-[30px] sm:px-4 sm:text-center lg:text-[40px] 2xl:text-[60px] text-[72px] font-[700] sm:leading-9">
             Manage your Data assets with ease at scale

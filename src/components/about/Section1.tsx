@@ -49,7 +49,7 @@ export default function Section1() {
       <div className="relative w-full h-[520px]">
         <Image src={`/about/1.svg`} alt="brand" fill />
       </div>
-      <div className="w-full flex flex-col px-5 justify-start items-center mt-[-4rem]">
+      <div className="w-full flex flex-col px-5 justify-start md:px-16 items-center md:mt-[4rem] lg:mt-[-4rem]">
         <div>
           <p className="text-[30px] font-[700]">Our Belief</p>
           <p className="text-[16px] text-[#555]">
