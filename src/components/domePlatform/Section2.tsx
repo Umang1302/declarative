@@ -105,8 +105,8 @@ export default function Section1() {
         className={`mb-4 sm:visible lg:hidden justify-center mt-[5rem] w-full ${cabin.className}`}
       >
         <div className="max-w-[1200px]">
-          <div className="w-full flex justify-center items-center mb-6">
-            <p className="text-[40px] font-[700]">
+          <div className="w-full flex justify-center items-center mb-3">
+            <p className="text-[30px] font-[700]">
               DOME <span className="text-[#4D91FF]">Capabilities</span>
             </p>
           </div>

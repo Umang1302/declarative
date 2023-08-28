@@ -26,7 +26,7 @@ export default function Section1() {
   };
 
   return (
-    <div className={`w-full sm:px-10 ${pathName.includes("tryitout") ? "lg:mt-[1rem] sm:mt-[5rem]" : "sm:mt-[2rem] lg:mt-[8rem]"}  pt-[0.6rem] bg-[#F5FAFF] `}>
+    <div className={`w-full sm:px-3 ${pathName.includes("tryitout") ? "lg:mt-[1rem] sm:mt-[5rem]" : "sm:mt-[2rem] lg:mt-[8rem]"}  pt-[0.6rem] bg-[#F5FAFF] `}>
       <div className="h-[500px] lg:mt-20 pt-10 w-full">
         <div className="w-full flex justify-center items-center">
           <div className="w-full flex flex-col justify-center">
@@ -34,36 +34,36 @@ export default function Section1() {
               {/* <div className="relative w-[50px] h-[50px] cursor-pointer">
                 <Image src={`/landingPage/hand.svg`} alt="brand" fill />
               </div> */}
-              <p className="sm:text-[30px] lg:text-[40px] font-[700] text-[#4D91FF]">
+              <p className="sm:text-[30px] sm:px-10 sm:text-center lg:text-[40px] font-[700] text-[#4D91FF]">
                 Let’s Connect To Learn More!
               </p>
             </div>
-            <div className="mt-8">
+            <div className="mt-8 px-10">
               <form ref={form} onSubmit={sendEmail}>
-                <div className="flex justify-center gap-x-5">
+                <div className="lg:flex justify-center gap-x-5">
                   <input
-                    className="sm:w-[200px] sm:h-[30px] sm:px-2 text-[12px] lg:w-[480px] lg:px-3 lg:py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
+                    className="sm:w-full sm:h-[30px] sm:px-2 text-[12px] lg:w-[480px] lg:px-3 lg:py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
                     placeholder="Name"
                     type="text"
                     name="name"
                   />
                   <input
-                    className="sm:w-[200px] sm:h-[30px] sm:px-2 text-[12px] lg:w-[480px] lg:px-3 lg:py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
+                    className="sm:w-full sm:mt-3 lg:mt-0 sm:h-[30px] sm:px-2 text-[12px] lg:w-[480px] lg:px-3 lg:py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
                     placeholder="name@company.com"
                     type="text"
                     name="email"
                   />
                 </div>
-                <div className="flex mt-5 justify-center gap-x-5">
+                <div className="lg:flex mt-3 justify-center gap-x-5">
                   <input
-                    className="sm:w-[200px] sm:h-[30px] sm:px-2 text-[12px] lg:w-[480px] lg:px-3 lg:py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
+                    className="sm:w-full sm:h-[30px] sm:px-2 text-[12px] lg:w-[480px] lg:px-3 lg:py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
 
                     placeholder="Phone"
                     type="text"
                     name="mobile_no"
                   />
                   <input
-                    className="sm:w-[200px] sm:h-[30px] sm:px-2 text-[12px] lg:w-[480px] lg:px-3 lg:py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
+                    className="sm:w-full sm:mt-3 lg:mt-0  sm:h-[30px] sm:px-2 text-[12px] lg:w-[480px] lg:px-3 lg:py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
                     placeholder="Company"
                     type="text"
                     name="company"
@@ -77,7 +77,7 @@ export default function Section1() {
                   />
                 </div>
                 <div className="flex w-full justify-center items-center">
-                  <div className="w-[986px] mt-4 h-full flex justify-between gap-x-5">
+                  <div className="w-[986px] mt-4 h-full flex sm:flex-col lg:flex-row sm:justify-center sm:items-center lg:justify-between gap-x-5">
                     <Checkbox
                       label={
                         <p className="sm:text-[12px] lg:text-[18px] text-black">
@@ -87,7 +87,7 @@ export default function Section1() {
                     />
                     <button
                       type="submit"
-                      className="sm:w-[150px] sm:text-[12px] lg:w-[200px] hover:scale-105 sm:h-[40px] lg:h-[50px] px-3 font-[700] rounded-[5px] text-white text-[18px] bg-[#F65A27]"
+                      className="sm:w-[150px] sm:text-[12px] lg:w-[200px] hover:scale-105 sm:h-[40px] lg:h-[50px] px-3 font-[700] rounded-[5px] text-white lg:text-[18px] bg-[#F65A27]"
                     >
                       Schedule a Demo!
                     </button>
@@ -98,8 +98,8 @@ export default function Section1() {
           </div>
         </div>
       </div>
-      <div className="w-full">
-        <div className="relative w-full h-[250px]">
+      <div className="w-full sm:mt-[8rem]">
+        <div className="relative w-full sm:h-[100px] lg:h-[250px]">
           <Image src={`/landingPage/design1.svg`} alt="brand" fill />
         </div>
       </div>

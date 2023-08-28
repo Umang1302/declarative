@@ -37,7 +37,7 @@ export default function Section1() {
           <p className="text-[30px] font-[700]">
             Getting started with <span className="text-[#4D91FF]">DOME</span>
           </p>
-          <p className="text-[16px] px-8">
+          <p className="text-center text-[16px] px-8">
             It only takes four easy steps to convert your data to a fully
             managed data product.
           </p>

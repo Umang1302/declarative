@@ -98,7 +98,7 @@ export default function Hero() {
       }
       console.log(index);
       setActive(index);
-    }, 2000);
+    }, 8000);
 
     return () => clearInterval(i);
   }, []);
@@ -149,8 +149,8 @@ export default function Hero() {
           </div>
         </button>
         <div className="px-6">
-          <p className="text-[36px] font-[700]">{data[active].heading}</p>
-          <p className="text-[18px] mt-5">{data[active].content}</p>
+          <p className="text-center text-[36px] font-[700]">{data[active].heading}</p>
+          <p className="text-center text-[18px] mt-5">{data[active].content}</p>
         </div>
         <button
           onClick={() => {
@@ -162,7 +162,7 @@ export default function Hero() {
           </div>
         </button>
       </div>
-      <div className="flex w-full px-3 justify-center">
+      <div className="flex mt-[-2rem] w-full px-3 justify-center">
         <div className="relative w-full h-[400px]">
           <Image src={`/domePlaform/8.svg`} alt="brand" fill />
         </div>

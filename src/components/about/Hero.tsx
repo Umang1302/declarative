@@ -13,18 +13,18 @@ export default function Hero() {
   return (
     <div>
 
-    <div className="sm:hidden lg:flex w-full justify-center">
-      <div className="max-w-[1450px]">
-      <div className="relative w-[1450px] h-[390px]">
+    <div className="sm:hidden lg:flex w-full mt-[-3rem]">
+      <div className="max-w-[1460px]">
+      <div className="relative w-[1468px] h-[400px]">
         <Image src={`/about/bg.svg`} alt="brand" fill />
       </div>
       </div>
     </div>
 
-    <div className="sm:visible lg:hidden w-full flex justify-center">
-      <div className="w-full">
-      <div className="relative w-full h-[85px]">
-        <Image src={`/about/bg.svg`} alt="brand" fill />
+    <div className="sm:visible lg:hidden w-full">
+      <div className="w-full mt-[-2.3rem]">
+      <div className="relative w-[400px] h-[180px]">
+        <Image src={`/about/mobBg.svg`} alt="brand" fill />
       </div>
       </div>
     </div>

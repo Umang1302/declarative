@@ -44,12 +44,12 @@ export default function Section1() {
     </div>
 
 
-    <div className="sm:visible lg:hidden w-full flex justify-center gap-x-10 mt-[1rem]">
+    <div className="sm:visible lg:hidden w-full flex justify-center gap-x-10 mt-[-6rem]">
      <div className="w-full flex flex-col">
       <div className="relative w-full h-[520px]">
         <Image src={`/about/1.svg`} alt="brand" fill />
       </div>
-      <div className="w-full flex flex-col px-5 justify-start items-center">
+      <div className="w-full flex flex-col px-5 justify-start items-center mt-[-4rem]">
         <div>
           <p className="text-[30px] font-[700]">Our Belief</p>
           <p className="text-[16px] text-[#555]">
