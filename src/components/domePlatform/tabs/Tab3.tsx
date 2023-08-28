@@ -71,9 +71,9 @@ export default function Hero() {
       </div>
     </div>
 
-    <div className="w-full flex justify-center roll-out gap-x-10 mt-6">
+    <div className="sm:visible lg:hidden w-full flex justify-center roll-out gap-x-10 mt-6">
       <div className="flex w-full">
-        <div className="w-full grid grid-cols-1 gap-y-6 px-6">
+        <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-6 gap-y-6 px-6">
           {data.map((element, index) => (
             <div
               key={`${index}`}
