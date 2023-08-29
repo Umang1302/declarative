@@ -53,7 +53,7 @@ export default function Navbar() {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:mx-auto">
               <li className="nav-item">
-                <a className="px-3 py-2 flex items-center text-[14px]  font-bold leading-snug hover:opacity-75">
+                <a className="px-3 py-2 flex items-center font-[700] text-[14px] leading-snug hover:opacity-75">
                   <p
                     onClick={() => {
                       router.push("/");

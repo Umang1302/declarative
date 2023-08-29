@@ -225,7 +225,7 @@ export default function Navbar() {
         >
           <Image src="/Logo3.svg" alt="brand" fill />
         </div>
-        <div className="flex text-[18px] justify-around items-center gap-x-16">
+        <div className="flex text-[18px] font-[700] justify-around items-center gap-x-16">
           <p
             onClick={() => {
               router.push("/");
