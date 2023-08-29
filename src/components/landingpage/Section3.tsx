@@ -26,7 +26,13 @@ export default function Section1() {
   };
 
   return (
-    <div className={`w-full sm:px-3 ${pathName.includes("tryitout") ? "lg:mt-[1rem] sm:mt-[5rem]" : "sm:mt-[2rem] lg:mt-[8rem]"}  pt-[0.6rem] bg-[#F5FAFF] `}>
+    <div
+      className={`w-full sm:px-3 ${
+        pathName.includes("tryitout")
+          ? "lg:mt-[1rem] sm:mt-[5rem]"
+          : "sm:mt-[2rem] lg:mt-[8rem]"
+      }  pt-[0.6rem] bg-[#F5FAFF] `}
+    >
       <div className="h-[500px] lg:mt-20 pt-10 w-full">
         <div className="w-full flex justify-center items-center">
           <div className="w-full flex flex-col justify-center">
@@ -57,7 +63,6 @@ export default function Section1() {
                 <div className="lg:flex mt-3 justify-center gap-x-5">
                   <input
                     className="sm:w-full sm:h-[30px] sm:px-2 text-[12px] lg:w-[480px] lg:px-3 lg:py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
-
                     placeholder="Phone"
                     type="text"
                     name="mobile_no"
@@ -78,16 +83,18 @@ export default function Section1() {
                 </div>
                 <div className="flex w-full justify-center items-center">
                   <div className="w-[986px] mt-4 h-full flex sm:flex-col lg:flex-row sm:justify-center sm:items-center lg:justify-between gap-x-5">
-                    <Checkbox
-                      label={
-                        <p className="sm:text-[12px] lg:text-[18px] text-black">
-                          I agree to the Privacy Policy and Terms of Service
-                        </p>
-                      }
-                    />
+                    <div className="sm:flex sm:justify-center sm:items-center sm:text-center sm:px-7 lg:px-0">
+                      <Checkbox
+                        label={
+                          <p className="sm:text-[12px] lg:text-[18px] text-black">
+                            I agree to the Privacy Policy <br className="sm:visible lg:hidden"/>and Terms of Service
+                          </p>
+                        }
+                      />
+                    </div>
                     <button
                       type="submit"
-                      className="sm:w-[150px] sm:text-[12px] lg:w-[200px] hover:scale-105 sm:h-[40px] lg:h-[50px] px-3 font-[700] rounded-[5px] text-white lg:text-[18px] bg-[#F65A27]"
+                      className="sm:w-[150px] sm:mt-4 sm:text-[12px] lg:w-[200px] hover:scale-105 sm:h-[40px] lg:h-[50px] px-3 font-[700] rounded-[5px] text-white lg:text-[18px] bg-[#F65A27]"
                     >
                       Schedule a Demo!
                     </button>

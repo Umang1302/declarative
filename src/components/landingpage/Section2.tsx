@@ -63,7 +63,7 @@ export default function Section1() {
             <div
               key={`${index}`}
               className={`rounded-[10px]  landingBox ${
-                index > 2 ? "sm:h-[500px] md:h-[550px] lg:h-[620px]" : "sm:h-[600px]  md:h-[550px] lg:h-[660px]"
+                index > 2 ? "sm:h-[525px] md:h-[550px] lg:h-[620px]" : "sm:h-[600px]  md:h-[550px] lg:h-[660px]"
               }`}
             >
               <div className="w-full">

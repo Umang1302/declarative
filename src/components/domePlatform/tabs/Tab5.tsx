@@ -137,7 +137,7 @@ export default function Hero() {
       </div>
     </div>
 
-    <div className="w-full roll-out flex flex-col justify-center mt-6">
+    <div className="sm:visible lg:hidden w-full roll-out flex flex-col justify-center mt-6">
       <div className="w-full h-[400px] flex gap-x-6 items-center">
         <button
           onClick={() => {
