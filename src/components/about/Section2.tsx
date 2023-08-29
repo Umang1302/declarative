@@ -82,7 +82,7 @@ export default function Section1() {
     </div>
 
     <div
-      className={`md:visible lg:hidden mb-[5rem] mt-[5rem] pr-1 w-full justify-center ${cabin.className}`}
+      className={`sm:hidden md:visible lg:hidden mb-[5rem] mt-[5rem] pr-1 w-full justify-center ${cabin.className}`}
     >
       <div className="max-w-[1450px] w-[800px] flex justify-center">
         <div className="landingBox px-10 py-5">

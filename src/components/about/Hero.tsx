@@ -28,7 +28,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="md:visible lg:hidden w-full mb-[8rem]">
+      <div className="sm:hidden md:visible lg:hidden w-full mb-[8rem]">
         <div className="max-w-[1760px]">
           <div className="relative w-[820px] h-[180px]">
             <Image src={`/about/bg.svg`} alt="brand" fill />
