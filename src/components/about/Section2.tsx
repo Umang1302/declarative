@@ -17,7 +17,7 @@ export default function Section1() {
     >
       <div className="max-w-[1450px] min-w-[1400px]">
         <div className="landingBox px-10 py-5">
-          <p className="border-[#8E8E8E] border-b-[2px] py-3 text-[36px] font-[700]">
+          <p className="border-[#8E8E8E] border-b-[1px] py-3 text-[36px] font-[700]">
             Meet the Leadership team
           </p>
           <div className="mt-6">
@@ -25,14 +25,14 @@ export default function Section1() {
               <div className="relative w-[200px] h-[200px]">
                 <Image src={`/about/chess.svg`} alt="brand" fill />
               </div>
-              <div className="mt-3">
+              <div className="">
                 <div className="flex gap-x-10  items-center">
                   <p className="text-[36px] font-[700]">Bhavin Dave</p>
                   <div className="relative w-[25px] h-[25px]">
                     <Image src={`/about/linkedIn.svg`} alt="brand" fill />
                   </div>
                 </div>
-                <div className="w-[250px] text-[18px] flex flex-col gap-y-4 mt-5">
+                <div className="lg:w-[300px] text-[18px] flex flex-col gap-y-4 mt-5">
                   <p className="font-[700]">Founder and CEO</p>
                   <p>
                     25+ years experience in Enterprise Data Strategy,
@@ -67,7 +67,7 @@ export default function Section1() {
                     <Image src={`/about/linkedIn.svg`} alt="brand" fill />
                   </div>
                 </div>
-                <div className="w-[250px] text-[12px] flex flex-col gap-y-2 mt-3">
+                <div className="w-[200px] text-[12px] flex flex-col gap-y-2 mt-3">
                   <p className="font-[700]">Founder and CEO</p>
                   <p>
                     25+ years experience in Enterprise Data Strategy,

@@ -13,8 +13,8 @@ export default function Hero() {
   return (
     <div>
       <div className="sm:hidden lg:flex w-full roll-out justify-center gap-x-10 mt-6">
-        <div className="relative w-[50%] h-[400px]">
-          <Image src={`/landingPage/domePlatform1.svg`} alt="brand" fill />
+        <div className="relative w-[50%] h-[300px] border-2 rounded-lg">
+          <Image src={`/landingPage/domePlatform1.png`} alt="brand" fill />
         </div>
         <p className="w-[40%] flex justify-start items-center text-[18px]">
           Leverage comprehensive library of Dome connectors to integrate with

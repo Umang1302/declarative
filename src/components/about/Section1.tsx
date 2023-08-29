@@ -43,8 +43,7 @@ export default function Section1() {
      </div>
     </div>
 
-
-    <div className="sm:visible lg:hidden w-full flex justify-center gap-x-10 mt-[-6rem]">
+    <div className="sm:visible md:hidden w-full flex justify-center gap-x-10 mt-[-6rem]">
      <div className="w-full flex flex-col">
       <div className="relative w-full h-[520px]">
         <Image src={`/about/1.svg`} alt="brand" fill />
@@ -74,6 +73,38 @@ export default function Section1() {
       </div>
      </div>
     </div>
+
+    <div className="sm:hidden md:flex lg:hidden w-full justify-center gap-x-10 mt-[-6rem] mb-4">
+     <div className="w-full flex flex-col">
+      <div className="relative w-full h-[520px]">
+        <Image src={`/about/1.svg`} alt="brand" fill />
+      </div>
+      <div className="w-full flex flex-col px-5 justify-start md:px-16 items-center md:mt-[4rem] lg:mt-[-4rem]">
+        <div>
+          <p className="text-[30px] font-[700]">Our Belief</p>
+          <p className="text-[16px] text-[#555]">
+            Effective Data Management extends beyond Data Engineering,
+            Analytics, and Operations. It includes proactive application of
+            Security, Privacy, Access, Quality, Lifecycle & other framework
+            controls combined with active use of Profile, Metrics and Meta data
+            to achieve maximum Observability, Auditability, and Compliance.
+            Organizations in the digital era will require effective Data
+            Management tools complementing their investments in Data
+            Engineering, ML & AI in order to be truly and responsibly data
+            driven.
+          </p>
+        </div>
+        <div className="mt-9">
+          <p className="text-[30px] font-[700]">Our Mission</p>
+          <p className="text-[16px] text-[#555]">
+            We are on a mission to automate end to end Data Management and help
+            organizations to be truly and responsibly data driven.
+          </p>
+        </div>
+      </div>
+     </div>
+    </div>
+
     </div>
   );
 }
