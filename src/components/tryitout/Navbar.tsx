@@ -193,7 +193,7 @@ export default function Navbar() {
                   </p>
                 </a>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <div className="px-3 py-2 flex items-center text-[14px]  font-bold leading-snug hover:opacity-75">
                   <div className="flex gap-x-1 justify-center hover:text-[#F65A27] items-center">
                     <div
@@ -209,7 +209,7 @@ export default function Navbar() {
                     </a>
                   </div>
                 </div>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
