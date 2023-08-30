@@ -5,15 +5,6 @@ import React, { useEffect } from "react";
 import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });
 
-export const metadata = {
-  icons: {
-    icon: 'https://cdn.onlinewebfonts.com/svg/img_174089.png',
-    shortcut: './icon.svg',
-    apple: 'https://cdn.onlinewebfonts.com/svg/img_174089.png',
-  },
-}
-
-
 export default function Landingpage({
   children,
 }: {
