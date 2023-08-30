@@ -7,9 +7,9 @@ const cabin = Cabin({ subsets: ["latin"] });
 
 export const metadata = {
   icons: {
-    icon: './icon.svg',
+    icon: 'https://cdn.onlinewebfonts.com/svg/img_174089.png',
     shortcut: './icon.svg',
-    apple: './apple-icon.png',
+    apple: 'https://cdn.onlinewebfonts.com/svg/img_174089.png',
   },
 }
 
