@@ -108,6 +108,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .change-text{
-  animation: 3s changeText;
+  animation: 2s changeText;
   animation-iteration-count: infinite;
 }

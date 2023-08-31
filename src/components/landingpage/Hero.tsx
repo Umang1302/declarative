@@ -32,7 +32,7 @@ export default function Hero() {
       }
       console.log(index);
       setWord(index);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(i);
   }, []);
 
