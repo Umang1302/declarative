@@ -66,6 +66,7 @@ export default function Hero() {
           autoPlay
           loop
           muted
+          controls
           className="absolute sm:top-[-18rem] lg:top-[-6rem] xl:top-[-6rem] 2xl:top-[-5.5rem] 3xl:top-0 z-10 w-[150vw] h-[700px]"
         >
           <source src="/landingPage/Homevideo-Comp.mp4" type="video/mp4" />
