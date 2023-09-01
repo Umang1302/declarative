@@ -68,12 +68,22 @@ export default function Hero() {
           <p className="sm:text-[16px] text-center lg:text-[24px] sm:mt-4 lg:mt-10">
             <p className="flex w-full justify-center">
               Convert your data into{" "}
-              <span className={`lg:mx-2 change-text flex justify-center font-[700] animate-pulse duration-1000 sm:w-[100px] lg:w-[130px] lg:px-2 ${wordRef.current%2===0 ? "text-[#F65A27]":"text-[#4D91FF]"}`}>
+              <span
+                className={`lg:mx-2 change-text flex justify-center font-[700] animate-pulse sm:w-[100px] lg:w-[130px] lg:px-2 ${
+                  wordRef.current % 2 === 0
+                    ? "text-[#F65A27]"
+                    : "text-[#4D91FF]"
+                }`}
+              >
                 {array[wordRef.current]}{" "}
               </span>
-            <p className="sm:visible lg:flex">Business aligned Data Products in minutes.</p>
+              <p className="sm:hidden lg:flex">
+                Business aligned Data Products in minutes.
+              </p>
             </p>
-            <p className="sm:hidden lg:visible">Business aligned Data Products in minutes.</p>
+            <p className="sm:visible lg:hidden">
+              Business aligned Data Products in minutes.
+            </p>
           </p>
         </div>
         <video
