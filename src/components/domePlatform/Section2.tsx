@@ -85,7 +85,7 @@ export default function Section1() {
                   onClick={() => {
                     setActive(index);
                   }}
-                  className={`cursor-pointer flex justify-center text-[16px] py-3 ${
+                  className={`cursor-pointer flex justify-center text-[18px] py-3 ${
                     active === index
                       ? "border-b-[4px] rounded-[2px] border-[#F65A27] font-[700]"
                       : ""

@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import React, { useRef } from "react";
 import { Checkbox, Textarea } from "@material-tailwind/react";
 import emailjs from "@emailjs/browser";
+import useStateRef from "react-usestateref";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -13,16 +14,23 @@ export default function Section1() {
   const router = useRouter();
   const pathName = usePathname();
   const form: any = useRef();
+  const [checkBox,setCheckbox,checkboxRef] = useStateRef<any>();
 
   const sendEmail = (e: any) => {
     e.preventDefault();
     console.log(form.current);
-    // emailjs.sendForm('service_uwqinqk', 'template_dxleovb', form.current, 'K0oNsfyBvmdFKi_eT')
-    //   .then((result) => {
-    //       console.log(result.text);
-    //   }, (error) => {
-    //       console.log(error.text);
-    //   });
+    if(checkboxRef.current){
+
+      // emailjs.sendForm('service_uwqinqk', 'template_dxleovb', form.current, 'K0oNsfyBvmdFKi_eT')
+      emailjs.sendForm('service_y6qyhn8', 'template_rlwaszn', form.current, 'uRwDSIn_nqwruC9pJ')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    }else{
+      alert("Please check the terms and condition");
+    }
   };
 
   return (
@@ -52,26 +60,30 @@ export default function Section1() {
                     placeholder="Name"
                     type="text"
                     name="name"
+                    required
                   />
                   <input
                     className="sm:w-full sm:mt-3 lg:mt-0 sm:h-[30px] sm:px-2 text-[12px] lg:w-[480px] lg:px-3 lg:py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
                     placeholder="name@company.com"
-                    type="text"
+                    type="email"
                     name="email"
+                    required
                   />
                 </div>
                 <div className="lg:flex mt-3 justify-center gap-x-5">
                   <input
                     className="sm:w-full sm:h-[30px] sm:px-2 text-[12px] lg:w-[480px] lg:px-3 lg:py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
                     placeholder="Phone"
-                    type="text"
+                    type="number"
                     name="mobile_no"
+                    required
                   />
                   <input
                     className="sm:w-full sm:mt-3 lg:mt-0  sm:h-[30px] sm:px-2 text-[12px] lg:w-[480px] lg:px-3 lg:py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
                     placeholder="Company"
                     type="text"
                     name="company"
+                    required
                   />
                 </div>
                 <div className="mt-5 flex justify-center">
@@ -79,12 +91,17 @@ export default function Section1() {
                     placeholder="Message"
                     className="sm:w-[400px] md:w-[900px] sm:h-[200px] sm:text-[12px] lg:w-[986px] lg:h-[150px] px-3 py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
                     name="message"
+                    required
                   />
                 </div>
                 <div className="flex w-full justify-center items-center">
                   <div className="w-[986px] mt-4 h-full flex sm:flex-col lg:flex-row sm:justify-center sm:items-center lg:justify-between gap-x-5">
                     <div className="sm:flex sm:justify-center sm:items-center sm:text-center sm:px-7 lg:px-0">
                       <Checkbox
+                        checked={checkboxRef.current}
+                        onChange={(check)=>{
+                           setCheckbox(check);
+                        }}
                         label={
                           <p className="sm:text-[12px] lg:text-[18px] text-black">
                             I agree to the Privacy Policy <br className="sm:visible lg:hidden"/>and Terms of Service

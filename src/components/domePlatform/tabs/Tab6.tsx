@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="relative w-[50%] h-[400px]">
           <Image src={`/domePlaform/9.svg`} alt="brand" fill />
         </div>
-        <p className="w-[40%] flex justify-start items-center text-[18px]">
+        <p className="w-[40%] flex justify-start items-center text-[#555] text-[18px]">
           Search, observe, review, and manage fully featured Products through
           Dome&apos;s Data Product Marketplace. Collaborate efficiently with
           users and evolve your Products with agility
@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="relative w-full h-[250px]">
           <Image src={`/domePlaform/9.svg`} alt="brand" fill />
         </div>
-        <p className="w-full flex justify-start items-center text-[16px] text-center">
+        <p className="w-full flex justify-start items-center text-[#555] text-[16px] text-center">
           Search, observe, review, and manage fully featured Products through
           Dome&apos;s Data Product Marketplace. Collaborate efficiently with
           users and evolve your Products with agility

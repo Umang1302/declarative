@@ -20,23 +20,18 @@ export default function Hero() {
     },
     {
       heading: "Rule Intent",
-      content: `With declarative, defining rules to check quality of
-    your data product is no longer the sole responsibility of owner.
-    Everyone using the product can easily define new rules. You spot
-    an issue, you declare a new rule. It’s that simple.`,
+      content: `With dome, defining rules to check quality of your data product is no longer a sole responsibility of the owner. Everyone using the product can easily define new rules. You spot an issue, you declare a new rule. It’s that simple
+      `,
     },
     {
       heading: "Profile Intent",
-      content: `Declarative computes deep profile for each Data
-    Product. The profile itself is stored inline with Data making it
-    possible for you to review profiles on a Daily basis, for a Time
-    series, or for the entire Product.`,
+      content: `Dome computes a deep profile for each Data Product. The profile itself is stored inline with Data making it possible for you to review profiles on a Daily basis, for a Time series, or for the entire Product 
+      `,
     },
     {
       heading: "Security & Privacy Intent",
-      content: `Declarative auto detects sensitive
-    Product attributes and classifies them accordingly. Protect
-    sensitive attributes by defining Intents to redact or mask them.`,
+      content: `Dome auto detects sensitive Product attributes and classifies them accordingly. Protect sensitive attributes by defining Intents to redact or mask them
+      `,
     },
     {
       heading: "Access Intent",
@@ -51,9 +46,8 @@ export default function Hero() {
     },
     {
       heading: "Knowledge link",
-      content: `Don’t waste months and years to model your
-    data in order to use it. Leverage Declarative’s knowledge graph to discover associations between your data products as you use
-    them. Know the full lineage at any point in time.`,
+      content: `Don’t waste months and years to model your data in order to use it. Leverage Dome’s knowledge graph to discover associations between your data products as you use them. Know the full lineage at any point in time
+      `,
     },
     {
       heading: "Sharing Intent",
@@ -63,7 +57,7 @@ export default function Hero() {
     },
   ];
 
-  const [active, setActive,activeRef] = useStateRef(0);
+  const [active, setActive, activeRef] = useStateRef(0);
 
   const handleSlideRight = (active: any) => {
     let index: any;
@@ -105,70 +99,73 @@ export default function Hero() {
 
   return (
     <div>
-    <div className="sm:hidden lg:flex w-full roll-out justify-center mt-6">
-      <div className="w-[50%] px-16 flex gap-x-6 items-center">
-        <button
-          onClick={() => {
-            handleSlideLeft(active);
-          }}
-        >
-          <div className="relative w-[20px] h-[20px]">
-            <Image src={`/domePlaform/left.svg`} alt="brand" fill />
+      <div className="sm:hidden lg:flex w-full roll-out justify-center mt-6">
+        <div className="w-[50%] px-16 flex gap-x-6 items-center">
+          <button
+            onClick={() => {
+              handleSlideLeft(active);
+            }}
+          >
+            <div className="relative w-[20px] h-[20px]">
+              <Image src={`/domePlaform/left.svg`} alt="brand" fill />
+            </div>
+          </button>
+          <div className="px-6">
+            <p className="text-[36px] font-[700]">{data[active].heading}</p>
+            <p className="text-[18px] mt-5">{data[active].content}</p>
           </div>
-        </button>
-        <div className="px-6">
-          <p className="text-[36px] font-[700]">{data[active].heading}</p>
-          <p className="text-[18px] mt-5">{data[active].content}</p>
+          <button
+            onClick={() => {
+              handleSlideRight(active);
+            }}
+          >
+            <div className="relative w-[20px] h-[20px]">
+              <Image src={`/domePlaform/right.svg`} alt="brand" fill />
+            </div>
+          </button>
         </div>
-        <button
-          onClick={() => {
-            handleSlideRight(active);
-          }}
-        >
-          <div className="relative w-[20px] h-[20px]">
-            <Image src={`/domePlaform/right.svg`} alt="brand" fill />
+        <div className="flex  w-[50%] justify-center">
+          <div className="relative w-full h-[400px]">
+            <Image src={`/domePlaform/8.svg`} alt="brand" fill />
           </div>
-        </button>
-      </div>
-      <div className="flex  w-[50%] justify-center">
-        <div className="relative w-full h-[400px]">
-          <Image src={`/domePlaform/8.svg`} alt="brand" fill />
         </div>
       </div>
-    </div>
 
-    <div className="sm:visible lg:hidden w-full roll-out flex flex-col justify-center mt-6">
-      <div className="w-full h-[400px] flex gap-x-6 items-center">
-        <button
-          onClick={() => {
-            handleSlideLeft(activeRef.current);
-          }}
-        >
-          <div className="relative w-[20px] h-[20px]">
-            <Image src={`/domePlaform/left.svg`} alt="brand" fill />
+      <div className="sm:visible lg:hidden w-full roll-out flex flex-col justify-center mt-6">
+        <div className="w-full h-[400px] flex gap-x-6 items-center">
+          <button
+            onClick={() => {
+              handleSlideLeft(activeRef.current);
+            }}
+          >
+            <div className="relative w-[20px] h-[20px]">
+              <Image src={`/domePlaform/left.svg`} alt="brand" fill />
+            </div>
+          </button>
+          <div className="px-6">
+            <p className="text-center text-[36px] font-[700]">
+              {data[active].heading}
+            </p>
+            <p className="text-center text-[18px] mt-5">
+              {data[active].content}
+            </p>
           </div>
-        </button>
-        <div className="px-6">
-          <p className="text-center text-[36px] font-[700]">{data[active].heading}</p>
-          <p className="text-center text-[18px] mt-5">{data[active].content}</p>
+          <button
+            onClick={() => {
+              handleSlideRight(activeRef.current);
+            }}
+          >
+            <div className="relative w-[20px] h-[20px]">
+              <Image src={`/domePlaform/right.svg`} alt="brand" fill />
+            </div>
+          </button>
         </div>
-        <button
-          onClick={() => {
-            handleSlideRight(activeRef.current);
-          }}
-        >
-          <div className="relative w-[20px] h-[20px]">
-            <Image src={`/domePlaform/right.svg`} alt="brand" fill />
+        <div className="flex mt-[-2rem] w-full px-3 justify-center">
+          <div className="relative w-full h-[400px]">
+            <Image src={`/domePlaform/8.svg`} alt="brand" fill />
           </div>
-        </button>
-      </div>
-      <div className="flex mt-[-2rem] w-full px-3 justify-center">
-        <div className="relative w-full h-[400px]">
-          <Image src={`/domePlaform/8.svg`} alt="brand" fill />
         </div>
       </div>
-    </div>
-
     </div>
   );
 }

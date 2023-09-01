@@ -51,12 +51,12 @@ export default function Section1() {
         </p>
       </div>
       <div className="flex w-full justify-center">
-        <div className="w-full max-w-[1500px] grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-6 sm:px-10 lg:px-20">
+        <div className="w-full max-w-[1500px] grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-6 sm:px-5 lg:px-20">
           {data.map((element, index) => (
             <div
               key={`${index}`}
               className={`rounded-[10px]  landingBox ${
-                index > 2 ? "sm:h-[555px] md:h-[560px] lg:h-[640px]" : "sm:h-[600px]  md:h-[560px] lg:h-[660px]"
+                index > 2 ? "sm:h-[600px] md:h-[560px] lg:h-[640px]" : "sm:h-[620px]  md:h-[560px] lg:h-[660px]"
               }`}
             >
               <div className="w-full">

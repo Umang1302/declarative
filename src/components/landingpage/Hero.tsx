@@ -22,7 +22,6 @@ export default function Hero() {
   const [word, setWord, wordRef] = useStateRef(0);
 
   useEffect(() => {
-    console.log("HHHHHHHHH");
     const i = setInterval(() => {
       let index = wordRef.current;
       if (index > 5) {
@@ -30,7 +29,6 @@ export default function Hero() {
       } else {
         index = wordRef.current + 1;
       }
-      console.log(index);
       setWord(index);
     }, 2000);
     return () => clearInterval(i);
@@ -38,14 +36,14 @@ export default function Hero() {
 
   return (
     <div>
-      <div className="sm:hidden lg:flex relative items-center justify-center h-[800px] overflow-hidden">
+      {/* <div className="sm:hidden lg:flex relative items-center justify-center h-[800px] overflow-hidden">
         <div className="relative  z-30 sm:mt-[-42rem] lg:mt-[-18rem] -mt-[8rem] 2xl:mt-[-19rem] rounded-xl flex flex-col justify-center items-center">
           <p className="sm:text-[30px] sm:text-center lg:text-[40px] 2xl:text-[60px] text-[72px] font-[700] sm:leading-9">
             Manage your Data assets with ease at scale
           </p>
           <p className="sm:text-[10px] lg:text-[24px] sm:mt-4 lg:mt-10 flex">
             Convert your data into{" "}
-            <div className="text-[#4D91FF] change-text flex justify-center font-[700] animate-pulse duration-1000 lg:w-[150px] sm:w-[70px]">
+            <div className="text-[#4D91FF] change-text flex justify-center font-[700] lg:w-[150px] sm:w-[70px]">
               {array[wordRef.current]}{" "}
             </div>
             Business aligned Data Products in minutes.
@@ -60,9 +58,9 @@ export default function Hero() {
           <source src="/landingPage/Homevideo-Comp.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div>
+      </div> */}
 
-      <div className="sm:visible lg:hidden relative flex items-center justify-center h-[800px] overflow-hidden">
+      <div className="relative flex items-center justify-center h-[800px] overflow-hidden">
         <div className="relative  z-30  sm:mt-[-35rem] lg:mt-[-18rem] -mt-[8rem] 2xl:mt-[-19rem] rounded-xl flex flex-col justify-center items-center">
           <p className="sm:text-[30px] sm:px-4 sm:text-center lg:text-[40px] 2xl:text-[60px] text-[72px] font-[700] sm:leading-9">
             Manage your Data assets with ease at scale
@@ -70,11 +68,12 @@ export default function Hero() {
           <p className="sm:text-[16px] text-center lg:text-[24px] sm:mt-4 lg:mt-10">
             <p className="flex w-full justify-center">
               Convert your data into{" "}
-              <span className="text-[#4D91FF] change-text flex justify-center font-[700] animate-pulse duration-1000 sm:w-[100px]">
+              <span className={`lg:mx-2 change-text flex justify-center font-[700] animate-pulse duration-1000 sm:w-[100px] lg:w-[130px] lg:px-2 ${wordRef.current%2===0 ? "text-[#F65A27]":"text-[#4D91FF]"}`}>
                 {array[wordRef.current]}{" "}
               </span>
+            <p className="sm:visible lg:flex">Business aligned Data Products in minutes.</p>
             </p>
-            <p>Business aligned Data Products in minutes.</p>
+            <p className="sm:hidden lg:visible">Business aligned Data Products in minutes.</p>
           </p>
         </div>
         <video
