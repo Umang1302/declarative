@@ -44,7 +44,7 @@ export default function Section1() {
           <div>
             <div className="w-full px-6 mt-5 h-full flex justify-center">
               <video autoPlay loop muted className="w-[1250px]">
-                <source src="/landingPage/DomeEngine.mkv" type="video/mp4" />
+                <source src="/domPlaform/video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
