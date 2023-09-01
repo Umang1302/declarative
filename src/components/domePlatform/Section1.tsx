@@ -43,8 +43,8 @@ export default function Section1() {
           </p>
           <div>
             <div className="w-full px-6 mt-5 h-full flex justify-center">
-              <video autoPlay playsInline loop muted className="w-[1250px]">
-                <source src="/domPlaform/video.mp4" type="video/mp4" />
+              <video autoPlay playsInline controls loop muted className="w-[1250px]">
+                <source src="/domePlaform/video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
