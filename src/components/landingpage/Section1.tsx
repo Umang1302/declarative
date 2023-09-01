@@ -18,7 +18,7 @@ export default function Section1() {
         Dome Platform.
       </p>
       <div className="w-full mt-5 h-full flex justify-center">
-        <video autoPlay loop muted className="w-[1250px]">
+        <video autoPlay loop playsInline muted className="w-[1250px]">
           <source src="/landingPage/DomeEngine2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
