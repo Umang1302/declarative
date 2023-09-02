@@ -69,7 +69,7 @@ export default function Section1() {
                 </div>
                 <div className="w-[200px] text-[12px] flex flex-col gap-y-2 mt-3">
                   <p className="font-[700]">Founder and CEO</p>
-                  <p>
+                  <p className="text-[#555]">
                     25+ years experience in Enterprise Data Strategy,
                     Governance, Platforms & Architectures
                   </p>
