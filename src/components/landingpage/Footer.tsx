@@ -91,10 +91,18 @@ export default function Footer() {
                 <p className="px-1 py-2">Follow Us</p>
                 <div className="h-[2px] w-[70px] bg-white ml-1" />
                 <div className="flex justify-between font-[400] mt-4 gap-x-5">
-                  <div className="relative w-[28px] h-[28px] hover:scale-105">
+                  <div
+                    onClick={()=>{
+                      router.push("https://www.linkedin.com/company/declarativedata/ ");
+                    }} 
+                  className="relative w-[28px] h-[28px] hover:scale-105">
                     <Image src="/landingPage/linkedIn.svg" alt="brand" fill />
                   </div>
-                  <div className="relative w-[28px] h-[28px] hover:scale-105">
+                  <div
+                    onClick={()=>{
+                      router.push("https://www.twitter.com");
+                    }} 
+                  className="relative w-[28px] h-[28px] hover:scale-105">
                     <Image src="/landingPage/Twitter.svg" alt="brand" fill />
                   </div>
                 </div>

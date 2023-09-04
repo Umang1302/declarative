@@ -23,7 +23,7 @@ export default function Section1() {
           <div className="mt-6">
             <div className="w-full flex gap-x-8 h-[220px]">
               <div className="relative w-[200px] h-[200px]">
-                <Image src={`/about/chess.svg`} alt="brand" fill />
+                <Image src={`/about/bhavin.svg`} alt="brand" fill />
               </div>
               <div className="">
                 <div className="flex gap-x-10  items-center">
@@ -58,12 +58,15 @@ export default function Section1() {
           <div className="mt-6">
             <div className="w-full flex flex-col gap-x-8">
               <div className="relative w-full h-[240px]">
-                <Image src={`/about/chess.svg`} alt="brand" fill />
+                <Image src={`/about/bhavin.svg`} alt="brand" fill />
               </div>
               <div className="mt-3 px-10 w-full">
                 <div className="w-full flex justify-between gap-x-10 items-center">
                   <p className="text-[24px] font-[700]">Bhavin Dave</p>
-                  <div className="relative w-[25px] h-[25px]">
+                  <div 
+                  onClick={()=>{
+                    router.push("https://www.linkedin.com/company/declarativedata/ ");
+                  }} className="relative w-[25px] h-[25px]">
                     <Image src={`/about/linkedIn.svg`} alt="brand" fill />
                   </div>
                 </div>
