@@ -59,8 +59,20 @@ export default function Footer() {
                 </p>
                 {/* </div> */}
                 {/* <div className="flex mt-3 font-[400] justify-start gap-x-16"> */}
-                <p className="hover:scale-105 cursor-pointer">Privacy Policy</p>
-                <p className="hover:scale-105 cursor-pointer">
+                <p
+                  onClick={() => {
+                    router.push("/privacy");
+                  }}
+                  className="hover:scale-105 cursor-pointer"
+                >
+                  Privacy Policy
+                </p>
+                <p
+                  onClick={() => {
+                    router.push("/terms");
+                  }}
+                  className="hover:scale-105 cursor-pointer"
+                >
                   Terms & Conditions
                 </p>
                 {/* </div> */}
@@ -92,17 +104,21 @@ export default function Footer() {
                 <div className="h-[2px] w-[70px] bg-white ml-1" />
                 <div className="flex justify-between font-[400] mt-4 gap-x-5">
                   <div
-                    onClick={()=>{
-                      router.push("https://www.linkedin.com/company/declarativedata/ ");
-                    }} 
-                  className="relative w-[28px] h-[28px] hover:scale-105">
+                    onClick={() => {
+                      router.push(
+                        "https://www.linkedin.com/company/declarativedata/ "
+                      );
+                    }}
+                    className="relative w-[28px] h-[28px] hover:scale-105"
+                  >
                     <Image src="/landingPage/linkedIn.svg" alt="brand" fill />
                   </div>
                   <div
-                    onClick={()=>{
+                    onClick={() => {
                       router.push("https://www.twitter.com");
-                    }} 
-                  className="relative w-[28px] h-[28px] hover:scale-105">
+                    }}
+                    className="relative w-[28px] h-[28px] hover:scale-105"
+                  >
                     <Image src="/landingPage/Twitter.svg" alt="brand" fill />
                   </div>
                 </div>
@@ -173,8 +189,20 @@ export default function Footer() {
                 </p>
                 {/* </div> */}
                 {/* <div className="flex mt-3 font-[400] justify-start gap-x-16"> */}
-                <p className="hover:scale-105 cursor-pointer">Privacy Policy</p>
-                <p className="hover:scale-105 cursor-pointer">
+                <p
+                  onClick={() => {
+                    router.push("/privacy");
+                  }}
+                  className="hover:scale-105 cursor-pointer"
+                >
+                  Privacy Policy
+                </p>
+                <p
+                  onClick={() => {
+                    router.push("/terms");
+                  }}
+                  className="hover:scale-105 cursor-pointer"
+                >
                   Terms & Conditions
                 </p>
                 {/* </div> */}
