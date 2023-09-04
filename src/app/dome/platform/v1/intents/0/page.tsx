@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import jsonData from "../../../../../data.json";
+import jsonData from "../../../../../../../data.json";
 import { RingLoader } from "react-spinners";
 import { Breadcrumbs, Card, CardBody } from "@material-tailwind/react";
 import { Cabin } from "next/font/google";
-import Intents from "../../../../components/product/Intents";
+import Intents from "../../../../../../components/product/Intents";
 const cabin = Cabin({ subsets: ["latin"] });
 
 export default function Page({ params }: any) {

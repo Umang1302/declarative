@@ -139,7 +139,7 @@ export default function TransparentTabs({
                   className="cursor-pointer border-[1px] px-3 rounded-[5px] py-2 border-black hover:bg-[#F65A27] hover:border-none hover:text-white"
                   onClick={() => {
                     setDataSetVal(`Data Source ${index}`);
-                    router.push(`/dome/onboarding`);
+                    router.push(`/dome/platform/v1/onboarding`);
                   }}
                   key={index}
                 >

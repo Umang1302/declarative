@@ -69,7 +69,7 @@ export default function Sidebar({ active, setActive }: any) {
           <div className="w-full h-[8%] max-h-[60px] py-1 my-[38px] flex justify-start px-2">
             <button
               onClick={() => {
-                router.push(`/dome/onboarding`);
+                router.push(`/dome/platform/v1/onboarding`);
               }}
               className="w-[50%] h-[90%] gap-x-2 px-2 border-[1px] items-center rounded-[10px] hover:w-[50%] hover:z-50 hover:h-[98%] shadow-xl flex"
             >
@@ -90,7 +90,7 @@ export default function Sidebar({ active, setActive }: any) {
                   active === 0 ? "bg-[#F2F2F2] border-l-4 border-[#F65A27]" : ""
                 } cursor-pointer w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3`}
                 onClick={() => {
-                  router.push("/dome");
+                  router.push("/dome/platform/v1");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">
@@ -107,7 +107,7 @@ export default function Sidebar({ active, setActive }: any) {
                     : ""
                 }`}
                 onClick={() => {
-                  router.push("/dome");
+                  router.push("/dome/platform/v1");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">
@@ -124,7 +124,7 @@ export default function Sidebar({ active, setActive }: any) {
                     : ""
                 }`}
                 onClick={() => {
-                  router.push("/dome/policy");
+                  router.push("/dome/platform/v1/policy");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">
@@ -141,7 +141,7 @@ export default function Sidebar({ active, setActive }: any) {
                     : ""
                 }`}
                 onClick={() => {
-                  router.push("/dome/intents/0");
+                  router.push("/dome/platform/v1/intents/0");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">
@@ -156,7 +156,7 @@ export default function Sidebar({ active, setActive }: any) {
                   active === 4 ? "bg-[#F2F2F2] border-l-4 border-[#F65A27]" : ""
                 } cursor-pointer w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3`}
                 onClick={() => {
-                  router.push("/dome/settings");
+                  router.push("/dome/platform/v1/settings");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">
@@ -169,7 +169,7 @@ export default function Sidebar({ active, setActive }: any) {
               <div
                 className="hover:bg-[#F2F2F2] cursor-pointer pl-4 w-full h-[54px] flex items-center justify-start py-5 px-2 gap-x-3"
                 onClick={() => {
-                  router.push("/dome");
+                  router.push("/dome/platform/v1");
                 }}
               >
                 <div className="relative w-[18px] h-[18px]">

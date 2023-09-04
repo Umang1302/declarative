@@ -2,11 +2,11 @@
 
 import Hero from "@/components/dashboard/Hero";
 
-import ShowcaseProduct from "../../components/dashboard/ShowcaseProduct";
+import ShowcaseProduct from "../../../../components/dashboard/ShowcaseProduct";
 import { Cabin } from "next/font/google";
 import React from "react";
 import { RingLoader } from "react-spinners";
-import jsonData from "../../../data.json";
+import jsonData from "../../../../../data.json";
 import Image from "next/image";
 import LabelSection from "@/components/dashboard/LabelSection";
 

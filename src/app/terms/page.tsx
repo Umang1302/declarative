@@ -212,8 +212,8 @@ export default function Dashboard() {
         <div className="flex justify-center bg-[#FFF2ED] sm:w-[90%] lg:w-[80%] py-2 rounded-[5px]">
           <p className="text-[40px] font-[700]">Terms of Use</p>
         </div>
-        <div className="flex justify-center py-2 px-2 sm:w-[90%] lg:w-[80%]">
-          <div className="text-[20px] flex justify-between w-[100%]">
+        <div className="flex justify-center py-2 px-2 sm:w-[96%] lg:w-[80%]">
+          <div className="sm:text-[16px] lg:text-[20px] flex justify-between w-[100%]">
             <p>Declarative Data Inc.</p>
             <p>Last Updated: Sep 2 2023</p>
           </div>

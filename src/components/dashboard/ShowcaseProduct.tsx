@@ -99,7 +99,7 @@ export default function ShowcaseProduct({ page, prodData }: any) {
                       <p
                         onClick={() => {
                           if (activeLink) {
-                            router.push(`/dome/product/${index}`);
+                            router.push(`/dome/platform/v1/product/${index}`);
                           }
                         }}
                         onMouseEnter={() => {

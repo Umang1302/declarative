@@ -1,12 +1,12 @@
 "use client";
 
-import "../globals.css";
+import "../../../globals.css";
 import React, { useEffect } from "react";
 
-import Sidebar from "../../components/common/Sidebar";
-import Navsearchbar from "../../components/common/NavSearchbar";
-import OnboardingSidebar from "../../components/common/OnboardingSidebar";
-import OnboardingHeading from "../../components/common/OnboardingHeading";
+import Sidebar from "../../../../components/common/Sidebar";
+import Navsearchbar from "../../../../components/common/NavSearchbar";
+import OnboardingSidebar from "../../../../components/common/OnboardingSidebar";
+import OnboardingHeading from "../../../../components/common/OnboardingHeading";
 
 import { Cabin } from "next/font/google";
 const cabin = Cabin({ subsets: ["latin"] });

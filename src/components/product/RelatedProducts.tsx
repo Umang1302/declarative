@@ -67,7 +67,7 @@ export default function RelatedProducts() {
               >
                 <button
                   onClick={() => {
-                    router.push(`/dome/product/${i}`);
+                    router.push(`/dome/platform/v1/product/${i}`);
                   }}
                 >
                   {element.name}
