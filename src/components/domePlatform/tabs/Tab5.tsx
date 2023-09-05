@@ -146,7 +146,7 @@ export default function Hero() {
             <p className="text-center text-[36px] font-[700]">
               {data[active].heading}
             </p>
-            <p className="text-center text-[18px] mt-5">
+            <p className="text-center text-[#555] text-[18px] mt-5">
               {data[active].content}
             </p>
           </div>
