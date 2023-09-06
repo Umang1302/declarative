@@ -3,10 +3,12 @@
 import { Cabin } from "next/font/google";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Checkbox, Textarea } from "@material-tailwind/react";
 import emailjs from "@emailjs/browser";
 import useStateRef from "react-usestateref";
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -15,16 +17,34 @@ export default function Section1() {
   const pathName = usePathname();
   const form: any = useRef();
   const [checkBox,setCheckbox,checkboxRef] = useStateRef<any>();
+  const [alert,setAlert] = useState<any>(false);
+
+
+  useEffect(()=>{},[alert]);
+
+   const success = ()=> {
+    toast.success('Demo Scheduled!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+   }
 
   const sendEmail = (e: any) => {
     e.preventDefault();
     console.log(form.current);
-    if(checkboxRef.current){
 
+    if(checkboxRef.current){
       // emailjs.sendForm('service_uwqinqk', 'template_dxleovb', form.current, 'K0oNsfyBvmdFKi_eT')
       emailjs.sendForm('service_y6qyhn8', 'template_rlwaszn', form.current, 'uRwDSIn_nqwruC9pJ')
       .then((result) => {
         console.log(result.text);
+        success();
       }, (error) => {
         console.log(error.text);
       });
@@ -41,6 +61,8 @@ export default function Section1() {
           : "sm:mt-[2rem] lg:mt-[8rem]"
       }  pt-[0.6rem] bg-[#F5FAFF] `}
     >
+       
+        <ToastContainer />
       <div className="h-[500px] lg:mt-20 pt-10 w-full">
         <div className="w-full flex justify-center items-center">
           <div className="w-full flex flex-col justify-center">
@@ -100,7 +122,12 @@ export default function Section1() {
                       <Checkbox
                         checked={checkboxRef.current}
                         onChange={(check)=>{
+                          console.log(check);
+                          if(checkboxRef.current)
+                           setCheckbox(!check);
+                          else
                            setCheckbox(check);
+
                         }}
                         label={
                           <p className="sm:text-[12px] lg:text-[18px] text-black">
