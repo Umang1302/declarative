@@ -21,8 +21,8 @@ export default function Section1() {
               Meet the Leadership team
             </p>
             <div className="mt-6">
-              <div className="w-full flex gap-x-3 h-[220px]">
-                <div className="relative w-[200px] h-[200px]">
+              <div className="w-full flex h-[200px]">
+                <div className="relative ml-[-1.5rem] w-[200px] h-[200px]">
                   <Image src={`/about/bhavin.svg`} alt="brand" fill />
                 </div>
                 <div className="">
@@ -89,7 +89,7 @@ export default function Section1() {
       </div>
 
       <div
-        className={`sm:hidden md:visible lg:hidden mb-[5rem] mt-[5rem] pr-1 w-full justify-center ${cabin.className}`}
+        className={`sm:hidden md:flex lg:hidden mb-[5rem] mt-[5rem] pr-1 w-full justify-center ${cabin.className}`}
       >
         <div className="max-w-[1450px] w-[800px] flex justify-center">
           <div className="landingBox px-10 py-5">
@@ -98,8 +98,8 @@ export default function Section1() {
             </p>
             <div className="mt-6">
               <div className="w-full flex gap-x-8 h-[220px]">
-                <div className="relative w-[200px] h-[200px]">
-                  <Image src={`/about/chess.svg`} alt="brand" fill />
+                <div className="relative ml-[-1.5rem] w-[200px] h-[200px]">
+                  <Image src={`/about/bhavin.svg`} alt="brand" fill />
                 </div>
                 <div className="mt-3">
                   <div className="flex gap-x-10  items-center">
