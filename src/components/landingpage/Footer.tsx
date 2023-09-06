@@ -112,14 +112,14 @@ export default function Footer() {
                   </a>
                   <a
                     target="_blank"
-                    href="https://www.twitter.com"
+                    href="https://twitter.com/declarativedata"
                     className="relative w-[28px] h-[28px] hover:scale-105"
                   >
                     <Image src="/landingPage/Twitter.svg" alt="brand" fill />
                   </a>
                   <a
                     target="_blank"
-                    href="https://www.discord.com"
+                    href=" https://discord.gg/YbPYQPzP"
                     className="relative w-[28px] h-[28px] hover:scale-105"
                   >
                     <Image src="/landingPage/discord.svg" alt="brand" fill />
@@ -247,14 +247,14 @@ export default function Footer() {
                   </a>
                   <a
                     target="_blank"
-                    href="https://www.twitter.com"
+                    href="https://twitter.com/declarativedata"
                     className="relative w-[28px] h-[28px] hover:scale-105"
                   >
                     <Image src="/landingPage/Twitter.svg" alt="brand" fill />
                   </a>
                   <a
                     target="_blank"
-                    href="https://www.discord.com"
+                    href=" https://discord.gg/YbPYQPzP"
                     className="relative w-[28px] h-[28px] hover:scale-105"
                   >
                     <Image src="/landingPage/discord.svg" alt="brand" fill />

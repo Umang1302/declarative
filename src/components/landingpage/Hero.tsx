@@ -23,19 +23,6 @@ export default function Hero() {
   const [word, setWord, wordRef] = useStateRef(0);
   const [counter, setCounter, counterRef] = useStateRef(0);
 
-  useEffect(() => {
-    const i = setInterval(() => {
-      let index = wordRef.current;
-      if (index > 5) {
-        index = 0;
-      } else {
-        index = wordRef.current + 1;
-      }
-      setWord(index);
-      setCounter(counterRef.current + 1);
-    }, 2000);
-    return () => clearInterval(i);
-  }, []);
 
   return (
     <div>
@@ -49,19 +36,24 @@ export default function Hero() {
               <p className="flex justify-center">Convert your data into </p>
               <span
                 className={`sm:w-[100px] relative change-text font-[700] lg:w-[150px] flex justify-center 
-                 
-                    text-[#F65A27]
-                   
+                  ${counterRef.current % 2 ===0? 'text-[#4D91FF]':"text-[#F65A27]"
+                  }
                 `}
               >
                 <Typewriter
                   words={array}
-                  loop={10000}
+                  loop={10000000000}
                   cursor
                   cursorStyle="|"
-                  typeSpeed={70}
-                  deleteSpeed={50}
+                  typeSpeed={50}
+                  deleteSpeed={80}
                   delaySpeed={1000}
+                  onType={(count)=>{
+
+                    setCounter(count);
+                    
+                  }}
+                  
                 />
               </span>
             </div>
