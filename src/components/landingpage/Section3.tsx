@@ -86,10 +86,10 @@ export default function Section1() {
                     required
                   />
                 </div>
-                <div className="mt-5 flex justify-center">
+                <div className="w-full mt-5 flex justify-center">
                   <textarea
                     placeholder="Message"
-                    className="sm:w-[400px] md:w-[900px] sm:h-[200px] sm:text-[12px] lg:w-[986px] lg:h-[150px] px-3 py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
+                    className="sm:w-[400px] md:w-full sm:h-[200px] sm:text-[12px] lg:w-[986px] lg:h-[150px] px-3 py-2 outline-none border-[#8E8E8E] border-[1px] rounded-[5px]"
                     name="message"
                     required
                   />

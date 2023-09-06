@@ -82,7 +82,7 @@ export default function Section1() {
             <Image src={`/about/1.svg`} alt="brand" fill />
           </div>
           <div className="w-full flex flex-col px-5 justify-start md:px-16 items-center md:mt-[4rem] lg:mt-[-4rem]">
-            <div>
+            <div className="max-w-[850px]">
               <p className="text-[30px] font-[700]">Our Belief</p>
               <p className="text-[16px] text-[#555]">
                 Effective Data Management extends beyond Data Engineering,
