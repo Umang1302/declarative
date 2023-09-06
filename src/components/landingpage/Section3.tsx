@@ -31,7 +31,7 @@ export default function Section1() {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "light",
+      theme: "colored",
       });
    }
 
@@ -39,12 +39,12 @@ export default function Section1() {
     e.preventDefault();
     console.log(form.current);
 
+    
     if(checkboxRef.current){
-      // emailjs.sendForm('service_uwqinqk', 'template_dxleovb', form.current, 'K0oNsfyBvmdFKi_eT')
       emailjs.sendForm('service_y6qyhn8', 'template_rlwaszn', form.current, 'uRwDSIn_nqwruC9pJ')
       .then((result) => {
         console.log(result.text);
-        success();
+      success();
       }, (error) => {
         console.log(error.text);
       });
